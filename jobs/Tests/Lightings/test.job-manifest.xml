@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<job-manifest enable="False">
+
+    <outpath value="{OutputDir}"/>
+    <!--[0] - GPU, if machine has n GPU, than [0,1, ... n] - GPUs [n+1] - CPU-->
+    <option name="RenderMode">
+        <configuration name="GPU">
+            <Value>1</Value>
+        </configuration>
+        <!--<configuration name="DUAL">-->
+            <!--<Value>0, 1</Value>-->
+        <!--</configuration>-->
+        <!--<configuration name="CPU">-->
+            <!--<Value>1</Value>-->
+        <!--</configuration>-->
+    </option>
+
+    <execute command='python "{CWD}\Scripts\simpleRender.py"' stage="stage1">
+        <argument>--stage_report stage1.json</argument>
+        <argument>--tool "{Maya[Path]}"</argument>
+        <argument>--tests "{CWD}\Tests\Lightings\testsList.txt"</argument>
+        <argument>--gpumode "{RenderMode[Value]}"</argument>
+        <argument>--output "{OutputDir}"</argument>
+        <argument>--testType Lightings</argument>
+        <argument>--projectPath "{ScenesDir}"</argument>
+    </execute>
+
+    <execute command='python "{CommonDir}\scripts\checkExpected.py"' stage="stage2">
+        <argument>--stage_report stage2.json</argument>
+        <argument>--work_dir "{OutputDir}"</argument>
+        <argument>--report_name expected.json</argument>
+        <argument>--result_name not_rendered.json</argument>
+    </execute>
+
+    <execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"' stage="stage3">
+        <argument>--stage_report stage3.json</argument>
+        <argument>--work_dir "{OutputDir}"</argument>
+        <argument>--base_dir "{BaselineDir}"</argument>
+        <argument>--report_name report_mel.json</argument>
+        <argument>--result_name report_compare.json</argument>
+    </execute>
+
+    <!--<execute command='python "{CommonDir}\scripts\HtmlTemplate\htmlBuilder.py"' stage="stage4">-->
+        <!--<argument>&#45;&#45;stage_report stage4.json</argument>-->
+        <!--<argument>&#45;&#45;work_dir "{OutputDir}"</argument>-->
+    <!--</execute>-->
+
+</job-manifest>

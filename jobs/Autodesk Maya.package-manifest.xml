@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<package-manifest name="Autodesk Maya">
+    <option name='Maya'>
+        <!--<configuration name="2015">-->
+            <!--<Path>C:\Program Files\Autodesk\Maya2015\bin\maya.exe</Path>-->
+        <!--</configuration>-->
+        <!--<configuration name="2016">-->
+            <!--<Path>C:\Program Files\Autodesk\Maya2016\bin\maya.exe</Path>-->
+        <!--</configuration>-->
+        <!--<configuration name="2016.5">-->
+            <!--<Path>C:\Program Files\Autodesk\Maya2016.5\bin\maya.exe</Path>-->
+        <!--</configuration>-->
+        <configuration name="2017">
+            <Path>C:\Program Files\Autodesk\Maya2017\bin\maya.exe</Path>
+        </configuration>
+    </option>
+
+    <variable name="CWD" value="{CWD}"/>
+    <variable name="BaselineDir" value="{CWD}\..\..\..\..\base_line\Maya\Base_results"/>
+    <variable name="ScenesDir" value="{CWD}\..\..\..\assets\Maya"/>
+
+</package-manifest>

@@ -1,0 +1,168 @@
+global proc writeToJSONReport(string $resultsDirectory, string $reportName, string $textToReport){
+	print("json result \n");
+	print($resultsDirectory);
+	string $filePath = $resultsDirectory + $reportName;
+	int $fileID = `fopen $filePath "a"`;
+
+	fprint $fileID $textToReport;
+	fclose $fileID;
+}
+
+global proc writePairToJSONReport(string $resultsDirectory, string $reportName, string $key, string $value, int $lastRow){
+	string $filePath = $resultsDirectory + $reportName;
+	int $fileID = `fopen $filePath "a"`;
+
+	string $text;
+	if ($lastRow == 0){
+		$text = "\n  \""+ $key + "\":" + "\"" + $value + "\"" ; 	
+	}
+	else{
+		$text = "\n  \""+ $key + "\":" + "\"" + $value + "\"," ; 
+	}
+	
+	fprint $fileID $text;
+	fclose $fileID;
+}
+
+global proc writeFloatPairToJSONReport(string $resultsDirectory, string $reportName, string $key, float $value, int $lastRow){
+	string $filePath = $resultsDirectory + $reportName;
+	int $fileID = `fopen $filePath "a"`;
+
+	string $text;
+	if ($lastRow == 0){
+		$text = "\n  \""+ $key + "\":" + $value; 	
+	}
+	else{
+		$text = "\n  \""+ $key + "\":" + $value + "," ; 
+	}
+	
+	fprint $fileID $text;
+	fclose $fileID;
+}
+
+//create file with names of expected .jpg files
+global proc createExpectedLog(string $reportName, string $resultsDirectory, string $sceneRenderData[], string $useGPU[]){
+	string $filePath = $resultsDirectory + $reportName;
+	int $fileID = `fopen $filePath "a"`;
+	fprint $fileID "[";
+
+	int $j = 0;
+	for ($j = 0 ; $j<size($sceneRenderData) ; $j += 4) {
+
+		string $sceneF = $sceneRenderData[$j+1];
+		string $additionalFileNameId = $sceneRenderData[$j+3];
+		string $sceneFile = substituteAllString($sceneF,".mb","") + $additionalFileNameId + ".jpg";
+
+		string $text;
+		if ($j+4 >= size($sceneRenderData)){
+			$text = "\n  {\"file_name\": \"" + $sceneFile + "\"}"; 	
+		}
+		else{
+			$text = "\n  {\"file_name\": \"" + $sceneFile + "\"}," ;
+		}		
+		
+		fprint $fileID $text;
+
+		// fprint $fileID $sceneFile;
+		// fprint $fileID "\n";
+	}
+	fprint $fileID "\n]";
+	fclose $fileID;
+}
+
+//create file with names of expected .jpg files for materials
+global proc createExpectedLogMaterials(string $reportName, string $resultsDirectory, string $sceneRenderData[], string $useGPU[]){
+	string $filePath = $resultsDirectory + $reportName;
+	int $fileID = `fopen $filePath "a"`;
+	fprint $fileID "[";
+
+	int $j = 0;
+	for ($j = 0 ; $j<size($sceneRenderData) ; $j += 1) {
+		string $sceneFile = $sceneRenderData[$j] + ".jpg";
+
+		string $text;
+		if ($j+1 >= size($sceneRenderData)){
+			$text = "\n  {\"file_name\": \"" + $sceneFile + "\"}"; 	
+		}
+		else{
+			$text = "\n  {\"file_name\": \"" + $sceneFile + "\"}," ;
+		}	
+
+		fprint $fileID $text;
+		print $text;
+		// fprint $fileID $sceneFile;
+		// fprint $fileID "\n";
+	}
+
+	fprint $fileID "\n]";
+	fclose $fileID;
+}
+
+global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, string $file_name, float $testTime, string $useGPU[]){
+	global string $reportName;
+	global string $testType;
+	string $RPR_version[] = `RPRImageComparing -rprPluginDetails`;
+	string $gpuDevices[] = `optionVar -q "RPR_DevicesName"`;
+	string $s;
+	string $render_device = "";
+	for($s in $useGPU){
+		int $i = $s;
+		$render_device = $render_device + $gpuDevices[$i] + " ";
+		if($i >= size($gpuDevices)){
+			$render_device = $render_device + stringArrayToString(`hardware -cpu`, "");
+		}
+	}
+
+	writePairToJSONReport($resultsDirectory, $reportName, "tool", "maya"+`about -version`, 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "datetime", `date -format "YYYY-MM-DD_hh-mm-ss"`, 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "render_version", $RPR_version[0], 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "test_name", $testType, 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "render_device", $render_device, 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "scene_name", $scene_name, 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "file_name", $file_name, 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "difference_color", "", 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "difference_opacity", "", 1);
+	writeFloatPairToJSONReport($resultsDirectory, $reportName, "render_time", $testTime, 0);
+}
+
+//get render window panel name, so we can save out the rendered image:
+global proc string getRenderWindowPanel(){
+     string $renderPanel;
+     string $renderPanels[] = `getPanel -scriptType "renderWindowPanel"`;
+
+     if( size($renderPanels) == 0 ){
+         $renderPanel = `scriptedPanel -type "renderWindowPanel" -unParent`;
+         scriptedPanel -e -label `interToUI $renderPanel` $renderPanel;
+     }
+     else{
+         $renderPanel = $renderPanels[0];
+     }
+
+     return $renderPanel;
+}
+
+//Open given Scene and set RPR render hardware to cpu/gpu/mixed
+global proc openSceneFileAndSetRPRRender(string $sceneF, string $useGPU[]){
+	print("SCENFILE: " + $sceneF + "\n");
+	file -f -open -type "mayaBinary" -iv $sceneF;
+	//set image output format to JPEG:
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	// setAttr "defaultRenderGlobals.currentRenderer" -type "string" "fireRender";
+	// eval(`setAttr "defaultRenderGlobals.currentRenderer" -type "string" "fireRender"`);
+
+	//open RPR render settings tab so it loads global variables properly:
+	// openSettingsTabRPR();
+	int $selected[] = `optionVar -q "RPR_DevicesSelected"`;
+	optionVar -rm "RPR_DevicesSelected";
+
+    int $i = 0;
+	for($i=0; $i < size($selected); $i++){
+	    string $stri = $i;
+		if(stringArrayContains( $stri, $useGPU) == 1){
+			optionVar -iva "RPR_DevicesSelected" 1;
+		}else{
+			optionVar -iva "RPR_DevicesSelected" 0;
+		}
+		// optionVar -iva "RPR_DevicesSelected" stringArrayContains($stri, $useGPU);
+	}
+}
