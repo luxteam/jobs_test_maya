@@ -15,8 +15,8 @@
         </configuration>
     </option>
 
-    <variable name="CWD" value="{CWD}"/>
-    <variable name="BaselineDir" value="{CWD}\..\..\..\..\base_line\Maya\Base_results"/>
-    <variable name="ScenesDir" value="{CWD}\..\..\..\assets\Maya"/>
+    <variable name="CWD" value="..\jobs"/>
+    <variable name="ScenesDir" value="c:\TestResources\MayaAssets"/>
+    <variable name="CommonDir" value = "\..\..\jobs_launcher_small\common"/>
 
 </package-manifest>

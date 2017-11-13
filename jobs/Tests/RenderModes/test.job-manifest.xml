@@ -5,7 +5,7 @@
     <!--[0] - GPU, if machine has n GPU, than [0,1, ... n] - GPUs [n+1] - CPU-->
     <option name="RenderMode">
         <configuration name="GPU">
-            <Value>1</Value>
+            <Value>0</Value>
         </configuration>
         <!--<configuration name="DUAL">-->
             <!--<Value>0, 1</Value>-->
@@ -32,13 +32,13 @@
         <argument>--result_name not_rendered.json</argument>
     </execute>
 
-    <execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"' stage="stage3">
-        <argument>--stage_report stage3.json</argument>
-        <argument>--work_dir "{OutputDir}"</argument>
-        <argument>--base_dir "{BaselineDir}"</argument>
-        <argument>--report_name report_mel.json</argument>
-        <argument>--result_name report_compare.json</argument>
-    </execute>
+    <!--<execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"' stage="stage3">-->
+        <!--<argument>&#45;&#45;stage_report stage3.json</argument>-->
+        <!--<argument>&#45;&#45;work_dir "{OutputDir}"</argument>-->
+        <!--<argument>&#45;&#45;base_dir "{BaselineDir}"</argument>-->
+        <!--<argument>&#45;&#45;report_name report_mel.json</argument>-->
+        <!--<argument>&#45;&#45;result_name report_compare.json</argument>-->
+    <!--</execute>-->
 
     <!--<execute command='python "{CommonDir}\scripts\HtmlTemplate\htmlBuilder.py"' stage="stage4">-->
         <!--<argument>&#45;&#45;stage_report stage4.json</argument>-->
