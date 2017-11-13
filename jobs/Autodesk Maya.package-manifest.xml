@@ -17,6 +17,6 @@
 
     <variable name="CWD" value="..\jobs"/>
     <variable name="ScenesDir" value="c:\TestResources\MayaAssets"/>
-    <variable name="CommonDir" value = "\..\..\jobs_launcher_small\common"/>
+    <variable name="CommonDir" value = "\..\..\jobs_launcher\common"/>
 
 </package-manifest>
