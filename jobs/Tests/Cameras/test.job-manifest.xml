@@ -2,24 +2,12 @@
 <job-manifest enable="False">
 
     <outpath value="{OutputDir}"/>
-    <!--[0] - GPU, if machine has n GPU, than [0,1, ... n] - GPUs [n+1] - CPU-->
-    <option name="RenderMode">
-        <configuration name="GPU">
-            <Value>0</Value>
-        </configuration>
-        <!--<configuration name="DUAL">-->
-            <!--<Value>0, 1</Value>-->
-        <!--</configuration>-->
-        <!--<configuration name="CPU">-->
-            <!--<Value>1</Value>-->
-        <!--</configuration>-->
-    </option>
 
     <execute command='python "{CWD}\Scripts\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
-        <argument>--tool "{Maya[Path]}"</argument>
-        <argument>--tests "{CWD}\Tests\Cameras\testsList.txt"</argument>
-        <argument>--gpumode "{RenderMode[Value]}"</argument>
+        <argument>--tool "{Tool[path]}"</argument>
+        <argument>--tests "{CWD}\Tests\Cameras\{TestsFilter[filter]}TestsList.txt"</argument>
+        <argument>--gpumode "{RenderDevice[device]}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Cameras</argument>
         <argument>--projectPath "{ScenesDir}"</argument>

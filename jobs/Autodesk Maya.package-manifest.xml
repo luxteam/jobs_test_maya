@@ -1,18 +1,41 @@
 <?xml version="1.0" ?>
 <package-manifest name="Autodesk Maya">
-    <option name='Maya'>
-        <!--<configuration name="2015">-->
-            <!--<Path>C:\Program Files\Autodesk\Maya2015\bin\maya.exe</Path>-->
-        <!--</configuration>-->
-        <!--<configuration name="2016">-->
-            <!--<Path>C:\Program Files\Autodesk\Maya2016\bin\maya.exe</Path>-->
-        <!--</configuration>-->
-        <!--<configuration name="2016.5">-->
-            <!--<Path>C:\Program Files\Autodesk\Maya2016.5\bin\maya.exe</Path>-->
-        <!--</configuration>-->
-        <configuration name="2017">
-            <Path>C:\Program Files\Autodesk\Maya2017\bin\maya.exe</Path>
-        </configuration>
+
+    <option name="RenderDevice" type="exec">
+import os
+import collections
+import json
+
+hwprofiles = os.getenv('HWProfiles').split(';')
+
+with open('c:\\RenderDevice.config.json', 'r') as file:
+    config_parse = file.read()
+    config_parse = json.loads(config_parse)
+
+for hwprofile in hwprofiles:
+    config_name = hwprofile
+    configurations[config_name] = collections.OrderedDict()
+    configurations[config_name]['device'] = config_parse['Maya'][hwprofile]
+    </option>
+
+    <option name="TestsFilter" type="exec">
+import os
+import collections
+filters = os.getenv('TestsFilter').split(';')
+for filter in filters:
+    config_name = filter
+    configurations[config_name] = collections.OrderedDict()
+    configurations[config_name]['filter'] = filter
+    </option>
+
+    <option name="Tool" type="exec">
+import os
+import collections
+tools = os.getenv('Tool').split(';')
+for tool in tools:
+    config_name = tool
+    configurations[config_name] = collections.OrderedDict()
+    configurations[config_name]['path'] = "C:\Program Files\Autodesk\Maya{}\\bin\maya.exe".format(tool)
     </option>
 
     <variable name="CWD" value="..\jobs"/>
