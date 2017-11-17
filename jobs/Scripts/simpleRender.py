@@ -4,6 +4,7 @@ import subprocess
 import psutil
 import json
 import ctypes
+import pyscreenshot
 from shutil import copyfile
 
 
@@ -117,6 +118,8 @@ def main():
             rc = p.wait(timeout=20)
         except psutil.TimeoutExpired as err:
             rc = -1
+            error_screen = pyscreenshot.grab()
+            error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
             if "maya" in get_windows_titles():
                 for child in reversed(p.children(recursive=True)):
                     child.terminate()
