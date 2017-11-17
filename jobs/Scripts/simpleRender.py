@@ -3,6 +3,7 @@ import os
 import subprocess
 import psutil
 import json
+import ctypes
 from shutil import copyfile
 
 
@@ -109,23 +110,22 @@ def main():
     os.chdir(args.output)
 
     p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE)
+    rc = -1
 
-    try:
-        rc = p.wait(timeout=2000)
-    except psutil.TimeoutExpired as err:
-        sub_skip = -1
-        for child in reversed(p.children(recursive=True)):
-            child.terminate()
-        p.terminate()
+    while True:
+        try:
+            rc = p.wait(timeout=20)
+        except psutil.TimeoutExpired as err:
+            rc = -1
+            if "maya" in get_windows_titles():
+                for child in reversed(p.children(recursive=True)):
+                    child.terminate()
+                p.terminate()
+                break
+        else:
+            break
 
-    sub_skip = 0
-
-    if sub_skip:
-        rc = 2
-        print('skipped')
-        stage_report[0]['status'] = 'FAILED'
-        stage_report[1]['log'].append('subprocess SKIPPED')
-    elif rc == 0:
+    if rc == 0:
         print('passed')
         stage_report[0]['status'] = 'OK'
         stage_report[1]['log'].append('subprocess PASSED')
