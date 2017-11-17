@@ -1,0 +1,15 @@
+// copy to 'C:\RenderConfig'
+// customize file according your hardware
+{
+    "CPU": "2",
+    "WX7100": "1",
+    "HD7900": "0",
+
+    "CPU+WX7100": "1,2",
+    "CPU+HD7900": "0,2",
+    "CPU+WX7100+HD7900": "0,1,2",
+    "CPU+HD7900+WX7100": "0,1,2",
+
+    "WX7100+HD7900": "0,1",
+    "HD7900+WX7100": "0,1"
+}
