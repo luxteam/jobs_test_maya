@@ -1,0 +1,29 @@
+source shelfCommands.mel;
+
+global proc auto_config(string $configPath){
+    if( `pluginInfo -query -loaded RadeonProRender` == 0){
+        loadPlugin RadeonProRender;
+    }
+
+    int $selected[] = `optionVar -q "RPR_DevicesSelected"`;
+    string $gpuDevices[] = `optionVar -q "RPR_DevicesName"`;
+
+    string $filePath = $configPath + "resutl.json";
+
+    int $fileID = `fopen $filePath "w"`;
+
+    fprint $fileID "{\n";
+
+    int $i = 0;
+    for($i=0; $i < size($selected); $i++){
+        fprint $fileID $i;
+        fprint $fileID " ";
+        fprint $fileID $gpuDevices[$i];
+        fprint $fileID "\n";
+    }
+
+    fprint $fileID "\n}";
+    fclose $fileID;
+    
+    evalDeferred("quit -abort");
+}

@@ -40,6 +40,7 @@ for tool in tools:
 
     <variable name="CWD" value="..\jobs"/>
     <variable name="ScenesDir" value="c:\TestResources\MayaAssets"/>
-    <variable name="CommonDir" value = "{CWD}\..\..\jobs_launcher\common"/>
+    <variable name="CommonDir" value="{CWD}\..\..\jobs_launcher\common"/>
+    <variable name="BaselineDir" value="{CWD}\..\..\MayaBaseline.CPU"/>
 
 </package-manifest>

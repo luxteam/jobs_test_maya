@@ -1,2 +1,4 @@
 /Results/*
 *.pyc
+cache
+tahoe.log

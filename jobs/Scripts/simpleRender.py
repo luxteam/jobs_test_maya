@@ -134,8 +134,8 @@ def main():
         stage_report[1]['log'].append('subprocess PASSED')
     else:
         print('failed')
-        stage_report[0]['status'] = 'FAILED'
-        stage_report[1]['log'].append('subprocess FAILED')
+        stage_report[0]['status'] = 'TERMINATED'
+        stage_report[1]['log'].append('subprocess FAILED and was TERMINATED')
 
     with open(os.path.join(args.output, args.stage_report), 'w') as file:
         json.dump(stage_report, file, indent=' ')

@@ -1,6 +1,4 @@
 global proc writeToJSONReport(string $resultsDirectory, string $reportName, string $textToReport){
-	print("json result \n");
-	print($resultsDirectory);
 	string $filePath = $resultsDirectory + $reportName;
 	int $fileID = `fopen $filePath "a"`;
 
@@ -114,7 +112,7 @@ global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, st
 	}
 
 	writePairToJSONReport($resultsDirectory, $reportName, "tool", "maya"+`about -version`, 1);
-	writePairToJSONReport($resultsDirectory, $reportName, "datetime", `date -format "YYYY-MM-DD_hh-mm-ss"`, 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "date_time", `date -format "YYYY-MM-DD_hh-mm-ss"`, 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "render_version", $RPR_version[0], 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "test_name", $testType, 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "render_device", $render_device, 1);
