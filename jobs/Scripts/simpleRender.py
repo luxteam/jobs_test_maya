@@ -89,7 +89,7 @@ def main():
     with open(melScriptFile, 'w') as f:
         f.write(melScript)
 
-    copyfile(os.path.join(os.path.dirname(__file__), 'common.mel'),
+    copyfile(os.path.join(os.path.dirname(__file__), 'maya_benchmark_common.mel'),
              os.path.join(args.output, 'maya_benchmark_common.mel'))
 
     cmdRun = '''
@@ -115,7 +115,7 @@ def main():
 
     while True:
         try:
-            rc = p.wait(timeout=10)
+            rc = p.wait(timeout=0)
         except psutil.TimeoutExpired as err:
             rc = -1
             error_screen = pyscreenshot.grab()

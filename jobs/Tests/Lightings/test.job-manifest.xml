@@ -5,9 +5,9 @@
 
     <execute command='python "{CWD}\Scripts\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
-        <argument>--tool "{Tool[path]}"</argument>
-        <argument>--tests "{CWD}\Tests\Lightings\{TestsFilter[filter]}TestsList.txt"</argument>
-        <argument>--gpumode "{RenderDevice[device]}"</argument>
+        <argument>--tool "{Tool}"</argument>
+        <argument>--tests "{CWD}\Tests\Lightings\{TestsFilter}TestsList.txt"</argument>
+        <argument>--gpumode "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Lightings</argument>
         <argument>--projectPath "{ScenesDir}"</argument>

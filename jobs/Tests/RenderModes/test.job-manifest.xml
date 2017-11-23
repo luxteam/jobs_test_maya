@@ -5,9 +5,9 @@
 
     <execute command='python "{CWD}\Scripts\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
-        <argument>--tool "{Tool[path]}"</argument>
-        <argument>--tests "{CWD}\Tests\RenderModes\{TestsFilter[filter]}TestsList.txt"</argument>
-        <argument>--gpumode "{RenderDevice[device]}"</argument>
+        <argument>--tool "{Tool}"</argument>
+        <argument>--tests "{CWD}\Tests\RenderModes\{TestsFilter}TestsList.txt"</argument>
+        <argument>--gpumode "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType RenderModes</argument>
         <argument>--projectPath "{ScenesDir}"</argument>
@@ -31,7 +31,7 @@
     <execute command='python "{CommonDir}\scripts\HtmlTemplate\htmlBuilder.py"' stage="stage4">
         <argument>--stage_report stage4.json</argument>
         <argument>--work_dir "{OutputDir}"</argument>
-        <argument>--template_name template_maya.html</argument>
+        <argument>--template_name temo</argument>
     </execute>
 
 </job-manifest>
