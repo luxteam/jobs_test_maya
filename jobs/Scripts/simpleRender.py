@@ -115,7 +115,7 @@ def main():
 
     while True:
         try:
-            rc = p.wait(timeout=20)
+            rc = p.wait(timeout=10)
         except psutil.TimeoutExpired as err:
             rc = -1
             error_screen = pyscreenshot.grab()

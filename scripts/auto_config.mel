@@ -1,29 +1,66 @@
 source shelfCommands.mel;
 
-global proc auto_config(string $configPath){
-    if( `pluginInfo -query -loaded RadeonProRender` == 0){
+global proc print_configs(int $fileID, string $mainDevice, int $mainID, string $devices[], int $lastIndex){
+    int $i = 0;
+    string $text = $mainDevice;
+    string $secondText = $mainID;
+    for($i = 0; $i < $lastIndex; $i++){
+        if($devices[$i] != $mainDevice){
+            $text = $text + " + " + $devices[$i];
+            $secondText = $secondText +"," + $i;
+        }
+    }
+
+    fprint $fileID ("\"" + $text + "\": \"" + $secondText + "\"");
+    if($mainID == size($devices)-1 && $lastIndex == 0){
+        fprint $fileID "\n";
+    }else{
+        fprint $fileID ",\n";
+    }
+
+    if($lastIndex > 0){
+        print_configs($fileID, $mainDevice, $mainID, $devices, $lastIndex-1);
+    }
+}
+
+global proc auto_config(){
+    if(`pluginInfo -query -loaded RadeonProRender` == 0){
         loadPlugin RadeonProRender;
     }
 
     int $selected[] = `optionVar -q "RPR_DevicesSelected"`;
     string $gpuDevices[] = `optionVar -q "RPR_DevicesName"`;
 
-    string $filePath = $configPath + "resutl.json";
 
+    string $scriptPath = `whatIs auto_config`;
+    string $scriptPathTokens[];
+    string $resultsDirectory = "";
+    tokenize $scriptPath " " $scriptPathTokens;
+
+    string $pathArray[] = stringToStringArray($scriptPathTokens[4], "/");
+    
+    int $i = 0;
+    for ($i = 0; $i < size($pathArray)-1; $i++){{       //-2 to delete *.mel name and go top directory
+        $resultsDirectory = $resultsDirectory + $pathArray[$i] + "/";
+    }}
+    print($resultsDirectory);
+    string $filePath = $resultsDirectory + "Maya.config.json";
     int $fileID = `fopen $filePath "w"`;
-
     fprint $fileID "{\n";
 
-    int $i = 0;
     for($i=0; $i < size($selected); $i++){
-        fprint $fileID $i;
-        fprint $fileID " ";
-        fprint $fileID $gpuDevices[$i];
-        fprint $fileID "\n";
+        if($i >= size($gpuDevices)){
+            $gpuDevices[$i] = "CPU";
+        }
+        $gpuDevices[$i] = `substitute "/" $gpuDevices[$i] ""`;
+    }
+    
+    for($i=0; $i < size($selected); $i++){
+        print_configs($fileID, $gpuDevices[$i], $i, $gpuDevices, size($selected));
     }
 
-    fprint $fileID "\n}";
+    fprint $fileID "}";
     fclose $fileID;
-    
+
     evalDeferred("quit -abort");
 }

@@ -222,7 +222,6 @@ global proc mayaBenchmark(int $wantedTests[]){{
 	int $a = 0;
 	for ($a = 0; $a < size($pathArray)-1; $a++){{ 		//-1 to delete *.mel name
 		$resultsDirectory = $resultsDirectory + $pathArray[$a] + "/";
-		print($resultsDirectory + "_\n");
 	}}
 	
 	global string $sceneRenderData[];
@@ -239,9 +238,6 @@ global proc mayaBenchmark(int $wantedTests[]){{
 
 	string $temp = intArrayToString($wantedTests, " ");
 	string $useGPU[] = stringToStringArray($temp, " ");
-
-	print("resultsDirectory\n");
-	print($resultsDirectory + "\n");
 
 	if (`match "Materials" $testType` == "Materials"){{
 		string $matProjectFolderPath = $projectBase + "MaterialLibraryScene/";

@@ -8,14 +8,22 @@ import json
 
 hwprofiles = os.getenv('HWProfiles').split(';')
 
-with open('c:\\RenderConfig\\Maya.config.json', 'r') as file:
+with open(os.getenv('ConfigPath'), 'r') as file:
     config_parse = file.read()
     config_parse = json.loads(config_parse)
 
 for hwprofile in hwprofiles:
-    config_name = hwprofile
-    configurations[config_name] = collections.OrderedDict()
-    configurations[config_name]['device'] = config_parse[hwprofile]
+
+    if hwprofile in list(config_parse.values()):
+        for key, value in config_parse.items():
+            if value == hwprofile:
+                config_name = key
+        configurations[config_name] = collections.OrderedDict()
+        configurations[config_name]['device'] = hwprofile
+    else:
+        config_name = hwprofile
+        configurations[config_name] = collections.OrderedDict()
+        configurations[config_name]['device'] = config_parse[hwprofile]
     </option>
 
     <option name="TestsFilter" type="exec">
