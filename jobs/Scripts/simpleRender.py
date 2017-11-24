@@ -115,12 +115,12 @@ def main():
 
     while True:
         try:
-            rc = p.wait(timeout=0)
+            rc = p.wait(timeout=5)
         except psutil.TimeoutExpired as err:
-            rc = -1
-            error_screen = pyscreenshot.grab()
-            error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
             if "maya" in get_windows_titles():
+                rc = -1
+                error_screen = pyscreenshot.grab()
+                error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
                 for child in reversed(p.children(recursive=True)):
                     child.terminate()
                 p.terminate()

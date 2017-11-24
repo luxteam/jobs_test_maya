@@ -1,51 +1,6 @@
 <?xml version="1.0" ?>
 <package-manifest name="Autodesk Maya">
 
-    <!--<option name="RenderDevice" type="exec">-->
-<!--import os-->
-<!--import collections-->
-<!--import json-->
-
-<!--hwprofiles = os.getenv('HWProfiles').split(';')-->
-
-<!--with open(os.getenv('ConfigPath'), 'r') as file:-->
-    <!--config_parse = file.read()-->
-    <!--config_parse = json.loads(config_parse)-->
-
-<!--for hwprofile in hwprofiles:-->
-
-    <!--if hwprofile in list(config_parse.values()):-->
-        <!--for key, value in config_parse.items():-->
-            <!--if value == hwprofile:-->
-                <!--config_name = key-->
-        <!--configurations[config_name] = collections.OrderedDict()-->
-        <!--configurations[config_name]['device'] = hwprofile-->
-    <!--else:-->
-        <!--config_name = hwprofile-->
-        <!--configurations[config_name] = collections.OrderedDict()-->
-        <!--configurations[config_name]['device'] = config_parse[hwprofile]-->
-    <!--</option>-->
-
-    <!--<option name="TestsFilter" type="exec">-->
-<!--import os-->
-<!--import collections-->
-<!--filters = os.getenv('TestsFilter').split(';')-->
-<!--for filter in filters:-->
-    <!--config_name = filter-->
-    <!--configurations[config_name] = collections.OrderedDict()-->
-    <!--configurations[config_name]['filter'] = filter-->
-    <!--</option>-->
-
-    <!--<option name="Tool" type="exec">-->
-<!--import os-->
-<!--import collections-->
-<!--tools = os.getenv('Tool').split(';')-->
-<!--for tool in tools:-->
-    <!--config_name = tool-->
-    <!--configurations[config_name] = collections.OrderedDict()-->
-    <!--configurations[config_name]['path'] = "C:\Program Files\Autodesk\Maya{}\\bin\maya.exe".format(tool)-->
-    <!--</option>-->
-
     <variable name="CWD" value="..\jobs"/>
     <variable name="ScenesDir" value="c:\TestResources\MayaAssets"/>
     <variable name="CommonDir" value="{CWD}\..\..\jobs_launcher\common"/>
