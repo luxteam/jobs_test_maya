@@ -1,45 +1,4 @@
 source shelfCommands.mel;
-// TODO: upgrade script, delete duplicated lines
-// global proc print_configs1(int $fileID, string $mainDevice, int $mainID, string $devices[], int $lastIndex){
-//     int $i = 0;
-//     string $text = $mainDevice;
-//     string $secondText = $mainID;
-//     for($i = 0; $i < $lastIndex; $i++){
-//         if($devices[$i] != $mainDevice){
-//             $text = $text + " + " + $devices[$i];
-//             $secondText = $secondText +"," + $i;
-//         }
-//     }
-
-//     fprint $fileID ("\"" + $text + "\": \"" + $secondText + "\"");
-//     if($mainID == size($devices)-1 && $lastIndex == 0){
-//         fprint $fileID "\n";
-//     }else{
-//         fprint $fileID ",\n";
-//     }
-
-//     if($lastIndex > 0){
-//         print_configs($fileID, $mainDevice, $mainID, $devices, $lastIndex-1);
-//     }
-// }
-
-global proc print_configs(int $fileID, string $devices[], int $mainID, int $excludeID[]){
-    int $i = 0;
-    string $key = $devices[$mainID];
-    string $value = $mainID;
-    int $excludeIDnew[] = $excludeID;
-
-    for($i = 0; $i < size($devices); $i++){
-        if(intArrayCount($i, $excludeID) == 0){
-            $key = $key + " + " + $devices[$i];
-            $value = $value + "," + $i;
-            intArrayInsertAtIndex(0, $excludeIDnew, $i);
-            print_configs($fileID, $devices, $mainID, $excludeIDnew);
-        }
-    }
-    fprint $fileID ("\"" + $key + "\": \"" + $value + "\"\n");
-
-}
 
 global proc auto_config(){
     if(`pluginInfo -query -loaded RadeonProRender` == 0){
@@ -61,7 +20,7 @@ global proc auto_config(){
         $resultsDirectory = $resultsDirectory + $pathArray[$i] + "/";
     }}
     print($resultsDirectory);
-    string $filePath = $resultsDirectory + "Maya.config.json";
+    string $filePath = $resultsDirectory + "Devices.config.json";
     int $fileID = `fopen $filePath "w"`;
     fprint $fileID "{\n";
 
@@ -71,14 +30,14 @@ global proc auto_config(){
         }
         $gpuDevices[$i] = `substitute "/" $gpuDevices[$i] ""`;
     }
-    
-    int $excludeID[] = {};
+
+    string $text;
     for($i=0; $i < size($selected); $i++){
-        fprint $fileID "new iteration";
-        // print_configs($fileID, $gpuDevices[$i], $i, $gpuDevices, size($selected));
-        $excludeID = {};
-        intArrayInsertAtIndex(0, $excludeID, $i);
-        print_configs($fileID, $gpuDevices, $i, $excludeID);
+        if($i+1 == size($selected)){
+            fprint $fileID ("  \"" + $gpuDevices[$i] + "\": \"" + $i + "\"\n");
+        }else{
+            fprint $fileID ("  \"" + $gpuDevices[$i] + "\": \"" + $i + "\",\n");
+        }
     }
 
     fprint $fileID "}";
