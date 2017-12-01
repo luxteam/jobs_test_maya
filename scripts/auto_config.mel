@@ -5,7 +5,7 @@ global proc auto_config(){
         loadPlugin RadeonProRender;
     }
 
-    int $selected[] = `optionVar -q "RPR_DevicesSelected"`;
+    // int $selected[] = `optionVar -q "RPR_DevicesSelected"`;
     string $gpuDevices[] = `optionVar -q "RPR_DevicesName"`;
 
     string $scriptPath = `whatIs auto_config`;
@@ -16,24 +16,32 @@ global proc auto_config(){
     string $pathArray[] = stringToStringArray($scriptPathTokens[4], "/");
     
     int $i = 0;
-    for ($i = 0; $i < size($pathArray)-1; $i++){{       //- to delete *.mel name
+    for ($i = 0; $i < size($pathArray)-1; $i++){       //- to delete *.mel name
         $resultsDirectory = $resultsDirectory + $pathArray[$i] + "/";
-    }}
+    }
+
     print($resultsDirectory);
     string $filePath = $resultsDirectory + "Devices.config.json";
     int $fileID = `fopen $filePath "w"`;
     fprint $fileID "{\n";
 
-    for($i=0; $i < size($selected); $i++){
-        if($i >= size($gpuDevices)){
-            $gpuDevices[$i] = "CPU";
-        }
+    for($i=0; $i < size($gpuDevices); $i++){
+        // if($i >= size($gpuDevices)){
+        //     $gpuDevices[$i] = "CPU";
+        // }
         $gpuDevices[$i] = `substitute "/" $gpuDevices[$i] ""`;
     }
 
+    if(stringArrayContains("", $gpuDevices) == 1){
+        $gpuDevices[stringArrayFind("", 0, $gpuDevices)] = "CPU";
+    }
+    else{
+        stringArrayInsertAtIndex(size($gpuDevices), $gpuDevices, "CPU");
+    }
+
     string $text;
-    for($i=0; $i < size($selected); $i++){
-        if($i+1 == size($selected)){
+    for($i=0; $i < size($gpuDevices); $i++){
+        if($i+1 == size($gpuDevices)){
             fprint $fileID ("  \"" + $gpuDevices[$i] + "\": \"" + $i + "\"\n");
         }else{
             fprint $fileID ("  \"" + $gpuDevices[$i] + "\": \"" + $i + "\",\n");
