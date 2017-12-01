@@ -26,18 +26,10 @@ global proc auto_config(){
     fprint $fileID "{\n";
 
     for($i=0; $i < size($gpuDevices); $i++){
-        // if($i >= size($gpuDevices)){
-        //     $gpuDevices[$i] = "CPU";
-        // }
         $gpuDevices[$i] = `substitute "/" $gpuDevices[$i] ""`;
     }
 
-    if(stringArrayContains("", $gpuDevices) == 1){
-        $gpuDevices[stringArrayFind("", 0, $gpuDevices)] = "CPU";
-    }
-    else{
-        stringArrayInsertAtIndex(size($gpuDevices), $gpuDevices, "CPU");
-    }
+    stringArrayInsertAtIndex(size($gpuDevices), $gpuDevices, "CPU");
 
     string $text;
     for($i=0; $i < size($gpuDevices); $i++){

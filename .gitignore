@@ -2,4 +2,4 @@
 *.pyc
 cache
 tahoe.log
-Maya.Autoconfig.json
+Devices.config.json
