@@ -117,7 +117,9 @@ def main():
         try:
             rc = p.wait(timeout=5)
         except psutil.TimeoutExpired as err:
-            if "maya" in get_windows_titles():
+            # if "maya" in get_windows_titles() or "Radeon ProRender Error" in  get_windows_titles():
+            fatal_errors_titles = ['maya', 'Radeon ProRender Error']
+            if set(fatal_errors_titles).intersection(get_windows_titles()):
                 rc = -1
                 error_screen = pyscreenshot.grab()
                 error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
