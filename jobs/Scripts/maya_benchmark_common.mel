@@ -118,8 +118,8 @@ global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, st
 	writePairToJSONReport($resultsDirectory, $reportName, "render_device", $render_device, 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "scene_name", $scene_name, 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "file_name", $file_name, 1);
-	writePairToJSONReport($resultsDirectory, $reportName, "difference_color", "", 1);
-	writePairToJSONReport($resultsDirectory, $reportName, "difference_opacity", "", 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "difference_color", "not compared yet", 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "difference_opacity", "not compared yet", 1);
 	writeFloatPairToJSONReport($resultsDirectory, $reportName, "render_time", $testTime, 0);
 }
 
