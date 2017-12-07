@@ -45,8 +45,12 @@ def createArgsParser():
 
 
 def main():
+    def rewrite_stage_report():
+        with open(os.path.join(args.output, args.stage_report), 'w') as file:
+            json.dump(stage_report, file, indent=' ')
+
     args = createArgsParser().parse_args()
-    stage_report = [{'status': 'INIT'}, {'log': ['simpleRender.py start']}]
+    stage_report = [{'status': 'INIT'}, {'log': ['Maya simpleRender.py started;']}]
 
     testsList = None
     script_template = None
@@ -56,8 +60,9 @@ def main():
         with open(args.tests, 'r') as file:
             testsList = file.read()
     except OSError as e:
-        stage_report[0]['status'] = 'ERROR'
+        stage_report[0]['status'] = 'FAILED'
         stage_report[1]['log'].append('OSError while read tests list. ' + str(e))
+        rewrite_stage_report()
         return 1
 
     try:
@@ -65,8 +70,9 @@ def main():
         os.mkdir(os.path.join(args.output, 'Color'))
         os.mkdir(os.path.join(args.output, 'Opacity'))
     except OSError as e:
-        stage_report[0]['status'] = 'ERROR'
+        stage_report[0]['status'] = 'FAILED'
         stage_report[1]['log'].append('OSError while create folders. ' + str(e))
+        rewrite_stage_report()
         return 1
 
     try:
@@ -74,8 +80,9 @@ def main():
         with open(os.path.join(os.path.dirname(__file__), 'template.mel')) as f:
             script_template = f.read()
     except OSError as e:
-        stage_report[0]['status'] = 'ERROR'
+        stage_report[0]['status'] = 'FAILED'
         stage_report[1]['log'].append('OSError while read mel template. ' + str(e))
+        rewrite_stage_report()
         return 1
 
     outputFolder = os.path.abspath(args.output).replace('\\', '/')
@@ -84,13 +91,6 @@ def main():
                                        testsList=testsList,
                                        testType=args.testType,
                                        projectBase=basePath)
-    melScriptPath = args.output
-    melScriptFile = os.path.join(args.output, 'script.mel')
-    with open(melScriptFile, 'w') as f:
-        f.write(melScript)
-
-    copyfile(os.path.join(os.path.dirname(__file__), 'maya_benchmark_common.mel'),
-             os.path.join(args.output, 'maya_benchmark_common.mel'))
 
     cmdRun = '''
     set MAYA_CMD_FILE_OUTPUT=%cd%/scriptEditorTrace.txt 
@@ -99,25 +99,32 @@ def main():
         .format(tool=args.tool, gpumode=args.gpumode)
 
     try:
-        cmdScriptPath = os.path.join(args.output, 'script.bat')
-        with open(cmdScriptPath, 'w') as f:
+        with open(os.path.join(args.output, 'script.bat'), 'w') as f:
             f.write(cmdRun)
-        stage_report[1]['log'].append('Templates is formated, starting execution')
+        stage_report[1]['log'].append('cmd template formatted and saved as script.bat;')
+
+        with open(os.path.join(args.output, 'script.mel'), 'w') as f:
+            f.write(melScript)
+        stage_report[1]['log'].append('mel template formatted and saved as script.mel;')
+
+        copyfile(os.path.join(os.path.dirname(__file__), 'maya_benchmark_common.mel'),
+                 os.path.join(args.output, 'maya_benchmark_common.mel'))
+        stage_report[1]['log'].append('maya_benchmark_common.mel copied;')
     except OSError as e:
-        stage_report[0]['status'] = 'ERROR'
-        stage_report[1]['log'].append('OSError while write mel script. ' + str(e))
+        stage_report[0]['status'] = 'FAILED'
+        stage_report[1]['log'].append('OSError while write scripts file saving. ' + str(e))
+        rewrite_stage_report()
         return 1
 
     os.chdir(args.output)
-
     p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE)
+    stage_report[1]['log'].append('subprocess started;')
     rc = -1
 
     while True:
         try:
             rc = p.wait(timeout=5)
         except psutil.TimeoutExpired as err:
-            # if "maya" in get_windows_titles() or "Radeon ProRender Error" in  get_windows_titles():
             fatal_errors_titles = ['maya', 'Radeon ProRender Error']
             if set(fatal_errors_titles).intersection(get_windows_titles()):
                 rc = -1
@@ -133,15 +140,13 @@ def main():
     if rc == 0:
         print('passed')
         stage_report[0]['status'] = 'OK'
-        stage_report[1]['log'].append('subprocess PASSED')
+        stage_report[1]['log'].append('subprocess PASSED;')
     else:
         print('failed')
         stage_report[0]['status'] = 'TERMINATED'
-        stage_report[1]['log'].append('subprocess FAILED and was TERMINATED')
+        stage_report[1]['log'].append('subprocess FAILED and was TERMINATED;')
 
-    with open(os.path.join(args.output, args.stage_report), 'w') as file:
-        json.dump(stage_report, file, indent=' ')
-
+    rewrite_stage_report()
     return rc
 
 
