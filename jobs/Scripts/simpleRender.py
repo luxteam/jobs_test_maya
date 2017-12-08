@@ -67,8 +67,8 @@ def main():
 
     try:
         os.makedirs(args.output)
-        os.mkdir(os.path.join(args.output, 'Color'))
-        os.mkdir(os.path.join(args.output, 'Opacity'))
+        # os.mkdir(os.path.join(args.output, 'Color'))
+        # os.mkdir(os.path.join(args.output, 'Opacity'))
     except OSError as e:
         stage_report[0]['status'] = 'FAILED'
         stage_report[1]['log'].append('OSError while create folders. ' + str(e))

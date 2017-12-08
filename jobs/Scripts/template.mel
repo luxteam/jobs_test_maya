@@ -208,12 +208,14 @@ global proc mayaBenchmark(int $wantedTests[]){{
 	// Force the window size to SPEC APC definition 1920x1024 30 pixels are not used to make way for window boarders
 	// window -e -tlc 0 0 -wh 1920 1050 MayaWindow;
 
-	string $scriptPath = `whatIs mayaBenchmark`;
-	string $scriptPathTokens[];
+	// string $scriptPath = `whatIs mayaBenchmark`;
+	$scriptPath = stringRemovePrefix (`whatIs mayaBenchmark`, "Mel procedure found in: ");
+	// string $scriptPathTokens[];
 	// tokenize $scriptPath " " $scriptPathTokens;
-	tokenize $scriptPath "\n" $scriptPathTokens;
+	// tokenize $scriptPath "\n" $scriptPathTokens;
 
-	string $pathArray[] = stringToStringArray($scriptPathTokens[4], "/");
+	// string $pathArray[] = stringToStringArray($scriptPathTokens[4], "/");
+	string $pathArray[] = stringToStringArray($scriptPath, "/");
 	string $resultsDirectory = "";
 	string $projectBase = "";
 	
@@ -229,17 +231,15 @@ global proc mayaBenchmark(int $wantedTests[]){{
 	string $resultColor = $resultsDirectory + "Color/";
 	string $resultOpacity = $resultsDirectory + "Opacity/";
 
-	if (`filetest -d $resultColor` == 0){{
-		sysFile -makeDir $resultColor;
-	}}
-	if (`filetest -d $resultOpacity` == 0){{
-		sysFile -makeDir $resultOpacity;
-	}}
 
 	string $temp = intArrayToString($wantedTests, " ");
 	string $useGPU[] = stringToStringArray($temp, " ");
 
 	if (`match "Materials" $testType` == "Materials"){{
+		if (`filetest -d $resultColor` == 0){{
+			sysFile -makeDir $resultColor;
+		}}
+
 		string $matProjectFolderPath = $projectBase + "MaterialLibraryScene/";
 		string $matSceneName = "MaterialTestScene.mb";
 		string $libPath = getMatLibraryPath();
@@ -260,6 +260,13 @@ global proc mayaBenchmark(int $wantedTests[]){{
 		mayaMaterialTests($resultsDirectory, $matProjectFolderPath, $matSceneName, $resultColor, $useGPU, $libPath, $contentList);
 		writeToJSONReport($resultsDirectory, $reportName, "\n]");	
 	}}else{{
+		if (`filetest -d $resultColor` == 0){{
+			sysFile -makeDir $resultColor;
+		}}
+		if (`filetest -d $resultOpacity` == 0){{
+			sysFile -makeDir $resultOpacity;
+		}}
+
 		createExpectedLog("expected.json", $resultsDirectory, $sceneRenderData, $useGPU);
 
 		writeToJSONReport($resultsDirectory, $reportName, "[");
