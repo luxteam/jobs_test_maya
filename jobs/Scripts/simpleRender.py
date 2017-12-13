@@ -128,8 +128,11 @@ def main():
             fatal_errors_titles = ['maya', 'Radeon ProRender Error']
             if set(fatal_errors_titles).intersection(get_windows_titles()):
                 rc = -1
-                error_screen = pyscreenshot.grab()
-                error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
+                try:
+                    error_screen = pyscreenshot.grab()
+                    error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
+                except:
+                    pass
                 for child in reversed(p.children(recursive=True)):
                     child.terminate()
                 p.terminate()
