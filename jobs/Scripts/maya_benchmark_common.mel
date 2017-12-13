@@ -102,7 +102,7 @@ global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, st
 	string $RPR_version[] = `RPRImageComparing -rprPluginDetails`;
 	string $gpuDevices[];
 	if (`optionVar -as "RPR_DevicesName"` == 0 ){
-	    $gpuDevices[0] = "";
+	    $gpuDevices[0] = stringArrayToString(`hardware -cpu`, "");
 	}else{
 	    $gpuDevices = `optionVar -q "RPR_DevicesName"`;
 	}

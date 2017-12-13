@@ -22,10 +22,10 @@ global proc auto_config(){
     fprint $fileID "{\n";
 
     string $gpuDevices[];
-    if (`optionVar -q "RPR_DevicesName"` == 0){
+    if (`optionVar -as "RPR_DevicesName"` == 0){
         $gpuDevices[0] = "CPU";    
     }else{
-    
+        $gpuDevices = `optionVar -q "RPR_DevicesName"`;
         for($i=0; $i < size($gpuDevices); $i++){
             $gpuDevices[$i] = `substitute "/" $gpuDevices[$i] ""`;
         }
