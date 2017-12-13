@@ -6,31 +6,32 @@ global proc auto_config(){
     }
 
     // int $selected[] = `optionVar -q "RPR_DevicesSelected"`;
-    string $gpuDevices[] = `optionVar -q "RPR_DevicesName"`;
-
-    string $scriptPath = `whatIs auto_config`;
-    string $scriptPathTokens[];
+    
+    
+    string $scriptPath = stringRemovePrefix (`whatIs auto_config`, "Mel procedure found in: ");
+    string $pathArray[] = stringToStringArray($scriptPath, "/");
     string $resultsDirectory = "";
-    tokenize $scriptPath " " $scriptPathTokens;
-
-    string $pathArray[] = stringToStringArray($scriptPathTokens[4], "/");
     
     int $i = 0;
     for ($i = 0; $i < size($pathArray)-1; $i++){       //- to delete *.mel name
         $resultsDirectory = $resultsDirectory + $pathArray[$i] + "/";
     }
 
-    print($resultsDirectory);
     string $filePath = $resultsDirectory + "Devices.config.json";
     int $fileID = `fopen $filePath "w"`;
     fprint $fileID "{\n";
 
-    for($i=0; $i < size($gpuDevices); $i++){
-        $gpuDevices[$i] = `substitute "/" $gpuDevices[$i] ""`;
+    string $gpuDevices[];
+    if (`optionVar -q "RPR_DevicesName"` == 0){
+        $gpuDevices[0] = "CPU";    
+    }else{
+    
+        for($i=0; $i < size($gpuDevices); $i++){
+            $gpuDevices[$i] = `substitute "/" $gpuDevices[$i] ""`;
+        }
+    
+        stringArrayInsertAtIndex(size($gpuDevices), $gpuDevices, "CPU");
     }
-
-    stringArrayInsertAtIndex(size($gpuDevices), $gpuDevices, "CPU");
-
     string $text;
     for($i=0; $i < size($gpuDevices); $i++){
         if($i+1 == size($gpuDevices)){

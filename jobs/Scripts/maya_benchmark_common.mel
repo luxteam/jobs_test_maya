@@ -100,7 +100,12 @@ global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, st
 	global string $reportName;
 	global string $testType;
 	string $RPR_version[] = `RPRImageComparing -rprPluginDetails`;
-	string $gpuDevices[] = `optionVar -q "RPR_DevicesName"`;
+	string $gpuDevices[];
+	if (`optionVar -as "RPR_DevicesName"` == 0 ){
+	    $gpuDevices[0] = "";
+	}else{
+	    $gpuDevices = `optionVar -q "RPR_DevicesName"`;
+	}
 	string $s;
 	string $render_device = "";
 	for($s in $useGPU){
@@ -142,7 +147,7 @@ global proc string getRenderWindowPanel(){
 //Open given Scene and set RPR render hardware to cpu/gpu/mixed
 global proc openSceneFileAndSetRPRRender(string $sceneF, string $useGPU[]){
 	print("SCENFILE: " + $sceneF + "\n");
-	file -f -open -type "mayaBinary" -iv $sceneF;
+	file -f -open -iv $sceneF;
 	//set image output format to JPEG:
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	// setAttr "defaultRenderGlobals.currentRenderer" -type "string" "fireRender";
@@ -150,6 +155,10 @@ global proc openSceneFileAndSetRPRRender(string $sceneF, string $useGPU[]){
 
 	//open RPR render settings tab so it loads global variables properly:
 	// openSettingsTabRPR();
+
+	if (`optionVar -as "RPR_DevicesSelected"` == 0){
+	    optionVar -iva "RPR_DevicesSelected" 1;
+	}
 	int $selected[] = `optionVar -q "RPR_DevicesSelected"`;
 	optionVar -rm "RPR_DevicesSelected";
 
