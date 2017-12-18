@@ -105,6 +105,9 @@ global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, st
 	    $gpuDevices[0] = stringArrayToString(`hardware -cpu`, "");
 	}else{
 	    $gpuDevices = `optionVar -q "RPR_DevicesName"`;
+        for($i=0; $i < size($gpuDevices); $i++){
+            $gpuDevices[$i] = `substitute "/" $gpuDevices[$i] ""`;
+        }
 	}
 	string $s;
 	string $render_device = "";
@@ -125,6 +128,8 @@ global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, st
 	writePairToJSONReport($resultsDirectory, $reportName, "file_name", $file_name, 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "difference_color", "not compared yet", 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "difference_opacity", "not compared yet", 1);
+	writePairToJSONReport($resultsDirectory, $reportName, "render_color_path", ("Color/" + $file_name), 1);
+    writePairToJSONReport($resultsDirectory, $reportName, "render_opacity_path", ("Opacity/" + $file_name), 1);
 	writeFloatPairToJSONReport($resultsDirectory, $reportName, "render_time", $testTime, 0);
 }
 

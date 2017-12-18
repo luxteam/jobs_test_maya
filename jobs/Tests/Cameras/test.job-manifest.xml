@@ -3,6 +3,24 @@
 
     <outpath value="{OutputDir}"/>
 
+    <option name="Test">
+        <configuration name="one">
+            <Value>report_mel.json</Value>
+        </configuration>
+        <configuration name="two">
+            <Value>report_mel.json</Value>
+        </configuration>
+    </option>
+
+    <option name="SecondOption">
+        <configuration name="odin">
+            <Value>report_compare.json</Value>
+        </configuration>
+        <configuration name="dwa">
+            <Value>report_compare.json</Value>
+        </configuration>
+    </option>
+
     <execute command='python "{CWD}\Scripts\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
@@ -24,8 +42,8 @@
         <argument>--stage_report stage3.json</argument>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
-        <argument>--report_name report_mel.json</argument>
-        <argument>--result_name report_compare.json</argument>
+        <argument>--report_name {Test[Value]}</argument>
+        <argument>--result_name {SecondOption[Value]}</argument>
     </execute>
 
     <execute command='python "{CommonDir}\scripts\HtmlTemplate\htmlBuilder.py"' stage="stage4">
