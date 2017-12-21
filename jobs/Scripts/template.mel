@@ -97,7 +97,7 @@ proc mayaSceneTests(string $resultsDirectory, string $projectBase, string $resul
 		global string $reportName;
 
 		writeToJSONReport($resultsDirectory, $reportName, "\n {{");
-		writeFullJsonReport($resultsDirectory, $sceneF, $sceneFile, $testTime, $useGPU);
+		writeFullJsonReport($resultsDirectory, $sceneF, $sceneFile, $testTime, $useGPU, 1);
 		if ($j+4 < size($sceneRenderData)){{
 			writeToJSONReport($resultsDirectory, $reportName, "\n }},");
 		}}
@@ -171,7 +171,7 @@ proc mayaMaterialTests(string $resultsDirectory, string $projectFolderPath, stri
 				global string $reportName;
 
 				writeToJSONReport($resultsDirectory, $reportName, "\n {{");
-				writeFullJsonReport($resultsDirectory, $sceneFile, $resultFileName, $testTime, $useGPU);
+				writeFullJsonReport($resultsDirectory, $sceneFile, $resultFileName, $testTime, $useGPU, 0);
 				if ($i+1 < size($contentList)){{
 					writeToJSONReport($resultsDirectory, $reportName, "}},");
 				}}

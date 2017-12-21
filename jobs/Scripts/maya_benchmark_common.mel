@@ -96,7 +96,7 @@ global proc createExpectedLogMaterials(string $reportName, string $resultsDirect
 	fclose $fileID;
 }
 
-global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, string $file_name, float $testTime, string $useGPU[]){
+global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, string $file_name, float $testTime, string $useGPU[], int $withOpacity){
 	global string $reportName;
 	global string $testType;
 	string $RPR_version[] = `RPRImageComparing -rprPluginDetails`;
@@ -127,9 +127,11 @@ global proc writeFullJsonReport(string $resultsDirectory, string $scene_name, st
 	writePairToJSONReport($resultsDirectory, $reportName, "scene_name", $scene_name, 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "file_name", $file_name, 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "difference_color", "not compared yet", 1);
-	writePairToJSONReport($resultsDirectory, $reportName, "difference_opacity", "not compared yet", 1);
 	writePairToJSONReport($resultsDirectory, $reportName, "render_color_path", ("Color/" + $file_name), 1);
-    writePairToJSONReport($resultsDirectory, $reportName, "render_opacity_path", ("Opacity/" + $file_name), 1);
+	if ($withOpacity){
+		writePairToJSONReport($resultsDirectory, $reportName, "difference_opacity", "not compared yet", 1);
+		writePairToJSONReport($resultsDirectory, $reportName, "render_opacity_path", ("Opacity/" + $file_name), 1);
+	}
 	writeFloatPairToJSONReport($resultsDirectory, $reportName, "render_time", $testTime, 0);
 }
 
