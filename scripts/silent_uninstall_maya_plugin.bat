@@ -1,1 +1,1 @@
-msiexec /x "RadeonProRenderForMaya.msi" /quiet /log rpr.maya.plugin.unistall.log /norestart
+msiexec /x "RadeonProRenderForMaya.msi" /quiet /L+ie rpr.maya.plugin.unistall.log /norestart
