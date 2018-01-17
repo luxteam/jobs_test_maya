@@ -16,9 +16,9 @@
         <configuration name="odin">
             <Value>report_compare.json</Value>
         </configuration>
-        <!--<configuration name="dwa">-->
-            <!--<Value>report_compare.json</Value>-->
-        <!--</configuration>-->
+<!--         <configuration name="dwa">
+            <Value>report_compare.json</Value>
+        </configuration> -->
     </option>
 
     <execute command='python "{CWD}\Scripts\simpleRender.py"' stage="stage1">

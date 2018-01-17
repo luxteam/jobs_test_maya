@@ -2,7 +2,7 @@
 <package-manifest name="Autodesk Maya">
 
     <variable name="CWD" value="..\jobs"/>
-    <variable name="ScenesDir" value="c:\TestResources\MayaAssets"/>
+    <variable name="ScenesDir" value="{ResPath}"/>
     <variable name="CommonDir" value="{CWD}\..\jobs_launcher\common"/>
     <variable name="BaselineDir" value="{CWD}\..\..\Baseline"/>
 
