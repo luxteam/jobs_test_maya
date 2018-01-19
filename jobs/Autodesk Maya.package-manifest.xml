@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <package-manifest name="Autodesk Maya">
 
-    <variable name="CWD" value="..\jobs"/>
+    <variable name="CWD" value="../jobs"/>
     <variable name="ScenesDir" value="{ResPath}"/>
-    <variable name="CommonDir" value="{CWD}\..\jobs_launcher\common"/>
-    <variable name="BaselineDir" value="{CWD}\..\..\Baseline"/>
+    <variable name="CommonDir" value="{CWD}/../jobs_launcher/common"/>
+    <variable name="BaselineDir" value="{CWD}/../../Baseline"/>
 
 </package-manifest>
