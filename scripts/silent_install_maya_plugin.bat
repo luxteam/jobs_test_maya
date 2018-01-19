@@ -1,1 +1,1 @@
-msiexec /i "RadeonProRenderForMaya.msi" /quiet /qn PIDKEY=GPUOpen2016 /log rpr.maya.plugin.log /norestart
+msiexec /i "RadeonProRenderForMaya.msi" /quiet /qn PIDKEY=GPUOpen2016 /L+ie rpr.maya.plugin.log /norestart

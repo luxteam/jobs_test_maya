@@ -16,29 +16,29 @@
         <configuration name="odin">
             <Value>report_compare.json</Value>
         </configuration>
-        <!--<configuration name="dwa">-->
-            <!--<Value>report_compare.json</Value>-->
-        <!--</configuration>-->
+<!--         <configuration name="dwa">
+            <Value>report_compare.json</Value>
+        </configuration> -->
     </option>
 
-    <execute command='python "{CWD}\Scripts\simpleRender.py"' stage="stage1">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--tests "{CWD}\Tests\Cameras\{TestsFilter}TestsList.txt"</argument>
+        <argument>--tests "{CWD}/Tests/Cameras/{TestsFilter}TestsList.txt"</argument>
         <argument>--gpumode "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Cameras</argument>
         <argument>--projectPath "{ScenesDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}\scripts\checkExpected.py"' stage="stage2">
+    <execute command='python "{CommonDir}/scripts/checkExpected.py"' stage="stage2">
         <argument>--stage_report stage2.json</argument>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--report_name expected.json</argument>
         <argument>--result_name not_rendered.json</argument>
     </execute>
 
-    <execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"' stage="stage3">
+    <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"' stage="stage3">
         <argument>--stage_report stage3.json</argument>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
@@ -46,7 +46,7 @@
         <argument>--result_name {SecondOption[Value]}</argument>
     </execute>
 
-    <execute command='python "{CommonDir}\scripts\HtmlTemplate\htmlBuilder.py"' stage="stage4">
+    <execute command='python "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"' stage="stage4">
         <argument>--stage_report stage4.json</argument>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--template_name template_maya_with_opacity.html</argument>
