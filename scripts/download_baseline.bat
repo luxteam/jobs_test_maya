@@ -1,1 +1,0 @@
-xcopy c:\TestResources\Baseline ..\..\Baseline /I/R/Y/S/C/H
