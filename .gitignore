@@ -6,3 +6,6 @@ Devices.config.json
 run_dev.bat
 top-level.log
 Baseline/
+Work/*
+.idea
+launcher.engine.log
