@@ -1,0 +1,74 @@
+
+global proc save_render(int $pass, string $test_name){
+	
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	$test_name = "..//" + $test_name;
+	setAttr -type "string" defaultRenderGlobals.imageFilePrefix $test_name;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
+
+	//renderSettings -firstImageName -fullPath;
+	workspace -fr "images" "C:/jobs_test_maya" ;
+
+	render;
+}
+
+global proc import_test(){
+
+	file -import -type "OBJ" -options "mo=-1"  -pr "C:/TestResources/BlenderAssets/scenes/example.obj";
+	rename "polySurface1" "Shader_Ball";
+}
+
+global proc create_uber_test(){
+
+	string $rpr = `shadingNode -asShader "RPRUberMaterial"`; 
+	setAttr ($rpr + ".diffuse") 1; 
+	setAttr ($rpr + ".diffuseColor") 1 0 0;
+	string $sge = $rpr + "SG"; 
+	sets -renderable true -noSurfaceShader true -empty -name $sge; 
+	connectAttr -f ($rpr + ".outColor") ($sge + ".surfaceShader"); 
+	select -r "Shader_Ball";
+	string $sgs[] = `listConnections -type shadingEngine $rpr`;
+	sets -e -forceElement $sgs[0];
+}
+
+global proc create_IBL(){
+
+	string $iblNode = `createNode RPRIBL -n RPRIBLShape`;
+	$parent = `listRelatives -p $iblNode`;
+	setAttr ($parent[0] + ".scaleX") 1001.25663706144; //pi*5/10 ... something unique (for hierarchy change tracking)
+	setAttr ($parent[0] + ".scaleY") 1001.25663706144;
+	setAttr ($parent[0] + ".scaleZ") 1001.25663706144;
+	rename $parent[0] RPRIBL;
+}
+
+global proc create_sun_sky(){
+
+	delete RPRIBL;
+	string $SkyNode = `createNode RPRSky -n RPRSkyShape`;
+}
+
+global proc main(){
+
+	import_test();
+	save_render(30, "import_test");
+
+	create_uber_test();
+	save_render(30, "uber_test");
+
+	create_IBL();
+	save_render(30, "ibl_test");
+
+	create_sun_sky();
+	save_render(30, "sky_sun_test");
+
+	save_render(100, "full");
+}
+
+main()
+
+
+
+
+
+
