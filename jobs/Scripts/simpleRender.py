@@ -40,6 +40,7 @@ def createArgsParser():
     parser.add_argument('--output', required=True, metavar="<dir>")
     parser.add_argument('--testType', required=True)
     parser.add_argument('--template', required=True)
+    parser.add_argument('--pass_limit', required=True)
 
     return parser
 
@@ -59,6 +60,7 @@ def main():
     try:
         with open(args.tests, 'r') as file:
             testsList = file.read()
+            testsList = testsList.replace("\n","")
     except OSError as e:
         stage_report[0]['status'] = 'FAILED'
         stage_report[1]['log'].append('OSError while read tests list. ' + str(e))
@@ -93,7 +95,8 @@ def main():
     melScript = mel_template.format(outputFolder=outputFolder,
                                        testsList=testsList,
                                        testType=args.testType,
-                                       render_device = args.render_device)
+                                       render_device = args.render_device,
+                                       pass_limit = args.pass_limit)
 
     cmdRun = '''
     set MAYA_CMD_FILE_OUTPUT=%cd%/scriptEditorTrace.txt 

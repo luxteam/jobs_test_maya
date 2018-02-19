@@ -1,12 +1,5 @@
 global proc save_render(string $test_name){{
 
-	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    	loadPlugin RadeonProRender;
-	}}
-
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	setAttr -type "string" defaultRenderGlobals.imageFilePrefix $test_name;
-
 	float $startTime = 0;
 	float $testTime = 0;
 	fireRender -waitForItTwo;

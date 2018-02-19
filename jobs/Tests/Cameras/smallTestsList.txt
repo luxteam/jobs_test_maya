@@ -1,3 +1,2 @@
-		"FeatureScenes", "Camera_Cube_Map.mb", "","",
-		"FeatureScenes", "Camera_Cube_Map_Stereo.mb", "",""
-
+Camera_Cube_Map.mb,
+Camera_Cube_Map_Stereo.mb
