@@ -186,7 +186,7 @@ proc mayaMaterialTests(string $resultsDirectory, string $projectFolderPath, stri
 }}
 
 //main function
-global proc mayaBenchmark(int $wantedTests[]){{
+global proc main(int $wantedTests[]){{
 
 	global string $reportName;
 	if (`filetest -f $reportName` == 0){{

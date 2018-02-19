@@ -36,10 +36,10 @@ def createArgsParser():
     parser.add_argument('--stage_report', required=True)
     parser.add_argument('--tool', required=True, metavar="<path>")
     parser.add_argument('--tests', required=True)
-    parser.add_argument('--gpumode', required=True)
+    parser.add_argument('--render_device', required=True)
     parser.add_argument('--output', required=True, metavar="<dir>")
     parser.add_argument('--testType', required=True)
-    parser.add_argument('--projectPath', required=True)
+    parser.add_argument('--template', required=True)
 
     return parser
 
@@ -75,28 +75,31 @@ def main():
         rewrite_stage_report()
         return 1
 
+
     try:
         # with open(os.path.join(os.path.dirname(sys.argv[0]), 'template.mel')) as f:
-        with open(os.path.join(os.path.dirname(__file__), 'template.mel')) as f:
+        with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
             script_template = f.read()
+        with open(os.path.join(os.path.dirname(__file__), "Templates", "base_function.mel")) as f:
+            base = f.read()
     except OSError as e:
         stage_report[0]['status'] = 'FAILED'
         stage_report[1]['log'].append('OSError while read mel template. ' + str(e))
         rewrite_stage_report()
         return 1
 
+    mel_template = base + script_template
     outputFolder = os.path.abspath(args.output).replace('\\', '/')
-    basePath = os.path.abspath(args.projectPath).replace('\\', '/')
-    melScript = script_template.format(outputFolder=outputFolder,
+    melScript = mel_template.format(outputFolder=outputFolder,
                                        testsList=testsList,
                                        testType=args.testType,
-                                       projectBase=basePath)
+                                       render_device = args.render_device)
 
     cmdRun = '''
     set MAYA_CMD_FILE_OUTPUT=%cd%/scriptEditorTrace.txt 
     set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-    "{tool}" -command "source script.mel; evalDeferred -lp (mayaBenchmark({{{gpumode}}}));"''' \
-        .format(tool=args.tool, gpumode=args.gpumode)
+    "{tool}" -command "source script.mel; evalDeferred -lp (main());"''' \
+        .format(tool=args.tool)
 
     try:
         with open(os.path.join(args.output, 'script.bat'), 'w') as f:

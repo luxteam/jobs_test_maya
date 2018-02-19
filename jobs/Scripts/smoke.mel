@@ -1,25 +1,20 @@
 
-global proc save_render(int $pass, string $test_name){
-	
+global proc config(int $pass, string $test_name){{
+
 	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	$test_name = "..//" + $test_name;
-	setAttr -type "string" defaultRenderGlobals.imageFilePrefix $test_name;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
 
-	//renderSettings -firstImageName -fullPath;
-	workspace -fr "images" "C:/jobs_test_maya" ;
+	save_render($test_name);
 
-	render;
-}
+}}
 
-global proc import_test(){
+global proc import_test(){{
 
 	file -import -type "OBJ" -options "mo=-1"  -pr "C:/TestResources/BlenderAssets/scenes/example.obj";
 	rename "polySurface1" "Shader_Ball";
-}
+}}
 
-global proc create_uber_test(){
+global proc create_uber_test(){{
 
 	string $rpr = `shadingNode -asShader "RPRUberMaterial"`; 
 	setAttr ($rpr + ".diffuse") 1; 
@@ -30,9 +25,9 @@ global proc create_uber_test(){
 	select -r "Shader_Ball";
 	string $sgs[] = `listConnections -type shadingEngine $rpr`;
 	sets -e -forceElement $sgs[0];
-}
+}}
 
-global proc create_IBL(){
+global proc create_IBL(){{
 
 	string $iblNode = `createNode RPRIBL -n RPRIBLShape`;
 	$parent = `listRelatives -p $iblNode`;
@@ -40,15 +35,18 @@ global proc create_IBL(){
 	setAttr ($parent[0] + ".scaleY") 1001.25663706144;
 	setAttr ($parent[0] + ".scaleZ") 1001.25663706144;
 	rename $parent[0] RPRIBL;
-}
+}}
 
-global proc create_sun_sky(){
+global proc create_sun_sky(){{
 
 	delete RPRIBL;
 	string $SkyNode = `createNode RPRSky -n RPRSkyShape`;
-}
+}}
 
-global proc main(){
+global proc main(){{
+
+	file -f -new;
+	//file -f -options "v=0;"  -ignoreVersion -o "{testsList}";
 
 	import_test();
 	save_render(30, "import_test");
@@ -63,9 +61,10 @@ global proc main(){
 	save_render(30, "sky_sun_test");
 
 	save_render(100, "full");
-}
 
-main()
+	evalDeferred("quit -abort");
+}}
+
 
 
 
