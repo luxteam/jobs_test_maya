@@ -1,0 +1,86 @@
+
+global proc config(string $test_name, int $param1, int $param2, int $param3){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+    string $allObjects[] = `ls -g`;
+    string $exist = 0;
+
+    for ($tempName in $allObjects)
+        {{
+            if ($tempName == "RPRIBLShape"){{
+                delete RPRIBL;
+            }}
+
+            if ($tempName == "RPRSkyShape"){{
+                $exist = 1;
+            }}
+        }}
+
+    if ($exist == 0) {{
+        string $SkyNode = `createNode RPRSky -n RPRSkyShape`;
+        setAttr "RPRSkyShape.intensity" 1;
+        setAttr "RPRSkyShape.turbidity" 20;
+        setAttr "RPRSkyShape.sunGlow" 45;
+        setAttr "RPRSkyShape.sunDiskSize" 5;
+    }}
+
+    if ($param1) {{
+
+        setAttr "RPRSkyShape.sunPositionType" 0;
+        setAttr "RPRSkyShape.altitude" $param3;
+        setAttr "RPRSkyShape.azimuth" $param2;
+
+    }} else {{
+
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.latitude" 56;
+        setAttr "RPRSkyShape.longitude" 38;
+        setAttr "RPRSkyShape.hours" $param2;
+        setAttr "RPRSkyShape.minutes" $param3;
+    }}
+
+	$test_name = $test_name + "_" + $param1 + "_" + $param2 + "_" + $param3;
+	save_render($test_name);
+
+}}
+
+global proc main(){{
+
+	setProject ("C:/TestResources/MayaAssets");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	for ($each in $scene) {{
+    	file -f -options "v=0;"  -ignoreVersion -o $each;
+            config($each, 1, 0, 0);
+            config($each, 1, 0, 45);
+            config($each, 1, 0, 90);
+            config($each, 1, 90, 0);
+            config($each, 1, 90, 45);
+            config($each, 1, 90, 90);
+            config($each, 1, 180, 0);
+            config($each, 1, 180, 45);
+            config($each, 1, 180, 90);
+            config($each, 1, 270, 0);
+            config($each, 1, 270, 45);
+            config($each, 1, 270, 90);
+            config($each, 1, 360, 0);
+            config($each, 1, 360, 45);
+            config($each, 1, 360, 90);
+            config($each, 0, 0, 0);
+            config($each, 0, 6, 0);
+            config($each, 0, 12, 0);
+            config($each, 0, 18, 0);
+            config($each, 0, 24, 0);
+
+	}}
+
+	evalDeferred("quit -abort");
+}}
