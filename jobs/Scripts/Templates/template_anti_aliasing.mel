@@ -1,0 +1,60 @@
+
+global proc config(string $test_name, int $filter, int $samples){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	setAttr "RadeonProRenderGlobals.filter" $filter;
+	setAttr "RadeonProRenderGlobals.samples" $samples;
+	$test_name = $test_name + "_" + $filter + "_" + $samples;
+	save_render($test_name);
+
+}}
+
+global proc main(){{
+
+	setProject ("C:/TestResources/MayaAssets");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	for ($each in $scene) {{
+    	file -f -options "v=0;"  -ignoreVersion -o $each;
+    	config($each, 1, 1);
+    	config($each, 1, 5);
+    	config($each, 1, 15);
+    	config($each, 1, 23);
+    	config($each, 1, 32);
+    	config($each, 2, 1);
+    	config($each, 2, 5);
+    	config($each, 2, 15);
+    	config($each, 2, 23);
+    	config($each, 2, 32);
+    	config($each, 3, 1);
+    	config($each, 3, 5);
+    	config($each, 3, 15);
+    	config($each, 3, 23);
+    	config($each, 3, 32);
+    	config($each, 4, 1);
+    	config($each, 4, 5);
+    	config($each, 4, 15);
+    	config($each, 4, 23);
+    	config($each, 4, 32);
+    	config($each, 5, 1);
+    	config($each, 5, 5);
+    	config($each, 5, 15);
+    	config($each, 5, 23);
+    	config($each, 5, 32);
+    	config($each, 6, 1);
+    	config($each, 6, 5);
+    	config($each, 6, 15);
+    	config($each, 6, 23);
+    	config($each, 6, 32);
+	}}
+
+	evalDeferred("quit -abort");
+}}

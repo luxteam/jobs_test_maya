@@ -6,12 +6,12 @@
     <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--tests "{CWD}/Tests/Smoke/{TestsFilter}TestsList.txt"</argument>
+        <argument>--tests "{CWD}/Tests/Anti_Aliasing_Test/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Smoke</argument>
-	<argument>--template "{CWD}/Scripts/Templates/smoke.mel"</argument>
-	<argument>--pass_limit 30</argument>
+        <argument>--testType Anti_Aliasing</argument>
+	<argument>--template "{CWD}/Scripts/Templates/template_anti_aliasing.mel"</argument>
+	<argument>--pass_limit 10</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">
