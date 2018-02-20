@@ -9,8 +9,29 @@ global proc config(string $test_name, int $intensity, int $map){{
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
-    setAttr "RPRIBLShape.intensity" $intensity;
+    string $exist = 0;
+    string $allObjects[] = `ls -g`;
+    for ($tempName in $allObjects)
+        {{
+            if ($tempName == "RPRIBLShape"){{
+                $exist = 1;
+            }}
+        }}
+
+    string $iblNode;
+    string $parent[];
     
+    if ($exist == 0) {{
+        $iblNode = `createNode RPRIBL -n RPRIBLShape`;
+        $parent = `listRelatives -p $iblNode`;
+        setAttr ($parent[0] + ".scaleX") 1001.25663706144;
+        setAttr ($parent[0] + ".scaleY") 1001.25663706144;
+        setAttr ($parent[0] + ".scaleZ") 1001.25663706144;
+        rename $parent[0] RPRIBL;
+    }}
+
+    setAttr "RPRIBLShape.intensity" $intensity;
+
     if ($map) {{
         setAttr -type "string" RPRIBLShape.filePath "sourceimages/4DstudioLight_2048x1024.hdr";
     }} else {{
