@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<job-manifest enable="False">
+
+    <outpath value="{OutputDir}"/>
+
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1">
+        <argument>--stage_report stage1.json</argument>
+        <argument>--tool "{Tool}"</argument>
+        <argument>--tests "{CWD}/Tests/Quality_Test/{TestsFilter}TestsList.txt"</argument>
+        <argument>--render_device "{RenderDevice}"</argument>
+        <argument>--output "{OutputDir}"</argument>
+        <argument>--testType QualityPresets</argument>
+	<argument>--template "{CWD}/Scripts/Templates/template_quality.mel"</argument>
+	<argument>--pass_limit 50</argument>
+    </execute>
+
+    <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">
+        <argument>--stage_report stage2.json</argument>
+        <argument>--work_dir "{OutputDir}"</argument>
+    </execute>
+
+    <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"' stage="stage3">
+        <argument>--stage_report stage3.json</argument>
+        <argument>--work_dir "{OutputDir}"</argument>
+        <argument>--base_dir "{BaselineDir}"</argument>
+        <argument>--report_name report.json</argument>
+        <argument>--result_name report_compare.json</argument>
+    </execute>
+
+    <execute command='python "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"' stage="stage4">
+        <argument>--stage_report stage4.json</argument>
+        <argument>--work_dir "{OutputDir}"</argument>
+        <argument>--template_name template_maya_with_opacity.html</argument>
+    </execute>
+
+</job-manifest>
