@@ -1,0 +1,33 @@
+
+global proc config(string $test_name, int $type){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	setAttr "RadeonProRenderGlobals.cameraType" $type;
+	$test_name = $test_name + "_" + $type;
+	save_render($test_name);
+
+}}
+
+global proc main(){{
+
+	setProject ("C:/TestResources/MayaAssets");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	for ($each in $scene) {{
+    	file -f -options "v=0;"  -ignoreVersion -o $each;
+    	config($each, 1);
+    	config($each, 2);
+    	config($each, 3);
+    	config($each, 4);
+	}}
+
+	evalDeferred("quit -abort");
+}}
