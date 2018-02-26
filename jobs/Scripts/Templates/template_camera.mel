@@ -1,5 +1,5 @@
 
-global proc config(string $test_name, int $type){{
+global proc config(string $test_name, string $preset, int $type, float $hfa, float $vfa){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -10,7 +10,9 @@ global proc config(string $test_name, int $type){{
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
 	setAttr "RadeonProRenderGlobals.cameraType" $type;
-	$test_name = $test_name + "_" + $type;
+	setAttr "perspShape.horizontalFilmAperture" $hfa;
+	setAttr "perspShape.verticalFilmAperture" $vfa;
+	$test_name = $test_name + "_" + $preset + "_" + $type;
 	save_render($test_name);
 
 }}
@@ -23,10 +25,22 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
-    	config($each, 1);
-    	config($each, 2);
-    	config($each, 3);
-    	config($each, 4);
+    	//RPR
+    	for ($k = 1; $k < 5; $k++ ) {{
+	    	config($each, "default", $k, 1.417, 0.945);
+	    }}	
+    	//Presets
+    	config($each,"16mm_theatrical", 0, 0.404, 0.295);
+    	config($each,"super_16mm", 0, 0.493, 0.292);
+    	config($each,"35mm_academy", 0, 0.864, 0.630);
+    	config($each,"35mm_tv_projection", 0, 0.816, 0.612);
+    	config($each,"35mm_full_aperture", 0, 0.980, 0.735);
+    	config($each,"35mm_1.85_projection", 0, 0.825, 0.446);
+    	config($each,"35mm_anamorphic", 0, 0.864, 0.732);
+    	config($each,"70mm_projection", 0, 2.066, 0.906);
+    	config($each,"vista_vision", 0, 1.485, 0.991);
+    	config($each,"imax", 0, 2.772, 2.072);
+
 	}}
 
 	evalDeferred("quit -abort");

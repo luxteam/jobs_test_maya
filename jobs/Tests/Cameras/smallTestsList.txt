@@ -1,2 +1,0 @@
-Camera_Cube_Map.mb,
-Camera_Cube_Map_Stereo.mb

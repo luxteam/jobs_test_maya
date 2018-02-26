@@ -1,0 +1,5 @@
+		"FeatureScenes", "RPRToneMapping.mb", "setAttr \"RadeonProRenderGlobals.toneMappingType\" 3;" , "-AutoLinear",
+		"FeatureScenes", "RPRToneMapping.mb", "setAttr \"RadeonProRenderGlobals.toneMappingType\" 1; setAttr \"RadeonProRenderGlobals.toneMappingLinearScale\" 4;" , "-Linear-4",
+		"FeatureScenes", "RPRToneMapping.mb", "setAttr \"RadeonProRenderGlobals.toneMappingType\" 4;" , "-MaxWhite",
+		"FeatureScenes", "RPRToneMapping.mb", "setAttr \"RadeonProRenderGlobals.toneMappingType\" 2; setAttr \"RadeonProRenderGlobals.toneMappingPhotolinearSensitivity\" 1.5; setAttr \"RadeonProRenderGlobals.toneMappingPhotolinearExposure\" 1.5; setAttr \"RadeonProRenderGlobals.toneMappingPhotolinearFstop\" 1.5;" , "-PhotoLinear-1_5",
+		"FeatureScenes", "RPRToneMapping.mb", "setAttr \"RadeonProRenderGlobals.toneMappingType\" 5; setAttr \"RadeonProRenderGlobals.toneMappingReinhard02Postscale\" 2; setAttr \"RadeonProRenderGlobals.toneMappingReinhard02Prescale\" 2; setAttr \"RadeonProRenderGlobals.toneMappingReinhard02Burn\" 2;" , "-Reinhard02-222"
