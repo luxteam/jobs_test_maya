@@ -1,0 +1,11 @@
+Acrylic_Refractive_Glossy_Green,
+Brass_Matte,
+Carbon_Fiber,
+Car_Paint_Metallic,
+Copper_Old,
+Glass_Solid_GreenBlue_Scratched,
+Iron_Smooth,
+Mirror,
+Plastic_Glossy_Black,
+Rubber_Diamonds,
+Wood_Bark

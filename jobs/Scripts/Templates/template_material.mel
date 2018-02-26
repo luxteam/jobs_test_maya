@@ -1,0 +1,42 @@
+global proc config(string $libraryPath, string $material){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	string $material_path = "";
+    $material_path = $libraryPath + "/" + $material;
+	string $xml[] = `getFileList -folder $material_path -filespec "*.xml"`;
+	$material_path = $material_path + "/" + $xml[0];
+
+	RPRXMLImport -file $material_path -ii false -mn "materialTestNode";
+	select -r Probe03;
+	sets -e -forceElement "materialTestNodeSG";
+
+	save_render($material);
+
+    delete "materialTestNode";
+    delete "materialTestNodeSG";
+
+}}
+
+global proc main(){{
+
+	setProject ("C:/TestResources/MayaAssets");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	python("import fireRender.rpr_material_browser");
+	string $libraryPath = python("fireRender.rpr_material_browser.getLibPath()");
+	file -f -options "v=0;"  -ignoreVersion -o "MaterialTestScene.mb";
+
+	for ($each in $scene) {{
+    	config($libraryPath, $each);
+	}}
+
+	evalDeferred("quit -abort");
+}}
