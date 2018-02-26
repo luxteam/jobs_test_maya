@@ -36,8 +36,7 @@ global proc main(){{
     	config($each, "4k_square", 4096, 4096, 72, 1.0, 1.0);
     	config($each, "CCIR_PAL_Quantel_PAL", 720, 576, 72, 1.332, 1.066);
     	config($each, "CCIR_601_Quantel_NTSC", 720, 486, 72, 1.333, 0.9);
-    	config($each, "CCIR_PAL_Quantel_PAL", 720, 576, 72, 1.332, 1.066);
-    	config($each, "Full_1024", 1024, 768, 72, 1.333, 1.0);
+	   	config($each, "Full_1024", 1024, 768, 72, 1.333, 1.0);
     	config($each, "Full_1280_Screen", 1280, 1024, 72, 1.332, 1.066);
     	config($each, "HD_540", 960, 540, 72, 1.778, 1.0);
     	config($each, "HD_720", 1280, 720, 72, 1.778, 1.0);
