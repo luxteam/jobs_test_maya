@@ -9,7 +9,7 @@
         <argument>--tests "{CWD}/Tests/Smoke/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Smoke</argument>
+        <argument>--testType Smoke_Test</argument>
 	<argument>--template "{CWD}/Scripts/Templates/template_smoke.mel"</argument>
 	<argument>--pass_limit 30</argument>
     </execute>

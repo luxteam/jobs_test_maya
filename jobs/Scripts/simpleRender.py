@@ -156,7 +156,6 @@ def main():
         stage_report[1]['log'].append('subprocess FAILED and was TERMINATED;')
 
     rewrite_stage_report()
-    os.system("taskkill /f /im  DADispatcherService.exe")
     return rc
 
 
