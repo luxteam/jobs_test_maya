@@ -33,13 +33,23 @@ global proc config(string $test_name, int $intensity, int $map){{
     setAttr "RPRIBLShape.intensity" $intensity;
 
     if ($map) {{
-        setAttr -type "string" RPRIBLShape.filePath "sourceimages/4DstudioLight_2048x1024.hdr";
-    }} else {{
-        setAttr -type "string" RPRIBLShape.filePath "";
-    }}
 
-	$test_name = $test_name + "_" + $map + "_" + $intensity;
-	save_render($test_name);
+    	string $test_name_exr = "";
+        $test_name_exr = $test_name + "_" + $intensity + "_exr";
+
+        setAttr -type "string" RPRIBLShape.filePath "sourceimages/Tropical_Beach_3k.hdr";
+        $test_name = $test_name + "_" + $intensity + "_hdr";
+        save_render($test_name);
+
+        setAttr -type "string" RPRIBLShape.filePath "sourceimages/ibl_test.exr";
+        save_render($test_name_exr);
+    
+    }} else {{
+
+        setAttr -type "string" RPRIBLShape.filePath "";
+        $test_name = $test_name + "_" + $map + "_" + $intensity;
+		save_render($test_name);
+    }}
 
 }}
 

@@ -14,10 +14,10 @@ global proc save_render(string $test_name){{
 
 	string $render_device = "{render_device}";
 	optionVar -rm "RPR_DevicesSelected";
-	if ($render_device == 1) {{
+	if ($render_device == 0) {{
 		optionVar -iva "RPR_DevicesSelected" 1;
 		optionVar -iva "RPR_DevicesSelected" 0;
-	}} else if ($render_device == 0){{
+	}} else if ($render_device == 1){{
 		optionVar -iva "RPR_DevicesSelected" 0;
 		optionVar -iva "RPR_DevicesSelected" 1;
 	}} else if ($render_device == 2){{
