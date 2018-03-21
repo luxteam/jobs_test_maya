@@ -1,0 +1,4 @@
+Description: Testing maya & custom image size
+Scene: no base scene
+Summary: 38 tests
+Test cases: no test cases

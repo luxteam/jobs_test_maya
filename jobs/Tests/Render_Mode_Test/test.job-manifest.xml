@@ -6,7 +6,7 @@
     <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--tests "{CWD}/Tests/Render_mode/{TestsFilter}TestsList.txt"</argument>
+        <argument>--tests "{CWD}/Tests/Render_Mode_Test/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType RenderMode</argument>

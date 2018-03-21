@@ -22,6 +22,7 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
+    	config($each, 1);
     	config($each, 100);
     	config($each, 500);
     	config($each, 1000);

@@ -6,10 +6,10 @@
     <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--tests "{CWD}/Tests/Material_Test/{TestsFilter}TestsList.txt"</argument>
+        <argument>--tests "{CWD}/Tests/Material_Library_Test/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Materials</argument>
+        <argument>--testType Material_Library</argument>
 	<argument>--template "{CWD}/Scripts/Templates/template_material.mel"</argument>
 	<argument>--pass_limit 10</argument>
     </execute>

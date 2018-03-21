@@ -61,12 +61,14 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
+            config($each, 0, 0);
             config($each, 1, 0);
             config($each, 2, 0);
             config($each, 3, 0);
             config($each, 5, 0);
             config($each, 7, 0);
             config($each, 10, 0);
+            config($each, 0, 0);
             config($each, 1, 1);
             config($each, 2, 1);
             config($each, 3, 1);
