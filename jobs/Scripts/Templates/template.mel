@@ -1,15 +1,20 @@
 
-global proc config(string $test_name){{
+global proc prerender(string $test_name){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
 	}}
 
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
-	save_render($test_name);
+	rpr_render($test_name);
 
 }}
 
@@ -21,7 +26,7 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
-    	config($each);
+    	prerender($each);
 	}}
 
 	evalDeferred("quit -abort");

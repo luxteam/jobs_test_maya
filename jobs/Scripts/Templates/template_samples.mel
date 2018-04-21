@@ -1,5 +1,5 @@
 
-global proc config(string $test_name, int $iterations){{
+global proc prerender(string $test_case, int $iterations, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -9,8 +9,12 @@ global proc config(string $test_name, int $iterations){{
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $iterations;
 
-	$test_name = $test_name + "_" + $iterations;
-	save_render($test_name);
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+	rpr_render($test_case, $script_info);
 
 }}
 
@@ -22,12 +26,13 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
-    	config($each, 1);
-    	config($each, 100);
-    	config($each, 500);
-    	config($each, 1000);
-    	config($each, 5000);
-    	config($each, 10000);
+
+    	prerender("MAYA_RS_PS_001", 1, "[\"Pass Limit: 1\"]");
+    	prerender("MAYA_RS_PS_002", 100, "[\"Pass Limit: 100\"]");
+    	//prerender("MAYA_RS_PS_003", 500, "[\"Pass Limit: 500\"]");
+    	//prerender("MAYA_RS_PS_004", 1000, "[\"Pass Limit: 1000\"]");
+    	//prerender("MAYA_RS_PS_005", 5000, "[\"Pass Limit: 5000\"]");
+    	//prerender("MAYA_RS_PS_006", 10000, "[\"Pass Limit: 10000\"]");
  
 	}}
 

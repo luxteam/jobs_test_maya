@@ -12,7 +12,7 @@ directory = args.work_dir
 stage_report = [{'status': 'INIT'}, {'log': ['make_report_json.py start']}]
 
 files = os.listdir(directory)
-json_files = list(filter(lambda x: x.endswith('MAYA.json'), files))
+json_files = list(filter(lambda x: x.endswith('RPR.json'), files))
 result_json = ""
 
 for file in range(len(json_files)):

@@ -1,9 +1,14 @@
 
-global proc config(string $test_name, int $k, string $ies_file){{
+global proc prerender(string $test_case, string $ies_file, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
 	}}
+	
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
 
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
@@ -12,8 +17,7 @@ global proc config(string $test_name, int $k, string $ies_file){{
 	setAttr "RPRIESLight.intensity" 10;
 	setAttr -type "string" "RPRIESLight.iesFile" $ies_file;
 
-	$test_name = $test_name + "_" + $k;
-	save_render($test_name);
+	rpr_render($test_case, $script_info);
 
 }}
 
@@ -25,9 +29,17 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
-	    for ($k = 1; $k < 11; $k++ ) {{
-	    	config($each, $k, ("ies\\" + $k + ".ies"));
-	    }}	
+
+	    prerender("MAYA_L_IES_001", "ies\\1.ies", "[\"IES file: 1.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_002", "ies\\2.ies", "[\"IES file: 2.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_003", "ies\\3.ies", "[\"IES file: 3.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_004", "ies\\4.ies", "[\"IES file: 4.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_005", "ies\\5.ies", "[\"IES file: 5.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_006", "ies\\6.ies", "[\"IES file: 6.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_007", "ies\\7.ies", "[\"IES file: 7.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_008", "ies\\8.ies", "[\"IES file: 8.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_009", "ies\\9.ies", "[\"IES file: 9.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_010", "ies\\10.ies", "[\"IES file: 10.ies\", \"Intensity: 10\"]");
 	}}
 
 	evalDeferred("quit -abort");

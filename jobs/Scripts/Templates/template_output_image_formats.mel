@@ -1,16 +1,20 @@
 
-global proc config(string $test_name, int $image_format){{
+global proc prerender(string $test_case, int $image_format, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
 	}}
 
+    if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" $image_format;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
-	$test_name = $test_name + "_" + $image_format;
-	save_render($test_name);
+	rpr_render($test_case, $script_info);
 
 }}
 
@@ -22,28 +26,29 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
-    	config($each, 6);
-    	//config($each, 11);
-    	config($each, 35);
-    	config($each, 9);
-    	config($each, 0);
-    	config($each, 8);
-    	config($each, 7);
-    	config($each, 10);
-    	config($each, 31);
-    	config($each, 36);
-    	config($each, 32);
-    	config($each, 12);
-    	config($each, 2);
-    	config($each, 5);
-    	config($each, 13);
-    	config($each, 1);
-    	config($each, 19);
-    	config($each, 3);
-    	config($each, 4);
-    	config($each, 20);
-    	config($each, 40);
-    	config($each, 63);
+
+    	prerender("MAYA_RS_IF_001", 6, "[\"Image format: Alias PIX (als)\"]");
+    	//prerender("MAYA_RS_IF_002", 11, "[\"Image format: Cineon (cin)\"]";
+    	prerender("MAYA_RS_IF_003", 35, "[\"Image format: DDS (dds)\"]");
+    	prerender("MAYA_RS_IF_004", 9, "[\"Image format: EPS (eps)\"]");
+    	prerender("MAYA_RS_IF_005", 0, "[\"Image format: GIF (gif)\"]");
+    	prerender("MAYA_RS_IF_006", 8, "[\"Image format: JPEG (jpg)\"]");
+    	prerender("MAYA_RS_IF_007", 7, "[\"Image format: Maya IFF (iff)\"]");
+    	prerender("MAYA_RS_IF_008", 10, "[\"Image format: Maya16 IFF (iff)\"]");
+    	prerender("MAYA_RS_IF_009", 31, "[\"Image format: PSD (psd)\"]");
+    	prerender("MAYA_RS_IF_010", 36, "[\"Image format: PSD Layered (psd)\"]");
+    	prerender("MAYA_RS_IF_011", 32, "[\"Image format: PNG (png)\"]");
+    	prerender("MAYA_RS_IF_012", 12, "[\"Image format: Quantel (yuv)\"]");
+    	prerender("MAYA_RS_IF_013", 2, "[\"Image format: RLA (rla)\"]");
+    	prerender("MAYA_RS_IF_014", 5, "[\"Image format: SGI (sgi)\"]");
+    	prerender("MAYA_RS_IF_015", 13, "[\"Image format: SGI16 (sgi)\"]");
+    	prerender("MAYA_RS_IF_016", 1, "[\"Image format: SoftImage (pic)\"]");
+    	prerender("MAYA_RS_IF_017", 19, "[\"Image format: Targa (tga)\"]");
+    	prerender("MAYA_RS_IF_018", 3, "[\"Image format: Tiff (tif)\"]");
+    	prerender("MAYA_RS_IF_019", 4, "[\"Image format: Tiff16 (tif)\"]");
+    	prerender("MAYA_RS_IF_020", 20, "[\"Image format: Windows Bitmap (bmp)\"]");
+    	prerender("MAYA_RS_IF_021", 40, "[\"Image format: EXR (exr)\"]");
+    	prerender("MAYA_RS_IF_022", 63, "[\"Image format: SonyPlaystation (tim)\"]");
 	}}
 
 	evalDeferred("quit -abort");

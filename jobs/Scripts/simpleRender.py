@@ -41,6 +41,8 @@ def createArgsParser():
     parser.add_argument('--testType', required=True)
     parser.add_argument('--template', required=True)
     parser.add_argument('--pass_limit', required=True)
+    parser.add_argument('--resolution_x', required=True)
+    parser.add_argument('--resolution_y', required=True)
 
     return parser
 
@@ -96,7 +98,8 @@ def main():
                                        testsList=testsList,
                                        testType=args.testType,
                                        render_device = args.render_device,
-                                       pass_limit = args.pass_limit)
+                                       pass_limit = args.pass_limit, resolution_x = args.resolution_x,
+                                       resolution_y = args.resolution_y)
 
     cmdRun = '''
     set MAYA_CMD_FILE_OUTPUT=%cd%/scriptEditorTrace.txt 
@@ -113,9 +116,6 @@ def main():
             f.write(melScript)
         stage_report[1]['log'].append('mel template formatted and saved as script.mel;')
 
-        copyfile(os.path.join(os.path.dirname(__file__), 'maya_benchmark_common.mel'),
-                 os.path.join(args.output, 'maya_benchmark_common.mel'))
-        stage_report[1]['log'].append('maya_benchmark_common.mel copied;')
     except OSError as e:
         stage_report[0]['status'] = 'FAILED'
         stage_report[1]['log'].append('OSError while write scripts file saving. ' + str(e))
@@ -161,4 +161,5 @@ def main():
 
 if __name__ == "__main__":
     rc = main()
+    os.system("taskkill /f /im  DADispatcherService.exe")
     exit(rc)

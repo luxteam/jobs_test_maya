@@ -1,5 +1,5 @@
 
-global proc config(int $pass, string $test_name){{
+global proc prerender(int $pass, string $test_name){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -9,7 +9,12 @@ global proc config(int $pass, string $test_name){{
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
 
-	save_render($test_name);
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+	rpr_render($test_name);
 
 }}
 
@@ -54,18 +59,21 @@ global proc main(){{
 	//file -f -options "v=0;"  -ignoreVersion -o "{testsList}";
 
 	import_test();
-	config(30, "import_test");
+	prerender(30, "import_test");
 
 	create_uber_test();
-	config(30, "uber_test");
+	prerender(30, "uber_test");
 
 	create_IBL();
-	config(30, "ibl_test");
+	prerender(30, "ibl_test");
 
 	create_sun_sky();
-	config(30, "sky_sun_test");
+	prerender(30, "sky_sun_test");
 
-	config(100, "full");
+	prerender(1, "full");
+	prerender(100, "full");
+	prerender(500, "full");
+	prerender(1000, "full");
 
 	evalDeferred("quit -abort");
 }}

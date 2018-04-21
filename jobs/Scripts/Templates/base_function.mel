@@ -1,4 +1,4 @@
-global proc save_render(string $test_name){{
+global proc rpr_render(string $test_name, string $script_info){{
 
 	float $startTime = 0;
 	float $testTime = 0;
@@ -32,7 +32,7 @@ global proc save_render(string $test_name){{
 	}}
 	string $render_device_name[] = `optionVar -q "RPR_DevicesName"`;
 	string $RPR_version[] = `RPRImageComparing -rprPluginDetails`;
-	string $filePath = "{outputFolder}" + "/" + $test_name + "_MAYA.json";
+	string $filePath = "{outputFolder}" + "/" + $test_name + "_RPR.json";
 	int $fileID = `fopen $filePath "a"`;
 	fprint $fileID ("[");
 	fprint $fileID ("\r\n {{");
@@ -45,7 +45,8 @@ global proc save_render(string $test_name){{
 	fprint $fileID ("\r\n  \"render_time\": " + $testTime + ",");
 	fprint $fileID ("\r\n  \"scene_name\": \"" + $scene_name + "\",");
 	fprint $fileID ("\r\n  \"test_type\": \"" + "{testType}" + "\",");
-	fprint $fileID ("\r\n  \"difference_color\": \"" + "not compared yet" + "\"");
+	fprint $fileID ("\r\n  \"difference_color\": \"" + "not compared yet" + "\",");
+	fprint $fileID ("\r\n  \"script_info\": " + $script_info);
 	fprint $fileID ("\r\n }}");
 	fprint $fileID ("\r\n]");
 	fclose $fileID;

@@ -1,5 +1,5 @@
 
-global proc config(string $test_name, int $param1, int $param2, int $param3){{
+global proc prerender(string $test_case, int $type, int $param1, int $param2, string $location, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -8,6 +8,11 @@ global proc config(string $test_name, int $param1, int $param2, int $param3){{
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+    if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
 
     string $allObjects[] = `ls -g`;
     string $exist = 0;
@@ -31,23 +36,36 @@ global proc config(string $test_name, int $param1, int $param2, int $param3){{
         setAttr "RPRSkyShape.sunDiskSize" 5;
     }}
 
-    if ($param1) {{
+    if ($type) {{
 
-        setAttr "RPRSkyShape.sunPositionType" 0;
-        setAttr "RPRSkyShape.altitude" $param3;
-        setAttr "RPRSkyShape.azimuth" $param2;
+        setAttr "RPRSkyShape.sunPositionType" $type;
+
+        if ($location == "Moscow") {{
+            setAttr "RPRSkyShape.latitude" 56;
+            setAttr "RPRSkyShape.longitude" 38;
+            setAttr "RPRSkyShape.timeZone" 3;
+        }} else if ($location == "Miami_Beach") {{
+            setAttr "RPRSkyShape.latitude" 25.791;
+            setAttr "RPRSkyShape.longitude" -80.130;
+            setAttr "RPRSkyShape.timeZone" -5;
+        }} else if ($location == "Canberra") {{
+            setAttr "RPRSkyShape.latitude" -35.283;
+            setAttr "RPRSkyShape.longitude" 149.128;
+            setAttr "RPRSkyShape.timeZone" 11;
+        }}
+
+        setAttr "RPRSkyShape.hours" $param1;
+        setAttr "RPRSkyShape.minutes" $param2;
 
     }} else {{
 
-        setAttr "RPRSkyShape.sunPositionType" 1;
-        setAttr "RPRSkyShape.latitude" 56;
-        setAttr "RPRSkyShape.longitude" 38;
-        setAttr "RPRSkyShape.hours" $param2;
-        setAttr "RPRSkyShape.minutes" $param3;
+        setAttr "RPRSkyShape.sunPositionType" $type;
+        setAttr "RPRSkyShape.altitude" $param2;
+        setAttr "RPRSkyShape.azimuth" $param1;
+
     }}
 
-	$test_name = $test_name + "_" + $param1 + "_" + $param2 + "_" + $param3;
-	save_render($test_name);
+	rpr_render($test_case, $script_info);
 
 }}
 
@@ -59,26 +77,36 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
-            config($each, 1, 0, 0);
-            config($each, 1, 0, 45);
-            config($each, 1, 0, 90);
-            config($each, 1, 90, 0);
-            config($each, 1, 90, 45);
-            config($each, 1, 90, 90);
-            config($each, 1, 180, 0);
-            config($each, 1, 180, 45);
-            config($each, 1, 180, 90);
-            config($each, 1, 270, 0);
-            config($each, 1, 270, 45);
-            config($each, 1, 270, 90);
-            config($each, 1, 360, 0);
-            config($each, 1, 360, 45);
-            config($each, 1, 360, 90);
-            config($each, 0, 0, 0);
-            config($each, 0, 6, 0);
-            config($each, 0, 12, 0);
-            config($each, 0, 18, 0);
-            config($each, 0, 24, 0);
+
+            prerender("MAYA_RS_SS_001", 0, 0, 0, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 0\"]");
+            prerender("MAYA_RS_SS_002", 0, 0, 45, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 45\"]");
+            prerender("MAYA_RS_SS_003", 0, 0, 90, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 90\"]");
+            prerender("MAYA_RS_SS_004", 0, 90, 0, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 0\"]");
+            prerender("MAYA_RS_SS_005", 0, 90, 45, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 45\"]");
+            prerender("MAYA_RS_SS_006", 0, 90, 90, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 90\"]");
+            prerender("MAYA_RS_SS_007", 0, 180, 0, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 0\"]");
+            prerender("MAYA_RS_SS_008", 0, 180, 45, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 45\"]");
+            prerender("MAYA_RS_SS_009", 0, 180, 90, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 90\"]");
+            prerender("MAYA_RS_SS_010", 0, 270, 0, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 0\"]");
+            prerender("MAYA_RS_SS_011", 0, 270, 45, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 45\"]");
+            prerender("MAYA_RS_SS_012", 0, 270, 90, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 90\"]");
+            prerender("MAYA_RS_SS_013", 0, 360, 0, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 0\"]");
+            prerender("MAYA_RS_SS_014", 0, 360, 45, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 45\"]");
+            prerender("MAYA_RS_SS_015", 0, 360, 90, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 90\"]");
+
+            prerender("MAYA_RS_SS_16", 1, 0, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 0\"]");
+            prerender("MAYA_RS_SS_17", 1, 6, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 6\"]");
+            prerender("MAYA_RS_SS_18", 1, 12, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 12\"]");
+            prerender("MAYA_RS_SS_19", 1, 18, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 18\"]");
+            prerender("MAYA_RS_SS_20", 1, 24, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 24\"]");
+
+            prerender("MAYA_RS_SS_21", 1, 0, 0, "Miami_Beach", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 0\"]");
+            prerender("MAYA_RS_SS_22", 1, 12, 0, "Miami_Beach", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 12\"]");
+            prerender("MAYA_RS_SS_23", 1, 24, 0, "Miami_Beach", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 24\"]");
+
+            prerender("MAYA_RS_SS_24", 1, 0, 0, "Canberra", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 0\"]");
+            prerender("MAYA_RS_SS_25", 1, 12, 0, "Canberra", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 12\"]");
+            prerender("MAYA_RS_SS_26", 1, 24, 0, "Canberra", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 24\"]");
 
 	}}
 

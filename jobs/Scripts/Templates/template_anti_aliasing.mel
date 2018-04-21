@@ -1,9 +1,14 @@
 
-global proc config(string $test_name, int $filter, int $samples){{
+global proc prerender(string $test_case, int $filter, int $samples, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
 	}}
+
+    if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
 
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
@@ -11,8 +16,8 @@ global proc config(string $test_name, int $filter, int $samples){{
 
 	setAttr "RadeonProRenderGlobals.filter" $filter;
 	setAttr "RadeonProRenderGlobals.samples" $samples;
-	$test_name = $test_name + "_" + $filter + "_" + $samples;
-	save_render($test_name);
+
+	rpr_render($test_case, $script_info);
 
 }}
 
@@ -24,36 +29,36 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
-    	config($each, 1, 1);
-    	config($each, 1, 5);
-    	config($each, 1, 15);
-    	config($each, 1, 23);
-    	config($each, 1, 32);
-    	config($each, 2, 1);
-    	config($each, 2, 5);
-    	config($each, 2, 15);
-    	config($each, 2, 23);
-    	config($each, 2, 32);
-    	config($each, 3, 1);
-    	config($each, 3, 5);
-    	config($each, 3, 15);
-    	config($each, 3, 23);
-    	config($each, 3, 32);
-    	config($each, 4, 1);
-    	config($each, 4, 5);
-    	config($each, 4, 15);
-    	config($each, 4, 23);
-    	config($each, 4, 32);
-    	config($each, 5, 1);
-    	config($each, 5, 5);
-    	config($each, 5, 15);
-    	config($each, 5, 23);
-    	config($each, 5, 32);
-    	config($each, 6, 1);
-    	config($each, 6, 5);
-    	config($each, 6, 15);
-    	config($each, 6, 23);
-    	config($each, 6, 32);
+    	prerender("MAYA_RS_AA_001", 1, 1, "[\"AA filter: Box\", \"Render samples: 1\"]");
+        prerender("MAYA_RS_AA_002", 1, 13, "[\"AA filter: Box\", \"Render samples: 13\"]");
+        prerender("MAYA_RS_AA_003", 1, 23, "[\"AA filter: Box\", \"Render samples: 23\"]");
+        prerender("MAYA_RS_AA_004", 1, 32, "[\"AA filter: Box\", \"Render samples: 32\"]");
+
+        prerender("MAYA_RS_AA_005", 2, 1, "[\"AA filter: Lanczos\", \"Render samples: 1\"]");
+        prerender("MAYA_RS_AA_006", 2, 13, "[\"AA filter: Lanczos\", \"Render samples: 13\"]");
+        prerender("MAYA_RS_AA_007", 2, 23, "[\"AA filter: Lanczos\", \"Render samples: 23\"]");
+        prerender("MAYA_RS_AA_008", 2, 32, "[\"AA filter: Lanczos\", \"Render samples: 32\"]");
+
+        prerender("MAYA_RS_AA_009", 3, 1, "[\"AA filter: Triangle\", \"Render samples: 1\"]"); 
+        prerender("MAYA_RS_AA_010", 3, 13, "[\"AA filter: Triangle\", \"Render samples: 13\"]");
+        prerender("MAYA_RS_AA_011", 3, 23, "[\"AA filter: Triangle\", \"Render samples: 23\"]");
+        prerender("MAYA_RS_AA_012", 3, 32, "[\"AA filter: Triangle\", \"Render samples: 32\"]");
+
+        prerender("MAYA_RS_AA_013", 4, 1, "[\"AA filter: Box\", \"Render samples: 1\"]");
+        prerender("MAYA_RS_AA_014", 4, 13, "[\"AA filter: Box\", \"Render samples: 13\"]");
+        prerender("MAYA_RS_AA_015", 4, 23, "[\"AA filter: Box\", \"Render samples: 23\"]");
+        prerender("MAYA_RS_AA_016", 4, 32, "[\"AA filter: Box\", \"Render samples: 32\"]");
+
+        prerender("MAYA_RS_AA_017", 5, 1, "[\"AA filter: Gaussian\", \"Render samples: 1\"]");
+        prerender("MAYA_RS_AA_018", 5, 13, "[\"AA filter: Gaussian\", \"Render samples: 13\"]");
+        prerender("MAYA_RS_AA_019", 5, 23, "[\"AA filter: Gaussian\", \"Render samples: 23\"]");
+        prerender("MAYA_RS_AA_020", 5, 32, "[\"AA filter: Gaussian\", \"Render samples: 32\"]");
+
+        prerender("MAYA_RS_AA_021", 6, 1, "[\"AA filter: Blackmanharris\", \"Render samples: 1\"]");
+        prerender("MAYA_RS_AA_022", 6, 13, "[\"AA filter: Blackmanharris\", \"Render samples: 13\"]");
+        prerender("MAYA_RS_AA_023", 6, 23, "[\"AA filter: Blackmanharris\", \"Render samples: 23\"]");
+        prerender("MAYA_RS_AA_024", 6, 32, "[\"AA filter: Blackmanharris\", \"Render samples: 32\"]");
+
 	}}
 
 	evalDeferred("quit -abort");

@@ -11,7 +11,9 @@
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Material_Library</argument>
 	<argument>--template "{CWD}/Scripts/Templates/template_material.mel"</argument>
-	<argument>--pass_limit 10</argument>
+	<argument>--pass_limit {PassLimit}</argument>
+	<argument>--resolution_x {rx}</argument>
+	<argument>--resolution_y {ry}</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">

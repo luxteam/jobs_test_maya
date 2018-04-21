@@ -1,4 +1,4 @@
-global proc config(string $libraryPath, string $material){{
+global proc prerender(string $libraryPath, string $material, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -7,6 +7,11 @@ global proc config(string $libraryPath, string $material){{
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
 
 	string $material_path = "";
     $material_path = $libraryPath + "/" + $material;
@@ -17,7 +22,7 @@ global proc config(string $libraryPath, string $material){{
 	select -r Probe03;
 	sets -e -forceElement "materialTestNodeSG";
 
-	save_render($material);
+	rpr_render($material, $script_info);
 
     delete "materialTestNode";
     delete "materialTestNodeSG";
@@ -35,7 +40,7 @@ global proc main(){{
 	file -f -options "v=0;"  -ignoreVersion -o "MaterialTestScene.mb";
 
 	for ($each in $scene) {{
-    	config($libraryPath, $each);
+    	prerender($libraryPath, $each, ("[\"Material: " + $each + "\"]"));
 	}}
 
 	evalDeferred("quit -abort");
