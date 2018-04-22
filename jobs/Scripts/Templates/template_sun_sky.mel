@@ -94,19 +94,19 @@ global proc main(){{
             prerender("MAYA_RS_SS_014", 0, 360, 45, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 45\"]");
             prerender("MAYA_RS_SS_015", 0, 360, 90, "none", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 90\"]");
 
-            prerender("MAYA_RS_SS_16", 1, 0, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 0\"]");
-            prerender("MAYA_RS_SS_17", 1, 6, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 6\"]");
-            prerender("MAYA_RS_SS_18", 1, 12, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 12\"]");
-            prerender("MAYA_RS_SS_19", 1, 18, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 18\"]");
-            prerender("MAYA_RS_SS_20", 1, 24, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 24\"]");
-
-            prerender("MAYA_RS_SS_21", 1, 0, 0, "Miami_Beach", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 0\"]");
-            prerender("MAYA_RS_SS_22", 1, 12, 0, "Miami_Beach", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 12\"]");
-            prerender("MAYA_RS_SS_23", 1, 24, 0, "Miami_Beach", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 24\"]");
-
-            prerender("MAYA_RS_SS_24", 1, 0, 0, "Canberra", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 0\"]");
-            prerender("MAYA_RS_SS_25", 1, 12, 0, "Canberra", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 12\"]");
-            prerender("MAYA_RS_SS_26", 1, 24, 0, "Canberra", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 24\"]");
+            prerender("MAYA_RS_SS_016", 1, 0, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 0\"]");
+            prerender("MAYA_RS_SS_017", 1, 6, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 6\"]");
+            prerender("MAYA_RS_SS_018", 1, 12, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 12\"]");
+            prerender("MAYA_RS_SS_019", 1, 18, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 18\"]");
+            prerender("MAYA_RS_SS_020", 1, 24, 0, "Moscow", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 24\"]");
+0
+            prerender("MAYA_RS_SS_021", 1, 0, 0, "Miami_Beach", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 0\"]");
+            prerender("MAYA_RS_SS_022", 1, 12, 0, "Miami_Beach", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 12\"]");
+            prerender("MAYA_RS_SS_023", 1, 24, 0, "Miami_Beach", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 24\"]");
+0
+            prerender("MAYA_RS_SS_024", 1, 0, 0, "Canberra", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 0\"]");
+            prerender("MAYA_RS_SS_025", 1, 12, 0, "Canberra", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 12\"]");
+            prerender("MAYA_RS_SS_026", 1, 24, 0, "Canberra", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 24\"]");
 
 	}}
 

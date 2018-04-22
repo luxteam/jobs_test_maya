@@ -64,13 +64,14 @@ global proc main(){{
 	create_uber_test();
 	prerender(30, "uber_test");
 
-	create_IBL();
-	prerender(30, "ibl_test");
-
 	create_sun_sky();
 	prerender(30, "sky_sun_test");
 
+	create_IBL();
+	prerender(30, "ibl_test");
+
 	prerender(1, "full");
+	prerender(3, "full");
 	prerender(100, "full");
 	prerender(500, "full");
 	prerender(1000, "full");

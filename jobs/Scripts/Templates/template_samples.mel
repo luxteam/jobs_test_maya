@@ -29,10 +29,10 @@ global proc main(){{
 
     	prerender("MAYA_RS_PS_001", 1, "[\"Pass Limit: 1\"]");
     	prerender("MAYA_RS_PS_002", 100, "[\"Pass Limit: 100\"]");
-    	//prerender("MAYA_RS_PS_003", 500, "[\"Pass Limit: 500\"]");
-    	//prerender("MAYA_RS_PS_004", 1000, "[\"Pass Limit: 1000\"]");
-    	//prerender("MAYA_RS_PS_005", 5000, "[\"Pass Limit: 5000\"]");
-    	//prerender("MAYA_RS_PS_006", 10000, "[\"Pass Limit: 10000\"]");
+    	prerender("MAYA_RS_PS_003", 500, "[\"Pass Limit: 500\"]");
+    	prerender("MAYA_RS_PS_004", 1000, "[\"Pass Limit: 1000\"]");
+    	prerender("MAYA_RS_PS_005", 5000, "[\"Pass Limit: 5000\"]");
+    	prerender("MAYA_RS_PS_006", 10000, "[\"Pass Limit: 10000\"]");
  
 	}}
 
