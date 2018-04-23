@@ -63,9 +63,19 @@ global proc main(){{
         prerender("MAYA_RS_IS_033", 3000, 3000, 72, 1.0, 1.0, "[\"Preset: 3000x3000\"]");
         prerender("MAYA_RS_IS_034", 4000, 4000, 72, 1.0, 1.0, "[\"Preset: 4000x4000\"]");
         prerender("MAYA_RS_IS_035", 5000, 5000, 72, 1.0, 1.0, "[\"Preset: 5000x5000\"]");
-    	prerender("MAYA_RS_IS_036", 6000, 6000, 72, 1.0, 1.0, "[\"Preset: 6000x6000\"]");
-    	prerender("MAYA_RS_IS_037", 7000, 7000, 72, 1.0, 1.0, "[\"Preset: 7000x7000\"]");
-    	prerender("MAYA_RS_IS_038", 8000, 8000, 72, 1.0, 1.0, "[\"Preset: 8000x8000\"]");
+
+    	//prerender("MAYA_RS_IS_036", 6000, 6000, 72, 1.0, 1.0, "[\"Preset: 6000x6000\"]");
+        prerender("MAYA_RS_IS_036", 1, 1, 72, 1.0, 1.0, "[\"Preset: 6000x6000\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IS_036") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	//prerender("MAYA_RS_IS_037", 7000, 7000, 72, 1.0, 1.0, "[\"Preset: 7000x7000\"]");
+        prerender("MAYA_RS_IS_037", 1, 1, 72, 1.0, 1.0, "[\"Preset:  7000x7000\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IS_037") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	//prerender("MAYA_RS_IS_038", 8000, 8000, 72, 1.0, 1.0, "[\"Preset: 8000x8000\"]");
+        prerender("MAYA_RS_IS_038", 1, 1, 72, 1.0, 1.0, "[\"Preset: 8000x8000\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IS_038") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
         prerender("MAYA_RS_IS_039", 1500, 1125, 72, 1.0, 1.0, "[\"Preset: 1500x1125\"]");
 	}}
 

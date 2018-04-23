@@ -1,2 +1,2 @@
 default.ma,
-rpr_default.ma
+base_scene.ma

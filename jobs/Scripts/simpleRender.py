@@ -96,8 +96,8 @@ def main():
     res_path = args.res_path
     res_path = res_path.replace('\\', '/')
     mel_template = base + script_template
-    outputFolder = os.path.abspath(args.output).replace('\\', '/')
-    melScript = mel_template.format(outputFolder=outputFolder,
+    work_dir = os.path.abspath(args.output).replace('\\', '/')
+    melScript = mel_template.format(work_dir=work_dir,
                                        testsList=testsList,
                                        testType=args.testType,
                                        render_device = args.render_device, res_path=res_path,

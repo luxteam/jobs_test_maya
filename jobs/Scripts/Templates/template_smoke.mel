@@ -5,6 +5,10 @@ global proc prerender(string $test_case, int $pass, string $script_info){{
     	loadPlugin RadeonProRender;
 	}}
 
+	if( `pluginInfo -query -loaded fbxmaya` == 0){{
+    	loadPlugin fbxmaya;
+	}}
+
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
@@ -26,6 +30,8 @@ global proc import_obj(){{
 	delete Default;
 	file -import -type "OBJ" -options "mo=-1"  -pr ("{res_path}" + "/sourceimages/example.obj");
 	rename "polySurface1" "Shader_Ball";
+	setAttr "Shader_Ball.translate" -3.774 -1.4 -3.865;
+	setAttr "Shader_Ball.scale" 2 2 2;
 }}
 
 
@@ -74,8 +80,18 @@ global proc main(){{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
 
     	if ($each == "default.ma") {{
+    		prerender("MAYA_SM_001", 1, "[\"Install plugin\"]");
+    		sysFile -copy ("{work_dir}/Color/MAYA_SM_001.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    		prerender("MAYA_SM_002", 1, "[\"Open empty scene\"]");
+    		sysFile -copy ("{work_dir}/Color/MAYA_SM_002.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
     		prerender("MAYA_SM_003", 15, "[\"Render empty scene\", \"Pass Limit: 50\"]");
+
     	}} else if ($each == "rpr_default.ma") {{
+
+    		prerender("MAYA_SM_004", 1, "[\"Open empty scene with RPR parameters\"]");
+    		sysFile -copy ("{work_dir}/Color/MAYA_SM_004.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
     		prerender("MAYA_SM_005", 15, "[\"Render empty scene with RPR parameters\", \"Pass Limit: 50\"]");
 
     		import_fbx();
@@ -84,8 +100,14 @@ global proc main(){{
     		import_obj();
     		prerender("MAYA_SM_007", 15, "[\"Import OBJ\", \"Pass Limit: 50\"]");
 
+    		prerender("MAYA_SM_008", 1, "[\"Open hypershade\"]");
+    		sysFile -copy ("{work_dir}/Color/MAYA_SM_008.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    		prerender("MAYA_SM_009", 1, "[\"Create Uber material\"]");
+    		sysFile -copy ("{work_dir}/Color/MAYA_SM_009.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
     		test_Uber();
-    		prerender("MAYA_SM_010", 15, "[\"Testing Uber material\", \"Pass Limit: 50\"]");
+    		prerender("MAYA_SM_010", 15, "[\"Assign uber material\", \"Pass Limit: 50\"]");
 
     		test_sun_sky();
     		prerender("MAYA_SM_013", 15, "[\"Testing Sun and Sky System\", \"Pass Limit: 50\"]");
@@ -101,9 +123,9 @@ global proc main(){{
 
     		prerender("MAYA_SM_017", 1, "[\"Iteration test\", \"Pass Limit: 1\"]");
     		prerender("MAYA_SM_018", 30, "[\"Iteration test\", \"Pass Limit: 30\"]");
-    		//prerender("MAYA_SM_019", 100, "[\"Iteration test\", \"Pass Limit: 100\"]");
-    		//prerender("MAYA_SM_020", 500, "[\"Iteration test\", \"Pass Limit: 500\"]");
-    		//prerender("MAYA_SM_021", 1000, "[\"Iteration test\", \"Pass Limit: 1000\"]");
+    		prerender("MAYA_SM_019", 100, "[\"Iteration test\", \"Pass Limit: 100\"]");
+    		prerender("MAYA_SM_020", 500, "[\"Iteration test\", \"Pass Limit: 500\"]");
+    		prerender("MAYA_SM_021", 1000, "[\"Iteration test\", \"Pass Limit: 1000\"]");
 
     	}}
     }}
