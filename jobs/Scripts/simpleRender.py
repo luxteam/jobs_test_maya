@@ -40,6 +40,7 @@ def createArgsParser():
     parser.add_argument('--output', required=True, metavar="<dir>")
     parser.add_argument('--testType', required=True)
     parser.add_argument('--template', required=True)
+    parser.add_argument('--res_path', required=True)
     parser.add_argument('--pass_limit', required=True)
     parser.add_argument('--resolution_x', required=True)
     parser.add_argument('--resolution_y', required=True)
@@ -92,12 +93,14 @@ def main():
         rewrite_stage_report()
         return 1
 
+    res_path = args.res_path
+    res_path = res_path.replace('\\', '/')
     mel_template = base + script_template
     outputFolder = os.path.abspath(args.output).replace('\\', '/')
     melScript = mel_template.format(outputFolder=outputFolder,
                                        testsList=testsList,
                                        testType=args.testType,
-                                       render_device = args.render_device,
+                                       render_device = args.render_device, res_path=res_path,
                                        pass_limit = args.pass_limit, resolution_x = args.resolution_x,
                                        resolution_y = args.resolution_y)
 

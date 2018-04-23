@@ -6,14 +6,15 @@
     <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--tests "{CWD}/Tests/Sun_Sky_Test/{TestsFilter}TestsList.txt"</argument>
+        <argument>--tests "{CWD}/Tests/IES/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Sun_Sky</argument>
-	<argument>--template "{CWD}/Scripts/Templates/template_sun_sky.mel"</argument>
+        <argument>--testType IES</argument>
+	<argument>--template "{CWD}/Scripts/Templates/template_ies.mel"</argument>
 	<argument>--pass_limit {PassLimit}</argument>
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
+	<argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">

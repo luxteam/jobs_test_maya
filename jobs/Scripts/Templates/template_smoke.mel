@@ -1,5 +1,5 @@
 
-global proc prerender(int $pass, string $test_name){{
+global proc prerender(string $test_case, int $pass, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -14,17 +14,22 @@ global proc prerender(int $pass, string $test_name){{
         setAttr "defaultResolution.height" {resolution_y};
     }}
 
-	rpr_render($test_name);
+	rpr_render($test_case, $script_info);
 
 }}
 
-global proc import_test(){{
+global proc import_fbx(){{
+	FBXImport -f ("{res_path}" + "/sourceimages/park_bench1.fbx");
+}}
 
-	file -import -type "OBJ" -options "mo=-1"  -pr "C:/TestResources/BlenderAssets/scenes/example.obj";
+global proc import_obj(){{
+	delete Default;
+	file -import -type "OBJ" -options "mo=-1"  -pr ("{res_path}" + "/sourceimages/example.obj");
 	rename "polySurface1" "Shader_Ball";
 }}
 
-global proc create_uber_test(){{
+
+global proc test_Uber(){{
 
 	string $rpr = `shadingNode -asShader "RPRUberMaterial"`; 
 	setAttr ($rpr + ".diffuse") 1; 
@@ -37,44 +42,71 @@ global proc create_uber_test(){{
 	sets -e -forceElement $sgs[0];
 }}
 
-global proc create_IBL(){{
-
+global proc test_IBL_on(){{
+	delete RPRSky;
 	string $iblNode = `createNode RPRIBL -n RPRIBLShape`;
 	$parent = `listRelatives -p $iblNode`;
-	setAttr ($parent[0] + ".scaleX") 1001.25663706144; //pi*5/10 ... something unique (for hierarchy change tracking)
+	setAttr ($parent[0] + ".scaleX") 1001.25663706144;
 	setAttr ($parent[0] + ".scaleY") 1001.25663706144;
 	setAttr ($parent[0] + ".scaleZ") 1001.25663706144;
 	rename $parent[0] RPRIBL;
 }}
 
-global proc create_sun_sky(){{
+global proc test_IBL_hdr(){{
+	setAttr -type "string" RPRIBLShape.filePath ("{res_path}" + "/sourceimages/Tropical_Beach_3k.hdr");
+}}
 
-	delete RPRIBL;
+global proc test_IBL_exr(){{
+	setAttr -type "string" RPRIBLShape.filePath ("{res_path}" + "/sourceimages/ibl_test.exr");
+}}
+
+global proc test_sun_sky(){{
 	string $SkyNode = `createNode RPRSky -n RPRSkyShape`;
 }}
 
 global proc main(){{
+	
+	setProject ("{res_path}");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	for ($each in $scene) {{
+    	file -f -options "v=0;"  -ignoreVersion -o $each;
 
-	file -f -new;
-	//file -f -options "v=0;"  -ignoreVersion -o "{testsList}";
+    	if ($each == "default.ma") {{
+    		prerender("MAYA_SM_003", 15, "[\"Render empty scene\", \"Pass Limit: 50\"]");
+    	}} else if ($each == "rpr_default.ma") {{
+    		prerender("MAYA_SM_005", 15, "[\"Render empty scene with RPR parameters\", \"Pass Limit: 50\"]");
 
-	import_test();
-	prerender(30, "import_test");
+    		import_fbx();
+    		prerender("MAYA_SM_006", 15, "[\"Import FBX\", \"Pass Limit: 50\"]" );
 
-	create_uber_test();
-	prerender(30, "uber_test");
+    		import_obj();
+    		prerender("MAYA_SM_007", 15, "[\"Import OBJ\", \"Pass Limit: 50\"]");
 
-	create_sun_sky();
-	prerender(30, "sky_sun_test");
+    		test_Uber();
+    		prerender("MAYA_SM_010", 15, "[\"Testing Uber material\", \"Pass Limit: 50\"]");
 
-	create_IBL();
-	prerender(30, "ibl_test");
+    		test_sun_sky();
+    		prerender("MAYA_SM_013", 15, "[\"Testing Sun and Sky System\", \"Pass Limit: 50\"]");
 
-	prerender(1, "full");
-	prerender(3, "full");
-	prerender(100, "full");
-	prerender(500, "full");
-	prerender(1000, "full");
+    		test_IBL_on();
+    		prerender("MAYA_SM_014", 15, "[\"Testing IBL\", \"Pass Limit: 50\"]");
+
+    		test_IBL_hdr();
+    		prerender("MAYA_SM_015", 15, "[\"Testing IBL with hdr\", \"Pass Limit: 50\"]");
+
+    		test_IBL_hdr();
+    		prerender("MAYA_SM_016", 15, "[\"Testing IBL with exr\", \"Pass Limit: 50\"]");
+
+    		prerender("MAYA_SM_017", 1, "[\"Iteration test\", \"Pass Limit: 1\"]");
+    		prerender("MAYA_SM_018", 30, "[\"Iteration test\", \"Pass Limit: 30\"]");
+    		//prerender("MAYA_SM_019", 100, "[\"Iteration test\", \"Pass Limit: 100\"]");
+    		//prerender("MAYA_SM_020", 500, "[\"Iteration test\", \"Pass Limit: 500\"]");
+    		//prerender("MAYA_SM_021", 1000, "[\"Iteration test\", \"Pass Limit: 1000\"]");
+
+    	}}
+    }}
 
 	evalDeferred("quit -abort");
 }}

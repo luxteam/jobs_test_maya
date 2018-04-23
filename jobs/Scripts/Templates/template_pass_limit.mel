@@ -20,7 +20,7 @@ global proc prerender(string $test_case, int $iterations, string $script_info){{
 
 global proc main(){{
 
-	setProject ("C:/TestResources/MayaAssets");
+	setProject ("{res_path}");
 	string $scenes = "{testsList}";
 	string $scene[];
 	$numTokens = `tokenize $scenes "," $scene`;

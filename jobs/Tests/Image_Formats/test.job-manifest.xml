@@ -9,11 +9,12 @@
         <argument>--tests "{CWD}/Tests/Output_Image_Formats_Test/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Output_Image_Formats</argument>
-	<argument>--template "{CWD}/Scripts/Templates/template_output_image_formats.mel"</argument>
+        <argument>--testType Image_Formats</argument>
+	<argument>--template "{CWD}/Scripts/Templates/template_image_formats.mel"</argument>
 	<argument>--pass_limit {PassLimit}</argument>
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
+	<argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">

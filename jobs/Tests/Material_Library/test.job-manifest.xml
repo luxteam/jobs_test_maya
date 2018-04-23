@@ -6,14 +6,15 @@
     <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--tests "{CWD}/Tests/Quality_Test/{TestsFilter}TestsList.txt"</argument>
+        <argument>--tests "{CWD}/Tests/Material_Library/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType QualityPresets</argument>
-	<argument>--template "{CWD}/Scripts/Templates/template_quality.mel"</argument>
+        <argument>--testType Material_Library</argument>
+	<argument>--template "{CWD}/Scripts/Templates/template_material.mel"</argument>
 	<argument>--pass_limit {PassLimit}</argument>
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
+	<argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">

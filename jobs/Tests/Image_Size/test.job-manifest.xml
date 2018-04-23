@@ -6,14 +6,15 @@
     <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--tests "{CWD}/Tests/Camera_Test/{TestsFilter}TestsList.txt"</argument>
+        <argument>--tests "{CWD}/Tests/Image_Size/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Camera</argument>
-	<argument>--template "{CWD}/Scripts/Templates/template_camera.mel"</argument>
+        <argument>--testType Image_Size</argument>
+	<argument>--template "{CWD}/Scripts/Templates/template_image_size.mel"</argument>
 	<argument>--pass_limit {PassLimit}</argument>
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
+	<argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">
