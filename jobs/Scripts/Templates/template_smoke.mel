@@ -48,6 +48,20 @@ global proc test_Uber(){{
 	sets -e -forceElement $sgs[0];
 }}
 
+global proc test_base_light(){{
+	defaultAmbientLight(1, 0.45, 1,1,1, "0", 0,0,0, "1");
+}}
+
+global proc test_ies(){{	
+	delete ambientLight1;
+	source shelfCommands.mel; createIESLight();
+	setAttr -type "string" "RPRIESLight.iesFile" ("{res_path}" + "/sourceimages/1.IES");
+	select -r RPRIES1;
+	move -r -5.624372 8.701813 0.900209;
+	rotate -r -os -fo 0 0 -47.850803;
+	setAttr "RPRIESLight.intensity" 2;
+}}
+
 global proc test_IBL_on(){{
 	delete RPRSky;
 	string $iblNode = `createNode RPRIBL -n RPRIBLShape`;
@@ -108,6 +122,12 @@ global proc main(){{
 
     		test_Uber();
     		prerender("MAYA_SM_010", 15, "[\"Assign uber material\", \"Pass Limit: 50\"]");
+
+    		test_base_light();
+    		prerender("MAYA_SM_011", 15, "[\"Test base light\", \"Pass Limit: 50\"]");
+
+    		test_ies();
+    		prerender("MAYA_SM_012", 15, "[\"Test ies light\", \"Pass Limit: 50\"]");
 
     		test_sun_sky();
     		prerender("MAYA_SM_013", 15, "[\"Testing Sun and Sky System\", \"Pass Limit: 50\"]");
