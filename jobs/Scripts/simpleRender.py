@@ -164,5 +164,5 @@ def main():
 
 if __name__ == "__main__":
     rc = main()
-    os.system("taskkill /f /im  DADispatcherService.exe")
+    #os.system("taskkill /f /im  DADispatcherService.exe")
     exit(rc)
