@@ -39,16 +39,16 @@ global proc main(){{
 	string $libraryPath = python("fireRender.rpr_material_browser.getLibPath()");
 	file -f -options "v=0;"  -ignoreVersion -o "MaterialTestScene.mb";
 
-	test_case = 1
+	float $test_case = 1;
 	for ($each in $scene) {{
-		if (test_case < 10) {{
-			prerender(("MAYA_MAT_LIB_00" + test_case as string) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
-		}} else if (test_case < 100) {{
-			prerender(("MAYA_MAT_LIB_0" + test_case as string) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+		if ($test_case < 10) {{
+			prerender(("MAYA_MAT_LIB_00" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+		}} else if ($test_case < 100) {{
+			prerender(("MAYA_MAT_LIB_0" + $test_caseg) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
 		}} else {{
-			prerender(("MAYA_MAT_LIB_" + test_case as string) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+			prerender(("MAYA_MAT_LIB_" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
 		}}
-    	
+    	$test_case += 1;
 	}}
 
 	evalDeferred("quit -abort");

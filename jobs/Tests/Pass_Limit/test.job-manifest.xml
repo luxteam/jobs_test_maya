@@ -10,7 +10,7 @@
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Pass_Limit</argument>
-	<argument>--template "{CWD}/Scripts/Templates/template_samples.mel"</argument>
+	<argument>--template "{CWD}/Scripts/Templates/template_pass_limit.mel"</argument>
 	<argument>--pass_limit {PassLimit}</argument>
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
