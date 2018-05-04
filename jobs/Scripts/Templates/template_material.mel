@@ -44,7 +44,7 @@ global proc main(){{
 		if ($test_case < 10) {{
 			prerender(("MAYA_MAT_LIB_00" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
 		}} else if ($test_case < 100) {{
-			prerender(("MAYA_MAT_LIB_0" + $test_caseg) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+			prerender(("MAYA_MAT_LIB_0" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
 		}} else {{
 			prerender(("MAYA_MAT_LIB_" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
 		}}
