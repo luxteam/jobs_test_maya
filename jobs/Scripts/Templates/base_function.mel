@@ -45,8 +45,9 @@ global proc rpr_render(string $test_case, string $script_info){{
 	fprint $fileID ("\r\n  \"render_time\": " + $testTime + ",");
 	fprint $fileID ("\r\n  \"scene_name\": \"" + $scene_name + "\",");
 	fprint $fileID ("\r\n  \"test_type\": \"" + "{testType}" + "\",");
+	fprint $fileID ("\r\n  \"test_case\": \"" + $test_case + "\",");
 	fprint $fileID ("\r\n  \"difference_color\": \"" + "not compared yet" + "\",");
-	fprint $fileID ("\r\n  \"test_status\": \"" + "pass" + "\",");
+	fprint $fileID ("\r\n  \"test_status\": \"" + "passed" + "\",");
 	fprint $fileID ("\r\n  \"script_info\": " + $script_info);
 	fprint $fileID ("\r\n }}");
 	fprint $fileID ("\r\n]");
