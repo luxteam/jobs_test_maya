@@ -1,0 +1,37 @@
+
+global proc prerender(string $test_case, int $quality, string $script_info){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	setAttr "RadeonProRenderGlobals.qualityPresets" $quality;
+
+	rpr_render($test_case, $script_info);
+
+}}
+
+global proc main(){{
+
+	setProject ("{res_path}");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	for ($each in $scene) {{
+    	file -f -options "v=0;"  -ignoreVersion -o $each;
+    	prerender("MAYA_RS_QL_001", 0, "[\"Quality preset: Low\"]");
+    	prerender("MAYA_RS_QL_002", 1, "[\"Quality preset: Medium\"]");
+    	prerender("MAYA_RS_QL_003", 2, "[\"Quality preset: High\"]");
+	}}
+
+	evalDeferred("quit -abort");
+}}

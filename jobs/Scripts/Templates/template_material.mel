@@ -1,0 +1,55 @@
+global proc prerender(string $test_case, string $libraryPath, string $material, string $script_info){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+	string $material_path = "";
+    $material_path = $libraryPath + "/" + $material;
+	string $xml[] = `getFileList -folder $material_path -filespec "*.xml"`;
+	$material_path = $material_path + "/" + $xml[0];
+
+	RPRXMLImport -file $material_path -ii false -mn "materialTestNode";
+	select -r Probe03;
+	sets -e -forceElement "materialTestNodeSG";
+
+	rpr_render($test_case, $script_info);
+
+    delete "materialTestNode";
+    delete "materialTestNodeSG";
+
+}}
+
+global proc main(){{
+
+	setProject ("{res_path}");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	python("import fireRender.rpr_material_browser");
+	string $libraryPath = python("fireRender.rpr_material_browser.getLibPath()");
+	file -f -options "v=0;"  -ignoreVersion -o "MaterialTestScene.mb";
+
+	float $test_case = 1;
+	for ($each in $scene) {{
+		if ($test_case < 10) {{
+			prerender(("MAYA_MAT_LIB_00" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+		}} else if ($test_case < 100) {{
+			prerender(("MAYA_MAT_LIB_0" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+		}} else {{
+			prerender(("MAYA_MAT_LIB_" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+		}}
+    	$test_case += 1;
+	}}
+
+	evalDeferred("quit -abort");
+}}

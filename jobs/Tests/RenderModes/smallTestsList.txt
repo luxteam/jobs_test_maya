@@ -1,2 +1,0 @@
-		"FeatureScenes", "RenderModes.mb", "setAttr \"RadeonProRenderGlobals.renderMode\" 1;setAttr \"RadeonProRenderGlobals.useRenderStamp\" 1;" , "1",
-		"FeatureScenes", "RPRToneMapping.mb", "setAttr \"RadeonProRenderGlobals.toneMappingType\" 3;" , "-AutoLinear"

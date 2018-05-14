@@ -1,0 +1,100 @@
+
+global proc prerender(string $test_case, int $image_format, string $script_info){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
+    if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" $image_format;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	rpr_render($test_case, $script_info);
+
+}}
+
+global proc main(){{
+
+	setProject ("{res_path}");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	for ($each in $scene) {{
+    	file -f -options "v=0;"  -ignoreVersion -o $each;
+
+    	prerender("MAYA_RS_IF_001", 6, "[\"Image format: Alias PIX (als)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_001.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	//prerender("MAYA_RS_IF_002", 11, "[\"Image format: Cineon (cin)\"]");
+        prerender("MAYA_RS_IF_002", 8, "[\"Image format: Cineon (cin)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_002.jpg") ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");
+
+    	prerender("MAYA_RS_IF_003", 35, "[\"Image format: DDS (dds)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_003.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_004", 9, "[\"Image format: EPS (eps)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_004.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_005", 0, "[\"Image format: GIF (gif)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_005.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_006", 8, "[\"Image format: JPEG (jpg)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_006.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_007", 7, "[\"Image format: Maya IFF (iff)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_007.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_008", 10, "[\"Image format: Maya16 IFF (iff)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_008.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_009", 31, "[\"Image format: PSD (psd)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_009.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_010", 36, "[\"Image format: PSD Layered (psd)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_010.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_011", 32, "[\"Image format: PNG (png)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_011.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_012", 12, "[\"Image format: Quantel (yuv)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_012.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_013", 2, "[\"Image format: RLA (rla)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_013.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_014", 5, "[\"Image format: SGI (sgi)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_014.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_015", 13, "[\"Image format: SGI16 (sgi)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_015.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_016", 1, "[\"Image format: SoftImage (pic)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_016.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_017", 19, "[\"Image format: Targa (tga)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_017.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_018", 3, "[\"Image format: Tiff (tif)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_018.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_019", 4, "[\"Image format: Tiff16 (tif)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_019.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_020", 20, "[\"Image format: Windows Bitmap (bmp)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_020.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_021", 40, "[\"Image format: EXR (exr)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_021.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+
+    	prerender("MAYA_RS_IF_022", 63, "[\"Image format: SonyPlaystation (tim)\"]");
+        sysFile -copy ("{work_dir}/Color/MAYA_RS_IF_022.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+	}}
+
+	evalDeferred("quit -abort");
+}}
+

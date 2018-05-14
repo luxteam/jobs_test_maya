@@ -1,0 +1,4 @@
+Description: Testing all output image formats
+Scene: no base scene
+Summary: 22 tests
+Test cases: no test cases

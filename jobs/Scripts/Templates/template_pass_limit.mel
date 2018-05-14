@@ -1,0 +1,41 @@
+
+global proc prerender(string $test_case, int $iterations, string $script_info){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $iterations;
+
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+	rpr_render($test_case, $script_info);
+
+}}
+
+global proc main(){{
+
+	setProject ("{res_path}");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	for ($each in $scene) {{
+    	file -f -options "v=0;"  -ignoreVersion -o $each;
+
+    	prerender("MAYA_RS_PS_001", 1, "[\"Pass Limit: 1\"]");
+    	prerender("MAYA_RS_PS_002", 100, "[\"Pass Limit: 100\"]");
+    	prerender("MAYA_RS_PS_003", 500, "[\"Pass Limit: 500\"]");
+    	prerender("MAYA_RS_PS_004", 1000, "[\"Pass Limit: 1000\"]");
+    	prerender("MAYA_RS_PS_005", 5000, "[\"Pass Limit: 5000\"]");
+    	prerender("MAYA_RS_PS_006", 10000, "[\"Pass Limit: 10000\"]");
+ 
+	}}
+
+	evalDeferred("quit -abort");
+}}
+
