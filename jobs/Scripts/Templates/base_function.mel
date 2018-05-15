@@ -40,6 +40,7 @@ global proc rpr_render(string $test_case, string $script_info){{
 	fprint $fileID ("\r\n  \"tool\": \"Maya " + `about -version` + "\",");
 	fprint $fileID ("\r\n  \"date_time\": \"" + `date -format "YYYY-MM-DD_hh-mm-ss"` + "\",");
 	fprint $fileID ("\r\n  \"render_version\": \"" + $RPR_version[0] + "\",");
+	fprint $fileID ("\r\n  \"core_version\": \"0\",");
 	fprint $fileID ("\r\n  \"file_name\": \"" + $test_case + ".jpg\",");
 	fprint $fileID ("\r\n  \"render_color_path\": \"Color/" + $test_case + ".jpg\",");
 	fprint $fileID ("\r\n  \"render_time\": " + $testTime + ",");
