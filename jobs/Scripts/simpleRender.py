@@ -105,7 +105,7 @@ def main():
                                        resolution_y = args.resolution_y)
 
     cmdRun = '''
-    set MAYA_CMD_FILE_OUTPUT=%cd%/scriptEditorTrace.txt 
+    set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
     set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
     "{tool}" -command "source script.mel; evalDeferred -lp (main());"''' \
         .format(tool=args.tool)
