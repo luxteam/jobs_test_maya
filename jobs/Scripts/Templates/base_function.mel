@@ -14,13 +14,13 @@ global proc rpr_render(string $test_case, string $script_info){{
 
 	string $render_device = "{render_device}";
 	optionVar -rm "RPR_DevicesSelected";
-	if ($render_device == 0) {{
+	if ($render_device == "gpu") {{
 		optionVar -iva "RPR_DevicesSelected" 1;
 		optionVar -iva "RPR_DevicesSelected" 0;
-	}} else if ($render_device == 1){{
+	}} else if ($render_device == "cpu"){{
 		optionVar -iva "RPR_DevicesSelected" 0;
 		optionVar -iva "RPR_DevicesSelected" 1;
-	}} else if ($render_device == 2){{
+	}} else if ($render_device == "dual"){{
 		optionVar -iva "RPR_DevicesSelected" 1;
 		optionVar -iva "RPR_DevicesSelected" 1;
 	}}
