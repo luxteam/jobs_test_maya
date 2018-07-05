@@ -1,17 +1,5 @@
 global proc rpr_render(string $test_case, string $script_info){{
 
-	float $startTime = 0;
-	float $testTime = 0;
-	fireRender -waitForItTwo;
-	$startTime = `timerX`;
-	renderIntoNewWindow render;
-	string $ff = "";
-	sysFile -makeDir ("{work_dir}" + "/Color");
-	$ff = "{work_dir}" + "/Color/" + $test_case;
-	renderWindowEditor -edit  -dst "color" renderView;
-	renderWindowEditor -edit -com -writeImage $ff renderView;
-	$testTime = `timerX -startTime $startTime`;
-
 	string $render_device = "{render_device}";
 	optionVar -rm "RPR_DevicesSelected";
 	if ($render_device == "gpu") {{
@@ -25,6 +13,17 @@ global proc rpr_render(string $test_case, string $script_info){{
 		optionVar -iva "RPR_DevicesSelected" 1;
 	}}
 
+	float $startTime = 0;
+	float $testTime = 0;
+	fireRender -waitForItTwo;
+	$startTime = `timerX`;
+	renderIntoNewWindow render;
+	string $ff = "";
+	sysFile -makeDir ("{work_dir}" + "/Color");
+	$ff = "{work_dir}" + "/Color/" + $test_case;
+	renderWindowEditor -edit  -dst "color" renderView;
+	renderWindowEditor -edit -com -writeImage $ff renderView;
+	$testTime = `timerX -startTime $startTime`;
 
 	string $scene_name  = `file -q -sn -shn`;
 	if ($scene_name == "") {{
