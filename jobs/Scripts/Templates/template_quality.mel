@@ -1,5 +1,5 @@
 
-global proc prerender(string $test_case, int $quality, string $script_info){{
+global proc prerender(string $test_case, int $samples, int $mrd, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -14,7 +14,8 @@ global proc prerender(string $test_case, int $quality, string $script_info){{
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
-	setAttr "RadeonProRenderGlobals.qualityPresets" $quality;
+	setAttr "RadeonProRenderGlobals.samples" $samples;
+	setAttr "RadeonProRenderGlobals.maxRayDepth" $mrd;
 
 	rpr_render($test_case, $script_info);
 
@@ -28,9 +29,9 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
-    	prerender("MAYA_RS_QL_001", 0, "[\"Quality preset: Low\"]");
-    	prerender("MAYA_RS_QL_002", 1, "[\"Quality preset: Medium\"]");
-    	prerender("MAYA_RS_QL_003", 2, "[\"Quality preset: High\"]");
+    	prerender("MAYA_RS_QL_001", 1, 5, "[\"Quality preset: Low\"]");
+    	prerender("MAYA_RS_QL_002", 8, 15, "[\"Quality preset: Medium\"]");
+    	prerender("MAYA_RS_QL_003", 16, 25, "[\"Quality preset: High\"]");
 	}}
 
 	evalDeferred("quit -abort");
