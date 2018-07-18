@@ -38,7 +38,7 @@ global proc main(){{
 	    prerender("MAYA_L_IES_006", "ies\\6.ies", "[\"IES file: 6.ies\", \"Intensity: 10\"]");
 	    prerender("MAYA_L_IES_007", "ies\\7.ies", "[\"IES file: 7.ies\", \"Intensity: 10\"]");
 	    prerender("MAYA_L_IES_008", "ies\\8.ies", "[\"IES file: 8.ies\", \"Intensity: 10\"]");
-	    prerender("MAYA_L_IES_009", "ies\\9.ies", "[\"IES file: 9.ies\", \"Intensity: 10\"]");
+	    prerender("MAYA_L_IES_009", "ies\\9.ies", "[\"IES file: 9.ies\", \"Intensity: 2\"]");
 	    prerender("MAYA_L_IES_010", "ies\\10.ies", "[\"IES file: 10.ies\", \"Intensity: 10\"]");
 	}}
 
