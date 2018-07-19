@@ -347,7 +347,7 @@ global proc main(){{
 
     		activate_png_format();
     		prerender("MAYA_SM_020", 50, "[\"Save image as png\", \"Pass Limit: 50\"]");
-    		rpr_success_save("MAYA_SM_020", "[\"Save image as png\"]");
+    		sysFile -copy ("{work_dir}/Color/MAYA_SM_020.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
 
     		activate_jpg_format();
     		prerender("MAYA_SM_021", 50, "[\"Save image as jpg\", \"Pass Limit: 50\"]");
