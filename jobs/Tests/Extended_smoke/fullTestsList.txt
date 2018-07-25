@@ -1,5 +1,8 @@
 default.ma,
 rpr_default.ma,
 Lamborginhi_Aventador.ma,
-instances.ma
+instances.ma,
+IES.ma,
+maya_shaderball.ma,
+displacement.ma
 

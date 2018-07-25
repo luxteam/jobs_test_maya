@@ -35,7 +35,7 @@ global proc import_fbx(){{
 }}
 
 global proc delete_fbx(){{
-	delete -hi park_bench;
+	delete Default;
 }}
 
 
@@ -269,6 +269,27 @@ global proc create_and_asign_pbr(){{
 }}
 
 
+global proc multiple_ies_lights(){{	
+	for ($i=1; $i<13; ++$i){{
+		setAttr -type "string" ("RPRIESLight" + $i +".iesFile") ("{res_path}" + "/sourceimages/1.IES");
+		setAttr ("RPRIESLight" + $i +".intensity") 2;
+	}}
+}}
+
+
+global proc shadow_catcher_test(){{
+	setAttr "RadeonProRenderGlobals.aovOpacity" 1;
+	setAttr "RadeonProRenderGlobals.aovBackground" 1;
+	setAttr "RadeonProRenderGlobals.aovShadowCatcher" 1;
+	string $rpr = `shadingNode -asShader "RPRShadowCatcherMaterial"`; 
+	string $sge = $rpr + "SG"; 
+	sets -renderable true -noSurfaceShader true -empty -name $sge; 
+	connectAttr -f ($rpr + ".outColor") ($sge + ".surfaceShader"); 
+	select -r Plane01;
+	string $sgs[] = `listConnections -type shadingEngine $rpr`;
+	sets -e -forceElement $sgs[0];
+}}
+
 global proc main(){{
 	
 	setProject ("{res_path}");
@@ -386,9 +407,39 @@ global proc main(){{
 
     	}} else if ($each == "instances.ma") {{
 
+    		activate_jpg_format();
+
     		duplicate_500_instances();
     		prerender("MAYA_SM_031", 50, "[\"Instances\", \"Pass Limit: 50\"]");
-    	}}
+
+    	}} else if ($each == "IES.ma") {{
+
+    		activate_jpg_format();
+
+    		multiple_ies_lights();
+    		prerender("MAYA_SM_032", 50, "[\"12 lights in one scene\", \"Pass Limit: 50\"]");
+
+    	}} else if ($each == "maya_shaderball.ma") {{
+
+    		activate_jpg_format();
+
+    		shadow_catcher_test();
+    		prerender("MAYA_SM_033", 50, "[\"AOV Shadow Catcher\", \"Pass Limit: 50\"]");
+
+    	}} else if ($each == "Uber_SSS.ma") {{
+
+    		activate_jpg_format();
+
+    		prerender("MAYA_SM_034", 50, "[\"SSS\", \"Pass Limit: 50\"]");
+
+    	}} else if ($each == "displacement.ma") {{
+
+    		activate_jpg_format();
+
+    		prerender("MAYA_SM_035", 50, "[\"Displacement\", \"Pass Limit: 50\"]");
+
+    	}} 
+    	
     }}
 
 	evalDeferred("quit -abort");
