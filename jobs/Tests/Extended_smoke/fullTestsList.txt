@@ -2,7 +2,7 @@ default.ma,
 rpr_default.ma,
 Lamborginhi_Aventador.ma,
 instances.ma,
-maya_IES.ma,
+IES.ma,
 maya_shaderball.ma,
 Uber_SSS.ma,
 displacement.ma
