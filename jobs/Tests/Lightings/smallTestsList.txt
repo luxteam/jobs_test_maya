@@ -1,2 +1,0 @@
-		"FeatureScenes", "Ambient_lights.mb", "","",
-		"FeatureScenes", "Area_lights.mb", "",""
