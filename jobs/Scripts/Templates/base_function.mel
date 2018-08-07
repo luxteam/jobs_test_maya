@@ -30,7 +30,6 @@ global proc rpr_render(string $test_case, string $script_info){{
 		$scene_name = "untitled";
 	}}
 	string $render_device_name[] = `optionVar -q "RPR_DevicesName"`;
-	string $RPR_version[] = `RPRImageComparing -rprPluginDetails`;
 	string $filePath = "{work_dir}" + "/" + $test_case + "_RPR.json";
 	int $fileID = `fopen $filePath "a"`;
 	fprint $fileID ("[");
@@ -38,8 +37,8 @@ global proc rpr_render(string $test_case, string $script_info){{
 	fprint $fileID ("\r\n  \"render_device\": \"" + $render_device_name[0] + "\",");
 	fprint $fileID ("\r\n  \"tool\": \"Maya " + `about -version` + "\",");
 	fprint $fileID ("\r\n  \"date_time\": \"" + `date -format "YYYY-MM-DD_hh-mm-ss"` + "\",");
-	fprint $fileID ("\r\n  \"render_version\": \"" + $RPR_version[0] + "\",");
-	fprint $fileID ("\r\n  \"core_version\": \"0\",");
+	fprint $fileID ("\r\n  \"render_version\": \"" + getRPRPluginVersion() + "\",");
+	fprint $fileID ("\r\n  \"core_version\": \"" + getRprCoreVersion() + "\",");
 	fprint $fileID ("\r\n  \"file_name\": \"" + $test_case + ".jpg\",");
 	fprint $fileID ("\r\n  \"render_color_path\": \"Color/" + $test_case + ".jpg\",");
 	fprint $fileID ("\r\n  \"render_time\": " + $testTime + ",");
@@ -67,7 +66,6 @@ global proc rpr_success_save(string $test_case, string $script_info){{
 		$scene_name = "untitled";
 	}}
 	string $render_device_name[] = `optionVar -q "RPR_DevicesName"`;
-	string $RPR_version[] = `RPRImageComparing -rprPluginDetails`;
 	string $filePath = "{work_dir}" + "/" + $test_case + "_RPR.json";
 	int $fileID = `fopen $filePath "a"`;
 	fprint $fileID ("[");
@@ -75,8 +73,8 @@ global proc rpr_success_save(string $test_case, string $script_info){{
 	fprint $fileID ("\r\n  \"render_device\": \"" + $render_device_name[0] + "\",");
 	fprint $fileID ("\r\n  \"tool\": \"Maya " + `about -version` + "\",");
 	fprint $fileID ("\r\n  \"date_time\": \"" + `date -format "YYYY-MM-DD_hh-mm-ss"` + "\",");
-	fprint $fileID ("\r\n  \"render_version\": \"" + $RPR_version[0] + "\",");
-	fprint $fileID ("\r\n  \"core_version\": \"0\",");
+	fprint $fileID ("\r\n  \"render_version\": \"" + getRPRPluginVersion() + "\",");
+	fprint $fileID ("\r\n  \"core_version\": \"" + getRprCoreVersion() + "\",");
 	fprint $fileID ("\r\n  \"file_name\": \"" + $test_case + ".jpg\",");
 	fprint $fileID ("\r\n  \"render_color_path\": \"Color/" + $test_case + ".jpg\",");
 	fprint $fileID ("\r\n  \"render_time\": " + 0 + ",");
