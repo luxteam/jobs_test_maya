@@ -31,7 +31,9 @@ global proc main(){{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
     	prerender("MAYA_RS_QL_001", 1, 5, "[\"Quality preset: Low\"]");
     	prerender("MAYA_RS_QL_002", 8, 15, "[\"Quality preset: Medium\"]");
-    	prerender("MAYA_RS_QL_003", 16, 25, "[\"Quality preset: High\"]");
+        prerender("MAYA_RS_QL_003", 16, 25, "[\"Quality preset: High\"]");
+        prerender("MAYA_RS_QL_004", 24, 40, "[\"Render sampling: RS-24, MRD-40\"]");
+    	prerender("MAYA_RS_QL_005", 32, 50, "[\"Render sampling: RS-32, MRD-50\"]");
 	}}
 
 	evalDeferred("quit -abort");
