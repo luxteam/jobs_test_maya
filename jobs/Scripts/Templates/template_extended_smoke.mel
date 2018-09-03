@@ -93,7 +93,8 @@ global proc create_physical_light(){{
 	select -r RPRPhysicalLight1;
 	setAttr "RPRPhysicalLight1.translateY" 400;
 	setAttr "RPRPhysicalLight1.rotateX" 270;
-	setAttr "RPRPhysicalLight1Shape.intensityUnits" 100;
+    setAttr "RPRPhysicalLight1Shape.lightIntensity" 100;
+    setAttr "RPRPhysicalLight1Shape.intensityUnits" 0;
 }}
 
 global proc delete_physical_light(){{
