@@ -89,6 +89,9 @@ def main():
             script_template = f.read()
         with open(os.path.join(os.path.dirname(__file__), "Templates", "base_function.mel")) as f:
             base = f.read()
+        with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
+            tc = f.read()
+            testCases_mel = json.loads(tc)[args.testType]
     except OSError as e:
         stage_report[0]['status'] = 'FAILED'
         stage_report[1]['log'].append('OSError while read mel template. ' + str(e))
@@ -104,7 +107,7 @@ def main():
                                        testType=args.testType,
                                        render_device = args.render_device, res_path=res_path,
                                        pass_limit = args.pass_limit, resolution_x = args.resolution_x,
-                                       resolution_y = args.resolution_y, testCases = args.testCases)
+                                       resolution_y = args.resolution_y, testCases = testCases_mel)
 
     cmdRun = '''
     set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
