@@ -1,22 +1,31 @@
 
 global proc prerender(string $test_case, int $mode, string $script_info){{
 
-	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    	loadPlugin RadeonProRender;
+	string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    for ($each in $test) {{ 
+        if ($each == $test_case) {{
+
+			if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+		    	loadPlugin RadeonProRender;
+			}}
+
+			setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+			setAttr "defaultRenderGlobals.imageFormat" 8;
+			setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+			if ({resolution_x} && {resolution_y}) {{
+		        setAttr "defaultResolution.width" {resolution_x};
+		        setAttr "defaultResolution.height" {resolution_y};
+		    }}
+
+			setAttr "RadeonProRenderGlobals.renderMode" $mode;
+
+			rpr_render($test_case, $script_info);
+		}}
 	}}
-
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
-
-	if ({resolution_x} && {resolution_y}) {{
-        setAttr "defaultResolution.width" {resolution_x};
-        setAttr "defaultResolution.height" {resolution_y};
-    }}
-
-	setAttr "RadeonProRenderGlobals.renderMode" $mode;
-
-	rpr_render($test_case, $script_info);
 
 }}
 

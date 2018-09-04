@@ -1,49 +1,59 @@
 
 global proc prerender(string $test_case, int $intensity, string $map, string $script_info){{
 
-	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    	loadPlugin RadeonProRender;
-	}}
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
 
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+    for ($each in $test) {{ 
+        if ($each == $test_case) {{
 
-    if ({resolution_x} && {resolution_y}) {{
-        setAttr "defaultResolution.width" {resolution_x};
-        setAttr "defaultResolution.height" {resolution_y};
-    }}
+        	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+            	loadPlugin RadeonProRender;
+        	}}
 
-    string $exist = 0;
-    string $allObjects[] = `ls -g`;
-    for ($tempName in $allObjects)
-        {{
-            if ($tempName == "RPRIBLShape"){{
-                $exist = 1;
+        	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+        	setAttr "defaultRenderGlobals.imageFormat" 8;
+        	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+            if ({resolution_x} && {resolution_y}) {{
+                setAttr "defaultResolution.width" {resolution_x};
+                setAttr "defaultResolution.height" {resolution_y};
             }}
+
+            string $exist = 0;
+            string $allObjects[] = `ls -g`;
+            for ($tempName in $allObjects)
+                {{
+                    if ($tempName == "RPRIBLShape"){{
+                        $exist = 1;
+                    }}
+                }}
+
+            string $iblNode;
+            string $parent[];
+            
+            if ($exist == 0) {{
+                $iblNode = `createNode RPRIBL -n RPRIBLShape`;
+                $parent = `listRelatives -p $iblNode`;
+                setAttr ($parent[0] + ".scaleX") 1001.25663706144;
+                setAttr ($parent[0] + ".scaleY") 1001.25663706144;
+                setAttr ($parent[0] + ".scaleZ") 1001.25663706144;
+                rename $parent[0] RPRIBL;
+            }}
+
+            setAttr "RPRIBLShape.intensity" $intensity;
+
+            if ($map != "") {{
+                setAttr -type "string" RPRIBLShape.filePath $map;    
+            }} else {{
+                setAttr -type "string" RPRIBLShape.filePath "";
+            }}
+
+            rpr_render($test_case, $script_info);
         }}
-
-    string $iblNode;
-    string $parent[];
-    
-    if ($exist == 0) {{
-        $iblNode = `createNode RPRIBL -n RPRIBLShape`;
-        $parent = `listRelatives -p $iblNode`;
-        setAttr ($parent[0] + ".scaleX") 1001.25663706144;
-        setAttr ($parent[0] + ".scaleY") 1001.25663706144;
-        setAttr ($parent[0] + ".scaleZ") 1001.25663706144;
-        rename $parent[0] RPRIBL;
     }}
 
-    setAttr "RPRIBLShape.intensity" $intensity;
-
-    if ($map != "") {{
-        setAttr -type "string" RPRIBLShape.filePath $map;    
-    }} else {{
-        setAttr -type "string" RPRIBLShape.filePath "";
-    }}
-
-    rpr_render($test_case, $script_info);
 }}
 
 global proc main(){{

@@ -1,18 +1,26 @@
 
 global proc prerender(string $test_case, int $pass, string $script_info){{
 
-	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    	loadPlugin RadeonProRender;
+	string $tests = "{testCases}";
+	string $test[];
+	$numTokens = `tokenize $tests "," $test`;
+
+	for ($each in $test) {{ 
+		if ($each == $test_case) {{
+			if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    			loadPlugin RadeonProRender;
+			}}
+
+			if( `pluginInfo -query -loaded fbxmaya` == 0){{
+		    	loadPlugin fbxmaya;
+			}}
+
+			setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+			setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
+
+			rpr_render($test_case, $script_info);
+		}}
 	}}
-
-	if( `pluginInfo -query -loaded fbxmaya` == 0){{
-    	loadPlugin fbxmaya;
-	}}
-
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
-
-	rpr_render($test_case, $script_info);
 
 }}
 
@@ -297,6 +305,7 @@ global proc main(){{
 	string $scenes = "{testsList}";
 	string $scene[];
 	$numTokens = `tokenize $scenes "," $scene`;
+
 
 	check_rpr_load();
 	rpr_success_save("MAYA_SM_001", "[\"Installing with default settings\"]");

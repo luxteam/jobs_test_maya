@@ -1,23 +1,32 @@
 
 global proc prerender(string $test_case, int $samples, int $mrd, string $script_info){{
 
-	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    	loadPlugin RadeonProRender;
+	string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    for ($each in $test) {{ 
+        if ($each == $test_case) {{
+
+			if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+		    	loadPlugin RadeonProRender;
+			}}
+
+			if ({resolution_x} && {resolution_y}) {{
+		        setAttr "defaultResolution.width" {resolution_x};
+		        setAttr "defaultResolution.height" {resolution_y};
+		    }}
+
+			setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+			setAttr "defaultRenderGlobals.imageFormat" 8;
+			setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+			setAttr "RadeonProRenderGlobals.samples" $samples;
+			setAttr "RadeonProRenderGlobals.maxRayDepth" $mrd;
+
+			rpr_render($test_case, $script_info);
+		}}
 	}}
-
-	if ({resolution_x} && {resolution_y}) {{
-        setAttr "defaultResolution.width" {resolution_x};
-        setAttr "defaultResolution.height" {resolution_y};
-    }}
-
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
-
-	setAttr "RadeonProRenderGlobals.samples" $samples;
-	setAttr "RadeonProRenderGlobals.maxRayDepth" $mrd;
-
-	rpr_render($test_case, $script_info);
 
 }}
 

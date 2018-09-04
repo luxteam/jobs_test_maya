@@ -44,6 +44,8 @@ def createArgsParser():
     parser.add_argument('--pass_limit', required=True)
     parser.add_argument('--resolution_x', required=True)
     parser.add_argument('--resolution_y', required=True)
+    parser.add_argument('--testCases', required=True)
+
 
     return parser
 
@@ -102,7 +104,7 @@ def main():
                                        testType=args.testType,
                                        render_device = args.render_device, res_path=res_path,
                                        pass_limit = args.pass_limit, resolution_x = args.resolution_x,
-                                       resolution_y = args.resolution_y)
+                                       resolution_y = args.resolution_y, testCases = args.testCases)
 
     cmdRun = '''
     set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 

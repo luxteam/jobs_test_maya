@@ -1,71 +1,80 @@
 
 global proc prerender(string $test_case, int $type, int $param1, int $param2, string $location, string $script_info){{
 
-	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    	loadPlugin RadeonProRender;
-	}}
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
 
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+    for ($each in $test) {{ 
+        if ($each == $test_case) {{
 
-    if ({resolution_x} && {resolution_y}) {{
-        setAttr "defaultResolution.width" {resolution_x};
-        setAttr "defaultResolution.height" {resolution_y};
-    }}
+        	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+            	loadPlugin RadeonProRender;
+        	}}
 
-    string $allObjects[] = `ls -g`;
-    string $exist = 0;
+        	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+        	setAttr "defaultRenderGlobals.imageFormat" 8;
+        	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
-    for ($tempName in $allObjects)
-        {{
-            if ($tempName == "RPRIBLShape"){{
-                delete RPRIBL;
+            if ({resolution_x} && {resolution_y}) {{
+                setAttr "defaultResolution.width" {resolution_x};
+                setAttr "defaultResolution.height" {resolution_y};
             }}
 
-            if ($tempName == "RPRSkyShape"){{
-                $exist = 1;
+            string $allObjects[] = `ls -g`;
+            string $exist = 0;
+
+            for ($tempName in $allObjects)
+                {{
+                    if ($tempName == "RPRIBLShape"){{
+                        delete RPRIBL;
+                    }}
+
+                    if ($tempName == "RPRSkyShape"){{
+                        $exist = 1;
+                    }}
+                }}
+
+            if ($exist == 0) {{
+                string $SkyNode = `createNode RPRSky -n RPRSkyShape`;
+                setAttr "RPRSkyShape.intensity" 1;
+                setAttr "RPRSkyShape.turbidity" 20;
+                setAttr "RPRSkyShape.sunGlow" 45;
+                setAttr "RPRSkyShape.sunDiskSize" 5;
             }}
+
+            if ($type) {{
+
+                setAttr "RPRSkyShape.sunPositionType" $type;
+
+                if ($location == "Moscow") {{
+                    setAttr "RPRSkyShape.latitude" 56;
+                    setAttr "RPRSkyShape.longitude" 38;
+                    setAttr "RPRSkyShape.timeZone" 3;
+                }} else if ($location == "Miami_Beach") {{
+                    setAttr "RPRSkyShape.latitude" 25.791;
+                    setAttr "RPRSkyShape.longitude" -80.130;
+                    setAttr "RPRSkyShape.timeZone" -5;
+                }} else if ($location == "Canberra") {{
+                    setAttr "RPRSkyShape.latitude" -35.283;
+                    setAttr "RPRSkyShape.longitude" 149.128;
+                    setAttr "RPRSkyShape.timeZone" 11;
+                }}
+
+                setAttr "RPRSkyShape.hours" $param1;
+                setAttr "RPRSkyShape.minutes" $param2;
+
+            }} else {{
+
+                setAttr "RPRSkyShape.sunPositionType" $type;
+                setAttr "RPRSkyShape.altitude" $param2;
+                setAttr "RPRSkyShape.azimuth" $param1;
+
+            }}
+
+        	rpr_render($test_case, $script_info);
         }}
-
-    if ($exist == 0) {{
-        string $SkyNode = `createNode RPRSky -n RPRSkyShape`;
-        setAttr "RPRSkyShape.intensity" 1;
-        setAttr "RPRSkyShape.turbidity" 20;
-        setAttr "RPRSkyShape.sunGlow" 45;
-        setAttr "RPRSkyShape.sunDiskSize" 5;
     }}
-
-    if ($type) {{
-
-        setAttr "RPRSkyShape.sunPositionType" $type;
-
-        if ($location == "Moscow") {{
-            setAttr "RPRSkyShape.latitude" 56;
-            setAttr "RPRSkyShape.longitude" 38;
-            setAttr "RPRSkyShape.timeZone" 3;
-        }} else if ($location == "Miami_Beach") {{
-            setAttr "RPRSkyShape.latitude" 25.791;
-            setAttr "RPRSkyShape.longitude" -80.130;
-            setAttr "RPRSkyShape.timeZone" -5;
-        }} else if ($location == "Canberra") {{
-            setAttr "RPRSkyShape.latitude" -35.283;
-            setAttr "RPRSkyShape.longitude" 149.128;
-            setAttr "RPRSkyShape.timeZone" 11;
-        }}
-
-        setAttr "RPRSkyShape.hours" $param1;
-        setAttr "RPRSkyShape.minutes" $param2;
-
-    }} else {{
-
-        setAttr "RPRSkyShape.sunPositionType" $type;
-        setAttr "RPRSkyShape.altitude" $param2;
-        setAttr "RPRSkyShape.azimuth" $param1;
-
-    }}
-
-	rpr_render($test_case, $script_info);
 
 }}
 
