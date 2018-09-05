@@ -9,7 +9,7 @@
         <argument>--tests "{CWD}/Tests/Quality/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType QualityPresets</argument>
+        <argument>--testType Quality</argument>
 	<argument>--template "{CWD}/Scripts/Templates/template_quality.mel"</argument>
 	<argument>--pass_limit {PassLimit}</argument>
 	<argument>--resolution_x {rx}</argument>

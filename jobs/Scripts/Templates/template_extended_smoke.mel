@@ -1,27 +1,19 @@
 
 global proc prerender(string $test_case, int $pass, string $script_info){{
 
-	string $tests = "{testCases}";
-	string $test[];
-	$numTokens = `tokenize $tests "," $test`;
-
-	for ($each in $test) {{ 
-		if ($each == $test_case) {{
-			if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    			loadPlugin RadeonProRender;
-			}}
-
-			if( `pluginInfo -query -loaded fbxmaya` == 0){{
-		    	loadPlugin fbxmaya;
-			}}
-
-			setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-			setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
-
-			rpr_render($test_case, $script_info);
-		}}
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+		loadPlugin RadeonProRender;
 	}}
 
+	if( `pluginInfo -query -loaded fbxmaya` == 0){{
+    	loadPlugin fbxmaya;
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
+
+	rpr_render($test_case, $script_info);
+			
 }}
 
 

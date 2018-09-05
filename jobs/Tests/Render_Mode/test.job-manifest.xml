@@ -9,7 +9,7 @@
         <argument>--tests "{CWD}/Tests/Render_Mode/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType RenderMode</argument>
+        <argument>--testType Render_Mode</argument>
 	<argument>--template "{CWD}/Scripts/Templates/template_render_mode.mel"</argument>
 	<argument>--pass_limit {PassLimit}</argument>
 	<argument>--resolution_x {rx}</argument>

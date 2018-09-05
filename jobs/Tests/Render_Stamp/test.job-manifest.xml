@@ -9,7 +9,7 @@
         <argument>--tests "{CWD}/Tests/Render_Stamp/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Render_Test</argument>
+        <argument>--testType Render_Stamp</argument>
 	<argument>--template "{CWD}/Scripts/Templates/template_render_stamp.mel"</argument>
 	<argument>--pass_limit {PassLimit}</argument>
 	<argument>--resolution_x {rx}</argument>

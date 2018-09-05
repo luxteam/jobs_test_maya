@@ -1,33 +1,41 @@
 
-global proc prerender(string $test_case, int $type, float $hfa, float $vfa, string $script_info){{
+global proc check_test_cases(string $test_case, int $type, float $hfa, float $vfa, string $script_info){{
 
-	string $tests = "{testCases}";
+    string $tests = "{testCases}";
     string $test[];
     $numTokens = `tokenize $tests "," $test`;
 
-    for ($each in $test) {{ 
-        if ($each == $test_case) {{
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $type, $hfa, $vfa, $script_info);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $type, $hfa, $vfa, $script_info);
+    }}
+}}
 
-			if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-		    	loadPlugin RadeonProRender;
-			}}
+global proc prerender(string $test_case, int $type, float $hfa, float $vfa, string $script_info){{
 
-			if ({resolution_x} && {resolution_y}) {{
-				setAttr "defaultResolution.width" {resolution_x};
-				setAttr "defaultResolution.height" {resolution_y};
-			}}
-
-			setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-			setAttr "defaultRenderGlobals.imageFormat" 8;
-			setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
-
-			setAttr "RadeonProRenderGlobals.cameraType" $type;
-			setAttr "Camera00Shape1.horizontalFilmAperture" $hfa;
-			setAttr "Camera00Shape1.verticalFilmAperture" $vfa;
-
-			rpr_render($test_case, $script_info);
-		}}
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
 	}}
+
+	if ({resolution_x} && {resolution_y}) {{
+		setAttr "defaultResolution.width" {resolution_x};
+		setAttr "defaultResolution.height" {resolution_y};
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	setAttr "RadeonProRenderGlobals.cameraType" $type;
+	setAttr "Camera00Shape1.horizontalFilmAperture" $hfa;
+	setAttr "Camera00Shape1.verticalFilmAperture" $vfa;
+
+	rpr_render($test_case, $script_info);
 
 }}
 
@@ -40,21 +48,21 @@ global proc main(){{
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
     
-	    prerender("MAYA_RS_CAM_001", 1, 1.417, 0.945, "[\"RPR Camera Type: Spherical panorama\"]");
-	    prerender("MAYA_RS_CAM_002", 2, 1.417, 0.945, "[\"RPR Camera Type: Stereo spherical panorama\"]");
-	    prerender("MAYA_RS_CAM_003", 3, 1.417, 0.945, "[\"RPR Camera Type: Cubemap\"]");
-	    prerender("MAYA_RS_CAM_004", 4, 1.417, 0.945, "[\"RPR Camera Type: Stereo cubemap\"]");
+	    check_test_cases("MAYA_RS_CAM_001", 1, 1.417, 0.945, "[\"RPR Camera Type: Spherical panorama\"]");
+	    check_test_cases("MAYA_RS_CAM_002", 2, 1.417, 0.945, "[\"RPR Camera Type: Stereo spherical panorama\"]");
+	    check_test_cases("MAYA_RS_CAM_003", 3, 1.417, 0.945, "[\"RPR Camera Type: Cubemap\"]");
+	    check_test_cases("MAYA_RS_CAM_004", 4, 1.417, 0.945, "[\"RPR Camera Type: Stereo cubemap\"]");
   
-    	prerender("MAYA_RS_CAM_005", 0, 0.404, 0.295, "[\"Camera preset: 16mm Theatrical\"]");
-    	prerender("MAYA_RS_CAM_006", 0, 0.493, 0.292, "[\"Camera preset: Super 16mm\"]");
-    	prerender("MAYA_RS_CAM_007", 0, 0.864, 0.630, "[\"Camera preset: 35mm Academy\"]");
-    	prerender("MAYA_RS_CAM_008", 0, 0.816, 0.612, "[\"Camera preset: 35mm TV Projection\"]");
-    	prerender("MAYA_RS_CAM_009", 0, 0.980, 0.735, "[\"Camera preset: 35mm Full Aperture\"]");
-    	prerender("MAYA_RS_CAM_010", 0, 0.825, 0.446, "[\"Camera preset: 35mm 1.85 Projection\"]");
-    	prerender("MAYA_RS_CAM_011", 0, 0.864, 0.732, "[\"Camera preset: 35mm Anamorphic\"]");
-    	prerender("MAYA_RS_CAM_012", 0, 2.066, 0.906, "[\"Camera preset: 70mm Projection\"]");
-    	prerender("MAYA_RS_CAM_013", 0, 1.485, 0.991, "[\"Camera preset: VistaVision\"]");
-    	prerender("MAYA_RS_CAM_014", 0, 2.772, 2.072, "[\"Camera preset: Imax\"]");
+    	check_test_cases("MAYA_RS_CAM_005", 0, 0.404, 0.295, "[\"Camera preset: 16mm Theatrical\"]");
+    	check_test_cases("MAYA_RS_CAM_006", 0, 0.493, 0.292, "[\"Camera preset: Super 16mm\"]");
+    	check_test_cases("MAYA_RS_CAM_007", 0, 0.864, 0.630, "[\"Camera preset: 35mm Academy\"]");
+    	check_test_cases("MAYA_RS_CAM_008", 0, 0.816, 0.612, "[\"Camera preset: 35mm TV Projection\"]");
+    	check_test_cases("MAYA_RS_CAM_009", 0, 0.980, 0.735, "[\"Camera preset: 35mm Full Aperture\"]");
+    	check_test_cases("MAYA_RS_CAM_010", 0, 0.825, 0.446, "[\"Camera preset: 35mm 1.85 Projection\"]");
+    	check_test_cases("MAYA_RS_CAM_011", 0, 0.864, 0.732, "[\"Camera preset: 35mm Anamorphic\"]");
+    	check_test_cases("MAYA_RS_CAM_012", 0, 2.066, 0.906, "[\"Camera preset: 70mm Projection\"]");
+    	check_test_cases("MAYA_RS_CAM_013", 0, 1.485, 0.991, "[\"Camera preset: VistaVision\"]");
+    	check_test_cases("MAYA_RS_CAM_014", 0, 2.772, 2.072, "[\"Camera preset: Imax\"]");
 
 	}}
 
