@@ -93,35 +93,35 @@ global proc main(){{
     for ($each in $scene) {{
         file -f -options "v=0;"  -ignoreVersion -o $each;
 
-        prerender_bilateral("MAYA_RS_DEN_001", "[\"1. Rendering with Bilateral Denoiser\", \"â€œRadiusâ€ - 1\"]", 0, 1);
-        prerender_bilateral("MAYA_RS_DEN_002", "[\"1. Rendering with Bilateral Denoiser\", \"â€œRadiusâ€ - 5\"]", 0, 5);
+        prerender_bilateral("MAYA_RS_DEN_001", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 1\"]", 0, 1);
+        prerender_bilateral("MAYA_RS_DEN_002", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 5\"]", 0, 5);
         
-        if ( catch(prerender_bilateral("MAYA_RS_DEN_003", "[\"1. Rendering with Bilateral Denoiser\", \"â€œRadiusâ€ - 10\"]", 0, 10)) ) {{
+        if ( catch(prerender_bilateral("MAYA_RS_DEN_003", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 10\"]", 0, 10)) ) {{
             sysFile -copy ("{work_dir}/Color/MAYA_RS_DEN_003.jpg") ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");
         }}
         
         prerender_lwr("MAYA_RS_DEN_004", "[\"2. Rendering with LWR Denoiser\", \"Default settings\"]", 1, 2, 1, 1);
-        prerender_lwr("MAYA_RS_DEN_005", "[\"2. Rendering with LWR Denoiser\", \"â€œSamplesâ€ - 5\"]", 1, 5, 1, 1);
-        prerender_lwr("MAYA_RS_DEN_006", "[\"2. Rendering with LWR Denoiser\", \"â€œSamplesâ€ - 10\"]", 1, 10, 1, 1);
-        prerender_lwr("MAYA_RS_DEN_007", "[\"2. Rendering with LWR Denoiser\", \"â€œFilter Radiusâ€ - 5\"]", 1, 2, 5, 1);
-        prerender_lwr("MAYA_RS_DEN_008", "[\"2. Rendering with LWR Denoiser\", \"â€œFilter Radiusâ€ - 10\"]", 1, 2, 10, 1);
-        prerender_lwr("MAYA_RS_DEN_009", "[\"2. Rendering with LWR Denoiser\", \"â€œBandwidthâ€ - 0.1\"]", 1, 2, 1, 0.1001);
-        prerender_lwr("MAYA_RS_DEN_010", "[\"2. Rendering with LWR Denoiser\", \"â€œBandwidthâ€ - 0.5\"]", 1, 2, 1, 0.5);
-        prerender_lwr("MAYA_RS_DEN_011", "[\"2. Rendering with LWR Denoiser\", \" â€œSamplesâ€ - 2\", \"â€œFilter Radiusâ€ - 1\", \"â€œBandwidthâ€ - 0.1\"]", 1, 2, 1, 0.1001);
-        prerender_lwr("MAYA_RS_DEN_012", "[\"2. Rendering with LWR Denoiser\", \" â€œSamplesâ€ - 5\", \"â€œFilter Radiusâ€ - 5\", \"â€œBandwidthâ€ - 0.5\"]", 1, 5, 5, 0.5);
-        prerender_lwr("MAYA_RS_DEN_013", "[\"2. Rendering with LWR Denoiser\", \" â€œSamplesâ€ - 10\", \"â€œFilter Radiusâ€ - 10\", \"â€œBandwidthâ€ - 1\"]", 1, 10, 10, 1);
+        prerender_lwr("MAYA_RS_DEN_005", "[\"2. Rendering with LWR Denoiser\", \"Samples - 5\"]", 1, 5, 1, 1);
+        prerender_lwr("MAYA_RS_DEN_006", "[\"2. Rendering with LWR Denoiser\", \"Samples - 10\"]", 1, 10, 1, 1);
+        prerender_lwr("MAYA_RS_DEN_007", "[\"2. Rendering with LWR Denoiser\", \"Filter Radius - 5\"]", 1, 2, 5, 1);
+        prerender_lwr("MAYA_RS_DEN_008", "[\"2. Rendering with LWR Denoiser\", \"Filter Radius - 10\"]", 1, 2, 10, 1);
+        prerender_lwr("MAYA_RS_DEN_009", "[\"2. Rendering with LWR Denoiser\", \"Bandwidth - 0.1\"]", 1, 2, 1, 0.1001);
+        prerender_lwr("MAYA_RS_DEN_010", "[\"2. Rendering with LWR Denoiser\", \"Bandwidth - 0.5\"]", 1, 2, 1, 0.5);
+        prerender_lwr("MAYA_RS_DEN_011", "[\"2. Rendering with LWR Denoiser\", \"Samples - 2\", \"Filter Radius - 1\", \"Bandwidth - 0.1\"]", 1, 2, 1, 0.1001);
+        prerender_lwr("MAYA_RS_DEN_012", "[\"2. Rendering with LWR Denoiser\", \"Samples - 5\", \"Filter Radius - 5\", \"Bandwidth - 0.5\"]", 1, 5, 5, 0.5);
+        prerender_lwr("MAYA_RS_DEN_013", "[\"2. Rendering with LWR Denoiser\", \"Samples - 10\", \"Filter Radius - 10\", \"Bandwidth - 1\"]", 1, 10, 10, 1);
 
         prerender_eaw("MAYA_RS_DEN_014", "[\"3. Rendering with EAW Denoiser\", \"Default Settings\"]", 2, 1, 1, 1, 1);
-        prerender_eaw("MAYA_RS_DEN_015", "[\"3. Rendering with EAW Denoiser\", \" â€œColorâ€œ - 0.1\"]", 2, 0.1001, 1, 1, 1);
-        prerender_eaw("MAYA_RS_DEN_016", "[\"3. Rendering with EAW Denoiser\", \" â€œColorâ€œ - 0.5\"]", 2, 0.5, 1, 1, 1);
-        prerender_eaw("MAYA_RS_DEN_017", "[\"3. Rendering with EAW Denoiser\", \" â€œDepthâ€œ - 0.1\"]", 2, 1, 0.1001, 1, 1);
-        prerender_eaw("MAYA_RS_DEN_018", "[\"3. Rendering with EAW Denoiser\", \" â€œDepthâ€œ - 0.5\"]", 2, 1, 0.5, 1, 1);
-        prerender_eaw("MAYA_RS_DEN_019", "[\"3. Rendering with EAW Denoiser\", \" â€œNormalâ€œ - 0.1\"]", 2, 1, 1, 0.1001, 1);
-        prerender_eaw("MAYA_RS_DEN_020", "[\"3. Rendering with EAW Denoiser\", \" â€œNormalâ€œ - 0.5\"]", 2, 1, 1, 0.5, 1);
-        prerender_eaw("MAYA_RS_DEN_021", "[\"3. Rendering with EAW Denoiser\", \" â€œTransâ€œ - 0.1\"]", 2, 1, 1, 1, 0.1001);
-        prerender_eaw("MAYA_RS_DEN_022", "[\"3. Rendering with EAW Denoiser\", \" â€œTransâ€œ - 0.5\"]", 2, 1, 1, 1, 0.5);
-        prerender_eaw("MAYA_RS_DEN_023", "[\"3. Rendering with EAW Denoiser\", \" â€œColorâ€œ - 0.1\",  \" â€œDepthâ€œ - 0.1\", \" â€œNormalâ€œ - 0.1\", \" â€œTransâ€œ - 0.1\"]", 2, 0.1001, 0.1001, 0.1001, 0.1001);
-        prerender_eaw("MAYA_RS_DEN_024", "[\"3. Rendering with EAW Denoiser\", \" â€œColorâ€œ - 0.5\",  \" â€œDepthâ€œ - 0.5\", \" â€œNormalâ€œ - 0.5\", \" â€œTransâ€œ - 0.5\"]", 2, 0.5, 0.5, 0.5, 0.5);    
+        prerender_eaw("MAYA_RS_DEN_015", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.1\"]", 2, 0.1001, 1, 1, 1);
+        prerender_eaw("MAYA_RS_DEN_016", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.5\"]", 2, 0.5, 1, 1, 1);
+        prerender_eaw("MAYA_RS_DEN_017", "[\"3. Rendering with EAW Denoiser\", \"Depth - 0.1\"]", 2, 1, 0.1001, 1, 1);
+        prerender_eaw("MAYA_RS_DEN_018", "[\"3. Rendering with EAW Denoiser\", \"Depth - 0.5\"]", 2, 1, 0.5, 1, 1);
+        prerender_eaw("MAYA_RS_DEN_019", "[\"3. Rendering with EAW Denoiser\", \"Normal - 0.1\"]", 2, 1, 1, 0.1001, 1);
+        prerender_eaw("MAYA_RS_DEN_020", "[\"3. Rendering with EAW Denoiser\", \"Normal - 0.5\"]", 2, 1, 1, 0.5, 1);
+        prerender_eaw("MAYA_RS_DEN_021", "[\"3. Rendering with EAW Denoiser\", \"Trans - 0.1\"]", 2, 1, 1, 1, 0.1001);
+        prerender_eaw("MAYA_RS_DEN_022", "[\"3. Rendering with EAW Denoiser\", \"Trans - 0.5\"]", 2, 1, 1, 1, 0.5);
+        prerender_eaw("MAYA_RS_DEN_023", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.1\",  \"Depth - 0.1\", \"Normal - 0.1\", \"Trans - 0.1\"]", 2, 0.1001, 0.1001, 0.1001, 0.1001);
+        prerender_eaw("MAYA_RS_DEN_024", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.5\",  \"Depth - 0.5\", \"Normal - 0.5\", \"Trans - 0.5\"]", 2, 0.5, 0.5, 0.5, 0.5);    
     }}
 
     evalDeferred("quit -abort");
