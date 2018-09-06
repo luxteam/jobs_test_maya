@@ -1,0 +1,14 @@
+{
+	"Camera": "MAYA_RS_CAM_003,MAYA_RS_CAM_007,MAYA_RS_CAM_002",
+	"IBL": "MAYA_RS_IBL_009",
+	"IES": "MAYA_L_IES_003",
+	"Image_Formats": "MAYA_RS_IF_002",
+	"Image_Size": "MAYA_RS_IS_004",
+	"Material_Library": "MAYA_MAT_LIB_097",
+	"Pass_Limit": "MAYA_RS_PS_001",
+	"Quality": "MAYA_RS_QL_002",
+	"Render_Mode": "MAYA_RS_RM_007",
+	"Render_Stamp": "MAYA_RS_RS_002",
+	"Sun_Sky": "MAYA_RS_SS_005",
+	"Denoiser": "MAYA_RS_DEN_001"
+}

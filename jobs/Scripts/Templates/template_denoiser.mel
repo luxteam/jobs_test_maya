@@ -8,11 +8,11 @@ global proc check_test_cases_bilateral(string $test_case, string $script_info, i
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $denoiserType, $denoiserRadius, $script_info);
+                prerender_bilateral($test_case, $script_info, $denoiserType, $denoiserRadius);
             }}
         }}
     }} else {{
-        prerender($test_case, $denoiserType, $denoiserRadius, $script_info);
+        prerender_bilateral($test_case, $script_info, $denoiserType, $denoiserRadius);
     }}
 }}
 
@@ -40,7 +40,7 @@ global proc prerender_bilateral(string $test_case, string $script_info, int $den
     rpr_render($test_case, $script_info);
 }}
 
-global proc check_test_cases_lwr(string $test_case, string $script_info, int $denoiserType, int $samples, int $radius, int $bandwidth){{
+global proc check_test_cases_lwr(string $test_case, string $script_info, int $denoiserType, int $samples, int $radius, float $bandwidth){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -49,11 +49,11 @@ global proc check_test_cases_lwr(string $test_case, string $script_info, int $de
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $denoiserType, $samples, $radius, $bandwidth, $script_info);
+                prerender_lwr($test_case, $script_info, $denoiserType, $samples, $radius, $bandwidth);
             }}
         }}
     }} else {{
-        prerender($test_case, $denoiserType, $samples, $radius, $bandwidth, $script_info);
+        prerender_lwr($test_case, $script_info, $denoiserType, $samples, $radius, $bandwidth);
     }}
 }}
 
@@ -85,7 +85,7 @@ global proc prerender_lwr(string $test_case, string $script_info, int $denoiserT
 
 }}
 
-global proc check_test_cases_eaw(string $test_case, string $script_info, int $denoiserType, int $color, int $depth, int $normal, int $trans){{
+global proc check_test_cases_eaw(string $test_case, string $script_info, int $denoiserType, float $color, float $depth, float $normal, float $trans){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -94,11 +94,11 @@ global proc check_test_cases_eaw(string $test_case, string $script_info, int $de
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $denoiserType, $color, $depth, $normal, $trans , $script_info);
+                prerender_eaw($test_case, $script_info, $denoiserType, $color, $depth, $normal, $trans);
             }}
         }}
     }} else {{
-        prerender($test_case, $denoiserType, $color, $depth, $normal, $trans , $script_info);
+        prerender_eaw($test_case, $script_info, $denoiserType, $color, $depth, $normal, $trans);
     }}
 }}
 
