@@ -55,6 +55,25 @@ global proc rpr_render(string $test_case, string $script_info){{
 }}
 
 
+global proc check_test_cases_success_save(string $test_case, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_success_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_success_save($test_case, $script_info);
+    }}
+
+}}
+
+
 global proc rpr_success_save(string $test_case, string $script_info){{
 
 	sysFile -makeDir ("{work_dir}" + "/Color");
