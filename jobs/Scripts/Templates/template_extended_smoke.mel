@@ -424,10 +424,10 @@ global proc main(){{
 
     	}} else if ($each == "IES.ma") {{
 
-    		// activate_jpg_format();
+    		activate_jpg_format();
 
-    		// multiple_ies_lights();
-    		// prerender("MAYA_SM_032", 50, "[\"12 lights in one scene\", \"Pass Limit: 50\"]");
+    		multiple_ies_lights();
+    		prerender("MAYA_SM_032", 50, "[\"12 lights in one scene\", \"Pass Limit: 50\"]");
 
     	}} else if ($each == "maya_shaderball.ma") {{
 
