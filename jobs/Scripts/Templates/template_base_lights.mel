@@ -1,0 +1,291 @@
+
+global proc check_test_cases_ambient_light(string $test_case, int $intensity, int $ambientShade, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $intensity, $ambientShade, $script_info);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $intensity, $ambientShade, $script_info);
+    }}
+}}
+
+global proc prerender_ambient_light(string $test_case, int $intensity, int $ambientShade, string $script_info){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+    setAttr "ambientLightShape1.intensity" $intensity;
+    setAttr "ambientLightShape1.ambientShade" $ambientShade;
+
+	rpr_render($test_case, $script_info);
+
+}}
+
+
+global proc check_test_cases_area_light(string $test_case, int $intensity, int $decayRate, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $intensity, $decayRate, $script_info);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $intensity, $decayRate, $script_info);
+    }}
+}}
+
+global proc prerender_area_light(string $test_case, int $intensity, int $decayRate, string $script_info){{
+
+    if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+        loadPlugin RadeonProRender;
+    }}
+
+    if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+    setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+    setAttr "defaultRenderGlobals.imageFormat" 8;
+    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+    setAttr "areaLightShape1.intensity" $intensity;
+    setAttr "areaLightShape1.ambientShade" $decayRate;
+
+    rpr_render($test_case, $script_info);
+
+}}
+
+
+global proc check_test_cases_directional_light(string $test_case, int $intensity, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $intensity, $script_info);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $intensity, $script_info);
+    }}
+}}
+
+global proc prerender_directional_light(string $test_case, int $intensity, string $script_info){{
+
+    if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+        loadPlugin RadeonProRender;
+    }}
+
+    if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+    setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+    setAttr "defaultRenderGlobals.imageFormat" 8;
+    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+    setAttr "directionalLightShape1.intensity" $intensity;
+
+    rpr_render($test_case, $script_info);
+
+}}
+
+
+global proc check_test_cases_point_light(string $test_case, int $intensity, int $decayRate, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $intensity, $decayRate, $script_info);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $intensity, $decayRate, $script_info);
+    }}
+}}
+
+global proc prerender_point_light(string $test_case, int $intensity, int $decayRate, string $script_info){{
+
+    if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+        loadPlugin RadeonProRender;
+    }}
+
+    if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+    setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+    setAttr "defaultRenderGlobals.imageFormat" 8;
+    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+    setAttr "pointLightShape1.intensity" $intensity;
+    setAttr "pointLightShape1.ambientShade" $decayRate;
+
+    rpr_render($test_case, $script_info);
+
+}}
+
+
+global proc check_test_cases_spot_light(string $test_case, int $intensity, int $decayRate, float $coneAngle, float $penumbraAngle, float $dropoff, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $intensity, $decayRate, $coneAngle, $penumbraAngle, $dropoff, $script_info);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $intensity, $decayRate, $coneAngle, $penumbraAngle, $dropoff, $script_info);
+    }}
+}}
+
+global proc prerender_spot_light(string $test_case, int $intensity, int $decayRate, float $coneAngle, float $penumbraAngle, float $dropoff, string $script_info){{
+
+    if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+        loadPlugin RadeonProRender;
+    }}
+
+    if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+    setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+    setAttr "defaultRenderGlobals.imageFormat" 8;
+    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+    setAttr "spotLightShape1.intensity" $intensity;
+    setAttr "spotLightShape1.ambientShade" $decayRate;
+    setAttr "spotLightShape1.coneAngle" $coneAngle;
+    setAttr "spotLightShape1.penumbraAngle" $penumbraAngle;
+    setAttr "spotLightShape1.dropoff" $dropoff;
+
+    rpr_render($test_case, $script_info);
+
+}}
+
+
+global proc create_ambient_light(){{
+    defaultAmbientLight(1, 0.45, 1,1,1, "0", 0,0,0, "1");
+    setAttr "ambientLight1.translateX" 270;
+    setAttr "ambientLight1.translateY" 40;
+    setAttr "ambientLight1.translateZ" 1200;
+}}
+
+global proc delete_ambient_light(){{
+    delete ambientLight1;
+}}
+
+
+global proc create_area_light(){{
+    defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0);
+    setAttr "areaLight1.translateX" 270;
+    setAttr "areaLight1.translateY" 40;
+    setAttr "areaLight1.translateZ" 1200;
+    setAttr "areaLight1.rotateX" 0;
+    setAttr "areaLight1.rotateY" 111;
+    setAttr "areaLight1.rotateZ" 11;
+}}
+
+global proc delete_area_light(){{
+    delete areaLight1;
+}}
+
+ 
+global proc create_directional_light(){{
+    defaultDirectionalLight(1, 1,1,1, "0", 0,0,0, 0);
+    setAttr "directionalLight1.translateX" 44;
+    setAttr "directionalLight1.translateY" 44;
+    setAttr "directionalLight1.translateZ" 440;
+    setAttr "directionalLight1.rotateX" 111;
+    setAttr "directionalLight1.rotateY" 111;
+    setAttr "directionalLight1.rotateZ" 11;
+}}
+
+global proc delete_directional_light(){{
+    delete directionalLight1;
+}}
+
+
+global proc create_point_light(){{
+    defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1);
+    setAttr "pointLight1.translateX" 44;
+    setAttr "pointLight1.translateY" 44;
+    setAttr "pointLight1.translateZ" 440;
+    setAttr "pointLight1.rotateX" 111;
+    setAttr "pointLight1.rotateY" 111;
+    setAttr "pointLight1.rotateZ" 11;
+}}
+
+global proc delete_point_light(){{
+    delete pointLight1;
+}}
+
+
+global proc create_spot_light(){{
+    defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0);
+    setAttr "spotLight1.translateX" 44;
+    setAttr "spotLight1.translateY" 44;
+    setAttr "spotLight1.translateZ" 440;
+    setAttr "spotLight1.rotateX" 111;
+    setAttr "spotLight1.rotateY" 111;
+    setAttr "spotLight1.rotateZ" 11;
+}}
+
+global proc delete_point_light(){{
+    delete spotLight1;
+}}
+
+
+global proc main(){{
+
+	setProject ("{res_path}");
+	string $scenes = "{testsList}";
+	string $scene[];
+	$numTokens = `tokenize $scenes "," $scene`;
+	for ($each in $scene) {{
+    	file -f -options "v=0;"  -ignoreVersion -o $each;
+    	
+
+
+
+	}}
+
+	evalDeferred("quit -abort");
+}}
