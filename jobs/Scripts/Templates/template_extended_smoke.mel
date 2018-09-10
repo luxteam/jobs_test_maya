@@ -271,10 +271,18 @@ global proc create_and_asign_pbr(){{
 
 
 global proc multiple_ies_lights(){{	
-	for ($i=1; $i<13; ++$i){{
-		setAttr -type "string" ("RPRIESLight" + $i +".iesFile") ("{res_path}" + "/sourceimages/1.IES");
-		setAttr ("RPRIESLight" + $i +".intensity") 2;
-	}}
+	// for ($i=1; $i<13; ++$i){{
+	// 	 setAttr -type "string" ("RPRIESLight" + $i +".iesFile") ("{res_path}" + "/sourceimages/1.IES");
+	//	 setAttr ("RPRIESLight" + $i +".intensity") 2;
+	// }}
+
+	setAttr -type "string" ("RPRIESLight1.iesFile") ("{res_path}" + "/sourceimages/1.IES");
+	setAttr ("RPRIESLight1.intensity") 2;
+	setAttr -type "string" ("RPRIESLight6.iesFile") ("{res_path}" + "/sourceimages/6.IES");
+	setAttr ("RPRIESLight6.intensity") 2;
+	setAttr -type "string" ("RPRIESLight12.iesFile") ("{res_path}" + "/sourceimages/12.IES");
+	setAttr ("RPRIESLight12.intensity") 2;
+	
 }}
 
 
