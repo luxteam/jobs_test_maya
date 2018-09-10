@@ -55,6 +55,25 @@ global proc sanity_render(string $test_case, string $script_info, string $render
 
 }}
 
+
+global proc check_test_cases(string $test_case, int $pass, string $script_info, string $render_mode){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $pass, $script_info, $render_mode);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $pass, $script_info, $render_mode);
+    }}
+}}
+
+
 global proc prerender(string $test_case, int $pass, string $script_info, string $render_mode){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -185,8 +204,8 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 
 	check_rpr_load();
-	rpr_success_save("MAYA_SAN_001", "[\"Installing with default settings\"]");
-    rpr_success_save("MAYA_SAN_002", "[\"Change renderer from default to RPR\"]");
+	check_test_cases_success_save("MAYA_SAN_001", "[\"Installing with default settings\"]");
+    check_test_cases_success_save("MAYA_SAN_002", "[\"Change renderer from default to RPR\"]");
     
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
@@ -195,44 +214,44 @@ global proc main(){{
 
     		activate_jpg_format();
 
-    		prerender("MAYA_SAN_003", 10, "[\"Render empty scene\", \"Pass Limit: 10\"]", "gpu");
+    		check_test_cases("MAYA_SAN_003", 10, "[\"Render empty scene\", \"Pass Limit: 10\"]", "gpu");
 
 
     	}} else if ($each == "maya_shaderball.ma") {{
 
     		activate_jpg_format();
 
-    		prerender("MAYA_SAN_004", 10, "[\"GPU Render\", \"Pass Limit: 10\"]", "gpu");
-    		prerender("MAYA_SAN_005", 10, "[\"CPU Render\", \"Pass Limit: 10\"]", "cpu");
-    		prerender("MAYA_SAN_006", 10, "[\"Dual Render\", \"Pass Limit: 10\"]", "dual");
+    		check_test_cases("MAYA_SAN_004", 10, "[\"GPU Render\", \"Pass Limit: 10\"]", "gpu");
+    		check_test_cases("MAYA_SAN_005", 10, "[\"CPU Render\", \"Pass Limit: 10\"]", "cpu");
+    		check_test_cases("MAYA_SAN_006", 10, "[\"Dual Render\", \"Pass Limit: 10\"]", "dual");
 
     		create_and_asign_lambert();
-    		prerender("MAYA_SAN_007", 10, "[\"Lambert material test\", \"Pass Limit: 10\"]", "gpu");
+    		check_test_cases("MAYA_SAN_007", 10, "[\"Lambert material test\", \"Pass Limit: 10\"]", "gpu");
 
     		create_and_asign_uber();
-    		prerender("MAYA_SAN_008", 10, "[\"Uber material test\", \"Pass Limit: 10\"]", "gpu");
+    		check_test_cases("MAYA_SAN_008", 10, "[\"Uber material test\", \"Pass Limit: 10\"]", "gpu");
 
     		create_and_asign_pbr();
-    		prerender("MAYA_SAN_009", 10, "[\"PBR material test\", \"Pass Limit: 10\"]", "gpu");
+    		check_test_cases("MAYA_SAN_009", 10, "[\"PBR material test\", \"Pass Limit: 10\"]", "gpu");
 
     		change_image_size_4k();
-    		prerender("MAYA_SAN_010", 10, "[\"Render in 4K\", \"Pass Limit: 10\"]", "gpu");
+    		check_test_cases("MAYA_SAN_010", 10, "[\"Render in 4K\", \"Pass Limit: 10\"]", "gpu");
     		change_image_size_standart();
 
     		change_camera_view();
-    		prerender("MAYA_SAN_012", 10, "[\"Change camera view\", \"Pass Limit: 10\"]", "gpu");
+    		check_test_cases("MAYA_SAN_012", 10, "[\"Change camera view\", \"Pass Limit: 10\"]", "gpu");
     		standart_camera_view();
 
     		create_directional_light();
-			prerender("MAYA_SAN_013", 10, "[\"Directional light\", \"Pass Limit: 10\"]", "gpu");
+			check_test_cases("MAYA_SAN_013", 10, "[\"Directional light\", \"Pass Limit: 10\"]", "gpu");
     		delete_directional_light();
 
     		create_ies_light();
-    		prerender("MAYA_SAN_014", 10, "[\"Create IES Light\", \"Pass Limit: 10\"]", "gpu");
+    		check_test_cases("MAYA_SAN_014", 10, "[\"Create IES Light\", \"Pass Limit: 10\"]", "gpu");
     		delete_ies_light();
 
     		activate_png_format();
-    		prerender("MAYA_SAN_015", 10, "[\"Save image as png\", \"Pass Limit: 10\"]", "gpu");
+    		check_test_cases("MAYA_SAN_015", 10, "[\"Save image as png\", \"Pass Limit: 10\"]", "gpu");
     		sysFile -copy ("{work_dir}/Color/MAYA_SAN_015.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
 
     	}}
