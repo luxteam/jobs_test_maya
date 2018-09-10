@@ -1,4 +1,21 @@
 
+global proc check_test_cases(string $test_case, int $samples, int $mrd, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $samples, $mrd, $script_info);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $samples, $mrd, $script_info);
+    }}
+}}
+
 global proc prerender(string $test_case, int $samples, int $mrd, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -29,11 +46,11 @@ global proc main(){{
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
-    	prerender("MAYA_RS_QL_001", 1, 5, "[\"Quality preset: Low\"]");
-    	prerender("MAYA_RS_QL_002", 8, 15, "[\"Quality preset: Medium\"]");
-        prerender("MAYA_RS_QL_003", 16, 25, "[\"Quality preset: High\"]");
-        prerender("MAYA_RS_QL_004", 24, 40, "[\"Render sampling: RS-24, MRD-40\"]");
-    	prerender("MAYA_RS_QL_005", 32, 50, "[\"Render sampling: RS-32, MRD-50\"]");
+    	check_test_cases("MAYA_RS_QL_001", 1, 5, "[\"Quality preset: Low\"]");
+    	check_test_cases("MAYA_RS_QL_002", 8, 15, "[\"Quality preset: Medium\"]");
+        check_test_cases("MAYA_RS_QL_003", 16, 25, "[\"Quality preset: High\"]");
+        check_test_cases("MAYA_RS_QL_004", 24, 40, "[\"Render sampling: RS-24, MRD-40\"]");
+    	check_test_cases("MAYA_RS_QL_005", 32, 50, "[\"Render sampling: RS-32, MRD-50\"]");
 	}}
 
 	evalDeferred("quit -abort");

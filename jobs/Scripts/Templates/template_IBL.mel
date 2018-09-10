@@ -1,4 +1,21 @@
 
+global proc check_test_cases(string $test_case, int $intensity, string $map, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $intensity, $map, $script_info);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $intensity, $map, $script_info);
+    }}
+}}
+
 global proc prerender(string $test_case, int $intensity, string $map, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -44,6 +61,7 @@ global proc prerender(string $test_case, int $intensity, string $map, string $sc
     }}
 
     rpr_render($test_case, $script_info);
+
 }}
 
 global proc main(){{
@@ -55,29 +73,29 @@ global proc main(){{
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
 
-            prerender("MAYA_RS_IBL_001", 0, "", "[\"Type: Color\", \"Intensity: 0\"]");
-            prerender("MAYA_RS_IBL_002", 1, "", "[\"Type: Color\", \"Intensity: 1\"]");
-            prerender("MAYA_RS_IBL_003", 2, "", "[\"Type: Color\", \"Intensity: 2\"]");
-            prerender("MAYA_RS_IBL_004", 3, "", "[\"Type: Color\", \"Intensity: 3\"]");
-            prerender("MAYA_RS_IBL_005", 5, "", "[\"Type: Color\", \"Intensity: 5\"]");
-            prerender("MAYA_RS_IBL_006", 7, "", "[\"Type: Color\", \"Intensity: 7\"]");
-            prerender("MAYA_RS_IBL_007", 10, "", "[\"Type: Color\", \"Intensity: 10\"]");
+            check_test_cases("MAYA_RS_IBL_001", 0, "", "[\"Type: Color\", \"Intensity: 0\"]");
+            check_test_cases("MAYA_RS_IBL_002", 1, "", "[\"Type: Color\", \"Intensity: 1\"]");
+            check_test_cases("MAYA_RS_IBL_003", 2, "", "[\"Type: Color\", \"Intensity: 2\"]");
+            check_test_cases("MAYA_RS_IBL_004", 3, "", "[\"Type: Color\", \"Intensity: 3\"]");
+            check_test_cases("MAYA_RS_IBL_005", 5, "", "[\"Type: Color\", \"Intensity: 5\"]");
+            check_test_cases("MAYA_RS_IBL_006", 7, "", "[\"Type: Color\", \"Intensity: 7\"]");
+            check_test_cases("MAYA_RS_IBL_007", 10, "", "[\"Type: Color\", \"Intensity: 10\"]");
 
-            prerender("MAYA_RS_IBL_008", 0, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 0\"]");
-            prerender("MAYA_RS_IBL_009", 1, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 1\"]");
-            prerender("MAYA_RS_IBL_010", 2, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 2\"]");
-            prerender("MAYA_RS_IBL_011", 3, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 3\"]");
-            prerender("MAYA_RS_IBL_012", 5, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 5\"]");
-            prerender("MAYA_RS_IBL_013", 7, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 7\"]");
-            prerender("MAYA_RS_IBL_014", 10, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 10\"]");
+            check_test_cases("MAYA_RS_IBL_008", 0, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 0\"]");
+            check_test_cases("MAYA_RS_IBL_009", 1, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 1\"]");
+            check_test_cases("MAYA_RS_IBL_010", 2, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 2\"]");
+            check_test_cases("MAYA_RS_IBL_011", 3, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 3\"]");
+            check_test_cases("MAYA_RS_IBL_012", 5, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 5\"]");
+            check_test_cases("MAYA_RS_IBL_013", 7, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 7\"]");
+            check_test_cases("MAYA_RS_IBL_014", 10, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 10\"]");
 
-            prerender("MAYA_RS_IBL_015", 0, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 0\"]");
-            prerender("MAYA_RS_IBL_016", 1, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 1\"]");
-            prerender("MAYA_RS_IBL_017", 2, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 2\"]");
-            prerender("MAYA_RS_IBL_018", 3, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 3\"]");
-            prerender("MAYA_RS_IBL_019", 5, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 5\"]");
-            prerender("MAYA_RS_IBL_020", 7, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 7\"]");
-            prerender("MAYA_RS_IBL_021", 10, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 10\"]");
+            check_test_cases("MAYA_RS_IBL_015", 0, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 0\"]");
+            check_test_cases("MAYA_RS_IBL_016", 1, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 1\"]");
+            check_test_cases("MAYA_RS_IBL_017", 2, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 2\"]");
+            check_test_cases("MAYA_RS_IBL_018", 3, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 3\"]");
+            check_test_cases("MAYA_RS_IBL_019", 5, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 5\"]");
+            check_test_cases("MAYA_RS_IBL_020", 7, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 7\"]");
+            check_test_cases("MAYA_RS_IBL_021", 10, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 10\"]");
 	}}
 
 	evalDeferred("quit -abort");

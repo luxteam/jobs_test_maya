@@ -1,3 +1,21 @@
+
+global proc check_test_cases(string $test_case, string $libraryPath, string $material, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $libraryPath, $material, $script_info);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $libraryPath, $material, $script_info);
+    }}
+}}
+
 global proc prerender(string $test_case, string $libraryPath, string $material, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -42,11 +60,11 @@ global proc main(){{
 	float $test_case = 1;
 	for ($each in $scene) {{
 		if ($test_case < 10) {{
-			prerender(("MAYA_MAT_LIB_00" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+			check_test_cases(("MAYA_MAT_LIB_00" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
 		}} else if ($test_case < 100) {{
-			prerender(("MAYA_MAT_LIB_0" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+			check_test_cases(("MAYA_MAT_LIB_0" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
 		}} else {{
-			prerender(("MAYA_MAT_LIB_" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
+			check_test_cases(("MAYA_MAT_LIB_" + $test_case) , $libraryPath, $each, ("[\"Material: " + $each + "\"]"));
 		}}
     	$test_case += 1;
 	}}
