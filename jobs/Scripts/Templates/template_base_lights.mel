@@ -282,7 +282,7 @@ global proc main(){{
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
     	
-        setAttr "RPRIBLShape.intensity" 0.3;
+        delete RPRIBL;
 
         create_ambient_light();
         check_test_cases_ambient_light("MAYA_L_BL_001", 1, 0.450, "[\"Ambient light. Intensity: 1. Ambient Shade: 0.450 (standart)\"]");

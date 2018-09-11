@@ -466,7 +466,13 @@ global proc main(){{
 
     		check_test_cases("MAYA_SM_035", 50, "[\"Displacement\", \"Pass Limit: 50\"]");
 
-    	}} 
+    	}} else if ($each == "bifrost.ma") {{
+
+    		activate_jpg_format();
+
+    		check_test_cases("MAYA_SM_036", 50, "[\"Bifrost\", \"Pass Limit: 50\"]");
+
+    	}}
     	
     }}
 
