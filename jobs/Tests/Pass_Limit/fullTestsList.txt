@@ -1,1 +1,3 @@
-maya_shaderball.ma
+easy_scene.ma,
+normal_scene.ma,
+complex_scene.ma

@@ -1,1 +1,3 @@
-base_scene.ma
+easy_scene,
+normal_scene,
+complex_scene
