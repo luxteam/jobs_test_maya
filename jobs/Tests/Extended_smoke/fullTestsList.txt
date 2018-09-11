@@ -5,6 +5,5 @@ instances.ma,
 IES.ma,
 maya_shaderball.ma,
 Uber_SSS.ma,
-displacement.ma,
-bifrost.ma
+displacement.ma
 
