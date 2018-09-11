@@ -1,5 +1,5 @@
 
-global proc check_test_cases(string $test_case, int $mode, string $script_info){{
+global proc check_test_cases(string $test_case, int $mode, int $clamp, string $script_info){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -8,15 +8,15 @@ global proc check_test_cases(string $test_case, int $mode, string $script_info){
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $mode, $script_info);
+                prerender($test_case, $mode, $clamp, $script_info);
             }}
         }}
     }} else {{
-        prerender($test_case, $mode, $script_info);
+        prerender($test_case, $mode, $clamp, $script_info);
     }}
 }}
 
-global proc prerender(string $test_case, int $mode, string $script_info){{
+global proc prerender(string $test_case, int $mode, int $clamp, string $script_info){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -24,7 +24,7 @@ global proc prerender(string $test_case, int $mode, string $script_info){{
 
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 2;
 
 	if ({resolution_x} && {resolution_y}) {{
         setAttr "defaultResolution.width" {resolution_x};
@@ -32,6 +32,7 @@ global proc prerender(string $test_case, int $mode, string $script_info){{
     }}
 
 	setAttr "RadeonProRenderGlobals.renderMode" $mode;
+    setAttr "RadeonProRenderGlobals.giClampIrradianceValue" $clamp;
 
 	rpr_render($test_case, $script_info);
 
@@ -46,15 +47,35 @@ global proc main(){{
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
 
-    	check_test_cases("MAYA_RS_RM_001", 1, "[\"Render mode: Global illumination\"]");
-    	check_test_cases("MAYA_RS_RM_002", 2, "[\"Render mode: Direct illumination\"]");
-    	check_test_cases("MAYA_RS_RM_003", 3, "[\"Render mode: Direct illumination no shadow\"]");
-    	check_test_cases("MAYA_RS_RM_004", 4, "[\"Render mode: Wireframe\"]");
-    	// check_test_cases("MAYA_RS_RM_005", 5, "[\"Render mode: Material index\"]");
-    	check_test_cases("MAYA_RS_RM_006", 6, "[\"Render mode: Position\"]");
-    	check_test_cases("MAYA_RS_RM_007", 7, "[\"Render mode: Normal\"]");
-    	check_test_cases("MAYA_RS_RM_008", 8, "[\"Render mode: Tex coords\"]");
-    	check_test_cases("MAYA_RS_RM_009", 9, "[\"Render mode: Ambient Occlusion\"]");
+    	check_test_cases("MAYA_RS_RM_001", 1, 1, "[\"Render mode: Global illumination\"]");
+    	check_test_cases("MAYA_RS_RM_002", 2, 1, "[\"Render mode: Direct illumination\"]");
+    	check_test_cases("MAYA_RS_RM_003", 3, 1, "[\"Render mode: Direct illumination no shadow\"]");
+    	check_test_cases("MAYA_RS_RM_004", 4, 1, "[\"Render mode: Wireframe\"]");
+    	// check_test_cases("MAYA_RS_RM_005", 5, 1, "[\"Render mode: Material index\"]");
+    	check_test_cases("MAYA_RS_RM_006", 6, 1, "[\"Render mode: Position\"]");
+    	check_test_cases("MAYA_RS_RM_007", 7, 1, "[\"Render mode: Normal\"]");
+    	check_test_cases("MAYA_RS_RM_008", 8, 1, "[\"Render mode: Tex coords\"]");
+    	check_test_cases("MAYA_RS_RM_009", 9, 1, "[\"Render mode: Ambient Occlusion\"]");
+
+        check_test_cases("MAYA_RS_RM_010", 1, 50, "[\"Render mode: Global illumination. Clamp Irradiance Value: 50 \"]");
+        check_test_cases("MAYA_RS_RM_011", 2, 50, "[\"Render mode: Direct illumination. Clamp Irradiance Value: 50\"]");
+        check_test_cases("MAYA_RS_RM_012", 3, 50, "[\"Render mode: Direct illumination no shadow. Clamp Irradiance Value: 50\"]");
+        check_test_cases("MAYA_RS_RM_013", 4, 50, "[\"Render mode: Wireframe. Clamp Irradiance Value: 50\"]");
+        // check_test_cases("MAYA_RS_RM_014", 5, 50, "[\"Render mode: Material index. Clamp Irradiance Value: 50\"]");
+        check_test_cases("MAYA_RS_RM_015", 6, 50, "[\"Render mode: Position. Clamp Irradiance Value: 50\"]");
+        check_test_cases("MAYA_RS_RM_016", 7, 50, "[\"Render mode: Normal. Clamp Irradiance Value: 50\"]");
+        check_test_cases("MAYA_RS_RM_017", 8, 50, "[\"Render mode: Tex coords. Clamp Irradiance Value: 50\"]");
+        check_test_cases("MAYA_RS_RM_018", 9, 50, "[\"Render mode: Ambient Occlusion. Clamp Irradiance Value: 50\"]");
+
+        check_test_cases("MAYA_RS_RM_019", 1, 100, "[\"Render mode: Global illumination. Clamp Irradiance Value: 100\"]");
+        check_test_cases("MAYA_RS_RM_020", 2, 100, "[\"Render mode: Direct illumination. Clamp Irradiance Value: 100\"]");
+        check_test_cases("MAYA_RS_RM_021", 3, 100, "[\"Render mode: Direct illumination no shadow. Clamp Irradiance Value: 100\"]");
+        check_test_cases("MAYA_RS_RM_022", 4, 100, "[\"Render mode: Wireframe. Clamp Irradiance Value: 100\"]");
+        // check_test_cases("MAYA_RS_RM_023", 5, 100, "[\"Render mode: Material index. Clamp Irradiance Value: 100\"]");
+        check_test_cases("MAYA_RS_RM_024", 6, 100, "[\"Render mode: Position. Clamp Irradiance Value: 100\"]");
+        check_test_cases("MAYA_RS_RM_025", 7, 100, "[\"Render mode: Normal. Clamp Irradiance Value: 100\"]");
+        check_test_cases("MAYA_RS_RM_026", 8, 100, "[\"Render mode: Tex coords. Clamp Irradiance Value: 100\"]");
+        check_test_cases("MAYA_RS_RM_027", 9, 100, "[\"Render mode: Ambient Occlusion. Clamp Irradiance Value: 100\"]");
 	}}
 
 	evalDeferred("quit -abort");
