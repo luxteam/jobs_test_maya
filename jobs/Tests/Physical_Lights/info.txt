@@ -1,0 +1,4 @@
+Description: Testing different IES files with 10 intensity
+Scene: maya_IES_solo.ma
+Summary: 10 tests
+Test cases: no test cases
