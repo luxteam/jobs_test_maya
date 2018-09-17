@@ -81,15 +81,15 @@ global proc main(){{
         check_test_cases("MAYA_RS_IS_034", 0, 0, 4000, 4000, 72, 1.0, 1.0, "[\"Preset: 4000x4000\"]");
         check_test_cases("MAYA_RS_IS_035", 0, 0, 5000, 5000, 72, 1.0, 1.0, "[\"Preset: 5000x5000\"]");
 
-        // check_test_cases("MAYA_RS_IS_036", 0, 0, 6000, 6000, 72, 1.0, 1.0, "[\"Preset: 6000x6000\"]");
+        check_test_cases("MAYA_RS_IS_036", 0, 0, 6000, 6000, 72, 1.0, 1.0, "[\"Preset: 6000x6000\"]");
         // check_test_cases("MAYA_RS_IS_036", 0, 0, 100, 100, 72, 1.0, 1.0, "[\"Preset: 6000x6000\"]");
         // sysFile -copy ("{work_dir}/Color/MAYA_RS_IS_036.jpg") ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");
 
-        // check_test_cases("MAYA_RS_IS_037", 0, 0, 7000, 7000, 72, 1.0, 1.0, "[\"Preset: 7000x7000\"]");
+        check_test_cases("MAYA_RS_IS_037", 0, 0, 7000, 7000, 72, 1.0, 1.0, "[\"Preset: 7000x7000\"]");
         // check_test_cases("MAYA_RS_IS_037", 0, 0, 100, 100, 72, 1.0, 1.0, "[\"Preset:  7000x7000\"]");
         // sysFile -copy ("{work_dir}/Color/MAYA_RS_IS_037.jpg") ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");
 
-        // check_test_cases("MAYA_RS_IS_038", 0, 0, 8000, 8000, 72, 1.0, 1.0, "[\"Preset: 8000x8000\"]");
+        check_test_cases("MAYA_RS_IS_038", 0, 0, 8000, 8000, 72, 1.0, 1.0, "[\"Preset: 8000x8000\"]");
         // check_test_cases("MAYA_RS_IS_038", 0, 0, 100, 100, 72, 1.0, 1.0, "[\"Preset: 8000x8000\"]");
         // sysFile -copy ("{work_dir}/Color/MAYA_RS_IS_038.jpg") ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");
 
@@ -106,7 +106,7 @@ global proc main(){{
         check_test_cases("MAYA_RS_IS_047", 0, 0, 1280, 720, 1, 1.778, 1.0, "[\"Preset: HD 720, Resolution: 1\"]");
         check_test_cases("MAYA_RS_IS_048", 0, 0, 1280, 720, 50, 1.778, 1.0, "[\"Preset: HD 720, Resolution: 50\"]");
         check_test_cases("MAYA_RS_IS_049", 0, 0, 1280, 720, 100, 1.778, 1.0, "[\"Preset: HD 720, Resolution: 100\"]");
-        check_test_cases("MAYA_RS_IS_047", 0, 1, 1280, 720, 72, 1.778, 1.0, "[\"Preset: HD 720, Resolution: 72, Resolution unis: pixels cm\"]");
+        check_test_cases("MAYA_RS_IS_050", 0, 1, 1280, 720, 72, 1.778, 1.0, "[\"Preset: HD 720, Resolution: 72, Resolution unis: pixels cm\"]");
         
     }}
 
