@@ -3,7 +3,7 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1" timeout="750">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
         <argument>--tests "{CWD}/Tests/Extended_smoke/{TestsFilter}TestsList.txt"</argument>
