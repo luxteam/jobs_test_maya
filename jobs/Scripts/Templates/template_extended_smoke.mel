@@ -459,6 +459,7 @@ global proc main(){{
     		activate_jpg_format();
 
     		check_test_cases("MAYA_SM_034", 100, "[\"SSS\", \"Pass Limit: 100\"]");
+	}}
 		
 	else if ($each == "Uber_SSS_night.ma") {{
 
