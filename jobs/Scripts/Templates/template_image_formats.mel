@@ -53,7 +53,7 @@ global proc main(){{
     	check_test_cases("MAYA_RS_IF_001", 6, "[\"Image format: Alias PIX (als)\"]");
 
     	//prerender("MAYA_RS_IF_002", 11, "[\"Image format: Cineon (cin)\"]");
-        check_test_cases("MAYA_RS_IF_002", 8, "[\"Image format: Cineon (cin)\"]");
+        //check_test_cases("MAYA_RS_IF_002", 8, "[\"Image format: Cineon (cin)\"]");
 
     	check_test_cases("MAYA_RS_IF_003", 35, "[\"Image format: DDS (dds)\"]");
     	check_test_cases("MAYA_RS_IF_004", 9, "[\"Image format: EPS (eps)\"]");
