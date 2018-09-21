@@ -25,6 +25,8 @@ global proc prerender(string $test_case, int $type, int $option_1, int $option_2
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 
+    setAttr "RadeonProRenderGlobals.completionCriteriaType" $type;
+
     if ($type == 0) {{
         setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $option_1;
     }} else if ($type == 1) {{
@@ -48,7 +50,7 @@ global proc main(){{
 	string $scene[];
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
-        catchQuiet ( `file -f -options "v=0;" -ignoreVersion -o $each` );
+        file -f -options "v=0;" -ignoreVersion -o $each;
     	
         if ($each == "easy_scene.ma") {{
 
