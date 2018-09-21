@@ -201,7 +201,7 @@ global proc main(){{
         check_test_cases_area_light("MAYA_L_PL_007", 1, 1, 100, 0, 17, 1, 0, 0, 2, 1, "[\" Light Type - Area, Light Intensity - 100, Intensity Units - Lumen, Color Mode - Temperature, Light Shape - Sphere,Check Box Shadows - Activate\"]");
         check_test_cases_area_light("MAYA_L_PL_008", 1, 0, 1, 1, 17, 1, 4000, 1, 3, 0, "[\" Light Type - Area, Area Lenght - 0, Intensity Units - Luminance, Color Mode - Temperature, Temperature - 40000, Check Box Visible - Activate, Light Shape - Rectangle, Check Box Shadows - Deactivate\"]");
         check_test_cases_area_light("MAYA_L_PL_009", 1, 1, 0, 2, 17, 1, 4000, 0, 0, 1, "[\" Light Type - Area, Area Lenght - 1, Light Intensity - 0, Color Mode - Temperature, Check Box Visible - Deactivate, Light Shape - Disk\"]");
-        check_test_cases_area_light("MAYA_L_PL_010", 1, 1, 1, 0, 17, 0, 1, 0, 1, 1, "[\" Light Type - Area, Area Lenght - 10, Light Intensity - 1, Intensity Units - Lumen, Color Mode - Temperature, Temperature - 40000, Check Box Visible - Deactivate, Light Shape - Cylinder, Check Box Shadows - Activate\"]");
+        check_test_cases_area_light("MAYA_L_PL_010", 1, 1, 1, 0, 17, 0, 1, 0, 1, 1, "[\" Light Type - Area, Light Intensity - 1, Intensity Units - Lumen, Color Mode - Temperature, Temperature - 40000, Check Box Visible - Deactivate, Light Shape - Cylinder, Check Box Shadows - Activate\"]");
 
         check_test_cases_spot_light("MAYA_L_PL_011", 0, 0, 0, 2, 0.100001, 0, 1, "[\" Light Type - Spot, Light Intensity - 0, Intensity Units - Watts, Luminous Efficacy - 0.1, Inner Cone Angle - 0, Outer Cone Angle - 0\"]");
         check_test_cases_spot_light("MAYA_L_PL_012", 43, 45, 0, 2, 17, 0, 1, "[\" Light Type - Spot, Light Intensity - 0\"]");
