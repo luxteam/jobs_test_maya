@@ -48,8 +48,8 @@ global proc main(){{
 	string $scene[];
 	$numTokens = `tokenize $scenes "," $scene`;
 	for ($each in $scene) {{
-    	file -f -options "v=0;"  -ignoreVersion -o $each;
-
+        catchQuiet ( `file -f -options "v=0;" -ignoreVersion -o $each` );
+    	
         if ($each == "easy_scene.ma") {{
 
     	check_test_cases("MAYA_RS_PS_001", 0, 1, 0, "[\"Easy scene. Pass Limit: 1\"]");
