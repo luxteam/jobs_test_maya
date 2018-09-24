@@ -33,7 +33,6 @@ def get_windows_titles():
 def createArgsParser():
 	parser = argparse.ArgumentParser()
 
-	parser.add_argument('--stage_report', required=True)
 	parser.add_argument('--tool', required=True, metavar="<path>")
 	parser.add_argument('--tests', required=True)
 	parser.add_argument('--render_device', required=True)
@@ -50,13 +49,9 @@ def createArgsParser():
 	return parser
 
 
-def main():
-	def rewrite_stage_report():
-		with open(os.path.join(args.output, args.stage_report), 'w') as file:
-			json.dump(stage_report, file, indent=' ')
-
-	args = createArgsParser().parse_args()
-	stage_report = [{'status': 'INIT'}, {'log': ['Maya simpleRender.py started;']}]
+def main(args, startFrom):
+	
+	#args = createArgsParser().parse_args()
 
 	testsList = None
 	script_template = None
@@ -67,19 +62,6 @@ def main():
 			testsList = file.read()
 			testsList = testsList.replace("\n","")
 	except OSError as e:
-		stage_report[0]['status'] = 'FAILED'
-		stage_report[1]['log'].append('OSError while read tests list. ' + str(e))
-		rewrite_stage_report()
-		return 1
-
-	try:
-		os.makedirs(args.output)
-		# os.mkdir(os.path.join(args.output, 'Color'))
-		# os.mkdir(os.path.join(args.output, 'Opacity'))
-	except OSError as e:
-		stage_report[0]['status'] = 'FAILED'
-		stage_report[1]['log'].append('OSError while create folders. ' + str(e))
-		rewrite_stage_report()
 		return 1
 
 	try:
@@ -89,16 +71,12 @@ def main():
 	except Exception as e:
 		testCases_mel = "all"
 	
-	try:
-		# with open(os.path.join(os.path.dirname(sys.argv[0]), 'template.mel')) as f:
+	try:		
 		with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
 			script_template = f.read()
 		with open(os.path.join(os.path.dirname(__file__), "Templates", "base_function.mel")) as f:
 			base = f.read()
 	except OSError as e:
-		stage_report[0]['status'] = 'FAILED'
-		stage_report[1]['log'].append('OSError while read mel template. ' + str(e))
-		rewrite_stage_report()
 		return 1
 
 	res_path = args.res_path
@@ -112,6 +90,13 @@ def main():
 									   pass_limit = args.pass_limit, resolution_x = args.resolution_x,
 									   resolution_y = args.resolution_y, testCases = testCases_mel)
 
+	original_tests = melScript[melScript.find("<-- start -->")+ 19: melScript.find("<-- end -->")]
+	modified_tests = original_tests.split("\n\t    ")[startFrom:]
+	replace_tests = ""
+	for each in modified_tests:
+		replace_tests += each
+	melScript = melScript.replace(original_tests, replace_tests)
+
 	cmdRun = '''
 	set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
 	set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
@@ -121,21 +106,14 @@ def main():
 	try:
 		with open(os.path.join(args.output, 'script.bat'), 'w') as f:
 			f.write(cmdRun)
-		stage_report[1]['log'].append('cmd template formatted and saved as script.bat;')
 
 		with open(os.path.join(args.output, 'script.mel'), 'w') as f:
 			f.write(melScript)
-		stage_report[1]['log'].append('mel template formatted and saved as script.mel;')
-
 	except OSError as e:
-		stage_report[0]['status'] = 'FAILED'
-		stage_report[1]['log'].append('OSError while write scripts file saving. ' + str(e))
-		rewrite_stage_report()
 		return 1
 
 	os.chdir(args.output)
 	p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE)
-	stage_report[1]['log'].append('subprocess started;')
 	rc = -1
 
 	while True:
@@ -159,18 +137,32 @@ def main():
 
 	if rc == 0:
 		print('passed')
-		stage_report[0]['status'] = 'OK'
-		stage_report[1]['log'].append('subprocess PASSED;')
 	else:
 		print('failed')
-		stage_report[0]['status'] = 'TERMINATED'
-		stage_report[1]['log'].append('subprocess FAILED and was TERMINATED;')
 
-	rewrite_stage_report()
 	return rc
 
 
 if __name__ == "__main__":
-	rc = main()
-	#os.system("taskkill /f /im  DADispatcherService.exe")
-	exit(rc)
+
+	args = createArgsParser().parse_args()
+
+	try:
+		os.makedirs(args.output)
+	except OSError as e:
+		return 1
+
+	try:
+		with open(os.path.join(os.path.dirname(__file__), "..", "total_count.json")) as f:
+			all_counts = f.read()
+			total_count = json.loads(all_counts)[args.testType]
+	except Exception as e:
+		return 1
+
+	def getPassedCount():
+		return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
+
+	while getPassedCount() != total_count:
+		rc = main(args, getPassedCount)
+	
+	exit(1)
