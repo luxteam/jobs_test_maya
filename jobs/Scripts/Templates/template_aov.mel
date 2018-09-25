@@ -33,33 +33,11 @@ global proc prerender(string $test_case, int $aov, string $script_info){{
 
 	setAttr "RadeonProRenderGlobals.aovDisplayedInRenderView" $aov;
 
+    if ($test_case == "MAYA_RS_AOV_021"){{
+        setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 500; 
+    }}
+    
 	rpr_render($test_case, $script_info);
-
-}}
-
-global proc activate_aov(){{
-
-    setAttr "RadeonProRenderGlobals.aovOpacity" 1;
-    setAttr "RadeonProRenderGlobals.aovVolume" 1;
-    setAttr "RadeonProRenderGlobals.aovRefraction" 1;
-    setAttr "RadeonProRenderGlobals.aovReflectionIndirect" 1;
-    setAttr "RadeonProRenderGlobals.aovReflectionDirect" 1;
-    setAttr "RadeonProRenderGlobals.aovDiffuseIndirect" 1;
-    setAttr "RadeonProRenderGlobals.aovDiffuseDirect" 1;
-    setAttr "RadeonProRenderGlobals.aovAO" 1;
-    setAttr "RadeonProRenderGlobals.aovIndirectIllumination" 1;
-    setAttr "RadeonProRenderGlobals.aovDirectIllumination" 1;
-    setAttr "RadeonProRenderGlobals.aovVelocity" 1;
-    setAttr "RadeonProRenderGlobals.aovEmission" 1;
-    setAttr "RadeonProRenderGlobals.aovBackground" 1;
-    setAttr "RadeonProRenderGlobals.aovShadowCatcher" 1;
-    setAttr "RadeonProRenderGlobals.aovObjectId" 1;
-    setAttr "RadeonProRenderGlobals.aovDepth" 1;
-    setAttr "RadeonProRenderGlobals.aovShadingNormal" 1;
-    setAttr "RadeonProRenderGlobals.aovGeometricNormal" 1;
-    setAttr "RadeonProRenderGlobals.aovMaterialIndex" 1;
-    setAttr "RadeonProRenderGlobals.aovUV" 1;
-    setAttr "RadeonProRenderGlobals.aovWorldCoordinate" 1;
 
 }}
 
@@ -72,28 +50,96 @@ global proc main(){{
 	for ($each in $scene) {{
     	file -f -options "v=0;"  -ignoreVersion -o $each;
 
-        activate_aov();
-
+        setAttr "RadeonProRenderGlobals.aovOpacity" 1;
     	check_test_cases("MAYA_RS_AOV_001", 1, "[\"AOV: Opacity\"]");
+        setAttr "RadeonProRenderGlobals.aovOpacity" 0;
+
+        setAttr "RadeonProRenderGlobals.aovWorldCoordinate" 1;
         check_test_cases("MAYA_RS_AOV_002", 2, "[\"AOV: World Coordinate\"]");
+        setAttr "RadeonProRenderGlobals.aovWorldCoordinate" 0;
+
+        setAttr "RadeonProRenderGlobals.aovUV" 1;
         check_test_cases("MAYA_RS_AOV_003", 3, "[\"AOV: UV\"]");
+        setAttr "RadeonProRenderGlobals.aovUV" 0;
+
+        setAttr "RadeonProRenderGlobals.aovMaterialIndex" 1;
         check_test_cases("MAYA_RS_AOV_004", 4, "[\"AOV: Material Index\"]");
+        setAttr "RadeonProRenderGlobals.aovMaterialIndex" 0;
+
+        setAttr "RadeonProRenderGlobals.aovGeometricNormal" 1;
         check_test_cases("MAYA_RS_AOV_005", 5, "[\"AOV: Geometric Normal\"]");
+        setAttr "RadeonProRenderGlobals.aovGeometricNormal" 0;
+
+        setAttr "RadeonProRenderGlobals.aovShadingNormal" 1;
         check_test_cases("MAYA_RS_AOV_006", 6, "[\"AOV: Shading Normal\"]");
+        setAttr "RadeonProRenderGlobals.aovShadingNormal" 0;
+
+        setAttr "RadeonProRenderGlobals.aovDepth" 1;
         check_test_cases("MAYA_RS_AOV_007", 7, "[\"AOV: Depth\"]");
+        setAttr "RadeonProRenderGlobals.aovDepth" 0;
+
+        setAttr "RadeonProRenderGlobals.aovObjectId" 1;
         check_test_cases("MAYA_RS_AOV_008", 8, "[\"AOV: Object ID\"]");
+        setAttr "RadeonProRenderGlobals.aovObjectId" 0;
+
+        setAttr "RadeonProRenderGlobals.aovBackground" 1;
+        setAttr "RadeonProRenderGlobals.aovShadowCatcher" 1;
+        setAttr "RadeonProRenderGlobals.aovOpacity" 1;
         check_test_cases("MAYA_RS_AOV_009", 10, "[\"AOV: Shadow Catcher\"]");
+        setAttr "RadeonProRenderGlobals.aovBackground" 0;
+        setAttr "RadeonProRenderGlobals.aovShadowCatcher" 0;
+        setAttr "RadeonProRenderGlobals.aovOpacity" 0;
+
+        setAttr "RadeonProRenderGlobals.aovBackground" 1;
         check_test_cases("MAYA_RS_AOV_010", 11, "[\"AOV: Background\"]");
+        setAttr "RadeonProRenderGlobals.aovBackground" 0;
+
+        setAttr "RadeonProRenderGlobals.aovEmission" 1;
         check_test_cases("MAYA_RS_AOV_011", 12, "[\"AOV: Emission\"]");
+        setAttr "RadeonProRenderGlobals.aovEmission" 0;
+
+        setAttr "RadeonProRenderGlobals.aovVelocity" 1;
         check_test_cases("MAYA_RS_AOV_012", 13, "[\"AOV: Velocity\"]");
+        setAttr "RadeonProRenderGlobals.aovVelocity" 0;
+
+        setAttr "RadeonProRenderGlobals.aovDirectIllumination" 1;
         check_test_cases("MAYA_RS_AOV_013", 14, "[\"AOV: Direct Illumination\"]");
+        setAttr "RadeonProRenderGlobals.aovDirectIllumination" 0;
+
+        setAttr "RadeonProRenderGlobals.aovIndirectIllumination" 1;
         check_test_cases("MAYA_RS_AOV_014", 15, "[\"AOV: Indirect Illumination\"]");
+        setAttr "RadeonProRenderGlobals.aovIndirectIllumination" 0;
+
+        setAttr "RadeonProRenderGlobals.aovAO" 1;
         check_test_cases("MAYA_RS_AOV_015", 16, "[\"AOV: Ambient Occlusion\"]");
+        setAttr "RadeonProRenderGlobals.aovAO" 0;
+
+        setAttr "RadeonProRenderGlobals.aovDiffuseDirect" 1;
         check_test_cases("MAYA_RS_AOV_016", 17, "[\"AOV: Diffuse Direct\"]");
+        setAttr "RadeonProRenderGlobals.aovDiffuseDirect" 0;
+
+        setAttr "RadeonProRenderGlobals.aovDiffuseIndirect" 1;
         check_test_cases("MAYA_RS_AOV_017", 18, "[\"AOV: Diffuse Indirect\"]");
+        setAttr "RadeonProRenderGlobals.aovDiffuseIndirect" 0;
+
+        setAttr "RadeonProRenderGlobals.aovReflectionDirect" 1;
         check_test_cases("MAYA_RS_AOV_018", 19, "[\"AOV: Reflection Direct\"]");
+        setAttr "RadeonProRenderGlobals.aovReflectionDirect" 0;
+
+        setAttr "RadeonProRenderGlobals.aovReflectionIndirect" 1;
         check_test_cases("MAYA_RS_AOV_019", 20, "[\"AOV: Reflection Indirect\"]");
+        setAttr "RadeonProRenderGlobals.aovReflectionIndirect" 0;
+
+        setAttr "RadeonProRenderGlobals.aovRefraction" 1;
         check_test_cases("MAYA_RS_AOV_020", 21, "[\"AOV: Refraction\"]");
+        setAttr "RadeonProRenderGlobals.aovRefraction" 0;
+
+        setAttr "RadeonProRenderGlobals.aovVelocity" 1;
+        select -r ShaderBall_4_UntitledFBXASC046005;
+        showHidden -a;
+        select -r RPRPhysicalLight1;
+        showHidden -a;
+        delete RPRIBL;
         check_test_cases("MAYA_RS_AOV_021", 22, "[\"AOV: Volume\"]");
         
 	}}
