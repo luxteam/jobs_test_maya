@@ -99,7 +99,9 @@ global proc main(){{
         setAttr "RadeonProRenderGlobals.aovEmission" 0;
 
         setAttr "RadeonProRenderGlobals.aovVelocity" 1;
+	setAttr "RadeonProRenderGlobals.motionBlur" 1;
         check_test_cases("MAYA_RS_AOV_012", 13, "[\"AOV: Velocity\"]");
+	setAttr "RadeonProRenderGlobals.motionBlur" 0;
         setAttr "RadeonProRenderGlobals.aovVelocity" 0;
 
         setAttr "RadeonProRenderGlobals.aovDirectIllumination" 1;
