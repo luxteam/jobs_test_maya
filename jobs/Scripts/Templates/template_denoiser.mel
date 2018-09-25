@@ -142,11 +142,11 @@ global proc main(){{
         file -f -options "v=0;"  -ignoreVersion -o $each;
 
         check_test_cases_bilateral("MAYA_RS_DEN_001", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 1\"]", 0, 1);
-        check_test_cases_bilateral("MAYA_RS_DEN_002", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 5\"]", 0, 5);
-        
-        if ( catch(check_test_cases_bilateral("MAYA_RS_DEN_003", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 10\"]", 0, 10)) ) {{
-            sysFile -copy ("{work_dir}/Color/MAYA_RS_DEN_003.jpg") ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");
-        }}
+        check_test_cases_bilateral("MAYA_RS_DEN_002", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 3\"]", 0, 3);
+        check_test_cases_bilateral("MAYA_RS_DEN_003", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 6\"]", 0, 6);
+        //if ( catch(check_test_cases_bilateral("MAYA_RS_DEN_003", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 10\"]", 0, 10)) ) {{
+        //    sysFile -copy ("{work_dir}/Color/MAYA_RS_DEN_003.jpg") ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");
+        //}}
         
         check_test_cases_lwr("MAYA_RS_DEN_004", "[\"2. Rendering with LWR Denoiser\", \"Default settings\"]", 1, 2, 1, 1);
         check_test_cases_lwr("MAYA_RS_DEN_005", "[\"2. Rendering with LWR Denoiser\", \"Samples - 5\"]", 1, 5, 1, 1);
