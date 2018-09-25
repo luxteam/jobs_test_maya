@@ -82,19 +82,19 @@ global proc main(){{
         check_test_cases("MAYA_RS_AOV_006", 6, "[\"AOV: Shading Normal\"]");
         check_test_cases("MAYA_RS_AOV_007", 7, "[\"AOV: Depth\"]");
         check_test_cases("MAYA_RS_AOV_008", 8, "[\"AOV: Object ID\"]");
-        check_test_cases("MAYA_RS_AOV_009", 9, "[\"AOV: Shadow Catcher\"]");
-        check_test_cases("MAYA_RS_AOV_010", 10, "[\"AOV: Background\"]");
-        check_test_cases("MAYA_RS_AOV_011", 11, "[\"AOV: Emission\"]");
-        check_test_cases("MAYA_RS_AOV_012", 12, "[\"AOV: Velocity\"]");
-        check_test_cases("MAYA_RS_AOV_013", 13, "[\"AOV: Direct Illumination\"]");
-        check_test_cases("MAYA_RS_AOV_014", 14, "[\"AOV: Indirect Illumination\"]");
-        check_test_cases("MAYA_RS_AOV_015", 15, "[\"AOV: Ambient Occlusion\"]");
-        check_test_cases("MAYA_RS_AOV_016", 16, "[\"AOV: Diffuse Direct\"]");
-        check_test_cases("MAYA_RS_AOV_017", 17, "[\"AOV: Diffuse Indirect\"]");
-        check_test_cases("MAYA_RS_AOV_018", 18, "[\"AOV: Reflection Direct\"]");
-        check_test_cases("MAYA_RS_AOV_019", 19, "[\"AOV: Reflection Indirect\"]");
-        check_test_cases("MAYA_RS_AOV_020", 20, "[\"AOV: Refraction\"]");
-        check_test_cases("MAYA_RS_AOV_021", 21, "[\"AOV: Volume\"]");
+        check_test_cases("MAYA_RS_AOV_009", 10, "[\"AOV: Shadow Catcher\"]");
+        check_test_cases("MAYA_RS_AOV_010", 11, "[\"AOV: Background\"]");
+        check_test_cases("MAYA_RS_AOV_011", 12, "[\"AOV: Emission\"]");
+        check_test_cases("MAYA_RS_AOV_012", 13, "[\"AOV: Velocity\"]");
+        check_test_cases("MAYA_RS_AOV_013", 14, "[\"AOV: Direct Illumination\"]");
+        check_test_cases("MAYA_RS_AOV_014", 15, "[\"AOV: Indirect Illumination\"]");
+        check_test_cases("MAYA_RS_AOV_015", 16, "[\"AOV: Ambient Occlusion\"]");
+        check_test_cases("MAYA_RS_AOV_016", 17, "[\"AOV: Diffuse Direct\"]");
+        check_test_cases("MAYA_RS_AOV_017", 18, "[\"AOV: Diffuse Indirect\"]");
+        check_test_cases("MAYA_RS_AOV_018", 19, "[\"AOV: Reflection Direct\"]");
+        check_test_cases("MAYA_RS_AOV_019", 20, "[\"AOV: Reflection Indirect\"]");
+        check_test_cases("MAYA_RS_AOV_020", 21, "[\"AOV: Refraction\"]");
+        check_test_cases("MAYA_RS_AOV_021", 22, "[\"AOV: Volume\"]");
         
 	}}
 
