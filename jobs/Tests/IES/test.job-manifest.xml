@@ -3,8 +3,7 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1" timeout="100">
-        <argument>--stage_report stage1.json</argument>
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="1000">
         <argument>--tool "{Tool}"</argument>
         <argument>--tests "{CWD}/Tests/IES/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>

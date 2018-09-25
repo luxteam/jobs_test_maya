@@ -1,5 +1,5 @@
 
-global proc check_test_cases(string $test_case, int $pass, string $script_info){{
+global proc check_test_cases(string $test_case, int $pass, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -8,16 +8,16 @@ global proc check_test_cases(string $test_case, int $pass, string $script_info){
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $pass, $script_info);
+                prerender($test_case, $pass, $script_info, $scene);
             }}
         }}
     }} else {{
-        prerender($test_case, $pass, $script_info);
+        prerender($test_case, $pass, $script_info, $scene);
     }}
 }}
 
 
-global proc prerender(string $test_case, int $pass, string $script_info){{
+global proc prerender(string $test_case, int $pass, string $script_info, string $scene){{
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
 		loadPlugin RadeonProRender;
@@ -27,10 +27,180 @@ global proc prerender(string $test_case, int $pass, string $script_info){{
     	loadPlugin fbxmaya;
 	}}
 
+	string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		file -f -options "v=0;"  -ignoreVersion -o $scene;
+		activate_jpg_format();
+	}}
+
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
 
-	rpr_render($test_case, $script_info);
+	switch ($test_case) {{
+
+	case "MAYA_SM_003":
+		import_fbx();
+		rpr_render($test_case, $script_info);
+		delete_fbx();
+		break;
+
+	case "MAYA_SM_004":
+		import_obj();
+		rpr_render($test_case, $script_info);
+		delete_obj();
+		break;
+
+	case "MAYA_SM_006":
+		create_IBL();
+		rpr_render($test_case, $script_info);
+		delete_IBL();
+		break;
+
+	case "MAYA_SM_007":
+		create_IBL();
+		update_IBL_hdr();
+		rpr_render($test_case, $script_info);
+		delete_IBL();
+		break;
+
+	case "MAYA_SM_008":
+		create_IBL();
+		update_IBL_exr();
+		rpr_render($test_case, $script_info);
+		delete_IBL();
+		break;
+
+	case "MAYA_SM_009":
+		create_sun_sky();
+		rpr_render($test_case, $script_info);
+		delete_sun_sky();
+		break;
+
+	case "MAYA_SM_010":
+		create_ies_light();
+		rpr_render($test_case, $script_info);
+		delete_ies_light();
+		break;
+
+	case "MAYA_SM_014":
+		activate_tone_mapping();
+		rpr_render($test_case, $script_info);
+		deactivate_tone_mapping();
+		break;
+
+	case "MAYA_SM_015":
+		activate_render_stamp();
+		rpr_render($test_case, $script_info);
+		deactivate_render_stamp();
+		break;
+
+	case "MAYA_SM_016":
+		activate_wireframe_mode();
+		rpr_render($test_case, $script_info);
+		deactivate_wireframe_mode();
+		break;
+
+	case "MAYA_SM_017":
+		activate_medium_quality();
+		rpr_render($test_case, $script_info);
+		deactivate_medium_quality();
+		break;
+
+	case "MAYA_SM_018":
+		change_image_size_hd720();
+		rpr_render($test_case, $script_info);
+		change_image_size_standart();
+		break;
+
+	case "MAYA_SM_019":
+		change_image_size_custom();
+		rpr_render($test_case, $script_info);
+		change_image_size_standart();
+		break;
+
+	case "MAYA_SM_020":
+		activate_png_format();
+		rpr_render($test_case, $script_info);
+		sysFile -copy ("{work_dir}/Color/MAYA_SM_020.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+		break;
+
+	case "MAYA_SM_021":
+		activate_jpg_format();
+		rpr_render($test_case, $script_info);
+		break;
+
+	case "MAYA_SM_022":
+		activate_denoiser_bilateral();
+		rpr_render($test_case, $script_info);
+		deactivate_denoiser();
+		break;
+
+	case "MAYA_SM_023":
+		activate_denoiser_lwr();
+		rpr_render($test_case, $script_info);
+		deactivate_denoiser();
+		break;
+
+	case "MAYA_SM_024":
+		activate_denoiser_eaw();
+		rpr_render($test_case, $script_info);
+		deactivate_denoiser();
+		break;
+
+	case "MAYA_SM_025":
+		create_area_light();
+		rpr_render($test_case, $script_info);
+		delete_area_light();
+		break;
+
+	case "MAYA_SM_026":
+		activate_uv();
+		rpr_render($test_case, $script_info);
+		deactivate_uv();
+		break;
+
+	case "MAYA_SM_027":
+		create_physical_light();
+		rpr_render($test_case, $script_info);
+		delete_physical_light();
+		break;
+
+	case "MAYA_SM_028":
+		import_rpr_matlib();
+		rpr_render($test_case, $script_info);
+		break;
+
+	case "MAYA_SM_029":
+		create_and_asign_pbr();
+		rpr_render($test_case, $script_info);
+		break;
+
+	case "MAYA_SM_030":
+		create_and_asign_uber();
+		rpr_render($test_case, $script_info);
+		break;
+
+	case "MAYA_SM_031":
+		duplicate_500_instances();
+		rpr_render($test_case, $script_info);
+		break;
+
+	case "MAYA_SM_032":
+		multiple_ies_lights();
+		rpr_render($test_case, $script_info);
+		break;
+
+	case "MAYA_SM_033":
+		shadow_catcher_test();
+		rpr_render($test_case, $script_info);
+		break;
+
+	default:
+		rpr_render($test_case, $script_info);
+		break;
+
+	}}
+	
 			
 }}
 
@@ -47,6 +217,9 @@ global proc check_rpr_load(){{
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 }}
 
+global proc open_rpr_scene(){{
+	file -f -options "v=0;"  -ignoreVersion -o "Lamborginhi_Aventador.ma";
+}}
 
 global proc import_fbx(){{
 	FBXImport -f ("{res_path}" + "/sourceimages/park_bench1.fbx");
@@ -320,163 +493,54 @@ global proc shadow_catcher_test(){{
 global proc main(){{
 	
 	setProject ("{res_path}");
-	string $scenes = "{testsList}";
-	string $scene[];
-	$numTokens = `tokenize $scenes "," $scene`;
-
 
 	check_rpr_load();
+
+	// <-- start -->
+
+
 	check_test_cases_success_save("MAYA_SM_001", "[\"Installing with default settings\"]");
-    check_test_cases_success_save("MAYA_SM_002", "[\"Change renderer from default to RPR\"]");
+    @check_test_cases_success_save("MAYA_SM_002", "[\"Change renderer from default to RPR\"]");
+
+	@check_test_cases("MAYA_SM_003", 50, "[\"Test import FBX\", \"Pass Limit: 50\"]", "default.ma");
+	@check_test_cases("MAYA_SM_004", 50, "[\"Test import OBJ\", \"Pass Limit: 50\"]", "default.ma");
+
+	@check_test_cases_success_save("MAYA_SM_005", "[\"Open RPR scene\"]");
+
+	@check_test_cases("MAYA_SM_006", 50, "[\"Create IBL\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_007", 50, "[\"Test IBL HDR\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_008", 50, "[\"Test IBL EXR\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_009", 50, "[\"Create Sun&Sky\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_010", 50, "[\"Create IES Light\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_011", 1, "[\"Render 1 pass\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_012", 100, "[\"Render 100 pass\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_013", 500, "[\"Render 500 pass\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_014", 50, "[\"Tone Mapping\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_015", 50, "[\"Render Stamp\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_016", 50, "[\"Render mode wireframe\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_017", 50, "[\"Quality medium\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_018", 50, "[\"Image Size 1280 720\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_019", 50, "[\"Image Size 1500 1125\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_020", 50, "[\"Save image as png\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_021", 50, "[\"Save image as jpg\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_022", 50, "[\"Denoiser Bilateral default\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_023", 50, "[\"Denoiser LWR default\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_024", 50, "[\"Denoiser EAW default\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_025", 50, "[\"Base Light Area Light\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_026", 50, "[\"AOV UV\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_027", 50, "[\"Physical Light\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_028", 50, "[\"Assign material from Mat Library\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_029", 50, "[\"Assign Pbr to object\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_030", 50, "[\"Assign Uber to object\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	@check_test_cases("MAYA_SM_031", 50, "[\"Instances\", \"Pass Limit: 50\"]", "instances.ma");
+	@check_test_cases("MAYA_SM_032", 50, "[\"12 lights in one scene\", \"Pass Limit: 50\"]", "IES.ma");
+	@check_test_cases("MAYA_SM_033", 50, "[\"AOV Shadow Catcher\", \"Pass Limit: 50\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SM_034", 100, "[\"SSS\", \"Pass Limit: 100\"]", "Uber_SSS.ma");
+	@check_test_cases("MAYA_SM_035", 50, "[\"SSS Night\", \"Pass Limit: 50\"]", "Uber_SSS_night.ma");
+	@check_test_cases("MAYA_SM_036", 50, "[\"Displacement\", \"Pass Limit: 50\"]", "displacement.ma");
+	
+	// <-- end -->
     
-	for ($each in $scene) {{
-    	file -f -options "v=0;"  -ignoreVersion -o $each;
-
-    	if ($each == "default.ma") {{
-
-    		activate_jpg_format();
-
-    		import_fbx();
-    		check_test_cases("MAYA_SM_003", 50, "[\"Test import FBX\", \"Pass Limit: 50\"]");
-    		delete_fbx();
-
-    		import_obj();
-    		check_test_cases("MAYA_SM_004", 50, "[\"Test import OBJ\", \"Pass Limit: 50\"]");
-    		delete_obj();
-
-    	}} else if ($each == "Lamborginhi_Aventador.ma") {{
-
-    		activate_jpg_format();
-
-    		check_test_cases_success_save("MAYA_SM_005", "[\"Open RPR scene\"]");
-
-    		create_IBL();
-    		check_test_cases("MAYA_SM_006", 50, "[\"Create IBL\", \"Pass Limit: 50\"]");
-    		update_IBL_hdr();
-    		check_test_cases("MAYA_SM_007", 50, "[\"Test IBL HDR\", \"Pass Limit: 50\"]");
-    		update_IBL_exr();
-    		check_test_cases("MAYA_SM_008", 50, "[\"Test IBL EXR\", \"Pass Limit: 50\"]");
-    		delete_IBL();
-
-    		create_sun_sky();
-    		check_test_cases("MAYA_SM_009", 50, "[\"Create Sun&Sky\", \"Pass Limit: 50\"]");
-    		delete_sun_sky();
-
-    		create_ies_light();
-    		check_test_cases("MAYA_SM_010", 50, "[\"Create IES Light\", \"Pass Limit: 50\"]");
-    		delete_ies_light();
-
-    		check_test_cases("MAYA_SM_011", 1, "[\"Render 1 pass\"]");
-    		check_test_cases("MAYA_SM_012", 100, "[\"Render 100 pass\"]");
-    		check_test_cases("MAYA_SM_013", 500, "[\"Render 500 pass\"]");
-
-    		activate_tone_mapping();
-			check_test_cases("MAYA_SM_014", 50, "[\"Tone Mapping\", \"Pass Limit: 50\"]");
-    		deactivate_tone_mapping();
-
-    		activate_render_stamp();
-    		check_test_cases("MAYA_SM_015", 50, "[\"Render Stamp\", \"Pass Limit: 50\"]");
-    		deactivate_render_stamp();
-
-    		activate_wireframe_mode();
-			check_test_cases("MAYA_SM_016", 50, "[\"Render mode wireframe\", \"Pass Limit: 50\"]");
-    		deactivate_wireframe_mode();
-
-    		activate_medium_quality();
-    		check_test_cases("MAYA_SM_017", 50, "[\"Quality medium\", \"Pass Limit: 50\"]");
-    		deactivate_medium_quality();
-
-    		change_image_size_hd720();
-    		check_test_cases("MAYA_SM_018", 50, "[\"Image Size 1280 720\", \"Pass Limit: 50\"]");
-    		
-    		change_image_size_custom();
-    		check_test_cases("MAYA_SM_019", 50, "[\"Image Size 1500 1125\", \"Pass Limit: 50\"]");
-
-    		change_image_size_standart();
-
-    		activate_png_format();
-    		check_test_cases("MAYA_SM_020", 50, "[\"Save image as png\", \"Pass Limit: 50\"]");
-    		sysFile -copy ("{work_dir}/Color/MAYA_SM_020.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
-
-    		activate_jpg_format();
-    		check_test_cases("MAYA_SM_021", 50, "[\"Save image as jpg\", \"Pass Limit: 50\"]");
-
-    		activate_denoiser_bilateral();
-    		check_test_cases("MAYA_SM_022", 50, "[\"Denoiser Bilateral default\", \"Pass Limit: 50\"]");
-
-    		activate_denoiser_lwr();
-    		check_test_cases("MAYA_SM_023", 50, "[\"Denoiser LWR default\", \"Pass Limit: 50\"]");
-
-    		activate_denoiser_eaw();
-    		check_test_cases("MAYA_SM_024", 50, "[\"Denoiser EAW default\", \"Pass Limit: 50\"]");
-
-    		deactivate_denoiser();
-
-    		create_area_light();
-    		check_test_cases("MAYA_SM_025", 50, "[\"Base Light Area Light\", \"Pass Limit: 50\"]");
-    		delete_area_light();
-
-    		activate_uv();
-    		check_test_cases("MAYA_SM_026", 50, "[\"AOV UV\", \"Pass Limit: 50\"]");
-    		deactivate_uv();
-
-    		create_physical_light();
-			check_test_cases("MAYA_SM_027", 50, "[\"Physical Light\", \"Pass Limit: 50\"]");
-    		delete_physical_light();
-
-    		import_rpr_matlib();
-    		check_test_cases("MAYA_SM_028", 50, "[\"Assign material from Mat Library\", \"Pass Limit: 50\"]");
-
-    		create_and_asign_pbr();
-    		check_test_cases("MAYA_SM_029", 50, "[\"Assign Pbr to object\", \"Pass Limit: 50\"]");
-
-    		create_and_asign_uber();
-    		check_test_cases("MAYA_SM_030", 50, "[\"Assign Uber to object\", \"Pass Limit: 50\"]");
-
-    	}} else if ($each == "instances.ma") {{
-
-    		activate_jpg_format();
-
-    		duplicate_500_instances();
-    		check_test_cases("MAYA_SM_031", 50, "[\"Instances\", \"Pass Limit: 50\"]");
-
-    	}} else if ($each == "IES.ma") {{
-
-    		activate_jpg_format();
-
-    		multiple_ies_lights();
-    		check_test_cases("MAYA_SM_032", 50, "[\"12 lights in one scene\", \"Pass Limit: 50\"]");
-
-    	}} else if ($each == "maya_shaderball.ma") {{
-
-    		activate_jpg_format();
-
-    		shadow_catcher_test();
-    		check_test_cases("MAYA_SM_033", 50, "[\"AOV Shadow Catcher\", \"Pass Limit: 50\"]");
-
-    	}} else if ($each == "Uber_SSS.ma") {{
-
-    		activate_jpg_format();
-
-    		check_test_cases("MAYA_SM_034", 100, "[\"SSS\", \"Pass Limit: 100\"]");
-	}}
-		
-	else if ($each == "Uber_SSS_night.ma") {{
-
-    		activate_jpg_format();
-
-    		check_test_cases("MAYA_SM_035", 50, "[\"SSS Night\", \"Pass Limit: 50\"]");
-
-    	}} else if ($each == "displacement.ma") {{
-
-    		activate_jpg_format();
-
-    		check_test_cases("MAYA_SM_036", 50, "[\"Displacement\", \"Pass Limit: 50\"]");
-
-    	}} 
-    	
-    }}
-
 	evalDeferred("quit -abort");
 }}
 

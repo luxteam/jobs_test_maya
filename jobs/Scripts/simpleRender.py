@@ -90,8 +90,8 @@ def main(args, startFrom):
 									   pass_limit = args.pass_limit, resolution_x = args.resolution_x,
 									   resolution_y = args.resolution_y, testCases = testCases_mel)
 
-	original_tests = melScript[melScript.find("<-- start -->")+ 19: melScript.find("<-- end -->")]
-	modified_tests = original_tests.split("\n\t    ")[startFrom:]
+	original_tests = melScript[melScript.find("<-- start -->") + 13: melScript.find("<-- end -->")]
+	modified_tests = original_tests.split("@")[startFrom:]
 	replace_tests = ""
 	for each in modified_tests:
 		replace_tests += each
@@ -135,11 +135,6 @@ def main(args, startFrom):
 		else:
 			break
 
-	if rc == 0:
-		print('passed')
-	else:
-		print('failed')
-
 	return rc
 
 
@@ -150,19 +145,19 @@ if __name__ == "__main__":
 	try:
 		os.makedirs(args.output)
 	except OSError as e:
-		return 1
+		pass
 
 	try:
 		with open(os.path.join(os.path.dirname(__file__), "..", "total_count.json")) as f:
 			all_counts = f.read()
 			total_count = json.loads(all_counts)[args.testType]
 	except Exception as e:
-		return 1
+		pass
 
 	def getPassedCount():
 		return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
 
 	while getPassedCount() != total_count:
-		rc = main(args, getPassedCount)
+		rc = main(args, getPassedCount())
 	
 	exit(1)
