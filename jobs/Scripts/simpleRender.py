@@ -90,11 +90,13 @@ def main(args, startFrom):
 									   pass_limit = args.pass_limit, resolution_x = args.resolution_x,
 									   resolution_y = args.resolution_y, testCases = testCases_mel)
 
-	original_tests = melScript[melScript.find("<-- start -->") + 13: melScript.find("<-- end -->")]
+	original_tests = melScript[melScript.find("<-- start -->") + 13: melScript.find("// <-- end -->")]
 	modified_tests = original_tests.split("@")[startFrom:]
-	replace_tests = ""
+	with open(os.path.join(os.path.dirname(__file__), "..", "..", "log.txt"), "a") as rr:
+			rr.write("!" + str(modified_tests) + str(startFrom))
+	replace_tests = "\n\t"
 	for each in modified_tests:
-		replace_tests += each
+		replace_tests += each + "\n\t"
 	melScript = melScript.replace(original_tests, replace_tests)
 
 	cmdRun = '''
@@ -158,6 +160,7 @@ if __name__ == "__main__":
 		return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
 
 	while getPassedCount() != total_count:
-		rc = main(args, getPassedCount())
+		rc = main(args, getPassedCount() + 1)
+		
 	
 	exit(1)
