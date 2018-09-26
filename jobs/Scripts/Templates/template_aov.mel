@@ -62,9 +62,9 @@ global proc main(){{
         check_test_cases("MAYA_RS_AOV_003", 3, "[\"AOV: UV\"]");
         setAttr "RadeonProRenderGlobals.aovUV" 0;
 
-        setAttr "RadeonProRenderGlobals.aovMaterialIndex" 1;
-        check_test_cases("MAYA_RS_AOV_004", 4, "[\"AOV: Material Index\"]");
-        setAttr "RadeonProRenderGlobals.aovMaterialIndex" 0;
+        //setAttr "RadeonProRenderGlobals.aovMaterialIndex" 1;
+        //check_test_cases("MAYA_RS_AOV_004", 4, "[\"AOV: Material Index\"]");
+        //setAttr "RadeonProRenderGlobals.aovMaterialIndex" 0;
 
         setAttr "RadeonProRenderGlobals.aovGeometricNormal" 1;
         check_test_cases("MAYA_RS_AOV_005", 5, "[\"AOV: Geometric Normal\"]");
@@ -78,9 +78,9 @@ global proc main(){{
         check_test_cases("MAYA_RS_AOV_007", 7, "[\"AOV: Depth\"]");
         setAttr "RadeonProRenderGlobals.aovDepth" 0;
 
-        setAttr "RadeonProRenderGlobals.aovObjectId" 1;
-        check_test_cases("MAYA_RS_AOV_008", 8, "[\"AOV: Object ID\"]");
-        setAttr "RadeonProRenderGlobals.aovObjectId" 0;
+        //setAttr "RadeonProRenderGlobals.aovObjectId" 1;
+        //check_test_cases("MAYA_RS_AOV_008", 8, "[\"AOV: Object ID\"]");
+        //setAttr "RadeonProRenderGlobals.aovObjectId" 0;
 
         setAttr "RadeonProRenderGlobals.aovBackground" 1;
         setAttr "RadeonProRenderGlobals.aovShadowCatcher" 1;
