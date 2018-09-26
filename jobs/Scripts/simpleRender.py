@@ -34,7 +34,6 @@ def createArgsParser():
 	parser = argparse.ArgumentParser()
 
 	parser.add_argument('--tool', required=True, metavar="<path>")
-	parser.add_argument('--tests', required=True)
 	parser.add_argument('--render_device', required=True)
 	parser.add_argument('--output', required=True, metavar="<dir>")
 	parser.add_argument('--testType', required=True)
@@ -56,13 +55,6 @@ def main(args, startFrom, lastStatus):
 	cmdScriptPath = None
 
 	try:
-		with open(args.tests, 'r') as file:
-			testsList = file.read()
-			testsList = testsList.replace("\n","")
-	except OSError as e:
-		return 1
-
-	try:
 		with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
 			tc = f.read()
 			testCases_mel = json.loads(tc)[args.testType]
@@ -82,7 +74,6 @@ def main(args, startFrom, lastStatus):
 	mel_template = base + script_template
 	work_dir = os.path.abspath(args.output).replace('\\', '/')
 	melScript = mel_template.format(work_dir=work_dir,
-									   testsList=testsList,
 									   testType=args.testType,
 									   render_device = args.render_device, res_path=res_path,
 									   pass_limit = args.pass_limit, resolution_x = args.resolution_x,

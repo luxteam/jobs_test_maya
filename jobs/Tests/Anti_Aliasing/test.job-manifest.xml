@@ -3,10 +3,8 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1" timeout="3000">
-        <argument>--stage_report stage1.json</argument>
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="99999">
         <argument>--tool "{Tool}"</argument>
-        <argument>--tests "{CWD}/Tests/Anti_Aliasing/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Anti_Aliasing</argument>
@@ -18,17 +16,16 @@
     	<argument>--testCases "{TestCases}"</argument>
     </execute>
 
-    <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">
-        <argument>--stage_report stage2.json</argument>
+    <execute command='python "{CWD}/Scripts/make_report_json.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"' stage="stage3">
+    <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"' stage="stage4">
+    <execute command='python "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 

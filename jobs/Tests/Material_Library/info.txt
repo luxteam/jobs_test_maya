@@ -1,4 +1,0 @@
-Description: Testing material library
-Scene: MaterialTestScene.mb
-Summary: 270 tests
-Test cases: no test cases

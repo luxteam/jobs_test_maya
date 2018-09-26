@@ -1,4 +1,0 @@
-Description: Testing RPR render modes
-Scene: no base scene
-Summary: 9 tests
-Test cases: no test cases
