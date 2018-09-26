@@ -76,6 +76,10 @@ global proc check_test_cases_success_save(string $test_case, string $script_info
 
 global proc rpr_success_save(string $test_case, string $script_info){{
 
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
 	sysFile -makeDir ("{work_dir}" + "/Color");
 	string $work_folder = "{work_dir}/Color/" + $test_case + ".jpg";
 	sysFile -copy ($work_folder) ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
@@ -109,6 +113,7 @@ global proc rpr_success_save(string $test_case, string $script_info){{
 
 }}
 
+/*
 global proc check_test_cases_fail_save(string $test_case, string $script_info){{
 
     string $tests = "{testCases}";
@@ -126,9 +131,14 @@ global proc check_test_cases_fail_save(string $test_case, string $script_info){{
     }}
 
 }}
+*/
 
 global proc rpr_fail_save(string $test_case, string $script_info){{
 
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+	
 	sysFile -makeDir ("{work_dir}" + "/Color");
 	string $work_folder = "{work_dir}/Color/" + $test_case + ".jpg";
 	sysFile -copy ($work_folder) ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");

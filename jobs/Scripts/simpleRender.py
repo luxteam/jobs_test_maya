@@ -49,10 +49,8 @@ def createArgsParser():
 	return parser
 
 
-def main(args, startFrom):
+def main(args, startFrom, lastStatus):
 	
-	#args = createArgsParser().parse_args()
-
 	testsList = None
 	script_template = None
 	cmdScriptPath = None
@@ -92,12 +90,18 @@ def main(args, startFrom):
 
 	original_tests = melScript[melScript.find("<-- start -->") + 13: melScript.find("// <-- end -->")]
 	modified_tests = original_tests.split("@")[startFrom:]
-	with open(os.path.join(os.path.dirname(__file__), "..", "..", "log.txt"), "a") as rr:
-			rr.write("!" + str(modified_tests) + str(startFrom))
 	replace_tests = "\n\t"
 	for each in modified_tests:
 		replace_tests += each + "\n\t"
 	melScript = melScript.replace(original_tests, replace_tests)
+
+	if lastStatus == "fail":
+		fail_test = original_tests.split("@")[startFrom-1:startFrom]
+		fail_test_ = ""
+		for each in fail_test:
+			each = each.replace("check_test_cases", "check_test_cases_fail_save")
+			fail_test_ += each + "\n\t"
+		melScript = melScript.replace("// <-- fail -->", fail_test_)
 
 	cmdRun = '''
 	set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
@@ -149,18 +153,53 @@ if __name__ == "__main__":
 	except OSError as e:
 		pass
 
-	try:
-		with open(os.path.join(os.path.dirname(__file__), "..", "total_count.json")) as f:
-			all_counts = f.read()
-			total_count = json.loads(all_counts)[args.testType]
-	except Exception as e:
-		pass
-
-	def getPassedCount():
+	def getJsonCount():
 		return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
 
-	while getPassedCount() != total_count:
-		rc = main(args, getPassedCount() + 1)
+	def totalCount():
+		try:		
+			with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
+				script_template = f.read()
+			return len(script_template.split("@")) - 1 # -1 because first element is "" (split)
+		except OSError as e:
+			return -1
+
+	total_count = totalCount()
+	fail_count = 0 
+	current_test = 1 # start from 1st test
+	last_status = 0 # 0 - success status
+	it = 0
+
+	while current_test != total_count:
+
+		it += 1
+
+		with open(os.path.join(args.output, 'log_status.txt'), 'a') as f:
+			f.write("Iter:" + str(it) + " | current test: " + str(current_test) + " | fail count: " + \
+				str(fail_count) + " | last_status: " + str(last_status) + " | json: " + \
+				str(getJsonCount()) + " | total count: " + str(total_count) + "\n")
+
+		if last_status == -1 and fail_count == 3:
+			rc = main(args, current_test, "fail") # Start from n+1 test. n - fail.
+		else:
+			rc = main(args, current_test, "ok") # Start from 1st test (ok - random word)
+
+		if current_test != getJsonCount() + 1: # count to zero if failes another test
+			fail_count = 0
+
+		last_status = rc
+		if not last_status: 
+			current_test = getJsonCount() # finish work. 0 - success status.
+		elif last_status and fail_count == 2:
+			if total_count < getJsonCount() + 2: # last test failed
+				fail_count += 1
+				current_test = getJsonCount() + 1
+			else: # not last test failed
+				fail_count += 1
+				current_test = getJsonCount() + 2 # mark as fail test and go to next test 
+		elif last_status:
+			fail_count += 1 # count of failes + 1 (for current test)
+			current_test = getJsonCount() + 1
 		
 	
 	exit(1)

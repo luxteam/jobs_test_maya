@@ -1,4 +1,23 @@
 
+global proc check_test_cases_fail_save(string $test_case, int $intensity, string $ies_file, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_fail_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+
 global proc check_test_cases(string $test_case, int $intensity, string $ies_file, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
@@ -68,3 +87,5 @@ global proc main(){{
 
 	evalDeferred("quit -abort");
 }}
+
+
