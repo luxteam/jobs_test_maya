@@ -37,18 +37,18 @@ global proc check_test_cases(string $test_case, int $pass, string $script_info, 
 
 global proc prerender(string $test_case, int $pass, string $script_info, string $scene){{
 
+	string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		file -f -options "v=0;"  -ignoreVersion -o $scene;
+		activate_jpg_format();
+	}}
+
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
 		loadPlugin RadeonProRender;
 	}}
 
 	if( `pluginInfo -query -loaded fbxmaya` == 0){{
     	loadPlugin fbxmaya;
-	}}
-
-	string $scene_name  = `file -q -sn -shn`;
-	if ($scene_name != $scene) {{
-		file -f -options "v=0;"  -ignoreVersion -o $scene;
-		activate_jpg_format();
 	}}
 
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
