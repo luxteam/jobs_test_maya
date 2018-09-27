@@ -1,5 +1,5 @@
 
-global proc check_test_cases_fail_save(string $test_case, int $passes, int $mode, int $clamp, string $script_info){{
+global proc check_test_cases_fail_save(string $test_case, int $passes, int $mode, int $clamp, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -79,7 +79,7 @@ global proc main(){{
 	@check_test_cases("MAYA_RS_RM_002", 1, 2, 1, "[\"Render mode: Direct illumination\"]", "maya_shaderball.ma");
 	@check_test_cases("MAYA_RS_RM_003", 1, 3, 1, "[\"Render mode: Direct illumination no shadow\"]", "maya_shaderball.ma");
 	@check_test_cases("MAYA_RS_RM_004", 2, 4, 1, "[\"Render mode: Wireframe\"]", "maya_shaderball.ma");
-	@// check_test_cases("MAYA_RS_RM_005", 2, 5, 1, "[\"Render mode: Material index\"]", "maya_shaderball.ma");
+	// check_test_cases("MAYA_RS_RM_005", 2, 5, 1, "[\"Render mode: Material index\"]", "maya_shaderball.ma");
 	@check_test_cases("MAYA_RS_RM_006", 2, 6, 1, "[\"Render mode: Position\"]", "maya_shaderball.ma");
 	@check_test_cases("MAYA_RS_RM_007", 2, 7, 1, "[\"Render mode: Normal\"]", "maya_shaderball.ma");
 	@check_test_cases("MAYA_RS_RM_008", 2, 8, 1, "[\"Render mode: Tex coords\"]", "maya_shaderball.ma");
@@ -89,7 +89,7 @@ global proc main(){{
     @check_test_cases("MAYA_RS_RM_011", 1, 2, 50, "[\"Render mode: Direct illumination. Clamp Irradiance Value: 50\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_012", 1, 3, 50, "[\"Render mode: Direct illumination no shadow. Clamp Irradiance Value: 50\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_013", 2, 4, 50, "[\"Render mode: Wireframe. Clamp Irradiance Value: 50\"]", "maya_shaderball.ma");
-    @// check_test_cases("MAYA_RS_RM_014", 2, 5, 50, "[\"Render mode: Material index. Clamp Irradiance Value: 50\"]", "maya_shaderball.ma");
+    // check_test_cases("MAYA_RS_RM_014", 2, 5, 50, "[\"Render mode: Material index. Clamp Irradiance Value: 50\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_015", 2, 6, 50, "[\"Render mode: Position. Clamp Irradiance Value: 50\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_016", 2, 7, 50, "[\"Render mode: Normal. Clamp Irradiance Value: 50\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_017", 2, 8, 50, "[\"Render mode: Tex coords. Clamp Irradiance Value: 50\"]", "maya_shaderball.ma");
@@ -99,7 +99,7 @@ global proc main(){{
     @check_test_cases("MAYA_RS_RM_020", 1, 2, 100, "[\"Render mode: Direct illumination. Clamp Irradiance Value: 100\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_021", 1, 3, 100, "[\"Render mode: Direct illumination no shadow. Clamp Irradiance Value: 100\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_022", 2, 4, 100, "[\"Render mode: Wireframe. Clamp Irradiance Value: 100\"]", "maya_shaderball.ma");
-    @// check_test_cases("MAYA_RS_RM_023", 2, 5, 100, "[\"Render mode: Material index. Clamp Irradiance Value: 100\"]", "maya_shaderball.ma");
+    // check_test_cases("MAYA_RS_RM_023", 2, 5, 100, "[\"Render mode: Material index. Clamp Irradiance Value: 100\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_024", 2, 6, 100, "[\"Render mode: Position. Clamp Irradiance Value: 100\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_025", 2, 7, 100, "[\"Render mode: Normal. Clamp Irradiance Value: 100\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_RM_026", 2, 8, 100, "[\"Render mode: Tex coords. Clamp Irradiance Value: 100\"]", "maya_shaderball.ma");
