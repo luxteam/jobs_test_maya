@@ -1,5 +1,5 @@
 
-global proc check_test_cases_bilateral(string $test_case, string $script_info, int $denoiserType, int $denoiserRadius){{
+global proc check_test_cases_fail_save_bilateral(string $test_case, string $script_info, int $denoiserType, int $denoiserRadius, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -8,15 +8,38 @@ global proc check_test_cases_bilateral(string $test_case, string $script_info, i
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender_bilateral($test_case, $script_info, $denoiserType, $denoiserRadius);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender_bilateral($test_case, $script_info, $denoiserType, $denoiserRadius);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases_bilateral(string $test_case, string $script_info, int $denoiserType, int $denoiserRadius, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender_bilateral($test_case, $script_info, $denoiserType, $denoiserRadius, $scene);
+            }}
+        }}
+    }} else {{
+        prerender_bilateral($test_case, $script_info, $denoiserType, $denoiserRadius, $scene);
     }}
 }}
 
-global proc prerender_bilateral(string $test_case, string $script_info, int $denoiserType, int $denoiserRadius){{
+global proc prerender_bilateral(string $test_case, string $script_info, int $denoiserType, int $denoiserRadius, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        file -f -options "v=0;"  -ignoreVersion -o $scene;
+    }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
         loadPlugin RadeonProRender;
@@ -40,7 +63,7 @@ global proc prerender_bilateral(string $test_case, string $script_info, int $den
     rpr_render($test_case, $script_info);
 }}
 
-global proc check_test_cases_lwr(string $test_case, string $script_info, int $denoiserType, int $samples, int $radius, float $bandwidth){{
+global proc check_test_cases_fail_save_lwr(string $test_case, string $script_info, int $denoiserType, int $samples, int $radius, float $bandwidth, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -49,15 +72,38 @@ global proc check_test_cases_lwr(string $test_case, string $script_info, int $de
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender_lwr($test_case, $script_info, $denoiserType, $samples, $radius, $bandwidth);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender_lwr($test_case, $script_info, $denoiserType, $samples, $radius, $bandwidth);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases_lwr(string $test_case, string $script_info, int $denoiserType, int $samples, int $radius, float $bandwidth, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender_lwr($test_case, $script_info, $denoiserType, $samples, $radius, $bandwidth, $scene);
+            }}
+        }}
+    }} else {{
+        prerender_lwr($test_case, $script_info, $denoiserType, $samples, $radius, $bandwidth, $scene);
     }}
 }}
 
-global proc prerender_lwr(string $test_case, string $script_info, int $denoiserType, int $samples, int $radius, float $bandwidth){{
+global proc prerender_lwr(string $test_case, string $script_info, int $denoiserType, int $samples, int $radius, float $bandwidth, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        file -f -options "v=0;"  -ignoreVersion -o $scene;
+    }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
         loadPlugin RadeonProRender;
@@ -85,7 +131,7 @@ global proc prerender_lwr(string $test_case, string $script_info, int $denoiserT
 
 }}
 
-global proc check_test_cases_eaw(string $test_case, string $script_info, int $denoiserType, float $color, float $depth, float $normal, float $trans){{
+global proc check_test_cases_fail_save_eaw(string $test_case, string $script_info, int $denoiserType, float $color, float $depth, float $normal, float $trans, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -94,15 +140,38 @@ global proc check_test_cases_eaw(string $test_case, string $script_info, int $de
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender_eaw($test_case, $script_info, $denoiserType, $color, $depth, $normal, $trans);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender_eaw($test_case, $script_info, $denoiserType, $color, $depth, $normal, $trans);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases_eaw(string $test_case, string $script_info, int $denoiserType, float $color, float $depth, float $normal, float $trans, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender_eaw($test_case, $script_info, $denoiserType, $color, $depth, $normal, $trans, $scene);
+            }}
+        }}
+    }} else {{
+        prerender_eaw($test_case, $script_info, $denoiserType, $color, $depth, $normal, $trans, $scene);
     }}
 }}
 
-global proc prerender_eaw(string $test_case, string $script_info, int $denoiserType, float $color, float $depth, float $normal, float $trans){{
+global proc prerender_eaw(string $test_case, string $script_info, int $denoiserType, float $color, float $depth, float $normal, float $trans, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        file -f -options "v=0;"  -ignoreVersion -o $scene;
+    }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
         loadPlugin RadeonProRender;
@@ -135,43 +204,39 @@ global proc prerender_eaw(string $test_case, string $script_info, int $denoiserT
 global proc main(){{
 
     setProject ("{res_path}");
-    string $scenes = "{testsList}";
-    string $scene[];
-    $numTokens = `tokenize $scenes "," $scene`;
-    for ($each in $scene) {{
-        file -f -options "v=0;"  -ignoreVersion -o $each;
+    
+    // <-- fail -->
 
-        check_test_cases_bilateral("MAYA_RS_DEN_001", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 1\"]", 0, 1);
-        check_test_cases_bilateral("MAYA_RS_DEN_002", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 5\"]", 0, 5);
-        
-        if ( catch(check_test_cases_bilateral("MAYA_RS_DEN_003", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 10\"]", 0, 10)) ) {{
-            sysFile -copy ("{work_dir}/Color/MAYA_RS_DEN_003.jpg") ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");
-        }}
-        
-        check_test_cases_lwr("MAYA_RS_DEN_004", "[\"2. Rendering with LWR Denoiser\", \"Default settings\"]", 1, 2, 1, 1);
-        check_test_cases_lwr("MAYA_RS_DEN_005", "[\"2. Rendering with LWR Denoiser\", \"Samples - 5\"]", 1, 5, 1, 1);
-        check_test_cases_lwr("MAYA_RS_DEN_006", "[\"2. Rendering with LWR Denoiser\", \"Samples - 10\"]", 1, 10, 1, 1);
-        check_test_cases_lwr("MAYA_RS_DEN_007", "[\"2. Rendering with LWR Denoiser\", \"Filter Radius - 5\"]", 1, 2, 5, 1);
-        check_test_cases_lwr("MAYA_RS_DEN_008", "[\"2. Rendering with LWR Denoiser\", \"Filter Radius - 10\"]", 1, 2, 10, 1);
-        check_test_cases_lwr("MAYA_RS_DEN_009", "[\"2. Rendering with LWR Denoiser\", \"Bandwidth - 0.1\"]", 1, 2, 1, 0.1001);
-        check_test_cases_lwr("MAYA_RS_DEN_010", "[\"2. Rendering with LWR Denoiser\", \"Bandwidth - 0.5\"]", 1, 2, 1, 0.5);
-        check_test_cases_lwr("MAYA_RS_DEN_011", "[\"2. Rendering with LWR Denoiser\", \"Samples - 2\", \"Filter Radius - 1\", \"Bandwidth - 0.1\"]", 1, 2, 1, 0.1001);
-        check_test_cases_lwr("MAYA_RS_DEN_012", "[\"2. Rendering with LWR Denoiser\", \"Samples - 5\", \"Filter Radius - 5\", \"Bandwidth - 0.5\"]", 1, 5, 5, 0.5);
-        check_test_cases_lwr("MAYA_RS_DEN_013", "[\"2. Rendering with LWR Denoiser\", \"Samples - 10\", \"Filter Radius - 10\", \"Bandwidth - 1\"]", 1, 10, 10, 1);
+    // <-- start -->
 
-        check_test_cases_eaw("MAYA_RS_DEN_014", "[\"3. Rendering with EAW Denoiser\", \"Default Settings\"]", 2, 1, 1, 1, 1);
-        check_test_cases_eaw("MAYA_RS_DEN_015", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.1\"]", 2, 0.1001, 1, 1, 1);
-        check_test_cases_eaw("MAYA_RS_DEN_016", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.5\"]", 2, 0.5, 1, 1, 1);
-        check_test_cases_eaw("MAYA_RS_DEN_017", "[\"3. Rendering with EAW Denoiser\", \"Depth - 0.1\"]", 2, 1, 0.1001, 1, 1);
-        check_test_cases_eaw("MAYA_RS_DEN_018", "[\"3. Rendering with EAW Denoiser\", \"Depth - 0.5\"]", 2, 1, 0.5, 1, 1);
-        check_test_cases_eaw("MAYA_RS_DEN_019", "[\"3. Rendering with EAW Denoiser\", \"Normal - 0.1\"]", 2, 1, 1, 0.1001, 1);
-        check_test_cases_eaw("MAYA_RS_DEN_020", "[\"3. Rendering with EAW Denoiser\", \"Normal - 0.5\"]", 2, 1, 1, 0.5, 1);
-        check_test_cases_eaw("MAYA_RS_DEN_021", "[\"3. Rendering with EAW Denoiser\", \"Trans - 0.1\"]", 2, 1, 1, 1, 0.1001);
-        check_test_cases_eaw("MAYA_RS_DEN_022", "[\"3. Rendering with EAW Denoiser\", \"Trans - 0.5\"]", 2, 1, 1, 1, 0.5);
-        check_test_cases_eaw("MAYA_RS_DEN_023", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.1\",  \"Depth - 0.1\", \"Normal - 0.1\", \"Trans - 0.1\"]", 2, 0.1001, 0.1001, 0.1001, 0.1001);
-        check_test_cases_eaw("MAYA_RS_DEN_024", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.5\",  \"Depth - 0.5\", \"Normal - 0.5\", \"Trans - 0.5\"]", 2, 0.5, 0.5, 0.5, 0.5);    
+    @check_test_cases_bilateral("MAYA_RS_DEN_001", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 1\"]", 0, 1, "maya_shaderball.ma");
+    @check_test_cases_bilateral("MAYA_RS_DEN_002", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 5\"]", 0, 3, "maya_shaderball.ma");
+    @check_test_cases_bilateral("MAYA_RS_DEN_003", "[\"1. Rendering with Bilateral Denoiser\", \"Radius - 10\"]", 0, 6, "maya_shaderball.ma")
+    
+    @check_test_cases_lwr("MAYA_RS_DEN_004", "[\"2. Rendering with LWR Denoiser\", \"Default settings\"]", 1, 2, 1, 1, "maya_shaderball.ma");
+    @check_test_cases_lwr("MAYA_RS_DEN_005", "[\"2. Rendering with LWR Denoiser\", \"Samples - 5\"]", 1, 5, 1, 1, "maya_shaderball.ma");
+    @check_test_cases_lwr("MAYA_RS_DEN_006", "[\"2. Rendering with LWR Denoiser\", \"Samples - 10\"]", 1, 10, 1, 1, "maya_shaderball.ma");
+    @check_test_cases_lwr("MAYA_RS_DEN_007", "[\"2. Rendering with LWR Denoiser\", \"Filter Radius - 5\"]", 1, 2, 5, 1, "maya_shaderball.ma");
+    @check_test_cases_lwr("MAYA_RS_DEN_008", "[\"2. Rendering with LWR Denoiser\", \"Filter Radius - 10\"]", 1, 2, 10, 1, "maya_shaderball.ma");
+    @check_test_cases_lwr("MAYA_RS_DEN_009", "[\"2. Rendering with LWR Denoiser\", \"Bandwidth - 0.1\"]", 1, 2, 1, 0.1001, "maya_shaderball.ma");
+    @check_test_cases_lwr("MAYA_RS_DEN_010", "[\"2. Rendering with LWR Denoiser\", \"Bandwidth - 0.5\"]", 1, 2, 1, 0.5, "maya_shaderball.ma");
+    @check_test_cases_lwr("MAYA_RS_DEN_011", "[\"2. Rendering with LWR Denoiser\", \"Samples - 2\", \"Filter Radius - 1\", \"Bandwidth - 0.1\"]", 1, 2, 1, 0.1001, "maya_shaderball.ma");
+    @check_test_cases_lwr("MAYA_RS_DEN_012", "[\"2. Rendering with LWR Denoiser\", \"Samples - 5\", \"Filter Radius - 5\", \"Bandwidth - 0.5\"]", 1, 5, 5, 0.5, "maya_shaderball.ma");
+    @check_test_cases_lwr("MAYA_RS_DEN_013", "[\"2. Rendering with LWR Denoiser\", \"Samples - 10\", \"Filter Radius - 10\", \"Bandwidth - 1\"]", 1, 10, 10, 1, "maya_shaderball.ma");
 
-    }}
+    @check_test_cases_eaw("MAYA_RS_DEN_014", "[\"3. Rendering with EAW Denoiser\", \"Default Settings\"]", 2, 1, 1, 1, 1, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_015", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.1\"]", 2, 0.1001, 1, 1, 1, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_016", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.5\"]", 2, 0.5, 1, 1, 1, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_017", "[\"3. Rendering with EAW Denoiser\", \"Depth - 0.1\"]", 2, 1, 0.1001, 1, 1, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_018", "[\"3. Rendering with EAW Denoiser\", \"Depth - 0.5\"]", 2, 1, 0.5, 1, 1, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_019", "[\"3. Rendering with EAW Denoiser\", \"Normal - 0.1\"]", 2, 1, 1, 0.1001, 1, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_020", "[\"3. Rendering with EAW Denoiser\", \"Normal - 0.5\"]", 2, 1, 1, 0.5, 1, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_021", "[\"3. Rendering with EAW Denoiser\", \"Trans - 0.1\"]", 2, 1, 1, 1, 0.1001, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_022", "[\"3. Rendering with EAW Denoiser\", \"Trans - 0.5\"]", 2, 1, 1, 1, 0.5, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_023", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.1\",  \"Depth - 0.1\", \"Normal - 0.1\", \"Trans - 0.1\"]", 2, 0.1001, 0.1001, 0.1001, 0.1001, "maya_shaderball.ma");
+    @check_test_cases_eaw("MAYA_RS_DEN_024", "[\"3. Rendering with EAW Denoiser\", \"Color - 0.5\",  \"Depth - 0.5\", \"Normal - 0.5\", \"Trans - 0.5\"]", 2, 0.5, 0.5, 0.5, 0.5, "maya_shaderball.ma");    
+
+    // <-- end -->
 
     evalDeferred("quit -abort");
 }}
