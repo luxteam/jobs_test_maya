@@ -39,8 +39,11 @@ global proc prerender(string $test_case, int $pass, string $script_info, string 
 
 	string $scene_name  = `file -q -sn -shn`;
 	if ($scene_name != $scene) {{
-		file -f -options "v=0;"  -ignoreVersion -o $scene;
-		activate_jpg_format();
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`)) {{
+            evalDeferred("quit -abort");
+        }} else {{
+        	activate_jpg_format();
+        }}
 	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{

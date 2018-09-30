@@ -38,7 +38,9 @@ global proc prerender(string $test_case, int $type, int $option_1, int $option_2
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        file -f -options "v=0;"  -ignoreVersion -o $scene;
+        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
     }}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{

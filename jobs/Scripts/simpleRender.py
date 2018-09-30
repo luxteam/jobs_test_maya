@@ -180,6 +180,8 @@ if __name__ == "__main__":
 
 		last_status = rc
 		if not last_status: 
+			if not getJsonCount():
+				exit(1)
 			current_test = getJsonCount() # finish work. 0 - success status.
 		elif last_status and fail_count == 2:
 			if total_count < getJsonCount() + 2: # last test failed

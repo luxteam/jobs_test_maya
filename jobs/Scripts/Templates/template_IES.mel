@@ -39,7 +39,9 @@ global proc prerender(string $test_case, int $intensity, string $ies_file, strin
 
 	string $scene_name  = `file -q -sn -shn`;
 	if ($scene_name != $scene) {{
-		file -f -options "v=0;"  -ignoreVersion -o $scene;
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
 	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -84,7 +86,7 @@ global proc main(){{
     // <-- end -->
 
 	evalDeferred("quit -abort");
-    
+
 }}
 
 

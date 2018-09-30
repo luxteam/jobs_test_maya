@@ -37,9 +37,11 @@ global proc check_test_cases(string $test_case, int $type, float $hfa, float $vf
 global proc prerender(string $test_case, int $type, float $hfa, float $vfa, string $script_info, string $scene){{
 
     string $scene_name  = `file -q -sn -shn`;
-    if ($scene_name != $scene) {{
-        file -f -options "v=0;"  -ignoreVersion -o $scene;
-    }}
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
+	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -101,9 +103,11 @@ global proc check_test_cases_camera(string $test_case, float $focalLength, float
 global proc prerender_camera(string $test_case, float $focalLength, float $cameraScale, float $FilmAperture, float $lensSqueezeRatio, float $shakeEnable, float $shake, float $shakeOverscanEnabled, float $preScale, float $filmTranslate, float $RollPivot, float $filmRollValue, float $postScale, float $filmRollOrder, string $script_info, string $scene){{
 
     string $scene_name  = `file -q -sn -shn`;
-    if ($scene_name != $scene) {{
-        file -f -options "v=0;"  -ignoreVersion -o $scene;
-    }}
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
+	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;

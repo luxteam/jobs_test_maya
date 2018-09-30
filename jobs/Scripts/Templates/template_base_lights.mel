@@ -38,7 +38,9 @@ global proc prerender_ambient_light(string $test_case, int $intensity, int $ambi
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        file -f -options "v=0;"  -ignoreVersion -o $scene;
+        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
     }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -104,7 +106,9 @@ global proc prerender_area_light(string $test_case, int $intensity, int $decayRa
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        file -f -options "v=0;"  -ignoreVersion -o $scene;
+        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
     }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -170,7 +174,9 @@ global proc prerender_directional_light(string $test_case, int $intensity, strin
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        file -f -options "v=0;"  -ignoreVersion -o $scene;
+        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
     }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -235,7 +241,9 @@ global proc prerender_point_light(string $test_case, int $intensity, int $decayR
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        file -f -options "v=0;"  -ignoreVersion -o $scene;
+        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
     }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -302,7 +310,9 @@ global proc prerender_spot_light(string $test_case, int $intensity, int $decayRa
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        file -f -options "v=0;"  -ignoreVersion -o $scene;
+        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
     }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
