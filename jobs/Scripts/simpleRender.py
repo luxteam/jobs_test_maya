@@ -94,6 +94,14 @@ def main(args, startFrom, lastStatus):
 			fail_test_ += each + "\n\t"
 		melScript = melScript.replace("// <-- fail -->", fail_test_)
 
+	if lastStatus == "no scene":
+		fail_test = original_tests.split("@")[startFrom:]
+		fail_test_ = ""
+		for each in fail_test:
+			each = each.replace("check_test_cases", "check_test_cases_fail_save")
+			fail_test_ += each + "\n\t"
+		melScript = melScript.replace("// <-- fail -->", fail_test_)
+
 	cmdRun = '''
 	set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
 	set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
@@ -181,6 +189,7 @@ if __name__ == "__main__":
 		last_status = rc
 		if not last_status: 
 			if not getJsonCount():
+				rc = main(args, current_test, "no scene")
 				exit(1)
 			current_test = getJsonCount() # finish work. 0 - success status.
 		elif last_status and fail_count == 2:
