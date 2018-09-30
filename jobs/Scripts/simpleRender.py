@@ -189,8 +189,9 @@ if __name__ == "__main__":
 				fail_count += 1
 				current_test = getJsonCount() + 2 # mark as fail test and go to next test 
 		elif last_status:
+			if getJsonCount() == total_count:
+				exit()
 			fail_count += 1 # count of failes + 1 (for current test)
 			current_test = getJsonCount() + 1
-		
 	
 	exit(1)

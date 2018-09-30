@@ -1,5 +1,5 @@
 
-global proc check_test_cases_ambient_light(string $test_case, int $intensity, int $ambientShade, string $script_info){{
+global proc check_test_cases_fail_save_ambient_light(string $test_case, int $intensity, int $ambientShade, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -8,38 +8,16 @@ global proc check_test_cases_ambient_light(string $test_case, int $intensity, in
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender_ambient_light($test_case, $intensity, $ambientShade, $script_info);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender_ambient_light($test_case, $intensity, $ambientShade, $script_info);
+        rpr_fail_save($test_case, $script_info);
     }}
-}}
-
-global proc prerender_ambient_light(string $test_case, int $intensity, int $ambientShade, string $script_info){{
-
-	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    	loadPlugin RadeonProRender;
-	}}
-
-	if ({resolution_x} && {resolution_y}) {{
-        setAttr "defaultResolution.width" {resolution_x};
-        setAttr "defaultResolution.height" {resolution_y};
-    }}
-
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
-
-    setAttr "ambientLightShape1.intensity" $intensity;
-    setAttr "ambientLightShape1.ambientShade" $ambientShade;
-
-	rpr_render($test_case, $script_info);
 
 }}
 
-
-global proc check_test_cases_area_light(string $test_case, int $intensity, int $decayRate, string $script_info){{
+global proc check_test_cases_ambient_light(string $test_case, int $intensity, int $ambientShade, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -48,15 +26,20 @@ global proc check_test_cases_area_light(string $test_case, int $intensity, int $
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender_area_light($test_case, $intensity, $decayRate, $script_info);
+                prerender_ambient_light($test_case, $intensity, $ambientShade, $script_info, $scene);
             }}
         }}
     }} else {{
-        prerender_area_light($test_case, $intensity, $decayRate, $script_info);
+        prerender_ambient_light($test_case, $intensity, $ambientShade, $script_info, $scene);
     }}
 }}
 
-global proc prerender_area_light(string $test_case, int $intensity, int $decayRate, string $script_info){{
+global proc prerender_ambient_light(string $test_case, int $intensity, int $ambientShade, string $script_info, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        file -f -options "v=0;"  -ignoreVersion -o $scene;
+    }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
         loadPlugin RadeonProRender;
@@ -71,15 +54,84 @@ global proc prerender_area_light(string $test_case, int $intensity, int $decayRa
     setAttr "defaultRenderGlobals.imageFormat" 8;
     setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
+    catchQuiet ( `delete RPRIBL` );
+    create_ambient_light();
+    setAttr "ambientLightShape1.intensity" $intensity;
+    setAttr "ambientLightShape1.ambientShade" $ambientShade;
+    
+    rpr_render($test_case, $script_info);
+
+    delete_ambient_light();
+
+}}
+
+global proc check_test_cases_fail_save_area_light(string $test_case, int $intensity, int $decayRate, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_fail_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases_area_light(string $test_case, int $intensity, int $decayRate, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender_area_light($test_case, $intensity, $decayRate, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender_area_light($test_case, $intensity, $decayRate, $script_info, $scene);
+    }}
+}}
+
+global proc prerender_area_light(string $test_case, int $intensity, int $decayRate, string $script_info, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        file -f -options "v=0;"  -ignoreVersion -o $scene;
+    }}
+
+    if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+        loadPlugin RadeonProRender;
+    }}
+
+    if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+    setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+    setAttr "defaultRenderGlobals.imageFormat" 8;
+    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+    catchQuiet ( `delete RPRIBL` );
+    create_area_light();
     setAttr "areaLightShape1.intensity" $intensity;
     setAttr "areaLightShape1.decayRate" $decayRate;
 
     rpr_render($test_case, $script_info);
 
+    delete_area_light();
+
 }}
 
-
-global proc check_test_cases_directional_light(string $test_case, int $intensity, string $script_info){{
+global proc check_test_cases_fail_save_directional_light(string $test_case, int $intensity, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -88,15 +140,38 @@ global proc check_test_cases_directional_light(string $test_case, int $intensity
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender_directional_light($test_case, $intensity, $script_info);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender_directional_light($test_case, $intensity, $script_info);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases_directional_light(string $test_case, int $intensity, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender_directional_light($test_case, $intensity, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender_directional_light($test_case, $intensity, $script_info, $scene);
     }}
 }}
 
-global proc prerender_directional_light(string $test_case, int $intensity, string $script_info){{
+global proc prerender_directional_light(string $test_case, int $intensity, string $script_info, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        file -f -options "v=0;"  -ignoreVersion -o $scene;
+    }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
         loadPlugin RadeonProRender;
@@ -111,14 +186,17 @@ global proc prerender_directional_light(string $test_case, int $intensity, strin
     setAttr "defaultRenderGlobals.imageFormat" 8;
     setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
+    catchQuiet ( `delete RPRIBL` );
+    create_directional_light();
     setAttr "directionalLightShape1.intensity" $intensity;
-
+    
     rpr_render($test_case, $script_info);
 
+    delete_directional_light();
+
 }}
 
-
-global proc check_test_cases_point_light(string $test_case, int $intensity, int $decayRate, string $script_info){{
+global proc check_test_cases_fail_save_point_light(string $test_case, int $intensity, int $decayRate, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -127,15 +205,38 @@ global proc check_test_cases_point_light(string $test_case, int $intensity, int 
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender_point_light($test_case, $intensity, $decayRate, $script_info);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender_point_light($test_case, $intensity, $decayRate, $script_info);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases_point_light(string $test_case, int $intensity, int $decayRate, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender_point_light($test_case, $intensity, $decayRate, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender_point_light($test_case, $intensity, $decayRate, $script_info, $scene);
     }}
 }}
 
-global proc prerender_point_light(string $test_case, int $intensity, int $decayRate, string $script_info){{
+global proc prerender_point_light(string $test_case, int $intensity, int $decayRate, string $script_info, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        file -f -options "v=0;"  -ignoreVersion -o $scene;
+    }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
         loadPlugin RadeonProRender;
@@ -150,15 +251,18 @@ global proc prerender_point_light(string $test_case, int $intensity, int $decayR
     setAttr "defaultRenderGlobals.imageFormat" 8;
     setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
+    catchQuiet ( `delete RPRIBL` );
+    create_point_light();
     setAttr "pointLightShape1.intensity" $intensity;
     setAttr "pointLightShape1.decayRate" $decayRate;
 
     rpr_render($test_case, $script_info);
 
+    delete_point_light();
+
 }}
 
-
-global proc check_test_cases_spot_light(string $test_case, int $intensity, int $decayRate, float $coneAngle, float $penumbraAngle, float $dropoff, string $script_info){{
+global proc check_test_cases_fail_save_spot_light(string $test_case, int $intensity, int $decayRate, float $coneAngle, float $penumbraAngle, float $dropoff, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -167,15 +271,39 @@ global proc check_test_cases_spot_light(string $test_case, int $intensity, int $
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender_spot_light($test_case, $intensity, $decayRate, $coneAngle, $penumbraAngle, $dropoff, $script_info);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender_spot_light($test_case, $intensity, $decayRate, $coneAngle, $penumbraAngle, $dropoff, $script_info);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+
+global proc check_test_cases_spot_light(string $test_case, int $intensity, int $decayRate, float $coneAngle, float $penumbraAngle, float $dropoff, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender_spot_light($test_case, $intensity, $decayRate, $coneAngle, $penumbraAngle, $dropoff, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender_spot_light($test_case, $intensity, $decayRate, $coneAngle, $penumbraAngle, $dropoff, $script_info, $scene);
     }}
 }}
 
-global proc prerender_spot_light(string $test_case, int $intensity, int $decayRate, float $coneAngle, float $penumbraAngle, float $dropoff, string $script_info){{
+global proc prerender_spot_light(string $test_case, int $intensity, int $decayRate, float $coneAngle, float $penumbraAngle, float $dropoff, string $script_info, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        file -f -options "v=0;"  -ignoreVersion -o $scene;
+    }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
         loadPlugin RadeonProRender;
@@ -190,6 +318,8 @@ global proc prerender_spot_light(string $test_case, int $intensity, int $decayRa
     setAttr "defaultRenderGlobals.imageFormat" 8;
     setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
+    catchQuiet ( `delete RPRIBL` );
+    create_spot_light();
     setAttr "spotLightShape1.intensity" $intensity;
     setAttr "spotLightShape1.decayRate" $decayRate;
     setAttr "spotLightShape1.coneAngle" $coneAngle;
@@ -197,6 +327,8 @@ global proc prerender_spot_light(string $test_case, int $intensity, int $decayRa
     setAttr "spotLightShape1.dropoff" $dropoff;
 
     rpr_render($test_case, $script_info);
+
+    delete_spot_light();
 
 }}
 
@@ -275,56 +407,43 @@ global proc delete_spot_light(){{
 
 global proc main(){{
 
-	setProject ("{res_path}");
-	string $scenes = "{testsList}";
-	string $scene[];
-	$numTokens = `tokenize $scenes "," $scene`;
-	for ($each in $scene) {{
-    	file -f -options "v=0;"  -ignoreVersion -o $each;
-    	
-        delete RPRIBL;
+    setProject ("{res_path}");
+    
+    // <-- fail -->
 
-        create_ambient_light();
-        check_test_cases_ambient_light("MAYA_L_BL_001", 1, 0.450, "[\"Ambient light. Intensity: 1. Ambient Shade: 0.450 (standart)\"]");
-        check_test_cases_ambient_light("MAYA_L_BL_002", 3, 0.450, "[\"Ambient light. Intensity: 3. Ambient Shade: 0.450 (standart)\"]");
-        check_test_cases_ambient_light("MAYA_L_BL_003", 3, 0, "[\"Ambient light. Intensity: 3. Ambient Shade: 0 \"]");
-        check_test_cases_ambient_light("MAYA_L_BL_004", 3, 1, "[\"Ambient light. Intensity: 3. Ambient Shade: 1 \"]");
-        delete_ambient_light();
+    // <-- start -->
+        
+    @check_test_cases_ambient_light("MAYA_L_BL_001", 1, 0.450, "[\"Ambient light. Intensity: 1. Ambient Shade: 0.450 (standart)\"]", "maya_shaderball.ma");
+    @check_test_cases_ambient_light("MAYA_L_BL_002", 3, 0.450, "[\"Ambient light. Intensity: 3. Ambient Shade: 0.450 (standart)\"]", "maya_shaderball.ma");
+    @check_test_cases_ambient_light("MAYA_L_BL_003", 3, 0, "[\"Ambient light. Intensity: 3. Ambient Shade: 0 \"]", "maya_shaderball.ma");
+    @check_test_cases_ambient_light("MAYA_L_BL_004", 3, 1, "[\"Ambient light. Intensity: 3. Ambient Shade: 1 \"]", "maya_shaderball.ma");
 
-        create_area_light();
-        check_test_cases_area_light("MAYA_L_BL_005", 1, 0, "[\"Area light. Intensity: 1.\"]");
-        check_test_cases_area_light("MAYA_L_BL_006", 3, 0, "[\"Area light. Intensity: 3.\"]");
-        check_test_cases_area_light("MAYA_L_BL_007", 3, 1, "[\"Area light. Intensity: 3. Decay Rate: Linear \"]");
-        check_test_cases_area_light("MAYA_L_BL_008", 3, 2, "[\"Area light. Intensity: 3. Decay Rate: Quadratic \"]");
-        check_test_cases_area_light("MAYA_L_BL_009", 3, 3, "[\"Area light. Intensity: 3. Decay Rate: Cubic \"]");
-        delete_area_light();
+    @check_test_cases_area_light("MAYA_L_BL_005", 1, 0, "[\"Area light. Intensity: 1.\"]", "maya_shaderball.ma");
+    @check_test_cases_area_light("MAYA_L_BL_006", 3, 0, "[\"Area light. Intensity: 3.\"]", "maya_shaderball.ma");
+    @check_test_cases_area_light("MAYA_L_BL_007", 3, 1, "[\"Area light. Intensity: 3. Decay Rate: Linear \"]", "maya_shaderball.ma");
+    @check_test_cases_area_light("MAYA_L_BL_008", 3, 2, "[\"Area light. Intensity: 3. Decay Rate: Quadratic \"]", "maya_shaderball.ma");
+    @check_test_cases_area_light("MAYA_L_BL_009", 3, 3, "[\"Area light. Intensity: 3. Decay Rate: Cubic \"]", "maya_shaderball.ma");
 
-        create_directional_light();
-        check_test_cases_directional_light("MAYA_L_BL_010", 1, "[\"Directional light. Intensity: 1.\"]");
-        check_test_cases_directional_light("MAYA_L_BL_011", 5, "[\"Directional light. Intensity: 1.\"]");
-        delete_directional_light();
+    @check_test_cases_directional_light("MAYA_L_BL_010", 1, "[\"Directional light. Intensity: 1.\"]", "maya_shaderball.ma");
+    @check_test_cases_directional_light("MAYA_L_BL_011", 5, "[\"Directional light. Intensity: 1.\"]", "maya_shaderball.ma");
 
-        create_point_light();
-        check_test_cases_point_light("MAYA_L_BL_012", 1, 0, "[\"Point light. Intensity: 1.\"]");
-        check_test_cases_point_light("MAYA_L_BL_013", 50, 0, "[\"Point light. Intensity: 50.\"]");
-        check_test_cases_point_light("MAYA_L_BL_014", 100, 0, "[\"Point light. Intensity: 100.\"]");
-        check_test_cases_point_light("MAYA_L_BL_015", 50, 1, "[\"Point light. Intensity: 1. Decay Rate: Linear \"]");
-        check_test_cases_point_light("MAYA_L_BL_016", 50, 2, "[\"Point light. Intensity: 1. Decay Rate: Quadratic \"]");
-        check_test_cases_point_light("MAYA_L_BL_017", 50, 3, "[\"Point light. Intensity: 1. Decay Rate: Cubic \"]");
-        delete_point_light();
+    @check_test_cases_point_light("MAYA_L_BL_012", 1, 0, "[\"Point light. Intensity: 1.\"]", "maya_shaderball.ma");
+    @check_test_cases_point_light("MAYA_L_BL_013", 50, 0, "[\"Point light. Intensity: 50.\"]", "maya_shaderball.ma");
+    @check_test_cases_point_light("MAYA_L_BL_014", 100, 0, "[\"Point light. Intensity: 100.\"]", "maya_shaderball.ma");
+    @check_test_cases_point_light("MAYA_L_BL_015", 50, 1, "[\"Point light. Intensity: 1. Decay Rate: Linear \"]", "maya_shaderball.ma");
+    @check_test_cases_point_light("MAYA_L_BL_016", 50, 2, "[\"Point light. Intensity: 1. Decay Rate: Quadratic \"]", "maya_shaderball.ma");
+    @check_test_cases_point_light("MAYA_L_BL_017", 50, 3, "[\"Point light. Intensity: 1. Decay Rate: Cubic \"]", "maya_shaderball.ma");
 
-        create_spot_light();
-        check_test_cases_spot_light("MAYA_L_BL_018", 1, 0, 40, 0, 0, "[\"Spot light. Intensity: 1.\"]");
-        check_test_cases_spot_light("MAYA_L_BL_019", 40, 0, 40, 0, 0, "[\"Spot light. Intensity: 1.\"]");
-        check_test_cases_spot_light("MAYA_L_BL_020", 40, 0, 0.006, -10, 0, "[\"Spot light. Intensity: 40, Cone Angle: 0.006, Penumbra Angle: -10, Dropoff: 0\"]");
-        check_test_cases_spot_light("MAYA_L_BL_021", 40, 0, 90, 0, 125, "[\"Spot light. Intensity: 40, Cone Angle: 90, Penumbra Angle: 0, Dropoff: 125\"]");
-        check_test_cases_spot_light("MAYA_L_BL_022", 40, 0, 179.994, 10, 255, "[\"Spot light. Intensity: 40, Cone Angle: 0.006, Penumbra Angle: -10, Dropoff: 0\"]");
-        check_test_cases_spot_light("MAYA_L_BL_023", 40, 1, 40, 0, 0, "[\"Spot light. Intensity: 1. Decay Rate: Linear\"]");
-        check_test_cases_spot_light("MAYA_L_BL_024", 40, 2, 40, 0, 0, "[\"Spot light. Intensity: 1. Decay Rate: Quadratic\"]");
-        check_test_cases_spot_light("MAYA_L_BL_025  ", 40, 3, 40, 0, 0, "[\"Spot light. Intensity: 1. Decay Rate: Cubic\"]");
-        delete_spot_light();
+    @check_test_cases_spot_light("MAYA_L_BL_018", 1, 0, 40, 0, 0, "[\"Spot light. Intensity: 1.\"]", "maya_shaderball.ma");
+    @check_test_cases_spot_light("MAYA_L_BL_019", 40, 0, 40, 0, 0, "[\"Spot light. Intensity: 1.\"]", "maya_shaderball.ma");
+    @check_test_cases_spot_light("MAYA_L_BL_020", 40, 0, 0.006, -10, 0, "[\"Spot light. Intensity: 40, Cone Angle: 0.006, Penumbra Angle: -10, Dropoff: 0, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases_spot_light("MAYA_L_BL_021", 40, 0, 90, 0, 125, "[\"Spot light. Intensity: 40, Cone Angle: 90, Penumbra Angle: 0, Dropoff: 125\"]", "maya_shaderball.ma");
+    @check_test_cases_spot_light("MAYA_L_BL_022", 40, 0, 179.994, 10, 255, "[\"Spot light. Intensity: 40, Cone Angle: 0.006, Penumbra Angle: -10, Dropoff: 0\"]", "maya_shaderball.ma");
+    @check_test_cases_spot_light("MAYA_L_BL_023", 40, 1, 40, 0, 0, "[\"Spot light. Intensity: 1. Decay Rate: Linear\"]", "maya_shaderball.ma");
+    @check_test_cases_spot_light("MAYA_L_BL_024", 40, 2, 40, 0, 0, "[\"Spot light. Intensity: 1. Decay Rate: Quadratic\"]", "maya_shaderball.ma");
+    @check_test_cases_spot_light("MAYA_L_BL_025  ", 40, 3, 40, 0, 0, "[\"Spot light. Intensity: 1. Decay Rate: Cubic\"]", "maya_shaderball.ma");
 
-	}}
+    // <-- end -->
 
-	evalDeferred("quit -abort");
+    evalDeferred("quit -abort");
 }}

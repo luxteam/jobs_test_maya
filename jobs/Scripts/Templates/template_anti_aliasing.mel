@@ -41,7 +41,6 @@ global proc prerender(string $test_case, int $filter, int $samples, string $scri
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
         file -f -options "v=0;"  -ignoreVersion -o $scene;
-        activate_jpg_format();
     }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{

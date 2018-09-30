@@ -41,13 +41,13 @@ global proc prerender(string $test_case, int $intensity, string $map, string $sc
         file -f -options "v=0;"  -ignoreVersion -o $scene;
     }}
 
-	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    	loadPlugin RadeonProRender;
-	}}
+    if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+        loadPlugin RadeonProRender;
+    }}
 
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+    setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+    setAttr "defaultRenderGlobals.imageFormat" 8;
+    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
     if ({resolution_x} && {resolution_y}) {{
         setAttr "defaultResolution.width" {resolution_x};
@@ -89,13 +89,13 @@ global proc prerender(string $test_case, int $intensity, string $map, string $sc
 
 global proc main(){{
 
-	setProject ("{res_path}");
-	
+    setProject ("{res_path}");
+    
     // <-- fail -->
 
     // <-- start -->
 
-    @check_test_cases("MAYA_RS_IBL_001", 0, "", "[\"Type: Color\", \"Intensity: 0\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_IBL_001", 0, "", "[\"Type: Color\", \"Intensity: 0, expected black picture\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_002", 1, "", "[\"Type: Color\", \"Intensity: 1\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_003", 2, "", "[\"Type: Color\", \"Intensity: 2\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_004", 3, "", "[\"Type: Color\", \"Intensity: 3\"]", "maya_shaderball.ma");
@@ -103,7 +103,7 @@ global proc main(){{
     @check_test_cases("MAYA_RS_IBL_006", 7, "", "[\"Type: Color\", \"Intensity: 7\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_007", 10, "", "[\"Type: Color\", \"Intensity: 10\"]", "maya_shaderball.ma");
 
-    @check_test_cases("MAYA_RS_IBL_008", 0, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 0\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_IBL_008", 0, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 0, expected black picture\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_009", 1, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 1\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_010", 2, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 2\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_011", 3, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 3\"]", "maya_shaderball.ma");
@@ -111,15 +111,15 @@ global proc main(){{
     @check_test_cases("MAYA_RS_IBL_013", 7, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 7\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_014", 10, "sourceimages/Tropical_Beach_3k.hdr", "[\"Type: IBL with hdr map\", \"Intensity: 10\"]", "maya_shaderball.ma");
 
-    @check_test_cases("MAYA_RS_IBL_015", 0, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 0\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_IBL_015", 0, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 0, expected black picture\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_016", 1, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 1\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_017", 2, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 2\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_018", 3, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 3\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_019", 5, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 5\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_020", 7, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 7\"]", "maya_shaderball.ma");
     @check_test_cases("MAYA_RS_IBL_021", 10, "sourceimages/ibl_test.exr", "[\"Type: IBL with exr map\", \"Intensity: 10\"]", "maya_shaderball.ma");
-	
+
     // <-- end -->
 
-	evalDeferred("quit -abort");
+    evalDeferred("quit -abort");
 }}

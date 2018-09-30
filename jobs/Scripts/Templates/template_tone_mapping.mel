@@ -1,5 +1,5 @@
 
-global proc check_test_cases(string $test_case, int $type, int $applyGammaToMayaViews, float $displayGamma, float $textureGamma, float $LinearScale, float $PhotolinearSensitivity, float $PhotolinearExposure, float $PhotolinearFstop, float $Reinhard02Prescale, float $Reinhard02Postscale, float $Reinhard02Burn, int $WhiteBalanceEnabled, int $WhiteBalanceValue, string $script_info){{
+global proc check_test_cases_fail_save(string $test_case, int $type, int $applyGammaToMayaViews, float $displayGamma, float $textureGamma, float $LinearScale, float $PhotolinearSensitivity, float $PhotolinearExposure, float $PhotolinearFstop, float $Reinhard02Prescale, float $Reinhard02Postscale, float $Reinhard02Burn, int $WhiteBalanceEnabled, int $WhiteBalanceValue, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -8,30 +8,54 @@ global proc check_test_cases(string $test_case, int $type, int $applyGammaToMaya
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $type, $applyGammaToMayaViews, $displayGamma, $textureGamma, $LinearScale, $PhotolinearSensitivity, $PhotolinearExposure, $PhotolinearFstop, $Reinhard02Prescale, $Reinhard02Postscale, $Reinhard02Burn, $WhiteBalanceEnabled,  $WhiteBalanceValue, $script_info);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender($test_case, $type, $applyGammaToMayaViews, $displayGamma, $textureGamma, $LinearScale, $PhotolinearSensitivity, $PhotolinearExposure, $PhotolinearFstop, $Reinhard02Prescale, $Reinhard02Postscale, $Reinhard02Burn, $WhiteBalanceEnabled,  $WhiteBalanceValue, $script_info);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+
+global proc check_test_cases(string $test_case, int $type, int $applyGammaToMayaViews, float $displayGamma, float $textureGamma, float $LinearScale, float $PhotolinearSensitivity, float $PhotolinearExposure, float $PhotolinearFstop, float $Reinhard02Prescale, float $Reinhard02Postscale, float $Reinhard02Burn, int $WhiteBalanceEnabled, int $WhiteBalanceValue, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $type, $applyGammaToMayaViews, $displayGamma, $textureGamma, $LinearScale, $PhotolinearSensitivity, $PhotolinearExposure, $PhotolinearFstop, $Reinhard02Prescale, $Reinhard02Postscale, $Reinhard02Burn, $WhiteBalanceEnabled,  $WhiteBalanceValue, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $type, $applyGammaToMayaViews, $displayGamma, $textureGamma, $LinearScale, $PhotolinearSensitivity, $PhotolinearExposure, $PhotolinearFstop, $Reinhard02Prescale, $Reinhard02Postscale, $Reinhard02Burn, $WhiteBalanceEnabled,  $WhiteBalanceValue, $script_info, $scene);
     }}
 }}
 
-global proc prerender(string $test_case, int $type, int $applyGammaToMayaViews, float $displayGamma, float $textureGamma, float $LinearScale, float $PhotolinearSensitivity, float $PhotolinearExposure, float $PhotolinearFstop, float $Reinhard02Prescale, float $Reinhard02Postscale, float $Reinhard02Burn, int $WhiteBalanceEnabled, int $WhiteBalanceValue, string $script_info){{
+global proc prerender(string $test_case, int $type, int $applyGammaToMayaViews, float $displayGamma, float $textureGamma, float $LinearScale, float $PhotolinearSensitivity, float $PhotolinearExposure, float $PhotolinearFstop, float $Reinhard02Prescale, float $Reinhard02Postscale, float $Reinhard02Burn, int $WhiteBalanceEnabled, int $WhiteBalanceValue, string $script_info, string $scene){{
 
-	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
-    	loadPlugin RadeonProRender;
-	}}
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        file -f -options "v=0;"  -ignoreVersion -o $scene;
+    }}
 
-	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
-	setAttr "defaultRenderGlobals.imageFormat" 8;
+    if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+        loadPlugin RadeonProRender;
+    }}
+
+    setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+    setAttr "defaultRenderGlobals.imageFormat" 8;
     setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit}; 
 
-	if ({resolution_x} && {resolution_y}) {{
+    if ({resolution_x} && {resolution_y}) {{
         setAttr "defaultResolution.width" {resolution_x};
         setAttr "defaultResolution.height" {resolution_y};
     }}
 
-	setAttr "RadeonProRenderGlobals.toneMappingType" $type;
+    setAttr "RadeonProRenderGlobals.toneMappingType" $type;
     setAttr "RadeonProRenderGlobals.applyGammaToMayaViews" $applyGammaToMayaViews;
     setAttr "RadeonProRenderGlobals.displayGamma" $displayGamma;
     setAttr "RadeonProRenderGlobals.textureGamma" $textureGamma;
@@ -49,107 +73,105 @@ global proc prerender(string $test_case, int $type, int $applyGammaToMayaViews, 
     setAttr "RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled" $WhiteBalanceEnabled;
     setAttr "RadeonProRenderGlobals.toneMappingWhiteBalanceValue" $WhiteBalanceValue;
 
-	rpr_render($test_case, $script_info);
+    rpr_render($test_case, $script_info);
 
 }}
 
 
 global proc main(){{
 
-	setProject ("{res_path}");
-	string $scenes = "{testsList}";
-	string $scene[];
-	$numTokens = `tokenize $scenes "," $scene`;
-	for ($each in $scene) {{
-    	file -f -options "v=0;"  -ignoreVersion -o $each;
-
-    	check_test_cases("MAYA_RS_TM_001", 0, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_002", 0, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_003", 0, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_004", 0, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_005", 0, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_006", 0, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_007", 0, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_008", 0, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_009", 0, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_010", 0, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_011", 0, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_012", 0, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_013", 0, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_014", 0, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_015", 1, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_016", 1, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_017", 1, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_018", 1, 1, 0, 0, 0, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_019", 1, 1, 5, 5, 15, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_020", 1, 1, 10, 10, 30, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_021", 1, 1, 0, 0, 0, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_022", 1, 1, 5, 5, 15, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_023", 1, 1, 10, 10, 30, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_024", 1, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_025", 1, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_026", 1, 1, 0, 0, 0, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_027", 1, 1, 5, 5, 15, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_028", 1, 1, 10, 10, 30, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_029", 2, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_030", 2, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_031", 2, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_032", 2, 1, 0, 0, 1, 0, 0, 0, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_033", 2, 1, 5, 5, 1, 5, 5, 25, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_034", 2, 1, 10, 10, 1, 10, 10, 50, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_035", 2, 1, 0, 0, 1, 0, 0, 0, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_036", 2, 1, 5, 5, 1, 5, 5, 25, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_037", 2, 1, 10, 10, 1, 10, 10, 50, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_038", 2, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_039", 2, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_040", 2, 1, 0, 0, 1, 0, 0, 0, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_041", 2, 1, 5, 5, 1, 5, 5, 25, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_042", 2, 1, 10, 10, 1, 10, 10, 50, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_043", 3, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_044", 3, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_045", 3, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_046", 3, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_047", 3, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_048", 3, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_049", 3, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_050", 3, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_051", 3, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_052", 3, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_053", 3, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_054", 3, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_055", 3, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_056", 3, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_057", 4, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_058", 4, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_059", 4, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_060", 4, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_061", 4, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_062", 4, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_063", 4, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_064", 4, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_065", 4, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_066", 4, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_067", 4, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_068", 4, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_069", 4, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_070", 4, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_071", 5, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_072", 5, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_073", 5, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_074", 5, 1, 0, 0, 1, 1, 1, 3.8, 0, 0, 0, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_075", 5, 1, 5, 5, 1, 1, 1, 3.8, 5, 5, 30, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_076", 5, 1, 10, 10, 1, 1, 1, 3.8, 10, 10, 60, 0, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_077", 5, 1, 0, 0, 1, 1, 1, 3.8, 0, 0, 0, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_078", 5, 1, 5, 5, 1, 1, 1, 3.8, 5, 5, 30, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_079", 5, 1, 10, 10, 1, 1, 1, 3.8, 10, 10, 60, 1, 3200, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_080", 5, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_081", 5, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_082", 5, 1, 0, 0, 1, 1, 1, 3.8, 0, 0, 0, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_083", 5, 1, 5, 5, 1, 1, 1, 3.8, 5, 5, 30, 1, 9500, "[\"Tone Mapping\"]");
-        check_test_cases("MAYA_RS_TM_084", 5, 1, 10, 10, 1, 1, 1, 3.8, 10, 10, 60, 1, 9500, "[\"Tone Mapping\"]");
+    setProject ("{res_path}");
     
-        
-	}}
+    // <-- fail -->
 
-	evalDeferred("quit -abort");
+    // <-- start -->
+
+    @check_test_cases("MAYA_RS_TM_001", 0, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"default +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_002", 0, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"default +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_003", 0, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"default +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_004", 0, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200,   "[\"0 0 +gamma, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_005", 0, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200,   "[\"5 5 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_006", 0, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"10 10 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_007", 0, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200,   "[\"0 0 +gamma +white-balance, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_008", 0, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "  [\"5 5 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_009", 0, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"10 10 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_010", 0, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"default +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_011", 0, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"default +gamma +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_012", 0, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "  [\"0 0  +gamma +white-balance=9500, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_013", 0, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "  [\"5 5  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_014", 0, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"10 10  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_015", 1, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Type: Linear default +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_016", 1, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: Linear default +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_017", 1, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: Linear default +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_018", 1, 1, 0, 0, 0, 1, 1, 3.8, 0.1, 1, 30, 0, 3200,   "[\"Type: Linear (Scale=0) 0 0 +gamma, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_019", 1, 1, 5, 5, 15, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, " [\"Type: Linear (Scale=15) 5 5 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_020", 1, 1, 10, 10, 30, 1, 1, 3.8, 0.1, 1, 30, 0, 3200,"[\"Type: Linear (Scale=30) 10 10 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_021", 1, 1, 0, 0, 0, 1, 1, 3.8, 0.1, 1, 30, 1, 3200,   "[\"Type: Linear (Scale=0) 0 0 +gamma +white-balance, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_022", 1, 1, 5, 5, 15, 1, 1, 3.8, 0.1, 1, 30, 1, 3200,  "[\"Type: Linear (Scale=15) 5 5 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_023", 1, 1, 10, 10, 30, 1, 1, 3.8, 0.1, 1, 30, 1, 3200,"[\"Type: Linear (Scale=30) 10 10 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_024", 1, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: Linear default +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_025", 1, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: Linear default +gamma +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_026", 1, 1, 0, 0, 0, 1, 1, 3.8, 0.1, 1, 30, 1, 9500,   "[\"Type: Linear (Scale=0) 0 0  +gamma +white-balance=9500, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_027", 1, 1, 5, 5, 15, 1, 1, 3.8, 0.1, 1, 30, 1, 9500,  "[\"Type: Linear (Scale=15) 5 5  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_028", 1, 1, 10, 10, 30, 1, 1, 3.8, 0.1, 1, 30, 1, 9500,"[\"Type: Linear (Scale=30) 10 10  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_029", 2, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Type: Photolinear default +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_030", 2, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: Photolinear default +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_031", 2, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: Photolinear default +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_032", 2, 1, 0, 0, 1, 0, 0, 0, 0.1, 1, 30, 0, 3200,     "[\"Type: Photolinear (0 0 0) 0 0 +gamma, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_033", 2, 1, 5, 5, 1, 5, 5, 25, 0.1, 1, 30, 0, 3200,    "[\"Type: Photolinear (5 5 25) 5 5 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_034", 2, 1, 10, 10, 1, 10, 10, 50, 0.1, 1, 30, 0, 3200,"[\"Type: Photolinear (10 10 50) 10 10 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_035", 2, 1, 0, 0, 1, 0, 0, 0, 0.1, 1, 30, 1, 3200,     "[\"Type: PhotoLinear (0 0 0) 0 0 +gamma +white-balance, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_036", 2, 1, 5, 5, 1, 5, 5, 25, 0.1, 1, 30, 1, 3200,    "[\"Type: PhotoLinear (5 5 25) 5 5 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_037", 2, 1, 10, 10, 1, 10, 10, 50, 0.1, 1, 30, 1, 3200,"[\"Type: PhotoLinear (10 10 50) 10 10 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_038", 2, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: PhotoLinear default +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_039", 2, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: PhotoLinear default +gamma +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_040", 2, 1, 0, 0, 1, 0, 0, 0, 0.1, 1, 30, 1, 9500,     "[\"Type: PhotoLinear (0 0 0) 0 0  +gamma +white-balance=9500, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_041", 2, 1, 5, 5, 1, 5, 5, 25, 0.1, 1, 30, 1, 9500,    "[\"Type:  PhotoLinear (5 5 25) 5 5  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_042", 2, 1, 10, 10, 1, 10, 10, 50, 0.1, 1, 30, 1, 9500,"[\"Type:  PhotoLinear (10 10 50) 10 10  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_043", 3, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Type: Autolinear default +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_044", 3, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: Autolinear default +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_045", 3, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: Autolinear default +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_046", 3, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200,   "[\"Type: Autolinear 0 0 +gamma, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_047", 3, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200,   "[\"Type: Autolinear 5 5 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_048", 3, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Type: Autolinear 10 10 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_049", 3, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200,   "[\"Type: Autolinear 0 0 +gamma +white-balance, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_050", 3, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200,   "[\"Type: Autolinear 5 5 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_051", 3, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Type: Autolinear 10 10 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_052", 3, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: Autolinear default +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_053", 3, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: Autolinear default +gamma +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_054", 3, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500,   "[\"Type: Autolinear 0 0  +gamma +white-balance=9500, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_055", 3, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500,   "[\"Type: Autolinear 5 5  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_056", 3, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: Autolinear 10 10  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_057", 4, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Type: MaxWhite default +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_058", 4, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: MaxWhite default +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_059", 4, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: MaxWhite default +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_060", 4, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200,   "[\"Type: MaxWhite 0 0 +gamma, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_061", 4, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200,   "[\"Type: MaxWhite 5 5 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_062", 4, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Type: MaxWhite 10 10 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_063", 4, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200,   "[\"Type: MaxWhite 0 0 +gamma +white-balance, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_064", 4, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200,   "[\"Type: MaxWhite 5 5 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_065", 4, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: MaxWhite 10 10 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_066", 4, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: MaxWhite default +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_067", 4, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: MaxWhite default +gamma +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_068", 4, 1, 0, 0, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500,   "[\"Type: MaxWhite 0 0  +gamma +white-balance=9500, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_069", 4, 1, 5, 5, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500,   "[\"Type: MaxWhite 5 5  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_070", 4, 1, 10, 10, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: MaxWhite 10 10  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_071", 5, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 0, 3200, "[\"Type: Reinhard02 default +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_072", 5, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: Reinhard02 default +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_073", 5, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 3200, "[\"Type: Reinhard02 default +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_074", 5, 1, 0, 0, 1, 1, 1, 3.8, 0, 0, 0, 0, 3200,      "[\"Type: Reinhard02 (0 0 0) 0 0 +gamma, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_075", 5, 1, 5, 5, 1, 1, 1, 3.8, 5, 5, 30, 0, 3200,     "[\"Type: Reinhard02 (5 5 30) 5 5 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_076", 5, 1, 10, 10, 1, 1, 1, 3.8, 10, 10, 60, 0, 3200, "[\"Type: Reinhard02 (10 10 60) 10 10 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_077", 5, 1, 0, 0, 1, 1, 1, 3.8, 0, 0, 0, 1, 3200,      "[\"Type: Reinhard02 (0 0 0) 0 0 +gamma +white-balance, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_078", 5, 1, 5, 5, 1, 1, 1, 3.8, 5, 5, 30, 1, 3200,     "[\"Type: Reinhard02 (5 5 30) 5 5 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_079", 5, 1, 10, 10, 1, 1, 1, 3.8, 10, 10, 60, 1, 3200, "[\"Type: Reinhard02 (10 10 60) 10 10 +gamma +white-balance\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_080", 5, 0, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: Reinhard02 default +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_081", 5, 1, 2.2, 1, 1, 1, 1, 3.8, 0.1, 1, 30, 1, 9500, "[\"Type: Reinhard02 default +gamma +white-balance=9500\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_082", 5, 1, 0, 0, 1, 1, 1, 3.8, 0, 0, 0, 1, 9500,      "[\"Type: Reinhard02 (0 0 0) 0 0  +gamma +white-balance=9500, expected black picture\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_083", 5, 1, 5, 5, 1, 1, 1, 3.8, 5, 5, 30, 1, 9500,     "[\"Type:  Reinhard02 (5 5 30) 5 5  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_TM_084", 5, 1, 10, 10, 1, 1, 1, 3.8, 10, 10, 60, 1, 9500, "[\"Type:  Reinhard02 (10 10 60) 10 10  +gamma +white-balance=9500 +gamma\"]", "maya_shaderball.ma");
+    
+    // <-- end -->
+
+    evalDeferred("quit -abort");
 }}

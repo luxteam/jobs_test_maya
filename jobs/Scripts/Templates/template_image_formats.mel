@@ -39,7 +39,6 @@ global proc prerender(string $test_case, int $image_format, string $script_info,
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
         file -f -options "v=0;"  -ignoreVersion -o $scene;
-        activate_jpg_format();
     }}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -56,6 +55,8 @@ global proc prerender(string $test_case, int $image_format, string $script_info,
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
 	rpr_render($test_case, $script_info);
+
+    sysFile -copy ("{work_dir}/Color/" + $test_case +".jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
 
 }}
 

@@ -83,9 +83,8 @@ global proc main(){{
 
     // <-- end -->
 
-
-
 	evalDeferred("quit -abort");
+    
 }}
 
 
