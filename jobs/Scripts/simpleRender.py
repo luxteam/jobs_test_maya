@@ -178,7 +178,7 @@ if __name__ == "__main__":
 				str(fail_count) + " | last_status: " + str(last_status) + " | json: " + \
 				str(getJsonCount()) + " | total count: " + str(total_count) + "\n")
 
-		if last_status == -1 and fail_count == 3:
+		if last_status and fail_count == 3:
 			rc = main(args, current_test, "fail") # Start from n+1 test. n - fail.
 		else:
 			rc = main(args, current_test, "ok") # Start from 1st test (ok - random word)
