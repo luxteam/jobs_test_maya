@@ -1,4 +1,0 @@
-Description: 
-Scene: 
-Summary: 
-Test cases: 

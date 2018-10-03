@@ -1,5 +1,5 @@
 
-global proc check_test_cases(string $test_case, int $type, float $hfa, float $vfa, string $script_info){{
+global proc check_test_cases_fail_save(string $test_case, int $type, float $hfa, float $vfa, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -8,15 +8,40 @@ global proc check_test_cases(string $test_case, int $type, float $hfa, float $vf
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $type, $hfa, $vfa, $script_info);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender($test_case, $type, $hfa, $vfa, $script_info);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases(string $test_case, int $type, float $hfa, float $vfa, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $type, $hfa, $vfa, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $type, $hfa, $vfa, $script_info, $scene);
     }}
 }}
 
-global proc prerender(string $test_case, int $type, float $hfa, float $vfa, string $script_info){{
+global proc prerender(string $test_case, int $type, float $hfa, float $vfa, string $script_info, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
+	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -39,7 +64,7 @@ global proc prerender(string $test_case, int $type, float $hfa, float $vfa, stri
 
 }}
 
-global proc check_test_cases_camera(string $test_case, float $focalLength, float $cameraScale, float $FilmAperture, float $lensSqueezeRatio, float $shakeEnable, float $shake, float $shakeOverscanEnabled, float $preScale, float $filmTranslate, float $RollPivot, float $filmRollValue, float $postScale, float $filmRollOrder, string $script_info){{
+global proc check_test_cases_fail_save_camera(string $test_case, float $focalLength, float $cameraScale, float $FilmAperture, float $lensSqueezeRatio, float $shakeEnable, float $shake, float $shakeOverscanEnabled, float $preScale, float $filmTranslate, float $RollPivot, float $filmRollValue, float $postScale, float $filmRollOrder, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -48,15 +73,41 @@ global proc check_test_cases_camera(string $test_case, float $focalLength, float
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender_camera($test_case, $focalLength, $cameraScale, $FilmAperture, $lensSqueezeRatio, $shakeEnable, $shake, $shakeOverscanEnabled, $preScale, $filmTranslate, $RollPivot, $filmRollValue, $postScale, $filmRollOrder, $script_info);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender_camera($test_case, $focalLength, $cameraScale, $FilmAperture, $lensSqueezeRatio, $shakeEnable, $shake, $shakeOverscanEnabled, $preScale, $filmTranslate, $RollPivot, $filmRollValue, $postScale, $filmRollOrder, $script_info);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+
+global proc check_test_cases_camera(string $test_case, float $focalLength, float $cameraScale, float $FilmAperture, float $lensSqueezeRatio, float $shakeEnable, float $shake, float $shakeOverscanEnabled, float $preScale, float $filmTranslate, float $RollPivot, float $filmRollValue, float $postScale, float $filmRollOrder, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender_camera($test_case, $focalLength, $cameraScale, $FilmAperture, $lensSqueezeRatio, $shakeEnable, $shake, $shakeOverscanEnabled, $preScale, $filmTranslate, $RollPivot, $filmRollValue, $postScale, $filmRollOrder, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender_camera($test_case, $focalLength, $cameraScale, $FilmAperture, $lensSqueezeRatio, $shakeEnable, $shake, $shakeOverscanEnabled, $preScale, $filmTranslate, $RollPivot, $filmRollValue, $postScale, $filmRollOrder, $script_info, $scene);
     }}
 }}
 
-global proc prerender_camera(string $test_case, float $focalLength, float $cameraScale, float $FilmAperture, float $lensSqueezeRatio, float $shakeEnable, float $shake, float $shakeOverscanEnabled, float $preScale, float $filmTranslate, float $RollPivot, float $filmRollValue, float $postScale, float $filmRollOrder, string $script_info){{
+global proc prerender_camera(string $test_case, float $focalLength, float $cameraScale, float $FilmAperture, float $lensSqueezeRatio, float $shakeEnable, float $shake, float $shakeOverscanEnabled, float $preScale, float $filmTranslate, float $RollPivot, float $filmRollValue, float $postScale, float $filmRollOrder, string $script_info, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
+	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -97,84 +148,67 @@ global proc prerender_camera(string $test_case, float $focalLength, float $camer
 global proc main(){{
 
 	setProject ("{res_path}");
-	string $scenes = "{testsList}";
-	string $scene[];
-	$numTokens = `tokenize $scenes "," $scene`;
-	for ($each in $scene) {{
-    	file -f -options "v=0;"  -ignoreVersion -o $each;
+
+    // <-- fail -->
+
+    // <-- start -->
     
-	    check_test_cases("MAYA_RS_CAM_001", 1, 1.417, 0.945, "[\"RPR Camera Type: Spherical panorama\"]");
-	    check_test_cases("MAYA_RS_CAM_002", 2, 1.417, 0.945, "[\"RPR Camera Type: Stereo spherical panorama\"]");
-	    check_test_cases("MAYA_RS_CAM_003", 3, 1.417, 0.945, "[\"RPR Camera Type: Cubemap\"]");
-	    check_test_cases("MAYA_RS_CAM_004", 4, 1.417, 0.945, "[\"RPR Camera Type: Stereo cubemap\"]");
-  
-    	check_test_cases("MAYA_RS_CAM_005", 0, 0.404, 0.295, "[\"Camera preset: 16mm Theatrical\"]");
-    	check_test_cases("MAYA_RS_CAM_006", 0, 0.493, 0.292, "[\"Camera preset: Super 16mm\"]");
-    	check_test_cases("MAYA_RS_CAM_007", 0, 0.864, 0.630, "[\"Camera preset: 35mm Academy\"]");
-    	check_test_cases("MAYA_RS_CAM_008", 0, 0.816, 0.612, "[\"Camera preset: 35mm TV Projection\"]");
-    	check_test_cases("MAYA_RS_CAM_009", 0, 0.980, 0.735, "[\"Camera preset: 35mm Full Aperture\"]");
-    	check_test_cases("MAYA_RS_CAM_010", 0, 0.825, 0.446, "[\"Camera preset: 35mm 1.85 Projection\"]");
-    	check_test_cases("MAYA_RS_CAM_011", 0, 0.864, 0.732, "[\"Camera preset: 35mm Anamorphic\"]");
-    	check_test_cases("MAYA_RS_CAM_012", 0, 2.066, 0.906, "[\"Camera preset: 70mm Projection\"]");
-    	check_test_cases("MAYA_RS_CAM_013", 0, 1.485, 0.991, "[\"Camera preset: VistaVision\"]");
-    	check_test_cases("MAYA_RS_CAM_014", 0, 2.772, 2.072, "[\"Camera preset: Imax\"]");
+    @check_test_cases("MAYA_RS_CAM_001", 1, 1.417, 0.945, "[\"RPR Camera Type: Spherical panorama\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_CAM_002", 2, 1.417, 0.945, "[\"RPR Camera Type: Stereo spherical panorama\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_CAM_003", 3, 1.417, 0.945, "[\"RPR Camera Type: Cubemap\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_CAM_004", 4, 1.417, 0.945, "[\"RPR Camera Type: Stereo cubemap\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_005", 0, 0.404, 0.295, "[\"Camera preset: 16mm Theatrical\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_006", 0, 0.493, 0.292, "[\"Camera preset: Super 16mm\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_007", 0, 0.864, 0.630, "[\"Camera preset: 35mm Academy\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_008", 0, 0.816, 0.612, "[\"Camera preset: 35mm TV Projection\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_009", 0, 0.980, 0.735, "[\"Camera preset: 35mm Full Aperture\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_010", 0, 0.825, 0.446, "[\"Camera preset: 35mm 1.85 Projection\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_011", 0, 0.864, 0.732, "[\"Camera preset: 35mm Anamorphic\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_012", 0, 2.066, 0.906, "[\"Camera preset: 70mm Projection\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_013", 0, 1.485, 0.991, "[\"Camera preset: VistaVision\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_CAM_014", 0, 2.772, 2.072, "[\"Camera preset: Imax\"]", "maya_shaderball.ma");
 
-    	check_test_cases_camera("MAYA_RS_CAM_015", 1432.360, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Angle of View: 1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_016", 16.290, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Angle of View: 75\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_017", 2.500, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Angle of View: 157.38\"]");
+	@check_test_cases_camera("MAYA_RS_CAM_015", 1432.360, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Angle of View: 1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_016", 16.290, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Angle of View: 75\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_017", 2.500, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Angle of View: 157.38\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_018", 50, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Focal length: 50\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_019", 100, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Focal length: 100\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_020", 200, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Focal length: 200\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_021", 45.5, 0.00001, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Camera Scale: 0\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_022", 45.5, 0.5, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Camera Scale: 0.5\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_023", 45.5, 1, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Camera Aperture(inch): 0.5 0.5\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_024", 45.5, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Camera Aperture(inch): 1 1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_029", 45.5, 1, 0.984, 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"lensSqueezeRatio: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_030", 45.5, 1, 0.984, 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"lensSqueezeRatio: 0.5\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_031", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"lensSqueezeRatio: 1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_032", 45.5, 1, 0.984, 1, 1, 0.2, 0, 1, 0, 0, 0, 1, 0, "[\"Shake: 0.2 0.2\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_033", 45.5, 1, 0.984, 1, 1, 0.2, 1, 1, 0, 0, 0, 1, 0, "[\"Shake: 0.2 0.2 (shake overscan)\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_034", 45.5, 1, 0.984, 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, "[\"Pre Scale: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_035", 45.5, 1, 0.984, 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, "[\"Pre Scale: 0.5\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_036", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Pre Scale: 1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_037", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0.1, 0, 0, 1, 0, "[\"Film translate: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_038", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0.1, 0, 1, 0, "[\"Roll Pivot: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_039", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0.1, 1, 0, "[\"Roll Value: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_040", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, "[\"Roll Value: 1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_041", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 90, 1, 0, "[\"Roll Value: 90\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_042", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 180, 1, 0, "[\"Roll Value: 180\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_043", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, "[\"Post Scale: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_044", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, "[\"Post Scale: 0.5\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_045", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Post Scale: 1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_046", 45.5, 1, 0.984, 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 1, "[\"Translate-Rotate. Pre Scale: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_047", 45.5, 1, 0.984, 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, "[\"Translate-Rotate. Pre Scale: 0.5\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_048", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, "[\"Translate-Rotate. Pre Scale: 1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_049", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0.1, 0, 0, 1, 1, "[\"Translate-Rotate. Film Translate: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_050", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0.1, 0, 1, 1, "[\"Translate-Rotate. Roll Pivot: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_051", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0.1, 1, 1, "[\"Translate-Rotate. Roll Value: 0.1: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_052", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, "[\"Translate-Rotate. Roll Value: 1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_053", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 90, 1, 1, "[\"Translate-Rotate. Roll Value: 90\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_054", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 180, 1, 1, "[\"Translate-Rotate. Roll Value: 180\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_055", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 1, "[\"Translate-Rotate. Post Scale: 0.1\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_056", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 1, "[\"Translate-Rotate. Roll Value: 0.5\"]", "maya_shaderball.ma");
+	@check_test_cases_camera("MAYA_RS_CAM_057", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, "[\"Translate-Rotate. Roll Value: 1\"]", "maya_shaderball.ma");
 
-    	check_test_cases_camera("MAYA_RS_CAM_018", 50, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Focal length: 50\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_019", 100, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Focal length: 100\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_020", 200, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Focal length: 200\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_021", 45.5, 0.00001, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Camera Scale: 0\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_022", 45.5, 0.5, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Camera Scale: 0.5\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_023", 45.5, 1, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Camera Aperture(inch): 0.5 0.5\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_024", 45.5, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Camera Aperture(inch): 1 1\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_029", 45.5, 1, 0.984, 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"lensSqueezeRatio: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_030", 45.5, 1, 0.984, 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"lensSqueezeRatio: 0.5\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_031", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"lensSqueezeRatio: 1\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_032", 45.5, 1, 0.984, 1, 1, 0.2, 0, 1, 0, 0, 0, 1, 0, "[\"Shake: 0.2 0.2\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_033", 45.5, 1, 0.984, 1, 1, 0.2, 1, 1, 0, 0, 0, 1, 0, "[\"Shake: 0.2 0.2 (shake overscan)\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_034", 45.5, 1, 0.984, 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, "[\"Pre Scale: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_035", 45.5, 1, 0.984, 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, "[\"Pre Scale: 0.5\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_036", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Pre Scale: 1\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_037", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0.1, 0, 0, 1, 0, "[\"Film translate: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_038", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0.1, 0, 1, 0, "[\"Roll Pivot: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_039", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0.1, 1, 0, "[\"Roll Value: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_040", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, "[\"Roll Value: 1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_041", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 90, 1, 0, "[\"Roll Value: 90\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_042", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 180, 1, 0, "[\"Roll Value: 180\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_043", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, "[\"Post Scale: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_044", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, "[\"Post Scale: 0.5\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_045", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"Post Scale: 1\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_046", 45.5, 1, 0.984, 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 1, "[\"Translate-Rotate. Pre Scale: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_047", 45.5, 1, 0.984, 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, "[\"Translate-Rotate. Pre Scale: 0.5\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_048", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, "[\"Translate-Rotate. Pre Scale: 1\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_049", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0.1, 0, 0, 1, 1, "[\"Translate-Rotate. Film Translate: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_050", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0.1, 0, 1, 1, "[\"Translate-Rotate. Roll Pivot: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_051", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0.1, 1, 1, "[\"Translate-Rotate. Roll Value: 0.1: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_052", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, "[\"Translate-Rotate. Roll Value: 1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_053", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 90, 1, 1, "[\"Translate-Rotate. Roll Value: 90\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_054", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 180, 1, 1, "[\"Translate-Rotate. Roll Value: 180\"]");
-
-    	check_test_cases_camera("MAYA_RS_CAM_055", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 1, "[\"Translate-Rotate. Post Scale: 0.1\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_056", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 1, "[\"Translate-Rotate. Roll Value: 0.5\"]");
-    	check_test_cases_camera("MAYA_RS_CAM_057", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, "[\"Translate-Rotate. Roll Value: 1\"]");
-
-    	// check_test_cases_camera("MAYA_RS_CAM_015", 45.5, 1, 0.984, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, "[\"RPR Camera Type: Spherical panorama\"]");
-
-    	// prerender_camera($test_case, $focalLength, $cameraScale, $FilmAperture, $lensSqueezeRatio, $shakeEnable, $shake, $shakeOverscanEnabled, $preScale, $filmTranslate, $RollPivot, $filmRollValue, $postScale, $filmRollOrder, $script_info);
-
-	}}
+    // <-- end -->
 
 	evalDeferred("quit -abort");
 }}

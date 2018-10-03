@@ -3,20 +3,20 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="4500">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="1100">
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Anti_Aliasing</argument>
-    	<argument>--template "{CWD}/Scripts/Templates/template_anti_aliasing.mel"</argument>
+        <argument>--testType Smoke</argument>
+    	<argument>--template "{CWD}/Scripts/Templates/template_smoke.mel"</argument>
     	<argument>--pass_limit {PassLimit}</argument>
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>
     	<argument>--res_path "{ScenesDir}"</argument>
-    	<argument>--testCases "{TestCases}"</argument>
+	    <argument>--testCases "{TestCases}"</argument>
     </execute>
 
-    <execute command='python "{CWD}/Scripts/make_report_json.py"'>
+    <execute command='python "{CWD}/Scripts/make_report_json.py"' >
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 

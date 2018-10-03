@@ -1,5 +1,23 @@
 
-global proc sanity_render(string $test_case, string $script_info, string $render_mode){{
+global proc check_test_cases_fail_save(string $test_case, int $pass, string $script_info, string $render_mode, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_fail_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc sanity_render(string $test_case, string $script_info, int $render_mode){{
 
 	string $render_device = $render_mode;
 	optionVar -rm "RPR_DevicesSelected";
@@ -56,7 +74,7 @@ global proc sanity_render(string $test_case, string $script_info, string $render
 }}
 
 
-global proc check_test_cases(string $test_case, int $pass, string $script_info, string $render_mode){{
+global proc check_test_cases(string $test_case, int $pass, string $script_info, string $render_mode, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -65,16 +83,25 @@ global proc check_test_cases(string $test_case, int $pass, string $script_info, 
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $pass, $script_info, $render_mode);
+                prerender($test_case, $pass, $script_info, $render_mode, $scene);
             }}
         }}
     }} else {{
-        prerender($test_case, $pass, $script_info, $render_mode);
+        prerender($test_case, $pass, $script_info, $render_mode, $scene);
     }}
 }}
 
 
-global proc prerender(string $test_case, int $pass, string $script_info, string $render_mode){{
+global proc prerender(string $test_case, int $pass, string $script_info, string $render_mode, string $scene){{
+
+	string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }} else {{
+        	activate_jpg_format();
+        }}
+	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -87,7 +114,58 @@ global proc prerender(string $test_case, int $pass, string $script_info, string 
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
 
-	sanity_render($test_case, $script_info, $render_mode);
+	switch ($test_case) {{
+
+	case "MAYA_SAN_007":
+		create_and_asign_lambert();
+		sanity_render($test_case, $script_info, $render_mode);
+		break;
+
+	case "MAYA_SAN_008":
+		create_and_asign_uber();
+		sanity_render($test_case, $script_info, $render_mode);
+		break;
+
+	case "MAYA_SAN_009":
+		create_and_asign_pbr();
+		sanity_render($test_case, $script_info, $render_mode);
+		break;
+
+	case "MAYA_SAN_010":
+		change_image_size_4k();
+		sanity_render($test_case, $script_info, $render_mode);
+		change_image_size_standart();
+		break;
+
+	case "MAYA_SAN_012":
+		change_camera_view();
+		sanity_render($test_case, $script_info, $render_mode);
+		standart_camera_view();
+		break;
+
+	case "MAYA_SAN_013":
+		create_directional_light();
+		sanity_render($test_case, $script_info, $render_mode);
+		delete_directional_light();
+		break;
+
+	case "MAYA_SAN_014":
+		create_ies_light();
+		sanity_render($test_case, $script_info, $render_mode);
+		delete_ies_light();
+		break;
+
+	case "MAYA_SAN_015":
+		activate_png_format();
+		sanity_render($test_case, $script_info, $render_mode);
+		sysFile -copy ("{work_dir}/Color/MAYA_SAN_015.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
+		break;
+
+	default:
+		sanity_render($test_case, $script_info, $render_mode);
+		break;
+
+	}}
 
 }}
 
@@ -199,64 +277,32 @@ global proc delete_directional_light(){{
 global proc main(){{
 	
 	setProject ("{res_path}");
-	string $scenes = "{testsList}";
-	string $scene[];
-	$numTokens = `tokenize $scenes "," $scene`;
 
 	check_rpr_load();
-	check_test_cases_success_save("MAYA_SAN_001", "[\"Installing with default settings\"]");
-    check_test_cases_success_save("MAYA_SAN_002", "[\"Change renderer from default to RPR\"]");
+	
+	// <-- fail -->
+
+	// <-- start -->
+
+	@check_test_cases_success_save("MAYA_SAN_001", "[\"Installing with default settings\"]");
+    @check_test_cases_success_save("MAYA_SAN_002", "[\"Change renderer from default to RPR\"]");
     
-	for ($each in $scene) {{
-    	file -f -options "v=0;"  -ignoreVersion -o $each;
+	@check_test_cases("MAYA_SAN_003", 10, "[\"Render RPR scene\", \"Pass Limit: 10\"]", "gpu", "Lamborginhi_Aventador.ma");
 
-    	if ($each == "Lamborginhi_Aventador.ma") {{
+	@check_test_cases("MAYA_SAN_004", 10, "[\"GPU Render\", \"Pass Limit: 10\"]", "gpu", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SAN_005", 10, "[\"CPU Render\", \"Pass Limit: 10\"]", "cpu", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SAN_006", 10, "[\"Dual Render\", \"Pass Limit: 10\"]", "dual", "maya_shaderball.ma");
 
-    		activate_jpg_format();
+	@check_test_cases("MAYA_SAN_007", 10, "[\"Lambert material test\", \"Pass Limit: 10\"]", "gpu", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SAN_008", 10, "[\"Uber material test\", \"Pass Limit: 10\"]", "gpu", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SAN_009", 10, "[\"PBR material test\", \"Pass Limit: 10\"]", "gpu", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SAN_010", 10, "[\"Render in 4K\", \"Pass Limit: 10\"]", "gpu", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SAN_012", 10, "[\"Change camera view\", \"Pass Limit: 10\"]", "gpu", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SAN_013", 10, "[\"Directional light\", \"Pass Limit: 10\"]", "gpu", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SAN_014", 10, "[\"Create IES Light\", \"Pass Limit: 10\"]", "gpu", "maya_shaderball.ma");
+	@check_test_cases("MAYA_SAN_015", 10, "[\"Save image as png\", \"Pass Limit: 10\"]", "gpu", "maya_shaderball.ma");
 
-    		check_test_cases("MAYA_SAN_003", 10, "[\"Render empty scene\", \"Pass Limit: 10\"]", "gpu");
-
-
-    	}} else if ($each == "maya_shaderball.ma") {{
-
-    		activate_jpg_format();
-
-    		check_test_cases("MAYA_SAN_004", 10, "[\"GPU Render\", \"Pass Limit: 10\"]", "gpu");
-    		check_test_cases("MAYA_SAN_005", 10, "[\"CPU Render\", \"Pass Limit: 10\"]", "cpu");
-    		check_test_cases("MAYA_SAN_006", 10, "[\"Dual Render\", \"Pass Limit: 10\"]", "dual");
-
-    		create_and_asign_lambert();
-    		check_test_cases("MAYA_SAN_007", 10, "[\"Lambert material test\", \"Pass Limit: 10\"]", "gpu");
-
-    		create_and_asign_uber();
-    		check_test_cases("MAYA_SAN_008", 10, "[\"Uber material test\", \"Pass Limit: 10\"]", "gpu");
-
-    		create_and_asign_pbr();
-    		check_test_cases("MAYA_SAN_009", 10, "[\"PBR material test\", \"Pass Limit: 10\"]", "gpu");
-
-    		change_image_size_4k();
-    		check_test_cases("MAYA_SAN_010", 10, "[\"Render in 4K\", \"Pass Limit: 10\"]", "gpu");
-    		change_image_size_standart();
-
-    		change_camera_view();
-    		check_test_cases("MAYA_SAN_012", 10, "[\"Change camera view\", \"Pass Limit: 10\"]", "gpu");
-    		standart_camera_view();
-
-    		create_directional_light();
-			check_test_cases("MAYA_SAN_013", 10, "[\"Directional light\", \"Pass Limit: 10\"]", "gpu");
-    		delete_directional_light();
-
-    		create_ies_light();
-    		check_test_cases("MAYA_SAN_014", 10, "[\"Create IES Light\", \"Pass Limit: 10\"]", "gpu");
-    		delete_ies_light();
-
-    		activate_png_format();
-    		check_test_cases("MAYA_SAN_015", 10, "[\"Save image as png\", \"Pass Limit: 10\"]", "gpu");
-    		sysFile -copy ("{work_dir}/Color/MAYA_SAN_015.jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
-
-    	}}
-    	
-    }}
+	// <-- end -->
 
 	evalDeferred("quit -abort");
 }}

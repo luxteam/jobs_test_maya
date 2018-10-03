@@ -3,32 +3,29 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' stage="stage1" timeout="100">
-        <argument>--stage_report stage1.json</argument>
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="100">
         <argument>--tool "{Tool}"</argument>
-        <argument>--tests "{CWD}/Tests/IES/{TestsFilter}TestsList.txt"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType IES</argument>
-	<argument>--template "{CWD}/Scripts/Templates/template_ies.mel"</argument>
-	<argument>--pass_limit {PassLimit}</argument>
-	<argument>--resolution_x {rx}</argument>
-	<argument>--resolution_y {ry}</argument>
-	<argument>--res_path "{ScenesDir}"</argument>
-	<argument>--testCases "{TestCases}"</argument>
+    	<argument>--template "{CWD}/Scripts/Templates/template_ies.mel"</argument>
+    	<argument>--pass_limit {PassLimit}</argument>
+    	<argument>--resolution_x {rx}</argument>
+    	<argument>--resolution_y {ry}</argument>
+    	<argument>--res_path "{ScenesDir}"</argument>
+    	<argument>--testCases "{TestCases}"</argument>
     </execute>
 
-    <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">
-        <argument>--stage_report stage2.json</argument>
+    <execute command='python "{CWD}/Scripts/make_report_json.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"' stage="stage3">
+    <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"' stage="stage4">
+    <execute command='python "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 

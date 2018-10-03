@@ -76,6 +76,10 @@ global proc check_test_cases_success_save(string $test_case, string $script_info
 
 global proc rpr_success_save(string $test_case, string $script_info){{
 
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+
 	sysFile -makeDir ("{work_dir}" + "/Color");
 	string $work_folder = "{work_dir}/Color/" + $test_case + ".jpg";
 	sysFile -copy ($work_folder) ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg");
@@ -102,6 +106,65 @@ global proc rpr_success_save(string $test_case, string $script_info){{
 	fprint $fileID ("\r\n  \"test_case\": \"" + $test_case + "\",");
 	fprint $fileID ("\r\n  \"difference_color\": \"" + "no compare" + "\",");
 	fprint $fileID ("\r\n  \"test_status\": \"" + "passed" + "\",");
+	fprint $fileID ("\r\n  \"script_info\": " + $script_info);
+	fprint $fileID ("\r\n }}");
+	fprint $fileID ("\r\n]");
+	fclose $fileID;
+
+}}
+
+/*
+global proc check_test_cases_fail_save(string $test_case, string $script_info){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_fail_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+*/
+
+global proc rpr_fail_save(string $test_case, string $script_info){{
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+	
+	sysFile -makeDir ("{work_dir}" + "/Color");
+	string $work_folder = "{work_dir}/Color/" + $test_case + ".jpg";
+	sysFile -copy ($work_folder) ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg");
+
+	string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name == "") {{
+		$scene_name = "untitled";
+	}}
+	string $render_device_name[] = `optionVar -q "RPR_DevicesName"`;
+	string $filePath = "{work_dir}" + "/" + $test_case + "_RPR.json";
+	int $fileID = `fopen $filePath "a"`;
+	fprint $fileID ("[");
+	fprint $fileID ("\r\n {{");
+	fprint $fileID ("\r\n  \"render_device\": \"" + $render_device_name[0] + "\",");
+	fprint $fileID ("\r\n  \"tool\": \"Maya " + `about -version` + "\",");
+	fprint $fileID ("\r\n  \"date_time\": \"" + `date -format "YYYY-MM-DD_hh-mm-ss"` + "\",");
+	fprint $fileID ("\r\n  \"render_version\": \"" + getRPRPluginVersion() + "\",");
+	fprint $fileID ("\r\n  \"core_version\": \"" + getRprCoreVersion() + "\",");
+	fprint $fileID ("\r\n  \"file_name\": \"" + $test_case + ".jpg\",");
+	fprint $fileID ("\r\n  \"render_color_path\": \"Color/" + $test_case + ".jpg\",");
+	fprint $fileID ("\r\n  \"render_time\": " + 0 + ",");
+	fprint $fileID ("\r\n  \"scene_name\": \"" + $scene_name + "\",");
+	fprint $fileID ("\r\n  \"test_group\": \"" + "{testType}" + "\",");
+	fprint $fileID ("\r\n  \"test_case\": \"" + $test_case + "\",");
+	fprint $fileID ("\r\n  \"difference_color\": \"" + "no compare" + "\",");
+	fprint $fileID ("\r\n  \"test_status\": \"" + "failed" + "\",");
 	fprint $fileID ("\r\n  \"script_info\": " + $script_info);
 	fprint $fileID ("\r\n }}");
 	fprint $fileID ("\r\n]");

@@ -1,6 +1,6 @@
 Anti_Aliasing
 Camera
-Extended_smoke
+Smoke
 IBL
 IES
 Image_Formats
@@ -15,3 +15,4 @@ Denoiser
 Base_Lights
 Physical_Lights
 Tone_Mapping
+Sanity

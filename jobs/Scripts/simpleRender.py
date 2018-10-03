@@ -33,9 +33,7 @@ def get_windows_titles():
 def createArgsParser():
 	parser = argparse.ArgumentParser()
 
-	parser.add_argument('--stage_report', required=True)
 	parser.add_argument('--tool', required=True, metavar="<path>")
-	parser.add_argument('--tests', required=True)
 	parser.add_argument('--render_device', required=True)
 	parser.add_argument('--output', required=True, metavar="<dir>")
 	parser.add_argument('--testType', required=True)
@@ -50,37 +48,11 @@ def createArgsParser():
 	return parser
 
 
-def main():
-	def rewrite_stage_report():
-		with open(os.path.join(args.output, args.stage_report), 'w') as file:
-			json.dump(stage_report, file, indent=' ')
-
-	args = createArgsParser().parse_args()
-	stage_report = [{'status': 'INIT'}, {'log': ['Maya simpleRender.py started;']}]
-
+def main(args, startFrom, lastStatus):
+	
 	testsList = None
 	script_template = None
 	cmdScriptPath = None
-
-	try:
-		with open(args.tests, 'r') as file:
-			testsList = file.read()
-			testsList = testsList.replace("\n","")
-	except OSError as e:
-		stage_report[0]['status'] = 'FAILED'
-		stage_report[1]['log'].append('OSError while read tests list. ' + str(e))
-		rewrite_stage_report()
-		return 1
-
-	try:
-		os.makedirs(args.output)
-		# os.mkdir(os.path.join(args.output, 'Color'))
-		# os.mkdir(os.path.join(args.output, 'Opacity'))
-	except OSError as e:
-		stage_report[0]['status'] = 'FAILED'
-		stage_report[1]['log'].append('OSError while create folders. ' + str(e))
-		rewrite_stage_report()
-		return 1
 
 	try:
 		with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
@@ -89,16 +61,12 @@ def main():
 	except Exception as e:
 		testCases_mel = "all"
 	
-	try:
-		# with open(os.path.join(os.path.dirname(sys.argv[0]), 'template.mel')) as f:
+	try:		
 		with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
 			script_template = f.read()
 		with open(os.path.join(os.path.dirname(__file__), "Templates", "base_function.mel")) as f:
 			base = f.read()
 	except OSError as e:
-		stage_report[0]['status'] = 'FAILED'
-		stage_report[1]['log'].append('OSError while read mel template. ' + str(e))
-		rewrite_stage_report()
 		return 1
 
 	res_path = args.res_path
@@ -106,11 +74,33 @@ def main():
 	mel_template = base + script_template
 	work_dir = os.path.abspath(args.output).replace('\\', '/')
 	melScript = mel_template.format(work_dir=work_dir,
-									   testsList=testsList,
 									   testType=args.testType,
 									   render_device = args.render_device, res_path=res_path,
 									   pass_limit = args.pass_limit, resolution_x = args.resolution_x,
 									   resolution_y = args.resolution_y, testCases = testCases_mel)
+
+	original_tests = melScript[melScript.find("<-- start -->") + 13: melScript.find("// <-- end -->")]
+	modified_tests = original_tests.split("@")[startFrom:]
+	replace_tests = "\n\t"
+	for each in modified_tests:
+		replace_tests += each + "\n\t"
+	melScript = melScript.replace(original_tests, replace_tests)
+
+	if lastStatus == "fail":
+		fail_test = original_tests.split("@")[startFrom-1:startFrom]
+		fail_test_ = ""
+		for each in fail_test:
+			each = each.replace("check_test_cases", "check_test_cases_fail_save")
+			fail_test_ += each + "\n\t"
+		melScript = melScript.replace("// <-- fail -->", fail_test_)
+
+	if lastStatus == "no scene":
+		fail_test = original_tests.split("@")[startFrom:]
+		fail_test_ = ""
+		for each in fail_test:
+			each = each.replace("check_test_cases", "check_test_cases_fail_save")
+			fail_test_ += each + "\n\t"
+		melScript = melScript.replace("// <-- fail -->", fail_test_)
 
 	cmdRun = '''
 	set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
@@ -121,21 +111,14 @@ def main():
 	try:
 		with open(os.path.join(args.output, 'script.bat'), 'w') as f:
 			f.write(cmdRun)
-		stage_report[1]['log'].append('cmd template formatted and saved as script.bat;')
 
 		with open(os.path.join(args.output, 'script.mel'), 'w') as f:
 			f.write(melScript)
-		stage_report[1]['log'].append('mel template formatted and saved as script.mel;')
-
 	except OSError as e:
-		stage_report[0]['status'] = 'FAILED'
-		stage_report[1]['log'].append('OSError while write scripts file saving. ' + str(e))
-		rewrite_stage_report()
 		return 1
 
 	os.chdir(args.output)
 	p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE)
-	stage_report[1]['log'].append('subprocess started;')
 	rc = -1
 
 	while True:
@@ -157,20 +140,69 @@ def main():
 		else:
 			break
 
-	if rc == 0:
-		print('passed')
-		stage_report[0]['status'] = 'OK'
-		stage_report[1]['log'].append('subprocess PASSED;')
-	else:
-		print('failed')
-		stage_report[0]['status'] = 'TERMINATED'
-		stage_report[1]['log'].append('subprocess FAILED and was TERMINATED;')
-
-	rewrite_stage_report()
 	return rc
 
 
 if __name__ == "__main__":
-	rc = main()
-	#os.system("taskkill /f /im  DADispatcherService.exe")
-	exit(rc)
+
+	args = createArgsParser().parse_args()
+
+	try:
+		os.makedirs(args.output)
+	except OSError as e:
+		pass
+
+	def getJsonCount():
+		return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
+
+	def totalCount():
+		try:		
+			with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
+				script_template = f.read()
+			return len(script_template.split("@")) - 1 # -1 because first element is "" (split)
+		except OSError as e:
+			return -1
+
+	total_count = totalCount()
+	fail_count = 0 
+	current_test = 1 # start from 1st test
+	last_status = 0 # 0 - success status
+	it = 0
+
+	while current_test != total_count:
+
+		it += 1
+
+		with open(os.path.join(args.output, 'log_status.txt'), 'a') as f:
+			f.write("Iter:" + str(it) + " | current test: " + str(current_test) + " | fail count: " + \
+				str(fail_count) + " | last_status: " + str(last_status) + " | json: " + \
+				str(getJsonCount()) + " | total count: " + str(total_count) + "\n")
+
+		if last_status and fail_count == 3:
+			rc = main(args, current_test, "fail") # Start from n+1 test. n - fail.
+		else:
+			rc = main(args, current_test, "ok") # Start from 1st test (ok - random word)
+
+		if current_test != getJsonCount() + 1: # count to zero if failes another test
+			fail_count = 0
+
+		last_status = rc
+		if not last_status: 
+			if not getJsonCount():
+				rc = main(args, current_test, "no scene")
+				exit(1)
+			current_test = getJsonCount() # finish work. 0 - success status.
+		elif last_status and fail_count == 2:
+			if total_count < getJsonCount() + 2: # last test failed
+				fail_count += 1
+				current_test = getJsonCount() + 1
+			else: # not last test failed
+				fail_count += 1
+				current_test = getJsonCount() + 2 # mark as fail test and go to next test 
+		elif last_status:
+			if getJsonCount() == total_count:
+				exit()
+			fail_count += 1 # count of failes + 1 (for current test)
+			current_test = getJsonCount() + 1
+	
+	exit(1)

@@ -1,5 +1,5 @@
 
-global proc check_test_cases(string $test_case, int $intensity, string $ies_file, string $script_info){{
+global proc check_test_cases_fail_save(string $test_case, int $intensity, string $ies_file, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -8,15 +8,41 @@ global proc check_test_cases(string $test_case, int $intensity, string $ies_file
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $intensity, $ies_file, $script_info);
+                rpr_fail_save($test_case, $script_info);
             }}
         }}
     }} else {{
-        prerender($test_case, $intensity, $ies_file, $script_info);
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+
+global proc check_test_cases(string $test_case, int $intensity, string $ies_file, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $intensity, $ies_file, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $intensity, $ies_file, $script_info, $scene);
     }}
 }}
 
-global proc prerender(string $test_case, int $intensity, string $ies_file, string $script_info){{
+global proc prerender(string $test_case, int $intensity, string $ies_file, string $script_info, string $scene){{
+
+	string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
+	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
@@ -41,23 +67,26 @@ global proc prerender(string $test_case, int $intensity, string $ies_file, strin
 global proc main(){{
 
 	setProject ("{res_path}");
-	string $scenes = "{testsList}";
-	string $scene[];
-	$numTokens = `tokenize $scenes "," $scene`;
-	for ($each in $scene) {{
-    	file -f -options "v=0;"  -ignoreVersion -o $each;
 
-	    check_test_cases("MAYA_L_IES_001", 10, "ies\\1.ies", "[\"IES file: 1.ies\", \"Intensity: 10\"]");
-	    check_test_cases("MAYA_L_IES_002", 10, "ies\\2.ies", "[\"IES file: 2.ies\", \"Intensity: 10\"]");
-	    check_test_cases("MAYA_L_IES_003", 10, "ies\\3.ies", "[\"IES file: 3.ies\", \"Intensity: 10\"]");
-	    check_test_cases("MAYA_L_IES_004", 10, "ies\\4.ies", "[\"IES file: 4.ies\", \"Intensity: 10\"]");
-	    check_test_cases("MAYA_L_IES_005", 10, "ies\\5.ies", "[\"IES file: 5.ies\", \"Intensity: 10\"]");
-	    check_test_cases("MAYA_L_IES_006", 10, "ies\\6.ies", "[\"IES file: 6.ies\", \"Intensity: 10\"]");
-	    check_test_cases("MAYA_L_IES_007", 10, "ies\\7.ies", "[\"IES file: 7.ies\", \"Intensity: 10\"]");
-	    check_test_cases("MAYA_L_IES_008", 10, "ies\\8.ies", "[\"IES file: 8.ies\", \"Intensity: 10\"]");
-	    check_test_cases("MAYA_L_IES_009", 2, "ies\\9.ies", "[\"IES file: 9.ies\", \"Intensity: 2\"]");
-	    check_test_cases("MAYA_L_IES_010", 10, "ies\\10.ies", "[\"IES file: 10.ies\", \"Intensity: 10\"]");
-	}}
+	// <-- fail -->
+
+	// <-- start -->
+
+    @check_test_cases("MAYA_L_IES_001", 10, "ies\\1.ies", "[\"IES file: 1.ies\", \"Intensity: 10\"]", "maya_IES_solo.ma");
+    @check_test_cases("MAYA_L_IES_002", 10, "ies\\2.ies", "[\"IES file: 2.ies\", \"Intensity: 10\"]", "maya_IES_solo.ma");
+    @check_test_cases("MAYA_L_IES_003", 10, "ies\\3.ies", "[\"IES file: 3.ies\", \"Intensity: 10\"]", "maya_IES_solo.ma");
+    @check_test_cases("MAYA_L_IES_004", 10, "ies\\4.ies", "[\"IES file: 4.ies\", \"Intensity: 10\"]", "maya_IES_solo.ma");
+    @check_test_cases("MAYA_L_IES_005", 10, "ies\\5.ies", "[\"IES file: 5.ies\", \"Intensity: 10\"]", "maya_IES_solo.ma");
+    @check_test_cases("MAYA_L_IES_006", 10, "ies\\6.ies", "[\"IES file: 6.ies\", \"Intensity: 10\"]", "maya_IES_solo.ma");
+    @check_test_cases("MAYA_L_IES_007", 10, "ies\\7.ies", "[\"IES file: 7.ies\", \"Intensity: 10\"]", "maya_IES_solo.ma");
+    @check_test_cases("MAYA_L_IES_008", 10, "ies\\8.ies", "[\"IES file: 8.ies\", \"Intensity: 10\"]", "maya_IES_solo.ma");
+    @check_test_cases("MAYA_L_IES_009", 2, "ies\\9.ies", "[\"IES file: 9.ies\", \"Intensity: 2\"]", "maya_IES_solo.ma");
+    @check_test_cases("MAYA_L_IES_010", 10, "ies\\10.ies", "[\"IES file: 10.ies\", \"Intensity: 10\"]", "maya_IES_solo.ma");
+
+    // <-- end -->
 
 	evalDeferred("quit -abort");
+
 }}
+
+

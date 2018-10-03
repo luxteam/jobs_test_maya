@@ -1,4 +1,0 @@
-Description: Testing IBL with/without map (exr + hdr) with different intensity.
-Scene: no base scene
-Summary: 21 tests
-Test cases: no test cases
