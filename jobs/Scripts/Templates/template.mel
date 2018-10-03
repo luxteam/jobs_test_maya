@@ -1,33 +1,157 @@
 
-global proc prerender(string $test_name){{
+/*
+	* description: function for saving failed json without render 
+	* neccesary args: test case name, test case description, scene name
+	* return: call rpr_fail_save fucntion from base_function.mel template
+*/
+
+global proc check_test_cases_fail_save(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_fail_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+/*
+	* description: function for check test case when we launch tests separately
+	* neccesary args: test case name, test case description, scene name
+	* return: call prerender fucntion 
+*/
+
+
+global proc check_test_cases(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $script_info, $scene);
+    }}
+}}
+
+
+/*
+	* description: function in which we set options for test case and do some checks before render
+	* neccesary args: test case name, test case description, scene name
+	* return: call rpr_render fucntion from base_function.mel template
+*/
+
+global proc prerender(string $test_case, string $script_info, string $scene){{
+
+	/*
+	   * check name of opened scene and open another if needed
+	   * if there are no such file -> exit maya and mark next tests as failed
+	*/
+
+	string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
+	}}
+
+	/*
+	   * check plugin is loaded and load if needed
+	*/
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
     	loadPlugin RadeonProRender;
 	}}
+	
+	/*
+	   * set resolution 
+	   * if resolution doesn't set -> use default scene resolution 
+	*/
 
 	if ({resolution_x} && {resolution_y}) {{
         setAttr "defaultResolution.width" {resolution_x};
         setAttr "defaultResolution.height" {resolution_y};
     }}
 
+    /*
+	   * set current render to RPR
+	   * set image format to JPG
+	   * set iteration of render 
+	*/
+
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
-	rpr_render($test_name);
+	/*
+	   * here you can add your own setting for each test case
+	   * you can change count of arguments 
+	   * note: you must have 3 first functions with SAME arguments
+	*/
+
+	/*
+	   * call render function
+	*/
+
+	rpr_render($test_case, $script_info);
 
 }}
 
 global proc main(){{
 
+	/*
+	   * set maya project path
+	*/
+
 	setProject ("{res_path}");
-	string $scenes = "{testsList}";
-	string $scene[];
-	$numTokens = `tokenize $scenes "," $scene`;
-	for ($each in $scene) {{
-    	file -f -options "v=0;"  -ignoreVersion -o $each;
-    	prerender($each);
-	}}
+
+	/*
+	   * used for failed test replacement
+	*/
+
+	// <-- fail -->
+
+	/*
+	   * used for test replacement
+	   * character '@' is needed before each test case
+	*/
+
+	// <-- start -->
+
+    @check_test_cases("TEST_CASE_NAME", "[\"DESCRIPTION\", "SCENE_NAME.ma");
+
+    /*
+	   * you can comment test in such way
+	   * character '@' must be deleted
+	*/
+
+    // check_test_cases("TEST_CASE_NAME", "[\"DESCRIPTION\", "SCENE_NAME.ma");
+    
+    /*
+	   * use after test cases
+	*/
+
+    // <-- end -->
+
+    /*
+	   * close maya
+	*/
 
 	evalDeferred("quit -abort");
+
 }}
+
+
