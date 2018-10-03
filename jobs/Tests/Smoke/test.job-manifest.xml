@@ -3,12 +3,12 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="99999">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="1100">
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Extended_smoke</argument>
-    	<argument>--template "{CWD}/Scripts/Templates/template_extended_smoke.mel"</argument>
+        <argument>--testType Smoke</argument>
+    	<argument>--template "{CWD}/Scripts/Templates/template_smoke.mel"</argument>
     	<argument>--pass_limit {PassLimit}</argument>
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>
