@@ -89,8 +89,8 @@ global proc main(){{
         //check_test_cases("MAYA_RS_PS_017", 0, 5000, 0, "[\"Complex scene. Pass Limit: 5000\"]");
         //check_test_cases("MAYA_RS_PS_018", 0, 10000, 0, "[\"Complex scene. Pass Limit: 10000\"]");
 
-        // check_test_cases("MAYA_RS_PS_027", 1, 10, 0, "[\"Complex scene. Time: 10 sec\"]");
-        check_test_cases("MAYA_RS_PS_028", 1, 30, 0, "[\"Complex scene. Time: 30 sec\"]");
+        //check_test_cases("MAYA_RS_PS_027", 1, 10, 0, "[\"Complex scene. Time: 10 sec\"]");
+        //check_test_cases("MAYA_RS_PS_028", 1, 30, 0, "[\"Complex scene. Time: 30 sec\"]");
         check_test_cases("MAYA_RS_PS_029", 1, 59, 0, "[\"Complex scene. Time: 59 sec\"]");
         check_test_cases("MAYA_RS_PS_030", 1, 1, 2, "[\"Complex scene. Time: 2 min\"]");
  
