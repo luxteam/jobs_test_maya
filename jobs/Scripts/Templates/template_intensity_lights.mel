@@ -1,0 +1,80 @@
+
+global proc check_test_cases_fail_save(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_fail_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $script_info, $scene);
+    }}
+}}
+
+global proc prerender(string $test_case, string $script_info, string $scene){{
+
+	string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+            evalDeferred("quit -abort");
+        }}
+	}}
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+    	loadPlugin RadeonProRender;
+	}}
+	
+	if ({resolution_x} && {resolution_y}) {{
+        setAttr "defaultResolution.width" {resolution_x};
+        setAttr "defaultResolution.height" {resolution_y};
+    }}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	rpr_render($test_case, $script_info);
+
+}}
+
+global proc main(){{
+
+	setProject ("{res_path}");
+
+	// <-- fail -->
+
+	// <-- start -->
+
+    @check_test_cases("MAYA_L_INT_001", "[\"Intensity Scene\"]", "IntensityLight.ma");
+    @check_test_cases("MAYA_L_INT_002", "[\"Intensity Scene\"]", "IntensityLight.ma");
+
+    // <-- end -->
+
+	evalDeferred("quit -abort");
+
+}}
+
+
