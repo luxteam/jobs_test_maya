@@ -69,8 +69,6 @@ global proc main(){{
 	// <-- start -->
 
     @check_test_cases("MAYA_L_EM_001", "[\"Emissive Scene\"]", "EmissiveLight.ma");
-    @check_test_cases("MAYA_L_EM_002", "[\"Emissive Scene\"]", "EmissiveLight.ma");
-    @check_test_cases("MAYA_L_EM_003", "[\"Emissive Scene\"]", "EmissiveLight.ma");
 
     // <-- end -->
 

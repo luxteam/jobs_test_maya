@@ -79,6 +79,9 @@ def main(args, startFrom, lastStatus):
 									   pass_limit = args.pass_limit, resolution_x = args.resolution_x,
 									   resolution_y = args.resolution_y, testCases = testCases_mel)
 
+	if lastStatus == "last_fail":
+		melScript = melScript.replace("@check_test_cases", "@check_test_cases_fail_save")
+
 	original_tests = melScript[melScript.find("<-- start -->") + 13: melScript.find("// <-- end -->")]
 	modified_tests = original_tests.split("@")[startFrom:]
 	replace_tests = "\n\t"
@@ -169,7 +172,7 @@ if __name__ == "__main__":
 	last_status = 0 # 0 - success status
 	it = 0
 
-	while current_test != total_count:
+	while current_test <= total_count:
 
 		it += 1
 
@@ -180,6 +183,8 @@ if __name__ == "__main__":
 
 		if last_status and fail_count == 3:
 			rc = main(args, current_test, "fail") # Start from n+1 test. n - fail.
+		elif last_status and fail_count == -1:
+			rc = main(args, current_test, "last_fail") # last test - fail.
 		else:
 			rc = main(args, current_test, "ok") # Start from 1st test (ok - random word)
 
@@ -190,11 +195,10 @@ if __name__ == "__main__":
 		if not last_status: 
 			if not getJsonCount():
 				rc = main(args, current_test, "no scene")
-				exit(1)
-			current_test = getJsonCount() # finish work. 0 - success status.
+			exit(1) # finish work. 0 - success status.
 		elif last_status and fail_count == 2:
 			if total_count < getJsonCount() + 2: # last test failed
-				fail_count += 1
+				fail_count = -1
 				current_test = getJsonCount() + 1
 			else: # not last test failed
 				fail_count += 1
