@@ -214,7 +214,7 @@ global proc main(){{
     // <-- start -->
 
     @check_test_cases("MAYA_RS_AOV_001", 1, "[\"AOV: Opacity\"]", "AOV.ma");
-    @check_test_cases("MAYA_RS_AOV_002", 2, "[\"AOV: World Coordinate\"]", "AOV.ma");
+    //check_test_cases("MAYA_RS_AOV_002", 2, "[\"AOV: World Coordinate\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_003", 3, "[\"AOV: UV\"]", "AOV.ma");
     //check_test_cases("MAYA_RS_AOV_004", 4, "[\"AOV: Material Index\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_005", 5, "[\"AOV: Geometric Normal\"]", "AOV.ma");
@@ -224,7 +224,7 @@ global proc main(){{
     @check_test_cases("MAYA_RS_AOV_009", 10, "[\"AOV: Shadow Catcher\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_010", 11, "[\"AOV: Background\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_011", 12, "[\"AOV: Emission\"]", "AOV.ma");
-    @check_test_cases("MAYA_RS_AOV_012", 13, "[\"AOV: Velocity\"]", "AOV.ma");
+    //check_test_cases("MAYA_RS_AOV_012", 13, "[\"AOV: Velocity\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_013", 14, "[\"AOV: Direct Illumination\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_014", 15, "[\"AOV: Indirect Illumination\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_015", 16, "[\"AOV: Ambient Occlusion\"]", "AOV.ma");
