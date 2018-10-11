@@ -1,0 +1,523 @@
+
+global proc string setAttribute(string $pbr_attr, string $file_attr, string $value){{
+    
+    if (`gmatch $value "*.*"`) {{
+
+        string $file = `shadingNode -asTexture -isColorManaged file`;
+        string $texture = `shadingNode -asUtility place2dTexture`;
+        connectAttr -f ($texture+".coverage") ($file+".coverage");
+        connectAttr -f ($texture+".translateFrame") ($file+".translateFrame");
+        connectAttr -f ($texture+".rotateFrame") ($file+".rotateFrame");
+        connectAttr -f ($texture+".mirrorU") ($file+".mirrorU");
+        connectAttr -f ($texture+".mirrorV") ($file+".mirrorV");
+        connectAttr -f ($texture+".stagger") ($file+".stagger");
+        connectAttr -f ($texture+".wrapU") ($file+".wrapU");
+        connectAttr -f ($texture+".wrapV") ($file+".wrapV");
+        connectAttr -f ($texture+".repeatUV") ($file+".repeatUV");
+        connectAttr -f ($texture+".offset") ($file+".offset");
+        connectAttr -f ($texture+".rotateUV") ($file+".rotateUV");
+        connectAttr -f ($texture+".noiseUV") ($file+".noiseUV");
+        connectAttr -f ($texture+".vertexUvTwo") ($file+".vertexUvTwo");
+        connectAttr -f ($texture+".vertexUvThree") ($file+".vertexUvThree");
+        connectAttr -f ($texture+".vertexCameraOne") ($file+".vertexCameraOne");
+        connectAttr -f ($texture+".outUV") ($file+".uv");
+        connectAttr ($texture+".outUvFilterSize") ($file+".uvFilterSize");
+        connectAttr ($texture+".vertexUvOne") ($file+".vertexUvOne");
+        connectAttr -force ($file+"."+$file_attr) ("R_PBRMat."+$pbr_attr);
+
+        setAttr ($file + ".fileTextureName") -type "string" $value;
+
+        return $file;
+        
+    }} 
+
+}}
+
+global proc check_test_cases_fail_save(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_fail_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $script_info, $scene);
+    }}
+}}
+
+
+global proc prerender(string $test_case, string $script_info, string $scene){{
+
+	string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`)) {{
+            evalDeferred("quit -abort");
+        }}
+	}}
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+		loadPlugin RadeonProRender;
+	}}
+
+	if( `pluginInfo -query -loaded fbxmaya` == 0){{
+    	loadPlugin fbxmaya;
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	//setAttr ("R_PBRMat." + $pbr_attr) -type double3 $value0 $value1 $value2;
+	//setAttr ("R_PBRMat." + $pbr_attr) -type $value0;
+
+	switch ($test_case) {{
+
+	case "MAYA_MAT_PBR_001":
+		string $file_tmp = setAttribute("color", "outColor", "sourceimages/base_color.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.color");
+		break;
+
+	case "MAYA_MAT_PBR_002":
+		string $file_tmp = setAttribute("color", "outColor", "sourceimages/base_color.jpg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.color");
+		break;
+
+	case "MAYA_MAT_PBR_003":
+		string $file_tmp = setAttribute("color", "outColor", "sourceimages/base_color.tif");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.color");
+		break;
+
+	case "MAYA_MAT_PBR_004":
+		string $file_tmp = setAttribute("color", "outColor", "sourceimages/base_color.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.color");
+		break;
+
+	case "MAYA_MAT_PBR_005":
+		setAttr "R_PBRMat.color" -type double3 1 0 1;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.color" -type double3 0.0719 0.31 0.0719;
+		break;
+
+	case "MAYA_MAT_PBR_006":
+		string $file_tmp = setAttribute("metalness", "outAlpha", "sourceimages/metalness.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.metalness");
+		break;
+
+	case "MAYA_MAT_PBR_007":
+		string $file_tmp = setAttribute("metalness", "outAlpha", "sourceimages/metalness.jpg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.metalness");
+		break;
+
+	case "MAYA_MAT_PBR_008":
+		string $file_tmp = setAttribute("metalness", "outAlpha", "sourceimages/metalness.tif");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.metalness");
+		break;
+
+	case "MAYA_MAT_PBR_009":
+		string $file_tmp = setAttribute("metalness", "outAlpha", "sourceimages/metalness.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.metalness");
+		break;
+
+	case "MAYA_MAT_PBR_010":
+		setAttr "R_PBRMat.metalness" 0.5;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.metalness" 0;
+		break;
+
+	case "MAYA_MAT_PBR_011":
+		setAttr "R_PBRMat.metalness" 1;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.metalness" 0;
+		break;
+
+	case "MAYA_MAT_PBR_012":
+		string $file_tmp = setAttribute("specular", "outAlpha", "sourceimages/specular.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.specular");
+		break;
+
+	case "MAYA_MAT_PBR_013":
+		string $file_tmp = setAttribute("specular", "outAlpha", "sourceimages/specular.jpg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.specular");
+		break;
+
+	case "MAYA_MAT_PBR_014":
+		string $file_tmp = setAttribute("specular", "outAlpha", "sourceimages/specular.tif");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.specular");
+		break;
+
+	case "MAYA_MAT_PBR_015":
+		string $file_tmp = setAttribute("specular", "outAlpha", "sourceimages/specular.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.specular");
+		break;
+
+	case "MAYA_MAT_PBR_016":
+		setAttr "R_PBRMat.specular" 0.5;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.specular" 1;
+		break;
+
+	case "MAYA_MAT_PBR_017":
+		setAttr "R_PBRMat.specular" 1;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.specular" 1;
+		break;
+
+	case "MAYA_MAT_PBR_018":
+		string $file_tmp = setAttribute("roughness", "outAlpha", "sourceimages/roughness.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.roughness");
+		break;
+
+	case "MAYA_MAT_PBR_019":
+		string $file_tmp = setAttribute("roughness", "outAlpha", "sourceimages/roughness.jpg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.roughness");
+		break;
+
+	case "MAYA_MAT_PBR_020":
+		string $file_tmp = setAttribute("roughness", "outAlpha", "sourceimages/roughness.tif");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.roughness");
+		break;
+
+	case "MAYA_MAT_PBR_021":
+		string $file_tmp = setAttribute("roughness", "outAlpha", "sourceimages/roughness.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.roughness");
+		break;
+
+	case "MAYA_MAT_PBR_022":
+		setAttr "R_PBRMat.roughness" 0.5;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.roughness" 0.1;
+		break;
+
+	case "MAYA_MAT_PBR_023":
+		setAttr "R_PBRMat.roughness" 1;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.roughness" 0.1;
+		break;
+
+	case "MAYA_MAT_PBR_024":
+		setAttr -type "string" file14.fileTextureName "sourceimages/normal.png";
+		rpr_render($test_case, $script_info);
+		setAttr -type "string" file14.fileTextureName "sourceimages/normal.tif";
+		break;
+		
+	case "MAYA_MAT_PBR_025":
+		setAttr -type "string" file14.fileTextureName "sourceimages/normal.jpg";
+		rpr_render($test_case, $script_info);
+		setAttr -type "string" file14.fileTextureName "sourceimages/normal.tif";
+		break;
+
+	case "MAYA_MAT_PBR_026":
+		rpr_render($test_case, $script_info);
+		break;
+
+	case "MAYA_MAT_PBR_027":
+		setAttr -type "string" file14.fileTextureName "sourceimages/normal.exr";
+		rpr_render($test_case, $script_info);
+		setAttr -type "string" file14.fileTextureName "sourceimages/normal.tif";
+		break;
+
+	case "MAYA_MAT_PBR_028":
+		string $file_tmp = setAttribute("glass", "outAlpha", "sourceimages/glass.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.glass");
+		break;
+
+	case "MAYA_MAT_PBR_029":
+		string $file_tmp = setAttribute("glass", "outAlpha", "sourceimages/glass.jpg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.glass");
+		break;
+
+	case "MAYA_MAT_PBR_030":
+		string $file_tmp = setAttribute("glass", "outAlpha", "sourceimages/glass.tif");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.glass");
+		break;
+
+	case "MAYA_MAT_PBR_031":
+		string $file_tmp = setAttribute("glass", "outAlpha", "sourceimages/glass.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.glass");
+		break;
+
+	case "MAYA_MAT_PBR_032":
+		setAttr "R_PBRMat.glass" 0.5;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.glass" 1;
+		break;
+
+	case "MAYA_MAT_PBR_033":
+		setAttr "R_PBRMat.glass" 1;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.glass" 1;
+		break;
+
+	case "MAYA_MAT_PBR_034":
+		string $file_tmp = setAttribute("glassIOR", "outAlpha", "sourceimages/glassIOR.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.glassIOR");
+		break;
+
+	case "MAYA_MAT_PBR_035":
+		setAttr "R_PBRMat.glassIOR" 0.5;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.glassIOR" 1.2;
+		break;
+
+	case "MAYA_MAT_PBR_036":
+		setAttr "R_PBRMat.glassIOR" 1;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.glassIOR" 1.2;
+		break;
+
+	case "MAYA_MAT_PBR_037":
+		string $file_tmp = setAttribute("emissiveColor", "outColor", "sourceimages/emissive.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.emissiveColor");
+		break;
+
+	case "MAYA_MAT_PBR_038":
+		string $file_tmp = setAttribute("emissiveColor", "outColor", "sourceimages/emissive.jpg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.emissiveColor");
+		break;
+
+	case "MAYA_MAT_PBR_039":
+		string $file_tmp = setAttribute("emissiveColor", "outColor", "sourceimages/emissive.tif");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.emissiveColor");
+		break;
+
+	case "MAYA_MAT_PBR_040":
+		string $file_tmp = setAttribute("emissiveColor", "outColor", "sourceimages/emissive.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.emissiveColor");
+		break;
+
+	case "MAYA_MAT_PBR_041":
+		setAttr "R_PBRMat.emissiveColor" -type double3 1 0.667 0;
+		setAttr "R_PBRMat.emissiveWeight" 0.5;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.emissiveColor" -type double3 0 0 0.5;
+		setAttr "R_PBRMat.emissiveWeight" 0;
+		break;
+
+	case "MAYA_MAT_PBR_042":
+		setAttr "R_PBRMat.emissiveColor" -type double3 1 0.667 0;
+		setAttr "R_PBRMat.emissiveWeight" 1;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.emissiveColor" -type double3 0 0 0.5;
+		setAttr "R_PBRMat.emissiveWeight" 0;
+		break;
+
+	case "MAYA_MAT_PBR_043":
+		string $file_tmp = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissiveWeight.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.emissiveWeight");
+		break;
+
+	case "MAYA_MAT_PBR_044":
+		string $file_tmp = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissiveWeight.jpg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.emissiveWeight");
+		break;
+
+	case "MAYA_MAT_PBR_045":
+		string $file_tmp = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissiveWeight.tif");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.emissiveWeight");
+		break;
+
+	case "MAYA_MAT_PBR_046":
+		string $file_tmp = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissiveWeight.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.emissiveWeight");
+		break;
+
+	case "MAYA_MAT_PBR_047":
+		string $file_tmp = setAttribute("subsurfaceWeight", "outAlpha", "sourceimages/subsurface_weight.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.subsurfaceWeight");
+		break;
+
+	case "MAYA_MAT_PBR_048":
+		string $file_tmp = setAttribute("subsurfaceWeight", "outAlpha", "sourceimages/subsurface_weight.jpg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.subsurfaceWeight");
+		break;
+
+	case "MAYA_MAT_PBR_049":
+		string $file_tmp = setAttribute("subsurfaceWeight", "outAlpha", "sourceimages/subsurface_weight.tif");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.subsurfaceWeight");
+		break;
+
+	case "MAYA_MAT_PBR_050":
+		string $file_tmp = setAttribute("subsurfaceWeight", "outAlpha", "sourceimages/subsurface_weight.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outAlpha") ("R_PBRMat.subsurfaceWeight");
+		break;
+
+	case "MAYA_MAT_PBR_051":
+		string $file_tmp = setAttribute("subsurfaceColor", "outColor", "sourceimages/subsurface_color.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.subsurfaceColor");
+		break;
+
+	case "MAYA_MAT_PBR_052":
+		string $file_tmp = setAttribute("subsurfaceColor", "outColor", "sourceimages/subsurface_color.jpg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.subsurfaceColor");
+		break;
+
+	case "MAYA_MAT_PBR_053":
+		string $file_tmp = setAttribute("subsurfaceColor", "outColor", "sourceimages/subsurface_color.tif");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.subsurfaceColor");
+		break;
+
+	case "MAYA_MAT_PBR_054":
+		string $file_tmp = setAttribute("subsurfaceColor", "outColor", "sourceimages/subsurface_color.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp + ".outColor") ("R_PBRMat.subsurfaceColor");
+		break;
+
+	case "MAYA_MAT_PBR_055":
+		setAttr "R_PBRMat.subsurfaceRadius0" 1;
+		setAttr "R_PBRMat.subsurfaceRadius1" 1;
+		setAttr "R_PBRMat.subsurfaceRadius2" 1;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.subsurfaceRadius0" 3.67;
+		setAttr "R_PBRMat.subsurfaceRadius1" 1.37;
+		setAttr "R_PBRMat.subsurfaceRadius2" 0.68;
+		break;
+
+	case "MAYA_MAT_PBR_056":
+		setAttr "R_PBRMat.subsurfaceRadius0" 5;
+		setAttr "R_PBRMat.subsurfaceRadius1" 5;
+		setAttr "R_PBRMat.subsurfaceRadius2" 5;
+		rpr_render($test_case, $script_info);
+		setAttr "R_PBRMat.subsurfaceRadius0" 3.67;
+		setAttr "R_PBRMat.subsurfaceRadius1" 1.37;
+		setAttr "R_PBRMat.subsurfaceRadius2" 0.68;
+		break;
+
+	}}
+			
+}}
+
+global proc main(){{
+	
+	setProject ("{res_path}");
+
+	// <-- fail -->
+
+	// <-- start -->
+
+	@check_test_cases("MAYA_MAT_PBR_001", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_002", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_003", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_004", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_005", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_006", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_007", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_008", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_009", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_010", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_011", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_012", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_013", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_014", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_015", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_016", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_017", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_018", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_019", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_020", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_021", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_022", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_023", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_024", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_025", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_026", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_027", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_028", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_029", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_030", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_031", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_032", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_033", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_034", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_035", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_036", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_037", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_038", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_039", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_040", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_041", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_042", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_043", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_044", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_045", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_046", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_047", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_048", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_049", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_050", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_051", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_052", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_053", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_054", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_055", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_056", "[\"PBR\"]", "PBR.ma");
+
+	// <-- end -->
+    
+	evalDeferred("quit -abort");
+}}
+
+
+
+
+
+
+
