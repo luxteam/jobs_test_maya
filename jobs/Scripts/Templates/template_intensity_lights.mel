@@ -1,5 +1,5 @@
 
-global proc check_test_cases_fail_save(string $test_case, string $script_info, string $scene){{
+global proc check_test_cases_fail_save(string $test_case, string $script_info, string $scene, int $pass){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -17,7 +17,7 @@ global proc check_test_cases_fail_save(string $test_case, string $script_info, s
 
 }}
 
-global proc check_test_cases(string $test_case, string $script_info, string $scene){{
+global proc check_test_cases(string $test_case, string $script_info, string $scene, int $pass){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -26,15 +26,15 @@ global proc check_test_cases(string $test_case, string $script_info, string $sce
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $script_info, $scene);
+                prerender($test_case, $script_info, $scene, $pass);
             }}
         }}
     }} else {{
-        prerender($test_case, $script_info, $scene);
+        prerender($test_case, $script_info, $scene, $pass);
     }}
 }}
 
-global proc prerender(string $test_case, string $script_info, string $scene){{
+global proc prerender(string $test_case, string $script_info, string $scene, int $pass){{
 
 	string $scene_name  = `file -q -sn -shn`;
 	if ($scene_name != $scene) {{
@@ -54,7 +54,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
 
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" $pass;
 
 	rpr_render($test_case, $script_info);
 
@@ -68,7 +68,9 @@ global proc main(){{
 
 	// <-- start -->
 
-    @check_test_cases("MAYA_L_INT_001", "[\"Intensity Scene\"]", "IntensityLight.ma");
+    @check_test_cases("MAYA_L_INT_001", "[\"Intensity Scene\"]", "IntensityLight.ma", 25); 
+    @check_test_cases("MAYA_L_INT_002", "[\"Intensity Scene\"]", "IntensityLight1.ma", 50);
+    @check_test_cases("MAYA_L_INT_003", "[\"Intensity Scene\"]", "IntensityLight2.ma", 50);
 
     // <-- end -->
 
