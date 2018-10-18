@@ -49,7 +49,7 @@ global proc prerender(string $test_case, int $aov, string $script_info, string $
 
     setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
     setAttr "defaultRenderGlobals.imageFormat" 8;
-    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 25; 
+    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 100; 
 
     if ({resolution_x} && {resolution_y}) {{
         setAttr "defaultResolution.width" {resolution_x};
@@ -187,7 +187,7 @@ global proc prerender(string $test_case, int $aov, string $script_info, string $
         break;
 
     case "MAYA_RS_AOV_021":
-        setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 50; 
+        setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 100; 
         setAttr "RadeonProRenderGlobals.aovVelocity" 1;
         select -r ShaderBall_4_UntitledFBXASC046005;
         showHidden -a;
@@ -225,13 +225,13 @@ global proc main(){{
     @check_test_cases("MAYA_RS_AOV_010", 11, "[\"AOV: Background\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_011", 12, "[\"AOV: Emission\"]", "AOV.ma");
     //check_test_cases("MAYA_RS_AOV_012", 13, "[\"AOV: Velocity\"]", "AOV.ma");
-    @check_test_cases("MAYA_RS_AOV_013", 14, "[\"AOV: Direct Illumination\"]", "AOV.ma");
-    @check_test_cases("MAYA_RS_AOV_014", 15, "[\"AOV: Indirect Illumination\"]", "AOV.ma");
+    @check_test_cases("MAYA_RS_AOV_013", 14, "[\"AOV: Direct Illumination\"]", "AOV_Better.ma");
+    @check_test_cases("MAYA_RS_AOV_014", 15, "[\"AOV: Indirect Illumination\"]", "AOV_Better.ma");
     @check_test_cases("MAYA_RS_AOV_015", 16, "[\"AOV: Ambient Occlusion\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_016", 17, "[\"AOV: Diffuse Direct\"]", "AOV.ma");
     @check_test_cases("MAYA_RS_AOV_017", 18, "[\"AOV: Diffuse Indirect\"]", "AOV.ma");
-    @check_test_cases("MAYA_RS_AOV_018", 19, "[\"AOV: Reflection Direct\"]", "AOV.ma");
-    @check_test_cases("MAYA_RS_AOV_019", 20, "[\"AOV: Reflection Indirect\"]", "AOV.ma");
+    @check_test_cases("MAYA_RS_AOV_018", 19, "[\"AOV: Reflection Direct\"]", "AOV_Better.ma");
+    @check_test_cases("MAYA_RS_AOV_019", 20, "[\"AOV: Reflection Indirect\"]", "AOV_Better.ma");
     @check_test_cases("MAYA_RS_AOV_020", 21, "[\"AOV: Refraction\"]", "AOV.ma");
     //check_test_cases("MAYA_RS_AOV_021", 22, "[\"AOV: Volume\"]", "AOV.ma");
         
