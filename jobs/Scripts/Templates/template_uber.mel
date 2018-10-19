@@ -1,0 +1,1411 @@
+
+global proc string setAttribute(string $uber_attr, string $file_attr, string $value){{
+    
+    if (`gmatch $value "*.*"`) {{
+
+        string $file = `shadingNode -asTexture -isColorManaged file`;
+        string $texture = `shadingNode -asUtility place2dTexture`;
+        connectAttr -f ($texture+".coverage") ($file+".coverage");
+        connectAttr -f ($texture+".translateFrame") ($file+".translateFrame");
+        connectAttr -f ($texture+".rotateFrame") ($file+".rotateFrame");
+        connectAttr -f ($texture+".mirrorU") ($file+".mirrorU");
+        connectAttr -f ($texture+".mirrorV") ($file+".mirrorV");
+        connectAttr -f ($texture+".stagger") ($file+".stagger");
+        connectAttr -f ($texture+".wrapU") ($file+".wrapU");
+        connectAttr -f ($texture+".wrapV") ($file+".wrapV");
+        connectAttr -f ($texture+".repeatUV") ($file+".repeatUV");
+        connectAttr -f ($texture+".offset") ($file+".offset");
+        connectAttr -f ($texture+".rotateUV") ($file+".rotateUV");
+        connectAttr -f ($texture+".noiseUV") ($file+".noiseUV");
+        connectAttr -f ($texture+".vertexUvTwo") ($file+".vertexUvTwo");
+        connectAttr -f ($texture+".vertexUvThree") ($file+".vertexUvThree");
+        connectAttr -f ($texture+".vertexCameraOne") ($file+".vertexCameraOne");
+        connectAttr -f ($texture+".outUV") ($file+".uv");
+        connectAttr ($texture+".outUvFilterSize") ($file+".uvFilterSize");
+        connectAttr ($texture+".vertexUvOne") ($file+".vertexUvOne");
+        connectAttr -force ($file+"."+$file_attr) ("R_UberMat."+$uber_attr);
+
+        setAttr ($file + ".fileTextureName") -type "string" $value;
+
+        return $file;
+        
+    }} 
+
+}}
+
+global proc resetAttributes(){{
+	
+	setAttr "R_UberMat.diffuse" 1;
+	setAttr "R_UberMat.diffuseColor" -type double3 0.05285 0.298014 0.303 ;
+	setAttr "R_UberMat.diffuseWeight" 1;
+	setAttr "R_UberMat.diffuseRoughness" 1;
+	setAttr "R_UberMat.useShaderNormal" 1;
+	setAttr "R_UberMat.diffuseNormal" -type double3 1 1 1 ;
+	setAttr "R_UberMat.backscatteringWeight" 0;
+	setAttr "R_UberMat.separateBackscatterColor" 0;
+	setAttr "R_UberMat.backscatteringColor" -type double3 0.5 0.5 0.5 ;
+
+	setAttr "R_UberMat.reflections" 1;
+	setAttr "R_UberMat.reflectColor" -type double3 1 1 1 ;
+	setAttr "R_UberMat.reflectWeight" 1;
+	setAttr "R_UberMat.reflectRoughness" 0.119;
+	setAttr "R_UberMat.reflectAnisotropy" 0;
+	setAttr "R_UberMat.reflectAnisotropyRotation" 0;
+	setAttr "R_UberMat.reflectUseShaderNormal" 1;
+	setAttr "R_UberMat.reflectNormal" -type double3 1 1 1 ;
+
+	setAttr "R_UberMat.reflectMetalMaterial" 0;
+	setAttr "R_UberMat.reflectIOR" 1.5;
+	setAttr "R_UberMat.reflectMetalness" 0;
+
+	setAttr "R_UberMat.refraction" 1;
+	setAttr "R_UberMat.refractColor" -type double3 0.22 0.957 0.794 ;
+	setAttr "R_UberMat.refractWeight" 1;
+	setAttr "R_UberMat.refractRoughness" 0;
+	setAttr "R_UberMat.refractLinkToReflect" 0;
+	setAttr "R_UberMat.refractIor" 1.5;
+	setAttr "R_UberMat.refractThinSurface" 0;
+	setAttr "R_UberMat.refractAbsorptionDistance" 0;
+	setAttr "R_UberMat.refractAbsorbColor" -type double3 0 0 0 ;
+	setAttr "R_UberMat.refractAllowCaustics" 1;
+
+	setAttr "R_UberMat.clearCoat" 0;
+	setAttr "R_UberMat.coatColor" -type double3 1 1 1 ;
+	setAttr "R_UberMat.coatWeight" 1;
+	setAttr "R_UberMat.coatRoughness" 0.5;
+	setAttr "R_UberMat.coatIor" 1.5;
+	setAttr "R_UberMat.coatUseShaderNormal" 0;
+	setAttr "R_UberMat.coatNormal" -type double3 1 1 1 ;
+	setAttr "R_UberMat.coatThickness" 1;
+	setAttr "R_UberMat.coatTransmissionColor" -type double3 1 1 1 ;
+
+	setAttr "R_UberMat.emissive" 0;
+	setAttr "R_UberMat.emissiveWeight" 1;
+	setAttr "R_UberMat.emissiveColor" -type double3 1 1 1 ;
+	setAttr "R_UberMat.emissiveIntensity" 1;
+	setAttr "R_UberMat.emissiveDoubleSided" 0;
+
+	setAttr "R_UberMat.sssEnable" 0;
+	setAttr "R_UberMat.sssWeight";
+	setAttr "R_UberMat.sssUseDiffuseColor" 0;
+	setAttr "R_UberMat.volumeScatter" -type double3 0.436 0.227 0.131 ;
+	setAttr "R_UberMat.subsurfaceRadius0" 3.67;
+	setAttr "R_UberMat.subsurfaceRadius1" 1.37;
+	setAttr "R_UberMat.subsurfaceRadius2" 0.68;
+	setAttr "R_UberMat.scatteringDirection" 0;
+	setAttr "R_UberMat.multipleScattering" 1;
+
+	setAttr "R_UberMat.transparencyEnable" 0;
+	setAttr "R_UberMat.transparencyLevel" 1;
+	setAttr "R_UberMat.normalMapEnable" 1;
+	catchQuiet (`connectAttr -f RPRNormal3.out R_UberMat.normalMap`);
+	setAttr -type "string" file13.fileTextureName "sourceimages/normal_normalmap.png";
+	setAttr "R_UberMat.displacementEnable" 0;
+	setAttr "R_UberMat.displacementMap" -type double3 0 0 0 ;
+	setAttr "R_UberMat.displacementMin" 13.986;
+	setAttr "R_UberMat.displacementMax" 23.776;
+	setAttr "R_UberMat.displacementSubdiv" 4;
+	setAttr "R_UberMat.displacementCreaseWeight" 0;
+	setAttr "R_UberMat.displacementBoundary" 1;
+
+}}
+
+global proc check_test_cases_fail_save(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_fail_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $script_info, $scene);
+    }}
+}}
+
+
+global proc prerender(string $test_case, string $script_info, string $scene){{
+
+	string $scene_name  = `file -q -sn -shn`;
+	if ($scene_name != $scene) {{
+		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`)) {{
+            evalDeferred("quit -abort");
+        }}
+	}}
+
+	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+		loadPlugin RadeonProRender;
+	}}
+
+	if( `pluginInfo -query -loaded fbxmaya` == 0){{
+    	loadPlugin fbxmaya;
+	}}
+
+	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+	setAttr "defaultRenderGlobals.imageFormat" 8;
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+	switch ($test_case) {{
+
+	case "MAYA_MAT_UBER_001":
+		setAttr "R_UberMat.diffuseWeight" 0;
+		setAttr "R_UberMat.diffuseRoughness" 0;
+		setAttr "R_UberMat.useShaderNormal" 0;
+		setAttr "R_UberMat.diffuseNormal" -type double3 0 0 0 ;
+		setAttr "R_UberMat.backscatteringWeight" 0.5;
+		setAttr "R_UberMat.separateBackscatterColor" 1;
+		setAttr "R_UberMat.backscatteringColor" -type double3 0 0 1 ;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_002":
+		string $file_tmp1 = setAttribute("diffuseColor", "outColor", "sourceimages/diffuse_color.png");
+		string $file_tmp2 = setAttribute("diffuseWeight", "outAlpha", "sourceimages/diffuse_weight.exr");
+		setAttr "R_UberMat.useShaderNormal" 0;
+		setAttr "R_UberMat.separateBackscatterColor" 1;
+		setAttr "R_UberMat.diffuseNormal" -type double3 5 0.416667 0 ;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.diffuseColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.diffuseWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_003":
+		string $file_tmp1 = setAttribute("diffuseColor", "outColor", "sourceimages/diffuse_color.tiff");
+		string $file_tmp2 = setAttribute("diffuseRoughness", "outAlpha", "sourceimages/diffuse_roughness.exr");
+		string $file_tmp3 = setAttribute("diffuseNormal", "outColor", "sourceimages/diffuse_normal.png");
+		string $file_tmp4 = setAttribute("backscatteringColor", "outColor", "sourceimages/diffuse_backscatteringcolor.exr");
+		setAttr "R_UberMat.diffuseWeight" 0;
+		setAttr "R_UberMat.useShaderNormal" 0;
+		setAttr "R_UberMat.separateBackscatterColor" 1;
+		setAttr "R_UberMat.backscatteringWeight" 0.5;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.diffuseColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.diffuseRoughness");
+		disconnectAttr ($file_tmp3 + ".outColor") ("R_UberMat.diffuseNormal");
+		disconnectAttr ($file_tmp4 + ".outColor") ("R_UberMat.backscatteringColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_004":
+		string $file_tmp1 = setAttribute("diffuseWeight", "outAlpha", "sourceimages/diffuse_weight.exr");
+		string $file_tmp2 = setAttribute("diffuseRoughness", "outAlpha", "sourceimages/diffuse_roughness.jpeg");
+		string $file_tmp3 = setAttribute("diffuseNormal", "outColor", "sourceimages/diffuse_normal.tiff");
+		string $file_tmp4 = setAttribute("backscatteringColor", "outColor", "sourceimages/diffuse_backscatteringcolor.jpeg");
+		setAttr "R_UberMat.useShaderNormal" 0;
+		setAttr "R_UberMat.separateBackscatterColor" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.diffuseWeight");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.diffuseRoughness");
+		disconnectAttr ($file_tmp3 + ".outColor") ("R_UberMat.diffuseNormal");
+		disconnectAttr ($file_tmp4 + ".outColor") ("R_UberMat.backscatteringColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_005":
+		setAttr "R_UberMat.diffuseRoughness" 1;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_006":
+		setAttr "R_UberMat.reflectWeight" 0;
+		setAttr "R_UberMat.reflectRoughness" 0;
+		setAttr "R_UberMat.reflectAnisotropy" 1;
+		setAttr "R_UberMat.reflectAnisotropyRotation" -1;
+		setAttr "R_UberMat.reflectUseShaderNormal" 1;
+		setAttr "R_UberMat.reflectNormal" -type double3 0 0 0 ;
+		setAttr "R_UberMat.reflectMetalMaterial" 1;
+		setAttr "R_UberMat.reflectMetalness" 0.5;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_007":
+		string $file_tmp1 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.tiff");
+		string $file_tmp2 = setAttribute("reflectRoughness", "outAlpha", "sourceimages/reflection_roughness.tiff");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.reflectWeight");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectRoughness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_008":
+		setAttr "R_UberMat.reflectIOR" 0;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_009":
+		string $file_tmp1 = setAttribute("reflectColor", "outColor", "sourceimages/reflection_color.jpeg");
+		string $file_tmp2 = setAttribute("reflectRoughness", "outAlpha", "sourceimages/reflection_roughness.jpeg");
+		setAttr "R_UberMat.reflectWeight" 0.5;
+		setAttr "R_UberMat.reflectMetalMaterial" 1;
+		setAttr "R_UberMat.reflectMetalness" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.reflectColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectRoughness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_010":
+		string $file_tmp1 = setAttribute("reflectColor", "outColor", "sourceimages/reflection_color.jpeg");
+		string $file_tmp2 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.exr");
+		string $file_tmp3 = setAttribute("reflectRoughness", "outAlpha", "sourceimages/reflection_roughness.tiff");
+		string $file_tmp4 = setAttribute("reflectNormal", "outColor", "sourceimages/reflection_normal.jpeg");
+		setAttr "R_UberMat.reflectAnisotropyRotation" 1;
+		setAttr "R_UberMat.reflectUseShaderNormal" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.reflectColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.reflectRoughness");
+		disconnectAttr ($file_tmp4 + ".outColor") ("R_UberMat.reflectNormal");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_011":
+		string $file_tmp1 = setAttribute("reflectColor", "outColor", "sourceimages/reflection_color.png");
+		string $file_tmp2 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.png");
+		string $file_tmp3 = setAttribute("reflectRoughness", "outAlpha", "sourceimages/reflection_roughness.tiff");
+		setAttr "R_UberMat.reflectAnisotropy" -1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.reflectColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.reflectRoughness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_012":
+		string $file_tmp1 = setAttribute("reflectColor", "outColor", "sourceimages/reflection_color.png");
+		string $file_tmp2 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.exr");
+		setAttr "R_UberMat.reflectAnisotropy" 1;
+		setAttr "R_UberMat.reflectIOR" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.reflectColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_013":
+		string $file_tmp1 = setAttribute("reflectColor", "outColor", "sourceimages/reflection_color.exr");
+		string $file_tmp2 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.exr");
+		string $file_tmp3 = setAttribute("reflectNormal", "outColor", "sourceimages/reflection_normal.exr");
+		setAttr "R_UberMat.reflectUseShaderNormal" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.reflectColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectWeight");
+		disconnectAttr ($file_tmp3 + ".outColor") ("R_UberMat.reflectNormal");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_014":
+		string $file_tmp1 = setAttribute("reflectColor", "outColor", "sourceimages/reflection_color.exr");
+		setAttr "R_UberMat.reflectRoughness" 0.5;
+		setAttr "R_UberMat.reflectAnisotropyRotation" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.reflectColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_015":
+		string $file_tmp1 = setAttribute("reflectColor", "outColor", "sourceimages/reflection_color.tiff");
+		string $file_tmp2 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weigh.jpeg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.reflectColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_016":
+		string $file_tmp1 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.exr");
+		string $file_tmp2 = setAttribute("reflectNormal", "outColor", "sourceimages/reflection_normal.png");
+		setAttr "R_UberMat.reflectRoughness" 0.5;
+		setAttr "R_UberMat.reflectUseShaderNormal" 1;
+		setAttr "R_UberMat.reflectIOR" 5;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.reflectWeight");
+		disconnectAttr ($file_tmp2 + ".outColor") ("R_UberMat.reflectNormal");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_017":
+		string $file_tmp1 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.tiff");
+		string $file_tmp2 = setAttribute("reflectRoughness", "outAlpha", "sourceimages/reflection_roughness.jpeg");
+		setAttr "R_UberMat.reflectAnisotropy" -1;
+		setAttr "R_UberMat.reflectMetalMaterial" 1;
+		setAttr "R_UberMat.reflectMetalness" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.reflectWeight");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectRoughness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_018":
+		string $file_tmp1 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.jpeg");
+		setAttr "R_UberMat.reflectRoughness" 0.5;
+		setAttr "R_UberMat.reflectAnisotropy" 1;
+		setAttr "R_UberMat.reflectAnisotropyRotation" 1;
+		setAttr "R_UberMat.reflectIOR" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.reflectWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_019":
+		string $file_tmp1 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.png");
+		string $file_tmp2 = setAttribute("reflectRoughness", "outAlpha", "sourceimages/reflection_roughness.jpeg");
+		setAttr "R_UberMat.reflectAnisotropyRotation" -1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.reflectWeight");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectRoughness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_020":
+		string $file_tmp1 = setAttribute("reflectWeight", "outAlpha", "sourceimages/reflection_weight.exr");
+		string $file_tmp2 = setAttribute("reflectRoughness", "outAlpha", "sourceimages/reflection_roughness.png");
+		setAttr "R_UberMat.reflectUseShaderNormal" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.reflectWeight");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectRoughness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_021":
+		setAttr "R_UberMat.reflectWeight" 0;
+		setAttr "R_UberMat.reflectRoughness" 0;
+		setAttr "R_UberMat.refractLinkToReflect" 1;
+		setAttr "R_UberMat.refractThinSurface" 1;
+		setAttr "R_UberMat.refractAbsorptionDistance" 5;
+		setAttr "R_UberMat.refractAllowCaustics" 1;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_022":
+		setAttr "R_UberMat.reflectIOR" 0;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_023":
+		string $file_tmp1 = setAttribute("refractColor", "outColor", "sourceimages/refraction_color.jpeg");
+		string $file_tmp2 = setAttribute("refractWeight", "outAlpha", "sourceimages/refraction_weight.png");
+		string $file_tmp3 = setAttribute("refractRoughness", "outAlpha", "sourceimages/refraction_roughness.exr");
+		setAttr "R_UberMat.refractAbsorptionDistance" 5;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.refractColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.refractRoughness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_024":
+		string $file_tmp1 = setAttribute("refractColor", "outColor", "sourceimages/refraction_color.jpeg");
+		//string $file_tmp2 = setAttribute("refractAbsorptionDistance", "outColor", "sourceimages/refraction_absorbtiondistance.png");
+		setAttr "R_UberMat.refractLinkToReflect" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.refractColor");
+		//disconnectAttr ($file_tmp2 + ".outColor") ("R_UberMat.refractAbsorptionDistance");
+		resetAttributes();
+		break;
+		
+	case "MAYA_MAT_UBER_025":
+		string $file_tmp1 = setAttribute("refractColor", "outColor", "sourceimages/refraction_color.png");
+		string $file_tmp2 = setAttribute("refractWeight", "outAlpha", "sourceimages/refraction_weight.exr");
+		setAttr "R_UberMat.refractAllowCaustics" 1;
+		setAttr "R_UberMat.refractThinSurface" 1;
+		setAttr "R_UberMat.refractLinkToReflect" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.refractColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_026":
+		string $file_tmp1 = setAttribute("refractColor", "outColor", "sourceimages/refraction_color.png");
+		string $file_tmp2 = setAttribute("refractRoughness", "outAlpha", "sourceimages/refraction_roughness.jpeg");
+		//string $file_tmp3 = setAttribute("refractAbsorptionDistance", "outAlpha", "sourceimages/refraction_absorbtiondistance.jpeg");
+		setAttr "R_UberMat.refractWeight" 0;
+		setAttr "R_UberMat.refractThinSurface" 1;
+		setAttr "R_UberMat.reflectIOR" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.refractColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractRoughness");
+		//disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.refractAbsorptionDistance");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_027":
+		string $file_tmp1 = setAttribute("refractColor", "outColor", "sourceimages/refraction_color.exr");
+		string $file_tmp2 = setAttribute("refractWeight", "outAlpha", "sourceimages/refraction_weight.jpeg");
+		string $file_tmp3 = setAttribute("refractRoughness", "outAlpha", "sourceimages/refraction_roughness.tiff");
+		setAttr "R_UberMat.refractLinkToReflect" 1;
+		setAttr "R_UberMat.refractAbsorptionDistance" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.refractColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.refractRoughness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_028":
+		string $file_tmp1 = setAttribute("refractColor", "outColor", "sourceimages/refraction_color.exr");
+		string $file_tmp2 = setAttribute("refractWeight", "outAlpha", "sourceimages/refraction_weight.tiff");
+		//string $file_tmp3 = setAttribute("reflectIOR", "outAlpha", "sourceimages/refraction_ior.jpeg");
+		//string $file_tmp4 = setAttribute("refractAbsorptionDistance", "outAlpha", "sourceimages/refraction_absorbtiondistance.exr");
+		setAttr "R_UberMat.refractRoughness" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.refractColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractWeight");
+		//disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.reflectIOR");
+		//disconnectAttr ($file_tmp4 + ".outAlpha") ("R_UberMat.refractAbsorptionDistance");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_029":
+		string $file_tmp1 = setAttribute("refractColor", "outColor", "sourceimages/refraction_color.tiff");
+		string $file_tmp2 = setAttribute("refractRoughness", "outAlpha", "sourceimages/refraction_roughness.exr");
+		//string $file_tmp3 = setAttribute("refractAbsorptionDistance", "outAlpha", "sourceimages/refraction_absorbtiondistance.exr");
+		setAttr "R_UberMat.refractWeight" 0;
+		setAttr "R_UberMat.refractAllowCaustics" 1;
+		setAttr "R_UberMat.refractThinSurface" 1;
+		setAttr "R_UberMat.refractLinkToReflect" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.refractColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractRoughness");
+		//disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.refractAbsorptionDistance");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_030":
+		string $file_tmp1 = setAttribute("refractColor", "outColor", "sourceimages/refraction_color.tiff");
+		string $file_tmp2 = setAttribute("refractWeight", "outAlpha", "sourceimages/refraction_weight.jpeg");
+		//string $file_tmp3 = setAttribute("reflectIOR", "outAlpha", "sourceimages/refraction_ior.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.refractColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractWeight");
+		//disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.reflectIOR");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_031":
+		string $file_tmp1 = setAttribute("refractRoughness", "outAlpha", "sourceimages/refraction_roughness.exr");
+		setAttr "R_UberMat.refractLinkToReflect" 1;
+		setAttr "R_UberMat.refractAbsorptionDistance" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.refractRoughness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_032":
+		string $file_tmp1 = setAttribute("refractRoughness", "outAlpha", "sourceimages/refraction_roughness.exr");
+		//string $file_tmp2 = setAttribute("reflectIOR", "outAlpha", "sourceimages/refraction_ior.exr");
+		setAttr "R_UberMat.refractAbsorptionDistance" 5;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.refractRoughness");
+		//disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.reflectIOR");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_033":
+		string $file_tmp1 = setAttribute("refractWeight", "outAlpha", "sourceimages/refraction_weight.exr");
+		string $file_tmp2 = setAttribute("refractRoughness", "outAlpha", "sourceimages/refraction_roughness.jpeg");
+		//string $file_tmp3 = setAttribute("refractAbsorptionDistance", "outAlpha", "sourceimages/refraction_absorbtiondistance.jpeg");
+		setAttr "R_UberMat.refractLinkToReflect" 1;
+		setAttr "R_UberMat.refractAllowCaustics" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.refractWeight");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractRoughness");
+		//disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.refractAbsorptionDistance");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_034":
+		//string $file_tmp1 = setAttribute("reflectIOR", "outAlpha", "sourceimages/refraction_ior.tiff");
+		//string $file_tmp2 = setAttribute("refractAbsorptionDistance", "outAlpha", "sourceimages/refraction_absorbtiondistance.exr");
+		setAttr "R_UberMat.refractWeight" 0.5;
+		setAttr "R_UberMat.refractRoughness" 0;
+		rpr_render($test_case, $script_info);
+		//disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.reflectIOR");
+		//disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractAbsorptionDistance");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_035":
+		string $file_tmp1 = setAttribute("refractWeight", "outAlpha", "sourceimages/refraction_weight.jpeg");
+		//string $file_tmp2 = setAttribute("refractAbsorptionDistance", "outAlpha", "sourceimages/refraction_absorbtiondistance.tiff");
+		setAttr "R_UberMat.refractRoughness" 0;
+		setAttr "R_UberMat.refractLinkToReflect" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.refractWeight");
+		//disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.refractAbsorptionDistance");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_036":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatColor", "outColor", "sourceimages/coating_color.jpeg");
+		string $file_tmp2 = setAttribute("coatWeight", "outAlpha", "sourceimages/coating_weight.jpeg");
+		string $file_tmp3 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.png");
+		//string $file_tmp4 = setAttribute("coatIor", "outAlpha", "sourceimages/coating_ior.exr");
+		setAttr "R_UberMat.coatTransmissionColor" -type double3 0 0 0 ;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.coatColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.coatRoughness");
+		//disconnectAttr ($file_tmp4 + ".outAlpha") ("R_UberMat.coatIor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_037":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatColor", "outColor", "sourceimages/coating_color.jpeg");
+		string $file_tmp2 = setAttribute("coatWeight", "outAlpha", "sourceimages/coating_weight.exr");
+		string $file_tmp3 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.tiff");
+		string $file_tmp4 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_trasmissioncolor.png");
+		setAttr "R_UberMat.coatNormal" -type double3 5 5 5 ;
+		setAttr "R_UberMat.coatThickness" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.coatColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.coatRoughness");
+		disconnectAttr ($file_tmp4 + ".outColor") ("R_UberMat.coatTransmissionColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_038":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatColor", "outColor", "sourceimages/coating_color.png");
+		//string $file_tmp2 = setAttribute("coatIor", "outAlpha", "sourceimages/coating_ior.tiff");
+		string $file_tmp3 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.png");
+		string $file_tmp4 = setAttribute("coatThickness", "outAlpha", "sourceimages/coating_thickness.png");
+		setAttr "R_UberMat.coatWeight" 0.5;
+		setAttr "R_UberMat.coatNormal" -type double3 10 10 10 ;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.coatColor");
+		//disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatIor");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.coatRoughness");
+		disconnectAttr ($file_tmp4 + ".outAlpha") ("R_UberMat.coatThickness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_039":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatColor", "outColor", "sourceimages/coating_color.png");
+		//string $file_tmp2 = setAttribute("coatIor", "outAlpha", "sourceimages/coating_ior.jpeg");
+		string $file_tmp3 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_transmissioncolor.png");
+		setAttr "R_UberMat.coatRoughness" 0;
+		setAttr "R_UberMat.coatThickness" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.coatColor");
+		//disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatIor");
+		disconnectAttr ($file_tmp3 + ".outColor") ("R_UberMat.coatTransmissionColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_040":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatColor", "outColor", "sourceimages/coating_color.exr");
+		string $file_tmp2 = setAttribute("coatWeight", "outAlpha", "sourceimages/coating_weight.jpeg");
+		string $file_tmp3 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.tiff");
+		string $file_tmp4 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_transmissioncolor.tiff");
+		setAttr "R_UberMat.coatIor" 0;
+		setAttr "R_UberMat.coatThickness" 10;
+		setAttr "R_UberMat.coatUseShaderNormal" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.coatColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.coatRoughness");
+		disconnectAttr ($file_tmp4 + ".outColor") ("R_UberMat.coatTransmissionColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_041":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatColor", "outColor", "sourceimages/coating_color.exr");
+		//string $file_tmp2 = setAttribute("coatIor", "outAlpha", "sourceimages/coating_ior.exr");
+		string $file_tmp3 = setAttribute("coatNormal", "outColor", "sourceimages/coating_normal.jpeg");
+		string $file_tmp4 = setAttribute("coatThickness", "outAlpha", "sourceimages/coating_thickness.tiff");
+		setAttr "R_UberMat.coatRoughness" 0.5;
+		setAttr "R_UberMat.coatTransmissionColor" -type double3 0 0 0 ;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.coatColor");
+		//disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatIor");
+		disconnectAttr ($file_tmp3 + ".outColor") ("R_UberMat.coatNormal");
+		disconnectAttr ($file_tmp4 + ".outAlpha") ("R_UberMat.coatThickness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_042":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatColor", "outColor", "sourceimages/coating_color.tiff");
+		string $file_tmp2 = setAttribute("coatWeight", "outAlpha", "sourceimages/coating_weight.png");
+		//string $file_tmp3 = setAttribute("coatIor", "outAlpha", "sourceimages/coating_ior.png");
+		string $file_tmp4 = setAttribute("coatNormal", "outColor", "sourceimages/coating_normal.png");
+		string $file_tmp5 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_transmissioncolor.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.coatColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatWeight");
+		//disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.coatIor");
+		disconnectAttr ($file_tmp4 + ".outColor") ("R_UberMat.coatNormal");
+		disconnectAttr ($file_tmp5 + ".outColor") ("R_UberMat.coatTransmissionColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_043":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatColor", "outColor", "sourceimages/coating_color.tiff");
+		string $file_tmp2 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.jpeg");
+		string $file_tmp3 = setAttribute("coatThickness", "outAlpha", "sourceimages/coating_thickness.jpeg");
+		setAttr "R_UberMat.coatUseShaderNormal" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.coatColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatRoughness");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.coatThickness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_044":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.tiff");
+		//string $file_tmp2 = setAttribute("coatIor", "outAlpha", "sourceimages/coating_ior.jpeg");
+		string $file_tmp3 = setAttribute("coatNormal", "outColor", "sourceimages/coating_normal.exr");
+		setAttr "R_UberMat.coatWeight" 0;
+		setAttr "R_UberMat.coatThickness" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.coatRoughness");
+		//disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatIor");
+		disconnectAttr ($file_tmp3 + ".outColor") ("R_UberMat.coatNormal");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_045":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatWeight", "outAlpha", "sourceimages/coating_weight.jpeg");
+		//string $file_tmp2 = setAttribute("coatIor", "outAlpha", "sourceimages/coating_ior.exr");
+		string $file_tmp3 = setAttribute("coatThickness", "outAlpha", "sourceimages/coating_thickness.png");
+		setAttr "R_UberMat.coatTransmissionColor" -type double3 0.4 0.4 0.4 ;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.coatWeight");
+		//disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatIor");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.coatThickness");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_046":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatWeight", "outAlpha", "sourceimages/coating_weight.tiff");
+		string $file_tmp2 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.png");
+		string $file_tmp3 = setAttribute("coatNormal", "outColor", "sourceimages/coating_normal.tiff");
+		string $file_tmp4 = setAttribute("coatThickness", "outAlpha", "sourceimages/coating_thickness.png");
+		string $file_tmp5 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_transmissioncolot.jpeg");
+		setAttr "R_UberMat.coatIor" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.coatWeight");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatRoughness");
+		disconnectAttr ($file_tmp3 + ".outColor") ("R_UberMat.coatNormal");
+		disconnectAttr ($file_tmp4 + ".outAlpha") ("R_UberMat.coatThickness");
+		disconnectAttr ($file_tmp5 + ".outColor") ("R_UberMat.coatTransmissionColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_047":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.exr");
+		//string $file_tmp2 = setAttribute("coatIor", "outAlpha", "sourceimages/coating_ior.jpeg");
+		string $file_tmp3 = setAttribute("coatThickness", "outAlpha", "sourceimages/coating_thickness.exr");
+		string $file_tmp4 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_transmissioncolor.png");
+		setAttr "R_UberMat.coatUseShaderNormal" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.coatRoughness");
+		//disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatIor");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.coatThickness");
+		disconnectAttr ($file_tmp4 + ".outColor") ("R_UberMat.coatTransmissionColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_048":
+		setAttr "R_UberMat.clearCoat" 1;
+		string $file_tmp1 = setAttribute("coatWeight", "outAlpha", "sourceimages/coating_weight.jpeg");
+		string $file_tmp2 = setAttribute("coatThickness", "outAlpha", "sourceimages/coating_thickness.tiff");
+		string $file_tmp3 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_transmissioncolor.tiff");
+		setAttr "R_UberMat.coatRoughness" 0.5;
+		setAttr "R_UberMat.coatIor" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.coatWeight");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.coatThickness");
+		disconnectAttr ($file_tmp3 + ".outColor") ("R_UberMat.coatTransmissionColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_049":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.jpeg");
+		setAttr "R_UberMat.emissiveWeight" 0;
+		setAttr "R_UberMat.emissiveIntensity" 0;
+		setAttr "R_UberMat.emissiveDoubleSided" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_050":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.jpeg");
+		string $file_tmp2 = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissive_weight.jpeg");
+		string $file_tmp3 = setAttribute("emissiveIntensity", "outAlpha", "sourceimages/emissive_intensity.jpeg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.emissiveIntensity");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_051":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.jpeg");
+		string $file_tmp2 = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissive_weight.tiff");
+		string $file_tmp3 = setAttribute("emissiveIntensity", "outAlpha", "sourceimages/emissive_intensity.tiff");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.emissiveIntensity");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_052":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.png");
+		string $file_tmp2 = setAttribute("emissiveIntensity", "outAlpha", "sourceimages/emissive_intensity.jpeg");
+		setAttr "R_UberMat.emissiveWeight" 0.5;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveIntensity");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_053":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.png");
+		string $file_tmp2 = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissive_weight.png");
+		string $file_tmp3 = setAttribute("emissiveIntensity", "outAlpha", "sourceimages/emissive_intensity.exr");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.emissiveIntensity");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_054":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.png");
+		string $file_tmp2 = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissive_weight.tiff");
+		setAttr "R_UberMat.emissiveDoubleSided" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_055":
+		setAttr "R_UberMat.emissive" 1;
+		setAttr "R_UberMat.emissiveWeight" 0;
+		setAttr "R_UberMat.emissiveIntensity" 10;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_056":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.exr");
+		string $file_tmp2 = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissive_weight.png");
+		string $file_tmp3 = setAttribute("emissiveIntensity", "outAlpha", "sourceimages/emissive_intensity.tiff");
+		setAttr "R_UberMat.emissiveDoubleSided" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveWeight");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.emissiveIntensity");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_057":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.exr");
+		setAttr "R_UberMat.emissiveIntensity" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_058":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.exr");
+		string $file_tmp2 = setAttribute("emissiveIntensity", "outAlpha", "sourceimages/emissive_intensity.jpeg");
+		setAttr "R_UberMat.emissiveWeight" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveIntensity");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_059":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveIntensity", "outAlpha", "sourceimages/emissive_intensity.png");
+		setAttr "R_UberMat.emissiveWeight" 0.5;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.emissiveIntensity");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_060":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.tiff");
+		string $file_tmp2 = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissive_weight.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_061":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.tiff");
+		string $file_tmp2 = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissive_weight.tiff");
+		setAttr "R_UberMat.emissiveIntensity" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_062":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveColor", "outColor", "sourceimages/emissive_color.tiff");
+		string $file_tmp2 = setAttribute("emissiveIntensity", "outAlpha", "sourceimages/emissive_intensity.exr");
+		setAttr "R_UberMat.emissiveWeight" 0.5;
+		setAttr "R_UberMat.emissiveDoubleSided" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.emissiveColor");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveIntensity");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_063":
+		setAttr "R_UberMat.emissive" 1;
+		string $file_tmp1 = setAttribute("emissiveWeight", "outAlpha", "sourceimages/emissive_weight.jpeg");
+		string $file_tmp2 = setAttribute("emissiveIntensity", "outAlpha", "sourceimages/emissive_intensity.tiff");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.emissiveWeight");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.emissiveIntensity");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_064":
+		setAttr "R_UberMat.sssEnable" 1;
+		setAttr "R_UberMat.volumeScatter" -type double3 0 0 0 ;
+		setAttr "R_UberMat.subsurfaceRadius0" 3;
+		setAttr "R_UberMat.subsurfaceRadius1" 3;
+		setAttr "R_UberMat.subsurfaceRadius2" 3;
+		setAttr "R_UberMat.scatteringDirection" 1;
+		setAttr "R_UberMat.multipleScattering" 0;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_065":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("subsurfaceRadius", "outColor", "sourceimages/subsurfacescattering_subsurfaceradius.jpeg");
+		string $file_tmp2 = setAttribute("sssWeight", "outAlpha", "sourceimages/subsurfacescattering_weight.jpeg");
+		setAttr "R_UberMat.sssUseDiffuseColor" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.subsurfaceRadius");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.sssWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_066":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("volumeScatter", "outColor", "sourceimages/subsurfacescattering_scatteringcolor.png");
+		string $file_tmp2 = setAttribute("sssWeight", "outAlpha", "sourceimages/subsurfacescattering_weight.jpeg");
+		setAttr "R_UberMat.subsurfaceRadius0" 3;
+		setAttr "R_UberMat.subsurfaceRadius1" 3;
+		setAttr "R_UberMat.subsurfaceRadius2" 3;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.volumeScatter");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.sssWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_067":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("subsurfaceRadius", "outColor", "sourceimages/subsurfacescattering_subsurfaceradius.png");
+		string $file_tmp2 = setAttribute("sssWeight", "outAlpha", "sourceimages/subsurfacescattering_weight.png");
+		setAttr "R_UberMat.sssUseDiffuseColor" 1;
+		setAttr "R_UberMat.multipleScattering" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.subsurfaceRadius");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.sssWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_068":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("volumeScatter", "outColor", "sourceimages/subsurfacescattering_scatteringcolor.exr");
+		string $file_tmp2 = setAttribute("subsurfaceRadius", "outColor", "sourceimages/subsurfacescattering_subsurfaceradius.exr");
+		string $file_tmp3 = setAttribute("sssWeight", "outAlpha", "sourceimages/subsurfacescattering_weight.exr");
+		setAttr "R_UberMat.scatteringDirection" -1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.volumeScatter");
+		disconnectAttr ($file_tmp2 + ".outColor") ("R_UberMat.subsurfaceRadius");
+		disconnectAttr ($file_tmp3 + ".outAlpha") ("R_UberMat.sssWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_069":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("subsurfaceRadius", "outColor", "sourceimages/subsurfacescattering_subsurfaceradius.tiff");
+		string $file_tmp2 = setAttribute("sssWeight", "outAlpha", "sourceimages/subsurfacescattering_weight.exr");
+		setAttr "R_UberMat.scatteringDirection" 1;
+		setAttr "R_UberMat.sssUseDiffuseColor" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.subsurfaceRadius");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.sssWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_070":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("subsurfaceRadius", "outColor", "sourceimages/subsurfacescattering_subsurfaceradius.tiff");
+		string $file_tmp2 = setAttribute("sssWeight", "outAlpha", "sourceimages/subsurfacescattering_weight.tiff");
+		setAttr "R_UberMat.volumeScatter" -type double3 0 0 0 ;
+		setAttr "R_UberMat.multipleScattering" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.subsurfaceRadius");
+		disconnectAttr ($file_tmp2 + ".outAlpha") ("R_UberMat.sssWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_071":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("sssWeight", "outAlpha", "sourceimages/subsurfacescattering_weight.tiff");
+		setAttr "R_UberMat.sssUseDiffuseColor" 1;
+		setAttr "R_UberMat.subsurfaceRadius0" 1;
+		setAttr "R_UberMat.subsurfaceRadius1" 1;
+		setAttr "R_UberMat.subsurfaceRadius2" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.sssWeight");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_072":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("subsurfaceRadius", "outColor", "sourceimages/subsurfacescattering_subsurfaceradius.jpeg");
+		setAttr "R_UberMat.sssWeight" 0;
+		setAttr "R_UberMat.sssUseDiffuseColor" 1;
+		setAttr "R_UberMat.scatteringDirection" -1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.subsurfaceRadius");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_073":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("volumeScatter", "outColor", "sourceimages/subsurfacescattering_scatteringcolor.tiff");
+		setAttr "R_UberMat.sssWeight" 0;
+		setAttr "R_UberMat.multipleScattering" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.volumeScatter");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_074":
+		setAttr "R_UberMat.sssEnable" 1;
+		string $file_tmp1 = setAttribute("subsurfaceRadius", "outColor", "sourceimages/subsurfacescattering_subsurfaceradius.exr");
+		setAttr "R_UberMat.sssWeight" 0.5;
+		setAttr "R_UberMat.sssUseDiffuseColor" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.subsurfaceRadius");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_075":
+		setAttr "R_UberMat.sssEnable" 1;
+		setAttr "R_UberMat.sssWeight" 0.5;
+		setAttr "R_UberMat.volumeScatter" -type double3 1 1 1 ;
+		setAttr "R_UberMat.subsurfaceRadius0" 1;
+		setAttr "R_UberMat.subsurfaceRadius1" 1;
+		setAttr "R_UberMat.subsurfaceRadius2" 1;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_076":
+		setAttr "R_UberMat.transparencyEnable" 1;
+		setAttr "R_UberMat.transparencyLevel" 0.5;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_077":
+		setAttr "R_UberMat.transparencyEnable" 1;
+		string $file_tmp1 = setAttribute("transparencyLevel", "outAlpha", "sourceimages/transparency_transparency.jpeg");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.transparencyLevel");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_078":
+		setAttr "R_UberMat.transparencyEnable" 1;
+		string $file_tmp1 = setAttribute("transparencyLevel", "outAlpha", "sourceimages/transparency_transparency.png");
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.transparencyLevel");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_079":
+		setAttr "R_UberMat.transparencyEnable" 1;
+		setAttr "R_UberMat.transparencyLevel" 0;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_080":
+		setAttr "R_UberMat.normalMapEnable" 1;
+		disconnectAttr RPRNormal3.out R_UberMat.normalMap;
+		setAttr "R_UberMat.normalMap" -type double3 0 0 0 ;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_081":
+		setAttr "R_UberMat.normalMapEnable" 1;
+		setAttr -type "string" file13.fileTextureName "sourceimages/normal_normalmap.jpeg";
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_082":
+		setAttr "R_UberMat.normalMapEnable" 1;
+		setAttr -type "string" file13.fileTextureName "sourceimages/normal_normalmap.png";
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_083":
+		setAttr "R_UberMat.normalMapEnable" 1;
+		setAttr -type "string" file13.fileTextureName "sourceimages/normal_normalmap.exr";
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_084":
+		setAttr "R_UberMat.displacementEnable" 1;
+		setAttr "R_UberMat.displacementMap" -type double3 1 1 1 ;
+		setAttr "R_UberMat.displacementMin" 1;
+		setAttr "R_UberMat.displacementMax" 1;
+		setAttr "R_UberMat.displacementSubdiv" 1;
+		setAttr "R_UberMat.displacementCreaseWeight" 10;
+		setAttr "R_UberMat.displacementBoundary" 0;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_085":
+		setAttr "R_UberMat.displacementEnable" 1;
+		setAttr "R_UberMat.displacementMap" -type double3 1 1 1 ;
+		setAttr "R_UberMat.displacementMin" 10;
+		setAttr "R_UberMat.displacementMax" 10;
+		setAttr "R_UberMat.displacementSubdiv" 7;
+		setAttr "R_UberMat.displacementCreaseWeight" 50;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_086":
+		setAttr "R_UberMat.displacementEnable" 1;
+		setAttr "R_UberMat.displacementMap" -type double3 1 1 1 ;
+		setAttr "R_UberMat.displacementMin" 50;
+		setAttr "R_UberMat.displacementMax" 50;
+		setAttr "R_UberMat.displacementSubdiv" 8;
+		setAttr "R_UberMat.displacementCreaseWeight" 100;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_087":
+		setAttr "R_UberMat.displacementEnable" 1;
+		setAttr "R_UberMat.displacementMap" -type double3 1 1 1 ;
+		setAttr "R_UberMat.displacementMin" 100;
+		setAttr "R_UberMat.displacementMax" 100;
+		rpr_render($test_case, $script_info);
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_088":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.jpeg");
+		setAttr "R_UberMat.displacementMin" 50;
+		setAttr "R_UberMat.displacementMax" 100;
+		setAttr "R_UberMat.displacementCreaseWeight" 10;
+		setAttr "R_UberMat.displacementBoundary" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_089":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.jpeg");
+		setAttr "R_UberMat.displacementMin" 100;
+		setAttr "R_UberMat.displacementSubdiv" 1;
+		setAttr "R_UberMat.displacementCreaseWeight" 50;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_090":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.jpeg");
+		setAttr "R_UberMat.displacementMax" 1;
+		setAttr "R_UberMat.displacementSubdiv" 7;
+		setAttr "R_UberMat.displacementCreaseWeight" 100;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_091":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.jpeg");
+		setAttr "R_UberMat.displacementMin" 1;
+		setAttr "R_UberMat.displacementMax" 10;
+		setAttr "R_UberMat.displacementSubdiv" 8;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_092":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.png");
+		setAttr "R_UberMat.displacementMin" 100;
+		setAttr "R_UberMat.displacementMax" 1;
+		setAttr "R_UberMat.displacementSubdiv" 8;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_093":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.png");
+		setAttr "R_UberMat.displacementMax" 10;
+		setAttr "R_UberMat.displacementCreaseWeight" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_094":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.png");
+		setAttr "R_UberMat.displacementMin" 10;
+		setAttr "R_UberMat.displacementMax" 100;
+		setAttr "R_UberMat.displacementSubdiv" 1;
+		setAttr "R_UberMat.displacementCreaseWeight" 100;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_095":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.exr");
+		setAttr "R_UberMat.displacementMin" 10;
+		setAttr "R_UberMat.displacementSubdiv" 8;
+		setAttr "R_UberMat.displacementCreaseWeight" 10;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_096":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.exr");
+		setAttr "R_UberMat.displacementMin" 50;
+		setAttr "R_UberMat.displacementMax" 1;
+		setAttr "R_UberMat.displacementCreaseWeight" 50;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_097":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.tiff");
+		setAttr "R_UberMat.displacementMin" 10;
+		setAttr "R_UberMat.displacementMax" 1;
+		setAttr "R_UberMat.displacementBoundary" 0;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	case "MAYA_MAT_UBER_098":
+		setAttr "R_UberMat.displacementEnable" 1;
+		string $file_tmp1 = setAttribute("displacementMap", "outColor", "sourceimages/displacement_displacementmap.tiff");
+		setAttr "R_UberMat.displacementMin" 50;
+		setAttr "R_UberMat.displacementMax" 10;
+		setAttr "R_UberMat.displacementSubdiv" 1;
+		rpr_render($test_case, $script_info);
+		disconnectAttr ($file_tmp1 + ".outColor") ("R_UberMat.displacementMap");
+		resetAttributes();
+		break;
+
+	}}
+			
+}}
+
+global proc main(){{
+	
+	setProject ("{res_path}");
+
+	// <-- fail -->
+
+	// <-- start -->
+
+	@check_test_cases("MAYA_MAT_UBER_001", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_002", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_003", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_004", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_005", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_006", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_007", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_008", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_009", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_010", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_011", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_012", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_013", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_014", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_015", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_016", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_017", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_018", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_019", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_020", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_021", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_022", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_023", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_024", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_025", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_026", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_027", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_028", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_029", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_030", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_031", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_032", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_033", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_034", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_035", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_036", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_037", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_038", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_039", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_040", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_041", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_042", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_043", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_044", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_045", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_046", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_047", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_048", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_049", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_050", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_051", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_052", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_053", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_054", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_055", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_056", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_057", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_058", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_059", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_060", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_061", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_062", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_063", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_064", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_065", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_066", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_067", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_068", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_069", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_070", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_071", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_072", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_073", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_074", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_075", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_076", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_077", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_078", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_079", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_080", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_081", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_082", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_083", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_084", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_085", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_086", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_087", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_088", "[\"Uber\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_089", "[\"Uber\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_090", "[\"Uber\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_091", "[\"Uber\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_092", "[\"Uber\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_093", "[\"Uber\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_094", "[\"Uber\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_095", "[\"Uber\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_096", "[\"Uber\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_097", "[\"Uber\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_098", "[\"Uber\"]", "Uber.ma");
+
+	// <-- end -->
+    
+	evalDeferred("quit -abort");
+}}
+
+
+
+
+
+
+
