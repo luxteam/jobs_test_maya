@@ -586,7 +586,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
 		string $file_tmp1 = setAttribute("coatColor", "outColor", "sourceimages/coating_color.jpeg");
 		string $file_tmp2 = setAttribute("coatWeight", "outAlpha", "sourceimages/coating_weight.exr");
 		string $file_tmp3 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.tiff");
-		string $file_tmp4 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_trasmissioncolor.png");
+		string $file_tmp4 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_transmissioncolor.png");
 		setAttr "R_UberMat.coatNormal" -type double3 5 5 5 ;
 		setAttr "R_UberMat.coatThickness" 10;
 		rpr_render($test_case, $script_info);
