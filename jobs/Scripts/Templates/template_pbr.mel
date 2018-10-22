@@ -108,7 +108,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
 
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 200;
 
 	switch ($test_case) {{
 
@@ -502,62 +502,62 @@ global proc main(){{
 
 	// <-- start -->
 
-	@check_test_cases("MAYA_MAT_PBR_001", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_002", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_003", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_004", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_005", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_006", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_007", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_008", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_009", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_010", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_011", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_012", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_013", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_014", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_015", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_016", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_017", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_018", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_019", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_020", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_021", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_022", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_023", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_024", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_025", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_026", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_027", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_028", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_029", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_030", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_031", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_032", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_033", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_034", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_035", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_036", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_037", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_038", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_039", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_040", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_041", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_042", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_043", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_044", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_045", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_046", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_047", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_048", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_049", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_050", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_051", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_052", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_053", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_054", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_055", "[\"PBR\"]", "PBR.ma");
-	@check_test_cases("MAYA_MAT_PBR_056", "[\"PBR\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_001", "[\"1. Base color .png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_002", "[\"Base color .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_003", "[\"Base color .tiff\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_004", "[\"Base color .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_005", "[\"Base color HSV color: 300:1:1\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_006", "[\"2. Metalness .png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_007", "[\"Metalness .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_008", "[\"Metalness .tif\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_009", "[\"Metalness .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_010", "[\"Metalness=0.5\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_011", "[\"Metalness=1\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_012", "[\"3. Specular .png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_013", "[\"Specular  .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_014", "[\"Specular  .tif\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_015", "[\"Specular  .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_016", "[\"Specular=0.5\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_017", "[\"Specular=1\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_018", "[\"4. Roughness .png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_019", "[\"Roughness  .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_020", "[\"Roughness  .tif\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_021", "[\"Roughness  .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_022", "[\"Roughness=0\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_023", "[\"Roughness=1\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_024", "[\"5. Normal Map .png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_025", "[\" Normal Map .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_026", "[\"Normal Map .tif\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_027", "[\"Normal Map .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_028", "[\"6. Glass .png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_029", "[\"Glass .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_030", "[\"Glass .tif\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_031", "[\"Glass .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_032", "[\"Glass=0\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_033", "[\"Glass=1\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_034", "[\"7. Glass IOR .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_035", "[\"Glass IOR=0\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_036", "[\"Glass IOR=1\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_037", "[\"8. Emissive Color .png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_038", "[\"Emissive Color .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_039", "[\"Emissive Color .tif\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_040", "[\"Emissive Color .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_041", "[\"Emissive Color HSV color: 40:1:1, Weight=0.5\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_042", "[\"Emissive Color HSV color: 40:1:1, Weight=1\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_043", "[\"9. Emissive Weight .png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_044", "[\"Emissive Weight .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_045", "[\"Emissive Weight .tif\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_046", "[\"Emissive Weight .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_047", "[\"10. Subsurface Weight .png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_048", "[\"Subsurface Weight .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_049", "[\"Subsurface Weight .tif\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_050", "[\"Subsurface Weight .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_051", "[\"11. Subsurface Color.png\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_052", "[\"Subsurface Color .jpg\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_053", "[\"Subsurface Color .tif\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_054", "[\"Subsurface Color .exr\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_055", "[\"12. Subsurface Radius 1, 1, 1\"]", "PBR.ma");
+	@check_test_cases("MAYA_MAT_PBR_056", "[\"Subsurface Radius 5, 5, 5\"]", "PBR.ma");
 
 	// <-- end -->
     
