@@ -1321,8 +1321,8 @@ global proc main(){{
 	@check_test_cases("MAYA_MAT_UBER_020", "[\" Weight - reflection_weight.exr, Roughness - reflection_roughness.png, Use Shader Normal - Activate\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_021", "[\"3. Reflection + Reflection Fresnel ,Weight - 0, Roughness - 0, Link to Reflection - Activate, Thin Surface - Activate, Absorbtion Distance - 5, Allow Caustics - Activate\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_022", "[\"IOR - 0\"]", "Uber.ma");
-	@check_test_cases("MAYA_MAT_UBER_023", "[\"4. Refraction, Color - refraction_color.jpeg, Weight - refraction_weight.png, Roughness - refraction_roughness.exr, Absorbtion Distance - 5\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_024", "[\" Color - refraction_color.jpeg, Link to Reflection - Activate, Absorbtion Distance - refraction_absorbtiondistance.png\"]", "Uber.ma");
+	//check_test_cases("MAYA_MAT_UBER_023", "[\"4. Refraction, Color - refraction_color.jpeg, Weight - refraction_weight.png, Roughness - refraction_roughness.exr, Absorbtion Distance - 5\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_024", "[\" Color - refraction_color.jpeg, Link to Reflection - Activate, Absorbtion Distance - refraction_absorbtiondistance.png\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_025", "[\" Color - refraction_color.png, Weight - refraction_weight.exr, Link to Reflection - Activate, Thin Surface - Activate, Allow Caustics - Activate\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_026", "[\" Color - refraction_color.png, Weight - 0, Roughness - refraction_roughness.jpeg, IOR - 10, Thin Surface - Activate, Absorbtion Distance - refraction_absorbtiondistance.jpeg\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_027", "[\" Color - refraction_color.exr, Weight - refraction_weight.jpeg, Roughness - refraction_roughness.tiff, Link to Reflection - Activate, Absorbtion Distance - 10\"]", "Uber.ma");
