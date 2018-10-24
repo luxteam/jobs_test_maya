@@ -82,15 +82,15 @@ global proc main(){{
     @check_test_cases("MAYA_RS_MB_007", 50, 50, 440, "[\"Camera Exposure: 50, Scale: 50, Frame: 440\"]", "motion_blur.ma");
     @check_test_cases("MAYA_RS_MB_008", 75, 75, 440, "[\"Camera Exposure: 75, Scale: 75, Frame: 440\"]", "motion_blur.ma");
     @check_test_cases("MAYA_RS_MB_009", 100, 100, 440, "[\"Camera Exposure: 100, Scale: 100, Frame: 440\"]", "motion_blur.ma");
-    @check_test_cases("MAYA_RS_MB_010", 0, 0, 1480, "[\"Camera Exposure: 0, Scale: 0, Frame: 1480\"]", "motion_blur.ma");
-    @check_test_cases("MAYA_RS_MB_011", 0.1, 1, 1480, "[\"Camera Exposure: 0.1, Scale: 1, Frame: 1480\"]", "motion_blur.ma");
-    @check_test_cases("MAYA_RS_MB_012", 1, 1, 1480, "[\"Camera Exposure: 1, Scale: 1, Frame: 1480\"]", "motion_blur.ma");
-    @check_test_cases("MAYA_RS_MB_013", 5, 5, 1480, "[\"Camera Exposure: 5, Scale: 5, Frame: 1480\"]", "motion_blur.ma");
-    @check_test_cases("MAYA_RS_MB_014", 10, 10, 1480, "[\"Camera Exposure: 10, Scale: 10, Frame: 1480\"]", "motion_blur.ma");
-    @check_test_cases("MAYA_RS_MB_015", 30, 30, 1480, "[\"Camera Exposure: 30, Scale: 30, Frame: 1480\"]", "motion_blur.ma");
-    @check_test_cases("MAYA_RS_MB_016", 50, 50, 1480, "[\"Camera Exposure: 50, Scale: 50, Frame: 1480\"]", "motion_blur.ma");
-    @check_test_cases("MAYA_RS_MB_017", 75, 75, 1480, "[\"Camera Exposure: 75, Scale: 75, Frame: 1480\"]", "motion_blur.ma");
-    @check_test_cases("MAYA_RS_MB_018", 100, 100, 1480, "[\"Camera Exposure: 100, Scale: 100, Frame: 1480\"]", "motion_blur.ma");
+    @check_test_cases("MAYA_RS_MB_010", 0, 0, 1520, "[\"Camera Exposure: 0, Scale: 0, Frame: 1520\"]", "motion_blur.ma");
+    @check_test_cases("MAYA_RS_MB_011", 0.1, 1, 1520, "[\"Camera Exposure: 0.1, Scale: 1, Frame: 1520\"]", "motion_blur.ma");
+    @check_test_cases("MAYA_RS_MB_012", 1, 1, 1520, "[\"Camera Exposure: 1, Scale: 1, Frame: 1520\"]", "motion_blur.ma");
+    @check_test_cases("MAYA_RS_MB_013", 5, 5, 1520, "[\"Camera Exposure: 5, Scale: 5, Frame: 1520\"]", "motion_blur.ma");
+    @check_test_cases("MAYA_RS_MB_014", 10, 10, 1520, "[\"Camera Exposure: 10, Scale: 10, Frame: 1520\"]", "motion_blur.ma");
+    @check_test_cases("MAYA_RS_MB_015", 30, 30, 1520, "[\"Camera Exposure: 30, Scale: 30, Frame: 1520\"]", "motion_blur.ma");
+    @check_test_cases("MAYA_RS_MB_016", 50, 50, 1520, "[\"Camera Exposure: 50, Scale: 50, Frame: 1520\"]", "motion_blur.ma");
+    @check_test_cases("MAYA_RS_MB_017", 75, 75, 1520, "[\"Camera Exposure: 75, Scale: 75, Frame: 1520\"]", "motion_blur.ma");
+    @check_test_cases("MAYA_RS_MB_018", 100, 100, 1520, "[\"Camera Exposure: 100, Scale: 100, Frame: 1520\"]", "motion_blur.ma");
 
     // <-- end -->
 
