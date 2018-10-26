@@ -1,0 +1,424 @@
+
+global proc string setAttribute(string $volume_attr, string $file_attr, string $value){{
+    
+    if (`gmatch $value "*.*"`) {{
+
+        string $file = `shadingNode -asTexture -isColorManaged file`;
+        string $texture = `shadingNode -asUtility place2dTexture`;
+        connectAttr -f ($texture+".coverage") ($file+".coverage");
+        connectAttr -f ($texture+".translateFrame") ($file+".translateFrame");
+        connectAttr -f ($texture+".rotateFrame") ($file+".rotateFrame");
+        connectAttr -f ($texture+".mirrorU") ($file+".mirrorU");
+        connectAttr -f ($texture+".mirrorV") ($file+".mirrorV");
+        connectAttr -f ($texture+".stagger") ($file+".stagger");
+        connectAttr -f ($texture+".wrapU") ($file+".wrapU");
+        connectAttr -f ($texture+".wrapV") ($file+".wrapV");
+        connectAttr -f ($texture+".repeatUV") ($file+".repeatUV");
+        connectAttr -f ($texture+".offset") ($file+".offset");
+        connectAttr -f ($texture+".rotateUV") ($file+".rotateUV");
+        connectAttr -f ($texture+".noiseUV") ($file+".noiseUV");
+        connectAttr -f ($texture+".vertexUvTwo") ($file+".vertexUvTwo");
+        connectAttr -f ($texture+".vertexUvThree") ($file+".vertexUvThree");
+        connectAttr -f ($texture+".vertexCameraOne") ($file+".vertexCameraOne");
+        connectAttr -f ($texture+".outUV") ($file+".uv");
+        connectAttr ($texture+".outUvFilterSize") ($file+".uvFilterSize");
+        connectAttr ($texture+".vertexUvOne") ($file+".vertexUvOne");
+        connectAttr -force ($file+"."+$file_attr) ("RPRVolumeMaterial1."+$volume_attr);
+
+        setAttr ($file + ".fileTextureName") -type "string" $value;
+
+        return $file;
+        
+    }} 
+
+}}
+
+global proc resetAttributes(){{
+    
+    setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+    setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+    setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 0 1 ;
+    setAttr "RPRVolumeMaterial1.density" 0.5;
+    setAttr "RPRVolumeMaterial1.scatteringDirection" 0.096;
+    setAttr "RPRVolumeMaterial1.multiscatter" 1;
+
+}}
+
+global proc check_test_cases_fail_save(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                rpr_fail_save($test_case, $script_info);
+            }}
+        }}
+    }} else {{
+        rpr_fail_save($test_case, $script_info);
+    }}
+
+}}
+
+global proc check_test_cases(string $test_case, string $script_info, string $scene){{
+
+    string $tests = "{testCases}";
+    string $test[];
+    $numTokens = `tokenize $tests "," $test`;
+
+    if ($tests != "all") {{
+        for ($each in $test) {{ 
+            if ($each == $test_case) {{
+                prerender($test_case, $script_info, $scene);
+            }}
+        }}
+    }} else {{
+        prerender($test_case, $script_info, $scene);
+    }}
+}}
+
+
+global proc prerender(string $test_case, string $script_info, string $scene){{
+
+    string $scene_name  = `file -q -sn -shn`;
+    if ($scene_name != $scene) {{
+        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`)) {{
+            evalDeferred("quit -abort");
+        }}
+    }}
+
+    if( `pluginInfo -query -loaded RadeonProRender` == 0){{
+        loadPlugin RadeonProRender;
+    }}
+
+    if( `pluginInfo -query -loaded fbxmaya` == 0){{
+        loadPlugin fbxmaya;
+    }}
+
+    setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
+    setAttr "defaultRenderGlobals.imageFormat" 8;
+    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+
+    switch ($test_case) {{
+
+    case "MAYA_MAT_VM_001":
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.jpg");
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -1;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.scatterColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_002":
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.transmissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_003":
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -0.5;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.emissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_004":
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.tiff");
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -0.5;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.scatterColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_005":
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0.5;
+        rpr_render($test_case, $script_info);
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_006":
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 2.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -1;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.transmissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_007":
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 2.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 1;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.emissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_008":
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 2.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -0.5;
+        rpr_render($test_case, $script_info);
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_009":
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.png");
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 2.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0.5;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.scatterColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_010":
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 2.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.transmissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_011":
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 1;
+        rpr_render($test_case, $script_info);
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_012":
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -0.5;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.emissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_013":
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.jpg");
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0.5;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.scatterColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_014":
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.transmissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_015":
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.jpg");
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -1;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.scatterColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_016":
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 7.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -0.5;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.transmissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_017":
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 7.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0.5;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.emissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_018":
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.exr");
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 7.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.scatterColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_019":
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 7.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -1;
+        rpr_render($test_case, $script_info);
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_020":
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 7.5;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 1;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.transmissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_021":
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 10;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0.5;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.emissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_022":
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 10;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 0;
+        rpr_render($test_case, $script_info);
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_023":
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.png");
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 10;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -1;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.scatterColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_024":
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 10;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" 1;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.transmissionColor");
+        resetAttributes();
+        break;
+
+    case "MAYA_MAT_VM_025":
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
+        setAttr "RPRVolumeMaterial1.density" 10;
+        setAttr "RPRVolumeMaterial1.scatteringDirection" -0.5;
+        rpr_render($test_case, $script_info);
+        disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.emissionColor");
+        resetAttributes();
+        break;
+
+    }}
+            
+}}
+
+global proc main(){{
+    
+    setProject ("{res_path}");
+
+    // <-- fail -->
+
+    // <-- start -->
+
+    @check_test_cases("MAYA_MAT_VM_001", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_002", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_003", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_004", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_005", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_006", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_007", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_008", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_009", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_010", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_011", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_012", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_013", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_014", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_015", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_016", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_017", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_018", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_019", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_020", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_021", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_022", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_023", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_024", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_025", "[\"Volume\"]", "VolumeRollingFog.ma");
+
+    // <-- end -->
+    
+    evalDeferred("quit -abort");
+}}
+
+
+
+
+
+
+
