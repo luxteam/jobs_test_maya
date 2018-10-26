@@ -165,7 +165,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
 
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 200;
 
 	switch ($test_case) {{
 
@@ -1348,20 +1348,20 @@ global proc main(){{
 	@check_test_cases("MAYA_MAT_UBER_047", "[\" Roughness - coating_roughness.exr, IOR - coating_ior.jpeg, Use Shader Normal - Activate, Thickness - coating_thickness.exr, Transmission Color - coating_transmissioncolor.png\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_048", "[\" Weight - coating_weight.jpeg, Roughness - 0.5, IOR - 0, Thickness - coating_thickness.tiff, Transmission Color - coating_transmissioncolor.tiff\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_049", "[\"6. Emissive ,Color - emissive_color.jpeg,, Weight - 0, Intensity - 0, Double Sided - Activate\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_050", "[\" Color - emissive_color.jpeg, Weight - emissive_weight.jpeg, Intensity - emissive_intensity.jpeg\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_051", "[\" Color - emissive_color.jpeg, Weight - emissive_weight.tiff, Intensity - emissive_intensity.tiff\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_052", "[\" Color - emissive_color.png, Weight - 0.5, Intensity - emissive_intensity.jpeg\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_053", "[\" Color - emissive_color.png, Weight - emissive_weight.png, Intensity - emissive_intensity.exr\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_054", "[\" Color - emissive_color.png, Weight - emissive_weight.tiff, Double Sided - Activate\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_050", "[\" Color - emissive_color.jpeg, Weight - emissive_weight.jpeg, Intensity - emissive_intensity.jpeg\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_051", "[\" Color - emissive_color.jpeg, Weight - emissive_weight.tiff, Intensity - emissive_intensity.tiff\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_052", "[\" Color - emissive_color.png, Weight - 0.5, Intensity - emissive_intensity.jpeg\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_053", "[\" Color - emissive_color.png, Weight - emissive_weight.png, Intensity - emissive_intensity.exr\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_054", "[\" Color - emissive_color.png, Weight - emissive_weight.tiff, Double Sided - Activate\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_055", "[\" Weight - 0, Intensity - 10\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_056", "[\" Color - emissive_color.exr, Weight - emissive_weight.png, Intensity - emissive_intensity.tiff, Double Sided - Activate\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_057", "[\" Color - emissive_color.exr, Intensity - 10\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_056", "[\" Color - emissive_color.exr, Weight - emissive_weight.png, Intensity - emissive_intensity.tiff, Double Sided - Activate\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_057", "[\" Color - emissive_color.exr, Intensity - 10\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_058", "[\" Color - emissive_color.exr, Weight - 0, Intensity - emissive_intensity.jpeg\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_059", "[\" Weight - 0.5, Intensity - emissive_intensity.png\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_060", "[\" Color - emissive_color.tiff, Weight - emissive_weight.png\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_061", "[\" Color - emissive_color.tiff, Weight - emissive_weight.tiff, Intensity - 10\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_062", "[\" Color - emissive_color.tiff, Weight - 0.5, Intensity - emissive_intensity.exr, Double Sided - Activate\"]", "Uber.ma");
-	//check_test_cases("MAYA_MAT_UBER_063", "[\" Weight - emissive_weight.jpeg, Intensity - emissive_intensity.tiff\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_059", "[\" Weight - 0.5, Intensity - emissive_intensity.png\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_060", "[\" Color - emissive_color.tiff, Weight - emissive_weight.png\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_061", "[\" Color - emissive_color.tiff, Weight - emissive_weight.tiff, Intensity - 10\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_062", "[\" Color - emissive_color.tiff, Weight - 0.5, Intensity - emissive_intensity.exr, Double Sided - Activate\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_063", "[\" Weight - emissive_weight.jpeg, Intensity - emissive_intensity.tiff\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_064", "[\"7. SSS ,Scattering Color - HSV: 0, 0, 0, Subsurface Radius - SS: 3, 3, 3, Scattering Direction - 1, Multiple Scattering - Deactivate\"]", "Uber.ma");
 	//check_test_cases("MAYA_MAT_UBER_065", "[\" Weight - subsurfacescattering_weight.jpeg, Use Diffuse Color - Activate, Subsurface Radius - subsurfacescattering_subsurfaceradius.jpeg\"]", "Uber.ma");
 	//check_test_cases("MAYA_MAT_UBER_066", "[\" Weight - subsurfacescattering_weight.jpeg, Scattering Color - subsurfacescattering_scatteringcolor.png, Subsurface Radius - SS: 3, 3, 3\"]", "Uber.ma");
