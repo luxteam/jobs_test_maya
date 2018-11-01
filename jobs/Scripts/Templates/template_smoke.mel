@@ -553,7 +553,7 @@ global proc main(){{
 	@check_test_cases("MAYA_SM_030", 50, "[\"Assign Uber to object\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_031", 50, "[\"Instances\", \"Pass Limit: 50\"]", "instances.ma");
 	@check_test_cases("MAYA_SM_032", 50, "[\"12 lights in one scene\", \"Pass Limit: 50\"]", "IES.ma");
-	//check_test_cases("MAYA_SM_033", 50, "[\"AOV Shadow Catcher\", \"Pass Limit: 50\"]", "maya_shaderball.ma"); Due to 1.320 core issue
+	@check_test_cases("MAYA_SM_033", 50, "[\"AOV Shadow Catcher\", \"Pass Limit: 50\"]", "maya_shaderball.ma"); Due to 1.320 core issue
 	@check_test_cases("MAYA_SM_034", 100, "[\"SSS\", \"Pass Limit: 100\"]", "Uber_SSS.ma");
 	@check_test_cases("MAYA_SM_035", 50, "[\"SSS Night\", \"Pass Limit: 50\"]", "Uber_SSS_night.ma");
 	@check_test_cases("MAYA_SM_036", 50, "[\"Displacement\", \"Pass Limit: 50\"]", "displacement.ma");
