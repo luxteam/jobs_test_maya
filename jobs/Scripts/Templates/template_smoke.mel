@@ -216,6 +216,12 @@ global proc prerender(string $test_case, int $pass, string $script_info, string 
 		rpr_render($test_case, $script_info);
 		break;
 
+	case "MAYA_SM_035":
+		maxRayDepth_15();
+		rpr_render($test_case, $script_info);
+		maxRayDepth_default();
+		break;
+
 	default:
 		rpr_render($test_case, $script_info);
 		break;
@@ -451,6 +457,11 @@ global proc deactivate_uv(){{
 	setAttr "RadeonProRenderGlobals.aovDisplayedInRenderView" 0;
 }}
 
+global proc maxRayDepth_15(){{
+	setAttr "RadeonProRenderGlobals.maxRayDepth" 15;
+
+global proc maxRayDepth_default(){{
+	setAttr "RadeonProRenderGlobals.maxRayDepth" 8;
 
 global proc duplicate_500_instances(){{
 	select -r Cube ;
@@ -555,7 +566,8 @@ global proc main(){{
 	@check_test_cases("MAYA_SM_032", 50, "[\"12 lights in one scene\", \"Pass Limit: 50\"]", "IES.ma");
 	@check_test_cases("MAYA_SM_033", 50, "[\"AOV Shadow Catcher\", \"Pass Limit: 50\"]", "maya_shaderball.ma");
 	@check_test_cases("MAYA_SM_034", 100, "[\"SSS\", \"Pass Limit: 100\"]", "Uber_SSS.ma");
-	@check_test_cases("MAYA_SM_035", 50, "[\"SSS Night\", \"Pass Limit: 50\"]", "Uber_SSS_night.ma");
+	@check_test_cases("MAYA_SM_035", 400, "[\"SSS Night\", \"Pass Limit: 400\"]", "Uber_SSS_night.ma");
+	//check_test_cases("MAYA_SM_035", 50, "[\"SSS Night\", \"Pass Limit: 50\"]", "Uber_SSS_night.ma");
 	@check_test_cases("MAYA_SM_036", 50, "[\"Displacement\", \"Pass Limit: 50\"]", "displacement.ma");
 	
 	// <-- end -->
