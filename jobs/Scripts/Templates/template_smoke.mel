@@ -537,7 +537,7 @@ global proc main(){{
 	@check_test_cases("MAYA_SM_014", 50, "[\"Tone Mapping\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_015", 50, "[\"Render Stamp\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_016", 50, "[\"Render mode wireframe\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
-	@check_test_cases("MAYA_SM_017", 50, "[\"Quality medium\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	//check_test_cases("MAYA_SM_017", 50, "[\"Quality medium\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma"); due to render setting refactoring
 	@check_test_cases("MAYA_SM_018", 50, "[\"Image Size 1280 720\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_019", 50, "[\"Image Size 1500 1125\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_020", 50, "[\"Save image as png\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
