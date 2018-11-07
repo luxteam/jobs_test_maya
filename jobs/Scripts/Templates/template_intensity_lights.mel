@@ -68,9 +68,9 @@ global proc main(){{
 
 	// <-- start -->
 
-    @check_test_cases("MAYA_L_INT_001", "[\"Intensity Scene\"]", "IntensityLight.ma", 25); 
-    @check_test_cases("MAYA_L_INT_002", "[\"Intensity Scene\"]", "IntensityLight1.ma", 50);
-    @check_test_cases("MAYA_L_INT_003", "[\"Intensity Scene\"]", "IntensityLight2.ma", 50);
+    @check_test_cases("MAYA_L_INT_001", "[\"Intensity Scene\"]", "IntensityLight.ma", 300); 
+    @check_test_cases("MAYA_L_INT_002", "[\"Intensity Scene\"]", "IntensityLight1.ma", 200);
+    @check_test_cases("MAYA_L_INT_003", "[\"Intensity Scene\"]", "IntensityLight2.ma", 300);
 
     // <-- end -->
 

@@ -49,7 +49,7 @@ global proc prerender(string $test_case, float $CameraExposure, int $Scale, int 
 
     setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
     setAttr "defaultRenderGlobals.imageFormat" 8;
-    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+    setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 100;
 
     if ({resolution_x} && {resolution_y}) {{
         setAttr "defaultResolution.width" {resolution_x};
