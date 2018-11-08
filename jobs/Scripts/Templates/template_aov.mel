@@ -146,8 +146,10 @@ global proc prerender(string $test_case, int $aov, string $script_info, string $
 
     case "MAYA_RS_AOV_014":
         setAttr "RadeonProRenderGlobals.aovIndirectIllumination" 1;
+        setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 400;
         rpr_render($test_case, $script_info);
         setAttr "RadeonProRenderGlobals.aovIndirectIllumination" 0;
+        setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 100;
         break;
 
     case "MAYA_RS_AOV_015":
@@ -170,8 +172,10 @@ global proc prerender(string $test_case, int $aov, string $script_info, string $
 
     case "MAYA_RS_AOV_018":
         setAttr "RadeonProRenderGlobals.aovReflectionDirect" 1;
+        setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 400;
         rpr_render($test_case, $script_info);
         setAttr "RadeonProRenderGlobals.aovReflectionDirect" 0;
+        setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 100;
         break;
 
     case "MAYA_RS_AOV_019":

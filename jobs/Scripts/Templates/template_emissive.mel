@@ -54,7 +54,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
 
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 	setAttr "defaultRenderGlobals.imageFormat" 8;
-	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
+	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 400;
 
 	rpr_render($test_case, $script_info);
 
