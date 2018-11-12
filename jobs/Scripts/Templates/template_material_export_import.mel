@@ -1,0 +1,2 @@
+maya.cmds.RPRXMLExport(s=1,file=u'C:/Users/askravchenko/Desktop/Material_7.xml')
+maya.cmds.RPRXMLImport(file=u'C:/Users/askravchenko/Desktop/Material_7.xml')

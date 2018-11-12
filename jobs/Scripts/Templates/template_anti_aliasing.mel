@@ -74,34 +74,28 @@ global proc main(){{
     // <-- start -->
 
 	@check_test_cases("MAYA_RS_AA_001", 1, 1, "[\"AA filter: Box\", \"Render samples: 1\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_002", 1, 13, "[\"AA filter: Box\", \"Render samples: 13\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_003", 1, 23, "[\"AA filter: Box\", \"Render samples: 23\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_004", 1, 32, "[\"AA filter: Box\", \"Render samples: 32\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_002", 1, 5, "[\"AA filter: Box\", \"Render samples: 5\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_003", 1, 10, "[\"AA filter: Box\", \"Render samples: 10\"]", "maya_shaderball.ma");
 
-    @check_test_cases("MAYA_RS_AA_005", 2, 1, "[\"AA filter: Lanczos\", \"Render samples: 1\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_006", 2, 13, "[\"AA filter: Lanczos\", \"Render samples: 13\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_007", 2, 23, "[\"AA filter: Lanczos\", \"Render samples: 23\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_008", 2, 32, "[\"AA filter: Lanczos\", \"Render samples: 32\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_004", 2, 1, "[\"AA filter: Lanczos\", \"Render samples: 1\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_005", 2, 5, "[\"AA filter: Lanczos\", \"Render samples: 5\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_006", 2, 10, "[\"AA filter: Lanczos\", \"Render samples: 10\"]", "maya_shaderball.ma");
 
-    @check_test_cases("MAYA_RS_AA_009", 3, 1, "[\"AA filter: Triangle\", \"Render samples: 1\"]", "maya_shaderball.ma"); 
-    @check_test_cases("MAYA_RS_AA_010", 3, 13, "[\"AA filter: Triangle\", \"Render samples: 13\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_011", 3, 23, "[\"AA filter: Triangle\", \"Render samples: 23\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_012", 3, 32, "[\"AA filter: Triangle\", \"Render samples: 32\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_007", 3, 1, "[\"AA filter: Triangle\", \"Render samples: 1\"]", "maya_shaderball.ma"); 
+    @check_test_cases("MAYA_RS_AA_008", 3, 5, "[\"AA filter: Triangle\", \"Render samples: 5\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_009", 3, 10, "[\"AA filter: Triangle\", \"Render samples: 10\"]", "maya_shaderball.ma");
 
-    @check_test_cases("MAYA_RS_AA_013", 4, 1, "[\"AA filter: Box\", \"Render samples: 1\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_014", 4, 13, "[\"AA filter: Box\", \"Render samples: 13\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_015", 4, 23, "[\"AA filter: Box\", \"Render samples: 23\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_016", 4, 32, "[\"AA filter: Box\", \"Render samples: 32\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_010", 4, 1, "[\"AA filter: Box\", \"Render samples: 1\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_011", 4, 5, "[\"AA filter: Box\", \"Render samples: 5\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_012", 4, 10, "[\"AA filter: Box\", \"Render samples: 10\"]", "maya_shaderball.ma");
 
-    @check_test_cases("MAYA_RS_AA_017", 5, 1, "[\"AA filter: Gaussian\", \"Render samples: 1\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_018", 5, 13, "[\"AA filter: Gaussian\", \"Render samples: 13\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_019", 5, 23, "[\"AA filter: Gaussian\", \"Render samples: 23\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_020", 5, 32, "[\"AA filter: Gaussian\", \"Render samples: 32\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_013", 5, 1, "[\"AA filter: Gaussian\", \"Render samples: 1\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_014", 5, 5, "[\"AA filter: Gaussian\", \"Render samples: 5\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_015", 5, 10, "[\"AA filter: Gaussian\", \"Render samples: 10\"]", "maya_shaderball.ma");
 
-    @check_test_cases("MAYA_RS_AA_021", 6, 1, "[\"AA filter: Blackmanharris\", \"Render samples: 1\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_022", 6, 13, "[\"AA filter: Blackmanharris\", \"Render samples: 13\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_023", 6, 23, "[\"AA filter: Blackmanharris\", \"Render samples: 23\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_AA_024", 6, 32, "[\"AA filter: Blackmanharris\", \"Render samples: 32\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_016", 6, 1, "[\"AA filter: Blackmanharris\", \"Render samples: 1\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_017", 6, 5, "[\"AA filter: Blackmanharris\", \"Render samples: 5\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_AA_018", 6, 10, "[\"AA filter: Blackmanharris\", \"Render samples: 10\"]", "maya_shaderball.ma");
 
 	// <-- end -->
 
