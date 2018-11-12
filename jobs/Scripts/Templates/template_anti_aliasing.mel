@@ -1,5 +1,5 @@
 
-global proc check_test_cases_fail_save(string $test_case, int $filter, int $samples, string $script_info, string $scene){{
+global proc check_test_cases_fail_save(string $test_case, int $filter, int $filter_size, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -17,7 +17,7 @@ global proc check_test_cases_fail_save(string $test_case, int $filter, int $samp
 
 }}
 
-global proc check_test_cases(string $test_case, int $filter, int $samples, string $script_info, string $scene){{
+global proc check_test_cases(string $test_case, int $filter, int $filter_size, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -26,17 +26,17 @@ global proc check_test_cases(string $test_case, int $filter, int $samples, strin
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $filter, $samples, $script_info, $scene);
+                prerender($test_case, $filter, $filter_size, $script_info, $scene);
             }}
         }}
     }} else {{
-        prerender($test_case, $filter, $samples, $script_info, $scene);
+        prerender($test_case, $filter, $filter_size, $script_info, $scene);
     }}
 
 }}
 
 
-global proc prerender(string $test_case, int $filter, int $samples, string $script_info, string $scene){{
+global proc prerender(string $test_case, int $filter, int $filter_size, string $script_info, string $scene){{
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
@@ -59,7 +59,7 @@ global proc prerender(string $test_case, int $filter, int $samples, string $scri
     setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
     setAttr "RadeonProRenderGlobals.filter" $filter;
-    setAttr "RadeonProRenderGlobals.samples" $samples;
+    setAttr "RadeonProRenderGlobals.filterSize" $filter_size;
 
     rpr_render($test_case, $script_info);
             
