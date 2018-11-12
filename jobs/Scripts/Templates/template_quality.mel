@@ -1,9 +1,6 @@
 
 global proc resetAttributes(){{ 
 
-    setAttr "RadeonProRenderGlobals.samples" 1;
-    setAttr "RadeonProRenderGlobals.filter" 4;
-    setAttr "RadeonProRenderGlobals.filterSize" 1.5;
     setAttr "RadeonProRenderGlobals.maxRayDepth" 8;
     setAttr "RadeonProRenderGlobals.maxDepthDiffuse" 3;
     setAttr "RadeonProRenderGlobals.maxDepthGlossy" 5;
