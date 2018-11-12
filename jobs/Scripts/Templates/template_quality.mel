@@ -1,5 +1,19 @@
 
-global proc check_test_cases_fail_save(string $test_case, int $samples, int $filter, float $filterSize, int $maxRayDepth, int $maxDepthDiffuse, int $maxDepthGlossy, int $maxDepthRefraction, int $maxDepthRefractionGlossy, int $maxDepthShadow, float $raycastEpsilon, int $enableOOC, int $textureCacheSize, string $script_info, string $scene){{
+global proc resetAttributes(){{ 
+
+    setAttr "RadeonProRenderGlobals.maxRayDepth" 8;
+    setAttr "RadeonProRenderGlobals.maxDepthDiffuse" 3;
+    setAttr "RadeonProRenderGlobals.maxDepthGlossy" 5;
+    setAttr "RadeonProRenderGlobals.maxDepthRefraction" 5;
+    setAttr "RadeonProRenderGlobals.maxDepthRefractionGlossy" 5;
+    setAttr "RadeonProRenderGlobals.maxDepthShadow" 5;
+    setAttr "RadeonProRenderGlobals.raycastEpsilon" 0.02;
+    setAttr "RadeonProRenderGlobals.enableOOC" 0;
+    setAttr "RadeonProRenderGlobals.textureCacheSize" 512;
+
+}}
+
+global proc check_test_cases_fail_save(string $test_case, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -17,7 +31,7 @@ global proc check_test_cases_fail_save(string $test_case, int $samples, int $fil
 
 }}
 
-global proc check_test_cases(string $test_case, int $samples, int $filter, float $filterSize, int $maxRayDepth, int $maxDepthDiffuse, int $maxDepthGlossy, int $maxDepthRefraction, int $maxDepthRefractionGlossy, int $maxDepthShadow, float $raycastEpsilon, int $enableOOC, int $textureCacheSize, string $script_info, string $scene){{
+global proc check_test_cases(string $test_case, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -26,15 +40,15 @@ global proc check_test_cases(string $test_case, int $samples, int $filter, float
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $samples, $filter, $filterSize, $maxRayDepth, $maxDepthDiffuse, $maxDepthGlossy, $maxDepthRefraction, $maxDepthRefractionGlossy, $maxDepthShadow, $raycastEpsilon, $enableOOC, $textureCacheSize, $script_info, $scene);
+                prerender($test_case, $script_info, $scene);
             }}
         }}
     }} else {{
-        prerender($test_case, $samples, $filter, $filterSize, $maxRayDepth, $maxDepthDiffuse, $maxDepthGlossy, $maxDepthRefraction, $maxDepthRefractionGlossy, $maxDepthShadow, $raycastEpsilon, $enableOOC, $textureCacheSize, $script_info, $scene);
+        prerender($test_case, $script_info, $scene);
     }}
 }}
 
-global proc prerender(string $test_case, int $samples, int $filter, float $filterSize, int $maxRayDepth, int $maxDepthDiffuse, int $maxDepthGlossy, int $maxDepthRefraction, int $maxDepthRefractionGlossy, int $maxDepthShadow, float $raycastEpsilon, int $enableOOC, int $textureCacheSize, string $script_info, string $scene){{
+global proc prerender(string $test_case, string $script_info, string $scene){{
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
@@ -56,18 +70,138 @@ global proc prerender(string $test_case, int $samples, int $filter, float $filte
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" {pass_limit};
 
-    setAttr "RadeonProRenderGlobals.samples" $samples;
-    setAttr "RadeonProRenderGlobals.filter" $filter;
-    setAttr "RadeonProRenderGlobals.filterSize" $filterSize;
-    setAttr "RadeonProRenderGlobals.maxRayDepth" $maxRayDepth;
-    setAttr "RadeonProRenderGlobals.maxDepthDiffuse" $maxDepthDiffuse;
-    setAttr "RadeonProRenderGlobals.maxDepthGlossy" $maxDepthGlossy;
-    setAttr "RadeonProRenderGlobals.maxDepthRefraction" $maxDepthRefraction;
-    setAttr "RadeonProRenderGlobals.maxDepthRefractionGlossy" $maxDepthRefractionGlossy;
-    setAttr "RadeonProRenderGlobals.maxDepthShadow" $maxDepthShadow;
-    setAttr "RadeonProRenderGlobals.raycastEpsilon" $raycastEpsilon;
-    setAttr "RadeonProRenderGlobals.enableOOC" $enableOOC;
-    setAttr "RadeonProRenderGlobals.textureCacheSize" $textureCacheSize;
+    switch ($test_case) {{
+
+    case "MAYA_RS_QL_001":
+        setAttr "RadeonProRenderGlobals.maxRayDepth" 2;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_002":
+        setAttr "RadeonProRenderGlobals.maxRayDepth" 50;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_003":
+        setAttr "RadeonProRenderGlobals.maxDepthDiffuse" 2;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_004":
+        setAttr "RadeonProRenderGlobals.maxDepthDiffuse" 50;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_005":
+        setAttr "RadeonProRenderGlobals.maxDepthGlossy" 2;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_006":
+        setAttr "RadeonProRenderGlobals.maxDepthGlossy" 50;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_007":
+        setAttr "RadeonProRenderGlobals.maxDepthRefraction" 2;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_008":
+        setAttr "RadeonProRenderGlobals.maxDepthRefraction" 50;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_009":
+        setAttr "RadeonProRenderGlobals.maxDepthRefractionGlossy" 2;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_010":
+        setAttr "RadeonProRenderGlobals.maxDepthRefractionGlossy" 50;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_011":
+        setAttr "RadeonProRenderGlobals.maxDepthShadow" 2;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_012":
+        setAttr "RadeonProRenderGlobals.maxDepthShadow" 50;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_013":
+        setAttr "RadeonProRenderGlobals.raycastEpsilon" 0;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_014":
+        setAttr "RadeonProRenderGlobals.raycastEpsilon" 2;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_015":
+        setAttr "RadeonProRenderGlobals.enableOOC" 1;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_016":
+        setAttr "RadeonProRenderGlobals.enableOOC" 1;
+        setAttr "RadeonProRenderGlobals.textureCacheSize" 4096;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_017":
+        setAttr "RadeonProRenderGlobals.maxRayDepth" 2;
+        setAttr "RadeonProRenderGlobals.maxDepthDiffuse" 2;
+        setAttr "RadeonProRenderGlobals.maxDepthGlossy" 2;
+        setAttr "RadeonProRenderGlobals.maxDepthRefraction" 2;
+        setAttr "RadeonProRenderGlobals.maxDepthRefractionGlossy" 2;
+        setAttr "RadeonProRenderGlobals.maxDepthShadow" 2;
+        setAttr "RadeonProRenderGlobals.raycastEpsilon" 0;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_018":
+        setAttr "RadeonProRenderGlobals.maxRayDepth" 50;
+        setAttr "RadeonProRenderGlobals.maxDepthDiffuse" 50;
+        setAttr "RadeonProRenderGlobals.maxDepthGlossy" 50;
+        setAttr "RadeonProRenderGlobals.maxDepthRefraction" 50;
+        setAttr "RadeonProRenderGlobals.maxDepthRefractionGlossy" 50;
+        setAttr "RadeonProRenderGlobals.maxDepthShadow" 50;
+        setAttr "RadeonProRenderGlobals.raycastEpsilon" 2;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_019":
+        setAttr "RadeonProRenderGlobals.giClampIrradiance" 1;
+        setAttr "RadeonProRenderGlobals.giClampIrradianceValue" 50;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_020":
+        setAttr "RadeonProRenderGlobals.giClampIrradiance" 1;
+        setAttr "RadeonProRenderGlobals.giClampIrradianceValue" 100;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_021":
+        setAttr "RadeonProRenderGlobals.giClampIrradiance" 1;
+        setAttr "RadeonProRenderGlobals.giClampIrradianceValue" 50;
+        setAttr "RadeonProRenderGlobals.textureCompression" 1;
+        resetAttributes();
+        break;
+
+    case "MAYA_RS_QL_022":
+        setAttr "RadeonProRenderGlobals.giClampIrradiance" 1;
+        setAttr "RadeonProRenderGlobals.giClampIrradianceValue" 100;
+        setAttr "RadeonProRenderGlobals.textureCompression" 1;
+        resetAttributes();
+        break;
+
+    }}
 
 	rpr_render($test_case, $script_info);
 
@@ -81,46 +215,28 @@ global proc main(){{
 
     // <-- start -->
 	
-	@check_test_cases("MAYA_RS_QL_001", 1, 4, 1.5, 8, 3, 5, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-	@check_test_cases("MAYA_RS_QL_002", 8, 4, 1.5, 15, 3, 5, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_003", 16, 4, 1.5, 25, 3, 5, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_004", 16, 2, 1, 2, 2, 2, 2, 2, 0, 0, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_005", 16, 3, 10, 50, 50, 50, 50, 50, 2, 0, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_006", 16, 1, 1.5, 8, 3, 5, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_007", 16, 5, 1.5, 8, 3, 5, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_008", 16, 6, 1.5, 8, 3, 5, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_009", 32, 3, 1.5, 8, 3, 5, 2, 50, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_010", 32, 1, 1.5, 8, 3, 2, 50, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_011", 32, 5, 1.5, 8, 2, 50, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_012", 32, 6, 1.5, 2, 50, 5, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_013", 32, 4, 1, 50, 3, 5, 5, 5, 0, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_014", 32, 2, 10, 8, 3, 5, 5, 2, 2, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_015", 1, 1, 1.5, 2, 3, 5, 2, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_016", 1, 5, 1.5, 50, 3, 5, 50, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_017", 1, 6, 1, 8, 3, 2, 5, 5, 0, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_018", 1, 4, 10, 8, 3, 50, 5, 5, 2, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_019", 1, 2, 1.5, 2, 3, 5, 5, 2, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_020", 1, 3, 1.5, 8, 50, 5, 5, 50, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_021", 1, 5, 1, 8, 2, 5, 2, 5, 0, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_022", 1, 6, 10, 8, 50, 5, 50, 5, 2, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_023", 1, 2, 1.5, 2, 3, 2, 5, 2, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_024", 1, 3, 1.5, 50, 3, 50, 5, 50, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_025", 1, 1, 1.5, 8, 3, 5, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_026", 1, 6, 1.5, 2, 3, 5, 2, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_027", 1, 4, 1.5, 50, 3, 5, 50, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_028", 1, 2, 1.5, 8, 2, 5, 5, 2, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_029", 1, 3, 1.5, 8, 50, 5, 5, 50, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_030", 1, 1, 1, 8, 3, 2, 5, 5, 0, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_031", 1, 5, 10, 8, 3, 50, 5, 5, 2, 2, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_032", 1, 4, 1.5, 8, 3, 50, 2, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_033", 1, 5, 1.5, 8, 3, 5, 50, 2, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_034", 1, 3, 1, 8, 3, 5, 5, 50, 0, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_035", 1, 1, 10, 2, 3, 5, 5, 5, 2, 2, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_036", 1, 5, 1.5, 50, 2, 5, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_037", 1, 6, 1.5, 8, 50, 2, 5, 5, 5, 0.02, 0, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_038", 1, 4, 1.5, 8, 3, 5, 5, 5, 5, 0.02, 1, 512, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_039", 32, 1, 1.5, 8, 3, 2, 50, 5, 5, 0.02, 1, 256, "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_040", 1, 4, 10, 8, 3, 50, 5, 5, 2, 2, 1, 8192, "[\"Quality test\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_QL_001", "[\"Quality test\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_QL_002", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_003", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_004", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_005", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_006", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_007", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_008", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_009", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_010", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_011", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_012", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_013", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_014", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_015", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_016", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_017", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_018", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_019", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_020", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_021", "[\"Quality test\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_022", "[\"Quality test\"]", "maya_shaderball.ma");
     
     // <-- end -->
 
