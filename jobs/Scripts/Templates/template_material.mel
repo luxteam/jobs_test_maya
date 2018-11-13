@@ -69,8 +69,7 @@ global proc prerender(string $test_case, string $libraryPath, string $material, 
 }}
 
 global proc main(){{
-
-	setProject ("C:/TestResources/MayaAssets");
+	setProject ("{res_path}");
 
 	string $materials = "BarnFindOrange_Solid, BasketCaseBlue_Solid, BeachBumAqua_Metallic, BlueBayou_Solid, BoulevardBlack_Solid";
 
