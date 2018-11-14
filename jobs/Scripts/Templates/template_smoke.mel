@@ -571,7 +571,7 @@ global proc main(){{
 	@check_test_cases("MAYA_SM_025", 50, "[\"Base Light Area Light\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_026", 50, "[\"AOV UV\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_027", 50, "[\"Physical Light\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
-	@check_test_cases("MAYA_SM_028", 50, "[\"Assign material from Mat Library\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	//check_test_cases("MAYA_SM_028", 50, "[\"Assign material from Mat Library\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_029", 50, "[\"Assign Pbr to object\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_030", 50, "[\"Assign Uber to object\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_031", 50, "[\"Instances\", \"Pass Limit: 50\"]", "instances.ma");
