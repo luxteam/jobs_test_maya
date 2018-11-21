@@ -108,7 +108,7 @@ def main(args, startFrom, lastStatus):
 	cmdRun = '''
 	set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
 	set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-	"{tool}" -command "source script.mel; evalDeferred -lp (main());"''' \
+	"{tool}" -command "source script.mel; evalDeferred -lp \\"main()\\";"''' \
 		.format(tool=args.tool)
 
 	try:
