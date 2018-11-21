@@ -43,7 +43,7 @@ def createArgsParser():
 	parser.add_argument('--resolution_x', required=True)
 	parser.add_argument('--resolution_y', required=True)
 	parser.add_argument('--testCases', required=True)
-
+	parser.add_argument('--SPU', required=False, default=10)
 
 	return parser
 
@@ -77,7 +77,8 @@ def main(args, startFrom, lastStatus):
 									   testType=args.testType,
 									   render_device = args.render_device, res_path=res_path,
 									   pass_limit = args.pass_limit, resolution_x = args.resolution_x,
-									   resolution_y = args.resolution_y, testCases = testCases_mel)
+									   resolution_y = args.resolution_y, testCases = testCases_mel,
+									   SPU=args.SPU)
 
 	if lastStatus == "last_fail":
 		melScript = melScript.replace("@check_test_cases", "@check_test_cases_fail_save")
