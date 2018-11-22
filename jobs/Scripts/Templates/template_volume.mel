@@ -385,31 +385,31 @@ global proc main(){{
 
     // <-- start -->
 
-    @check_test_cases("MAYA_MAT_VM_001", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_002", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_003", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_004", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_005", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_006", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_007", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_008", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_009", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_010", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_011", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_012", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_013", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_014", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_015", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_016", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_017", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_018", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_019", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_020", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_021", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_022", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_023", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_024", "[\"Volume\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_025", "[\"Volume\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_001", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 0, Scattering Direction- (-1),ColorVariation1.jpg\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_002", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1 , Density - 0, Scattering Direction - 0, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_003", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Transmission color - HVS : H -0, S - 0, V -1 , Density - 0, Scattering Direction- 1, EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_004", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density -0, Scattering Direction -(-0.5), ColorVariation1.tiff\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_005", "[\"Density - 0, Scattering Direction- 0.5, Scatter Color HVS: 300:0:1, Transmission Color HVS: 0:0:1, Emission Color HVS: 0:0:1\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_006", "[\"Scatter color  - HVS : H -0, S - 0, V -1 , Emission color - HVS : H -0, S - 0, V -1 , Density - 2.5, Scattering Direction- (-1), TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_007", "[\"Scatter color  - HVS : H -0, S - 0, V -1 , Transmission color - HVS : H -0, S - 0, V -1 , Density - 2.5, Scattering Direction- 1, EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_008", "[\"Density - 2.5, Scattering Direction- (-0.5), Scatter Color HVS: 0:0:1, Transmission Color HVS: 300:0:1, Emission Color HVS: 0:0:1\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_009", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 2.5, Scattering Direction- 0.5, ColorVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_010", "[\"Scatter color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 2.5, Scattering Direction- 0, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_011", "[\"Scatter Color HVS: 0:0:1, Transmission Color HVS: 0:0:1, Emission Color HVS: 300:0:1, Density - 5, Scattering Direction- 1\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_012", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 5, Scattering Direction- (-0.5), EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_013", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 5, Scattering Direction- 0.5, ColorVariation1.jpg\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_014", "[\"Scatter Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 5, Scattering Direction- 0, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_015", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 5, Scattering Direction- (-1), ColorVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_016", "[\"Scatter Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 7.5, Scattering Direction- (-0.5), TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_017", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 7.5, Scattering Direction- 0.5, EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_018", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 7.5, Scattering Direction- 0, ColorVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_019", "[\"Scatter Color HVS: 300:0:1, Transmission Color HVS: 0:0:1, Emission Color HVS: 0:0:1, Density - 7.5, Scattering Direction- (-1)\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_020", "[\"Scatter Color- HVS: 0:0:1, Emission Color - HVS: 0:0:1, Density - 7.5, Scattering Direction-1, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_021", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 10, Scattering Direction - 0.5,EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_022", "[\"Scatter Color HVS: 0:0:1, Transmission Color HVS: 300:0:1, Emission Color HVS: 0:0:1,Density - 10, Scattering Direction- 0\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_023", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 10, Scattering Direction- (-1), ColorVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_024", "[\"Scatter Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 10, Scattering Direction- 1, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_025", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 10, Scattering Direction - (-0.5), EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
 
     // <-- end -->
     
