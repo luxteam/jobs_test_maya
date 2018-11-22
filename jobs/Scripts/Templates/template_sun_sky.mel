@@ -198,17 +198,17 @@ global proc main(){{
     @check_test_cases("MAYA_RS_SS_049", 0.1, 0, "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_GroundColor.jpg", "0:0:1", 2, 1, 1, 45, 0, 2016, 1, 1, 12, 60, 1, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
     @check_test_cases("MAYA_RS_SS_050", 0.1, 2, "0:0:0", "sourceimages/Cafes/SunSky_FilterColor.png", "0:0:0", 2, 1, 1, 45, 0, 6000, 1, 1, 12, 0, 60, -18, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
     @check_test_cases("MAYA_RS_SS_051", 0.1, 10, "0:0:1", "sourceimages/Cafes/SunSky_GroundColor.exr", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 0, 1, 1, 45, 0, -2000, 1, 1, 12, 0, 0, 18, 0, 0, 1, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_052", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 0, 0, 0, 0, 56, 38, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_053", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 6, 0, 0, 0, 56, 38, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_054", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 12, 0, 0, 0, 56, 38, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_055", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 18, 0, 0, 0, 56, 38, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_056", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 24, 0, 0, 0, 56, 38, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_057", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 0, 0, 0, -5, 26, -80, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_058", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 12, 0, 0, -5, 26, -80, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_059", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 24, 0, 0, -5, 26, -80, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_060", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 0, 0, 0, 11, -35, 149, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_061", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 12, 0, 0, 11, -35, 149, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_062", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 24, 0, 0, 11, -35, 149, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_052", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 0, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1 , Hours - 0, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_053", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 6, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1 , Hours - 6, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_054", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 12, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 12, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_055", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 18, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 18, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_056", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 24, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 24, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_057", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 0, 0, 0, -5, 26, -80, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 0, Latitude - 26, Longitude - 80, Time Zone - 5\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_058", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 12, 0, 0, -5, 26, -80, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 12, Latitude - 26, Longitude - 80, Time Zone - 5"\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_059", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 24, 0, 0, -5, 26, -80, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 24, Latitude - 26, Longitude - 80, Time Zone - 5\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_060", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 0, 0, 0, 11, -35, 149, 0, "[\"Sun Position - Time / Location,  Year - 2018, Month - 8, Day - 1, Hours - 0, Latitude - 35, Longitude - 149, Time Zone - 11\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_061", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 12, 0, 0, 11, -35, 149, 0, "[\"Sun Position” - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 12, Latitude - 35, Longitude - 149, Time Zone” - 11\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_062", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 24, 0, 0, 11, -35, 149, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1 , Hours - 24, Latitude - 35, Longitude - 149, Time Zone - 11\"]", "Cafe_smaller.ma");
            
     // <-- end -->
 
