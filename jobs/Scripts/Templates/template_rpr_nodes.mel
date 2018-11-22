@@ -442,39 +442,38 @@ global proc main(){{
 
     // <-- start -->
 
-	@check_test_cases("MAYA_MAT_NODE_001", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_002", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_003", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_004", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_014", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_015", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_016", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_017", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_018", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_019", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_020", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_021", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_022", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_023", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_024", "[\"TODO\"]", "RPRNodes.ma");
+	@check_test_cases("MAYA_MAT_NODE_001", "[\"BlendUbernPBRMaterials\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_002", "[\"Open BlendMaterial, Disconnect BlendWeight.png map\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_003", "[\"Open BlendMaterial node, Set Weight - 0.5\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_004", "[\"Open BlendMaterial node, Set Weight - 0\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_014", "[\"SubsurfaceMaterial\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_015", "[\"SubsurfaceMaterial, Density - 5\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_016", "[\"SubsurfaceMaterial, Density - 20\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_017", "[\"SubsurfaceMaterial, Scatter Amount - 0\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_018", "[\"SubsurfaceMaterial, Scatter Amount - 0.5\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_019", "[\"SubsurfaceMaterial, Emission Color - RGB - 10, 255, 0\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_020", "[\"SubsurfaceMaterial, Emission Color - RGB - 255, 255, 0\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_021", "[\"Arythmetic_Blend_Gradient\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_022", "[\"Operation - Add, Arythmetic_Blend_Gradient\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_023", "[\"Operation - Substract, Arythmetic_Blend_Gradient\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_024", "[\"Operation - Multiply, Arythmetic_Blend_Gradient\"]", "RPRNodes.ma");
     //check_test_cases("MAYA_MAT_NODE_025", "[\"TODO\"]", "RPRNodes.ma");
     //check_test_cases("MAYA_MAT_NODE_026", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_027", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_028", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_029", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_030", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_031", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_032", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_033", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_034", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_035", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_036", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_037", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_038", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_039", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_040", "[\"TODO\"]", "RPRNodes.ma");
-    @check_test_cases("MAYA_MAT_NODE_041", "[\"TODO\"]", "RPRNodes.ma");
-    //check_test_cases("MAYA_MAT_NODE_042", "[\"TODO\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_028", "[\"LookUpNoisePassthrought\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_029", "[\"Type - Normal, LookUpNoisePassthrought\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_030", "[\"Type - World XYZ, LookUpNoisePassthrought\"]", "RPRNodes.ma");
+    //@check_test_cases("MAYA_MAT_NODE_031", "[\"TODO\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_032", "[\"Type - UV1, LookUpNoisePassthrought\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_033", "[\"BumpNormal\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_034", "[\"CheckerDotTexture\"]", "RPRNodes.ma");
+    //@check_test_cases("MAYA_MAT_NODE_035", "[\"TODO\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_036", "[\"Fresnel\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_037", "[\"RPRFresnelSchlick2 node Set Reflectance - 0.5\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_038", "[\"RPRFresnelSchlick2 node Set Reflectance - 1\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_039", "[\"RPRFresnel1 node Set IOR - 1\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_040", "[\"RPRFresnel1 node Set IOR - 3\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_041", "[\"RPRFresnel1 node Set IOR - 5\"]", "RPRNodes.ma");
+    //check_test_cases("MAYA_MAT_NODE_042", "[\"RPRFresnel1 node Set IOR - 10\"]", "RPRNodes.ma");
 	
     // <-- end -->
 
