@@ -215,28 +215,28 @@ global proc main(){{
 
     // <-- start -->
 	
-	@check_test_cases("MAYA_RS_QL_001", "[\"Quality test\"]", "maya_shaderball.ma");
-	@check_test_cases("MAYA_RS_QL_002", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_003", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_004", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_005", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_006", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_007", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_008", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_009", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_010", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_011", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_012", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_013", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_014", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_015", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_016", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_017", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_018", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_019", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_020", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_021", "[\"Quality test\"]", "maya_shaderball.ma");
-    @check_test_cases("MAYA_RS_QL_022", "[\"Quality test\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_QL_001", "[\" Max Ray Depth - 2\"]", "maya_shaderball.ma");
+	@check_test_cases("MAYA_RS_QL_002", "[\" Max Ray Depth - 50\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_003", "[\" Max Diffuse - 2\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_004", "[\" Max Diffuse - 50\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_005", "[\" Max Glossy - 2\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_006", "[\" Max Glossy - 50\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_007", "[\" Max Refraction - 2\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_008", "[\" Max Refraction - 50\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_009", "[\" Max Glossy Refraction - 2\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_010", "[\" Max Glossy Refraction - 50\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_011", "[\" Max Shadow - 2\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_012", "[\" Max Shadow - 50\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_013", "[\" Ray Epsilon - 0\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_014", "[\" Ray Epsilon - 2\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_015", "[\"Activate Enable Out of Core Textures checkbox\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_016", "[\"Enable Out of Core Textures checkbox, GPU texture cache (MB) - 4096\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_017", "[\"Max Ray Depth - 2, Max Diffse - 2, Max Glossy - 2, Max Refraction - 2, Max Glossy Refraction - 2, Max Shadow - 0, Ray Epsilon - 0\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_018", "[\"Max Ray Depth - 50, Max Diffse - 50, Max Glossy - 50, Max Refraction - 50, Max Glossy Refraction - 50, Max Shadow - 50, Ray Epsilon - 2\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_019", "[\"Clamp Irradience Value - 50\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_020", "[\"Clamp Irradience Value - 100\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_021", "[\"Clamp Irradience Value - 50, Activate Texture Compression checkbox\"]", "maya_shaderball.ma");
+    @check_test_cases("MAYA_RS_QL_022", "[\" Clamp Irradience Value - 100, Activate Texture Compression checkbox\"]", "maya_shaderball.ma");
     
     // <-- end -->
 
