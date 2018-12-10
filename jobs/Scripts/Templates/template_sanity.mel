@@ -62,7 +62,7 @@ global proc sanity_render(string $test_case, string $script_info, int $render_mo
 	fprint $fileID ("\r\n  \"render_color_path\": \"Color/" + $test_case + ".jpg\",");
 	fprint $fileID ("\r\n  \"render_time\": " + $testTime + ",");
 	fprint $fileID ("\r\n  \"scene_name\": \"" + $scene_name + "\",");
-	fprint $fileID ("\r\n  \"test_type\": \"" + "{testType}" + "\",");
+	fprint $fileID ("\r\n  \"test_group\": \"" + "{testType}" + "\",");
 	fprint $fileID ("\r\n  \"test_case\": \"" + $test_case + "\",");
 	fprint $fileID ("\r\n  \"difference_color\": \"" + "not compared yet" + "\",");
 	fprint $fileID ("\r\n  \"test_status\": \"" + "passed" + "\",");
