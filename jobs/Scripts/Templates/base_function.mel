@@ -14,6 +14,10 @@ global proc rpr_render(string $test_case, string $script_info){{
 		optionVar -iva "RPR_DevicesSelected" 1;
 	}}
 
+	// Remove this section after Pass_Limit or Adaptive_Sampling groups implementation
+	setAttr "RadeonProRenderGlobals.adaptiveThreshold" 0;
+    setAttr "RadeonProRenderGlobals.completionCriteriaSeconds" 0;
+
 	float $startTime = 0;
 	float $testTime = 0;
 	fireRender -waitForItTwo;
