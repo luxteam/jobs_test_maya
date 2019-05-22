@@ -54,12 +54,13 @@ global proc prerender(string $test_case, string $libraryPath, string $material, 
 	string $xml[] = `getFileList -folder $material_path -filespec "*.xml"`;
 	$material_path = $material_path + "/" + $xml[0];
 
+	print("Material to import: " + $material + " \n");
+
 	RPRXMLImport -file $material_path -ii false -mn "materialTestNode";
-	createNode "shadingEngine" -n "materialTestNodeSG";
-	defaultNavigation -connectToExisting -source "materialTestNode" -destination "materialTestNodeSG";
-	//connectAttr -f "materialTestNode.outColor" "materialTestNodeSG.surfaceShader";
 	select -r Probe03;
-	sets -e -forceElement "materialTestNodeSG";
+	hyperShade -assign materialTestNode;
+
+	print("Material connected: " + $material + " \n");
 
 	rpr_render($test_case, $script_info);
 
@@ -77,7 +78,7 @@ global proc main(){{
 	$numTokens = `tokenize $materials "," $material`;
 	python("import fireRender.rpr_material_browser");
 	string $libraryPath = python("fireRender.rpr_material_browser.getLibPath()");
-	file -f -options "v=0;"  -ignoreVersion -o "MaterialTestScene.mb";
+	file -f -options "v=0;"  -ignoreVersion -o "MaterialTestScene.ma";
 
 	// <-- fail -->
 
