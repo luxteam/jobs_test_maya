@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<job-manifest enable="False">
+
+    <outpath value="{OutputDir}"/>
+    <variable name="GroupName" value="GLTF_export"/>
+
+    <execute command='python "{ScriptsDir}\\rprRender.py"' timeout="4000">
+        <argument>--tests_list "{Root}\\{GroupName}\\test.cases.json"</argument>
+        <argument>--render_path "{Tool}"</argument>
+        <argument>--scene_path "{ScenesDir}\\scenes"</argument>
+        <argument>--output_dir "{OutputDir}"</argument>
+        <argument>--test_group {GroupName}</argument>
+    </execute>
+
+    <execute command='python "{CWD}/Scripts/make_report_json.py"'>
+        <argument>--work_dir "{OutputDir}"</argument>
+    </execute>
+
+    <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"'>
+        <argument>--work_dir "{OutputDir}"</argument>
+        <argument>--base_dir "{BaselineDir}"</argument>
+    </execute>
+
+</job-manifest>
