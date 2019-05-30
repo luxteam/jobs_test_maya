@@ -7,7 +7,7 @@
     <execute command='python "{ScriptsDir}\\rprRender.py"' timeout="4000">
         <argument>--tests_list "{Root}\\{GroupName}\\test.cases.json"</argument>
         <argument>--render_path "{Tool}"</argument>
-        <argument>--scene_path "{ScenesDir}\\scenes"</argument>
+        <argument>--scene_path "{ScenesDir}"</argument>
         <argument>--output_dir "{OutputDir}"</argument>
         <argument>--test_group {GroupName}</argument>
     </execute>

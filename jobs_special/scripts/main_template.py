@@ -73,7 +73,7 @@ def prerender(scene, rpr_iter):
         "render_device": cmds.optionVar(q="RPR_DevicesName")[0]
     }}
 
-    filePath = "{work_dir}" + "/" + scene + "_RPR.json"
+    filePath = "{work_dir}/scenes" + scene + "_RPR.json"
 
     with open(filePath, 'w') as file:
         json.dump([RENDER_REPORT_BASE], file, indent=4)
@@ -83,6 +83,6 @@ def main():
     mel.eval("setProject(\"{res_path}\")")
     tests = {tests}
     for each in tests:
-        prerender(each, 300)
+        prerender(each, 200)
 
     cmds.evalDeferred(cmds.quit(abort=True))
