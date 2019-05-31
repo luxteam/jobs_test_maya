@@ -28,12 +28,11 @@ def prerender(scene, rpr_iter):
     print("\n\n--------\n")
     print("Processing: " + scene_name + "\n")
 
-    if scene_name != scene:
-        try:
-            cmds.file(scene, f=True, options="v=0;", ignoreVersion=True, o=True)
-        except Exception as err:
-            print("[ERROR] Failed to open scene: {{}}\n".format(str(err)))
-            exit(1)
+    try:
+        cmds.file(os.path.join('scenes', scene), f=True, options="v=0;", ignoreVersion=True, o=True)
+    except Exception as err:
+        print("[ERROR] Failed to open scene: {{}}\n".format(str(err)))
+        return -1
 
     if not cmds.pluginInfo("RadeonProRender", q=True, loaded=True):
         print("Loading RPR plugin ....\n")
@@ -73,7 +72,7 @@ def prerender(scene, rpr_iter):
         "render_device": cmds.optionVar(q="RPR_DevicesName")[0]
     }}
 
-    filePath = "{work_dir}/scenes" + scene + "_RPR.json"
+    filePath = "{work_dir}/" + scene + "_RPR.json"
 
     with open(filePath, 'w') as file:
         json.dump([RENDER_REPORT_BASE], file, indent=4)
