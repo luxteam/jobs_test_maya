@@ -254,9 +254,9 @@ global proc create_and_asign_pbr(){{
 }}
 
 global proc change_camera_view(){{
-	setAttr "Camera001.translateX" 300;
-	setAttr "Camera001.translateY" 8;
-	setAttr "Camera001.translateZ" 1230;
+	setAttr "Camera001.translateX" 265;
+	setAttr "Camera001.translateY" 10;
+	setAttr "Camera001.translateZ" 1350;
 }}
 
 global proc standart_camera_view(){{
