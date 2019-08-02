@@ -5,6 +5,7 @@ import psutil
 import json
 import ctypes
 import pyscreenshot
+import platform
 from shutil import copyfile
 
 
@@ -106,31 +107,42 @@ def main(args, startFrom, lastStatus):
 			fail_test_ += each + "\n\t"
 		melScript = melScript.replace("// <-- fail -->", fail_test_)
 
-	cmdRun = '''
-	set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
-	set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-	"{tool}" -command "source script.mel; evalDeferred -lp \\"main()\\";"''' \
+	with open(os.path.join(args.output, 'script.mel'), 'w') as file:
+		file.write(melScript)
+
+	system_pl = platform.system()
+	if system_pl == 'Windows':
+		cmdRun = '''
+		set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
+		set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
+		"{tool}" -command "source script.mel; evalDeferred -lp (main());"''' \
+			.format(tool=args.tool)
+
+		cmdScriptPath = os.path.join(args.output, 'script.bat')
+		with open(cmdScriptPath, 'w') as file:
+			file.write(cmdRun)
+	elif system_pl == 'Darwin':
+		cmdRun = '''
+		export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
+		export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
+		"{tool}" -command "source script.mel; evalDeferred -lp (main());"'''\
 		.format(tool=args.tool)
 
-	try:
-		with open(os.path.join(args.output, 'script.bat'), 'w') as f:
-			f.write(cmdRun)
-
-		with open(os.path.join(args.output, 'script.mel'), 'w') as f:
-			f.write(melScript)
-	except OSError as e:
-		return 1
+		cmdScriptPath = os.path.join(args.output, 'script.sh')
+		with open(cmdScriptPath, 'w') as file:
+			file.write(cmdRun)
+		os.system('chmod +x {}'.format(cmdScriptPath))
 
 	os.chdir(args.output)
-	p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE)
+	p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 	rc = -1
 
 	while True:
 		try:
-			rc = p.wait(timeout=5)
+			rc = p.wait(timeout=5000)
 		except psutil.TimeoutExpired as err:
 			fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor']
-			if set(fatal_errors_titles).intersection(get_windows_titles()):
+			if False:
 				rc = -1
 				try:
 					error_screen = pyscreenshot.grab()

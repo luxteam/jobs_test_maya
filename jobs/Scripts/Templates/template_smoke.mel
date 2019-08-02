@@ -565,9 +565,9 @@ global proc main(){{
 	@check_test_cases("MAYA_SM_019", 50, "[\"Image Size 1500 1125\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_020", 50, "[\"Save image as png\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_021", 50, "[\"Save image as jpg\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
-	@check_test_cases("MAYA_SM_022", 50, "[\"Denoiser Bilateral default\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
-	@check_test_cases("MAYA_SM_023", 50, "[\"Denoiser LWR default\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
-	@check_test_cases("MAYA_SM_024", 50, "[\"Denoiser EAW default\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	//check_test_cases("MAYA_SM_022", 50, "[\"Denoiser Bilateral default\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	//check_test_cases("MAYA_SM_023", 50, "[\"Denoiser LWR default\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
+	//check_test_cases("MAYA_SM_024", 50, "[\"Denoiser EAW default\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_025", 50, "[\"Base Light Area Light\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_026", 50, "[\"AOV UV\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_027", 50, "[\"Physical Light\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
