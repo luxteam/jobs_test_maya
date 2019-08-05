@@ -1,5 +1,4 @@
 Image_Size
-AOV
 Camera
 Smoke
 IBL
@@ -9,9 +8,7 @@ Material_Library
 Render_Mode
 Render_Stamp
 Sun_Sky
-Denoiser
 Base_Lights
-Physical_Lights
 Tone_Mapping
 Sanity
 Intensity_Light

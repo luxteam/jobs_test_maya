@@ -545,7 +545,7 @@ global proc main(){{
 	// <-- start -->
 
 	@check_test_cases_success_save("MAYA_SM_001", "[\"Installing with default settings\"]");
-    	@check_test_cases_success_save("MAYA_SM_002", "[\"Change renderer from default to RPR\"]");
+    @check_test_cases_success_save("MAYA_SM_002", "[\"Change renderer from default to RPR\"]");
 	@check_test_cases("MAYA_SM_003", 50, "[\"Test import FBX\", \"Pass Limit: 50\"]", "default.ma");
 	@check_test_cases("MAYA_SM_004", 50, "[\"Test import OBJ\", \"Pass Limit: 50\"]", "default.ma");
 	@check_test_cases_success_save("MAYA_SM_005", "[\"Open RPR scene\"]");
@@ -576,7 +576,7 @@ global proc main(){{
 	@check_test_cases("MAYA_SM_030", 50, "[\"Assign Uber to object\", \"Pass Limit: 50\"]", "Lamborginhi_Aventador.ma");
 	@check_test_cases("MAYA_SM_031", 50, "[\"Instances\", \"Pass Limit: 50\"]", "instances.ma");
 	@check_test_cases("MAYA_SM_032", 50, "[\"12 lights in one scene\", \"Pass Limit: 50\"]", "IES.ma");
-	@check_test_cases("MAYA_SM_033", 50, "[\"AOV Shadow Catcher\", \"Pass Limit: 50\"]", "maya_shaderball.ma");
+	//check_test_cases("MAYA_SM_033", 50, "[\"AOV Shadow Catcher\", \"Pass Limit: 50\"]", "maya_shaderball.ma");
 	@check_test_cases("MAYA_SM_034", 100, "[\"SSS\", \"Pass Limit: 100\"]", "Uber_SSS.ma");
 	@check_test_cases("MAYA_SM_035", 50, "[\"SSS Night\", \"Pass Limit: 400\"]", "Uber_SSS_night.ma");
 	@check_test_cases("MAYA_SM_036", 50, "[\"Displacement\", \"Pass Limit: 50\"]", "displacement.ma");
