@@ -142,6 +142,7 @@ def main(args, startFrom, lastStatus):
 			rc = p.wait(timeout=5000)
 		except psutil.TimeoutExpired as err:
 			fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor']
+			# TODO: implement function for grabing opened windows titles
 			if False:
 				rc = -1
 				try:
@@ -154,6 +155,7 @@ def main(args, startFrom, lastStatus):
 				p.terminate()
 				break
 		else:
+			rc = 0
 			break
 
 	return rc
@@ -208,7 +210,7 @@ if __name__ == "__main__":
 		if not last_status: 
 			if not getJsonCount():
 				rc = main(args, current_test, "no scene")
-			exit(1) # finish work. 0 - success status.
+			exit(rc) # finish work. 0 - success status.
 		elif last_status and fail_count == 2:
 			if total_count < getJsonCount() + 2: # last test failed
 				fail_count = -1
@@ -218,8 +220,8 @@ if __name__ == "__main__":
 				current_test = getJsonCount() + 2 # mark as fail test and go to next test 
 		elif last_status:
 			if getJsonCount() == total_count:
-				exit()
+				exit(rc)
 			fail_count += 1 # count of failes + 1 (for current test)
 			current_test = getJsonCount() + 1
 	
-	exit(1)
+	exit(0)
