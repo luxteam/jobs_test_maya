@@ -65,7 +65,7 @@ global proc prerender(string $test_case, string $libraryPath, string $material, 
 	rpr_render($test_case, $script_info);
 
     delete "materialTestNode";
-    delete "materialTestNodeSG";
+    //delete "materialTestNodeSG";
 
 }}
 
