@@ -107,7 +107,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.jpg");
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
-        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.density" 0.05;
         setAttr "RPRVolumeMaterial1.scatteringDirection" -1;
         rpr_render($test_case, $script_info);
         disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.scatterColor");
@@ -118,7 +118,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
-        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.density" 0.1;
         setAttr "RPRVolumeMaterial1.scatteringDirection" 0;
         rpr_render($test_case, $script_info);
         disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.transmissionColor");
@@ -129,7 +129,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
-        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.density" 0.2;
         setAttr "RPRVolumeMaterial1.scatteringDirection" -0.5;
         rpr_render($test_case, $script_info);
         disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.emissionColor");
@@ -140,7 +140,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.tiff");
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
-        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.density" 0.5;
         setAttr "RPRVolumeMaterial1.scatteringDirection" -0.5;
         rpr_render($test_case, $script_info);
         disconnectAttr ($file_tmp + ".outColor") ("RPRVolumeMaterial1.scatterColor");
@@ -151,7 +151,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
-        setAttr "RPRVolumeMaterial1.density" 0;
+        setAttr "RPRVolumeMaterial1.density" 1;
         setAttr "RPRVolumeMaterial1.scatteringDirection" 0.5;
         rpr_render($test_case, $script_info);
         resetAttributes();
