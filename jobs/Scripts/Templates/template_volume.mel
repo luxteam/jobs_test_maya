@@ -385,11 +385,11 @@ global proc main(){{
 
     // <-- start -->
 
-    @check_test_cases("MAYA_MAT_VM_001", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 0, Scattering Direction- (-1),ColorVariation1.jpg\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_002", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1 , Density - 0, Scattering Direction - 0, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_003", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Transmission color - HVS : H -0, S - 0, V -1 , Density - 0, Scattering Direction- 1, EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_004", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density -0, Scattering Direction -(-0.5), ColorVariation1.tiff\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_005", "[\"Density - 0, Scattering Direction- 0.5, Scatter Color HVS: 300:0:1, Transmission Color HVS: 0:0:1, Emission Color HVS: 0:0:1\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_001", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 0.05, Scattering Direction- (-1),ColorVariation1.jpg\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_002", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1 , Density - 0.1, Scattering Direction - 0, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_003", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Transmission color - HVS : H -0, S - 0, V -1 , Density - 0.2, Scattering Direction- 1, EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_004", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density -0.5, Scattering Direction -(-0.5), ColorVariation1.tiff\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_005", "[\"Density - 1, Scattering Direction- 0.5, Scatter Color HVS: 300:0:1, Transmission Color HVS: 0:0:1, Emission Color HVS: 0:0:1\"]", "VolumeRollingFog.ma");
     @check_test_cases("MAYA_MAT_VM_006", "[\"Scatter color  - HVS : H -0, S - 0, V -1 , Emission color - HVS : H -0, S - 0, V -1 , Density - 2.5, Scattering Direction- (-1), TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
     //check_test_cases("MAYA_MAT_VM_007", "[\"Scatter color  - HVS : H -0, S - 0, V -1 , Transmission color - HVS : H -0, S - 0, V -1 , Density - 2.5, Scattering Direction- 1, EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
     @check_test_cases("MAYA_MAT_VM_008", "[\"Density - 2.5, Scattering Direction- (-0.5), Scatter Color HVS: 0:0:1, Transmission Color HVS: 300:0:1, Emission Color HVS: 0:0:1\"]", "VolumeRollingFog.ma");
