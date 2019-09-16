@@ -29,10 +29,16 @@ def get_windows_titles():
         if platform.system() == 'Darwin':
             ws_options = kCGWindowListOptionOnScreenOnly
             windows_list = CGWindowListCopyWindowInfo(ws_options, kCGNullWindowID)
+            maya_titles = [x.get('kCGWindowName', u'Unknown') for x in windows_list if 'Maya' in x['kCGWindowOwnerName']]
 
-            return [x.get('kCGWindowName' u'Unknown') for x in windows_list]
+            # duct tape for windows with empty title
+            # expected: Maya, Render View, progress bar windows
+            if len(maya_titles) > 3:
+                maya_titles.append('Radeon ProRender Error')
 
-        if platform.system() == 'Windows':
+            return maya_titles
+
+        elif platform.system() == 'Windows':
             EnumWindows = ctypes.windll.user32.EnumWindows
             EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int))
             GetWindowText = ctypes.windll.user32.GetWindowTextW
@@ -52,8 +58,8 @@ def get_windows_titles():
             EnumWindows(EnumWindowsProc(foreach_window), 0)
 
             return titles
-    except:
-        core_config.main_logger.error("Exception has occured while pull windows titles")
+    except Exception as err:
+        core_config.main_logger.error("Exception has occured while pull windows titles: {}".format(str(err)))
 
     return []
 
@@ -172,7 +178,9 @@ def main(args, startFrom, lastStatus):
 
         except psutil.TimeoutExpired as err:
             fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
-                'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report']
+                'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
+                'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
+                'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
             core_config.main_logger.info(str(fatal_errors_titles))
             core_config.main_logger.info(str(get_windows_titles()))
             if set(fatal_errors_titles).intersection(get_windows_titles()):
