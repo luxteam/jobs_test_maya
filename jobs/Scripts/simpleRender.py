@@ -29,14 +29,14 @@ def get_windows_titles():
         if platform.system() == 'Darwin':
             ws_options = kCGWindowListOptionOnScreenOnly
             windows_list = CGWindowListCopyWindowInfo(ws_options, kCGNullWindowID)
-            maya_titles = [x.get('kCGWindowName', u'Unknown') for x in windows_list if 'Maya' in x['kCGWindowOwnerName']]
+            maya_titles = {x.get('kCGWindowName', u'Unknown') for x in windows_list if 'Maya' in x['kCGWindowOwnerName']}
 
             # duct tape for windows with empty title
-            # expected: Maya, Render View, progress bar windows
-            if len(maya_titles) > 3:
-                maya_titles.append('Radeon ProRender Error')
+            expected = {'Maya', 'Render View', 'Rendering...'}
+            if maya_titles - expected:
+                maya_titles.add('Radeon ProRender Error')
 
-            return maya_titles
+            return list(maya_titles)
 
         elif platform.system() == 'Windows':
             EnumWindows = ctypes.windll.user32.EnumWindows
