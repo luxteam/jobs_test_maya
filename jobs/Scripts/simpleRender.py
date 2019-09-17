@@ -22,8 +22,8 @@ if platform.system() == 'Darwin':
     from Quartz import kCGWindowListOptionOnScreenOnly
     from Quartz import kCGNullWindowID
     from Quartz import kCGWindowName
-        
-    
+
+
 def get_windows_titles():
     try:
         if platform.system() == 'Darwin':
@@ -83,7 +83,7 @@ def createArgsParser():
 
 
 def main(args, startFrom, lastStatus):
-    
+
     testsList = None
     script_template = None
     cmdScriptPath = None
@@ -94,8 +94,8 @@ def main(args, startFrom, lastStatus):
             testCases_mel = json.loads(tc)[args.testType]
     except Exception as e:
         testCases_mel = "all"
-    
-    try:        
+
+    try:
         with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
             script_template = f.read()
         with open(os.path.join(os.path.dirname(__file__), "Templates", "base_function.mel")) as f:
@@ -173,23 +173,23 @@ def main(args, startFrom, lastStatus):
     core_config.main_logger.info("go to infinity")
     while True:
         try:
-            rc = p.wait(timeout=5)
-            core_config.main_logger.info("go to infinity")
+            p.communicate(timeout=10)
+            core_config.main_logger.info("")
 
-        except psutil.TimeoutExpired as err:
+        except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
             fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
                 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
                 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
-            core_config.main_logger.info(str(fatal_errors_titles))
-            core_config.main_logger.info(str(get_windows_titles()))
             if set(fatal_errors_titles).intersection(get_windows_titles()):
+                core_config.main_logger.warning("Tool fatal error has been detected")
+                core_config.main_logger.info(str(get_windows_titles()))
                 rc = -1
                 try:
                     error_screen = pyscreenshot.grab()
                     error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
                 except:
-                    pass
+                    core_config.main_logger.warning("Exception while try to screen error message")
                 for child in reversed(p.children(recursive=True)):
                     child.terminate()
                 p.terminate()
@@ -214,17 +214,17 @@ if __name__ == "__main__":
         return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
 
     def totalCount():
-        try:        
+        try:
             with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
                 script_template = f.read()
-            return len(script_template.split("@")) - 1 # -1 because first element is "" (split)
+            return len(script_template.split("@")) - 1  # -1 because first element is "" (split)
         except OSError as e:
             return -1
 
     total_count = totalCount()
-    fail_count = 0 
-    current_test = 1 # start from 1st test
-    last_status = 0 # 0 - success status
+    fail_count = 0
+    current_test = 1  # start from 1st test
+    last_status = 0  # 0 - success status
     it = 0
 
     while current_test <= total_count:
@@ -232,36 +232,36 @@ if __name__ == "__main__":
         it += 1
 
         with open(os.path.join(args.output, 'log_status.txt'), 'a') as f:
-            f.write("Iter:" + str(it) + " | current test: " + str(current_test) + " | fail count: " + \
-                str(fail_count) + " | last_status: " + str(last_status) + " | json: " + \
-                str(getJsonCount()) + " | total count: " + str(total_count) + "\n")
+            f.write("Iter:" + str(it) + " | current test: " + str(current_test) + " | fail count: " +
+                    str(fail_count) + " | last_status: " + str(last_status) + " | json: " +
+                    str(getJsonCount()) + " | total count: " + str(total_count) + "\n")
 
         if last_status and fail_count == 3:
-            rc = main(args, current_test, "fail") # Start from n+1 test. n - fail.
+            rc = main(args, current_test, "fail")  # Start from n+1 test. n - fail.
         elif last_status and fail_count == -1:
-            rc = main(args, current_test, "last_fail") # last test - fail.
+            rc = main(args, current_test, "last_fail")  # last test - fail.
         else:
-            rc = main(args, current_test, "ok") # Start from 1st test (ok - random word)
+            rc = main(args, current_test, "ok")  # Start from 1st test (ok - random word)
 
-        if current_test != getJsonCount() + 1: # count to zero if failes another test
+        if current_test != getJsonCount() + 1:  # count to zero if failes another test
             fail_count = 0
 
         last_status = rc
-        if not last_status: 
+        if not last_status:
             if not getJsonCount():
                 rc = main(args, current_test, "no scene")
-            exit(rc) # finish work. 0 - success status.
+            exit(rc)  # finish work. 0 - success status.
         elif last_status and fail_count == 2:
-            if total_count < getJsonCount() + 2: # last test failed
+            if total_count < getJsonCount() + 2:  # last test failed
                 fail_count = -1
                 current_test = getJsonCount() + 1
-            else: # not last test failed
+            else:  # not last test failed
                 fail_count += 1
-                current_test = getJsonCount() + 2 # mark as fail test and go to next test 
+                current_test = getJsonCount() + 2  # mark as fail test and go to next test
         elif last_status:
             if getJsonCount() == total_count:
                 exit(rc)
-            fail_count += 1 # count of failes + 1 (for current test)
+            fail_count += 1  # count of failes + 1 (for current test)
             current_test = getJsonCount() + 1
-    
+
     exit(0)
