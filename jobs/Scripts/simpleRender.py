@@ -191,8 +191,8 @@ def main(args, startFrom, lastStatus):
                 except:
                     core_config.main_logger.warning("Exception while try to screen error message")
                 for child in reversed(p.children(recursive=True)):
-                    child.terminate()
-                p.terminate()
+                    child.kill()
+                p.kill()
                 break
         else:
             rc = 0
