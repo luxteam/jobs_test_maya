@@ -122,12 +122,12 @@ def main(args, startFrom, lastStatus):
 		return 1
 
 	os.chdir(args.output)
-	p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE)
+	p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	rc = -1
 
 	while True:
 		try:
-			rc = p.wait(timeout=5)
+			rc = p.communicate(timeout=60)
 		except psutil.TimeoutExpired as err:
 			fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor']
 			if set(fatal_errors_titles).intersection(get_windows_titles()):
