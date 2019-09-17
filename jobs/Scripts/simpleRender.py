@@ -128,7 +128,7 @@ def main(args, startFrom, lastStatus):
 	while True:
 		try:
 			rc = p.communicate(timeout=60)
-		except psutil.TimeoutExpired as err:
+		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
 			fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor']
 			if set(fatal_errors_titles).intersection(get_windows_titles()):
 				rc = -1
