@@ -104,7 +104,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
     switch ($test_case) {{
 
     case "MAYA_MAT_VM_001":
-        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.jpg");
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation.jpg");
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 0.05;
@@ -115,7 +115,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_002":
-        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation.png");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 0.1;
@@ -126,7 +126,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_003":
-        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation.exr");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 0.2;
@@ -137,7 +137,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_004":
-        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.tiff");
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation.tiff");
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 0.5;
@@ -158,7 +158,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_006":
-        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation.png");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 2.5;
@@ -169,7 +169,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_007":
-        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation.exr");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 2.5;
@@ -190,7 +190,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_009":
-        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.png");
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation.png");
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 2.5;
@@ -201,7 +201,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_010":
-        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation.png");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 2.5;
@@ -222,7 +222,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_012":
-        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation.exr");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 5;
@@ -233,7 +233,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_013":
-        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.jpg");
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation.jpg");
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 5;
@@ -244,7 +244,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_014":
-        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation.png");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 5;
@@ -255,7 +255,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_015":
-        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.jpg");
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation.jpg");
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 5;
@@ -266,7 +266,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_016":
-        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation.png");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 7.5;
@@ -277,7 +277,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_017":
-        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation.exr");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 7.5;
@@ -288,7 +288,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_018":
-        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.exr");
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation.exr");
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 7.5;
@@ -309,7 +309,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_020":
-        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation.png");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 7.5;
@@ -320,7 +320,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_021":
-        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation.exr");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 10;
@@ -341,7 +341,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_023":
-        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation1.png");
+        string $file_tmp = setAttribute("scatterColor", "outColor", "sourceimages/ColorVariation.png");
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 10;
@@ -352,7 +352,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_024":
-        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation1.png");
+        string $file_tmp = setAttribute("transmissionColor", "outColor", "sourceimages/TransmissionVariation.png");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.emissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 10;
@@ -363,7 +363,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_025":
-        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation.exr");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 10;
@@ -385,31 +385,31 @@ global proc main(){{
 
     // <-- start -->
 
-    @check_test_cases("MAYA_MAT_VM_001", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 0.05, Scattering Direction- (-1),ColorVariation1.jpg\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_002", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1 , Density - 0.1, Scattering Direction - 0, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_003", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Transmission color - HVS : H -0, S - 0, V -1 , Density - 0.2, Scattering Direction- 1, EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_004", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density -0.5, Scattering Direction -(-0.5), ColorVariation1.tiff\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_001", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 0.05, Scattering Direction- (-1),ColorVariation.jpg\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_002", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1 , Density - 0.1, Scattering Direction - 0, TransmissionVariation.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_003", "[\"Scatter color  - HVS : H -0, S - 0, V -1, Transmission color - HVS : H -0, S - 0, V -1 , Density - 0.2, Scattering Direction- 1, EmissiveVariation.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_004", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density -0.5, Scattering Direction -(-0.5), ColorVariation.tiff\"]", "VolumeRollingFog.ma");
     @check_test_cases("MAYA_MAT_VM_005", "[\"Density - 1, Scattering Direction- 0.5, Scatter Color HVS: 300:0:1, Transmission Color HVS: 0:0:1, Emission Color HVS: 0:0:1\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_006", "[\"Scatter color  - HVS : H -0, S - 0, V -1 , Emission color - HVS : H -0, S - 0, V -1 , Density - 2.5, Scattering Direction- (-1), TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
-    //check_test_cases("MAYA_MAT_VM_007", "[\"Scatter color  - HVS : H -0, S - 0, V -1 , Transmission color - HVS : H -0, S - 0, V -1 , Density - 2.5, Scattering Direction- 1, EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_006", "[\"Scatter color  - HVS : H -0, S - 0, V -1 , Emission color - HVS : H -0, S - 0, V -1 , Density - 2.5, Scattering Direction- (-1), TransmissionVariation.png\"]", "VolumeRollingFog.ma");
+    //check_test_cases("MAYA_MAT_VM_007", "[\"Scatter color  - HVS : H -0, S - 0, V -1 , Transmission color - HVS : H -0, S - 0, V -1 , Density - 2.5, Scattering Direction- 1, EmissiveVariation.exr\"]", "VolumeRollingFog.ma");
     @check_test_cases("MAYA_MAT_VM_008", "[\"Density - 2.5, Scattering Direction- (-0.5), Scatter Color HVS: 0:0:1, Transmission Color HVS: 300:0:1, Emission Color HVS: 0:0:1\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_009", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 2.5, Scattering Direction- 0.5, ColorVariation1.png\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_010", "[\"Scatter color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 2.5, Scattering Direction- 0, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_009", "[\"Transmission color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 2.5, Scattering Direction- 0.5, ColorVariation.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_010", "[\"Scatter color - HVS : H -0, S - 0, V -1, Emission color - HVS : H -0, S - 0, V -1, Density - 2.5, Scattering Direction- 0, TransmissionVariation.png\"]", "VolumeRollingFog.ma");
     @check_test_cases("MAYA_MAT_VM_011", "[\"Scatter Color HVS: 0:0:1, Transmission Color HVS: 0:0:1, Emission Color HVS: 300:0:1, Density - 5, Scattering Direction- 1\"]", "VolumeRollingFog.ma");
-    //check_test_cases("MAYA_MAT_VM_012", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 5, Scattering Direction- (-0.5), EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_013", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 5, Scattering Direction- 0.5, ColorVariation1.jpg\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_014", "[\"Scatter Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 5, Scattering Direction- 0, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_015", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 5, Scattering Direction- (-1), ColorVariation1.exr\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_016", "[\"Scatter Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 7.5, Scattering Direction- (-0.5), TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
-    //check_test_cases("MAYA_MAT_VM_017", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 7.5, Scattering Direction- 0.5, EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_018", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 7.5, Scattering Direction- 0, ColorVariation1.exr\"]", "VolumeRollingFog.ma");
+    //check_test_cases("MAYA_MAT_VM_012", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 5, Scattering Direction- (-0.5), EmissiveVariation.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_013", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 5, Scattering Direction- 0.5, ColorVariation.jpg\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_014", "[\"Scatter Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 5, Scattering Direction- 0, TransmissionVariation.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_015", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 5, Scattering Direction- (-1), ColorVariation.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_016", "[\"Scatter Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 7.5, Scattering Direction- (-0.5), TransmissionVariation.png\"]", "VolumeRollingFog.ma");
+    //check_test_cases("MAYA_MAT_VM_017", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 7.5, Scattering Direction- 0.5, EmissiveVariation.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_018", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 7.5, Scattering Direction- 0, ColorVariation.exr\"]", "VolumeRollingFog.ma");
     @check_test_cases("MAYA_MAT_VM_019", "[\"Scatter Color HVS: 300:0:1, Transmission Color HVS: 0:0:1, Emission Color HVS: 0:0:1, Density - 7.5, Scattering Direction- (-1)\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_020", "[\"Scatter Color- HVS: 0:0:1, Emission Color - HVS: 0:0:1, Density - 7.5, Scattering Direction-1, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
-    //check_test_cases("MAYA_MAT_VM_021", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 10, Scattering Direction - 0.5,EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_020", "[\"Scatter Color- HVS: 0:0:1, Emission Color - HVS: 0:0:1, Density - 7.5, Scattering Direction-1, TransmissionVariation.png\"]", "VolumeRollingFog.ma");
+    //check_test_cases("MAYA_MAT_VM_021", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 10, Scattering Direction - 0.5,EmissiveVariation.exr\"]", "VolumeRollingFog.ma");
     @check_test_cases("MAYA_MAT_VM_022", "[\"Scatter Color HVS: 0:0:1, Transmission Color HVS: 300:0:1, Emission Color HVS: 0:0:1,Density - 10, Scattering Direction- 0\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_023", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 10, Scattering Direction- (-1), ColorVariation1.png\"]", "VolumeRollingFog.ma");
-    @check_test_cases("MAYA_MAT_VM_024", "[\"Scatter Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 10, Scattering Direction- 1, TransmissionVariation1.png\"]", "VolumeRollingFog.ma");
-    //check_test_cases("MAYA_MAT_VM_025", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 10, Scattering Direction - (-0.5), EmissiveVariation1.exr\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_023", "[\"Transmission Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 10, Scattering Direction- (-1), ColorVariation.png\"]", "VolumeRollingFog.ma");
+    @check_test_cases("MAYA_MAT_VM_024", "[\"Scatter Color- HVS: 0:0:1, Emission Color- HVS: 0:0:1, Density - 10, Scattering Direction- 1, TransmissionVariation.png\"]", "VolumeRollingFog.ma");
+    //check_test_cases("MAYA_MAT_VM_025", "[\"Scatter Color- HVS: 0:0:1, Transmission Color- HVS: 0:0:1, Density - 10, Scattering Direction - (-0.5), EmissiveVariation.exr\"]", "VolumeRollingFog.ma");
 
     // <-- end -->
     
