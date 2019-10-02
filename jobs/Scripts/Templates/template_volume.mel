@@ -126,7 +126,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         break;
 
     case "MAYA_MAT_VM_003":
-        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation.exr");
+        string $file_tmp = setAttribute("emissionColor", "outColor", "sourceimages/EmissiveVariation1.exr");
         setAttr "RPRVolumeMaterial1.scatterColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.transmissionColor" -type double3 1 1 1 ;
         setAttr "RPRVolumeMaterial1.density" 0.2;
