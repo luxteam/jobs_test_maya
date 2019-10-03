@@ -83,7 +83,6 @@ def createArgsParser():
 
 
 def main(args, startFrom, lastStatus):
-    
     testsList = None
     script_template = None
     cmdScriptPath = None
@@ -173,10 +172,10 @@ def main(args, startFrom, lastStatus):
     core_config.main_logger.info("go to infinity")
     while True:
         try:
-            rc = p.wait(timeout=5)
+            rc = p.communicate(timeout=20)
             core_config.main_logger.info("go to infinity")
 
-        except psutil.TimeoutExpired as err:
+        except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
             fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
                 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
