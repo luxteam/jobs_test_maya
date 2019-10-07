@@ -7,6 +7,8 @@ if not cmds.pluginInfo("RadeonProRender", q=True, loaded=True):
 cmds.sphere(radius=4)
 
 cmds.setAttr("defaultRenderGlobals.currentRenderer", "FireRender", type="string")
+cmds.setAttr("RadeonProRenderGlobals.completionCriteriaSeconds", 1)
+cmds.setAttr("RadeonProRenderGlobals.completionCriteriaIterations", 1)
 cmds.fireRender(waitForItTwo=True)
 mel.eval("renderIntoNewWindow render")
 

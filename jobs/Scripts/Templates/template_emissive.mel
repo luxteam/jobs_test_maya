@@ -41,6 +41,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
 		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
             evalDeferred("quit -abort");
         }}
+        validateFiles();
 	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{

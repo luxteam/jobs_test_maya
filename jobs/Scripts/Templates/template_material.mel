@@ -79,6 +79,7 @@ global proc main(){{
 	python("import fireRender.rpr_material_browser");
 	string $libraryPath = python("fireRender.rpr_material_browser.getLibPath()");
 	file -f -options "v=0;"  -ignoreVersion -o "MaterialTestScene.ma";
+	validateFiles();
 
 	// <-- fail -->
 

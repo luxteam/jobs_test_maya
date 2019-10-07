@@ -34,7 +34,6 @@ global proc check_test_cases(string $test_case, int $pass, string $script_info, 
     }}
 }}
 
-
 global proc prerender(string $test_case, int $pass, string $script_info, string $scene){{
 
 	string $scene_name  = `file -q -sn -shn`;
@@ -44,6 +43,7 @@ global proc prerender(string $test_case, int $pass, string $script_info, string 
         }} else {{
         	activate_jpg_format();
         }}
+        validateFiles();
 	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
@@ -545,7 +545,7 @@ global proc main(){{
 	// <-- start -->
 
 	@check_test_cases_success_save("MAYA_SM_001", "[\"Installing with default settings\"]");
-    	@check_test_cases_success_save("MAYA_SM_002", "[\"Change renderer from default to RPR\"]");
+    @check_test_cases_success_save("MAYA_SM_002", "[\"Change renderer from default to RPR\"]");
 	@check_test_cases("MAYA_SM_003", 50, "[\"Test import FBX\", \"Pass Limit: 50\"]", "default.ma");
 	@check_test_cases("MAYA_SM_004", 50, "[\"Test import OBJ\", \"Pass Limit: 50\"]", "default.ma");
 	@check_test_cases_success_save("MAYA_SM_005", "[\"Open RPR scene\"]");
