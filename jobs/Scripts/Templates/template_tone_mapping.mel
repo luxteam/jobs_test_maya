@@ -35,6 +35,7 @@ global proc check_test_cases(string $test_case, int $type, int $applyGammaToMaya
     }}
 }}
 
+
 global proc prerender(string $test_case, int $type, int $applyGammaToMayaViews, float $displayGamma, float $textureGamma, float $LinearScale, float $PhotolinearSensitivity, float $PhotolinearExposure, float $PhotolinearFstop, float $Reinhard02Prescale, float $Reinhard02Postscale, float $Reinhard02Burn, int $WhiteBalanceEnabled, int $WhiteBalanceValue, string $script_info, string $scene){{
 
     string $scene_name  = `file -q -sn -shn`;
@@ -42,6 +43,7 @@ global proc prerender(string $test_case, int $type, int $applyGammaToMayaViews, 
         if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
             evalDeferred("quit -abort");
         }}
+        validateFiles();
     }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{

@@ -176,3 +176,12 @@ global proc rpr_fail_save(string $test_case, string $script_info){{
 	fclose $fileID;
 
 }}
+
+
+global proc validateFiles(){{
+    string $unresolved_files[] = `filePathEditor -query -listFiles "" -unresolved -attributeOnly`;
+    string $new_path = "{res_path}";
+    for ($item in $unresolved_files) {{
+        filePathEditor -repath $new_path -recursive -replaceAll true $item ;
+    }}
+}}

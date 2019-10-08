@@ -8,6 +8,7 @@ import pyscreenshot
 import platform
 from shutil import copyfile
 import sys
+import re
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 import jobs_launcher.core.config as core_config
@@ -82,6 +83,18 @@ def createArgsParser():
     return parser
 
 
+def check_licenses(res_path, maya_scenes):
+	for scene in maya_scenes:
+		with open(os.path.join(res_path, scene[:-1])) as f:
+			scene_file = f.read()
+
+		license = "fileInfo \"license\" \"student\";"
+		scene_file = scene_file.replace(license, '')
+
+		with open(os.path.join(res_path, scene[:-1]), "w") as f:
+			f.write(scene_file)
+
+
 def main(args, startFrom, lastStatus):
     testsList = None
     script_template = None
@@ -101,6 +114,9 @@ def main(args, startFrom, lastStatus):
             base = f.read()
     except OSError as e:
         return 1
+
+    maya_scenes = set(re.findall(r"\w*\.ma\"", script_template))
+    check_licenses(args.res_path, maya_scenes)
 
     res_path = args.res_path
     res_path = res_path.replace('\\', '/')

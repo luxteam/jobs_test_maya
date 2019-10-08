@@ -35,13 +35,15 @@ global proc check_test_cases(string $test_case, float $intensity, string $ies_fi
     }}
 }}
 
+
 global proc prerender(string $test_case, float $intensity, string $ies_file, string $script_info, string $scene){{
 
 	string $scene_name  = `file -q -sn -shn`;
 	if ($scene_name != $scene) {{
-		if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
-            evalDeferred("quit -abort");
-        }}
+		  if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+          evalDeferred("quit -abort");
+    }}
+    validateFiles();
 	}}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{
