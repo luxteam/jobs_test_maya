@@ -203,12 +203,12 @@ def main(args, startFrom, lastStatus):
 
 
 if __name__ == "__main__":
+    args = createArgsParser().parse_args()
 
     try:
         os.makedirs(args.output)
     except OSError as e:
         pass
-
-    args = createArgsParser().parse_args()
+    
     exit(main(args, 0, 0))
 
