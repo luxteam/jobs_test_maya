@@ -183,12 +183,7 @@ def main(args, startFrom, lastStatus):
                 core_config.main_logger.warning("Tool fatal error has been detected")
                 core_config.main_logger.info(str(get_windows_titles()))
                 rc = -1
-                try:
-                    error_screen = pyscreenshot.grab()
-                    error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
-                except Exception as screen_err:
-                    core_config.main_logger.warning("Exception while try to screen error message")
-
+                
                 core_config.main_logger.info("Kill maya ...")
                 for child in reversed(p.children(recursive=True)):
                     child.kill()
