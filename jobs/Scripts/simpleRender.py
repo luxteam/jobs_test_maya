@@ -173,7 +173,7 @@ def main(args, startFrom, lastStatus):
     core_config.main_logger.info("Maya running...")
     while True:
         try:
-            p.communicate(timeout=20)
+            p.communicate(timeout=40)
         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
             fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
