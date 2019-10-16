@@ -3,7 +3,7 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="500">
+    <execute command='python3 "{CWD}/Scripts/simpleRender.py"' timeout="500">
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
@@ -17,16 +17,16 @@
         <argument>--SPU {SPU}</argument>
     </execute>
 
-    <execute command='python "{CWD}/Scripts/make_report_json.py"'>
+    <execute command='python3 "{CWD}/Scripts/make_report_json.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"'>
+    <execute command='python3 "{CommonDir}/scripts/ImageComparator/compareByJSON.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"'>
+    <execute command='python3 "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 
