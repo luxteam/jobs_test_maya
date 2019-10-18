@@ -38,7 +38,7 @@ global proc setAttribute(string $attr, string $value){{
 
 }}
 
-global proc check_test_cases_fail_save(string $test_case, float $turbidity, float $intensity, string $filterColor, string $groundColor, string $groundAlbedo, float $sunGlow, float $sunDiskSize, int $sunPositionType, float $altitude, float $azimuth, int $year, int $month, int $day, int $hours, int $minutes, int $seconds, float $timeZone, float $latitude, float $longitude, int $daylightSaving, string $script_info, string $scene){{
+global proc check_test_cases_fail_save(string $test_case, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -56,7 +56,7 @@ global proc check_test_cases_fail_save(string $test_case, float $turbidity, floa
 
 }}
 
-global proc check_test_cases(string $test_case, float $turbidity, float $intensity, string $filterColor, string $groundColor, string $groundAlbedo, float $sunGlow, float $sunDiskSize, int $sunPositionType, float $altitude, float $azimuth, int $year, int $month, int $day, int $hours, int $minutes, int $seconds, float $timeZone, float $latitude, float $longitude, int $daylightSaving, string $script_info, string $scene){{
+global proc check_test_cases(string $test_case, string $script_info, string $scene){{
 
     string $tests = "{testCases}";
     string $test[];
@@ -65,16 +65,16 @@ global proc check_test_cases(string $test_case, float $turbidity, float $intensi
     if ($tests != "all") {{
         for ($each in $test) {{ 
             if ($each == $test_case) {{
-                prerender($test_case, $turbidity, $intensity, $filterColor, $groundColor, $groundAlbedo, $sunGlow, $sunDiskSize, $sunPositionType, $altitude, $azimuth, $year, $month, $day, $hours, $minutes, $seconds, $timeZone, $latitude, $longitude, $daylightSaving, $script_info, $scene);
+                prerender($test_case, $script_info, $scene);
             }}
         }}
     }} else {{
-        prerender($test_case, $turbidity, $intensity, $filterColor, $groundColor, $groundAlbedo, $sunGlow, $sunDiskSize, $sunPositionType, $altitude, $azimuth, $year, $month, $day, $hours, $minutes, $seconds, $timeZone, $latitude, $longitude, $daylightSaving, $script_info, $scene);
+        prerender($test_case, $script_info, $scene);
     }}
 }}
 
 
-global proc prerender(string $test_case, float $turbidity, float $intensity, string $filterColor, string $groundColor, string $groundAlbedo, float $sunGlow, float $sunDiskSize, int $sunPositionType, float $altitude, float $azimuth, int $year, int $month, int $day, int $hours, int $minutes, int $seconds, float $timeZone, float $latitude, float $longitude, int $daylightSaving, string $script_info, string $scene){{
+global proc prerender(string $test_case, string $script_info, string $scene){{
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
@@ -110,34 +110,706 @@ global proc prerender(string $test_case, float $turbidity, float $intensity, str
             }}
         }}
 
-    string $SkyNode = `createNode RPRSky -n RPRSkyShape`;
+    createNode RPRSky -n RPRSkyShape;
 
-    setAttr "RPRSkyShape.intensity" $intensity;
-    setAttr "RPRSkyShape.turbidity" $turbidity;
-    setAttr "RPRSkyShape.sunGlow" $sunGlow;
-    setAttr "RPRSkyShape.sunDiskSize" $sunDiskSize;
+    switch ($test_case) {{
 
-    setAttribute("filterColor", $filterColor);
-    setAttribute("groundColor", $groundColor);
-    setAttribute("groundAlbedo", $groundAlbedo);
+    case "MAYA_RS_SS_001":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttr "RPRSkyShape.sunGlow" 0;
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        setAttribute("filterColor", "1:1:1");
+        setAttribute("groundColor", "1:1:1");
+        setAttribute("groundAlbedo", "1:1:1");
+        rpr_render($test_case, $script_info);
+        break;
 
-    setAttr "RPRSkyShape.sunPositionType" $sunPositionType;
+    case "MAYA_RS_SS_002":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttr "RPRSkyShape.turbidity" 2;
+        setAttr "RPRSkyShape.sunGlow" 50;
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        setAttribute("filterColor", "sunsky_filtercolor.jpeg");
+        setAttribute("groundColor", "0:0:0");
+        setAttribute("groundAlbedo", "0:0:0");
+        rpr_render($test_case, $script_info);
+        break;
 
-    setAttr "RPRSkyShape.latitude" $latitude;
-    setAttr "RPRSkyShape.longitude" $longitude;
-    setAttr "RPRSkyShape.timeZone" $timeZone;
-    setAttr "RPRSkyShape.year" $year;
-    setAttr "RPRSkyShape.month" $month;
-    setAttr "RPRSkyShape.day" $day;
-    setAttr "RPRSkyShape.hours" $hours;
-    setAttr "RPRSkyShape.minutes" $minutes;
-    setAttr "RPRSkyShape.seconds" $seconds;
-    setAttr "RPRSkyShape.daylightSaving" $daylightSaving;
-    
-    setAttr "RPRSkyShape.altitude" $altitude;
-    setAttr "RPRSkyShape.azimuth" $azimuth;
+    case "MAYA_RS_SS_003":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttr "RPRSkyShape.turbidity" 10;
+        setAttr "RPRSkyShape.sunGlow" 50;
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        rpr_render($test_case, $script_info);
+        break;
 
-    rpr_render($test_case, $script_info);
+    case "MAYA_RS_SS_004":
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.exr");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_005":
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.tiff");
+        setAttribute("groundColor", "sunsky_groundcolor.exr");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_006":
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttribute("groundColor", "sunsky_groundcolor.tiff");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_007":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_008":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "sunsky_filtercolor.exr");
+        setAttribute("groundColor", "sunsky_groundcolor.exr");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_009":
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "sunsky_filtercolor.tiff");
+        setAttribute("groundColor", "sunsky_groundcolor.tiff");
+        setAttribute("groundAlbedo", "1:1:1");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_010":
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("groundColor", "1:1:1");
+        setAttribute("groundAlbedo", "0:0:0");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_011":
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "1:1:1");
+        setAttribute("groundColor", "0:0:0");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_012":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "sunsky_filtercolor.jpeg");
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_013":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttribute("filterColor", "sunsky_filtercolor.tiff");
+        setAttribute("groundColor", "1:1:1");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_014":
+        setAttribute("groundColor", "0:0:0");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_015":
+        setAttribute("filterColor", "1:1:1");
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_016":
+        setAttribute("filterColor", "sunsky_filtercolor.jpeg");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_017":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.exr");
+        setAttribute("groundAlbedo", "1:1:1");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_018":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttribute("filterColor", "sunsky_filtercolor.exr");
+        setAttribute("groundColor", "sunsky_groundcolor.tiff");
+        setAttribute("groundAlbedo", "0:0:0");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_019":
+        setAttribute("filterColor", "1:1:1");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttribute("groundAlbedo", "1:1:1");
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_020":
+        setAttribute("filterColor", "sunsky_filtercolor.jpeg");
+        setAttribute("groundColor", "sunsky_groundcolor.exr");
+        setAttribute("groundAlbedo", "0:0:0");
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_021":
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.tiff");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_022":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.exr");
+        setAttribute("groundColor", "1:1:1");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_023":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttribute("filterColor", "sunsky_filtercolor.tiff");
+        setAttribute("groundColor", "0:0:0");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_024":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_025":
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "1:1:1");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_026":
+        setAttribute("filterColor", "sunsky_filtercolor.exr");
+        setAttribute("groundColor", "0:0:0");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_027":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.tiff");
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "1:1:1");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_028":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttribute("groundAlbedo", "0:0:0");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_029":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttribute("filterColor", "1:1:1");
+        setAttribute("groundColor", "sunsky_groundcolor.exr");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_030":
+        setAttribute("filterColor", "sunsky_filtercolor.jpeg");
+        setAttribute("groundColor", "sunsky_groundcolor.tiff");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_031":
+        setAttribute("filterColor", "sunsky_filtercolor.tiff");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_032":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttribute("groundColor", "sunsky_groundcolor.exr");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_033":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttribute("filterColor", "1:1:1");
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_034":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttribute("filterColor", "sunsky_filtercolor.jpeg");
+        setAttribute("groundColor", "1:1:1");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_035":
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "0:0:0");
+        setAttribute("groundAlbedo", "1:1:1");
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_036":
+        setAttribute("filterColor", "sunsky_filtercolor.exr");
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "0:0:0");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_037":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttribute("filterColor", "1:1:1");
+        setAttribute("groundColor", "1:1:1");
+        setAttribute("groundAlbedo", "1:1:1");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.minutes" 1;
+        setAttr "RPRSkyShape.seconds" 60;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_038":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.jpeg");
+        setAttribute("groundColor", "0:0:0");
+        setAttribute("groundAlbedo", "0:0:0");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.hours" 1;
+        setAttr "RPRSkyShape.minutes" 60;
+        setAttr "RPRSkyShape.longitude" -180;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_039":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" -2000;
+        setAttr "RPRSkyShape.seconds" 1;
+        setAttr "RPRSkyShape.timeZone" 18;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_040":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.month" 1;
+        setAttr "RPRSkyShape.minutes" 1;
+        setAttr "RPRSkyShape.daylightSaving" 1;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_041":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "sunsky_filtercolor.exr");
+        setAttribute("groundColor", "sunsky_groundcolor.exr");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.seconds" 1;
+        setAttr "RPRSkyShape.latitude" -90;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_042":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "sunsky_filtercolor.jpeg");
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.day" 31;
+        setAttr "RPRSkyShape.seconds" 60;
+        setAttr "RPRSkyShape.latitude" 90;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_043":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttribute("filterColor", "sunsky_filtercolor.tiff");
+        setAttribute("groundColor", "1:1:1");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.month" 1;
+        setAttr "RPRSkyShape.hours" 1;
+        setAttr "RPRSkyShape.seconds" 1;
+        setAttr "RPRSkyShape.daylightSaving" 1;
+        setAttr "RPRSkyShape.longitude" -180;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_044":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.exr");
+        setAttribute("groundAlbedo", "1:1:1");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.month" 12;
+        setAttr "RPRSkyShape.hours" 24;
+        setAttr "RPRSkyShape.seconds" 60;
+        setAttr "RPRSkyShape.longitude" 180;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_045":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttribute("filterColor", "sunsky_filtercolor.exr");
+        setAttribute("groundColor", "sunsky_groundcolor.tiff");
+        setAttribute("groundAlbedo", "0:0:0");
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_046":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.exr");
+        setAttribute("groundColor", "1:1:1");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.seconds" 1;
+        setAttr "RPRSkyShape.latitude" -90;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_047":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttribute("filterColor", "sunsky_filtercolor.tiff");
+        setAttribute("groundColor", "0:0:0");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.day" 31;
+        setAttr "RPRSkyShape.seconds" 60;
+        setAttr "RPRSkyShape.latitude" 90;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_048":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 6000;
+        setAttr "RPRSkyShape.hours" 1;
+        setAttr "RPRSkyShape.timeZone" -18;
+        setAttr "RPRSkyShape.longitude" -180;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_049":
+        setAttr "RPRSkyShape.intensity" 0;
+        setAttribute("filterColor", "sunsky_filtercolor.tiff");
+        setAttribute("groundColor", "sunsky_groundcolor.jpeg");
+        setAttribute("groundAlbedo", "1:1:1");
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.minutes" 60;
+        setAttr "RPRSkyShape.seconds" 1;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_050":
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttribute("groundAlbedo", "0:0:0");
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 6000;
+        setAttr "RPRSkyShape.seconds" 60;
+        setAttr "RPRSkyShape.timeZone" 18;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_051":
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttribute("filterColor", "1:1:1");
+        setAttribute("groundColor", "sunsky_groundcolor.exr");
+        setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" -2000;
+        setAttr "RPRSkyShape.month" 1;
+        setAttr "RPRSkyShape.timeZone" 18;
+        setAttr "RPRSkyShape.daylightSaving" 1;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_052":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 0;
+        setAttr "RPRSkyShape.latitude" 56;
+        setAttr "RPRSkyShape.longitude" 38;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_053":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 6;
+        setAttr "RPRSkyShape.latitude" 56;
+        setAttr "RPRSkyShape.longitude" 38;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_054":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 12;
+        setAttr "RPRSkyShape.latitude" 56;
+        setAttr "RPRSkyShape.longitude" 38;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_055":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 18;
+        setAttr "RPRSkyShape.latitude" 56;
+        setAttr "RPRSkyShape.longitude" 38;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_056":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 24;
+        setAttr "RPRSkyShape.latitude" 56;
+        setAttr "RPRSkyShape.longitude" 38;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_057":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 0;
+        setAttr "RPRSkyShape.latitude" 26;
+        setAttr "RPRSkyShape.longitude" -80;
+        setAttr "RPRSkyShape.timeZone" -5;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_058":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 12;
+        setAttr "RPRSkyShape.latitude" 26;
+        setAttr "RPRSkyShape.longitude" -80;
+        setAttr "RPRSkyShape.timeZone" -5;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_059":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 24;
+        setAttr "RPRSkyShape.latitude" 26;
+        setAttr "RPRSkyShape.longitude" -80;
+        setAttr "RPRSkyShape.timeZone" -5;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_060":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 0;
+        setAttr "RPRSkyShape.latitude" -35;
+        setAttr "RPRSkyShape.longitude" 149;
+        setAttr "RPRSkyShape.timeZone" 11;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_061":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 12;
+        setAttr "RPRSkyShape.latitude" -35;
+        setAttr "RPRSkyShape.longitude" 149;
+        setAttr "RPRSkyShape.timeZone" 11;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_062":
+        setAttr "RPRSkyShape.sunPositionType" 1;
+        setAttr "RPRSkyShape.year" 2018;
+        setAttr "RPRSkyShape.month" 8;
+        setAttr "RPRSkyShape.day" 1;
+        setAttr "RPRSkyShape.hours" 24;
+        setAttr "RPRSkyShape.latitude" -35;
+        setAttr "RPRSkyShape.longitude" 149;
+        setAttr "RPRSkyShape.timeZone" 11;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_063":
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttribute("filterColor", "1:1:1");
+        setAttribute("groundColor", "1:1:1");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_064":
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttr "RPRSkyShape.intensity" 1;
+        setAttribute("filterColor", "sunsky_filtercolor.tga");
+        setAttribute("groundColor", "0:0:0");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_065":
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttr "RPRSkyShape.intensity" 1;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_066":
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttr "RPRSkyShape.sunDiskSize" 0;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_067":
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttr "RPRSkyShape.intensity" 1;
+        setAttribute("filterColor", "sunsky_filtercolor.tga");
+        setAttribute("groundColor", "sunsky_groundcolor.tga");
+        setAttr "RPRSkyShape.sunGlow" 0;
+        setAttr "RPRSkyShape.sunDiskSize" 10;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_068":
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        rpr_render($test_case, $script_info);
+        break;
+
+    case "MAYA_RS_SS_069":
+        setAttr "RPRSkyShape.turbidity" 50;
+        setAttribute("filterColor", "sunsky_filtercolor.png");
+        setAttribute("groundColor", "sunsky_groundcolor.png");
+        setAttr "RPRSkyShape.sunGlow" 50;
+        rpr_render($test_case, $script_info);
+        break;
+
+    }}
 
 }}
 
@@ -149,69 +821,76 @@ global proc main(){{
 
     // <-- start -->
 
-    @check_test_cases("MAYA_RS_SS_001", 0, 0, "0:0:1", "0:0:1", "0:0:1", 0, 0, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_002", 0, 2, "sourceimages/Cafes/SunSky_FilterColor.jpg", "0:0:0", "0:0:0", 50, 10, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_003", 0, 10, "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 100, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_004", 0, 0.1, "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_GroundAlbedo.png", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_005", 0, 0.1, "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_GroundAlbedo.exr", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_006", 0, 0.1, "0:0:0", "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_GroundAlbedo.tif", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_007", 50, 2, "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_GroundAlbedo.exr", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_008", 50, 10, "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_GroundAlbedo.tif", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_009", 50, 0.1, "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_FilterColor.tif", "0:0:1", 50, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_010", 50, 0.1, "0:0:0", "0:0:1", "0:0:0", 100, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_011", 50, 0.1, "0:0:1", "0:0:0", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_012", 50, 0, "sourceimages/Cafes/SunSky_FilterColor.jpg", "sourceimages/Cafes/SunSky_FilterColor.jpg", "sourceimages/Cafes/SunSky_GroundAlbedo.png", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_013", 0.1, 10, "sourceimages/Cafes/SunSky_FilterColor.tif", "0:0:1", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 2, 0, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_014", 0.1, 0.1, "0:0:0", "0:0:0", "sourceimages/Cafes/SunSky_GroundAlbedo.png", 2, 10, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_015", 0.1, 0.1, "0:0:1", "sourceimages/Cafes/SunSky_FilterColor.jpg", "sourceimages/Cafes/SunSky_GroundAlbedo.exr", 0, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_016", 0.1, 0.1, "sourceimages/Cafes/SunSky_FilterColor.jpg", "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_GroundAlbedo.tif", 50, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_017", 0.1, 0, "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_FilterColor.exr", "0:0:1", 100, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_018", 0.1, 2, "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_FilterColor.tif", "0:0:0", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_019", 0.1, 0.1, "0:0:1", "sourceimages/Cafes/SunSky_FilterColor.png", "0:0:1", 2, 0, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_020", 0.1, 0.1, "sourceimages/Cafes/SunSky_FilterColor.jpg", "sourceimages/Cafes/SunSky_FilterColor.exr", "0:0:0", 2, 10, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_021", 0.1, 0.1, "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_022", 0.1, 0, "sourceimages/Cafes/SunSky_FilterColor.exr", "0:0:1", "sourceimages/Cafes/SunSky_GroundAlbedo.png", 0, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_023", 0.1, 2, "sourceimages/Cafes/SunSky_FilterColor.tif", "0:0:0", "sourceimages/Cafes/SunSky_GroundAlbedo.exr", 50, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_024", 0.1, 10, "0:0:0", "sourceimages/Cafes/SunSky_FilterColor.jpg", "sourceimages/Cafes/SunSky_GroundAlbedo.tif", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_025", 0.1, 0.1, "sourceimages/Cafes/SunSky_FilterColor.png", "0:0:1", "sourceimages/Cafes/SunSky_GroundAlbedo.exr", 100, 0, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_026", 0.1, 0.1, "sourceimages/Cafes/SunSky_FilterColor.exr", "0:0:0", "sourceimages/Cafes/SunSky_GroundAlbedo.tif", 2, 10, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_027", 0.1, 0, "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_FilterColor.jpg", "0:0:1", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_028", 0.1, 2, "0:0:0", "sourceimages/Cafes/SunSky_FilterColor.png", "0:0:0", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_029", 0.1, 10, "0:0:1", "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 0, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_030", 0.1, 0.1, "sourceimages/Cafes/SunSky_FilterColor.jpg", "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_GroundAlbedo.png", 50, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_031", 0.1, 0.1, "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 50, 0, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_032", 0.1, 0, "0:0:0", "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_GroundAlbedo.png", 100, 10, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_033", 0.1, 2, "0:0:1", "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_GroundAlbedo.exr", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_034", 0.1, 10, "sourceimages/Cafes/SunSky_FilterColor.jpg", "0:0:1", "sourceimages/Cafes/SunSky_GroundAlbedo.tif", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_035", 0.1, 0.1, "sourceimages/Cafes/SunSky_FilterColor.png", "0:0:0", "0:0:1", 2, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_036", 0.1, 0.1, "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_FilterColor.jpg", "0:0:0", 0, 1, 0, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_037", 0, 0, "0:0:1", "0:0:1", "0:0:1", 0, 0, 1, 45, 0, 2016, 1, 1, 12, 1, 60, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_038", 0, 2, "sourceimages/Cafes/SunSky_FilterColor.jpg", "0:0:0", "0:0:0", 50, 10, 1, 45, 0, 2016, 1, 1, 1, 60, 0, 0, 0, -180, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_039", 0, 10, "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_FilterColor.jpg", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 100, 1, 1, 45, 0, -2000, 1, 1, 12, 0, 1, 18, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_040", 50, 2, "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_GroundAlbedo.exr", 2, 0, 1, 45, 0, 2016, 1, 1, 12, 1, 0, 0, 0, 0, 1, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_041", 50, 10, "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_GroundAlbedo.tif", 0, 10, 1, 45, 0, 2016, 1, 1, 12, 0, 1, 0, -90, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_042", 50, 0, "sourceimages/Cafes/SunSky_FilterColor.jpg", "sourceimages/Cafes/SunSky_GroundColor.jpg", "sourceimages/Cafes/SunSky_GroundAlbedo.png", 2, 1, 1, 45, 0, 2016, 1, 31, 12, 0, 60, 0, 90, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_043", 0.1, 10, "sourceimages/Cafes/SunSky_FilterColor.tif", "0:0:1", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 2, 0, 1, 45, 0, 2016, 1, 1, 1, 0, 1, 0, 0, -180, 1, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_044", 0.1, 0, "sourceimages/Cafes/SunSky_FilterColor.png", "sourceimages/Cafes/SunSky_GroundColor.exr", "0:0:1", 100, 1, 1, 45, 0, 2016, 12, 1, 24, 0, 60, 0, 0, 180, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_045", 0.1, 2, "sourceimages/Cafes/SunSky_FilterColor.exr", "sourceimages/Cafes/SunSky_GroundColor.tif", "0:0:0", 2, 1, 1, 45, 0, 2016, 1, 1, 12, 0, 0, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_046", 0.1, 0, "sourceimages/Cafes/SunSky_FilterColor.exr", "0:0:1", "sourceimages/Cafes/SunSky_GroundAlbedo.png", 0, 1, 1, 45, 0, 2016, 1, 1, 12, 0, 1, 0, -90, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_047", 0.1, 2, "sourceimages/Cafes/SunSky_FilterColor.tif", "0:0:0", "sourceimages/Cafes/SunSky_GroundAlbedo.exr", 50, 1, 1, 45, 0, 2016, 1, 31, 12, 0, 60, 0, 90, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_048", 0.1, 10, "0:0:0", "sourceimages/Cafes/SunSky_GroundColor.jpg", "sourceimages/Cafes/SunSky_GroundAlbedo.tif", 100, 1, 1, 45, 0, 6000, 1, 1, 1, 0, 0, -18, 0, -180, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_049", 0.1, 0, "sourceimages/Cafes/SunSky_FilterColor.tif", "sourceimages/Cafes/SunSky_GroundColor.jpg", "0:0:1", 2, 1, 1, 45, 0, 2016, 1, 1, 12, 60, 1, 0, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_050", 0.1, 2, "0:0:0", "sourceimages/Cafes/SunSky_FilterColor.png", "0:0:0", 2, 1, 1, 45, 0, 6000, 1, 1, 12, 0, 60, -18, 0, 0, 0, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_051", 0.1, 10, "0:0:1", "sourceimages/Cafes/SunSky_GroundColor.exr", "sourceimages/Cafes/SunSky_GroundAlbedo.jpg", 0, 1, 1, 45, 0, -2000, 1, 1, 12, 0, 0, 18, 0, 0, 1, "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_052", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 0, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1 , Hours - 0, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_053", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 6, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1 , Hours - 6, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_054", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 12, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 12, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_055", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 18, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 18, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_056", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 24, 0, 0, 0, 56, 38, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 24, Latitude - 56, Longitude - 38\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_057", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 0, 0, 0, -5, 26, -80, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 0, Latitude - 26, Longitude - 80, Time Zone - 5\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_058", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 12, 0, 0, -5, 26, -80, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 12, Latitude - 26, Longitude - 80, Time Zone - 5\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_059", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 24, 0, 0, -5, 26, -80, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 24, Latitude - 26, Longitude - 80, Time Zone - 5\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_060", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 0, 0, 0, 11, -35, 149, 0, "[\"Sun Position - Time / Location,  Year - 2018, Month - 8, Day - 1, Hours - 0, Latitude - 35, Longitude - 149, Time Zone - 11\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_061", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 12, 0, 0, 11, -35, 149, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1, Hours - 12, Latitude - 35, Longitude - 149, Time Zone - 11\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_062", 0.1, 0.1, "0:0:0", "0:0:0", "0:0:0", 2, 1, 1, 45, 0, 2018, 8, 1, 24, 0, 0, 11, -35, 149, 0, "[\"Sun Position - Time / Location, Year - 2018, Month - 8, Day - 1 , Hours - 24, Latitude - 35, Longitude - 149, Time Zone - 11\"]", "Cafe_smaller.ma");
-           
+    @check_test_cases("MAYA_RS_SS_001", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_002", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_003", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_004", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_005", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_006", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_007", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_008", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_009", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_010", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_011", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_012", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_013", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_014", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_015", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_016", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_017", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_018", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_019", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_020", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_021", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_022", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_023", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_024", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_025", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_026", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_027", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_028", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_029", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_030", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_031", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_032", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_033", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_034", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_035", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_036", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_037", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_038", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_039", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_040", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_041", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_042", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_043", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_044", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_045", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_046", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_047", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_048", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_049", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_050", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_051", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_052", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_053", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_054", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_055", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_056", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_057", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_058", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_059", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_060", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_061", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_062", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_063", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_064", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_065", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_066", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_067", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_068", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_069", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+
     // <-- end -->
 
     evalDeferred("quit -abort");
