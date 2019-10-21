@@ -313,6 +313,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "sunsky_groundcolor.tiff");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        $script_info = "[\"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.tiff\", \"Ground Albedo - sunsky_groundalbedo.jpeg\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -322,6 +323,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "1:1:1");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
         setAttr "RPRSkyShape.sunGlow" 0;
+        $script_info = "[\"Intensity - 0\", \"Filter Color - sunsky_filtercolor.exr\", \"Ground Color - HSV: 0, 0, 1\", \"Ground Albedo - sunsky_groundalbedo.png\", \"Sun Glow - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -331,6 +333,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "0:0:0");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
         setAttr "RPRSkyShape.sunGlow" 50;
+        $script_info = "[\"Intensity - 2\", \"Filter Color - sunsky_filtercolor.tiff\", \"Ground Color - HSV: 0, 0, 0\", \"Ground Albedo - sunsky_groundalbedo.exr\", \"Sun Glow - 50\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -339,6 +342,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.jpeg");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
         setAttr "RPRSkyShape.sunGlow" 100;
+        $script_info = "[\"Intensity - 10\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - sunsky_groundalbedo.tiff\", \"Sun Glow - 100\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -348,6 +352,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
         setAttr "RPRSkyShape.sunGlow" 100;
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.png\", \"Ground Color - HSV: 0, 0, 1\", \"Ground Albedo - sunsky_groundalbedo.exr\", \"Sun Glow - 100\", \"Sun Disk Size - 100\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -356,6 +361,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "0:0:0");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.exr\", \"Ground Color - HSV: 0, 0, 0\", \"Ground Albedo - sunsky_groundalbedo.tiff\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -364,6 +370,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tiff");
         setAttribute("groundColor", "sunsky_groundcolor.jpeg");
         setAttribute("groundAlbedo", "1:1:1");
+        $script_info = "[\"Intensity - 0\", \"Filter Color - sunsky_filtercolor.tiff\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - HSV: 0, 0, 1\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -371,6 +378,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 2;
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttribute("groundAlbedo", "0:0:0");
+        $script_info = "[\"Intensity - 2\", \"Ground Color - sunsky_groundcolor.png\", \"Ground Albedo - HSV: 0, 0, 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -380,6 +388,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.exr");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
         setAttr "RPRSkyShape.sunGlow" 0;
+        $script_info = "[\"Intensity - 10\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.exr\", \"Ground Albedo - sunsky_groundalbedo.jpeg\", \"Sun Glow - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -388,6 +397,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.tiff");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
         setAttr "RPRSkyShape.sunGlow" 50;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.jpeg\", \"Ground Color - sunsky_groundcolor.tiff\", \"Ground Albedo - sunsky_groundalbedo.png\", \"Sun Glow - 50\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -397,6 +407,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
         setAttr "RPRSkyShape.sunGlow" 50;
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.tiff\", \"Ground Color - sunsky_groundcolor.png\", \"Ground Albedo - sunsky_groundalbedo.jpeg\", \"Sun Glow - 50\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -406,6 +417,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
         setAttr "RPRSkyShape.sunGlow" 100;
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Intensity - 0\", \"Ground Color - sunsky_groundcolor.exr\", \"Ground Albedo - sunsky_groundalbedo.png\", \"Sun Glow - 100\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -414,6 +426,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "1:1:1");
         setAttribute("groundColor", "sunsky_groundcolor.jpeg");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        $script_info = "[\"Intensity - 2\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - sunsky_groundalbedo.exr\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -422,6 +435,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.jpeg");
         setAttribute("groundColor", "1:1:1");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        $script_info = "[\"Intensity - 10\", \"Filter Color - sunsky_filtercolor.jpeg\", \"Ground Color - HSV: 0, 0, 1\", \"Ground Albedo - sunsky_groundalbedo.tiff\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -429,6 +443,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "0:0:0");
         setAttribute("groundAlbedo", "1:1:1");
+        $script_info = "[\"Filter Color - sunsky_filtercolor.png\", \"Ground Color - HSV: 0, 0, 0\", \"Ground Albedo - HSV: 0, 0, 1\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -437,6 +452,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.jpeg");
         setAttribute("groundAlbedo", "0:0:0");
         setAttr "RPRSkyShape.sunGlow" 0;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.exr\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - HSV: 0, 0, 0\", \"Sun Glow - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -451,6 +467,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.sunPositionType" 1;
         setAttr "RPRSkyShape.minutes" 1;
         setAttr "RPRSkyShape.seconds" 60;
+        $script_info = "[\"Intensity - 0\", \"Turbidity - 0\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - HSV: 0, 0, 1\", \"Ground Albedo - HSV: 0, 0, 1\", \"Sun Glow - 0\", \"Sun Disk Size - 0\", \"Sun Position - Time Location\", \"Minutes - 1\", \"Seconds - 60\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -466,6 +483,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.hours" 1;
         setAttr "RPRSkyShape.minutes" 60;
         setAttr "RPRSkyShape.longitude" -180;
+        $script_info = "[\"Intensity - 2\", \"Turbidity - 0\", \"Filter Color - sunsky_filtercolor.jpeg\", \"Ground Color - HSV: 0, 0, 0\", \"Ground Albedo - HSV: 0, 0, 0\", \"Sun Glow - 50\", \"Sun Disk Size - 10\", \"Sun Position - Time Location\", \"Hours - 1\", \"Minutes - 60\", \"Longitude - -180\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -480,6 +498,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" -2000;
         setAttr "RPRSkyShape.seconds" 1;
         setAttr "RPRSkyShape.timeZone" 18;
+        $script_info = "[\"Intensity - 10\", \"Turbidity - 0\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - sunsky_groundalbedo.jpeg\", \"Sun Glow - 100\", \"Sun Position - Time Location\", \"Year - -2000\", \"Seconds - 1\", \"Timezone - 18\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -494,6 +513,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.month" 1;
         setAttr "RPRSkyShape.minutes" 1;
         setAttr "RPRSkyShape.daylightSaving" 1;
+        $script_info = "[\"Intensity - 2\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.png\", \"Ground Albedo - sunsky_groundalbedo.exr\", \"Sun Disk Size - 0\", \"Sun Position - Time Location\", \"Month - 1\", \"Minutes - 1\", \"DaylightSaving - Activated\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -509,6 +529,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.day" 1;
         setAttr "RPRSkyShape.seconds" 1;
         setAttr "RPRSkyShape.latitude" -90;
+        $script_info = "[\"Intensity - 10\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.exr\", \"Ground Color - sunsky_groundcolor.exr\", \"Ground Albedo - sunsky_groundalbedo.tiff\", \"Sun Glow - 0\", \"Sun Disk Size - 10\", \"Sun Position - Time Location\", \"Day - 1\", \"Seconds - 1\", \"Latitude - -90\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -522,6 +543,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.day" 31;
         setAttr "RPRSkyShape.seconds" 60;
         setAttr "RPRSkyShape.latitude" 90;
+        $script_info = "[\"Intensity - 0\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.jpeg\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - sunsky_groundalbedo.png\", \"Sun Position - Time Location\", \"Day - 31\", \"Seconds - 60\", \"Latitude - 90\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -537,6 +559,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.seconds" 1;
         setAttr "RPRSkyShape.daylightSaving" 1;
         setAttr "RPRSkyShape.longitude" -180;
+        $script_info = "[\"Intensity - 10\", \"Filter Color - sunsky_filtercolor.tiff\", \"Ground Color - HSV: 0, 0, 1\", \"Ground Albedo - sunsky_groundalbedo.jpeg\", \"Sun Disk Size - 0\", \"Sun Position - Time Location\", \"Month - 1\", \"Hours - 1\", \"Seconds - 1\", \"DaylightSaving - Activated\", \"Longitude - -180\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -551,6 +574,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.hours" 24;
         setAttr "RPRSkyShape.seconds" 60;
         setAttr "RPRSkyShape.longitude" 180;
+        $script_info = "[\"Intensity - 0\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.exr\", \"Ground Albedo - HSV: 0, 0, 1\", \"Sun Glow - 100\", \"Sun Position - Time Location\", \"Month - 12\", \"Hours - 24\", \"Seconds - 60\", \"Longitude - 180\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -560,6 +584,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.tiff");
         setAttribute("groundAlbedo", "0:0:0");
         setAttr "RPRSkyShape.sunPositionType" 1;
+        $script_info = "[\"Intensity - 2\", \"Filter Color - sunsky_filtercolor.exr\", \"Ground Color - sunsky_groundcolor.tiff\", \"Ground Albedo - HSV: 0, 0, 0\", \"Sun Position - Time Location\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -573,6 +598,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.day" 1;
         setAttr "RPRSkyShape.seconds" 1;
         setAttr "RPRSkyShape.latitude" -90;
+        $script_info = "[\"Intensity - 0\", \"Filter Color - sunsky_filtercolor.exr\", \"Ground Color - HSV: 0, 0, 1\", \"Ground Albedo - sunsky_groundalbedo.png\", \"Sun Glow - 0\", \"Sun Position - Time Location\", \"Day - 1\", \"Seconds - 1\", \"Latitude - -90\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -586,6 +612,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.day" 31;
         setAttr "RPRSkyShape.seconds" 60;
         setAttr "RPRSkyShape.latitude" 90;
+        $script_info = "[\"Intensity - 2\", \"Filter Color - sunsky_filtercolor.tiff\", \"Ground Color - HSV: 0, 0, 0\", \"Ground Albedo - sunsky_groundalbedo.exr\", \"Sun Glow - 50\", \"Sun Position - Time Location\", \"Day - 31\", \"Seconds - 60\", \"Latitude - 90\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -599,6 +626,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.hours" 1;
         setAttr "RPRSkyShape.timeZone" -18;
         setAttr "RPRSkyShape.longitude" -180;
+        $script_info = "[\"Intensity - 10\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - sunsky_groundalbedo.tiff\", \"Sun Glow - 100\", \"Sun Position - Time Location\", \"Year - 6000\", \"Hours - 1\", \"Timezone - -18\", \"Longitude - -180\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -610,6 +638,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.sunPositionType" 1;
         setAttr "RPRSkyShape.minutes" 60;
         setAttr "RPRSkyShape.seconds" 1;
+        $script_info = "[\"Intensity - 0\", \"Filter Color - sunsky_filtercolor.tiff\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - HSV: 0, 0, 1\", \"Sun Position - Time Location\", \"Minutes - 60\", \"Seconds - 1\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -621,6 +650,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 6000;
         setAttr "RPRSkyShape.seconds" 60;
         setAttr "RPRSkyShape.timeZone" 18;
+        $script_info = "[\"Intensity - 2\", \"Ground Color - sunsky_groundcolor.png\", \"Ground Albedo - HSV: 0, 0, 0\", \"Sun Position - Time Location\", \"Year - 6000\", \"Seconds - 60\", \"Timezone - 18\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -635,6 +665,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.month" 1;
         setAttr "RPRSkyShape.timeZone" 18;
         setAttr "RPRSkyShape.daylightSaving" 1;
+        $script_info = "[\"Intensity - 10\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.exr\", \"Ground Albedo - sunsky_groundalbedo.jpeg\", \"Sun Glow - 0\", \"Sun Position - Time Location\", \"Year - -2000\", \"Month - 1\", \"Timezone - 18\", \"Daylight Saving - Activated\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -646,6 +677,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.hours" 0;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 0\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -657,6 +689,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.hours" 6;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 6\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -668,6 +701,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.hours" 12;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 12\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -679,6 +713,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.hours" 18;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 18\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -690,6 +725,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.hours" 24;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 24\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -702,6 +738,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.latitude" 26;
         setAttr "RPRSkyShape.longitude" -80;
         setAttr "RPRSkyShape.timeZone" -5;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 0\", \"Latitude - 26\", \"Longitude - -80\", \"Timezone - -5\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -714,6 +751,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.latitude" 26;
         setAttr "RPRSkyShape.longitude" -80;
         setAttr "RPRSkyShape.timeZone" -5;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 12\", \"Latitude - 26\", \"Longitude - -80\", \"Timezone - -5\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -726,6 +764,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.latitude" 26;
         setAttr "RPRSkyShape.longitude" -80;
         setAttr "RPRSkyShape.timeZone" -5;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 24\", \"Latitude - 26\", \"Longitude - -80\", \"Timezone - -5\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -738,6 +777,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.latitude" -35;
         setAttr "RPRSkyShape.longitude" 149;
         setAttr "RPRSkyShape.timeZone" 11;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 0\", \"Latitude - -35\", \"Longitude - 149\", \"Timezone - 11\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -750,6 +790,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.latitude" -35;
         setAttr "RPRSkyShape.longitude" 149;
         setAttr "RPRSkyShape.timeZone" 11;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 12\", \"Latitude - -35\", \"Longitude - 149\", \"Timezone - 11\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -762,6 +803,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.latitude" -35;
         setAttr "RPRSkyShape.longitude" 149;
         setAttr "RPRSkyShape.timeZone" 11;
+        $script_info = "[\"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 24\", \"Latitude - -35\", \"Longitude - 149\", \"Timezone - 11\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -771,6 +813,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "1:1:1");
         setAttr "RPRSkyShape.sunGlow" 0;
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Turbidity - 0\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - HSV: 0, 0, 1\", \"Sun Glow - 0\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -781,6 +824,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "0:0:0");
         setAttr "RPRSkyShape.sunGlow" 50;
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Intensity - 1\", \"Turbidity - 0\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - HSV: 0, 0, 0\", \"Sun Glow - 50\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -790,6 +834,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttr "RPRSkyShape.sunGlow" 100;
+        $script_info = "[\"Intensity - 1\", \"Turbidity - 0\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Glow - 100\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -799,6 +844,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Intensity - 2\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -809,6 +855,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.tga");
         setAttr "RPRSkyShape.sunGlow" 0;
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Intensity - 1\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 0\, \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -817,14 +864,15 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttr "RPRSkyShape.sunGlow" 50;
+        $script_info = "[\"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Glow - 50\"]";
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_069":
         setAttr "RPRSkyShape.turbidity" 50;
-        setAttribute("filterColor", "sunsky_filtercolor.png");
-        setAttribute("groundColor", "sunsky_groundcolor.png");
-        setAttr "RPRSkyShape.sunGlow" 50;
+        setAttribute("groundColor", "1:1:1");
+        setAttr "RPRSkyShape.sunGlow" 100;
+        $script_info = "[\"Turbidity - 50\", \"Ground Color - HSV: 0, 0, 1\", \"Sun Glow - 100\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -832,6 +880,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.turbidity" 50;
         setAttribute("filterColor", "1:1:1");
         setAttribute("groundColor", "0:0:0");
+        $script_info = "[\"Turbidity - 50\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - HSV: 0, 0, 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -839,6 +888,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.turbidity" 50;
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "sunsky_groundcolor.tga");
+        $script_info = "[\"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.tga\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -847,12 +897,14 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "1:1:1");
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Intensity - 3\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - HSV: 0, 0, 1\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_073":
         setAttribute("groundColor", "0:0:0");
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Ground Color - HSV: 0, 0, 0\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -860,6 +912,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "1:1:1");
         setAttribute("groundColor", "sunsky_groundcolor.tga");
         setAttr "RPRSkyShape.sunGlow" 0;
+        $script_info = "[\"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -867,6 +920,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttr "RPRSkyShape.sunGlow" 50;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Glow - 50\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -875,6 +929,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "sunsky_groundcolor.tga");
         setAttr "RPRSkyShape.sunGlow" 100;
+        $script_info = "[\"Intensity - 0.1\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 100\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -882,6 +937,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "sunsky_groundcolor.png");
+        $script_info = "[\"Intensity - 1\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.png\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -889,6 +945,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "1:1:1");
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -896,12 +953,14 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "sunsky_groundcolor.tga");
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_080":
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "sunsky_groundcolor.png");
+        $script_info = "[\"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.png\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -910,6 +969,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "1:1:1");
         setAttr "RPRSkyShape.sunGlow" 0;
+        $script_info = "[\"Intensity - 0.1\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - HSV: 0, 0, 1\", \"Sun Glow - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -918,6 +978,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "0:0:0");
         setAttr "RPRSkyShape.sunGlow" 50;
+        $script_info = "[\"Intensity - 2\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - HSV: 0, 0, 0\", \"Sun Glow - 50\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -925,6 +986,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 10;
         setAttribute("groundColor", "sunsky_groundcolor.tga");
         setAttr "RPRSkyShape.sunGlow" 100;
+        $script_info = "[\"Intensity - 10\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 100\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -933,6 +995,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "1:1:1");
         setAttr "RPRSkyShape.sunGlow" 100;
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.png\", \"Ground Color - HSV: 0, 0, 1\", \"Sun Glow - 100\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -940,6 +1003,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "0:0:0");
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - HSV: 0, 0, 0\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -947,12 +1011,14 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "sunsky_groundcolor.tga");
+        $script_info = "[\"Intensity - 1\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.tga\"]";
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_087":
         setAttr "RPRSkyShape.intensity" 2;
         setAttribute("filterColor", "sunsky_filtercolor.png");
+        $script_info = "[\"Intensity - 2\", \"Filter Color - sunsky_filtercolor.png\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -961,6 +1027,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "1:1:1");
         setAttribute("groundColor", "sunsky_groundcolor.tga");
         setAttr "RPRSkyShape.sunGlow" 0;
+        $script_info = "[\"Intensity - 1\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -968,6 +1035,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttr "RPRSkyShape.sunGlow" 50;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Glow - 50\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -976,6 +1044,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttr "RPRSkyShape.sunGlow" 50;
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Glow - 50\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -984,6 +1053,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttr "RPRSkyShape.sunGlow" 100;
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Intensity - 0.1\", \"Filter Color - sunsky_filtercolor.tga\", \"Sun Glow - 100\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -991,6 +1061,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 2;
         setAttribute("filterColor", "1:1:1");
         setAttribute("groundColor", "sunsky_groundcolor.png");
+        $script_info = "[\"Intensity - 2\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.png\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -998,12 +1069,14 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 10;
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "1:1:1");
+        $script_info = "[\"Intensity - 10\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - HSV: 0, 0, 1\"]";
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_094":
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "0:0:0");
+        $script_info = "[\"Filter Color - sunsky_filtercolor.png\", \"Ground Color - HSV: 0, 0, 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1011,6 +1084,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "sunsky_groundcolor.tga");
         setAttr "RPRSkyShape.sunGlow" 0;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1018,6 +1092,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.horizonHeight" 0;
         setAttr "RPRSkyShape.horizonBlur" 0;
+        $script_info = "[\"Intensity - 1\", \"Horizon Blur - 0\", \"Horizon Height - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1025,6 +1100,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.horizonHeight" 0.1;
         setAttr "RPRSkyShape.horizonBlur" 0.5;
+        $script_info = "[\"Intensity - 1\", \"Horizon Blur - 0.5\", \"Horizon Height - 0.1\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1032,6 +1108,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.horizonHeight" 0.5;
         setAttr "RPRSkyShape.horizonBlur" 1;
+        $script_info = "[\"Intensity - 1\", \"Horizon Blur - 1\", \"Horizon Height - 0.5\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1039,18 +1116,21 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.horizonHeight" 1;
         setAttr "RPRSkyShape.horizonBlur" 1;
+        $script_info = "[\"Intensity - 1\", \"Horizon Blur - 1\", \"Horizon Height - 1\"]";
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_100":
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.saturation" 0;
+        $script_info = "[\"Intensity - 1\", \"Saturation - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_101":
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.saturation" 1;
+        $script_info = "[\"Intensity - 1\", \"Saturation - 1\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1058,6 +1138,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.sunPositionType" 0;
         setAttr "RPRSkyShape.altitude" 0;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Altitude & Azimuth\", \"Altitude - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1065,6 +1146,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.sunPositionType" 0;
         setAttr "RPRSkyShape.altitude" 90;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Altitude & Azimuth\", \"Altitude - 90\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1072,6 +1154,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.sunPositionType" 0;
         setAttr "RPRSkyShape.azimuth" -360;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Altitude & Azimuth\", \"Azimuth - -360\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1079,6 +1162,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.sunPositionType" 0;
         setAttr "RPRSkyShape.altitude" 360;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Altitude & Azimuth\", \"Azimuth - 360\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1086,6 +1170,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.sunPositionType" 0;
         setAttr "RPRSkyShape.altitude" 150;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Altitude & Azimuth\", \"Altitude - 150\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1096,6 +1181,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.longitude" 37.616;
         setAttr "RPRSkyShape.timezone" 3;
         setAttr "RPRSkyShape.daylightSaving" 1;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Location - Moscow \", \"Latitude - 65.543\", \"Longitude - 37.616\", \"Timezone - 3\", \"DaylightSaving - Activated\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1105,6 +1191,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.latitude" 65.543;
         setAttr "RPRSkyShape.longitude" 37.616;
         setAttr "RPRSkyShape.timezone" 3;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Location - Moscow \", \"Latitude - 65.543\", \"Longitude - 37.616\", \"Timezone - 3\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1115,6 +1202,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.longitude" 37.616;
         setAttr "RPRSkyShape.timezone" 3;
         setAttr "RPRSkyShape.daylightSaving" 1;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Location - Moscow \", \"Latitude - 55.752\", \"Longitude - 37.616\", \"Timezone - 3\", \"DaylightSaving - Activated\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1128,6 +1216,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.sunPositionType" 1;
         setAttr "RPRSkyShape.minutes" 1;
         setAttr "RPRSkyShape.seconds" 60;
+        $script_info = "[\"Intensity - 1\", \"Turbidity - 0\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - HSV: 0, 0, 1\", \"Sun Glow - 0\", \"Sun Disk Size - 0\", \"Sun Position - Time Location\", \"Minutes - 1\", \"Seconds - 60\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1142,6 +1231,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.hours" 1;
         setAttr "RPRSkyShape.minutes" 60;
         setAttr "RPRSkyShape.longitude" -180;
+        $script_info = "[\"Intensity - 1\", \"Turbidity - 0\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - HSV: 0, 0, 0\", \"Sun Glow - 50\", \"Sun Disk Size - 10\", \"Sun Position - Time Location\", \"Hours - 1\", \"Minutes - 60\", \"Longitude - -180\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1155,6 +1245,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" -2000;
         setAttr "RPRSkyShape.seconds" 1;
         setAttr "RPRSkyShape.timezone" 18;
+        $script_info = "[\"Intensity - 0.1\", \"Turbidity - 0\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 100\", \"Sun Position - Time Location\", \"Year - -2000\", \"Seconds - 1\", \"Timezone - 18\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1168,6 +1259,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.month" 1;
         setAttr "RPRSkyShape.minutes" 1;
         setAttr "RPRSkyShape.daylightSaving" 1;
+        $script_info = "[\"Intensity - 2\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Disk Size - 0\", \"Sun Position - Time Location\", \"Month - 1\", \"Minutes - 1\", \"DaylightSaving - Activated\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1182,6 +1274,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.day" 1;
         setAttr "RPRSkyShape.seconds" 1;
         setAttr "RPRSkyShape.latitude" -90;
+        $script_info = "[\"Intensity - 1\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 0\", \"Sun Disk Size - 10\", \"Sun Position - Time Location\", \"Day - 1\", \"Seconds - 1\", \"Latitude - -90\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1194,6 +1287,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.day" 31;
         setAttr "RPRSkyShape.seconds" 60;
         setAttr "RPRSkyShape.latitude" 90;
+        $script_info = "[\"Intensity - 0.1\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Position - Time Location\", \"Day - 31\", \"Seconds - 60\", \"Latitude - 90\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1204,10 +1298,11 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.sunDiskSize" 0;
         setAttr "RPRSkyShape.sunPositionType" 1;
         setAttr "RPRSkyShape.month" 1;
-        setAttr "RPRSkyShape.hour" 1;
+        setAttr "RPRSkyShape.hours" 1;
         setAttr "RPRSkyShape.seconds" 1;
         setAttr "RPRSkyShape.daylightSaving" 1;
         setAttr "RPRSkyShape.longitude" -180;
+        $script_info = "[\"Intensity - 1\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - HSV: 0, 0, 1\", \"Sun Disk Size - 0\", \"Sun Position - Time Location\", \"Month - 1\", \"Hour - 1\", \"Seconds - 1\", \"DaylightSaving - Activated\", \"Longitude - -180\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1218,9 +1313,10 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.sunGlow" 100;
         setAttr "RPRSkyShape.sunPositionType" 1;
         setAttr "RPRSkyShape.month" 12;
-        setAttr "RPRSkyShape.hour" 24;
+        setAttr "RPRSkyShape.hours" 24;
         setAttr "RPRSkyShape.seconds" 60;
         setAttr "RPRSkyShape.longitude" 180;
+        $script_info = "[\"Intensity - 1\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 100\", \"Sun Position - Time Location\", \"Month - 12\", \"Hour - 24\", \"Seconds - 60\", \"Longitude - 180\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1229,6 +1325,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tga");
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttr "RPRSkyShape.sunPositionType" 1;
+        $script_info = "[\"Intensity - 2\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Position - Time Location\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1241,6 +1338,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.day" 1;
         setAttr "RPRSkyShape.seconds" 1;
         setAttr "RPRSkyShape.latitude" -90;
+        $script_info = "[\"Intensity - 1\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - HSV: 0, 0, 1\", \"Sun Glow - 0\", \"Sun Position - Time Location\", \"Day - 1\", \"Seconds - 1\", \"Latitude - -90\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1253,6 +1351,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.day" 31;
         setAttr "RPRSkyShape.seconds" 60;
         setAttr "RPRSkyShape.latitude" 90;
+        $script_info = "[\"Intensity - 2\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - HSV: 0, 0, 0\", \"Sun Glow - 50\", \"Sun Position - Time Location\", \"Day - 31\", \"Seconds - 60\", \"Latitude - 90\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1262,9 +1361,10 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.sunGlow" 100;
         setAttr "RPRSkyShape.sunPositionType" 1;
         setAttr "RPRSkyShape.year" 6000;
-        setAttr "RPRSkyShape.hour" 1;
+        setAttr "RPRSkyShape.hours" 1;
         setAttr "RPRSkyShape.timezone" -18;
         setAttr "RPRSkyShape.longitude" -180;
+        $script_info = "[\"Intensity - 1\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 100\", \"Sun Position - Time Location\", \"Year - 6000\", \"Hour - 60\", \"Timezone - -18\", \"Longitude - -180\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1275,6 +1375,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.sunPositionType" 1;
         setAttr "RPRSkyShape.minutes" 60;
         setAttr "RPRSkyShape.seconds" 1;
+        $script_info = "[\"Intensity - 0.1\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Position - Time Location\", \"Minutes - 60\", \"Seconds - 1\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1285,6 +1386,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 6000;
         setAttr "RPRSkyShape.seconds" 60;
         setAttr "RPRSkyShape.timezone" -18;
+        $script_info = "[\"Intensity - 2\", \"Ground Color - sunsky_groundcolor.png\", \"Sun Position - Time Location\", \"Year - 6000\", \"Seconds - 60\", \"Timezone - -18\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1298,6 +1400,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.month" 1;
         setAttr "RPRSkyShape.timezone" 18;
         setAttr "RPRSkyShape.daylightSaving" 1;
+        $script_info = "[\"Intensity - 1\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 0\", \"Sun Position - Time Location\", \"Year - -2000\", \"Month - 1\", \"Timezone - 18\", \"DayLight Saving - Activated\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1307,9 +1410,10 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 0;
+        setAttr "RPRSkyShape.hours" 0;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 0\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1319,9 +1423,10 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 6;
+        setAttr "RPRSkyShape.hours" 6;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 6\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1331,9 +1436,10 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 12;
+        setAttr "RPRSkyShape.hours" 12;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 12\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1343,9 +1449,10 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 18;
+        setAttr "RPRSkyShape.hours" 18;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 18\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1355,9 +1462,10 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 24;
+        setAttr "RPRSkyShape.hours" 24;
         setAttr "RPRSkyShape.latitude" 56;
         setAttr "RPRSkyShape.longitude" 38;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 24\", \"Latitude - 56\", \"Longitude - 38\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1367,10 +1475,11 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 0;
+        setAttr "RPRSkyShape.hours" 0;
         setAttr "RPRSkyShape.latitude" 26;
         setAttr "RPRSkyShape.longitude" -80;
         setAttr "RPRSkyShape.timezone" -5;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 0\", \"Latitude - 26\", \"Longitude - -80\", \"Timezone - -5\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1380,10 +1489,11 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 12;
+        setAttr "RPRSkyShape.hours" 12;
         setAttr "RPRSkyShape.latitude" 26;
         setAttr "RPRSkyShape.longitude" -80;
         setAttr "RPRSkyShape.timezone" -5;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 12\", \"Latitude - 26\", \"Longitude - -80\", \"Timezone - -5\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1393,10 +1503,11 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 24;
+        setAttr "RPRSkyShape.hours" 24;
         setAttr "RPRSkyShape.latitude" 26;
         setAttr "RPRSkyShape.longitude" -80;
         setAttr "RPRSkyShape.timezone" -5;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 24\", \"Latitude - 26\", \"Longitude - -80\", \"Timezone - -5\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1406,10 +1517,11 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 0;
+        setAttr "RPRSkyShape.hours" 0;
         setAttr "RPRSkyShape.latitude" -35;
         setAttr "RPRSkyShape.longitude" 149;
         setAttr "RPRSkyShape.timezone" 11;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 0\", \"Latitude - -35\", \"Longitude - 149\", \"Timezone - 11\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1419,10 +1531,11 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 12;
+        setAttr "RPRSkyShape.hours" 12;
         setAttr "RPRSkyShape.latitude" -35;
         setAttr "RPRSkyShape.longitude" 149;
         setAttr "RPRSkyShape.timezone" 11;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 12\", \"Latitude - -35\", \"Longitude - 149\", \"Timezone - 11\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1432,10 +1545,11 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.year" 2018;
         setAttr "RPRSkyShape.month" 8;
         setAttr "RPRSkyShape.day" 1;
-        setAttr "RPRSkyShape.hour" 24;
+        setAttr "RPRSkyShape.hours" 24;
         setAttr "RPRSkyShape.latitude" -35;
         setAttr "RPRSkyShape.longitude" 149;
         setAttr "RPRSkyShape.timezone" 11;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Year - 2018\", \"Month - 8\", \"Day - 1\", \"Hours - 24\", \"Latitude - -35\", \"Longitude - 149\", \"Timezone - 11\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1444,6 +1558,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.latitude" 55.752;
         setAttr "RPRSkyShape.longitude" 37.616;
         setAttr "RPRSkyShape.timezone" 3;
+        $script_info = "[\"Intensity - 1\", \"Sun Position - Time Location\", \"Location - Moscow \", \"Latitude - 55.752\", \"Longitude - 37.616\", \"Timezone - 3\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1461,142 +1576,142 @@ global proc main(){{
 
     // <-- start -->
 
-    @check_test_cases("MAYA_RS_SS_001", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_002", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_003", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_004", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_005", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_006", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_007", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_008", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_009", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_010", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_011", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_012", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_013", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_014", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_015", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_016", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_017", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_018", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_019", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    @check_test_cases("MAYA_RS_SS_020", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_021", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_022", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_023", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_024", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_025", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_026", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_027", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_028", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_029", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_030", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_031", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_032", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_033", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_034", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_035", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_036", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_037", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_038", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_039", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_040", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_041", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_042", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_043", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_044", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_045", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_046", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_047", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_048", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_049", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_050", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_051", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_052", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_053", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_054", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_055", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_056", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_057", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_058", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_059", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_060", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_061", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_062", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_063", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_064", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_065", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_066", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_067", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_068", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_069", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_070", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_071", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_072", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_073", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_074", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_075", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_076", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_077", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_078", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_079", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_080", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_081", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_082", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_083", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_084", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_085", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_086", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_087", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_088", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_089", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_090", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_091", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_092", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_093", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_094", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_095", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_096", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_097", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_098", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_099", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_100", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_101", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_102", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_103", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_104", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_105", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_106", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_107", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_108", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_109", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_110", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_111", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_112", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_113", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_114", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_115", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_116", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_117", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_118", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_119", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_120", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_121", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_122", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_123", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_124", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_125", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_126", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_127", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_128", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_129", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_130", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_131", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_132", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_133", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_134", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_135", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
-    //check_test_cases("MAYA_RS_SS_136", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_001", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_002", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_003", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_004", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_005", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_006", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_007", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_008", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_009", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_010", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_011", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_012", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_013", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_014", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_015", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_016", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_017", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_018", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_019", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_020", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_021", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_022", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_023", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_024", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_025", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_026", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_027", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_028", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_029", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_030", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_031", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_032", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_033", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_034", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_035", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_036", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_037", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_038", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_039", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_040", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_041", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_042", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_043", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_044", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_045", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_046", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_047", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_048", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_049", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_050", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_051", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_052", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_053", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_054", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_055", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_056", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_057", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_058", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_059", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_060", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_061", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    //check_test_cases("MAYA_RS_SS_062", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_063", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_064", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_065", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_066", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_067", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_068", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_069", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_070", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_071", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_072", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_073", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_074", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_075", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_076", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_077", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_078", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_079", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_080", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_081", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_082", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_083", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_084", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_085", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_086", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_087", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_088", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_089", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_090", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_091", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_092", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_093", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_094", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_095", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_096", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_097", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_098", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_099", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_100", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_101", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_102", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_103", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_104", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_105", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_106", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_107", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_108", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_109", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_110", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_111", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_112", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_113", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_114", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_115", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_116", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_117", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_118", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_119", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_120", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_121", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_122", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_123", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_124", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_125", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_126", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_127", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_128", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_129", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_130", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_131", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_132", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_133", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_134", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_135", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_136", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
 
 
     // <-- end -->
