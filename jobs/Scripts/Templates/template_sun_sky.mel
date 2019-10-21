@@ -122,28 +122,30 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "1:1:1");
         setAttribute("groundColor", "1:1:1");
         setAttribute("groundAlbedo", "1:1:1");
+        $script_info = "[\"Turbidity - 0\", \"Intensity - 0\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - HSV: 0, 0, 1\", \"Ground Albedo - HSV: 0, 0, 1\", \"Sun Glow - 0\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_002":
-        setAttr "RPRSkyShape.intensity" 0;
-        setAttr "RPRSkyShape.turbidity" 2;
+        setAttr "RPRSkyShape.intensity" 2;
+        setAttr "RPRSkyShape.turbidity" 0;
         setAttr "RPRSkyShape.sunGlow" 50;
         setAttr "RPRSkyShape.sunDiskSize" 10;
         setAttribute("filterColor", "sunsky_filtercolor.jpeg");
         setAttribute("groundColor", "0:0:0");
         setAttribute("groundAlbedo", "0:0:0");
+        $script_info = "[\"Turbidity - 0\", \"Intensity - 2\", \"Filter Color - sunsky_filtercolor.jpeg\", \"Ground Color - HSV: 0, 0, 0\", \"Ground Albedo - HSV: 0, 0, 0\", \"Sun Glow - 50\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_003":
-        setAttr "RPRSkyShape.intensity" 0;
-        setAttr "RPRSkyShape.turbidity" 10;
-        setAttr "RPRSkyShape.sunGlow" 50;
-        setAttr "RPRSkyShape.sunDiskSize" 10;
+        setAttr "RPRSkyShape.intensity" 10;
+        setAttr "RPRSkyShape.turbidity" 0;
+        setAttr "RPRSkyShape.sunGlow" 100;
         setAttribute("filterColor", "sunsky_filtercolor.png");
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        $script_info = "[\"Turbidity - 0\", \"Intensity - 10\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.png\", \"Ground Albedo - sunsky_groundalbedo.jpeg\", \"Sun Glow - 100\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -152,6 +154,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.exr");
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        $script_info = "[\"Turbidity - 0\", \"Filter Color - sunsky_filtercolor.exr\", \"Ground Color - sunsky_groundcolor.png\", \"Ground Albedo - sunsky_groundalbedo.png\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -160,6 +163,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.tiff");
         setAttribute("groundColor", "sunsky_groundcolor.exr");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
+        $script_info = "[\"Turbidity - 0\", \"Filter Color - sunsky_filtercolor.tiff\", \"Ground Color - sunsky_groundcolor.exr\", \"Ground Albedo - sunsky_groundalbedo.exr\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -167,6 +171,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttr "RPRSkyShape.turbidity" 0;
         setAttribute("groundColor", "sunsky_groundcolor.tiff");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
+        $script_info = "[\"Turbidity - 0\", \"Ground Color - sunsky_groundcolor.tiff\", \"Ground Albedo - sunsky_groundalbedo.tiff\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -177,6 +182,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Turbidity - 50\", \"Intensity - 2\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.png\", \"Ground Albedo - sunsky_groundalbedo.exr\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -188,6 +194,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
         setAttr "RPRSkyShape.sunGlow" 0;
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Turbidity - 50\", \"Intensity - 10\", \"Filter Color - sunsky_filtercolor.exr\", \"Ground Color - sunsky_groundcolor.exr\", \"Ground Albedo - sunsky_groundalbedo.tiff\", \"Sun Glow - 0\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -197,6 +204,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.tiff");
         setAttribute("groundAlbedo", "1:1:1");
         setAttr "RPRSkyShape.sunGlow" 50;
+        $script_info = "[\"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.tiff\", \"Ground Color - sunsky_groundcolor.tiff\", \"Ground Albedo - HSV: 0, 0, 1\", \"Sun Glow - 50\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -205,6 +213,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "1:1:1");
         setAttribute("groundAlbedo", "0:0:0");
         setAttr "RPRSkyShape.sunGlow" 100;
+        $script_info = "[\"Turbidity - 50\", \"Ground Color - HSV: 0, 0, 1\", \"Ground Albedo - HSV: 0, 0, 0\", \"Sun Glow - 100\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -213,6 +222,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "1:1:1");
         setAttribute("groundColor", "0:0:0");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
+        $script_info = "[\"Turbidity - 50\", \"Filter Color - HSV: 0, 0, 1\", \"Ground Color - HSV: 0, 0, 0\", \"Ground Albedo - sunsky_groundalbedo.jpeg\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -222,6 +232,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.jpeg");
         setAttribute("groundColor", "sunsky_groundcolor.jpeg");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
+        $script_info = "[\"Turbidity - 50\", \"Intensity - 0\", \"Filter Color - sunsky_filtercolor.jpeg\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - sunsky_groundalbedo.png\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -231,6 +242,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "1:1:1");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.jpeg");
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Intensity - 10\", \"Filter Color - sunsky_filtercolor.tiff\", \"Ground Color - HSV: 0, 0, 1\", \"Ground Albedo - sunsky_groundalbedo.jpeg\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -238,6 +250,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "0:0:0");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.png");
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Ground Color - HSV: 0, 0, 0\", \"Ground Albedo - sunsky_groundalbedo.png\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -246,6 +259,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.jpeg");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.exr");
         setAttr "RPRSkyShape.sunGlow" 0;
+        $script_info = "[\"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.jpeg\", \"Ground Albedo - sunsky_groundalbedo.exr\", \"Sun Glow - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -254,6 +268,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttribute("groundAlbedo", "sunsky_groundalbedo.tiff");
         setAttr "RPRSkyShape.sunGlow" 50;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.jpeg\", \"Ground Color - sunsky_groundcolor.png\", \"Ground Albedo - sunsky_groundalbedo.tiff\", \"Sun Glow - 50\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -263,6 +278,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.exr");
         setAttribute("groundAlbedo", "1:1:1");
         setAttr "RPRSkyShape.sunGlow" 100;
+        $script_info = "[\"Intensity - 0\", \"Filter Color - sunsky_filtercolor.png\", \"Ground Color - sunsky_groundcolor.exr\", \"Ground Albedo - HSV: 0, 0, 1\", \"Sun Glow - 100\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -271,6 +287,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("filterColor", "sunsky_filtercolor.exr");
         setAttribute("groundColor", "sunsky_groundcolor.tiff");
         setAttribute("groundAlbedo", "0:0:0");
+        $script_info = "[\"Intensity - 2\", \"Filter Color - sunsky_filtercolor.exr\", \"Ground Color - sunsky_groundcolor.tiff\", \"Ground Albedo - HSV: 0, 0, 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -279,6 +296,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.png");
         setAttribute("groundAlbedo", "1:1:1");
         setAttr "RPRSkyShape.sunDiskSize" 0;
+        $script_info = "[\"Filter Color - HSV: 0, 0, 1\", \"Ground Color - sunsky_groundcolor.png\", \"Ground Albedo - HSV: 0, 0, 1\", \"Sun Disk Size - 0\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -287,6 +305,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.exr");
         setAttribute("groundAlbedo", "0:0:0");
         setAttr "RPRSkyShape.sunDiskSize" 10;
+        $script_info = "[\"Filter Color - sunsky_filtercolor.jpeg\", \"Ground Color - sunsky_groundcolor.exr\", \"Ground Albedo - HSV: 0, 0, 0\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
@@ -1073,21 +1092,29 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
     case "MAYA_RS_SS_107":
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.sunPositionType" 1;
-
+        setAttr "RPRSkyShape.latitude" 65.543;
+        setAttr "RPRSkyShape.longitude" 37.616;
+        setAttr "RPRSkyShape.timezone" 3;
+        setAttr "RPRSkyShape.daylightSaving" 1;
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_108":
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.sunPositionType" 1;
-        
+        setAttr "RPRSkyShape.latitude" 65.543;
+        setAttr "RPRSkyShape.longitude" 37.616;
+        setAttr "RPRSkyShape.timezone" 3;
         rpr_render($test_case, $script_info);
         break;
 
     case "MAYA_RS_SS_109":
         setAttr "RPRSkyShape.intensity" 1;
         setAttr "RPRSkyShape.sunPositionType" 1;
-        
+        setAttr "RPRSkyShape.latitude" 55.752;
+        setAttr "RPRSkyShape.longitude" 37.616;
+        setAttr "RPRSkyShape.timezone" 3;
+        setAttr "RPRSkyShape.daylightSaving" 1;
         rpr_render($test_case, $script_info);
         break;
 
@@ -1414,7 +1441,9 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
 
     case "MAYA_RS_SS_136":
         setAttr "RPRSkyShape.intensity" 1;
-        
+        setAttr "RPRSkyShape.latitude" 55.752;
+        setAttr "RPRSkyShape.longitude" 37.616;
+        setAttr "RPRSkyShape.timezone" 3;
         rpr_render($test_case, $script_info);
         break;
 
@@ -1432,142 +1461,142 @@ global proc main(){{
 
     // <-- start -->
 
-    @check_test_cases("MAYA_RS_SS_001", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_002", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_003", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_004", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_005", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_006", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_007", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_008", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_009", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_010", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_011", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_012", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_013", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_014", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_015", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_016", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_017", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_018", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_019", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_020", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_021", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_022", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_023", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_024", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_025", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_026", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_027", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_028", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_029", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_030", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_031", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_032", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_033", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_034", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_035", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_036", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_037", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_038", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_039", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_040", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_041", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_042", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_043", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_044", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_045", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_046", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_047", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_048", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_049", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_050", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_051", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_052", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_053", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_054", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_055", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_056", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_057", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_058", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_059", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_060", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_061", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_062", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_063", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_064", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_065", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_066", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_067", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_068", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_069", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_070", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_071", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_072", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_073", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_074", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_075", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_076", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_077", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_078", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_079", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_080", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_081", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_082", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_083", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_084", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_085", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_086", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_087", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_088", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_089", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_090", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_091", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_092", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_093", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_094", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_095", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_096", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_097", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_098", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_099", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_100", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_101", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_102", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_103", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_104", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_105", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_106", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_107", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_108", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_109", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_110", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_111", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_112", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_113", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_114", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_115", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_116", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_117", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_118", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_119", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_120", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_121", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_122", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_123", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_124", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_125", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_126", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_127", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_128", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_129", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_130", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_131", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_132", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_133", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_134", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_135", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
-    @check_test_cases("MAYA_RS_SS_136", "[\"Sun&Sky System\"]", "Cafe_smaller.ma");
+    @check_test_cases("MAYA_RS_SS_001", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_002", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_003", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_004", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_005", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_006", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_007", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_008", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_009", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_010", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_011", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_012", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_013", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_014", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_015", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_016", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_017", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_018", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_019", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    @check_test_cases("MAYA_RS_SS_020", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_021", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_022", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_023", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_024", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_025", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_026", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_027", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_028", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_029", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_030", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_031", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_032", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_033", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_034", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_035", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_036", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_037", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_038", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_039", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_040", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_041", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_042", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_043", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_044", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_045", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_046", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_047", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_048", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_049", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_050", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_051", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_052", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_053", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_054", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_055", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_056", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_057", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_058", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_059", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_060", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_061", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_062", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_063", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_064", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_065", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_066", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_067", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_068", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_069", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_070", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_071", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_072", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_073", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_074", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_075", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_076", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_077", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_078", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_079", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_080", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_081", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_082", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_083", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_084", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_085", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_086", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_087", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_088", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_089", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_090", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_091", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_092", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_093", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_094", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_095", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_096", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_097", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_098", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_099", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_100", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_101", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_102", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_103", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_104", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_105", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_106", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_107", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_108", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_109", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_110", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_111", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_112", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_113", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_114", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_115", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_116", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_117", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_118", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_119", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_120", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_121", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_122", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_123", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_124", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_125", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_126", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_127", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_128", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_129", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_130", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_131", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_132", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_133", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_134", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_135", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
+    //check_test_cases("MAYA_RS_SS_136", "[\"Sun&Sky System\"]", "Sun_Sky.ma");
 
 
     // <-- end -->
