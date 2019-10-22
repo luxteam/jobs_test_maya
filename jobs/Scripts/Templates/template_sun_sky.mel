@@ -855,7 +855,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
         setAttribute("groundColor", "sunsky_groundcolor.tga");
         setAttr "RPRSkyShape.sunGlow" 0;
         setAttr "RPRSkyShape.sunDiskSize" 10;
-        $script_info = "[\"Intensity - 1\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 0\, \"Sun Disk Size - 10\"]";
+        $script_info = "[\"Intensity - 1\", \"Turbidity - 50\", \"Filter Color - sunsky_filtercolor.tga\", \"Ground Color - sunsky_groundcolor.tga\", \"Sun Glow - 0\", \"Sun Disk Size - 10\"]";
         rpr_render($test_case, $script_info);
         break;
 
