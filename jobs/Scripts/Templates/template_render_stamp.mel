@@ -34,6 +34,7 @@ global proc check_test_cases(string $test_case, string $stamp, string $script_in
     }}
 }}
 
+
 global proc prerender(string $test_case, string $stamp, string $script_info, string $scene){{
 
     string $scene_name  = `file -q -sn -shn`;
@@ -41,6 +42,7 @@ global proc prerender(string $test_case, string $stamp, string $script_info, str
         if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
             evalDeferred("quit -abort");
         }}
+        validateFiles();
     }}
 
 	if( `pluginInfo -query -loaded RadeonProRender` == 0){{

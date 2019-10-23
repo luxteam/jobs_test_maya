@@ -8,6 +8,7 @@ Image_Formats
 Material_Library
 Render_Mode
 Render_Stamp
+Pass_Limit
 Sun_Sky
 Denoiser
 Base_Lights

@@ -41,6 +41,7 @@ global proc prerender_area_light(string $test_case, float $areaWidth, float $are
         if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
             evalDeferred("quit -abort");
         }}
+        validateFiles();
     }}
 
     if( `pluginInfo -query -loaded RadeonProRender` == 0){{
