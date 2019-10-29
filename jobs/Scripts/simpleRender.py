@@ -89,10 +89,11 @@ def mayaKiller(kill=False):
         try:
             # Get process name & pid from process object.
             processName = proc.name()
-            if processName == 'maya.exe':
+            if processName in ('Maya', 'maya.exe'):
                 if kill:
                     maya_process = psutil.Process(proc.pid)
                     try:
+                        core_config.main_logger.error("Trying to kill process {}".format(maya_process))
                         maya_process.terminate()
                         maya_process.kill()
                         maya_process.status()
