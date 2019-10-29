@@ -262,7 +262,7 @@ def main(args, startFrom, lastStatus):
             break
 
     if mayaKiller(kill=True):
-        core_config.main_logger.error("Maya is alive.")
+        core_config.main_logger.error("Maya was alive after tests.")
 
     core_config.main_logger.info("Main func return : {}".format(rc))
     return rc
