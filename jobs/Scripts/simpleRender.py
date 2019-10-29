@@ -244,9 +244,6 @@ def main(args, startFrom, lastStatus):
                     except psutil.NoSuchProcess:
                         core_config.main_logger.info("Process is killed: {}. Name: {}".format(ch, ch.name()))
 
-                if mayaKiller(kill=True):
-                    core_config.main_logger.error("Maya is alive.")
-
                 try:
                     p.terminate()
                     p.kill()
@@ -259,6 +256,9 @@ def main(args, startFrom, lastStatus):
         else:
             rc = 0
             break
+
+    if mayaKiller(kill=True):
+        core_config.main_logger.error("Maya is alive.")
 
     core_config.main_logger.info("Main func return : {}".format(rc))
     return rc
