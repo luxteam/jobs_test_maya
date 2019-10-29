@@ -99,7 +99,7 @@ def mayaKiller(kill=False):
                         status = maya_process.status()
                         core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(maya_process, maya_process.name(), status))
                     except psutil.NoSuchProcess:
-                        core_config.main_logger.info("Maya is killed: {}. Name: {}".format(maya_process))
+                        core_config.main_logger.info("Maya is killed: {}".format(maya_process))
                 return True
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
             pass
@@ -248,7 +248,7 @@ def main(args, startFrom, lastStatus):
                         status = ch.status()
                         core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
                     except psutil.NoSuchProcess:
-                        core_config.main_logger.info("Process is killed: {}. Name: {}".format(ch))
+                        core_config.main_logger.info("Process is killed: {}".format(ch))
 
                 try:
                     p.terminate()
@@ -256,7 +256,7 @@ def main(args, startFrom, lastStatus):
                     status = ch.status()
                     core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
                 except psutil.NoSuchProcess:
-                    core_config.main_logger.info("Process is killed: {}. Name: {}".format(ch))
+                    core_config.main_logger.info("Process is killed: {}".format(ch))
                 
                 break
         else:
