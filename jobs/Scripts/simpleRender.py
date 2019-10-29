@@ -220,11 +220,14 @@ def main(args, startFrom, lastStatus):
                 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
                 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
                 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
-            error_window = set(fatal_errors_titles).intersection(get_windows_titles())
+            window_titles = get_windows_titles()
+            error_window = set(fatal_errors_titles).intersection(window_titles)
             if error_window:
                 core_config.main_logger.info("Error window found: {}".format(error_window))
+                core_config.main_logger.info("Found windows: {}".format(window_titles))
                 rc = -1
 
+                core_config.main_logger.info("Trying to save screenshot...")
                 try:
                     error_screen = pyscreenshot.grab()
                     error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
@@ -273,7 +276,7 @@ if __name__ == "__main__":
         pass
 
     if platform.system() == 'Darwin':
-        core_config.main_logger.info("Killing maya...")
+        core_config.main_logger.info("Found unkilled maya. Killing maya...")
         mayaKiller(kill=True)
 
     core_config.main_logger.info("simpleRender start working...")
