@@ -96,10 +96,10 @@ def mayaKiller(kill=False):
                         core_config.main_logger.error("Trying to kill process {}".format(maya_process))
                         maya_process.terminate()
                         maya_process.kill()
-                        maya_process.status()
-                        core_config.main_logger.error("Maya is alive: {}. Name: {}".format(maya_process, maya_process.name()))
+                        status = maya_process.status()
+                        core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(maya_process, maya_process.name(), status))
                     except psutil.NoSuchProcess:
-                        core_config.main_logger.info("Maya is killed: {}. Name: {}".format(maya_process, maya_process.name()))
+                        core_config.main_logger.info("Maya is killed: {}. Name: {}".format(maya_process))
                 return True
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
             pass
@@ -245,18 +245,18 @@ def main(args, startFrom, lastStatus):
                     try:
                         ch.terminate()
                         ch.kill()
-                        ch.status()
-                        core_config.main_logger.error("Process is alive: {}. Name: {}".format(ch, ch.name()))
+                        status = ch.status()
+                        core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
                     except psutil.NoSuchProcess:
-                        core_config.main_logger.info("Process is killed: {}. Name: {}".format(ch, ch.name()))
+                        core_config.main_logger.info("Process is killed: {}. Name: {}".format(ch))
 
                 try:
                     p.terminate()
                     p.kill()
-                    p.status()
-                    core_config.main_logger.error("Process is alive: {}. Name: {}".format(ch, ch.name()))
+                    status = ch.status()
+                    core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
                 except psutil.NoSuchProcess:
-                    core_config.main_logger.info("Process is killed: {}. Name: {}".format(ch, ch.name()))
+                    core_config.main_logger.info("Process is killed: {}. Name: {}".format(ch))
                 
                 break
         else:
@@ -279,8 +279,8 @@ if __name__ == "__main__":
         pass
 
     if platform.system() == 'Darwin':
-        core_config.main_logger.info("Found unkilled maya. Killing maya...")
-        mayaKiller(kill=True)
+        if mayaKiller(kill=True):
+            core_config.main_logger.info("Found unkilled maya. Killing maya...")
 
     core_config.main_logger.info("simpleRender start working...")
 
