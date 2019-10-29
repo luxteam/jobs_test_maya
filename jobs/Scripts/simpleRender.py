@@ -216,6 +216,8 @@ def main(args, startFrom, lastStatus):
     while True:
         try:
             p.communicate(timeout=40)
+            window_titles = get_windows_titles()
+            core_config.main_logger.info("Found windows: {}".format(window_titles))
         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
             fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
@@ -228,12 +230,12 @@ def main(args, startFrom, lastStatus):
                 core_config.main_logger.info("Found windows: {}".format(window_titles))
                 rc = -1
 
-                core_config.main_logger.info("Trying to save screenshot...")
-                try:
-                    error_screen = pyscreenshot.grab()
-                    error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
-                except Exception as ex:
-                    core_config.main_logger.error("Failed saving screenshot: {}".format(ex))
+                if system_pl == 'Windows':
+                    try:
+                        error_screen = pyscreenshot.grab()
+                        error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
+                    except Exception as ex:
+                        pass
 
                 core_config.main_logger.info("Killing maya....")
 
