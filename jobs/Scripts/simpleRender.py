@@ -9,6 +9,7 @@ import platform
 from shutil import copyfile
 import sys
 import re
+import logging
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 import jobs_launcher.core.config as core_config
@@ -83,16 +84,41 @@ def createArgsParser():
     return parser
 
 
+def mayaKiller(kill=False):
+    for proc in psutil.process_iter():
+        try:
+            # Get process name & pid from process object.
+            processName = proc.name()
+            if processName == 'maya.exe':
+                if kill:
+                    maya_process = psutil.Process(proc.pid)
+                    try:
+                        maya_process.terminate()
+                        maya_process.kill()
+                        maya_process.status()
+                        core_config.main_logger.error("Maya is alive: {}. Name: {}".format(maya_process, maya_process.name()))
+                    except psutil.NoSuchProcess:
+                        core_config.main_logger.info("Maya is killed: {}. Name: {}".format(maya_process, maya_process.name()))
+                return True
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            pass
+
+    return False
+
+
 def check_licenses(res_path, maya_scenes):
-	for scene in maya_scenes:
-		with open(os.path.join(res_path, scene[:-1])) as f:
-			scene_file = f.read()
+    try:
+    	for scene in maya_scenes:
+    		with open(os.path.join(res_path, scene[:-1])) as f:
+    			scene_file = f.read()
 
-		license = "fileInfo \"license\" \"student\";"
-		scene_file = scene_file.replace(license, '')
+    		license = "fileInfo \"license\" \"student\";"
+    		scene_file = scene_file.replace(license, '')
 
-		with open(os.path.join(res_path, scene[:-1]), "w") as f:
-			f.write(scene_file)
+    		with open(os.path.join(res_path, scene[:-1]), "w") as f:
+    			f.write(scene_file)
+    except Exception as ex:
+        core_config.main_logger.error("Error while deleting student license: {}".format(ex))
 
 
 def main(args, startFrom, lastStatus):
@@ -181,11 +207,11 @@ def main(args, startFrom, lastStatus):
             file.write(cmdRun)
         os.system('chmod +x {}'.format(cmdScriptPath))
 
+    core_config.main_logger.info("Starting maya")
     os.chdir(args.output)
     p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     rc = -1
 
-    core_config.main_logger.info("Maya running...")
     while True:
         try:
             p.communicate(timeout=40)
@@ -194,25 +220,44 @@ def main(args, startFrom, lastStatus):
                 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
                 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
                 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
-            core_config.main_logger.info(str(fatal_errors_titles))
-            core_config.main_logger.info(str(get_windows_titles()))
-            if set(fatal_errors_titles).intersection(get_windows_titles()):
+            error_window = set(fatal_errors_titles).intersection(get_windows_titles())
+            if error_window:
+                core_config.main_logger.info("Error window found: {}".format(error_window))
                 rc = -1
+
                 try:
                     error_screen = pyscreenshot.grab()
                     error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
-                except:
-                    pass
-                core_config.main_logger.info("Kill maya ...")
-                for child in reversed(p.children(recursive=True)):
-                    child.kill()
-                p.kill()
-                core_config.main_logger.info("Killed")
+                except Exception as ex:
+                    core_config.main_logger.error("Failed saving screenshot: {}".format(ex))
+
+                core_config.main_logger.info("Killing maya....")
+
+                child_processes = p.children()
+                core_config.main_logger.info("Child processes: {}".format(child_processes))
+                for ch in child_processes:
+                    try:
+                        ch.terminate()
+                        ch.kill()
+                        ch.status()
+                        core_config.main_logger.error("Process is alive: {}. Name: {}".format(ch, ch.name()))
+                    except psutil.NoSuchProcess:
+                        core_config.main_logger.info("Process is killed: {}. Name: {}".format(ch, ch.name()))
+
+                try:
+                    p.terminate()
+                    p.kill()
+                    p.status()
+                    core_config.main_logger.error("Process is alive: {}. Name: {}".format(ch, ch.name()))
+                except psutil.NoSuchProcess:
+                    core_config.main_logger.info("Process is killed: {}. Name: {}".format(ch, ch.name()))
+                
                 break
         else:
             rc = 0
             break
 
+    core_config.main_logger.info("Main func return : {}".format(rc))
     return rc
 
 
@@ -223,6 +268,12 @@ if __name__ == "__main__":
         os.makedirs(args.output)
     except OSError as e:
         pass
+
+    if platform.system() == 'Darwin':
+        core_config.main_logger.info("Killing maya...")
+        mayaKiller(kill=True)
+
+    core_config.main_logger.info("simpleRender start working...")
 
     def getJsonCount():
         return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
@@ -241,14 +292,14 @@ if __name__ == "__main__":
     last_status = 0 # 0 - success status
     it = 0
 
+    core_config.main_logger.info("Total tests count: {}".format(total_count))
+
     while current_test <= total_count:
 
         it += 1
 
-        with open(os.path.join(args.output, 'log_status.txt'), 'a') as f:
-            f.write("Iter:" + str(it) + " | current test: " + str(current_test) + " | fail count: " + \
-                str(fail_count) + " | last_status: " + str(last_status) + " | json: " + \
-                str(getJsonCount()) + " | total count: " + str(total_count) + "\n")
+        core_config.main_logger.info("Cycle iteration: {}; Current test: {}; Last status: {}; Fail count: {}; Json count: {}"\
+            .format(it, current_test, last_status, fail_count, getJsonCount()))
 
         if last_status and fail_count == 3:
             rc = main(args, current_test, "fail") # Start from n+1 test. n - fail.
@@ -264,6 +315,9 @@ if __name__ == "__main__":
         if not last_status: 
             if not getJsonCount():
                 rc = main(args, current_test, "no scene")
+                core_config.main_logger.info("Finish simpleRender with code: {}; Scene didn't found.".format(rc))
+            else:
+                core_config.main_logger.info("Finish simpleRender with code: {}".format(rc))
             exit(rc) # finish work. 0 - success status.
         elif last_status and fail_count == 2:
             if total_count < getJsonCount() + 2: # last test failed
@@ -274,8 +328,10 @@ if __name__ == "__main__":
                 current_test = getJsonCount() + 2 # mark as fail test and go to next test 
         elif last_status:
             if getJsonCount() == total_count:
+                core_config.main_logger.info("Finish simpleRender with code: {}\n\tJson count == total count.".format(rc))
                 exit(rc)
             fail_count += 1 # count of failes + 1 (for current test)
             current_test = getJsonCount() + 1
     
+    core_config.main_logger.info("Finish simpleRender with code: {}\n\tNo loop.".format(0))
     exit(0)
