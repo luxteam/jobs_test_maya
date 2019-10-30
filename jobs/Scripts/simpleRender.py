@@ -246,7 +246,9 @@ def main(args, startFrom, lastStatus):
                 for ch in child_processes:
                     try:
                         ch.terminate()
+                        time.sleep(10)
                         ch.kill()
+                        time.sleep(10)
                         status = ch.status()
                         core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
                     except psutil.NoSuchProcess:
@@ -254,7 +256,9 @@ def main(args, startFrom, lastStatus):
 
                 try:
                     p.terminate()
+                    time.sleep(10)
                     p.kill()
+                    time.sleep(10)
                     status = ch.status()
                     core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
                 except psutil.NoSuchProcess:
