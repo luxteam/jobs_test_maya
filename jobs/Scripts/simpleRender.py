@@ -9,7 +9,7 @@ import platform
 from shutil import copyfile
 import sys
 import re
-import logging
+import time
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 import jobs_launcher.core.config as core_config
@@ -95,7 +95,9 @@ def mayaKiller(kill=False):
                     try:
                         core_config.main_logger.error("Trying to kill process {}".format(maya_process))
                         maya_process.terminate()
+                        time.sleep(10)
                         maya_process.kill()
+                        time.sleep(10)
                         status = maya_process.status()
                         core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(maya_process, maya_process.name(), status))
                     except psutil.NoSuchProcess:
