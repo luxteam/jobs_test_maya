@@ -1,17 +1,19 @@
 import maya.mel as mel
 import maya.cmds as cmd
 import datetime
-import argparse
 import time
+import json
+import fireRender.rpr_material_browser
+import unicodedata
 
 
 class RPR_report_json:
-    def __init__(self, render_device, file_name, render_color_path, render_time, scene_name, test_group, test_case, difference_color, test_status, script_info):
+    def __init__(self, render_device = '', file_name = '', render_color_path = '', render_time = '', scene_name = '', test_group = '', test_case = '', difference_color = '', test_status = '', script_info = ''):
         self.render_device = render_device
         self.tool = mel.eval('about -version')
         self.date_time = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
-        #self.render_version = mel.eval('getRPRPluginVersion()')
-        #self.core_version = mel.eval('getRprCoreVersion()')
+        self.render_version = mel.eval('getRPRPluginVersion()')
+        self.core_version = mel.eval('getRprCoreVersion()')
         self.file_name = file_name
         self.render_color_path = "Color/MAYA_SM_000.jpg"
         self.render_time = 0
@@ -23,7 +25,7 @@ class RPR_report_json:
         self.script_info = script_info
 
     def toJSON(self):
-        self.__dict__
+        json.dumps(self)
 
 
 def rpr_render(test_case, script_info):
@@ -48,10 +50,10 @@ def rpr_render(test_case, script_info):
     mel.eval('fireRender -waitForItTwo')
     startTime = time.time()
     mel.eval('renderIntoNewWindow render')
-    cmd.sysFile(makeDir=("{work_dir}" + "/Color"))
+    cmd.sysFile(("{work_dir}" + "/Color"), makeDir=True)
     ff = "{work_dir}" + "/Color/" + test_case
-    cmd.renderWindowEditor(edit=1,  dst="color", renderView=True)
-    cmd.renderWindowEditor(edit=1, com=1, writeImage=ff, renderView=True)
+    cmd.renderWindowEditor('renderView', edit=1,  dst="color")
+    cmd.renderWindowEditor('renderView', edit=1, com=1, writeImage=ff)
     testTime = time.time() - startTime
 
     scene_name = cmd.file(q=True, sn=True, shn=True)
@@ -90,13 +92,12 @@ def check_test_cases_success_save(test_case, script_info):
 
 
 def rpr_success_save(test_case, script_info):
-    if(cmd.pluginInfo(query=True, loaded='RadeonProRender') == 0):
+    if(cmd.pluginInfo('RadeonProRender', query=True, loaded=True) == 0):
         mel.eval('loadPlugin RadeonProRender')
 
-    cmd.sysFile(makeDir=("{work_dir}" + "/Color"))
+    cmd.sysFile(("{work_dir}" + "/Color"), makeDir=True)
     work_folder = "{work_dir}/Color/" + test_case + ".jpg"
-    cmd.sysFile(
-        copy=((work_folder), ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg")))
+    cmd.sysFile(("{work_dir}" + "/../../../../jobs/Tests/pass.jpg"), copy=(work_folder))
 
     scene_name = cmd.file(q=True, sn=True, shn=True)
     if (scene_name == ""):
@@ -109,7 +110,6 @@ def rpr_success_save(test_case, script_info):
     report.render_device = render_device_name
     report.file_name = test_case + ".jpg"
     report.render_color_path = "Color/" + test_case + ".jpg"
-    report.render_time = 0
     report.scene_name = scene_name
     report.test_group = "{testType}"
     report.test_case = test_case
@@ -123,14 +123,12 @@ def rpr_success_save(test_case, script_info):
 
 
 def rpr_fail_save(test_case, script_info):
-    if(cmd.pluginInfo(query=True, loaded='RadeonProRender') == 0):
+    if(cmd.pluginInfo('RadeonProRender', query=True, loaded=True) == 0):
         mel.eval('loadPlugin RadeonProRender')
 
-    cmd.sysFile(makeDir=("{work_dir}" + "/Color"))
+    cmd.sysFile(("{work_dir}" + "/Color"), makeDir=True)
     work_folder = "{work_dir}/Color/" + test_case + ".jpg"
-    cmd.sysFile(
-        copy=((work_folder), ("{work_dir}" + "/../../../../jobs/Tests/failed.jpg")))
-
+    cmd.sysFile(("{work_dir}" + "/../../../../jobs/Tests/failed.jpg"), copy=(work_folder))
     scene_name = cmd.file(q=True, sn=True, shn=True)
     if (scene_name == ""):
         scene_name = "untitled"
@@ -142,7 +140,6 @@ def rpr_fail_save(test_case, script_info):
     report.render_device = render_device_name
     report.file_name = test_case + ".jpg"
     report.render_color_path = "Color/" + test_case + ".jpg"
-    report.render_time = 0
     report.scene_name = scene_name
     report.test_group = "{testType}"
     report.test_case = test_case
@@ -159,5 +156,6 @@ def validateFiles():
     unresolved_files = cmd.filePathEditor(
         query=True, listFiles="", unresolved=True, attributeOnly=True)
     new_path = "{res_path}"
-    for item in unresolved_files:
-        cmd.filePathEditor(repath=new_path, recursive=True, ra=1, item=True)
+    if (unresolved_files is not None):
+        for item in unresolved_files:
+            cmd.filePathEditor(item, repath=new_path, recursive=True, ra=1)
