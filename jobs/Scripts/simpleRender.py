@@ -64,7 +64,7 @@ def get_windows_titles():
             return titles
     except Exception as err:
         core_config.main_logger.error(
-            "Exception has occured while pull windows titles: {}".format(str(err)))
+            "Exception has occurred while pull windows titles: {}".format(str(err)))
 
     return []
 
@@ -239,11 +239,17 @@ if __name__ == "__main__":
     while True:
         rc = main(args)
         
-    try:
-        cases = json.load(open(os.path.realpath(os.path.join(work_dir, 'test_cases.json'))))
-    except:
-        cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
+        try:
+            cases = json.load(open(os.path.realpath(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+        except:
+            cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
-    for case in cases:
-        if (case['status'] == 'failed'):
-            exit(rc)
+        active_cases = 0
+
+        for case in cases:
+            if ((case['status'] == 'failed') & (args.fail_count != 0)):
+                exit(rc)
+            if (case['status'] == 'active'):
+                active_cases += 1
+        if (active_cases == 0):
+            exit()
