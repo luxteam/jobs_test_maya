@@ -1,0 +1,467 @@
+[
+    {
+        "case": "MAYA_SM_001", 
+        "status": "active", 
+        "functions": [
+            "check_test_cases_success_save"
+        ], 
+        "script_info": [
+            "Installing with default settings"
+        ]
+    }, 
+    {
+        "case": "MAYA_SM_002", 
+        "status": "active", 
+        "functions": [
+            "check_test_cases_success_save"
+        ], 
+        "script_info": [
+            "Change renderer from default to RPR"
+        ]
+    }, 
+    {
+        "case": "MAYA_SM_003", 
+        "status": "active", 
+        "functions": [
+            "import_fbx()", 
+            "rpr_render(test_case, script_info)", 
+            "delete_fbx()"
+        ], 
+        "script_info": [
+            "Test import FBX", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "default.ma"
+    }, 
+    {
+        "case": "MAYA_SM_004", 
+        "status": "active", 
+        "functions": [
+            "import_obj()", 
+            "rpr_render(test_case, script_info)", 
+            "delete_obj()"
+        ], 
+        "script_info": [
+            "Test import OBJ", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "default.ma"
+    }, 
+    {
+        "case": "MAYA_SM_005", 
+        "status": "active", 
+        "functions": [
+            "check_test_cases_success_save"
+        ], 
+        "script_info": [
+            "Open RPR scene"
+        ]
+    }, 
+    {
+        "case": "MAYA_SM_006", 
+        "status": "active", 
+        "functions": [
+            "create_IBL()", 
+            "rpr_render(test_case, script_info)", 
+            "delete_IBL()"
+        ], 
+        "script_info": [
+            "Create IBL", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_007", 
+        "status": "active", 
+        "functions": [
+            "create_IBL()", 
+            "update_IBL_hdr()", 
+            "rpr_render(test_case, script_info)", 
+            "delete_IBL()"
+        ], 
+        "script_info": [
+            "Test IBL HDR", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_008", 
+        "status": "active", 
+        "functions": [
+            "create_IBL()", 
+            "update_IBL_exr()", 
+            "rpr_render(test_case, script_info)", 
+            "delete_IBL()"
+        ], 
+        "script_info": [
+            "Test IBL EXR", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_009", 
+        "status": "active", 
+        "functions": [
+            "create_sun_sky()", 
+            "rpr_render(test_case, script_info)", 
+            "delete_sun_sky()"
+        ], 
+        "script_info": [
+            "Create Sun&Sky", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_010", 
+        "status": "active", 
+        "functions": [
+            "create_ies_light()", 
+            "rpr_render(test_case, script_info)", 
+            "delete_ies_light()"
+        ], 
+        "script_info": [
+            "Create IES Light", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_011", 
+        "status": "active", 
+        "script_info": [
+            "Render 1 pass"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma", 
+        "pass_count": 1
+    }, 
+    {
+        "case": "MAYA_SM_012", 
+        "status": "active", 
+        "script_info": [
+            "Render 100 pass"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma", 
+        "pass_count": 100
+    }, 
+    {
+        "case": "MAYA_SM_013", 
+        "status": "active", 
+        "script_info": [
+            "Render 500 pass"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma", 
+        "pass_count": 500
+    }, 
+    {
+        "case": "MAYA_SM_014", 
+        "status": "active", 
+        "functions": [
+            "activate_tone_mapping()", 
+            "rpr_render(test_case, script_info)", 
+            "deactivate_tone_mapping()"
+        ], 
+        "script_info": [
+            "Tone Mapping", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_015", 
+        "status": "active", 
+        "functions": [
+            "activate_render_stamp()", 
+            "rpr_render(test_case, script_info)", 
+            "deactivate_render_stamp()"
+        ], 
+        "script_info": [
+            "Render Stamp", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_016", 
+        "status": "active", 
+        "functions": [
+            "activate_wireframe_mode()", 
+            "rpr_render(test_case, script_info)", 
+            "deactivate_wireframe_mode()"
+        ], 
+        "script_info": [
+            "Render mode wireframe", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_017", 
+        "status": "skipped", 
+        "functions": [
+            "activate_medium_quality()", 
+            "rpr_render(test_case, script_info)", 
+            "deactivate_medium_quality()"
+        ], 
+        "script_info": [
+            "Quality medium", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_018", 
+        "status": "active", 
+        "functions": [
+            "change_image_size_hd720()", 
+            "rpr_render(test_case, script_info)", 
+            "change_image_size_standart()"
+        ], 
+        "script_info": [
+            "Image Size 1280 720", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_019", 
+        "status": "active", 
+        "functions": [
+            "change_image_size_custom()", 
+            "rpr_render(test_case, script_info)", 
+            "change_image_size_standart()"
+        ], 
+        "script_info": [
+            "Image Size 1500 1125", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_020", 
+        "status": "active", 
+        "functions": [
+            "activate_png_format()", 
+            "rpr_render(test_case, script_info)", 
+            "cmd.sysFile(('{work_dir}' + '/../../../../jobs/Tests/pass.jpg'), copy=('{work_dir}/Color/MAYA_SM_020.jpg'))"
+        ], 
+        "script_info": [
+            "Save image as png", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_021", 
+        "status": "active", 
+        "functions": [
+            "activate_jpg_format()", 
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Save image as jpg", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_022", 
+        "status": "active", 
+        "functions": [
+            "activate_denoiser_bilateral()", 
+            "rpr_render(test_case, script_info)", 
+            "deactivate_denoiser()"
+        ], 
+        "script_info": [
+            "Denoiser Bilateral default", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_023", 
+        "status": "active", 
+        "functions": [
+            "activate_denoiser_lwr()", 
+            "rpr_render(test_case, script_info)", 
+            "deactivate_denoiser()"
+        ], 
+        "script_info": [
+            "Denoiser LWR default", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_024", 
+        "status": "active", 
+        "functions": [
+            "activate_denoiser_eaw()", 
+            "rpr_render(test_case, script_info)", 
+            "deactivate_denoiser()"
+        ], 
+        "script_info": [
+            "Denoiser EAW default", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_025", 
+        "status": "active", 
+        "functions": [
+            "create_area_light()", 
+            "rpr_render(test_case, script_info)", 
+            "delete_area_light()"
+        ], 
+        "script_info": [
+            "Base Light Area Light", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_026", 
+        "status": "active", 
+        "functions": [
+            "activate_uv()", 
+            "rpr_render(test_case, script_info)", 
+            "deactivate_uv()"
+        ], 
+        "script_info": [
+            "AOV UV", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_027", 
+        "status": "active", 
+        "functions": [
+            "create_physical_light()", 
+            "rpr_render(test_case, script_info)", 
+            "delete_physical_light()"
+        ], 
+        "script_info": [
+            "Physical Light", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_028", 
+        "status": "skipped", 
+        "functions": [
+            "import_rpr_matlib()", 
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Assign material from Mat Library", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_029", 
+        "status": "active", 
+        "functions": [
+            "create_and_asign_pbr()", 
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Assign Pbr to object", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_030", 
+        "status": "active", 
+        "functions": [
+            "create_and_asign_uber()", 
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Assign Uber to object", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_031", 
+        "status": "active", 
+        "functions": [
+            "duplicate_500_instances()", 
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Instances", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "instances.ma"
+    }, 
+    {
+        "case": "MAYA_SM_032", 
+        "status": "active", 
+        "functions": [
+            "multiple_ies_lights()", 
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "12 lights in one scene", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "IES.ma"
+    }, 
+    {
+        "case": "MAYA_SM_033", 
+        "status": "active", 
+        "functions": [
+            "shadow_catcher_test()", 
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "AOV Shadow Catcher", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "maya_shaderball.ma"
+    }, 
+    {
+        "case": "MAYA_SM_034", 
+        "status": "active", 
+        "script_info": [
+            "SSS", 
+            "Pass Limit: 100"
+        ], 
+        "scene": "Uber_SSS.ma", 
+        "pass_count": 100
+    }, 
+    {
+        "case": "MAYA_SM_035", 
+        "status": "active", 
+        "functions": [
+            "maxRayDepth_15()", 
+            "setIterations_400()", 
+            "rpr_render(test_case, script_info)", 
+            "maxRayDepth_default()", 
+            "setIterations_default()"
+        ], 
+        "script_info": [
+            "SSS Night", 
+            "Pass Limit: 400"
+        ], 
+        "scene": "Uber_SSS_night.ma"
+    }, 
+    {
+        "case": "MAYA_SM_036", 
+        "status": "active", 
+        "script_info": [
+            "Displacement", 
+            "Pass Limit: 50"
+        ], 
+        "scene": "displacement.ma"
+    }
+]

@@ -83,6 +83,7 @@ def createArgsParser():
     parser.add_argument('--resolution_y', required=True)
     parser.add_argument('--testCases', required=True)
     parser.add_argument('--SPU', required=False, default=10)
+    parser.add_argument('--fail_count', required=False, default=0, type=int)
 
     return parser
 
@@ -99,7 +100,7 @@ def check_licenses(res_path, maya_scenes):
             f.write(scene_file)
 
 
-def main(args, startFrom, lastStatus):
+def main(args):
     testsList = None
     script_template = None
     cmdScriptPath = None
@@ -133,35 +134,35 @@ def main(args, startFrom, lastStatus):
                                     resolution_y=args.resolution_y, testCases=testCases_mel,
                                     SPU=args.SPU)
 
-    # if lastStatus == "last_fail":
-    #     melScript = melScript.replace(
-    #         "@check_test_cases", "@check_test_cases_fail_save")
-
-    # original_tests = melScript[melScript.find("<-- start -->") + 13: melScript.find("// <-- end -->")]
-    # modified_tests = original_tests.split("@")[startFrom:]
-    # replace_tests = "\n\t"
-    # for each in modified_tests:
-    #     replace_tests += each + "\n\t"
-    # melScript = melScript.replace(original_tests, replace_tests)
-
-    # if lastStatus == "fail":
-    #     fail_test = original_tests.split("@")[startFrom-1:startFrom]
-    #     fail_test_ = ""
-    #     for each in fail_test:
-    #         each = each.replace("check_test_cases", "check_test_cases_fail_save")
-    #         fail_test_ += each + "\n\t"
-    #     melScript = melScript.replace("// <-- fail -->", fail_test_)
-
-    # if lastStatus == "no scene":
-    #     fail_test = original_tests.split("@")[startFrom:]
-    #     fail_test_ = ""
-    #     for each in fail_test:
-    #         each = each.replace("check_test_cases", "check_test_cases_fail_save")
-    #         fail_test_ += each + "\n\t"
-    #     melScript = melScript.replace("// <-- fail -->", fail_test_)
-
     with open(os.path.join(args.output, 'script.py'), 'w') as file:
         file.write(melScript)
+
+    try:
+        cases = json.load(open(os.path.realpath(os.path.join(work_dir, 'test_cases.json'))))
+    except:
+        cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
+
+    for case in cases:
+        if (case['status'] != 'done'):
+            with open(os.path.join(work_dir, (case['case'] + core_config.CASE_REPORT_SUFFIX)), 'w') as f:
+                if (case["status"] == 'inprogress'):
+                    try: 
+                        case['failed_count'] += 1
+                    except:
+                        case['failed_count'] = 1
+
+                    if ((args.fail_count < case['failed_count']) & (args.fail_count != 0)):
+                        case['status']='active'
+                    else:
+                        case['status']='failed'
+
+                template = core_config.RENDER_REPORT_BASE
+                template["test_case"] = case["case"]
+                template["test_status"] = case["status"]
+                f.write(json.dumps(template))
+
+    with open(os.path.join(work_dir, 'test_cases.json'), "w+") as f:
+        json.dump(cases, f, indent=4)
 
     system_pl = platform.system()
     if system_pl == 'Windows':
@@ -233,60 +234,16 @@ if __name__ == "__main__":
     except OSError as e:
         pass
 
-    def getJsonCount():
-        return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
-
-    def totalCount():
-        try:
-            cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
-                __file__),  '..', 'Tests', args.testType, 'TestCases.json'))))  # TODO normal path
-            return cases.__len__()
-        except OSError as e:
-            return -1
-
-    total_count = totalCount()
     fail_count = 0
-    current_test = 1  # start from 1st test
-    last_status = 0  # 0 - success status
-    it = 0
 
-    while current_test <= total_count:
+    while True:
+        rc = main(args)
+        
+    try:
+        cases = json.load(open(os.path.realpath(os.path.join(work_dir, 'test_cases.json'))))
+    except:
+        cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
-        it += 1
-
-        with open(os.path.join(args.output, 'log_status.txt'), 'a') as f:
-            f.write("Iter:" + str(it) + " | current test: " + str(current_test) + " | fail count: " +
-                    str(fail_count) + " | last_status: " + str(last_status) + " | json: " +
-                    str(getJsonCount()) + " | total count: " + str(total_count) + "\n")
-
-        if last_status and fail_count == 3:
-            # Start from n+1 test. n - fail.
-            rc = main(args, current_test, "fail")
-        elif last_status and fail_count == -1:
-            rc = main(args, current_test, "last_fail")  # last test - fail.
-        else:
-            # Start from 1st test (ok - random word)
-            rc = main(args, current_test, "ok")
-
-        if current_test != getJsonCount() + 1:  # count to zero if failes another test
-            fail_count = 0
-
-        last_status = rc
-        if not last_status:
-            if not getJsonCount():
-                rc = main(args, current_test, "no scene")
-            exit(rc)  # finish work. 0 - success status.
-        elif last_status and fail_count == 2:
-            if total_count < getJsonCount() + 2:  # last test failed
-                fail_count = -1
-                current_test = getJsonCount() + 1
-            else:  # not last test failed
-                fail_count += 1
-                current_test = getJsonCount() + 2  # mark as fail test and go to next test
-        elif last_status:
-            if getJsonCount() == total_count:
-                exit(rc)
-            fail_count += 1  # count of failes + 1 (for current test)
-            current_test = getJsonCount() + 1
-
-    exit(0)
+    for case in cases:
+        if (case['status'] == 'failed'):
+            exit(rc)
