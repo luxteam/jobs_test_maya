@@ -12,4 +12,4 @@ cmds.setAttr("RadeonProRenderGlobals.completionCriteriaIterations", 1)
 cmds.fireRender(waitForItTwo=True)
 mel.eval("renderIntoNewWindow render")
 
-cmds.evalDeferred(cmds.quit(abort=True))
+cmds.evalDeferred("cmds.quit(abort=True)")
