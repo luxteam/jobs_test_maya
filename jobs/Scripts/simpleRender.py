@@ -118,6 +118,7 @@ def main(args):
         with open(os.path.join(os.path.dirname(__file__), "Templates", "base_function.py")) as f:
             base = f.read()
     except OSError as e:
+        core_config.main_logger.error(str(e))
         return 1
 
     maya_scenes = set(re.findall(r"\w*\.ma\"", script_template))
@@ -154,7 +155,7 @@ def main(args):
                     if ((args.fail_count < case['failed_count']) & (args.fail_count != 0)):
                         case['status']='active'
                     else:
-                        case['status']='failed'
+                        case['status']='fail'
 
                 template = core_config.RENDER_REPORT_BASE
                 template["test_case"] = case["case"]
@@ -163,7 +164,7 @@ def main(args):
 
     with open(os.path.join(work_dir, 'test_cases.json'), "w+") as f:
         json.dump(cases, f, indent=4)
-
+        
     system_pl = platform.system()
     if system_pl == 'Windows':
         cmdRun = '''
@@ -193,20 +194,18 @@ def main(args):
                      stderr=subprocess.PIPE, shell=True)
     rc = -1
 
-    core_config.main_logger.info("go to infinity")
     while True:
         try:
             rc = p.communicate(timeout=20)
-            core_config.main_logger.info("go to infinity")
 
         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
             fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                                    'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
                                    'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
                                    'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
-            core_config.main_logger.info(str(fatal_errors_titles))
-            core_config.main_logger.info(str(get_windows_titles()))
-            if set(fatal_errors_titles).intersection(get_windows_titles()):
+            fatal_window = set(fatal_errors_titles).intersection(get_windows_titles())
+            if (fatal_window is not None):
+                core_config.main_logger.error('Fatal window found: ' + str(fatal_window))
                 rc = -1
                 try:
                     error_screen = pyscreenshot.grab()
@@ -249,7 +248,7 @@ if __name__ == "__main__":
         for case in cases:
             if ((case['status'] == 'failed') & (args.fail_count != 0)):
                 exit(rc)
-            if (case['status'] == 'active'):
+            if ((case['status'] == 'active')|(case['status'] == 'fail')):
                 active_cases += 1
         if (active_cases == 0):
             exit()
