@@ -435,7 +435,7 @@ global proc import_rpr_matlib(){{
 
 	RPRXMLImport -file $material_path -ii false -mn "materialTestNode";
 	select -r Lamborginhi_Aventador;
-	sets -e -forceElement "materialTestNodeSG";
+	hyperShade -assign materialTestNode;
 }}
 
 
