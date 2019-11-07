@@ -9,9 +9,15 @@ import platform
 from shutil import copyfile
 import sys
 import re
+from datetime import datetime
+from shutil import copyfile
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 import jobs_launcher.core.config as core_config
+from jobs_launcher.core.system_info import get_gpu
+
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
+
 
 if platform.system() == 'Darwin':
     # from PyObjCTools import AppHelper
@@ -190,7 +196,6 @@ def main(args, startFrom, lastStatus):
         try:
             rc = p.communicate(timeout=20)
             core_config.main_logger.info("go to infinity")
-
         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
             fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
@@ -221,7 +226,8 @@ if __name__ == "__main__":
     args = createArgsParser().parse_args()
 
     try:
-        os.makedirs(args.output)
+        color_path = os.path.join(args.output, 'Color')
+        os.makedirs(color_path)
     except OSError as e:
         pass
 
@@ -236,8 +242,54 @@ if __name__ == "__main__":
         except OSError as e:
             return -1
 
+    def prepare_reports():
+        
+        # find cases in template
+        with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
+            script_template = f.read()
+
+        patterns = ['@.*MAYA_\w*', '//.*MAYA_\w*']
+        cases = []
+        for pattern in patterns:
+            cases += re.findall(pattern, script_template)
+
+        GPU = get_gpu()
+        # create reports
+        for case in cases:
+            name = re.search('MAYA_\w*', case).group(0)
+            
+            report = core_config.RENDER_REPORT_BASE
+            report["test_case"] = name
+            report["file_name"] = "{name}.jpg".format(name=name)
+            report["test_group"] = args.testType
+            report["date_time"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
+            report["tool"] = "Maya 2019"
+            report["render_color_path"] = "Color/{name}".format(name=name)
+            report["render_device"] = GPU
+            report["render_mode"] = args.render_device 
+
+            img_prefix_path = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img')
+
+            if "//" in case:
+                status = "skipped"
+                img_path = os.path.join(img_prefix_path, 'skipped.jpg')
+            elif "@" in case:
+                status = "failed"
+                img_path = os.path.join(img_prefix_path, 'error.jpg')
+
+            report["test_status"] = status
+            copyfile(img_path, os.path.join(color_path, report["file_name"]))
+
+            with open(os.path.join(args.output, "{name}_RPR.json".format(name=name)), 'w') as f:
+                json.dump([report], f, indent=4)
+
+    try:
+        prepare_reports()
+    except Exception as err:
+        core_config.main_logger.error("Can't create reports:" + str(err))
+
     total_count = totalCount()
-    fail_count = 0 
+    fail_count = 0
     current_test = 1 # start from 1st test
     last_status = 0 # 0 - success status
     it = 0
