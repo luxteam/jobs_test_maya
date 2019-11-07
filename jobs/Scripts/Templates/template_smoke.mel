@@ -525,7 +525,7 @@ global proc shadow_catcher_test(){{
 	setAttr "RadeonProRenderGlobals.aovOpacity" 1;
 	setAttr "RadeonProRenderGlobals.aovBackground" 1;
 	setAttr "RadeonProRenderGlobals.aovShadowCatcher" 1;
-	string $rpr = `shadingNode -asShader "RPRShadowCatcherMaterial"`; 
+	string $rpr = `shadingNode -asShader "RPRMatteMaterial"`;
 	string $sge = $rpr + "SG"; 
 	sets -renderable true -noSurfaceShader true -empty -name $sge; 
 	connectAttr -f ($rpr + ".outColor") ($sge + ".surfaceShader"); 
