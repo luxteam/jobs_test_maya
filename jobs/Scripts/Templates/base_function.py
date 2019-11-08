@@ -3,6 +3,7 @@ import maya.cmds as cmd
 import datetime
 import time
 import json
+import re
 import os.path as path
 import fireRender.rpr_material_browser
 
@@ -191,6 +192,7 @@ def main():
 			with open(path.join(WORK_DIR, "test_cases.json"), 'w') as file:
 				json.dump(cases, file, indent=4)
 
+			print(case['case'])
 			case_function(case)
 
 			if (case['status'] == 'inprogress'):

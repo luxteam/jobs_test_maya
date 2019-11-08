@@ -49,10 +49,13 @@ def prerender(test_case, passCount, script_info, scene):
 		for case in cases:
 			if (case['case'] == test_case):
 				for function in case['functions']:
-					eval(function)
+					if (re.match('^\w+ = ', function) is not None):
+						exec(function)
+					else:
+						eval(function)
 	except Exception as e:
-		if (str(e) != 'functions'):
-			print(e)
+		if (e.message != 'functions'):
+			print('Error: ' + str(e))
 		rpr_render(test_case, script_info)
 
 
