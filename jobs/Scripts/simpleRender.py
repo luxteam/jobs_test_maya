@@ -264,7 +264,7 @@ if __name__ == "__main__":
             report["test_group"] = args.testType
             report["date_time"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
             report["tool"] = "Maya 2019"
-            report["render_color_path"] = "Color/{name}".format(name=name)
+            report["render_color_path"] = "Color/{name}.jpg".format(name=name)
             report["render_device"] = GPU
             report["render_mode"] = args.render_device 
 
