@@ -16,16 +16,15 @@ RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
 TEST_CASES = '{testCases}'
 SPU = {SPU}
-
+LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 class RPR_report_json:
-	def __init__(self, file_name='', render_color_path='', render_time='', test_case='', difference_color='', test_status='', script_info=[]):
+	def __init__(self, render_color_path='', render_time='', test_case='', difference_color='', test_status='', script_info=[], render_log=''):
 		self.render_device = cmd.optionVar(q="RPR_DevicesName")[0]
 		self.tool = mel.eval('about -iv')
 		self.date_time = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
 		self.render_version = mel.eval('getRPRPluginVersion()')
 		self.core_version = mel.eval('getRprCoreVersion()')
-		self.file_name = file_name
 		self.render_color_path = path.join("Color", "MAYA_SM_000.jpg")
 		self.render_time = 0
 		self.scene_name = get_scene_name()
@@ -34,15 +33,16 @@ class RPR_report_json:
 		self.difference_color = difference_color
 		self.test_status = test_status
 		self.script_info = script_info
+		self.render_log = render_log
 
-	def toJSON(self, path):
-		with open(path, 'r') as file:
+	def toJSON(self, path_to_file):
+		with open(path_to_file, 'r') as file:
 			report = json.loads(file.read())
 
-		report["file_name"] = self.file_name
+		report["file_name"] = self.test_case + ".jpg"
 		report["date_time"] = self.date_time
 		report["script_info"] = self.script_info
-		report["render_color_path"] = self.render_color_path
+		report["render_color_path"] = path.join("Color", report["file_name"])
 		report["test_case"] = self.test_case
 		report["render_version"] = self.render_version
 		report["test_status"] = self.test_status
@@ -53,9 +53,14 @@ class RPR_report_json:
 		report["difference_color"] = self.difference_color
 		report["core_version"] = self.core_version
 		report["render_device"] = self.render_device
+		report["render_log"] = render_tool_log_path(self.test_case)
 
-		with open(path, 'w') as file:
+		with open(path_to_file, 'w') as file:
 			file.write(json.dumps([report], indent=4))
+
+
+def render_tool_log_path(name):
+	return path.join(LOGS_DIR, name + ".log")
 
 
 def get_scene_name():
@@ -63,6 +68,30 @@ def get_scene_name():
 	if (scene_name == ""):
 		scene_name = "untitled"
 	return scene_name
+
+
+def check_test_cases_fail_save(test_case, passCount, script_info, scene):
+	test = TEST_CASES
+	tests = test.split(',')
+
+	if (test != "all"):
+		for test in tests:
+			if test == test_case:
+				rpr_fail_save(test_case, script_info)
+	else:
+		rpr_fail_save(test_case, script_info)
+
+
+
+def check_test_cases(test_case, passCount, script_info, scene):
+	test = TEST_CASES
+	tests = test.split(',')
+	if (test != "all"):
+		for test in tests:
+			if test == test_case:
+				prerender(test_case, passCount, script_info, scene)
+	else:
+		prerender(test_case, passCount, script_info, scene)
 
 
 def rpr_render(test_case, script_info):
@@ -91,8 +120,6 @@ def rpr_render(test_case, script_info):
 	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
 
 	report = RPR_report_json()
-	report.file_name = test_case + ".jpg"
-	report.render_color_path = path.join("Color", report.file_name)
 	report.render_time = test_time
 	report.test_case = test_case
 	report.difference_color = "not compared yet"
@@ -125,8 +152,6 @@ def rpr_success_save(test_case, script_info):
 	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
 
 	report = RPR_report_json()
-	report.file_name = test_case + ".jpg"
-	report.render_color_path = path.join("Color", report.file_name)
 	report.test_case = test_case
 	report.difference_color = "no compare"
 	report.test_status = "passed"
@@ -147,8 +172,6 @@ def rpr_fail_save(test_case, script_info):
 	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
 
 	report = RPR_report_json()
-	report.file_name = test_case + ".jpg"
-	report.render_color_path = path.join("Color", report.file_name)
 	report.test_case = test_case
 	report.difference_color = "no compare"
 	report.test_status = "error"
@@ -182,6 +205,8 @@ def main():
 
 	check_rpr_load()
 
+	cmd.sysFile(LOGS_DIR, makeDir=True)
+
 	with open(path.join(WORK_DIR, "test_cases.json"), 'r') as json_file:
 		cases = json.load(json_file)
 
@@ -192,7 +217,12 @@ def main():
 			with open(path.join(WORK_DIR, "test_cases.json"), 'w') as file:
 				json.dump(cases, file, indent=4)
 
-			print(case['case'])
+			if (not path.exists(render_tool_log_path(case['case']))):
+				with open(render_tool_log_path(case['case']), 'w'):
+					pass
+
+			cmd.scriptEditorInfo(historyFilename=render_tool_log_path(
+				case['case']), writeHistory=True)
 			case_function(case)
 
 			if (case['status'] == 'inprogress'):

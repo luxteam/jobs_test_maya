@@ -1,28 +1,5 @@
 
 
-def check_test_cases_fail_save(test_case, passCount, script_info, scene):
-	test = TEST_CASES
-	tests = test.split(',')
-
-	if (test != "all"):
-		for test in tests:
-			if test == test_case:
-				rpr_fail_save(test_case, script_info)
-	else:
-		rpr_fail_save(test_case, script_info)
-
-
-def check_test_cases(test_case, passCount, script_info, scene):
-	test = TEST_CASES
-	tests = test.split(',')
-	if (test != "all"):
-		for test in tests:
-			if test == test_case:
-				prerender(test_case, passCount, script_info, scene)
-	else:
-		prerender(test_case, passCount, script_info, scene)
-
-
 def prerender(test_case, passCount, script_info, scene):
 	scene_name = cmd.file(q=True, sn=True, shn=True)
 	if (scene_name != scene):

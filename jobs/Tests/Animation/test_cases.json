@@ -1,0 +1,164 @@
+[
+    {
+        "case": "MAYA_RS_AN_001",
+        "status": "active",
+        "frame": 91,
+        "script_info": [
+            "Frame: 91"
+        ],
+        "scene": "KeyedAnimation.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_002",
+        "status": "active",
+        "frame": 92,
+        "script_info": [
+            "Frame: 92"
+        ],
+        "scene": "KeyedAnimation.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_003",
+        "status": "active",
+        "frame": 93,
+        "script_info": [
+            "Frame: 93"
+        ],
+        "scene": "KeyedAnimation.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_004",
+        "status": "active",
+        "frame": 201,
+        "script_info": [
+            "Frame: 201"
+        ],
+        "scene": "KeyedAnimation.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_005",
+        "status": "active",
+        "frame": 202,
+        "script_info": [
+            "Frame: 202"
+        ],
+        "scene": "KeyedAnimation.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_006",
+        "status": "active",
+        "frame": 203,
+        "script_info": [
+            "Frame: 203"
+        ],
+        "scene": "KeyedAnimation.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_007",
+        "status": "active",
+        "frame": 291,
+        "script_info": [
+            "Frame: 291"
+        ],
+        "scene": "KeyedAnimation.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_008",
+        "status": "active",
+        "frame": 292,
+        "script_info": [
+            "Frame: 292"
+        ],
+        "scene": "KeyedAnimation.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_009",
+        "status": "active",
+        "frame": 293,
+        "script_info": [
+            "Frame: 293"
+        ],
+        "scene": "KeyedAnimation.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_010",
+        "status": "active",
+        "frame": 21,
+        "script_info": [
+            "Frame: 21"
+        ],
+        "scene": "NonKeyed_Rigid.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_011",
+        "status": "active",
+        "frame": 22,
+        "script_info": [
+            "Frame: 22"
+        ],
+        "scene": "NonKeyed_Rigid.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_012",
+        "status": "active",
+        "frame": 23,
+        "script_info": [
+            "Frame: 23"
+        ],
+        "scene": "NonKeyed_Rigid.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_013",
+        "status": "active",
+        "frame": 201,
+        "script_info": [
+            "Frame: 201"
+        ],
+        "scene": "NonKeyed_Rigid.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_014",
+        "status": "active",
+        "frame": 202,
+        "script_info": [
+            "Frame: 202"
+        ],
+        "scene": "NonKeyed_Rigid.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_015",
+        "status": "active",
+        "frame": 203,
+        "script_info": [
+            "Frame: 203"
+        ],
+        "scene": "NonKeyed_Rigid.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_016",
+        "status": "active",
+        "frame": 301,
+        "script_info": [
+            "Frame: 301"
+        ],
+        "scene": "NonKeyed_Rigid.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_017",
+        "status": "active",
+        "frame": 302,
+        "script_info": [
+            "Frame: 302"
+        ],
+        "scene": "NonKeyed_Rigid.ma"
+    },
+    {
+        "case": "MAYA_RS_AN_018",
+        "status": "active",
+        "frame": 303,
+        "script_info": [
+            "Frame: 303"
+        ],
+        "scene": "NonKeyed_Rigid.ma"
+    }
+]

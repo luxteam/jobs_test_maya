@@ -15,6 +15,7 @@ sys.path.append(os.path.abspath(os.path.join(
 
 import jobs_launcher.core.config as core_config
 
+
 if platform.system() == 'Darwin':
 	# from PyObjCTools import AppHelper
 	# import objc
@@ -102,7 +103,7 @@ def check_licenses(res_path, maya_scenes):
 			f.write(scene_file)
 
 
-def main(args, iter):
+def main(args):
 	testsList = None
 	script_template = None
 	cmdScriptPath = None
@@ -168,25 +169,25 @@ def main(args, iter):
 
 	with open(os.path.join(work_dir, 'test_cases.json'), "w+") as f:
 		json.dump(cases, f, indent=4)
-
+	
 	system_pl = platform.system()
 	if system_pl == 'Windows':
 		cmdRun = '''
-		set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool{iter}.log 
+		set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
 		set PYTHONPATH=%cd%;PYTHONPATH
 		set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
 		"{tool}" -command "python(\\"import script\\"); python(\\"script.main()\\");"''' \
-			.format(tool=args.tool, iter=iter)
+				.format(tool=args.tool)
 
 		cmdScriptPath = os.path.join(args.output, 'script.bat')
 		with open(cmdScriptPath, 'w') as file:
 			file.write(cmdRun)
 	elif system_pl == 'Darwin':
 		cmdRun = '''
-		export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool{iter}.log
+		export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
 		export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
 		"{tool}" -command "source script.mel; evalDeferred -lp (main());"'''\
-		.format(tool=args.tool, iter=iter)
+		.format(tool=args.tool)
 
 		cmdScriptPath = os.path.join(args.output, 'script.sh')
 		with open(cmdScriptPath, 'w') as file:
@@ -208,7 +209,8 @@ def main(args, iter):
 								   'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
 								   'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
 
-			fatal_window = [window for window in fatal_errors_titles if window in set(get_windows_titles())]
+			fatal_window = [window for window in fatal_errors_titles if window in set(
+				get_windows_titles())]
 
 			if (fatal_window):
 				core_config.main_logger.error(
@@ -241,12 +243,9 @@ if __name__ == "__main__":
 		pass
 
 	fail_count = 0
-	iter = 0
 
 	while True:
-		rc = main(args, iter)
-
-		iter += 1
+		rc = main(args)
 
 		try:
 			cases = json.load(open(os.path.realpath(os.path.join(
