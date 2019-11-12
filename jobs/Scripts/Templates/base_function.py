@@ -14,7 +14,7 @@ RES_PATH = '{res_path}'
 PASS_LIMIT = {pass_limit}
 RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
-TEST_CASES = '{testCases}'
+TEST_CASES = "{testCases}"
 SPU = {SPU}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 

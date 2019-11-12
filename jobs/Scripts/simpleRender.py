@@ -147,6 +147,14 @@ def main(args):
 	except:
 		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
 			__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
+	
+	temp = []
+	if (testCases_mel != "all"):
+		for case in cases:
+			if (case['case'] in testCases_mel):
+				temp.append(case)
+
+	cases = temp
 
 	for case in cases:
 		if (case['status'] != 'done'):
@@ -186,7 +194,7 @@ def main(args):
 		cmdRun = '''
 		export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
 		export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
-		"{tool}" -command "source script.mel; evalDeferred -lp (main());"'''\
+		"{tool}" -command "source script.py; evalDeferred -lp (main());"'''\
 		.format(tool=args.tool)
 
 		cmdScriptPath = os.path.join(args.output, 'script.sh')
