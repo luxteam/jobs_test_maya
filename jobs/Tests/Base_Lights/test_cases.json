@@ -1,0 +1,537 @@
+[
+    {
+        "case": "MAYA_L_BL_001",
+        "status": "active",
+        "script_info": [
+            "Ambient light. Intensity: 1. Ambient Shade: 0.450 (standart)"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, '0', 0,0,0, '1')')",
+            "cmd.setAttr('ambientLight1.translateX', 267)",
+            "cmd.setAttr('ambientLight1.translateY', 40)",
+            "cmd.setAttr('ambientLight1.translateZ', 1184)",
+            "cmd.setAttr('ambientLightShape1.intensity', 1)",
+            "cmd.setAttr('ambientLightShape1.ambientShade', 0.450)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('ambientLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_002",
+        "status": "active",
+        "script_info": [
+            "Ambient light. Intensity: 3. Ambient Shade: 0.450 (standart)"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, '0', 0,0,0, '1')')",
+            "cmd.setAttr('ambientLight1.translateX', 267)",
+            "cmd.setAttr('ambientLight1.translateY', 40)",
+            "cmd.setAttr('ambientLight1.translateZ', 1184)",
+            "cmd.setAttr('ambientLightShape1.intensity', 3)",
+            "cmd.setAttr('ambientLightShape1.ambientShade', 0.450)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('ambientLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_003",
+        "status": "active",
+        "script_info": [
+            "Ambient light. Intensity: 3. Ambient Shade: 0"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, '0', 0,0,0, '1')')",
+            "cmd.setAttr('ambientLight1.translateX', 267)",
+            "cmd.setAttr('ambientLight1.translateY', 40)",
+            "cmd.setAttr('ambientLight1.translateZ', 1184)",
+            "cmd.setAttr('ambientLightShape1.intensity', 3)",
+            "cmd.setAttr('ambientLightShape1.ambientShade', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('ambientLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_004",
+        "status": "active",
+        "script_info": [
+            "Ambient light. Intensity: 3. Ambient Shade: 1"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, '0', 0,0,0, '1')')",
+            "cmd.setAttr('ambientLight1.translateX', 267)",
+            "cmd.setAttr('ambientLight1.translateY', 40)",
+            "cmd.setAttr('ambientLight1.translateZ', 1184)",
+            "cmd.setAttr('ambientLightShape1.intensity', 3)",
+            "cmd.setAttr('ambientLightShape1.ambientShade', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('ambientLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_005",
+        "status": "active",
+        "script_info": [
+            "Area light. Intensity: 1."
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('areaLight1.translateX', 267)",
+            "cmd.setAttr('areaLight1.translateY', 40)",
+            "cmd.setAttr('areaLight1.translateZ', 1184)",
+            "cmd.setAttr('areaLight1.rotateX', -90)",
+            "cmd.setAttr('areaLight1.rotateY', 0)",
+            "cmd.setAttr('areaLight1.rotateZ', 0)",
+            "cmd.setAttr('areaLightShape1.intensity', 1)",
+            "cmd.setAttr('areaLightShape1.decayRate', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('areaLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_006",
+        "status": "active",
+        "script_info": [
+            "Area light. Intensity: 3."
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('areaLight1.translateX', 267)",
+            "cmd.setAttr('areaLight1.translateY', 40)",
+            "cmd.setAttr('areaLight1.translateZ', 1184)",
+            "cmd.setAttr('areaLight1.rotateX', -90)",
+            "cmd.setAttr('areaLight1.rotateY', 0)",
+            "cmd.setAttr('areaLight1.rotateZ', 0)",
+            "cmd.setAttr('areaLightShape1.intensity', 3)",
+            "cmd.setAttr('areaLightShape1.decayRate', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('areaLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_007",
+        "status": "active",
+        "script_info": [
+            "Area light. Intensity: 3. Decay Rate: Linear"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('areaLight1.translateX', 267)",
+            "cmd.setAttr('areaLight1.translateY', 40)",
+            "cmd.setAttr('areaLight1.translateZ', 1184)",
+            "cmd.setAttr('areaLight1.rotateX', -90)",
+            "cmd.setAttr('areaLight1.rotateY', 0)",
+            "cmd.setAttr('areaLight1.rotateZ', 0)",
+            "cmd.setAttr('areaLightShape1.intensity', 3)",
+            "cmd.setAttr('areaLightShape1.decayRate', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('areaLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_008",
+        "status": "active",
+        "script_info": [
+            "Area light. Intensity: 3. Decay Rate: Quadratic"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('areaLight1.translateX', 267)",
+            "cmd.setAttr('areaLight1.translateY', 40)",
+            "cmd.setAttr('areaLight1.translateZ', 1184)",
+            "cmd.setAttr('areaLight1.rotateX', -90)",
+            "cmd.setAttr('areaLight1.rotateY', 0)",
+            "cmd.setAttr('areaLight1.rotateZ', 0)",
+            "cmd.setAttr('areaLightShape1.intensity', 3)",
+            "cmd.setAttr('areaLightShape1.decayRate', 2)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('areaLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_009",
+        "status": "active",
+        "script_info": [
+            "Area light. Intensity: 3. Decay Rate: Cubic"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('areaLight1.translateX', 267)",
+            "cmd.setAttr('areaLight1.translateY', 40)",
+            "cmd.setAttr('areaLight1.translateZ', 1184)",
+            "cmd.setAttr('areaLight1.rotateX', -90)",
+            "cmd.setAttr('areaLight1.rotateY', 0)",
+            "cmd.setAttr('areaLight1.rotateZ', 0)",
+            "cmd.setAttr('areaLightShape1.intensity', 3)",
+            "cmd.setAttr('areaLightShape1.decayRate', 3)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('areaLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_010",
+        "status": "active",
+        "script_info": [
+            "Directional light. Intensity: 1."
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultDirectionalLight(1, 1,1,1, '0', 0,0,0, 0)')",
+            "cmd.setAttr('directionalLight1.translateX', 267)",
+            "cmd.setAttr('directionalLight1.translateY', 40)",
+            "cmd.setAttr('directionalLight1.translateZ', 1184)",
+            "cmd.setAttr('directionalLight1.rotateX', -90)",
+            "cmd.setAttr('directionalLight1.rotateY', 0)",
+            "cmd.setAttr('directionalLight1.rotateZ', 0)",
+            "cmd.setAttr('directionalLightShape1.intensity', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('directionalLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_011",
+        "status": "active",
+        "script_info": [
+            "Directional light. Intensity: 1."
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultDirectionalLight(1, 1,1,1, '0', 0,0,0, 0)')",
+            "cmd.setAttr('directionalLight1.translateX', 267)",
+            "cmd.setAttr('directionalLight1.translateY', 40)",
+            "cmd.setAttr('directionalLight1.translateZ', 1184)",
+            "cmd.setAttr('directionalLight1.rotateX', -90)",
+            "cmd.setAttr('directionalLight1.rotateY', 0)",
+            "cmd.setAttr('directionalLight1.rotateZ', 0)",
+            "cmd.setAttr('directionalLightShape1.intensity', 5)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('directionalLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_012",
+        "status": "active",
+        "script_info": [
+            "Point light. Intensity: 1."
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
+            "cmd.setAttr('pointLight1.translateX', 267)",
+            "cmd.setAttr('pointLight1.translateY', 40)",
+            "cmd.setAttr('pointLight1.translateZ', 1184)",
+            "cmd.setAttr('pointLight1.rotateX', 0)",
+            "cmd.setAttr('pointLight1.rotateY', 0)",
+            "cmd.setAttr('pointLight1.rotateZ', 0)",
+            "cmd.setAttr('pointLightShape1.intensity', 1)",
+            "cmd.setAttr('pointLightShape1.decayRate', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('pointLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_013",
+        "status": "active",
+        "script_info": [
+            "Point light. Intensity: 50."
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
+            "cmd.setAttr('pointLight1.translateX', 267)",
+            "cmd.setAttr('pointLight1.translateY', 40)",
+            "cmd.setAttr('pointLight1.translateZ', 1184)",
+            "cmd.setAttr('pointLight1.rotateX', 0)",
+            "cmd.setAttr('pointLight1.rotateY', 0)",
+            "cmd.setAttr('pointLight1.rotateZ', 0)",
+            "cmd.setAttr('pointLightShape1.intensity', 50)",
+            "cmd.setAttr('pointLightShape1.decayRate', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('pointLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_014",
+        "status": "active",
+        "script_info": [
+            "Point light. Intensity: 100."
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
+            "cmd.setAttr('pointLight1.translateX', 267)",
+            "cmd.setAttr('pointLight1.translateY', 40)",
+            "cmd.setAttr('pointLight1.translateZ', 1184)",
+            "cmd.setAttr('pointLight1.rotateX', 0)",
+            "cmd.setAttr('pointLight1.rotateY', 0)",
+            "cmd.setAttr('pointLight1.rotateZ', 0)",
+            "cmd.setAttr('pointLightShape1.intensity', 100)",
+            "cmd.setAttr('pointLightShape1.decayRate', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('pointLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_015",
+        "status": "active",
+        "script_info": [
+            "Point light. Intensity: 1. Decay Rate: Linear"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
+            "cmd.setAttr('pointLight1.translateX', 267)",
+            "cmd.setAttr('pointLight1.translateY', 40)",
+            "cmd.setAttr('pointLight1.translateZ', 1184)",
+            "cmd.setAttr('pointLight1.rotateX', 0)",
+            "cmd.setAttr('pointLight1.rotateY', 0)",
+            "cmd.setAttr('pointLight1.rotateZ', 0)",
+            "cmd.setAttr('pointLightShape1.intensity', 50)",
+            "cmd.setAttr('pointLightShape1.decayRate', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('pointLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_016",
+        "status": "active",
+        "script_info": [
+            "Point light. Intensity: 1. Decay Rate: Quadratic"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
+            "cmd.setAttr('pointLight1.translateX', 267)",
+            "cmd.setAttr('pointLight1.translateY', 40)",
+            "cmd.setAttr('pointLight1.translateZ', 1184)",
+            "cmd.setAttr('pointLight1.rotateX', 0)",
+            "cmd.setAttr('pointLight1.rotateY', 0)",
+            "cmd.setAttr('pointLight1.rotateZ', 0)",
+            "cmd.setAttr('pointLightShape1.intensity', 50)",
+            "cmd.setAttr('pointLightShape1.decayRate', 2)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('pointLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_017",
+        "status": "active",
+        "script_info": [
+            "Point light. Intensity: 1. Decay Rate: Cubic"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
+            "cmd.setAttr('pointLight1.translateX', 267)",
+            "cmd.setAttr('pointLight1.translateY', 40)",
+            "cmd.setAttr('pointLight1.translateZ', 1184)",
+            "cmd.setAttr('pointLight1.rotateX', 0)",
+            "cmd.setAttr('pointLight1.rotateY', 0)",
+            "cmd.setAttr('pointLight1.rotateZ', 0)",
+            "cmd.setAttr('pointLightShape1.intensity', 50)",
+            "cmd.setAttr('pointLightShape1.decayRate', 3)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('pointLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_018",
+        "status": "active",
+        "script_info": [
+            "Spot light. Intensity: 1."
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('spotLight1.translateX', 267)",
+            "cmd.setAttr('spotLight1.translateY', 40)",
+            "cmd.setAttr('spotLight1.translateZ', 1184)",
+            "cmd.setAttr('spotLight1.rotateX', 0)",
+            "cmd.setAttr('spotLight1.rotateY', 0)",
+            "cmd.setAttr('spotLight1.rotateZ', 0)",
+            "cmd.setAttr('spotLightShape1.intensity', 1)",
+            "cmd.setAttr('spotLightShape1.decayRate', 0)",
+            "cmd.setAttr('spotLightShape1.coneAngle', 40)",
+            "cmd.setAttr('spotLightShape1.penumbraAngle', 0)",
+            "cmd.setAttr('spotLightShape1.dropoff', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('spotLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_019",
+        "status": "active",
+        "script_info": [
+            "Spot light. Intensity: 1."
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('spotLight1.translateX', 267)",
+            "cmd.setAttr('spotLight1.translateY', 40)",
+            "cmd.setAttr('spotLight1.translateZ', 1184)",
+            "cmd.setAttr('spotLight1.rotateX', 0)",
+            "cmd.setAttr('spotLight1.rotateY', 0)",
+            "cmd.setAttr('spotLight1.rotateZ', 0)",
+            "cmd.setAttr('spotLightShape1.intensity', 40)",
+            "cmd.setAttr('spotLightShape1.decayRate', 0)",
+            "cmd.setAttr('spotLightShape1.coneAngle', 40)",
+            "cmd.setAttr('spotLightShape1.penumbraAngle', 0)",
+            "cmd.setAttr('spotLightShape1.dropoff', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('spotLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_020",
+        "status": "active",
+        "script_info": [
+            "Spot light. Intensity: 40"
+        ],
+        "scene": "ConeAngle:0.006",
+        "functions": [
+            "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('spotLight1.translateX', 267)",
+            "cmd.setAttr('spotLight1.translateY', 40)",
+            "cmd.setAttr('spotLight1.translateZ', 1184)",
+            "cmd.setAttr('spotLight1.rotateX', 0)",
+            "cmd.setAttr('spotLight1.rotateY', 0)",
+            "cmd.setAttr('spotLight1.rotateZ', 0)",
+            "cmd.setAttr('spotLightShape1.intensity', 40)",
+            "cmd.setAttr('spotLightShape1.decayRate', 0)",
+            "cmd.setAttr('spotLightShape1.coneAngle', 0.006)",
+            "cmd.setAttr('spotLightShape1.penumbraAngle', -10)",
+            "cmd.setAttr('spotLightShape1.dropoff', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('spotLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_021",
+        "status": "active",
+        "script_info": [
+            "Spot light. Intensity: 40"
+        ],
+        "scene": "ConeAngle:90",
+        "functions": [
+            "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('spotLight1.translateX', 267)",
+            "cmd.setAttr('spotLight1.translateY', 40)",
+            "cmd.setAttr('spotLight1.translateZ', 1184)",
+            "cmd.setAttr('spotLight1.rotateX', 0)",
+            "cmd.setAttr('spotLight1.rotateY', 0)",
+            "cmd.setAttr('spotLight1.rotateZ', 0)",
+            "cmd.setAttr('spotLightShape1.intensity', 40)",
+            "cmd.setAttr('spotLightShape1.decayRate', 0)",
+            "cmd.setAttr('spotLightShape1.coneAngle', 90)",
+            "cmd.setAttr('spotLightShape1.penumbraAngle', 0)",
+            "cmd.setAttr('spotLightShape1.dropoff', 125)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('spotLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_022",
+        "status": "active",
+        "script_info": [
+            "Spot light. Intensity: 40"
+        ],
+        "scene": "ConeAngle:0.006",
+        "functions": [
+            "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('spotLight1.translateX', 267)",
+            "cmd.setAttr('spotLight1.translateY', 40)",
+            "cmd.setAttr('spotLight1.translateZ', 1184)",
+            "cmd.setAttr('spotLight1.rotateX', 0)",
+            "cmd.setAttr('spotLight1.rotateY', 0)",
+            "cmd.setAttr('spotLight1.rotateZ', 0)",
+            "cmd.setAttr('spotLightShape1.intensity', 40)",
+            "cmd.setAttr('spotLightShape1.decayRate', 0)",
+            "cmd.setAttr('spotLightShape1.coneAngle', 179.994)",
+            "cmd.setAttr('spotLightShape1.penumbraAngle', 10)",
+            "cmd.setAttr('spotLightShape1.dropoff', 255)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('spotLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_023",
+        "status": "active",
+        "script_info": [
+            "Spot light. Intensity: 1. Decay Rate: Linear"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('spotLight1.translateX', 267)",
+            "cmd.setAttr('spotLight1.translateY', 40)",
+            "cmd.setAttr('spotLight1.translateZ', 1184)",
+            "cmd.setAttr('spotLight1.rotateX', 0)",
+            "cmd.setAttr('spotLight1.rotateY', 0)",
+            "cmd.setAttr('spotLight1.rotateZ', 0)",
+            "cmd.setAttr('spotLightShape1.intensity', 40)",
+            "cmd.setAttr('spotLightShape1.decayRate', 1)",
+            "cmd.setAttr('spotLightShape1.coneAngle', 40)",
+            "cmd.setAttr('spotLightShape1.penumbraAngle', 0)",
+            "cmd.setAttr('spotLightShape1.dropoff', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('spotLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_024",
+        "status": "active",
+        "script_info": [
+            "Spot light. Intensity: 1. Decay Rate: Quadratic"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('spotLight1.translateX', 267)",
+            "cmd.setAttr('spotLight1.translateY', 40)",
+            "cmd.setAttr('spotLight1.translateZ', 1184)",
+            "cmd.setAttr('spotLight1.rotateX', 0)",
+            "cmd.setAttr('spotLight1.rotateY', 0)",
+            "cmd.setAttr('spotLight1.rotateZ', 0)",
+            "cmd.setAttr('spotLightShape1.intensity', 40)",
+            "cmd.setAttr('spotLightShape1.decayRate', 2)",
+            "cmd.setAttr('spotLightShape1.coneAngle', 40)",
+            "cmd.setAttr('spotLightShape1.penumbraAngle', 0)",
+            "cmd.setAttr('spotLightShape1.dropoff', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('spotLight1')"
+        ]
+    },
+    {
+        "case": "MAYA_L_BL_025  ",
+        "status": "active",
+        "script_info": [
+            "Spot light. Intensity: 1. Decay Rate: Cubic"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
+            "cmd.setAttr('spotLight1.translateX', 267)",
+            "cmd.setAttr('spotLight1.translateY', 40)",
+            "cmd.setAttr('spotLight1.translateZ', 1184)",
+            "cmd.setAttr('spotLight1.rotateX', 0)",
+            "cmd.setAttr('spotLight1.rotateY', 0)",
+            "cmd.setAttr('spotLight1.rotateZ', 0)",
+            "cmd.setAttr('spotLightShape1.intensity', 40)",
+            "cmd.setAttr('spotLightShape1.decayRate', 3)",
+            "cmd.setAttr('spotLightShape1.coneAngle', 40)",
+            "cmd.setAttr('spotLightShape1.penumbraAngle', 0)",
+            "cmd.setAttr('spotLightShape1.dropoff', 0)",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('spotLight1')"
+        ]
+    }
+]

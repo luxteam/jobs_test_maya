@@ -1,0 +1,309 @@
+[
+    {
+        "case": "MAYA_RS_AOV_001",
+        "status": "active",
+        "aov": 1,
+        "script_info": [
+            "AOV: Opacity"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovOpacity', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovOpacity', 0)"
+        ]        
+    },
+    {
+        "case": "MAYA_RS_AOV_002",
+        "status": "skipped",
+        "aov": 2,
+        "script_info": [
+            "AOV: World Coordinate"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovWorldCoordinate', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovWorldCoordinate', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_003",
+        "status": "active",
+        "aov": 3,
+        "script_info": [
+            "AOV: UV"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovUV', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovUV', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_004",
+        "status": "skipped",
+        "aov": 4,
+        "script_info": [
+            "AOV: Material Index"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovMaterialIndex', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovMaterialIndex', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_005",
+        "status": "active",
+        "aov": 5,
+        "script_info": [
+            "AOV: Geometric Normal"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovGeometricNormal', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovGeometricNormal', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_006",
+        "status": "active",
+        "aov": 6,
+        "script_info": [
+            "AOV: Shading Normal"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovShadingNormal', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovShadingNormal', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_007",
+        "status": "active",
+        "aov": 7,
+        "script_info": [
+            "AOV: Depth"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovDepth', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovDepth', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_008",
+        "status": "skipped",
+        "aov": 8,
+        "script_info": [
+            "AOV: Object ID"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovObjectId', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovObjectId', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_009",
+        "status": "active",
+        "aov": 10,
+        "script_info": [
+            "AOV: Shadow Catcher"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovBackground', 1)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovOpacity', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovBackground', 0)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovOpacity', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_010",
+        "status": "active",
+        "aov": 11,
+        "script_info": [
+            "AOV: Background"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovBackground', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovBackground', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_011",
+        "status": "active",
+        "aov": 12,
+        "script_info": [
+            "AOV: Emission"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovEmission', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovEmission', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_012",
+        "status": "skipped",
+        "aov": 13,
+        "script_info": [
+            "AOV: Velocity"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovVelocity', 1)",
+            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovVelocity', 0)",
+            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_013",
+        "status": "active",
+        "aov": 14,
+        "script_info": [
+            "AOV: Direct Illumination"
+        ],
+        "scene": "AOV_Better.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovDirectIllumination', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovDirectIllumination', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_014",
+        "status": "active",
+        "aov": 15,
+        "script_info": [
+            "AOV: Indirect Illumination"
+        ],
+        "scene": "AOV_Better.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovIndirectIllumination', 1)",
+            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 400)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovIndirectIllumination', 0)",
+            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_015",
+        "status": "active",
+        "aov": 16,
+        "script_info": [
+            "AOV: Ambient Occlusion"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovAO', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovAO', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_016",
+        "status": "active",
+        "aov": 17,
+        "script_info": [
+            "AOV: Diffuse Direct"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovDiffuseDirect', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovDiffuseDirect', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_017",
+        "status": "active",
+        "aov": 18,
+        "script_info": [
+            "AOV: Diffuse Indirect"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovDiffuseDirect', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovDiffuseDirect', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_018",
+        "status": "active",
+        "aov": 19,
+        "script_info": [
+            "AOV: Reflection Direct"
+        ],
+        "scene": "AOV_Better.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovReflectionDirect', 1)",
+            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 400)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovReflectionDirect', 0)",
+            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_019",
+        "status": "active",
+        "aov": 20,
+        "script_info": [
+            "AOV: Reflection Indirect"
+        ],
+        "scene": "AOV_Better.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovReflectionIndirect', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovReflectionIndirect', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_020",
+        "status": "active",
+        "aov": 21,
+        "script_info": [
+            "AOV: Refraction"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.aovRefraction', 1)",
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovRefraction', 0)"
+        ]  
+    },
+    {
+        "case": "MAYA_RS_AOV_021",
+        "status": "skipped",
+        "aov": 22,
+        "script_info": [
+            "AOV: Volume"
+        ],
+        "scene": "AOV.ma",
+        "functions":[
+            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmd.setAttr('RadeonProRenderGlobals.aovVelocity', 1)",
+            "cmd.showHidden('ShaderBall_4_UntitledFBXASC046005')",
+            "cmd.showHidden('RPRPhysicalLight1')",
+            "cmd.delete('RPRIBL')",
+            "rpr_render(test_case, script_info)"
+        ]  
+    }
+]

@@ -1,6 +1,6 @@
 
 
-def prerender(test_case, script_info, scene, frame):
+def prerender(test_case, filterAA, filter_size, script_info, scene):
     scene_name = cmd.file(q=True, sn=True, shn=True)
     if (scene_name != scene):
         if (mel.eval('catch (`file -f -options "v=0;"  -ignoreVersion -o ' + scene + '`)')):
@@ -10,30 +10,31 @@ def prerender(test_case, script_info, scene, frame):
     if(cmd.pluginInfo('RadeonProRender', query=True, loaded=True) == 0):
         mel.eval('loadPlugin RadeonProRender')
 
+    if (RESOLUTION_X & RESOLUTION_Y):
+        cmd.setAttr("defaultResolution.width", RESOLUTION_X)
+        cmd.setAttr("defaultResolution.height", RESOLUTION_Y)
+
     cmd.setAttr("defaultRenderGlobals.currentRenderer",
                 type="string" "FireRender")
     cmd.setAttr("defaultRenderGlobals.imageFormat", 8)
     cmd.setAttr(
         "RadeonProRenderGlobals.completionCriteriaIterations", PASS_LIMIT)
 
-    if (RESOLUTION_X & RESOLUTION_Y):
-        cmd.setAttr("defaultResolution.width", RESOLUTION_X)
-        cmd.setAttr("defaultResolution.height", RESOLUTION_Y)
-
-    cmd.currentTime(frame)
+    cmd.setAttr("RadeonProRenderGlobals.filter", filterAA)
+    cmd.setAttr("RadeonProRenderGlobals.filterSize", filter_size)
 
     rpr_render(test_case, script_info)
 
 
-def check_test_cases(test_case,  script_info, scene, frame):
-	test = TEST_CASES
-	tests = test.split(',')
-	if (test != "all"):
-		for test in tests:
-			if test == test_case:
-				prerender(test_case,  script_info, scene, frame)
-	else:
-		prerender(test_case,  script_info, scene, frame)
+def check_test_cases(test_case, filterAA, filter_size, script_info, scene):
+    test = TEST_CASES
+    tests = test.split(',')
+    if (test != "all"):
+        for test in tests:
+            if test == test_case:
+                prerender(test_case, filterAA, filter_size, script_info, scene)
+    else:
+        prerender(test_case, filterAA, filter_size, script_info, scene)
 
 
 def case_function(case):
@@ -55,12 +56,10 @@ def case_function(case):
         func = 2
         case['status'] = "failed"
 
-    try:
-        scene_name = case['scene']
-    except:
-        scene_name = ''
+    scene_name = case['scene']
 
-	if (func == 0):
-		functions[func](case['case'], case['script_info'], scene_name, case['frame'])
-	else:
-		functions[func](case['case'], case['script_info'])
+    if (func == 0):
+        functions[func](case['case'], case['filter'],
+                        case['filter_size'], case['script_info'], scene_name)
+    else:
+        functions[func](case['case'], case['script_info'])

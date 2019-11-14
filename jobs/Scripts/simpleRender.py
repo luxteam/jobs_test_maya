@@ -153,8 +153,7 @@ def main(args):
 		for case in cases:
 			if (case['case'] in testCases_mel):
 				temp.append(case)
-
-	cases = temp
+		cases = temp
 
 	for case in cases:
 		if (case['status'] != 'done'):

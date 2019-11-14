@@ -70,7 +70,7 @@ def get_scene_name():
 	return scene_name
 
 
-def check_test_cases_fail_save(test_case, passCount, script_info, scene):
+def check_test_cases_fail_save(test_case, script_info):
 	test = TEST_CASES
 	tests = test.split(',')
 
@@ -81,17 +81,6 @@ def check_test_cases_fail_save(test_case, passCount, script_info, scene):
 	else:
 		rpr_fail_save(test_case, script_info)
 
-
-
-def check_test_cases(test_case, passCount, script_info, scene):
-	test = TEST_CASES
-	tests = test.split(',')
-	if (test != "all"):
-		for test in tests:
-			if test == test_case:
-				prerender(test_case, passCount, script_info, scene)
-	else:
-		prerender(test_case, passCount, script_info, scene)
 
 
 def rpr_render(test_case, script_info):
@@ -129,7 +118,7 @@ def rpr_render(test_case, script_info):
 	report.toJSON(report_JSON)
 
 
-def check_test_cases_success_save(test_case, pass_count, script_info, scene_name):
+def check_test_cases_success_save(test_case, script_info):
 	test_cases = TEST_CASES
 	tests = test_cases.split(',')
 	if (test_cases != "all"):
