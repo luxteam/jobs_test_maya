@@ -6,7 +6,7 @@
             "Type: Color",
             "Intensity: 0"
         ],
-        "scene": "expectedblackpicture\\]",
+        "scene": "maya_shaderball.ma",
         "functions": [
             "cmd.createNode('RPRIBL', n='RPRIBLShape')",
             "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
