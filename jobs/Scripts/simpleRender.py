@@ -12,7 +12,6 @@ import re
 
 sys.path.append(os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
-
 import jobs_launcher.core.config as core_config
 
 
@@ -116,7 +115,7 @@ def main(args):
 
 	try:
 		with open(os.path.realpath(os.path.join(os.path.dirname(
-			__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
+				__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
 			script_template = f.read()
 		with open(os.path.join(os.path.dirname(__file__), "script.py")) as f:
 			script = f.read()
@@ -131,11 +130,11 @@ def main(args):
 	res_path = res_path.replace('\\', '/')
 	work_dir = os.path.abspath(args.output).replace('\\', '/')
 	melScript = script.format(work_dir=work_dir,
-									testType=args.testType,
-									render_device=args.render_device, res_path=res_path,
-									pass_limit=args.pass_limit, resolution_x=args.resolution_x,
-									resolution_y=args.resolution_y, testCases=testCases_mel,
-									SPU=args.SPU)
+							  testType=args.testType,
+							  render_device=args.render_device, res_path=res_path,
+							  pass_limit=args.pass_limit, resolution_x=args.resolution_x,
+							  resolution_y=args.resolution_y, testCases=testCases_mel,
+							  SPU=args.SPU)
 
 	with open(os.path.join(args.output, 'script.py'), 'w') as file:
 		file.write(melScript)
@@ -146,7 +145,7 @@ def main(args):
 	except:
 		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
 			__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
-	
+
 	temp = []
 	if (testCases_mel != "all"):
 		for case in cases:
@@ -158,15 +157,7 @@ def main(args):
 		if (case['status'] != 'done'):
 			with open(os.path.join(work_dir, (case['case'] + core_config.CASE_REPORT_SUFFIX)), 'w') as f:
 				if (case["status"] == 'inprogress'):
-					try:
-						case['failed_count'] += 1
-					except:
-						case['failed_count'] = 1
-
-					if ((args.fail_count < case['failed_count']) & (args.fail_count != 0)):
-						case['status'] = 'active'
-					else:
-						case['status'] = 'fail'
+					case['status'] = 'fail'
 
 				template = core_config.RENDER_REPORT_BASE
 				template["test_case"] = case["case"]
@@ -175,7 +166,7 @@ def main(args):
 
 	with open(os.path.join(work_dir, 'test_cases.json'), "w+") as f:
 		json.dump(cases, f, indent=4)
-	
+
 	system_pl = platform.system()
 	if system_pl == 'Windows':
 		cmdRun = '''
@@ -183,7 +174,7 @@ def main(args):
 		set PYTHONPATH=%cd%;PYTHONPATH
 		set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
 		"{tool}" -command "python(\\"import script\\"); python(\\"script.main()\\");"''' \
-				.format(tool=args.tool)
+						.format(tool=args.tool)
 
 		cmdScriptPath = os.path.join(args.output, 'script.bat')
 		with open(cmdScriptPath, 'w') as file:
@@ -239,6 +230,25 @@ def main(args):
 	return rc
 
 
+def group_failed(args):
+	try:
+		cases = json.load(open(os.path.realpath(os.path.join(
+			os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+	except:
+		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
+			__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
+
+	for case in cases:
+		if (case['status'] == 'active'):
+			case['status'] = 'skipped'
+
+	with open(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'), "w+") as f:
+		json.dump(cases, f, indent=4)
+
+	rc = main(args)
+	exit(rc)
+
+
 if __name__ == "__main__":
 
 	args = createArgsParser().parse_args()
@@ -247,8 +257,6 @@ if __name__ == "__main__":
 		os.makedirs(args.output)
 	except OSError as e:
 		pass
-
-	fail_count = 0
 
 	while True:
 		rc = main(args)
@@ -261,11 +269,19 @@ if __name__ == "__main__":
 				__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
 		active_cases = 0
+		failed_count = 0
 
 		for case in cases:
-			if ((case['status'] == 'failed') & (args.fail_count != 0)):
-				exit(rc)
-			if ((case['status'] == 'active') | (case['status'] == 'fail') | (case['status'] == 'inprogress')):
-				active_cases += 1
+			if (case['status'] not in ['skipped']):
+				if (case['status'] in ['fail', 'failed', 'inprogress']):
+					failed_count += 1
+					if (args.fail_count == failed_count):
+						group_failed(args)
+				else:
+					failed_count = 0
+
+				if (case['status'] in ['active', 'fail', 'inprogress']):
+					active_cases += 1
+
 		if (active_cases == 0):
 			exit()
