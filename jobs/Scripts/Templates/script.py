@@ -88,10 +88,8 @@ def rpr_render(test_case, script_info):
 	cmd.setAttr("RadeonProRenderGlobals.samplesPerUpdate", SPU)
 	cmd.optionVar(rm="RPR_DevicesSelected")
 
-	cmd.optionVar(iva=("RPR_DevicesSelected",
-					   (render_device == "gpu") | (render_device == "dual")))
-	cmd.optionVar(iva=("RPR_DevicesSelected",
-					   (render_device == "cpu") | (render_device == "dual")))
+	cmd.optionVar(iva=("RPR_DevicesSelected", (render_device in ["gpu", "dual"])))
+	cmd.optionVar(iva=("RPR_DevicesSelected", (render_device in ["cpu", "dual"])))
 
 	cmd.setAttr("RadeonProRenderGlobals.adaptiveThreshold", 0)
 	cmd.setAttr("RadeonProRenderGlobals.completionCriteriaSeconds", 0)
@@ -142,7 +140,7 @@ def rpr_success_save(test_case, script_info):
 
 	report = RPR_report_json()
 	report.test_case = test_case
-	report.difference_color = "no compare"
+	report.difference_color = "not compared yet"
 	report.test_status = "passed"
 	report.script_info = script_info
 
@@ -162,7 +160,7 @@ def rpr_fail_save(test_case, script_info):
 
 	report = RPR_report_json()
 	report.test_case = test_case
-	report.difference_color = "no compare"
+	report.difference_color = "not compared yet"
 	report.test_status = "error"
 	report.script_info = script_info
 
@@ -188,6 +186,88 @@ def check_rpr_load():
 				type="string" "FireRender")
 
 
+def prerender(test_case, script_info, scene):
+	scene_name = cmd.file(q=True, sn=True, shn=True)
+	if (scene_name != scene):
+		if (mel.eval('catch (`file -f -options "v=0;"  -ignoreVersion -o ' + scene + '`)')):
+			cmd.evalDeferred("maya.cmds.quit(abort=True)")
+		else:
+			cmd.setAttr("defaultRenderGlobals.imageFormat", 8)
+	validateFiles()
+
+	if(cmd.pluginInfo('RadeonProRender', query=True, loaded=True) == 0):
+		mel.eval('loadPlugin RadeonProRender')
+
+	if(cmd.pluginInfo('fbxmaya', query=True, loaded=True) == 0):
+		mel.eval('loadPlugin fbxmaya')
+		
+	if (RESOLUTION_X & RESOLUTION_Y):
+		cmd.setAttr("defaultResolution.width", RESOLUTION_X)
+		cmd.setAttr("defaultResolution.height", RESOLUTION_Y)
+
+	cmd.setAttr("defaultRenderGlobals.currentRenderer",
+				type="string" "FireRender")				
+	cmd.setAttr("defaultRenderGlobals.imageFormat", 8)
+	cmd.setAttr("RadeonProRenderGlobals.completionCriteriaIterations", PASS_LIMIT)
+
+	with open(path.join(WORK_DIR, "test_cases.json"), 'r') as json_file:
+		cases = json.load(json_file)
+
+	try:
+		for case in cases:
+			if (case['case'] == test_case):
+				for function in case['functions']:
+					if (re.match('^\w+ = ', function)):
+						exec(function)
+					else:
+						eval(function)
+	except Exception as e:
+		if (e.message != 'functions'):
+			print('Error: ' + str(e))
+		rpr_render(test_case, script_info)
+
+
+def check_test_cases(test_case, script_info, scene):
+	test = TEST_CASES
+	tests = test.split(',')
+	if (test != "all"):
+		for test in tests:
+			if test == test_case:
+				prerender(test_case, script_info, scene)
+	else:
+		prerender(test_case, script_info, scene)
+
+
+def case_function(case):
+	functions = {{
+		0: check_test_cases,
+		1: check_test_cases_success_save,
+		2: check_test_cases_fail_save
+	}}
+
+	func = 0
+
+	try:
+		if (case['functions'][0] == "check_test_cases_success_save"):
+			func = 1
+	except:
+		pass
+
+	if (case['status'] == "fail"):
+		func = 2
+		case['status'] = "failed"
+
+	try:
+		scene_name = case['scene']
+	except:
+		scene_name = ''
+
+	if (func == 0):
+		functions[func](case['case'], case['script_info'], scene_name)
+	else:
+		functions[func](case['case'], case['script_info'])
+
+
 def main():
 
 	mel.eval('setProject (\"' + RES_PATH + '\");')
@@ -198,6 +278,12 @@ def main():
 
 	with open(path.join(WORK_DIR, "test_cases.json"), 'r') as json_file:
 		cases = json.load(json_file)
+
+#	active- case need to be executed
+# 	inprogress- case executing (if maya crushed it still be inprogress)
+#	fail- maya was crushed while executing this case and script need to create report for this case
+#	failed- maya was crushed while executing this case and script don't need to touch this case
+#	done- case was executed successfully
 
 	for case in cases:
 		if (case['status'] == 'active'):

@@ -2,199 +2,253 @@
     {
         "case": "MAYA_RS_AA_001",
         "status": "active",
-        "filter": 1,
-        "filter_size": 1,
         "script_info": [
             "AA filter: Box",
             "Filter Size: 1"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 1)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_002",
         "status": "active",
-        "filter": 1,
-        "filter_size": 5,
         "script_info": [
             "AA filter: Box",
             "Filter Size: 5"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 1)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_003",
         "status": "active",
-        "filter": 1,
-        "filter_size": 10,
         "script_info": [
             "AA filter: Box",
             "Filter Size: 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 1)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_004",
         "status": "active",
-        "filter": 2,
-        "filter_size": 1,
         "script_info": [
             "AA filter: Lanczos",
             "Filter Size: 1"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 2)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_005",
         "status": "active",
-        "filter": 2,
-        "filter_size": 5,
         "script_info": [
             "AA filter: Lanczos",
             "Filter Size: 5"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 2)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_006",
         "status": "active",
-        "filter": 2,
-        "filter_size": 10,
         "script_info": [
             "AA filter: Lanczos",
             "Filter Size: 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 2)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_007",
         "status": "active",
-        "filter": 3,
-        "filter_size": 1,
         "script_info": [
             "AA filter: Triangle",
             "Filter Size: 1"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 3)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_008",
         "status": "active",
-        "filter": 3,
-        "filter_size": 5,
         "script_info": [
             "AA filter: Triangle",
             "Filter Size: 5"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 3)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_009",
         "status": "active",
-        "filter": 3,
-        "filter_size": 10,
         "script_info": [
             "AA filter: Triangle",
             "Filter Size: 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 3)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_010",
         "status": "active",
-        "filter": 4,
-        "filter_size": 1,
         "script_info": [
             "AA filter: Box",
             "Filter Size: 1"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 4)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_011",
         "status": "active",
-        "filter": 4,
-        "filter_size": 5,
         "script_info": [
             "AA filter: Box",
             "Filter Size: 5"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 4)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_012",
         "status": "active",
-        "filter": 4,
-        "filter_size": 10,
         "script_info": [
             "AA filter: Box",
             "Filter Size: 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 4)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_013",
         "status": "active",
-        "filter": 5,
-        "filter_size": 1,
         "script_info": [
             "AA filter: Gaussian",
             "Filter Size: 1"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 5)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_014",
         "status": "active",
-        "filter": 5,
-        "filter_size": 5,
         "script_info": [
             "AA filter: Gaussian",
             "Filter Size: 5"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 5)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_015",
         "status": "active",
-        "filter": 5,
-        "filter_size": 10,
         "script_info": [
             "AA filter: Gaussian",
             "Filter Size: 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 5)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_016",
         "status": "active",
-        "filter": 6,
-        "filter_size": 1,
         "script_info": [
             "AA filter: Blackmanharris",
             "Filter Size: 1"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 6)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_017",
         "status": "active",
-        "filter": 6,
-        "filter_size": 5,
         "script_info": [
             "AA filter: Blackmanharris",
             "Filter Size: 5"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 6)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "rpr_render(test_case, script_info)"
+        ]
     },
     {
         "case": "MAYA_RS_AA_018",
         "status": "active",
-        "filter": 6,
-        "filter_size": 10,
         "script_info": [
             "AA filter: Blackmanharris",
             "Filter Size: 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma", 
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.filter', 6)",
+            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "rpr_render(test_case, script_info)"
+        ]
     }
 ]
