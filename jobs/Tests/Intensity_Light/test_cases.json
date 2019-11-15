@@ -1,0 +1,38 @@
+[
+    {
+        "case": "MAYA_L_INT_001",
+        "status": "active",
+        "script_info": [
+            "Intensity Scene"
+        ],
+        "scene": "IntensityLight.ma",
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 300)", 
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_L_INT_002",
+        "status": "active",
+        "script_info": [
+            "Intensity Scene"
+        ],
+        "scene": "IntensityLight1.ma",
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 200)", 
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_L_INT_003",
+        "status": "active",
+        "script_info": [
+            "Intensity Scene"
+        ],
+        "scene": "IntensityLight2.ma",
+        "functions": [
+            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 300)", 
+            "rpr_render(test_case, script_info)"
+        ]
+    }
+]
