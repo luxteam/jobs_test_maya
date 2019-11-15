@@ -8,7 +8,6 @@
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Render_Stamp</argument>
-    	<argument>--template "{CWD}/Scripts/Templates/template_render_stamp.py"</argument>
     	<argument>--pass_limit {PassLimit}</argument>
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>

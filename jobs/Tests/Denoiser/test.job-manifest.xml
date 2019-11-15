@@ -8,7 +8,6 @@
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Denoiser</argument>
-    	<argument>--template "{CWD}/Scripts/Templates/template_denoiser.py"</argument>
     	<argument>--pass_limit {PassLimit}</argument>
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>

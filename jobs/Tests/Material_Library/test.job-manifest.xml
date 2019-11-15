@@ -8,7 +8,6 @@
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Material_Library</argument>
-    	<argument>--template "{CWD}/Scripts/Templates/template_material.mel"</argument>
     	<argument>--pass_limit 100</argument>
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>
