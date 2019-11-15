@@ -162,7 +162,7 @@ def main(args):
 				template = core_config.RENDER_REPORT_BASE
 				template["test_case"] = case["case"]
 				template["test_status"] = case["status"]
-				f.write(json.dumps(template))
+				f.write(json.dumps(template, indent=4))
 
 	with open(os.path.join(work_dir, 'test_cases.json'), "w+") as f:
 		json.dump(cases, f, indent=4)
