@@ -79,7 +79,7 @@ def createArgsParser():
 	parser.add_argument('--render_device', required=True)
 	parser.add_argument('--output', required=True, metavar="<dir>")
 	parser.add_argument('--testType', required=True)
-	parser.add_argument('--template', required=True)
+	parser.add_argument('--template', required=True)#TODO: don't need it anymore
 	parser.add_argument('--res_path', required=True)
 	parser.add_argument('--pass_limit', required=True)
 	parser.add_argument('--resolution_x', required=True)
@@ -116,7 +116,8 @@ def main(args):
 		testCases_mel = "all"
 
 	try:
-		with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
+		with open(os.path.realpath(os.path.join(os.path.dirname(
+			__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
 			script_template = f.read()
 		with open(os.path.join(os.path.dirname(__file__), "Templates", "script.py")) as f:
 			script = f.read()
