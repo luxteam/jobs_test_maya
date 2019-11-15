@@ -182,9 +182,6 @@ def check_rpr_load():
 	if(cmd.pluginInfo('fbxmaya', query=True, loaded=True) == 0):
 		mel.eval('loadPlugin fbxmaya')
 
-	cmd.setAttr("defaultRenderGlobals.currentRenderer",
-				type="string" "FireRender")
-
 
 def prerender(test_case, script_info, scene):
 	scene_name = cmd.file(q=True, sn=True, shn=True)
