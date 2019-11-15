@@ -284,6 +284,7 @@ def main():
 #	fail- maya was crushed while executing this case and script need to create report for this case
 #	failed- maya was crushed while executing this case and script don't need to touch this case
 #	done- case was executed successfully
+#	skipped- case don't need to be executed
 
 	for case in cases:
 		if (case['status'] == 'active'):
