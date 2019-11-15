@@ -8,7 +8,7 @@
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType IBL</argument>
-    	<argument>--template "{CWD}/Scripts/Templates/template_ibl.mel"</argument>
+    	<argument>--template "{CWD}/Scripts/Templates/template_ibl.py"</argument>
     	<argument>--pass_limit {PassLimit}</argument>
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>

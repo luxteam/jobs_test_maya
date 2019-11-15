@@ -1,0 +1,443 @@
+[
+    {
+        "case": "MAYA_RS_IBL_001",
+        "status": "active",
+        "script_info": [
+            "Type: Color",
+            "Intensity: 0"
+        ],
+        "scene": "expectedblackpicture\\]",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 0.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_002",
+        "status": "active",
+        "script_info": [
+            "Type: Color",
+            "Intensity: 1"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 1.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_003",
+        "status": "active",
+        "script_info": [
+            "Type: Color",
+            "Intensity: 2"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 2.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_004",
+        "status": "active",
+        "script_info": [
+            "Type: Color",
+            "Intensity: 3"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 3.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_005",
+        "status": "active",
+        "script_info": [
+            "Type: Color",
+            "Intensity: 5"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 5.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_006",
+        "status": "active",
+        "script_info": [
+            "Type: Color",
+            "Intensity: 7"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 7.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_007",
+        "status": "active",
+        "script_info": [
+            "Type: Color",
+            "Intensity: 10"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 10.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_008",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with hdr map",
+            "Intensity: 0"
+        ],
+        "scene": "expectedblackpicture\\]",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 0.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/Tropical_Beach_3k.hdr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_009",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with hdr map",
+            "Intensity: 1"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 1.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/Tropical_Beach_3k.hdr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_010",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with hdr map",
+            "Intensity: 2"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 2.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/Tropical_Beach_3k.hdr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_011",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with hdr map",
+            "Intensity: 3"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 3.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/Tropical_Beach_3k.hdr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_012",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with hdr map",
+            "Intensity: 5"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 5.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/Tropical_Beach_3k.hdr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_013",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with hdr map",
+            "Intensity: 7"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 7.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/Tropical_Beach_3k.hdr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_014",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with hdr map",
+            "Intensity: 10"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 10.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/Tropical_Beach_3k.hdr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_015",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with exr map",
+            "Intensity: 0"
+        ],
+        "scene": "expectedblackpicture\\]",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 0.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/ibl_test.exr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_016",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with exr map",
+            "Intensity: 1"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 1.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/ibl_test.exr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_017",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with exr map",
+            "Intensity: 2"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 2.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/ibl_test.exr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_018",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with exr map",
+            "Intensity: 3"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 3.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/ibl_test.exr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_019",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with exr map",
+            "Intensity: 5"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 5.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/ibl_test.exr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_020",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with exr map",
+            "Intensity: 7"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 7.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/ibl_test.exr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    },
+    {
+        "case": "MAYA_RS_IBL_021",
+        "status": "active",
+        "script_info": [
+            "Type: IBL with exr map",
+            "Intensity: 10"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmd.createNode('RPRIBL', n='RPRIBLShape')",
+            "parent = cmd.listRelatives(\"RPRIBLShape\", p=True)",
+            "cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)",
+            "cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)",
+            "cmd.rename(parent[0], 'RPRIBLShape')",
+            "cmd.setAttr(RPRIBLShape.intensity, 10.0)",
+            "cmd.setAttr('RPRIBLShape.filePath',  \"sourceimages/ibl_test.exr\", type='string')",
+            "rpr_render(test_case, script_info)",
+            "cmd.delete('RPRIBLShape')"
+        ]
+    }
+]
