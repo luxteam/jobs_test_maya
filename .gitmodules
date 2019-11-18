@@ -1,3 +1,4 @@
 [submodule "jobs_launcher"]
 	path = jobs_launcher
 	url = https://github.com/luxteam/jobs_launcher.git
+    branch = dev/kill_process
