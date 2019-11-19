@@ -1,7 +1,24 @@
 {
-    "Animation":"MAYA_RS_AN_001,MAYA_RS_AN_002,MAYA_RS_AN_003,MAYA_RS_AN_004,MAYA_RS_AN_005,MAYA_RS_AN_006,MAYA_RS_AN_007,MAYA_RS_AN_008,MAYA_RS_AN_009,MAYA_RS_AN_010,MAYA_RS_AN_011,MAYA_RS_AN_012,MAYA_RS_AN_013,MAYA_RS_AN_014,MAYA_RS_AN_015,MAYA_RS_AN_016,MAYA_RS_AN_017,MAYA_RS_AN_018",
-    "Smoke":"MAYA_SM_010,MAYA_SM_028",
+    "Animation":"all",
+    "AOV":"all",
     "Denoiser":",MAYA_RS_DEN_002,MAYA_RS_DEN_003,MAYA_RS_DEN_004,MAYA_RS_DEN_005,MAYA_RS_DEN_006,MAYA_RS_DEN_007,MAYA_RS_DEN_008,MAYA_RS_DEN_009,MAYA_RS_DEN_010,MAYA_RS_DEN_011,MAYA_RS_DEN_012,MAYA_RS_DEN_013,MAYA_RS_DEN_014,MAYA_RS_DEN_015,MAYA_RS_DEN_016,MAYA_RS_DEN_017,MAYA_RS_DEN_018,MAYA_RS_DEN_019,MAYA_RS_DEN_020,MAYA_RS_DEN_021,MAYA_RS_DEN_022,MAYA_RS_DEN_023,MAYA_RS_DEN_024",
+    "Base_Lights":"all",
+    "IBL":"all",
+    "Image_Formats":"all",
+    "Image_Size":"all",
+    "Material_Library":"all",
     "Motion_Blur":"MAYA_RS_MB_004,MAYA_RS_MB_013",
-    "Render_Layer":"MAYA_RS_RL_002,MAYA_RS_RL_004"
+    "Pass_Limit":"all",
+    "PBR":"all",
+    "Physical_Lights":"all",
+    "Quality":"all",
+    "Render_Layer":"MAYA_RS_RL_002,MAYA_RS_RL_004",
+    "Render_Mode":"all",
+    "RPR_Nodes":"all",
+    "Sanity":"all",
+    "Smoke":"MAYA_SM_010,MAYA_SM_028",
+    "Sun_Sky":"all",
+    "Tone_Mapping":"all",
+    "Uber":"all",
+    "Volume":"all"
 }
