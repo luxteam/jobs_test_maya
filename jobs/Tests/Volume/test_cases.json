@@ -1,1 +1,277 @@
-[]
+[
+    {
+        "case": "MAYA_MAT_VM_001",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Transmission color - HVS : H -0"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_002",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter color  - HVS : H -0"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_003",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter color  - HVS : H -0"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_004",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Transmission color - HVS : H -0"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_005",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Density - 1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_006",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter color  - HVS : H -0"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_007",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter color  - HVS : H -0"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_008",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Density - 2.5"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_009",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Transmission color - HVS : H -0"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_010",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter color - HVS : H -0"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_011",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_012",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_013",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Transmission Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_014",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_015",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Transmission Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_016",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_017",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_018",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Transmission Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_019",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color HVS: 300:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_020",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_021",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_022",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_023",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Transmission Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_024",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    },
+    {
+        "case": "MAYA_MAT_VM_025",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Scatter Color- HVS: 0:0:1"
+        ],
+        "scene": "VolumeRollingFog.ma"
+    }
+]

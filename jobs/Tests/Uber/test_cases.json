@@ -1,1 +1,1080 @@
-[]
+[
+    {
+        "case": "MAYA_MAT_UBER_001",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "1.Diffuse"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_002",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - diffuse_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_003",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - diffuse_color.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_004",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - diffuse_weight.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_005",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Roughness - 1"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_006",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "2. Reflection"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_007",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - reflection_weight.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_008",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "IOR - 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_009",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - reflection_color.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_010",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - reflection_color.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_011",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - reflection_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_012",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - reflection_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_013",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - reflection_color.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_014",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - reflection_color.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_015",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - reflection_color.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_016",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - reflection_weight.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_017",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - reflection_weight.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_018",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - reflection_weight.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_019",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - reflection_weight.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_020",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - reflection_weight.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_021",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "3. Reflection + Reflection Fresnel"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_022",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "IOR - 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_023",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "4. Refraction"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_024",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - refraction_color.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_025",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - refraction_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_026",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - refraction_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_027",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - refraction_color.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_028",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - refraction_color.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_029",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - refraction_color.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_030",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - refraction_color.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_031",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Roughness - refraction_roughness.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_032",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Roughness - refraction_roughness.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_033",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - refraction_weight.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_034",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - 0.5"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_035",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - refraction_weight.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_036",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "5. Coating"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_037",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - coating_color.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_038",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - coating_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_039",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - coating_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_040",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - coating_color.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_041",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - coating_color.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_042",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - coating_color.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_043",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - coating_color.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_044",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_045",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - coating_weight.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_046",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - coating_weight.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_047",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Roughness - coating_roughness.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_048",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - coating_weight.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_049",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "6. Emissive"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_050",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_051",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_052",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_053",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_054",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_055",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_056",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_057",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_058",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_059",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - 0.5"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_060",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_061",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_062",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Color - emissive_color.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_063",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - emissive_weight.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_064",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "7. SSS"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_065",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - subsurfacescattering_weight.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_066",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - subsurfacescattering_weight.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_067",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - subsurfacescattering_weight.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_068",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - subsurfacescattering_weight.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_069",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - subsurfacescattering_weight.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_070",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - subsurfacescattering_weight.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_071",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - subsurfacescattering_weight.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_072",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_073",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_074",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - 0.5"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_075",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Weight - 0.5"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_076",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "8. Material Settings"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_077",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Use Transparency - Yes"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_078",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Use Transparency - Yes"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_079",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Use Transparency - Yes"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_080",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Use Normal Map - Yes"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_081",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Use Normal Map - Yes"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_082",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Use Normal Map - Yes"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_083",
+        "status": "active",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Use Normal Map - Yes"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_084",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - HSV: 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_085",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - HSV: 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_086",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - HSV: 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_087",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - HSV: 0"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_088",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_089",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_090",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_091",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.jpeg"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_092",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_093",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_094",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.png"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_095",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_096",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.exr"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_097",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_098",
+        "status": "skipped",
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff"
+        ],
+        "scene": "Uber.ma"
+    }
+]

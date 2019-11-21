@@ -54,7 +54,7 @@ class RPR_report_json:
 		report["difference_color"] = self.difference_color
 		report["core_version"] = self.core_version
 		report["render_device"] = self.render_device
-		report["render_log"] = render_tool_log_path(self.test_case)
+		report["render_log"] = path.join('render_tool_logs', self.test_case+ ".log")
 
 		with open(path_to_file, 'w') as file:
 			file.write(json.dumps([report], indent=4))
