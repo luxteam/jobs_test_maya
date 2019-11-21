@@ -663,12 +663,14 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 1)",
             "cmd.setAttr('defaultResolution.width', 20.0)",
             "cmd.setAttr('defaultResolution.height', 15.0)",
             "cmd.setAttr('defaultResolution.dotsPerInch', 72.0)",
             "cmd.setAttr('defaultResolution.deviceAspectRatio', 1.0)",
             "cmd.setAttr('defaultResolution.pixelAspect', 1.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 0)"
         ]
     },
     {
@@ -679,12 +681,14 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 2)",
             "cmd.setAttr('defaultResolution.width', 67.733)",
             "cmd.setAttr('defaultResolution.height', 38.1)",
             "cmd.setAttr('defaultResolution.dotsPerInch', 72.0)",
             "cmd.setAttr('defaultResolution.deviceAspectRatio', 1.0)",
             "cmd.setAttr('defaultResolution.pixelAspect', 1.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 0)"
         ]
     },
     {
@@ -695,12 +699,14 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 3)",
             "cmd.setAttr('defaultResolution.width', 677.33)",
             "cmd.setAttr('defaultResolution.height', 381.0)",
             "cmd.setAttr('defaultResolution.dotsPerInch', 72.0)",
             "cmd.setAttr('defaultResolution.deviceAspectRatio', 1.0)",
             "cmd.setAttr('defaultResolution.pixelAspect', 1.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 0)"
         ]
     },
     {
@@ -711,12 +717,14 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 4)",
             "cmd.setAttr('defaultResolution.width', 1800.0)",
             "cmd.setAttr('defaultResolution.height', 1000.0)",
             "cmd.setAttr('defaultResolution.dotsPerInch', 72.0)",
             "cmd.setAttr('defaultResolution.deviceAspectRatio', 1.0)",
             "cmd.setAttr('defaultResolution.pixelAspect', 1.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 0)"
         ]
     },
     {
@@ -727,12 +735,14 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 5)",
             "cmd.setAttr('defaultResolution.width', 160.0)",
             "cmd.setAttr('defaultResolution.height', 100.0)",
             "cmd.setAttr('defaultResolution.dotsPerInch', 72.0)",
             "cmd.setAttr('defaultResolution.deviceAspectRatio', 1.0)",
             "cmd.setAttr('defaultResolution.pixelAspect', 1.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "cmd.setAttr('defaultResolution.imageSizeUnits', 0)"
         ]
     },
     {

@@ -188,10 +188,8 @@ def check_rpr_load():
 def prerender(test_case, script_info, scene):
 	scene_name = cmd.file(q=True, sn=True, shn=True)
 	if (scene_name != scene):
-		if (mel.eval('catch (`file -f -options "v=0;"  -ignoreVersion -o ' + scene + '`)')):
+		if (mel.eval('catch (`file -f -options "v=0;"  -ignoreVersion -o ' + scene + '`)')):#
 			cmd.evalDeferred("maya.cmds.quit(abort=True)")
-		else:
-			cmd.setAttr("defaultRenderGlobals.imageFormat", 8)
 	validateFiles()
 
 	if(cmd.pluginInfo('RadeonProRender', query=True, loaded=True) == 0):

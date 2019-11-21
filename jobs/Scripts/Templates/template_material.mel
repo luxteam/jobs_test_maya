@@ -71,11 +71,6 @@ global proc prerender(string $test_case, string $libraryPath, string $material, 
 
 global proc main(){{
 	setProject ("{res_path}");
-
-	string $materials = "BarnFindOrange_Solid, BasketCaseBlue_Solid, BeachBumAqua_Metallic, BlueBayou_Solid, BoulevardBlack_Solid";
-
-	string $material[];
-	$numTokens = `tokenize $materials "," $material`;
 	python("import fireRender.rpr_material_browser");
 	string $libraryPath = python("fireRender.rpr_material_browser.getLibPath()");
 	file -f -options "v=0;"  -ignoreVersion -o "MaterialTestScene.ma";
