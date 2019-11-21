@@ -10,7 +10,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
-            "cmd.setAttr('Camera00Shape1.focalLength', 1.0)",
+            "cmd.setAttr('Camera00Shape1.denoiserRadius', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -25,7 +25,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
-            "cmd.setAttr('Camera00Shape1.focalLength', 3.0)",
+            "cmd.setAttr('Camera00Shape1.denoiserRadius', 3.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -40,7 +40,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
-            "cmd.setAttr('Camera00Shape1.focalLength', 6.0)",
+            "cmd.setAttr('Camera00Shape1.denoiserRadius', 6.0)",
             "rpr_render(test_case, script_info)"
         ]
     },

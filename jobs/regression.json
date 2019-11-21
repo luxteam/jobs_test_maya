@@ -3,7 +3,6 @@
     "Base_Lights":"all",
     "IBL":"all",
     "Material_Library":"all",
-    "Motion_Blur":"MAYA_RS_MB_004,MAYA_RS_MB_013",
     "PBR":"all",
     "Quality":"all",
     "Render_Layer":"MAYA_RS_RL_002,MAYA_RS_RL_004",
