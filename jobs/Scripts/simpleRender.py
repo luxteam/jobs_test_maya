@@ -165,6 +165,8 @@ def main(args):
 				template = core_config.RENDER_REPORT_BASE
 				template["test_case"] = case["case"]
 				template["test_status"] = case["status"]
+				template["scene_name"] = case["scene"]
+				template["script_info"] = case["script_info"]
 				f.write(json.dumps([template], indent=4))
 
 	with open(os.path.join(work_dir, 'test_cases.json'), "w+") as f:
