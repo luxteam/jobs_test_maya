@@ -301,6 +301,7 @@ def main():
 
 			cmd.scriptEditorInfo(historyFilename=render_tool_log_path(
 				case['case']), writeHistory=True)
+			print(case['case'])
 			case_function(case)
 
 			if (case['status'] == 'inprogress'):
