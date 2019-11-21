@@ -18,6 +18,7 @@ TEST_CASES = "{testCases}"
 SPU = {SPU}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
+
 class RPR_report_json:
 	def __init__(self, render_color_path='', render_time='', test_case='', difference_color='', test_status='', script_info=[], render_log=''):
 		self.render_device = cmd.optionVar(q="RPR_DevicesName")[0]
@@ -37,7 +38,7 @@ class RPR_report_json:
 
 	def toJSON(self, path_to_file):
 		with open(path_to_file, 'r') as file:
-			report = json.loads(file.read())
+			report = json.loads(file.read())[0]
 
 		report["file_name"] = self.test_case + ".jpg"
 		report["date_time"] = self.date_time
@@ -82,14 +83,15 @@ def check_test_cases_fail_save(test_case, script_info):
 		rpr_fail_save(test_case, script_info)
 
 
-
 def rpr_render(test_case, script_info):
 	render_device = RENDER_DEVICE
 	cmd.setAttr("RadeonProRenderGlobals.samplesPerUpdate", SPU)
 	cmd.optionVar(rm="RPR_DevicesSelected")
 
-	cmd.optionVar(iva=("RPR_DevicesSelected", (render_device in ["gpu", "dual"])))
-	cmd.optionVar(iva=("RPR_DevicesSelected", (render_device in ["cpu", "dual"])))
+	cmd.optionVar(iva=("RPR_DevicesSelected",
+					   (render_device in ["gpu", "dual"])))
+	cmd.optionVar(iva=("RPR_DevicesSelected",
+					   (render_device in ["cpu", "dual"])))
 
 	cmd.setAttr("RadeonProRenderGlobals.adaptiveThreshold", 0)
 	cmd.setAttr("RadeonProRenderGlobals.completionCriteriaSeconds", 0)
@@ -197,31 +199,34 @@ def prerender(test_case, script_info, scene):
 
 	if(cmd.pluginInfo('fbxmaya', query=True, loaded=True) == 0):
 		mel.eval('loadPlugin fbxmaya')
-		
+
 	if (RESOLUTION_X & RESOLUTION_Y):
 		cmd.setAttr("defaultResolution.width", RESOLUTION_X)
 		cmd.setAttr("defaultResolution.height", RESOLUTION_Y)
 
 	cmd.setAttr("defaultRenderGlobals.currentRenderer",
-				type="string" "FireRender")				
+				type="string" "FireRender")
 	cmd.setAttr("defaultRenderGlobals.imageFormat", 8)
-	cmd.setAttr("RadeonProRenderGlobals.completionCriteriaIterations", PASS_LIMIT)
+	cmd.setAttr(
+		"RadeonProRenderGlobals.completionCriteriaIterations", PASS_LIMIT)
 
 	with open(path.join(WORK_DIR, "test_cases.json"), 'r') as json_file:
 		cases = json.load(json_file)
 
-	try:
-		for case in cases:
-			if (case['case'] == test_case):
-				for function in case['functions']:
-					if (re.match('^\w+ = ', function)):
+	for case in cases:
+		if (case['case'] == test_case):
+			for function in case['functions']:
+				try:
+					if (re.match('(^\w+ = |^print)', function)):
 						exec(function)
 					else:
 						eval(function)
-	except Exception as e:
-		if (e.message != 'functions'):
-			print('Error: ' + str(e))
-		rpr_render(test_case, script_info)
+				except Exception as e:
+					if (e.message != 'functions'):
+						print('Error: ' + str(e) +
+							  ' with string: \"' + function + '\"')
+					else:
+						rpr_render(test_case, script_info)
 
 
 def check_test_cases(test_case, script_info, scene):
@@ -305,3 +310,44 @@ def main():
 				json.dump(cases, file, indent=4)
 
 	cmd.evalDeferred("maya.cmds.quit(abort=True)")
+
+
+# special functions for one group
+
+def setAttributeSS(attr, value):  # for sun sky
+	file = mel.eval('shadingNode -asTexture -isColorManaged file')
+	texture = mel.eval('shadingNode -asUtility place2dTexture')
+	cmd.connectAttr((texture+".coverage"), (file+".coverage"), f=True)
+	cmd.connectAttr((texture+".translateFrame"),
+					(file+".translateFrame"), f=True)
+	cmd.connectAttr((texture+".rotateFrame"),
+					(file+".rotateFrame"), f=True)
+	cmd.connectAttr((texture+".mirrorU"), (file+".mirrorU"), f=True)
+	cmd.connectAttr((texture+".mirrorV"), (file+".mirrorV"), f=True)
+	cmd.connectAttr((texture+".stagger"), (file+".stagger"), f=True)
+	cmd.connectAttr((texture+".wrapU"), (file+".wrapU"), f=True)
+	cmd.connectAttr((texture+".wrapV"), (file+".wrapV"), f=True)
+	cmd.connectAttr((texture+".repeatUV"), (file+".repeatUV"), f=True)
+	cmd.connectAttr((texture+".offset"), (file+".offset"), f=True)
+	cmd.connectAttr((texture+".rotateUV"), (file+".rotateUV"), f=True)
+	cmd.connectAttr((texture+".noiseUV"), (file+".noiseUV"), f=True)
+	cmd.connectAttr((texture+".vertexUvTwo"),
+					(file+".vertexUvTwo"), f=True)
+	cmd.connectAttr((texture+".vertexUvThree"),
+					(file+".vertexUvThree"), f=True)
+	cmd.connectAttr((texture+".vertexCameraOne"),
+					(file+".vertexCameraOne"), f=True)
+	cmd.connectAttr((texture+".outUV"), (file+".uv"), f=True)
+	cmd.connectAttr((texture+".outUvFilterSize"), (file+".uvFilterSize"))
+	cmd.connectAttr((texture+".vertexUvOne"), (file+".vertexUvOne"))
+	cmd.connectAttr((file+".outColor"), ("RPRSkyShape."+attr), force=True)
+
+	cmd.setAttr((file+".fileTextureName"), value, type="string")
+
+
+def removeIBL(objects):  # for sun sky
+	for obj in objects:
+		if (obj == 'RPRIBLShape'):
+			cmd.delete('RPRIBL')
+		if (obj == 'RPRSkyShape'):
+			cmd.delete('RPRSky')
