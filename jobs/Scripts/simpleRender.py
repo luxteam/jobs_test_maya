@@ -20,24 +20,24 @@ PROCESS = ['Maya', 'maya.exe']
 
 
 if platform.system() == 'Darwin':
-    # from PyObjCTools import AppHelper
-    # import objc
-    # from objc import super
-    from Cocoa import NSWorkspace
-    # from AppKit import NSWorkspace
-    from Quartz import CGWindowListCopyWindowInfo
-    from Quartz import kCGWindowListOptionOnScreenOnly
-    from Quartz import kCGNullWindowID
-    from Quartz import kCGWindowName
+	# from PyObjCTools import AppHelper
+	# import objc
+	# from objc import super
+	from Cocoa import NSWorkspace
+	# from AppKit import NSWorkspace
+	from Quartz import CGWindowListCopyWindowInfo
+	from Quartz import kCGWindowListOptionOnScreenOnly
+	from Quartz import kCGNullWindowID
+	from Quartz import kCGWindowName
 
 
 def get_windows_titles():
-    try:
-        if platform.system() == 'Darwin':
-            ws_options = kCGWindowListOptionOnScreenOnly
-            windows_list = CGWindowListCopyWindowInfo(ws_options, kCGNullWindowID)
-            maya_titles = {x.get('kCGWindowName', u'Unknown') for x in windows_list if
-                           'Maya' in x['kCGWindowOwnerName']}
+	try:
+		if platform.system() == 'Darwin':
+			ws_options = kCGWindowListOptionOnScreenOnly
+			windows_list = CGWindowListCopyWindowInfo(ws_options, kCGNullWindowID)
+			maya_titles = {x.get('kCGWindowName', u'Unknown') for x in windows_list if
+						   'Maya' in x['kCGWindowOwnerName']}
 
 			# duct tape for windows with empty title
 			expected = {'Maya', 'Render View', 'Rendering...'}
@@ -46,13 +46,13 @@ def get_windows_titles():
 
 			return list(maya_titles)
 
-        elif platform.system() == 'Windows':
-            EnumWindows = ctypes.windll.user32.EnumWindows
-            EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int),
-                                                 ctypes.POINTER(ctypes.c_int))
-            GetWindowText = ctypes.windll.user32.GetWindowTextW
-            GetWindowTextLength = ctypes.windll.user32.GetWindowTextLengthW
-            IsWindowVisible = ctypes.windll.user32.IsWindowVisible
+		elif platform.system() == 'Windows':
+			EnumWindows = ctypes.windll.user32.EnumWindows
+			EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int),
+												 ctypes.POINTER(ctypes.c_int))
+			GetWindowText = ctypes.windll.user32.GetWindowTextW
+			GetWindowTextLength = ctypes.windll.user32.GetWindowTextLengthW
+			IsWindowVisible = ctypes.windll.user32.IsWindowVisible
 
 			titles = []
 
@@ -93,15 +93,15 @@ def createArgsParser():
 
 
 def check_licenses(res_path, maya_scenes):
-    for scene in maya_scenes:
-        with open(os.path.join(res_path, scene[:-1])) as f:
-            scene_file = f.read()
+	for scene in maya_scenes:
+		with open(os.path.join(res_path, scene[:-1])) as f:
+			scene_file = f.read()
 
-        license = "fileInfo \"license\" \"student\";"
-        scene_file = scene_file.replace(license, '')
+		license = "fileInfo \"license\" \"student\";"
+		scene_file = scene_file.replace(license, '')
 
-        with open(os.path.join(res_path, scene[:-1]), "w") as f:
-            f.write(scene_file)
+		with open(os.path.join(res_path, scene[:-1]), "w") as f:
+			f.write(scene_file)
 
 
 def main(args):
