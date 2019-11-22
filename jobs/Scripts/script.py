@@ -313,7 +313,7 @@ def main():
 
 # special functions for one group
 
-def setAttributeSS(attr, value):  # for sun sky
+def setAttribute(attr, value):
 	file = mel.eval('shadingNode -asTexture -isColorManaged file')
 	texture = mel.eval('shadingNode -asUtility place2dTexture')
 	cmd.connectAttr((texture+".coverage"), (file+".coverage"), f=True)
@@ -339,6 +339,11 @@ def setAttributeSS(attr, value):  # for sun sky
 	cmd.connectAttr((texture+".outUV"), (file+".uv"), f=True)
 	cmd.connectAttr((texture+".outUvFilterSize"), (file+".uvFilterSize"))
 	cmd.connectAttr((texture+".vertexUvOne"), (file+".vertexUvOne"))
+	return file
+
+
+def setAttributeSS(attr, value):  # for sun sky
+	file = setAttribute(attr, value)
 	cmd.connectAttr((file+".outColor"), ("RPRSkyShape."+attr), force=True)
 
 	cmd.setAttr((file+".fileTextureName"), value, type="string")
@@ -350,3 +355,18 @@ def removeIBL(objects):  # for sun sky
 			cmd.delete('RPRIBL')
 		if (obj == 'RPRSkyShape'):
 			cmd.delete('RPRSky')
+
+
+def resetAttributesV():    # for volume
+    cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')
+    cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')
+    cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 0, 1, type='double3')
+    cmd.setAttr('RPRVolumeMaterial1.density', 0.5)
+    cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.096)
+    cmd.setAttr('RPRVolumeMaterial1.multiscatter', 1)
+
+def setAttributeV(volume_attr, file_attr, value):  # for volume
+	file = setAttribute(volume_attr, value)
+	cmd.connectAttr((file+"."+file_attr), ("RPRVolumeMaterial1."+volume_attr), force=True)
+
+	cmd.setAttr((file+".fileTextureName"), value, type="string")
