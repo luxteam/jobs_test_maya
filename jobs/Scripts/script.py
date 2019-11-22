@@ -213,18 +213,21 @@ def prerender(test_case, script_info, scene):
 
 	for case in cases:
 		if (case['case'] == test_case):
-			for function in case['functions']:
-				try:
-					if (re.match('(^\w+ = |^print)', function)):
-						exec(function)
-					else:
-						eval(function)
-				except Exception as e:
-					if (e.message != 'functions'):
-						print('Error: ' + str(e) +
-							  ' with string: \"' + function + '\"')
-					else:
-						rpr_render(test_case, script_info)
+			try:
+				for function in case['functions']:
+					try:
+						if (re.match('(^\w+ = |^print)', function)):
+							exec(function)
+						else:
+							eval(function)
+					except Exception as e:
+						print(e)
+			except Exception as e:
+				if (e.message != 'functions'):
+					print('Error: ' + str(e) +
+						' with string: \"' + function + '\"')
+				else:
+					rpr_render(test_case, script_info)
 
 
 def check_test_cases(test_case, script_info, scene):
