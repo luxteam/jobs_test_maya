@@ -370,3 +370,29 @@ def setAttributeV(volume_attr, file_attr, value):  # for volume
 	cmd.connectAttr((file+"."+file_attr), ("RPRVolumeMaterial1."+volume_attr), force=True)
 
 	cmd.setAttr((file+".fileTextureName"), value, type="string")
+
+
+def setAttributePBR(pbr_attr, file_attr, value):  # for pbr
+	file = setAttribute(pbr_attr, value)
+	cmd.connectAttr((file+"."+file_attr), ("R_PBRMat."+pbr_attr), force=True)
+
+	cmd.setAttr((file+".fileTextureName"), value, type="string")
+
+def resetAttributesPBR():    # for pbr
+	cmd.setAttr('R_PBRMat.color', 0.0719, 0.31, 0.0719, type='double3')
+	cmd.setAttr('R_PBRMat.metalness', 0)
+	cmd.setAttr('R_PBRMat.specular', 1)
+	cmd.setAttr('R_PBRMat.roughness', 0.1)
+	try:
+		cmd.connectAttr('RPRNormal4.out', 'R_PBRMat.normalMap', f=True)
+	except:pass
+	cmd.setAttr('file14.fileTextureName', 'sourceimages/normal.tif', type='string' )
+	cmd.setAttr('R_PBRMat.glass', 1)
+	cmd.setAttr('R_PBRMat.glassIOR', 1.2)
+	cmd.setAttr('R_PBRMat.emissiveColor', 0.5, 0.5, 0.5, type='double3')
+	cmd.setAttr('R_PBRMat.emissiveWeight', 0)
+	cmd.setAttr('R_PBRMat.subsurfaceWeight', 0)
+	cmd.setAttr('R_PBRMat.subsurfaceColor', 0.436, 0.227, 0.131, type='double3')
+	cmd.setAttr('R_PBRMat.subsurfaceRadius0', 3.67)
+	cmd.setAttr('R_PBRMat.subsurfaceRadius1', 1.37)
+	cmd.setAttr('R_PBRMat.subsurfaceRadius2', 0.68)

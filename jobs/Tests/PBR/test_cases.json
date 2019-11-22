@@ -3,7 +3,10 @@
         "case": "MAYA_MAT_PBR_001",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('color', 'outColor', 'sourceimages/base_color.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.color')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "1. Base color .png"
@@ -14,7 +17,10 @@
         "case": "MAYA_MAT_PBR_002",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('color', 'outColor', 'sourceimages/base_color.jpg')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.color')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Base color .jpg"
@@ -25,7 +31,10 @@
         "case": "MAYA_MAT_PBR_003",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('color', 'outColor', 'sourceimages/base_color.tif')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.color')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Base color .tiff"
@@ -36,7 +45,10 @@
         "case": "MAYA_MAT_PBR_004",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('color', 'outColor', 'sourceimages/base_color.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.color')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Base color .exr"
@@ -47,7 +59,9 @@
         "case": "MAYA_MAT_PBR_005",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.color', 1, 0, 1, type='double3')",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Base color HSV color: 300:1:1"
@@ -58,7 +72,10 @@
         "case": "MAYA_MAT_PBR_006",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('metalness', 'outAlpha', 'sourceimages/metalness.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.metalness')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "2. Metalness .png"
@@ -69,7 +86,10 @@
         "case": "MAYA_MAT_PBR_007",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('metalness', 'outAlpha', 'sourceimages/metalness.jpg')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.metalness')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Metalness .jpg"
@@ -80,7 +100,10 @@
         "case": "MAYA_MAT_PBR_008",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('metalness', 'outAlpha', 'sourceimages/metalness.tif')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.metalness')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Metalness .tif"
@@ -91,7 +114,10 @@
         "case": "MAYA_MAT_PBR_009",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('metalness', 'outAlpha', 'sourceimages/metalness.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.metalness')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Metalness .exr"
@@ -102,7 +128,9 @@
         "case": "MAYA_MAT_PBR_010",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.metalness', 0.5)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Metalness=0.5"
@@ -113,7 +141,9 @@
         "case": "MAYA_MAT_PBR_011",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.metalness', 1)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Metalness=1"
@@ -124,7 +154,10 @@
         "case": "MAYA_MAT_PBR_012",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('specular', 'outAlpha', 'sourceimages/specular.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.specular')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "3. Specular .png"
@@ -135,7 +168,10 @@
         "case": "MAYA_MAT_PBR_013",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('specular', 'outAlpha', 'sourceimages/specular.jpg')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.specular')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Specular  .jpg"
@@ -146,7 +182,10 @@
         "case": "MAYA_MAT_PBR_014",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('specular', 'outAlpha', 'sourceimages/specular.tif')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.specular')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Specular  .tif"
@@ -157,7 +196,10 @@
         "case": "MAYA_MAT_PBR_015",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('specular', 'outAlpha', 'sourceimages/specular.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.specular')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Specular  .exr"
@@ -168,7 +210,9 @@
         "case": "MAYA_MAT_PBR_016",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.specular', 0.5)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Specular=0.5"
@@ -179,7 +223,9 @@
         "case": "MAYA_MAT_PBR_017",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.specular', 1)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Specular=1"
@@ -190,7 +236,10 @@
         "case": "MAYA_MAT_PBR_018",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('roughness', 'outAlpha', 'sourceimages/roughness.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.roughness')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "4. Roughness .png"
@@ -201,7 +250,10 @@
         "case": "MAYA_MAT_PBR_019",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('roughness', 'outAlpha', 'sourceimages/roughness.jpg')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.roughness')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Roughness  .jpg"
@@ -212,7 +264,10 @@
         "case": "MAYA_MAT_PBR_020",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('roughness', 'outAlpha', 'sourceimages/roughness.tif')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.roughness')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Roughness  .tif"
@@ -223,7 +278,10 @@
         "case": "MAYA_MAT_PBR_021",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('roughness', 'outAlpha', 'sourceimages/roughness.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.roughness')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Roughness  .exr"
@@ -234,7 +292,9 @@
         "case": "MAYA_MAT_PBR_022",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.roughness', 0.5)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Roughness=0"
@@ -245,7 +305,9 @@
         "case": "MAYA_MAT_PBR_023",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.roughness', 1)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Roughness=1"
@@ -256,7 +318,9 @@
         "case": "MAYA_MAT_PBR_024",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('file14.fileTextureName', 'sourceimages/normal.png', type='string')",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "5. Normal Map .png"
@@ -267,7 +331,9 @@
         "case": "MAYA_MAT_PBR_025",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('file14.fileTextureName', 'sourceimages/normal.jpg', type='string')",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Normal Map .jpg"
@@ -278,7 +344,8 @@
         "case": "MAYA_MAT_PBR_026",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Normal Map .tif"
@@ -289,7 +356,9 @@
         "case": "MAYA_MAT_PBR_027",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('file14.fileTextureName', 'sourceimages/normal.exr', type='string')",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Normal Map .exr"
@@ -300,7 +369,10 @@
         "case": "MAYA_MAT_PBR_028",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('glass', 'outAlpha', 'sourceimages/glass.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glass')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "6. Glass .png"
@@ -311,7 +383,10 @@
         "case": "MAYA_MAT_PBR_029",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('glass', 'outAlpha', 'sourceimages/glass.jpg')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glass')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Glass .jpg"
@@ -322,7 +397,10 @@
         "case": "MAYA_MAT_PBR_030",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('glass', 'outAlpha', 'sourceimages/glass.tif')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glass')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Glass .tif"
@@ -333,7 +411,10 @@
         "case": "MAYA_MAT_PBR_031",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('glass', 'outAlpha', 'sourceimages/glass.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glass')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Glass .exr"
@@ -344,7 +425,9 @@
         "case": "MAYA_MAT_PBR_032",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.glass', 0.5)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Glass=0"
@@ -355,7 +438,9 @@
         "case": "MAYA_MAT_PBR_033",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.glass', 1)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Glass=1"
@@ -366,7 +451,10 @@
         "case": "MAYA_MAT_PBR_034",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('glassIOR', 'outAlpha', 'sourceimages/glass_ior_t.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glassIOR')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "7. Glass IOR .exr"
@@ -377,7 +465,9 @@
         "case": "MAYA_MAT_PBR_035",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.glassIOR', 0.5)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Glass IOR=0"
@@ -388,7 +478,9 @@
         "case": "MAYA_MAT_PBR_036",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.glassIOR', 1)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Glass IOR=1"
@@ -399,7 +491,10 @@
         "case": "MAYA_MAT_PBR_037",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('emissiveColor', 'outColor', 'sourceimages/emissive.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.emissiveColor')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "8. Emissive Color .png"
@@ -410,7 +505,10 @@
         "case": "MAYA_MAT_PBR_038",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('emissiveColor', 'outColor', 'sourceimages/emissive.tif')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.emissiveColor')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Emissive Color .jpg"
@@ -421,7 +519,10 @@
         "case": "MAYA_MAT_PBR_039",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('emissiveColor', 'outColor', 'sourceimages/emissive.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.emissiveColor')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Emissive Color .tif"
@@ -432,7 +533,10 @@
         "case": "MAYA_MAT_PBR_040",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.emissiveColor', 1, 0.667, 0, type='double3')",
+            "cmd.setAttr('R_PBRMat.emissiveWeight', 0.5)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Emissive Color .exr"
@@ -443,7 +547,10 @@
         "case": "MAYA_MAT_PBR_041",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.emissiveColor', 1, 0.667, 0, type='double3')",
+            "cmd.setAttr('R_PBRMat.emissiveWeight', 1)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Emissive Color HSV color: 40:1:1"
@@ -454,7 +561,10 @@
         "case": "MAYA_MAT_PBR_042",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Emissive Color HSV color: 40:1:1"
@@ -465,7 +575,10 @@
         "case": "MAYA_MAT_PBR_043",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "9. Emissive Weight .png"
@@ -476,7 +589,10 @@
         "case": "MAYA_MAT_PBR_044",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.jpg')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Emissive Weight .jpg"
@@ -487,7 +603,10 @@
         "case": "MAYA_MAT_PBR_045",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.tif')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Emissive Weight .tif"
@@ -498,7 +617,10 @@
         "case": "MAYA_MAT_PBR_046",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Emissive Weight .exr"
@@ -509,7 +631,10 @@
         "case": "MAYA_MAT_PBR_047",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "10. Subsurface Weight .png"
@@ -520,7 +645,10 @@
         "case": "MAYA_MAT_PBR_048",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.jpeg')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Subsurface Weight .jpg"
@@ -531,7 +659,10 @@
         "case": "MAYA_MAT_PBR_049",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.tiff')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Subsurface Weight .tif"
@@ -542,7 +673,10 @@
         "case": "MAYA_MAT_PBR_050",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Subsurface Weight .exr"
@@ -553,7 +687,10 @@
         "case": "MAYA_MAT_PBR_051",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.png')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.subsurfaceColor')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "11. Subsurface Color.png"
@@ -564,7 +701,10 @@
         "case": "MAYA_MAT_PBR_052",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.jpeg')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.subsurfaceColor')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Subsurface Color .jpg"
@@ -575,7 +715,10 @@
         "case": "MAYA_MAT_PBR_053",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.tiff')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.subsurfaceColor')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Subsurface Color .tif"
@@ -586,7 +729,10 @@
         "case": "MAYA_MAT_PBR_054",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "file_tmp = setAttributePBR('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.exr')",
+            "rpr_render(test_case, script_info)",
+            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.subsurfaceColor')",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Subsurface Color .exr"
@@ -597,7 +743,11 @@
         "case": "MAYA_MAT_PBR_055",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.subsurfaceRadius0', 1)",
+            "cmd.setAttr('R_PBRMat.subsurfaceRadius1', 1)",
+            "cmd.setAttr('R_PBRMat.subsurfaceRadius2', 1)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "12. Subsurface Radius 1"
@@ -608,7 +758,11 @@
         "case": "MAYA_MAT_PBR_056",
         "status": "active",
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmd.setAttr('R_PBRMat.subsurfaceRadius0', 5)",
+            "cmd.setAttr('R_PBRMat.subsurfaceRadius1', 5)",
+            "cmd.setAttr('R_PBRMat.subsurfaceRadius2', 5)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributePBR()"
         ],
         "script_info": [
             "Subsurface Radius 5"
