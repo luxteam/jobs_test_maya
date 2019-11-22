@@ -221,13 +221,10 @@ def prerender(test_case, script_info, scene):
 						else:
 							eval(function)
 					except Exception as e:
-						print(e)
+						print('Error: ' + str(e) +
+							' with string: \"' + function + '\"')
 			except Exception as e:
-				if (e.message != 'functions'):
-					print('Error: ' + str(e) +
-						' with string: \"' + function + '\"')
-				else:
-					rpr_render(test_case, script_info)
+				rpr_render(test_case, script_info)
 
 
 def check_test_cases(test_case, script_info, scene):
