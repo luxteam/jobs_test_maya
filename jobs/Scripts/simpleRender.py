@@ -13,6 +13,9 @@ import time
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 import jobs_launcher.core.config as core_config
+from jobs_launcher.core.kill_process import kill_process
+
+PROCESS = ['Maya', 'maya.exe']
 
 if platform.system() == 'Darwin':
     # from PyObjCTools import AppHelper
@@ -24,14 +27,15 @@ if platform.system() == 'Darwin':
     from Quartz import kCGWindowListOptionOnScreenOnly
     from Quartz import kCGNullWindowID
     from Quartz import kCGWindowName
-        
-    
+
+
 def get_windows_titles():
     try:
         if platform.system() == 'Darwin':
             ws_options = kCGWindowListOptionOnScreenOnly
             windows_list = CGWindowListCopyWindowInfo(ws_options, kCGNullWindowID)
-            maya_titles = {x.get('kCGWindowName', u'Unknown') for x in windows_list if 'Maya' in x['kCGWindowOwnerName']}
+            maya_titles = {x.get('kCGWindowName', u'Unknown') for x in windows_list if
+                           'Maya' in x['kCGWindowOwnerName']}
 
             # duct tape for windows with empty title
             expected = {'Maya', 'Render View', 'Rendering...'}
@@ -42,7 +46,8 @@ def get_windows_titles():
 
         elif platform.system() == 'Windows':
             EnumWindows = ctypes.windll.user32.EnumWindows
-            EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int))
+            EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int),
+                                                 ctypes.POINTER(ctypes.c_int))
             GetWindowText = ctypes.windll.user32.GetWindowTextW
             GetWindowTextLength = ctypes.windll.user32.GetWindowTextLengthW
             IsWindowVisible = ctypes.windll.user32.IsWindowVisible
@@ -84,31 +89,6 @@ def createArgsParser():
     return parser
 
 
-def mayaKiller(kill=False):
-    for proc in psutil.process_iter():
-        try:
-            # Get process name & pid from process object.
-            processName = proc.name()
-            if processName in ('Maya', 'maya.exe'):
-                if kill:
-                    maya_process = psutil.Process(proc.pid)
-                    try:
-                        core_config.main_logger.error("Trying to kill process {}".format(maya_process))
-                        maya_process.terminate()
-                        time.sleep(10)
-                        maya_process.kill()
-                        time.sleep(10)
-                        status = maya_process.status()
-                        core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(maya_process, maya_process.name(), status))
-                    except psutil.NoSuchProcess:
-                        core_config.main_logger.info("Maya is killed: {}".format(maya_process))
-                return True
-        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
-            pass
-
-    return False
-
-
 def check_licenses(res_path, maya_scenes):
     try:
     	for scene in maya_scenes:
@@ -135,9 +115,9 @@ def main(args, startFrom, lastStatus):
             testCases_mel = json.loads(tc)[args.testType]
     except Exception as e:
         testCases_mel = "all"
-    
-    try:        
-        with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
+
+    try:
+        with open(os.path.join(os.path.dirname(__file__), args.template)) as f:
             script_template = f.read()
         with open(os.path.join(os.path.dirname(__file__), "Templates", "base_function.mel")) as f:
             base = f.read()
@@ -152,11 +132,11 @@ def main(args, startFrom, lastStatus):
     mel_template = base + script_template
     work_dir = os.path.abspath(args.output).replace('\\', '/')
     melScript = mel_template.format(work_dir=work_dir,
-                                       testType=args.testType,
-                                       render_device = args.render_device, res_path=res_path,
-                                       pass_limit = args.pass_limit, resolution_x = args.resolution_x,
-                                       resolution_y = args.resolution_y, testCases = testCases_mel,
-                                       SPU=args.SPU)
+                                    testType=args.testType,
+                                    render_device=args.render_device, res_path=res_path,
+                                    pass_limit=args.pass_limit, resolution_x=args.resolution_x,
+                                    resolution_y=args.resolution_y, testCases=testCases_mel,
+                                    SPU=args.SPU)
 
     if lastStatus == "last_fail":
         melScript = melScript.replace("@check_test_cases", "@check_test_cases_fail_save")
@@ -169,7 +149,7 @@ def main(args, startFrom, lastStatus):
     melScript = melScript.replace(original_tests, replace_tests)
 
     if lastStatus == "fail":
-        fail_test = original_tests.split("@")[startFrom-1:startFrom]
+        fail_test = original_tests.split("@")[startFrom - 1:startFrom]
         fail_test_ = ""
         for each in fail_test:
             each = each.replace("check_test_cases", "check_test_cases_fail_save")
@@ -202,8 +182,8 @@ def main(args, startFrom, lastStatus):
         cmdRun = '''
         export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
         export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
-        "{tool}" -command "source script.mel; evalDeferred -lp (main());"'''\
-        .format(tool=args.tool)
+        "{tool}" -command "source script.mel; evalDeferred -lp (main());"''' \
+            .format(tool=args.tool)
 
         cmdScriptPath = os.path.join(args.output, 'script.sh')
         with open(cmdScriptPath, 'w') as file:
@@ -269,9 +249,6 @@ def main(args, startFrom, lastStatus):
             rc = 0
             break
 
-    if mayaKiller(kill=True):
-        core_config.main_logger.error("Maya was alive after tests.")
-
     core_config.main_logger.info("Main func return : {}".format(rc))
     return rc
 
@@ -284,27 +261,27 @@ if __name__ == "__main__":
     except OSError as e:
         pass
 
-    if platform.system() == 'Darwin':
-        if mayaKiller(kill=True):
-            core_config.main_logger.info("Found unkilled maya. Killing maya...")
+    kill_process(PROCESS)
 
     core_config.main_logger.info("simpleRender start working...")
 
     def getJsonCount():
         return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
 
+
     def totalCount():
-        try:        
-            with open(os.path.join(os.path.dirname(__file__),  args.template)) as f:
+        try:
+            with open(os.path.join(os.path.dirname(__file__), args.template)) as f:
                 script_template = f.read()
-            return len(script_template.split("@")) - 1 # -1 because first element is "" (split)
+            return len(script_template.split("@")) - 1  # -1 because first element is "" (split)
         except OSError as e:
             return -1
 
+
     total_count = totalCount()
-    fail_count = 0 
-    current_test = 1 # start from 1st test
-    last_status = 0 # 0 - success status
+    fail_count = 0
+    current_test = 1  # start from 1st test
+    last_status = 0  # 0 - success status
     it = 0
 
     core_config.main_logger.info("Total tests count: {}".format(total_count))
@@ -317,36 +294,42 @@ if __name__ == "__main__":
             .format(it, current_test, last_status, fail_count, getJsonCount()))
 
         if last_status and fail_count == 3:
-            rc = main(args, current_test, "fail") # Start from n+1 test. n - fail.
+            rc = main(args, current_test, "fail")  # Start from n+1 test. n - fail.
         elif last_status and fail_count == -1:
-            rc = main(args, current_test, "last_fail") # last test - fail.
+            rc = main(args, current_test, "last_fail")  # last test - fail.
         else:
-            rc = main(args, current_test, "ok") # Start from 1st test (ok - random word)
+            rc = main(args, current_test, "ok")  # Start from 1st test (ok - random word)
 
-        if current_test != getJsonCount() + 1: # count to zero if failes another test
+        if current_test != getJsonCount() + 1:  # count to zero if failes another test
             fail_count = 0
 
         last_status = rc
-        if not last_status: 
+
+        if not last_status:
             if not getJsonCount():
                 rc = main(args, current_test, "no scene")
                 core_config.main_logger.info("Finish simpleRender with code: {}; Scene didn't found.".format(rc))
             else:
                 core_config.main_logger.info("Finish simpleRender with code: {}".format(rc))
+            kill_process(PROCESS)
             exit(rc) # finish work. 0 - success status.
+
         elif last_status and fail_count == 2:
-            if total_count < getJsonCount() + 2: # last test failed
+            if total_count < getJsonCount() + 2:  # last test failed
                 fail_count = -1
                 current_test = getJsonCount() + 1
-            else: # not last test failed
+            else:  # not last test failed
                 fail_count += 1
-                current_test = getJsonCount() + 2 # mark as fail test and go to next test 
+                current_test = getJsonCount() + 2  # mark as fail test and go to next test
+
         elif last_status:
             if getJsonCount() == total_count:
                 core_config.main_logger.info("Finish simpleRender with code: {}\n\tJson count == total count.".format(rc))
+                kill_process(PROCESS)
                 exit(rc)
-            fail_count += 1 # count of failes + 1 (for current test)
+            fail_count += 1  # count of failes + 1 (for current test)
             current_test = getJsonCount() + 1
     
     core_config.main_logger.info("Finish simpleRender with code: {}\n\tNo loop.".format(0))
+    kill_process(PROCESS)
     exit(0)
