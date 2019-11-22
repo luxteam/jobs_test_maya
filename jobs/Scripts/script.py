@@ -378,7 +378,7 @@ def setAttributePBR(pbr_attr, file_attr, value):  # for pbr
 
 	cmd.setAttr((file+".fileTextureName"), value, type="string")
 
-def resetAttributesPBR():    # for pbr
+def resetAttributePBR():    # for pbr
 	cmd.setAttr('R_PBRMat.color', 0.0719, 0.31, 0.0719, type='double3')
 	cmd.setAttr('R_PBRMat.metalness', 0)
 	cmd.setAttr('R_PBRMat.specular', 1)
