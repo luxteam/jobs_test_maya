@@ -13,8 +13,10 @@ import time
 
 sys.path.append(os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
-from jobs_launcher.core.kill_process import kill_process
+
 import jobs_launcher.core.config as core_config
+from jobs_launcher.core.kill_process import kill_process
+
 PROCESS = ['Maya', 'maya.exe']
 
 
@@ -162,19 +164,18 @@ def main(args):
 
 	for case in cases:
 		if (case['status'] != 'done'):
-			try:
-				with open(os.path.join(work_dir, (case['case'] + core_config.CASE_REPORT_SUFFIX)), 'w') as f:
-					if (case["status"] == 'inprogress'):
-						case['status'] = 'fail'
+			with open(os.path.join(work_dir, (case['case'] + core_config.CASE_REPORT_SUFFIX)), 'w') as f:
+				if (case["status"] == 'inprogress'):
+					case['status'] = 'fail'
 
-					template = core_config.RENDER_REPORT_BASE
-					template["test_case"] = case["case"]
-					template["test_status"] = case["status"]
+				template = core_config.RENDER_REPORT_BASE
+				template["test_case"] = case["case"]
+				template["test_status"] = case["status"]
+				try:
 					template["scene_name"] = case["scene"]
-					template["script_info"] = case["script_info"]
-					f.write(json.dumps([template], indent=4))
-			except Exception as e:
-				print(e)
+				except:pass
+				template["script_info"] = case["script_info"]
+				f.write(json.dumps([template], indent=4))
 
 	with open(os.path.join(work_dir, 'test_cases.json'), "w+") as f:
 		json.dump(cases, f, indent=4)
@@ -186,7 +187,7 @@ def main(args):
 		set PYTHONPATH=%cd%;PYTHONPATH
 		set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
 		"{tool}" -command "python(\\"import script\\"); python(\\"script.main()\\");"''' \
-										.format(tool=args.tool)
+																		.format(tool=args.tool)
 
 		cmdScriptPath = os.path.join(args.output, 'script.bat')
 		with open(cmdScriptPath, 'w') as file:
