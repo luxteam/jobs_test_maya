@@ -109,6 +109,8 @@ def main(args):
 	script_template = None
 	cmdScriptPath = None
 
+	core_config.main_logger.info('Make script')
+
 	try:
 		with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
 			tc = f.read()
@@ -156,6 +158,8 @@ def main(args):
 				temp.append(case)
 		cases = temp
 
+	core_config.main_logger.info('Create empty report files')
+
 	for case in cases:
 		if (case['status'] != 'done'):
 			try:
@@ -198,6 +202,8 @@ def main(args):
 		with open(cmdScriptPath, 'w') as file:
 			file.write(cmdRun)
 		os.system('chmod +x {}'.format(cmdScriptPath))
+
+	core_config.main_logger.info('Try to run run.* file')
 
 	os.chdir(args.output)
 	p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE,
@@ -258,6 +264,7 @@ def group_failed(args):
 
 
 if __name__ == "__main__":
+	i = 0
 
 	args = createArgsParser().parse_args()
 
@@ -267,6 +274,8 @@ if __name__ == "__main__":
 		pass
 
 	while True:
+		i += 1
+		core_config.main_logger.info('Iteration: ' + str(i))
 		rc = main(args)
 
 		try:
