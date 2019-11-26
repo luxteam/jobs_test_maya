@@ -188,7 +188,9 @@ def check_rpr_load():
 def prerender(test_case, script_info, scene):
 	scene_name = cmd.file(q=True, sn=True, shn=True)
 	if (scene_name != scene):
-		if (mel.eval('catch (`file -f -options "v=0;"  -ignoreVersion -o ' + scene + '`)')):#
+		try:
+			cmd.file(scene, f=True, op='v=0;', iv=True, o=True)
+		except:
 			cmd.evalDeferred("maya.cmds.quit(abort=True)")
 	validateFiles()
 
@@ -349,12 +351,14 @@ def setAttributeSS(attr, value):  # for sun sky
 	return file
 
 
-def removeIBL(objects):  # for sun sky
+def removeIBL():  # for sun sky
+	objects = cmd.ls(g=True)
 	for obj in objects:
 		if (obj == 'RPRIBLShape'):
 			cmd.delete('RPRIBL')
 		if (obj == 'RPRSkyShape'):
 			cmd.delete('RPRSky')
+	cmd.createNode('RPRSky', n='RPRSkyShape')
 
 
 def resetAttributesV():    # for volume

@@ -396,7 +396,7 @@
         "script_info": [
             "Spot light. Intensity: 40"
         ],
-        "scene": "ConeAngle:0.006",
+        "scene": "maya_shaderball.ma",
         "functions": [
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
@@ -420,7 +420,7 @@
         "script_info": [
             "Spot light. Intensity: 40"
         ],
-        "scene": "ConeAngle:90",
+        "scene": "maya_shaderball.ma",
         "functions": [
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
@@ -444,7 +444,7 @@
         "script_info": [
             "Spot light. Intensity: 40"
         ],
-        "scene": "ConeAngle:0.006",
+        "scene": "maya_shaderball.ma",
         "functions": [
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
