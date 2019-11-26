@@ -187,7 +187,7 @@
         "script_info": [
             "SubsurfaceMaterial"
         ],
-        "scene": "EmissionColor-RGB-10"
+        "scene": "RPRNodes.ma"
     },
     {
         "case": "MAYA_MAT_NODE_020",
@@ -206,7 +206,7 @@
         "script_info": [
             "SubsurfaceMaterial"
         ],
-        "scene": "EmissionColor-RGB-255"
+        "scene": "RPRNodes.ma"
     },
     {
         "case": "MAYA_MAT_NODE_021",

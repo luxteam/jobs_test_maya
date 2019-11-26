@@ -225,7 +225,7 @@
         "script_info": [
             "Max Ray Depth - 2"
         ],
-        "scene": "MaxDiffse-2"
+        "scene": "maya_shaderball.ma"
     },
     {
         "case": "MAYA_RS_QL_018",
@@ -244,7 +244,7 @@
         "script_info": [
             "Max Ray Depth - 50"
         ],
-        "scene": "MaxDiffse-50"
+        "scene": "maya_shaderball.ma"
     },
     {
         "case": "MAYA_RS_QL_019",
