@@ -479,3 +479,16 @@ def resetAttributeU():    # for Uber
 	cmd.setAttr('R_UberMat.displacementSubdiv', 4)
 	cmd.setAttr('R_UberMat.displacementCreaseWeight', 0)
 	cmd.setAttr('R_UberMat.displacementBoundary', 1)
+
+
+	
+def resetAttributesQ():	#for quality
+    cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 8)
+    cmd.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 3)
+    cmd.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 5)
+    cmd.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 5)
+    cmd.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 5)
+    cmd.setAttr('RadeonProRenderGlobals.maxDepthShadow', 5)
+    cmd.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0.02)
+    cmd.setAttr('RadeonProRenderGlobals.enableOOC', 0)
+    cmd.setAttr('RadeonProRenderGlobals.textureCacheSize', 512)
