@@ -375,8 +375,8 @@ def setAttributeV(volume_attr, file_attr, value):  # for volume
 def setAttributePBR(pbr_attr, file_attr, value):  # for pbr
 	file = setAttribute(pbr_attr, value)
 	cmd.connectAttr((file+"."+file_attr), ("R_PBRMat."+pbr_attr), force=True)
-
 	cmd.setAttr((file+".fileTextureName"), value, type="string")
+	return file
 
 def resetAttributePBR():    # for pbr
 	cmd.setAttr('R_PBRMat.color', 0.0719, 0.31, 0.0719, type='double3')

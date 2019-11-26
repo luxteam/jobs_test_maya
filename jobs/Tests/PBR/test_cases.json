@@ -5,7 +5,7 @@
         "functions": [
             "file_tmp = setAttributePBR('color', 'outColor', 'sourceimages/base_color.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.color')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.color')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -19,7 +19,7 @@
         "functions": [
             "file_tmp = setAttributePBR('color', 'outColor', 'sourceimages/base_color.jpg')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.color')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.color')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -33,7 +33,7 @@
         "functions": [
             "file_tmp = setAttributePBR('color', 'outColor', 'sourceimages/base_color.tif')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.color')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.color')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -47,7 +47,7 @@
         "functions": [
             "file_tmp = setAttributePBR('color', 'outColor', 'sourceimages/base_color.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.color')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.color')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -74,7 +74,7 @@
         "functions": [
             "file_tmp = setAttributePBR('metalness', 'outAlpha', 'sourceimages/metalness.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.metalness')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.metalness')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -88,7 +88,7 @@
         "functions": [
             "file_tmp = setAttributePBR('metalness', 'outAlpha', 'sourceimages/metalness.jpg')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.metalness')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.metalness')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -102,7 +102,7 @@
         "functions": [
             "file_tmp = setAttributePBR('metalness', 'outAlpha', 'sourceimages/metalness.tif')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.metalness')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.metalness')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -116,7 +116,7 @@
         "functions": [
             "file_tmp = setAttributePBR('metalness', 'outAlpha', 'sourceimages/metalness.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.metalness')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.metalness')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -156,7 +156,7 @@
         "functions": [
             "file_tmp = setAttributePBR('specular', 'outAlpha', 'sourceimages/specular.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.specular')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.specular')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -170,7 +170,7 @@
         "functions": [
             "file_tmp = setAttributePBR('specular', 'outAlpha', 'sourceimages/specular.jpg')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.specular')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.specular')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -184,7 +184,7 @@
         "functions": [
             "file_tmp = setAttributePBR('specular', 'outAlpha', 'sourceimages/specular.tif')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.specular')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.specular')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -198,7 +198,7 @@
         "functions": [
             "file_tmp = setAttributePBR('specular', 'outAlpha', 'sourceimages/specular.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.specular')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.specular')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -238,7 +238,7 @@
         "functions": [
             "file_tmp = setAttributePBR('roughness', 'outAlpha', 'sourceimages/roughness.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.roughness')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.roughness')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -252,7 +252,7 @@
         "functions": [
             "file_tmp = setAttributePBR('roughness', 'outAlpha', 'sourceimages/roughness.jpg')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.roughness')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.roughness')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -266,7 +266,7 @@
         "functions": [
             "file_tmp = setAttributePBR('roughness', 'outAlpha', 'sourceimages/roughness.tif')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.roughness')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.roughness')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -280,7 +280,7 @@
         "functions": [
             "file_tmp = setAttributePBR('roughness', 'outAlpha', 'sourceimages/roughness.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.roughness')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.roughness')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -371,7 +371,7 @@
         "functions": [
             "file_tmp = setAttributePBR('glass', 'outAlpha', 'sourceimages/glass.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glass')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.glass')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -385,7 +385,7 @@
         "functions": [
             "file_tmp = setAttributePBR('glass', 'outAlpha', 'sourceimages/glass.jpg')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glass')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.glass')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -399,7 +399,7 @@
         "functions": [
             "file_tmp = setAttributePBR('glass', 'outAlpha', 'sourceimages/glass.tif')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glass')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.glass')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -413,7 +413,7 @@
         "functions": [
             "file_tmp = setAttributePBR('glass', 'outAlpha', 'sourceimages/glass.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glass')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.glass')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -453,7 +453,7 @@
         "functions": [
             "file_tmp = setAttributePBR('glassIOR', 'outAlpha', 'sourceimages/glass_ior_t.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.glassIOR')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.glassIOR')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -493,7 +493,7 @@
         "functions": [
             "file_tmp = setAttributePBR('emissiveColor', 'outColor', 'sourceimages/emissive.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.emissiveColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.emissiveColor')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -507,7 +507,7 @@
         "functions": [
             "file_tmp = setAttributePBR('emissiveColor', 'outColor', 'sourceimages/emissive.tif')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.emissiveColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.emissiveColor')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -521,7 +521,7 @@
         "functions": [
             "file_tmp = setAttributePBR('emissiveColor', 'outColor', 'sourceimages/emissive.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.emissiveColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.emissiveColor')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -563,7 +563,7 @@
         "functions": [
             "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.emissiveWeight')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -577,7 +577,7 @@
         "functions": [
             "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.emissiveWeight')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -591,7 +591,7 @@
         "functions": [
             "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.jpg')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.emissiveWeight')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -605,7 +605,7 @@
         "functions": [
             "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.tif')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.emissiveWeight')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -619,7 +619,7 @@
         "functions": [
             "file_tmp = setAttributePBR('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.emissiveWeight')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.emissiveWeight')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -633,7 +633,7 @@
         "functions": [
             "file_tmp = setAttributePBR('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -647,7 +647,7 @@
         "functions": [
             "file_tmp = setAttributePBR('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.jpeg')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -661,7 +661,7 @@
         "functions": [
             "file_tmp = setAttributePBR('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.tiff')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -675,7 +675,7 @@
         "functions": [
             "file_tmp = setAttributePBR('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.subsurfaceWeight')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -689,7 +689,7 @@
         "functions": [
             "file_tmp = setAttributePBR('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.png')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.subsurfaceColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.subsurfaceColor')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -703,7 +703,7 @@
         "functions": [
             "file_tmp = setAttributePBR('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.jpeg')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.subsurfaceColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.subsurfaceColor')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -717,7 +717,7 @@
         "functions": [
             "file_tmp = setAttributePBR('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.tiff')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.subsurfaceColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.subsurfaceColor')",
             "resetAttributePBR()"
         ],
         "script_info": [
@@ -731,7 +731,7 @@
         "functions": [
             "file_tmp = setAttributePBR('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.exr')",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'R_PBRMat.subsurfaceColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.subsurfaceColor')",
             "resetAttributePBR()"
         ],
         "script_info": [
