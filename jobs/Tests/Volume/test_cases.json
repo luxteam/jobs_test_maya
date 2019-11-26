@@ -9,7 +9,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 0.05)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -27,7 +27,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 0.1)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -45,7 +45,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 0.2)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -63,7 +63,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 0.5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -97,7 +97,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 2.5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -115,7 +115,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 2.5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -150,7 +150,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 2.5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -168,7 +168,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 2.5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -203,7 +203,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -221,7 +221,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -239,7 +239,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -257,7 +257,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -275,7 +275,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 7.5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -293,7 +293,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 7.5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -311,7 +311,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 7.5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -346,7 +346,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 7.5)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -364,7 +364,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 10)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -399,7 +399,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 10)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -417,7 +417,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 10)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [
@@ -435,7 +435,7 @@
             "cmd.setAttr('RPRVolumeMaterial1.density', 10)",
             "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(file_tmp + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributesV()"
         ],
         "script_info": [

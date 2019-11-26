@@ -345,8 +345,8 @@ def setAttribute(attr, value):
 def setAttributeSS(attr, value):  # for sun sky
 	file = setAttribute(attr, value)
 	cmd.connectAttr((file+".outColor"), ("RPRSkyShape."+attr), force=True)
-
 	cmd.setAttr((file+".fileTextureName"), value, type="string")
+	return file
 
 
 def removeIBL(objects):  # for sun sky
@@ -368,8 +368,8 @@ def resetAttributesV():    # for volume
 def setAttributeV(volume_attr, file_attr, value):  # for volume
 	file = setAttribute(volume_attr, value)
 	cmd.connectAttr((file+"."+file_attr), ("RPRVolumeMaterial1."+volume_attr), force=True)
-
 	cmd.setAttr((file+".fileTextureName"), value, type="string")
+	return file
 
 
 def setAttributePBR(pbr_attr, file_attr, value):  # for pbr
@@ -401,8 +401,8 @@ def resetAttributePBR():    # for pbr
 def setAttributeU(pbr_attr, file_attr, value):  # for Uber
 	file = setAttribute(pbr_attr, value)
 	cmd.connectAttr((file+"."+file_attr), ("R_UberMat."+pbr_attr), force=True)
-
 	cmd.setAttr((file+".fileTextureName"), value, type="string")
+	return file
 
 def resetAttributeU():    # for Uber
 	cmd.setAttr('R_UberMat.diffuse', 1)
