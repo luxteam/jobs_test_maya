@@ -7,7 +7,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, '0', 0,0,0, '1')')",
+            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, \"0\", 0,0,0, \"1\")')",
             "cmd.setAttr('ambientLight1.translateX', 267)",
             "cmd.setAttr('ambientLight1.translateY', 40)",
             "cmd.setAttr('ambientLight1.translateZ', 1184)",
@@ -25,7 +25,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, '0', 0,0,0, '1')')",
+            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, \"0\", 0,0,0, \"1\")')",
             "cmd.setAttr('ambientLight1.translateX', 267)",
             "cmd.setAttr('ambientLight1.translateY', 40)",
             "cmd.setAttr('ambientLight1.translateZ', 1184)",
@@ -43,7 +43,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, '0', 0,0,0, '1')')",
+            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, \"0\", 0,0,0, \"1\")')",
             "cmd.setAttr('ambientLight1.translateX', 267)",
             "cmd.setAttr('ambientLight1.translateY', 40)",
             "cmd.setAttr('ambientLight1.translateZ', 1184)",
@@ -61,7 +61,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, '0', 0,0,0, '1')')",
+            "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, \"0\", 0,0,0, \"1\")')",
             "cmd.setAttr('ambientLight1.translateX', 267)",
             "cmd.setAttr('ambientLight1.translateY', 40)",
             "cmd.setAttr('ambientLight1.translateZ', 1184)",
@@ -184,7 +184,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "mel.eval('defaultDirectionalLight(1, 1,1,1, '0', 0,0,0, 0)')",
+            "mel.eval('defaultDirectionalLight(1, 1,1,1, \"0\", 0,0,0, 0)')",
             "cmd.setAttr('directionalLight1.translateX', 267)",
             "cmd.setAttr('directionalLight1.translateY', 40)",
             "cmd.setAttr('directionalLight1.translateZ', 1184)",
@@ -204,7 +204,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "mel.eval('defaultDirectionalLight(1, 1,1,1, '0', 0,0,0, 0)')",
+            "mel.eval('defaultDirectionalLight(1, 1,1,1, \"0\", 0,0,0, 0)')",
             "cmd.setAttr('directionalLight1.translateX', 267)",
             "cmd.setAttr('directionalLight1.translateY', 40)",
             "cmd.setAttr('directionalLight1.translateZ', 1184)",
