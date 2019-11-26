@@ -21,7 +21,7 @@ if platform.system() == 'Darwin':
     # from PyObjCTools import AppHelper
     # import objc
     # from objc import super
-    from Cocoa import NSWorkspace
+    # from Cocoa import NSWorkspace
     # from AppKit import NSWorkspace
     from Quartz import CGWindowListCopyWindowInfo
     from Quartz import kCGWindowListOptionOnScreenOnly
