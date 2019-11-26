@@ -195,7 +195,7 @@
         "case": "MAYA_SAN_013",
         "status": "active",
         "functions": [
-            "mel.eval('defaultDirectionalLight(1, 1,1,1, '0', 0,0,0, 0)')",
+            "mel.eval('defaultDirectionalLight(1, 1,1,1, \"0\", 0,0,0, 0)')",
             "cmd.setAttr('directionalLightShape1.intensity', 5)",
             "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
             "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
