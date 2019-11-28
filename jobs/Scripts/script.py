@@ -257,7 +257,7 @@ def case_function(case):
 
 	if (case['status'] == "fail"):
 		func = 2
-		case['status'] = "failed"
+		case['status'] = "error"
 
 	try:
 		scene_name = case['scene']
@@ -284,7 +284,7 @@ def main():
 #	active- case need to be executed
 # 	inprogress- case executing (if maya crushed it still be inprogress)
 #	fail- maya was crushed while executing this case and script need to create report for this case
-#	failed- maya was crushed while executing this case and script don't need to touch this case
+#	error- maya was crushed while executing this case and script don't need to touch this case
 #	done- case was executed successfully
 #	skipped- case don't need to be executed
 
@@ -485,7 +485,6 @@ def resetAttributeU():    # for Uber
 	cmd.setAttr('R_UberMat.displacementBoundary', 1)
 
 
-	
 def resetAttributesQ():	#for quality
     cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 8)
     cmd.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 3)
@@ -496,3 +495,18 @@ def resetAttributesQ():	#for quality
     cmd.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0.02)
     cmd.setAttr('RadeonProRenderGlobals.enableOOC', 0)
     cmd.setAttr('RadeonProRenderGlobals.textureCacheSize', 512)
+
+
+def ibl():	# for IBL
+	exist = 0		
+	objects = cmd.ls(g=True)
+	for obj in objects:
+		if (obj == 'RPRIBLShape'):
+			exist = 1
+	if (exist == 0):
+		cmd.createNode('RPRIBL', n='RPRIBLShape')
+		parent = cmd.listRelatives('RPRIBLShape', p=True)
+		cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)
+		cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)
+		cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)
+		cmd.rename(parent[0], 'RPRIBLShape')

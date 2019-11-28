@@ -291,7 +291,7 @@ if __name__ == "__main__":
 
 		for case in cases:
 			if (case['status'] not in ['skipped']):
-				if (case['status'] in ['fail', 'failed', 'inprogress']):
+				if (case['status'] in ['fail', 'error', 'inprogress']):
 					failed_count += 1
 					if (args.fail_count == failed_count):
 						group_failed(args)
