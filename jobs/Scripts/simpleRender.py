@@ -213,7 +213,7 @@ def main(args):
 
 	while True:
 		try:
-			rc = p.communicate(timeout=20)
+			rc = p.communicate(timeout=40)
 
 		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
 			fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
