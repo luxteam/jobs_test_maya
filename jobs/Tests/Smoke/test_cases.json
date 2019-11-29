@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_SM_001", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "check_test_cases_success_save"
         ], 
@@ -11,7 +11,7 @@
     }, 
     {
         "case": "MAYA_SM_002", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "check_test_cases_success_save"
         ], 
@@ -21,7 +21,7 @@
     }, 
     {
         "case": "MAYA_SM_003", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "mel.eval('FBXImport -f (\"' + RES_PATH + '\" + \"/sourceimages/park_bench1.fbx\")')", 
             "rpr_render(test_case, script_info)", 
@@ -35,7 +35,7 @@
     }, 
     {
         "case": "MAYA_SM_004", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.file((RES_PATH + '/sourceimages/example.obj'), i=True, type='OBJ', options='mo=-1', pr=True)",
             "cmd.rename('polySurface1', 'Shader_Ball')",
@@ -52,7 +52,7 @@
     }, 
     {
         "case": "MAYA_SM_005", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "check_test_cases_success_save"
         ], 
@@ -62,7 +62,7 @@
     }, 
     {
         "case": "MAYA_SM_006", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.hide('ground')", 
             "cmd.createNode('RPRIBL', n='RPRIBLShape')", 
@@ -83,7 +83,7 @@
     }, 
     {
         "case": "MAYA_SM_007", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.hide('ground')", 
             "cmd.createNode('RPRIBL', n='RPRIBLShape')", 
@@ -105,7 +105,7 @@
     }, 
     {
         "case": "MAYA_SM_008", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.hide('ground')", 
             "cmd.createNode('RPRIBL', n='RPRIBLShape')", 
@@ -127,7 +127,7 @@
     }, 
     {
         "case": "MAYA_SM_009", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.createNode('RPRSky', n='RPRSkyShape')", 
             "cmd.setAttr('RPRSkyShape.turbidity', 30)", 
@@ -143,7 +143,7 @@
     }, 
     {
         "case": "MAYA_SM_010", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "mel.eval('source shelfCommands.mel; createIESLight()')", 
             "cmd.setAttr('RPRIESLight.iesFile', (RES_PATH + '/sourceimages/1.IES'), type='string')", 
@@ -164,7 +164,7 @@
     }, 
     {
         "case": "MAYA_SM_011", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "Render 1 pass"
         ], 
@@ -176,7 +176,7 @@
     }, 
     {
         "case": "MAYA_SM_012", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "Render 100 pass"
         ], 
@@ -188,7 +188,7 @@
     }, 
     {
         "case": "MAYA_SM_013", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "Render 500 pass"
         ], 
@@ -200,7 +200,7 @@
     }, 
     {
         "case": "MAYA_SM_014", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)", 
             "cmd.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)", 
@@ -216,7 +216,7 @@
     }, 
     {
         "case": "MAYA_SM_015", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.useRenderStamp', 1)", 
             "rpr_render(test_case, script_info)", 
@@ -230,7 +230,7 @@
     }, 
     {
         "case": "MAYA_SM_016", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 4)", 
             "rpr_render(test_case, script_info)", 
@@ -244,7 +244,7 @@
     }, 
     {
         "case": "MAYA_SM_017", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.samples', 8)", 
             "cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 15)", 
@@ -260,7 +260,7 @@
     }, 
     {
         "case": "MAYA_SM_018", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('defaultResolution.width', 1280)", 
             "cmd.setAttr('defaultResolution.height', 720)", 
@@ -282,7 +282,7 @@
     }, 
     {
         "case": "MAYA_SM_019", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('defaultResolution.width', 1500)", 
             "cmd.setAttr('defaultResolution.height', 1125)", 
@@ -301,7 +301,7 @@
     }, 
     {
         "case": "MAYA_SM_020", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 32)", 
             "rpr_render(test_case, script_info)", 
@@ -315,7 +315,7 @@
     }, 
     {
         "case": "MAYA_SM_021", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 8)", 
             "rpr_render(test_case, script_info)"
@@ -328,7 +328,7 @@
     }, 
     {
         "case": "MAYA_SM_022", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
@@ -344,7 +344,7 @@
     }, 
     {
         "case": "MAYA_SM_023", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
@@ -359,7 +359,7 @@
     }, 
     {
         "case": "MAYA_SM_024", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
@@ -374,7 +374,7 @@
     }, 
     {
         "case": "MAYA_SM_025", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "mel.eval('defaultAreaLight(1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0)')", 
             "cmd.setAttr('areaLightShape1.intensity', 20)", 
@@ -391,7 +391,7 @@
     }, 
     {
         "case": "MAYA_SM_026", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 3)", 
             "rpr_render(test_case, script_info)", 
@@ -405,7 +405,7 @@
     }, 
     {
         "case": "MAYA_SM_027", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "mel.eval('source shelfCommands.mel; createPhysicalLight()')", 
             "cmd.select('RPRPhysicalLight1', r=True)", 
@@ -430,8 +430,7 @@
             "material = 'Fiberglass'", 
             "material_path = libraryPath + '/' + material", 
             "xml = mel.eval('getFileList -folder \"'+material_path+'\" -filespec \"*.xml\"')", 
-            "material_path = material_path + '/' + xml[0]", 
-            "mel.eval('RPRXMLImport -file \"'+material_path + '\" -ii false -mn \"materialTestNode\"')", 
+            "cmd.RPRXMLImport(file=material_path+\"/\"+xml[0], ii=False, mn='materialTestNode')", 
             "cmd.select('Lamborginhi_Aventador', r=True)", 
             "cmd.hyperShade('materialTestNode', assign=True)",
             "rpr_render(test_case, script_info)"
@@ -444,7 +443,7 @@
     }, 
     {
         "case": "MAYA_SM_029", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "rpr = cmd.shadingNode('RPRPbrMaterial', asShader=True)", 
             "cmd.setAttr(rpr + '.color', 0, 0, 1)", 
@@ -464,7 +463,7 @@
     }, 
     {
         "case": "MAYA_SM_030", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "rpr = mel.eval('shadingNode -asShader \"RPRUberMaterial\"')", 
             "cmd.setAttr((rpr + '.diffuse'), 1)", 
@@ -485,7 +484,7 @@
     }, 
     {
         "case": "MAYA_SM_031", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.select('Cube', r=True)", 
             "mel.eval('instance; rotate -r 0 10 0; move -r 0.025 0.025 0.025; for ($i=1; $i<500; ++$i) instance -st;')", 
@@ -499,7 +498,7 @@
     }, 
     {
         "case": "MAYA_SM_032", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RPRIESLight1.iesFile', (RES_PATH + '/sourceimages/1.IES'), type='string')", 
             "cmd.setAttr('RPRIESLight1.intensity', 2)", 
@@ -517,7 +516,7 @@
     }, 
     {
         "case": "MAYA_SM_033", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.aovOpacity', 1)", 
             "cmd.setAttr('RadeonProRenderGlobals.aovBackground', 1)", 
@@ -539,7 +538,7 @@
     }, 
     {
         "case": "MAYA_SM_034", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "SSS", 
             "Pass Limit: 100"
@@ -552,7 +551,7 @@
     }, 
     {
         "case": "MAYA_SM_035", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 15)", 
             "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 400)", 
@@ -568,7 +567,7 @@
     }, 
     {
         "case": "MAYA_SM_036", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "Displacement", 
             "Pass Limit: 50"
@@ -577,7 +576,7 @@
     }, 
     {
         "case": "MAYA_SM_037", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmd.hide('ground')", 
             "cmd.createNode('RPRIBL', n='RPRIBLShape')", 
