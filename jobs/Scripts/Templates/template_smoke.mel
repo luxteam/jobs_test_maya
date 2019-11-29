@@ -246,13 +246,16 @@ global proc check_rpr_load(){{
 	setAttr "defaultRenderGlobals.currentRenderer" -type "string" "FireRender";
 }}
 
+
 global proc open_rpr_scene(){{
 	file -f -options "v=0;"  -ignoreVersion -o "Lamborginhi_Aventador.ma";
 }}
 
+
 global proc import_fbx(){{
 	FBXImport -f ("{res_path}" + "/sourceimages/park_bench1.fbx");
 }}
+
 
 global proc delete_fbx(){{
 	delete Default;
@@ -269,13 +272,16 @@ global proc create_IBL(){{
 	rename $parent[0] RPRIBL;
 }}
 
+
 global proc update_IBL_hdr(){{
 	setAttr -type "string" RPRIBLShape.filePath ("{res_path}" + "/sourceimages/Tropical_Beach_3k.hdr");
 }}
 
+
 global proc update_IBL_exr(){{
 	setAttr -type "string" RPRIBLShape.filePath ("{res_path}" + "/sourceimages/ibl_test.exr");
 }}
+
 
 global proc delete_IBL(){{
 	showHidden ground;
@@ -288,6 +294,7 @@ global proc create_sun_sky(){{
 	setAttr "RPRSkyShape.turbidity" 30;
 	setAttr "RPRSkyShape.intensity" 6;
 }}
+
 
 global proc delete_sun_sky(){{
 	delete RPRSky;
@@ -303,6 +310,7 @@ global proc create_ies_light(){{
 	setAttr "RPRIESLight.intensity" 20;
 }}
 
+
 global proc delete_ies_light(){{
 	delete RPRIES1;
 }}
@@ -317,6 +325,7 @@ global proc create_physical_light(){{
     setAttr "RPRPhysicalLight1Shape.intensityUnits" 0;
 }}
 
+
 global proc delete_physical_light(){{
 	delete RPRPhysicalLight1;
 }}
@@ -329,6 +338,7 @@ global proc import_obj(){{
 	setAttr "Shader_Ball.scale" 2 2 2;
 }}
 
+
 global proc delete_obj(){{
 	delete Shader_Ball;
 }}
@@ -338,6 +348,7 @@ global proc activate_tone_mapping(){{
 	setAttr "RadeonProRenderGlobals.applyGammaToMayaViews" 1;
 	setAttr "RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled" 1;
 }}
+
 
 global proc deactivate_tone_mapping(){{
 	setAttr "RadeonProRenderGlobals.applyGammaToMayaViews" 0;
@@ -349,6 +360,7 @@ global proc activate_render_stamp(){{
 	setAttr "RadeonProRenderGlobals.useRenderStamp" 1;
 }}
 
+
 global proc deactivate_render_stamp(){{
 	setAttr "RadeonProRenderGlobals.useRenderStamp" 0;
 }}
@@ -357,6 +369,7 @@ global proc deactivate_render_stamp(){{
 global proc activate_wireframe_mode(){{
 	setAttr "RadeonProRenderGlobals.renderMode" 4;
 }}
+
 
 global proc deactivate_wireframe_mode(){{
 	setAttr "RadeonProRenderGlobals.renderMode" 1;
@@ -367,6 +380,7 @@ global proc activate_medium_quality(){{
 	setAttr "RadeonProRenderGlobals.samples" 8;
 	setAttr "RadeonProRenderGlobals.maxRayDepth" 15;
 }}
+
 
 global proc deactivate_medium_quality(){{
 	setAttr "RadeonProRenderGlobals.samples" 1;
@@ -382,10 +396,12 @@ global proc change_image_size_hd720(){{
 	setAttr "defaultResolution.pixelAspect" 1.00;
 }}
 
+
 global proc change_image_size_custom(){{
 	setAttr "defaultResolution.width" 1500;
 	setAttr "defaultResolution.height" 1125;
 }}
+
 
 global proc change_image_size_standart(){{
 	setAttr "defaultResolution.width" 1480;
@@ -400,6 +416,7 @@ global proc activate_jpg_format(){{
 	setAttr "defaultRenderGlobals.imageFormat" 8;
 }}
 
+
 global proc activate_png_format(){{
 	setAttr "defaultRenderGlobals.imageFormat" 32;
 }}
@@ -411,19 +428,23 @@ global proc activate_denoiser_bilateral(){{
 	setAttr "RadeonProRenderGlobals.denoiserRadius" 1;
 }}
 
+
 global proc activate_denoiser_lwr(){{
 	setAttr "RadeonProRenderGlobals.denoiserEnabled" 1;
 	setAttr "RadeonProRenderGlobals.denoiserType" 1;
 }}
+
 
 global proc activate_denoiser_eaw(){{
 	setAttr "RadeonProRenderGlobals.denoiserEnabled" 1;
 	setAttr "RadeonProRenderGlobals.denoiserType" 2;	
 }}
 
+
 global proc deactivate_denoiser(){{
 	setAttr "RadeonProRenderGlobals.denoiserEnabled" 0;
 }}
+
 
 global proc import_rpr_matlib(){{
 	python("import fireRender.rpr_material_browser");
@@ -435,7 +456,7 @@ global proc import_rpr_matlib(){{
 
 	RPRXMLImport -file $material_path -ii false -mn "materialTestNode";
 	select -r Lamborginhi_Aventador;
-	sets -e -forceElement "materialTestNodeSG";
+	hyperShade -assign materialTestNode;
 }}
 
 
@@ -446,6 +467,7 @@ global proc create_area_light(){{
 	setAttr "areaLight1.rotateX" 270;
 }}
 
+
 global proc delete_area_light(){{
 	delete areaLight1;	
 }}
@@ -455,25 +477,31 @@ global proc activate_uv(){{
 	setAttr "RadeonProRenderGlobals.aovDisplayedInRenderView" 3;
 }}
 
+
 global proc deactivate_uv(){{
 	setAttr "RadeonProRenderGlobals.aovDisplayedInRenderView" 0;
 }}
+
 
 global proc maxRayDepth_15(){{
 	setAttr "RadeonProRenderGlobals.maxRayDepth" 15;
 }}
 
+
 global proc maxRayDepth_default(){{
 	setAttr "RadeonProRenderGlobals.maxRayDepth" 5;
 }}
+
 
 global proc setIterations_400(){{
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 400;
 }}
 
+
 global proc setIterations_default(){{
 	setAttr "RadeonProRenderGlobals.completionCriteriaIterations" 50;
 }}
+
 
 global proc duplicate_500_instances(){{
 	select -r Cube ;
@@ -493,6 +521,7 @@ global proc create_and_asign_uber(){{
 	sets -e -forceElement $sgs[0];
 }}
 
+
 global proc create_and_asign_pbr(){{
 	string $rpr = `shadingNode -asShader "RPRPbrMaterial"`; 
 	setAttr ($rpr + ".color") 0 0 1;
@@ -506,11 +535,6 @@ global proc create_and_asign_pbr(){{
 
 
 global proc multiple_ies_lights(){{	
-	// for ($i=1; $i<13; ++$i){{
-	// 	 setAttr -type "string" ("RPRIESLight" + $i +".iesFile") ("{res_path}" + "/sourceimages/1.IES");
-	//	 setAttr ("RPRIESLight" + $i +".intensity") 2;
-	// }}
-
 	setAttr -type "string" ("RPRIESLight1.iesFile") ("{res_path}" + "/sourceimages/1.IES");
 	setAttr ("RPRIESLight1.intensity") 2;
 	setAttr -type "string" ("RPRIESLight6.iesFile") ("{res_path}" + "/sourceimages/1.IES");
@@ -533,6 +557,7 @@ global proc shadow_catcher_test(){{
 	string $sgs[] = `listConnections -type shadingEngine $rpr`;
 	sets -e -forceElement $sgs[0];
 }}
+
 
 global proc main(){{
 	
