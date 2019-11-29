@@ -11,6 +11,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: BarnFindOrange_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -31,6 +32,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: BasketCaseBlue_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -51,6 +53,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: BeachBumAqua_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -71,6 +74,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: BlueBayou_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -91,6 +95,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: BoulevardBlack_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -111,6 +116,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: BurnOutBlue_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -131,6 +137,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: CandyPantsViolet_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -151,6 +158,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -171,6 +179,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Pearlescent ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -191,6 +200,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -211,6 +221,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Champagne_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -231,6 +242,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: CherryGumball_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -251,6 +263,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: ChopTopSilver_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -271,6 +284,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: CruiseNightBlue_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -291,6 +305,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: DesertedTan_Flat ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -311,6 +326,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: EastwoodBluePearl_Pearlescent ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -331,6 +347,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: EastwoodRoyalBlue_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -351,6 +368,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: ElectricYellow_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -371,6 +389,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: EuroRacingGreen_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -391,6 +410,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: EyeCandyGreen_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -411,6 +431,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: GasserGreen_Pearlescent ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -431,6 +452,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: HugginOrange_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -451,6 +473,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: LimeSqueezinGreen_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -471,6 +494,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: MalibuSunsetOrange_Pearlescent ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -491,6 +515,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: OrangeUBad_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -511,6 +536,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: PinupRed_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -531,6 +557,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: PlumCrazy_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -551,6 +578,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: ProStreetRed_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -571,6 +599,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: PureWhite_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -591,6 +620,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: QuarterMileCandyRed_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -611,6 +641,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: RatRodBlack_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -631,6 +662,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: ReptileRed_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -651,6 +683,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: RodzBerry_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -671,6 +704,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: RottenLimeGreen_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -691,6 +725,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: SaltWaterTaffyTeal_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -711,6 +746,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: StraightAxleRedPearl_Pearlescent ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -731,6 +767,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: SugarCoatItGold_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -751,6 +788,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: TequilaLimeNGold_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -771,6 +809,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: TunnelRamGray_Metallic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -791,6 +830,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: USABrightWhite_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -811,6 +851,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: USABrightWhiteFlat_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -831,6 +872,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: VinoRojo_Solid ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -851,6 +893,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Carbon_Fiber ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -871,6 +914,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Carbon_Fiber_Glossy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -891,6 +935,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Carbon_Fiber_GlossyCoat ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -911,6 +956,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Carbon_Fiber_SemiGlossy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -931,6 +977,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: FiberGlass ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -951,6 +998,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Concrete_BrickCracks_Grey ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -971,6 +1019,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Concrete_PaintedCracks ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -991,6 +1040,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Concrete_PaintedRough ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1011,6 +1061,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Concrete_Stone ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1031,6 +1082,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Concrete_Tiles ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1051,6 +1103,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Concrete_WornBare ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1071,6 +1124,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Concrete_WornBare_SmoothBump ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1091,6 +1145,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Emissive_Fluorescent_Yellow ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1111,6 +1166,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Emissive_Fluorescent_Cyan ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1131,6 +1187,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Emissive_Fluorescent_Magenta ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1151,6 +1208,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Emissive_Fluorescent_White ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1171,6 +1229,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Emissive_CoolLight ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1191,6 +1250,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Aluminium_Anodized ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1211,6 +1271,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Aluminium_Directional ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1231,6 +1292,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Aluminium_Oxidiazed ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1251,6 +1313,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Aluminium_Polished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1271,6 +1334,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Aluminium_SandBlasted ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1291,6 +1355,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brass_Cartridge ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1311,6 +1376,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brass Matte ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1331,6 +1397,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brass_Oxidized ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1351,6 +1418,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brass_Patinated ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1371,6 +1439,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brass_Standard ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1391,6 +1460,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Bronze_Corrision ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1411,6 +1481,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Bronze_Matte ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1431,6 +1502,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Bronze_Oxidized ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1451,6 +1523,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Bronze_Polished2 ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1471,6 +1544,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Bronze_Rough ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1491,6 +1565,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Chrome_Dusty ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1511,6 +1586,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Chrome_Matte ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1531,6 +1607,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Chrome_Sandblasted ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1551,6 +1628,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Chrome_Scratched ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1571,6 +1649,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Copper_Brushed2 ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1591,6 +1670,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Copper_Dented ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1611,6 +1691,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Copper_Old ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1631,6 +1712,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Copper_Wrought ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1651,6 +1733,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Generic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1671,6 +1754,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Gold ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1691,6 +1775,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Gold_Foil_Rough ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1711,6 +1796,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Gold_Paint ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1731,6 +1817,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Gold_Paint_Cracked ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1751,6 +1838,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Gold_Rough ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1771,6 +1859,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Iron_Hammered ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1791,6 +1880,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Iron_Oxidized ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1811,6 +1901,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Iron_Rugged ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1831,6 +1922,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Iron_Smooth ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1851,6 +1943,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Iron_Worn ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1871,6 +1964,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Lead_Matte ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1891,6 +1985,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Lead_Rough ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1911,6 +2006,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Lead_Rusted ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1931,6 +2027,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Lead_Sandblasted ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1951,6 +2048,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Lead_Smooth ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1971,6 +2069,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Steel_Blue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -1991,6 +2090,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Steel_Galvanized ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2011,6 +2111,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Steel_Oxidized ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2031,6 +2132,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Steel_Smooth ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2051,6 +2153,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Steel_Worn ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2071,6 +2174,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Fabric_Matte_Solid_Beige ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2091,6 +2195,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Fabric_Matte_Solid_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2111,6 +2216,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Fabric_Matte_Transparent_Beige ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2131,6 +2237,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Fabric_Matte_Transparent_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2151,6 +2258,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Fabric_Silk ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2171,6 +2279,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Fur_Carpet_Displacement ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2191,6 +2300,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Antique ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2211,6 +2321,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_CarBreakLight ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2231,6 +2342,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_CarHeadLight ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2251,6 +2363,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_CarIndicatorLight ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2271,6 +2384,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Clear_Window ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2291,6 +2405,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_Blue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2311,6 +2426,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_Brown ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2331,6 +2447,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_Clear ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2351,6 +2468,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_Clear_Scratched ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2371,6 +2489,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_Frosted ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2391,6 +2510,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_Green ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2411,6 +2531,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_GreenBlue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2431,6 +2552,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_GreenBlue_Scratched ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2451,6 +2573,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2471,6 +2594,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_Tinted ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2491,6 +2615,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Solid_Yellow ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2511,6 +2636,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Thin_Bronze ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2531,6 +2657,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Thin_Green ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2551,6 +2678,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Tinted_Dark ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2571,6 +2699,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Glass_Used ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2591,6 +2720,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Mirror ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2611,6 +2741,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Ground_Dark_Displacement ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2631,6 +2762,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Ground_Dark ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2651,6 +2783,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Ground_Grass ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2671,6 +2804,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Ground_Grass_Displacement ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2691,6 +2825,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Ground_Grass_Cut_Displacement ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2711,6 +2846,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Jewels_Diamond ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2731,6 +2867,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Jewels_Emerald ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2751,6 +2888,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Jewels_Ruby ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2771,6 +2909,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Leather_Beige ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2791,6 +2930,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Leather_Black ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2811,6 +2951,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Leather_Brown ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2831,6 +2972,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Liquids_Alcohol_Champagne ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2851,6 +2993,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Water_Transparent ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2871,6 +3014,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Water_Transparent_Bump ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2891,6 +3035,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Water_Transparent_Displacement ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2911,6 +3056,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Black ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2931,6 +3077,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Bue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2951,6 +3098,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Dark_Grey ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2971,6 +3119,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Ice_Silver ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -2991,6 +3140,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Indy_Yellow ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3011,6 +3161,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Inferno ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3031,6 +3182,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Jasmine_Green ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3051,6 +3203,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Lapis_Blue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3071,6 +3224,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Lava_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3091,6 +3245,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_North_Grey ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3111,6 +3266,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Tungsten ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3131,6 +3287,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Venetian_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3151,6 +3308,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Vibrant_Violet ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3171,6 +3329,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Car_Paint_Wilderness_Green ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3191,6 +3350,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Metallic_Paint_Matte_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3211,6 +3371,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Metallic_Paint_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3231,6 +3392,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Metallic_Paint_Silver ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3251,6 +3413,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Scratched_Metallic_Paint_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3271,6 +3434,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Scratched_Metallic_Paint_Yellow ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3291,6 +3455,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Aluminium_Brushed ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3311,6 +3476,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Aluminium_Cast ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3331,6 +3497,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Aluminium_Corrugated ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3351,6 +3518,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Aluminium_Matte ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3371,6 +3539,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brass_Brushed ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3391,6 +3560,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brass_Polished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3411,6 +3581,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brass_Satin ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3431,6 +3602,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Cast_Iron ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3451,6 +3623,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Chrome ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3471,6 +3644,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Copper_Brushed ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3491,6 +3665,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Copper_Polished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3511,6 +3686,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Copper_Satin ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3531,6 +3707,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Galvanized-Steel ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3551,6 +3728,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Gun_Metal ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3571,6 +3749,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Mercury ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3591,6 +3770,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Metal_Plate ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3611,6 +3791,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rust_Metal ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3631,6 +3812,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stainless_Steel ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3651,6 +3833,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stainless_Steel_Brushed ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3671,6 +3854,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_EggShell_LaserLemon ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3691,6 +3875,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_EggShell_SleekWhite ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3711,6 +3896,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_EggShell_SunValley ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3731,6 +3917,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_EggShell_Tanzanite ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3751,6 +3938,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_EggShell_TartOrange ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3771,6 +3959,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_EggShell_TropicalSea ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3791,6 +3980,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Flat_LaserLemon ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3811,6 +4001,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Flat_SleekWhite ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3831,6 +4022,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Flat_SunValley ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3851,6 +4043,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Flat_Tanzanite ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3871,6 +4064,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Flat_TartOrange ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3891,6 +4085,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Flat_TawnyDayLily ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3911,6 +4106,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Flat_TropicalSea ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3931,6 +4127,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Flat_VoilePink ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3951,6 +4148,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Glossy_LaserLemon ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3971,6 +4169,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Glossy_SleekWhite ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -3991,6 +4190,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Glossy_SunValley ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4011,6 +4211,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Glossy_Tanzanite ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4031,6 +4232,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Glossy_TartOrange ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4051,6 +4253,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Paint_Glossy_TropicalSea ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4071,6 +4274,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Plastic_Glossy_Black ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4091,6 +4295,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Plastic_Glossy_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4111,6 +4316,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Plastic_Matte_Black ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4131,6 +4337,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Plastic_Matte_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4151,6 +4358,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Plastic_Matte_White ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4171,6 +4379,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Styrofoam ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4191,6 +4400,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Porcelain_Black ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4211,6 +4421,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Porcelain_Blue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4231,6 +4442,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Porcelain_Cracked_White ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4251,6 +4463,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Porcelain_Matte_White ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4271,6 +4484,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Porcelain_New_White ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4291,6 +4505,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Porcelain_Old_White ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4311,6 +4526,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Porcelain_White ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4331,6 +4547,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Bronze_Brushed ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4351,6 +4568,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Bronze_Polished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4371,6 +4589,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Bronze_Satin ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4391,6 +4610,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Gold_Brushed ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4411,6 +4631,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Gold_Polished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4431,6 +4652,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Gold_Satin ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4451,6 +4673,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Silver_Brushed ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4471,6 +4694,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Silver_Polished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4491,6 +4715,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Silver_Satin ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4511,6 +4736,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stone_Marble_Blue_Matte ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4531,6 +4757,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stone_Marble_Pink_Matte ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4551,6 +4778,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stone_Cladding ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4571,6 +4799,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stone_Granit_BWB ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4591,6 +4820,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stone_Marble_Blue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4611,6 +4841,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stone_Marble_Pink ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4631,6 +4862,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stone_Marble_Grey ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4651,6 +4883,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stone_Rough_Marble ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4671,6 +4904,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brick_Color_Displacement ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4691,6 +4925,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brick_Natural_V1 ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4711,6 +4946,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brick_Old_V3 ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4731,6 +4967,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brick_Old_V2 ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4751,6 +4988,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brick_Basic_V2 ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4771,6 +5009,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brick_Irregular ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4791,6 +5030,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Brick_Damage ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4811,6 +5051,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Stone_Marble_Yellow_Matte ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4831,6 +5072,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Floor_Ceramic_Tiles_Checker ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4851,6 +5093,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Floor_Ceramic_Tiles_Color ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4871,6 +5114,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Floor_Ceramic_Tiles_Color_Variation_8x8 ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4891,6 +5135,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Floor_Tiles_Rustic_Color_4x4 ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4911,6 +5156,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Tiling_BeigeMarble ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4931,6 +5177,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Tiling_Blue_Checkered ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4951,6 +5198,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Tiling_BLueMarble ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4971,6 +5219,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: tiling_Checkered ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -4991,6 +5240,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Tiling_Old ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5011,6 +5261,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Tiling_White ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5031,6 +5282,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Tiling_White_Marble ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5051,6 +5303,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Roofing_ClayShingles_Beige ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5071,6 +5324,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Roofing_CorrugatedIron ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5091,6 +5345,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Roofing_RedClayTiles ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5111,6 +5366,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_Bumpy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5131,6 +5387,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_Diamonds ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5151,6 +5408,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_Ribbed ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5171,6 +5429,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_Smooth_Clear ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5191,6 +5450,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothMatte ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5211,6 +5471,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothMatte_Black ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5231,6 +5492,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothMatte_Blue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5251,6 +5513,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothMatte_Green ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5271,6 +5534,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothMatte_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5291,6 +5555,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothShiny ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5311,6 +5576,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothShiny_Black ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5331,6 +5597,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothShiny_Blue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5351,6 +5618,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothShiny_Green ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5371,6 +5639,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_SmoothShiny_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5391,6 +5660,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Rubber_Used ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5411,6 +5681,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Diffuse_Shadow_Catcher ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5431,6 +5702,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Reflective_Shadow_Catcher ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5451,6 +5723,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Acrylic_Refractive_Glossy_Green ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5471,6 +5744,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Acrylic_Refractive_Glossy_Neon_Green ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5491,6 +5765,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Acrylic_Refractive_Glossy_Neon_Orange ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5511,6 +5786,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Acrylic_Refractive_Glossy_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5531,6 +5807,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Acrylic_Refractive_Matte_Green ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5551,6 +5828,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Acrylic_Refractive_Matte_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5571,6 +5849,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Acrylic_Transparent_Matte_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5591,6 +5870,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Acrylic_Transparent_Glossy_Red ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5611,6 +5891,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Plastic_Transparent_Solid_ClearBlue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5631,6 +5912,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Plastic_Transparent_Thin_ClearBlue ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5651,6 +5933,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Colored_Glass ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5671,6 +5954,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Jade ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5691,6 +5975,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Milk ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5711,6 +5996,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wax ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5731,6 +6017,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Bark ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5751,6 +6038,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Beech_Glossy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5771,6 +6059,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Beech_Unfinished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5791,6 +6080,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Cedar_Glossy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5811,6 +6101,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Cedar_Unfinished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5831,6 +6122,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Clear_Rustic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5851,6 +6143,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Mahogany_Glossy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5871,6 +6164,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Mahogany_Unfinished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5891,6 +6185,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Maple_Glossy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5911,6 +6206,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Maple_Unfinished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5931,6 +6227,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Natural_Maple ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5951,6 +6248,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Oak_Glossy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5971,6 +6269,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Oak_Unfinished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -5991,6 +6290,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Planks_Oak_Glossy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -6011,6 +6311,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Planks_Oak_Unfinished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -6031,6 +6332,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Rustic ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -6051,6 +6353,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Rustic_Cherry ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -6071,6 +6374,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Wenge_Glossy ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
@@ -6091,6 +6395,7 @@
             "cmd.hyperShade(objects='lambert1')",
             "rpr_sg = cmd.listConnections('materialTestNode', type='shadingEngine')[0]",
             "print('Material connected: Wood_Wenge_Unfinished ')",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
             "cmd.delete('materialTestNode')"
         ],
