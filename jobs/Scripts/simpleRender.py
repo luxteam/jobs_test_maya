@@ -9,8 +9,8 @@ import platform
 from shutil import copyfile
 import sys
 import re
+import time
 from datetime import datetime
-from shutil import copyfile
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 import jobs_launcher.core.config as core_config
@@ -22,11 +22,6 @@ PROCESS = ['Maya', 'maya.exe']
 
 
 if platform.system() == 'Darwin':
-    # from PyObjCTools import AppHelper
-    # import objc
-    # from objc import super
-    # from Cocoa import NSWorkspace
-    # from AppKit import NSWorkspace
     from Quartz import CGWindowListCopyWindowInfo
     from Quartz import kCGWindowListOptionOnScreenOnly
     from Quartz import kCGNullWindowID
@@ -95,15 +90,15 @@ def createArgsParser():
 
 def check_licenses(res_path, maya_scenes):
     try:
-    	for scene in maya_scenes:
-    		with open(os.path.join(res_path, scene[:-1])) as f:
-    			scene_file = f.read()
+        for scene in maya_scenes:
+            with open(os.path.join(res_path, scene[:-1])) as f:
+                scene_file = f.read()
 
-    		license = "fileInfo \"license\" \"student\";"
-    		scene_file = scene_file.replace(license, '')
+            license = "fileInfo \"license\" \"student\";"
+            scene_file = scene_file.replace(license, '')
 
-    		with open(os.path.join(res_path, scene[:-1]), "w") as f:
-    			f.write(scene_file)
+            with open(os.path.join(res_path, scene[:-1]), "w") as f:
+                f.write(scene_file)
     except Exception as ex:
         core_config.main_logger.error("Error while deleting student license: {}".format(ex))
 
@@ -311,7 +306,6 @@ if __name__ == "__main__":
                 report["test_group"] = args.testType
                 report["date_time"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
                 report["tool"] = "Maya 2019"
-                report["render_color_path"] = "Color/{name}.jpg".format(name=name)
                 report["render_device"] = render_device
                 report["render_mode"] = args.render_device
 
@@ -321,11 +315,13 @@ if __name__ == "__main__":
                     status = "skipped"
                     img_path = os.path.join(img_prefix_path, 'skipped.jpg')
                 else:
-                    status = "failed"
+                    status = "error"
                     img_path = os.path.join(img_prefix_path, 'error.jpg')
 
                 report["test_status"] = status
-                #copyfile(img_path, os.path.join(color_path, report["file_name"]))
+                report["render_color_path"] = "Color/{}.jpg".format(status)
+                if not os.path.exists(os.path.join(os.path.join(color_path, "{}.jpg".format(status)))):
+                    copyfile(img_path, os.path.join(color_path, "{}.jpg".format(status)))
 
                 with open(os.path.join(args.output, "{name}_RPR.json".format(name=name)), 'w') as f:
                     json.dump([report], f, indent=4)
