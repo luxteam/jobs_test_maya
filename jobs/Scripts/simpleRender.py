@@ -9,13 +9,17 @@ import platform
 from shutil import copyfile
 import sys
 import re
-import time
+from datetime import datetime
+from shutil import copyfile
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 import jobs_launcher.core.config as core_config
+from jobs_launcher.core.system_info import get_gpu
 from jobs_launcher.core.kill_process import kill_process
 
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 PROCESS = ['Maya', 'maya.exe']
+
 
 if platform.system() == 'Darwin':
     # from PyObjCTools import AppHelper
@@ -257,13 +261,13 @@ if __name__ == "__main__":
     args = createArgsParser().parse_args()
 
     try:
-        os.makedirs(args.output)
+        color_path = os.path.join(args.output, 'Color')
+        os.makedirs(color_path)
     except OSError as e:
         pass
 
-    kill_process(PROCESS)
-
     core_config.main_logger.info("simpleRender start working...")
+
 
     def getJsonCount():
         return len(list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))))
@@ -277,6 +281,59 @@ if __name__ == "__main__":
         except OSError as e:
             return -1
 
+
+    def prepare_reports():
+        try:
+            # check created reports
+            created = [file[:-9] for file in os.listdir(args.output) if 'MAYA' in file]
+
+            # find cases in template
+            with open(os.path.join(os.path.dirname(__file__), args.template)) as f:
+                script_template = f.read()
+
+            patterns = ['@.*MAYA_\w*', '//.*MAYA_\w*']
+            cases = []
+            for pattern in patterns:
+                cases += re.findall(pattern, script_template)
+
+            # prepare needed reports
+            render_device = get_gpu()
+            for case in cases:
+                name = re.search('MAYA_\w*', case).group(0)
+
+                # continue if test case report created
+                if name in created:
+                    continue
+
+                report = core_config.RENDER_REPORT_BASE
+                report["test_case"] = name
+                report["file_name"] = "{name}.jpg".format(name=name)
+                report["test_group"] = args.testType
+                report["date_time"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
+                report["tool"] = "Maya 2019"
+                report["render_color_path"] = "Color/{name}.jpg".format(name=name)
+                report["render_device"] = render_device
+                report["render_mode"] = args.render_device
+
+                img_prefix_path = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img')
+
+                if "//" in case:
+                    status = "skipped"
+                    img_path = os.path.join(img_prefix_path, 'skipped.jpg')
+                else:
+                    status = "failed"
+                    img_path = os.path.join(img_prefix_path, 'error.jpg')
+
+                report["test_status"] = status
+                #copyfile(img_path, os.path.join(color_path, report["file_name"]))
+
+                with open(os.path.join(args.output, "{name}_RPR.json".format(name=name)), 'w') as f:
+                    json.dump([report], f, indent=4)
+        except Exception as err:
+            core_config.main_logger.error("Can't check reports:" + str(err))
+
+
+    prepare_reports()
 
     total_count = totalCount()
     fail_count = 0
