@@ -369,7 +369,6 @@ if __name__ == "__main__":
             else:
                 core_config.main_logger.info("Finish simpleRender with code: {}".format(rc))
             kill_process(PROCESS)
-            prepare_reports()
             exit(rc) # finish work. 0 - success status.
 
         elif last_status and fail_count == 2:
@@ -390,5 +389,4 @@ if __name__ == "__main__":
     
     core_config.main_logger.info("Finish simpleRender with code: {}\n\tNo loop.".format(0))
     kill_process(PROCESS)
-    prepare_reports()
     exit(0)
