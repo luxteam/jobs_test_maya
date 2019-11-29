@@ -7,6 +7,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, \"0\", 0,0,0, \"1\")')",
             "cmd.setAttr('ambientLight1.translateX', 267)",
             "cmd.setAttr('ambientLight1.translateY', 40)",
@@ -25,6 +26,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, \"0\", 0,0,0, \"1\")')",
             "cmd.setAttr('ambientLight1.translateX', 267)",
             "cmd.setAttr('ambientLight1.translateY', 40)",
@@ -43,6 +45,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, \"0\", 0,0,0, \"1\")')",
             "cmd.setAttr('ambientLight1.translateX', 267)",
             "cmd.setAttr('ambientLight1.translateY', 40)",
@@ -61,6 +64,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultAmbientLight(1, 0.45, 1,1,1, \"0\", 0,0,0, \"1\")')",
             "cmd.setAttr('ambientLight1.translateX', 267)",
             "cmd.setAttr('ambientLight1.translateY', 40)",
@@ -79,6 +83,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('areaLight1.translateX', 267)",
             "cmd.setAttr('areaLight1.translateY', 40)",
@@ -100,6 +105,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('areaLight1.translateX', 267)",
             "cmd.setAttr('areaLight1.translateY', 40)",
@@ -121,6 +127,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('areaLight1.translateX', 267)",
             "cmd.setAttr('areaLight1.translateY', 40)",
@@ -142,6 +149,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('areaLight1.translateX', 267)",
             "cmd.setAttr('areaLight1.translateY', 40)",
@@ -163,6 +171,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultAreaLight(1, 1,1,1, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('areaLight1.translateX', 267)",
             "cmd.setAttr('areaLight1.translateY', 40)",
@@ -184,6 +193,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultDirectionalLight(1, 1,1,1, \"0\", 0,0,0, 0)')",
             "cmd.setAttr('directionalLight1.translateX', 267)",
             "cmd.setAttr('directionalLight1.translateY', 40)",
@@ -204,6 +214,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultDirectionalLight(1, 1,1,1, \"0\", 0,0,0, 0)')",
             "cmd.setAttr('directionalLight1.translateX', 267)",
             "cmd.setAttr('directionalLight1.translateY', 40)",
@@ -224,6 +235,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
             "cmd.setAttr('pointLight1.translateX', 267)",
             "cmd.setAttr('pointLight1.translateY', 40)",
@@ -245,6 +257,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
             "cmd.setAttr('pointLight1.translateX', 267)",
             "cmd.setAttr('pointLight1.translateY', 40)",
@@ -266,6 +279,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
             "cmd.setAttr('pointLight1.translateX', 267)",
             "cmd.setAttr('pointLight1.translateY', 40)",
@@ -287,6 +301,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
             "cmd.setAttr('pointLight1.translateX', 267)",
             "cmd.setAttr('pointLight1.translateY', 40)",
@@ -308,6 +323,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
             "cmd.setAttr('pointLight1.translateX', 267)",
             "cmd.setAttr('pointLight1.translateY', 40)",
@@ -329,6 +345,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultPointLight(1, 1,1,1, 0, 0, 0,0,0, 1)')",
             "cmd.setAttr('pointLight1.translateX', 267)",
             "cmd.setAttr('pointLight1.translateY', 40)",
@@ -350,6 +367,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
             "cmd.setAttr('spotLight1.translateY', 40)",
@@ -374,6 +392,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
             "cmd.setAttr('spotLight1.translateY', 40)",
@@ -398,6 +417,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
             "cmd.setAttr('spotLight1.translateY', 40)",
@@ -422,6 +442,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
             "cmd.setAttr('spotLight1.translateY', 40)",
@@ -446,6 +467,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
             "cmd.setAttr('spotLight1.translateY', 40)",
@@ -470,6 +492,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
             "cmd.setAttr('spotLight1.translateY', 40)",
@@ -494,6 +517,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
             "cmd.setAttr('spotLight1.translateY', 40)",
@@ -518,6 +542,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
+            "removeIBL()",
             "mel.eval('defaultSpotLight(1, 1,1,1, 0, 40, 0, 0, 0, 0,0,0, 1, 0)')",
             "cmd.setAttr('spotLight1.translateX', 267)",
             "cmd.setAttr('spotLight1.translateY', 40)",
