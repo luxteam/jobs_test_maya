@@ -428,11 +428,12 @@
         "functions": [
             "libraryPath = fireRender.rpr_material_browser.getLibPath()", 
             "material = 'Fiberglass'", 
-            "material_path = libraryPath + '/' + material", 
-            "xml = mel.eval('getFileList -folder \"'+material_path+'\" -filespec \"*.xml\"')", 
-            "cmd.RPRXMLImport(file=material_path+\"/\"+xml[0], ii=False, mn='materialTestNode')", 
-            "cmd.select('Lamborginhi_Aventador', r=True)", 
-            "cmd.hyperShade('materialTestNode', assign=True)",
+            "material_path = path.join(libraryPath, material)", 
+            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]", 
+            "cmd.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='test_material')", 
+            "cmd.hyperShade(objects='Lamborginhi_base_phong')",
+            "rpr_sg = cmd.listConnections('test_material', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [

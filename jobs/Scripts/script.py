@@ -5,6 +5,7 @@ import time
 import json
 import re
 import os.path as path
+import os
 import fireRender.rpr_material_browser
 
 WORK_DIR = '{work_dir}'
