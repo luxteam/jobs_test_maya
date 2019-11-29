@@ -361,6 +361,13 @@ def removeIBL():  # for sun sky
 	cmd.createNode('RPRSky', n='RPRSkyShape')
 
 
+def removeIBLBL():  # for base lights
+	objects = cmd.ls(g=True)
+	for obj in objects:
+		if (obj == 'RPRIBLShape'):
+			cmd.delete('RPRIBL')
+
+
 def resetAttributesV():    # for volume
     cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')
     cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')
