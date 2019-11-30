@@ -13,7 +13,9 @@
             "print('Material connected: BarnFindOrange_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: BarnFindOrange Solid"
@@ -34,7 +36,9 @@
             "print('Material connected: BasketCaseBlue_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: BasketCaseBlue Solid"
@@ -55,7 +59,9 @@
             "print('Material connected: BeachBumAqua_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: BeachBumAqua Metallic"
@@ -76,7 +82,9 @@
             "print('Material connected: BlueBayou_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: BlueBayou Solid"
@@ -97,7 +105,9 @@
             "print('Material connected: BoulevardBlack_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: BoulevardBlack Solid"
@@ -118,7 +128,9 @@
             "print('Material connected: BurnOutBlue_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: BurnOutBlue Metallic"
@@ -139,7 +151,9 @@
             "print('Material connected: CandyPantsViolet_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: CandyPantsViolet Metallic"
@@ -160,7 +174,9 @@
             "print('Material connected: Car_Paint_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Metallic"
@@ -181,7 +197,9 @@
             "print('Material connected: Car_Paint_Pearlescent ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Pearlescent"
@@ -202,7 +220,9 @@
             "print('Material connected: Car_Paint_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Solid"
@@ -223,7 +243,9 @@
             "print('Material connected: Champagne_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Champagne Metallic"
@@ -244,7 +266,9 @@
             "print('Material connected: CherryGumball_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: CherryGumball Solid"
@@ -265,7 +289,9 @@
             "print('Material connected: ChopTopSilver_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: ChopTopSilver Metallic"
@@ -286,7 +312,9 @@
             "print('Material connected: CruiseNightBlue_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: CruiseNightBlue Metallic"
@@ -307,7 +335,9 @@
             "print('Material connected: DesertedTan_Flat ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: DesertedTan Flat"
@@ -328,7 +358,9 @@
             "print('Material connected: EastwoodBluePearl_Pearlescent ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: EastwoodBluePearl Pearlescent"
@@ -349,7 +381,9 @@
             "print('Material connected: EastwoodRoyalBlue_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: EastwoodRoyalBlue Metallic"
@@ -370,7 +404,9 @@
             "print('Material connected: ElectricYellow_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: ElectricYellow Solid"
@@ -391,7 +427,9 @@
             "print('Material connected: EuroRacingGreen_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: EuroRacingGreen Metallic"
@@ -412,7 +450,9 @@
             "print('Material connected: EyeCandyGreen_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: EyeCandyGreen Solid"
@@ -433,7 +473,9 @@
             "print('Material connected: GasserGreen_Pearlescent ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: GasserGreen Pearlescent"
@@ -454,7 +496,9 @@
             "print('Material connected: HugginOrange_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: HugginOrange Solid"
@@ -475,7 +519,9 @@
             "print('Material connected: LimeSqueezinGreen_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: LimeSqueezinGreen Solid"
@@ -496,7 +542,9 @@
             "print('Material connected: MalibuSunsetOrange_Pearlescent ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: MalibuSunsetOrange Pearlescent"
@@ -517,7 +565,9 @@
             "print('Material connected: OrangeUBad_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: OrangeUBad Solid"
@@ -538,7 +588,9 @@
             "print('Material connected: PinupRed_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: PinupRed Solid"
@@ -559,7 +611,9 @@
             "print('Material connected: PlumCrazy_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: PlumCrazy Metallic"
@@ -580,7 +634,9 @@
             "print('Material connected: ProStreetRed_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: ProStreetRed Solid"
@@ -601,7 +657,9 @@
             "print('Material connected: PureWhite_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: PureWhite Solid"
@@ -622,7 +680,9 @@
             "print('Material connected: QuarterMileCandyRed_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: QuarterMileCandyRed Solid"
@@ -643,7 +703,9 @@
             "print('Material connected: RatRodBlack_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: RatRodBlack Solid"
@@ -664,7 +726,9 @@
             "print('Material connected: ReptileRed_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: ReptileRed Solid"
@@ -685,7 +749,9 @@
             "print('Material connected: RodzBerry_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: RodzBerry Metallic"
@@ -706,7 +772,9 @@
             "print('Material connected: RottenLimeGreen_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: RottenLimeGreen Solid"
@@ -727,7 +795,9 @@
             "print('Material connected: SaltWaterTaffyTeal_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: SaltWaterTaffyTeal Metallic"
@@ -748,7 +818,9 @@
             "print('Material connected: StraightAxleRedPearl_Pearlescent ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: StraightAxleRedPearl Pearlescent"
@@ -769,7 +841,9 @@
             "print('Material connected: SugarCoatItGold_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: SugarCoatItGold Metallic"
@@ -790,7 +864,9 @@
             "print('Material connected: TequilaLimeNGold_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: TequilaLimeNGold Solid"
@@ -811,7 +887,9 @@
             "print('Material connected: TunnelRamGray_Metallic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: TunnelRamGray Metallic"
@@ -832,7 +910,9 @@
             "print('Material connected: USABrightWhite_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: USABrightWhite Solid"
@@ -853,7 +933,9 @@
             "print('Material connected: USABrightWhiteFlat_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: USABrightWhiteFlat Solid"
@@ -874,7 +956,9 @@
             "print('Material connected: VinoRojo_Solid ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: VinoRojo Solid"
@@ -895,7 +979,9 @@
             "print('Material connected: Carbon_Fiber ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Carbon Fiber"
@@ -916,7 +1002,9 @@
             "print('Material connected: Carbon_Fiber_Glossy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Carbon Fiber Glossy"
@@ -937,7 +1025,9 @@
             "print('Material connected: Carbon_Fiber_GlossyCoat ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Carbon Fiber GlossyCoat"
@@ -958,7 +1048,9 @@
             "print('Material connected: Carbon_Fiber_SemiGlossy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Carbon Fiber SemiGlossy"
@@ -979,7 +1071,9 @@
             "print('Material connected: FiberGlass ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: FiberGlass"
@@ -1000,7 +1094,9 @@
             "print('Material connected: Concrete_BrickCracks_Grey ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Concrete BrickCracks Grey"
@@ -1021,7 +1117,9 @@
             "print('Material connected: Concrete_PaintedCracks ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Concrete PaintedCracks"
@@ -1042,7 +1140,9 @@
             "print('Material connected: Concrete_PaintedRough ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Concrete PaintedRough"
@@ -1063,7 +1163,9 @@
             "print('Material connected: Concrete_Stone ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Concrete Stone"
@@ -1084,7 +1186,9 @@
             "print('Material connected: Concrete_Tiles ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Concrete Tiles"
@@ -1105,7 +1209,9 @@
             "print('Material connected: Concrete_WornBare ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Concrete WornBare"
@@ -1126,7 +1232,9 @@
             "print('Material connected: Concrete_WornBare_SmoothBump ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Concrete WornBare SmoothBump"
@@ -1147,7 +1255,9 @@
             "print('Material connected: Emissive_Fluorescent_Yellow ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Emissive Fluorescent Yellow"
@@ -1168,7 +1278,9 @@
             "print('Material connected: Emissive_Fluorescent_Cyan ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Emissive Fluorescent Cyan"
@@ -1189,7 +1301,9 @@
             "print('Material connected: Emissive_Fluorescent_Magenta ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Emissive Fluorescent Magenta"
@@ -1210,7 +1324,9 @@
             "print('Material connected: Emissive_Fluorescent_White ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Emissive Fluorescent White"
@@ -1231,7 +1347,9 @@
             "print('Material connected: Emissive_CoolLight ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Emissive CoolLight"
@@ -1252,7 +1370,9 @@
             "print('Material connected: Aluminium_Anodized ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Aluminium Anodized"
@@ -1273,7 +1393,9 @@
             "print('Material connected: Aluminium_Directional ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Aluminium Directional"
@@ -1294,7 +1416,9 @@
             "print('Material connected: Aluminium_Oxidiazed ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Aluminium Oxidiazed"
@@ -1315,7 +1439,9 @@
             "print('Material connected: Aluminium_Polished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Aluminium Polished"
@@ -1336,7 +1462,9 @@
             "print('Material connected: Aluminium_SandBlasted ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Aluminium SandBlasted"
@@ -1357,7 +1485,9 @@
             "print('Material connected: Brass_Cartridge ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brass Cartridge"
@@ -1378,7 +1508,9 @@
             "print('Material connected: Brass Matte ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brass Matte"
@@ -1399,7 +1531,9 @@
             "print('Material connected: Brass_Oxidized ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brass Oxidized"
@@ -1420,7 +1554,9 @@
             "print('Material connected: Brass_Patinated ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brass Patinated"
@@ -1441,7 +1577,9 @@
             "print('Material connected: Brass_Standard ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brass Standard"
@@ -1462,7 +1600,9 @@
             "print('Material connected: Bronze_Corrision ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Bronze Corrision"
@@ -1483,7 +1623,9 @@
             "print('Material connected: Bronze_Matte ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Bronze Matte"
@@ -1504,7 +1646,9 @@
             "print('Material connected: Bronze_Oxidized ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Bronze Oxidized"
@@ -1525,7 +1669,9 @@
             "print('Material connected: Bronze_Polished2 ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Bronze Polished2"
@@ -1546,7 +1692,9 @@
             "print('Material connected: Bronze_Rough ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Bronze Rough"
@@ -1567,7 +1715,9 @@
             "print('Material connected: Chrome_Dusty ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Chrome Dusty"
@@ -1588,7 +1738,9 @@
             "print('Material connected: Chrome_Matte ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Chrome Matte"
@@ -1609,7 +1761,9 @@
             "print('Material connected: Chrome_Sandblasted ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Chrome Sandblasted"
@@ -1630,7 +1784,9 @@
             "print('Material connected: Chrome_Scratched ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Chrome Scratched"
@@ -1651,7 +1807,9 @@
             "print('Material connected: Copper_Brushed2 ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Copper Brushed2"
@@ -1672,7 +1830,9 @@
             "print('Material connected: Copper_Dented ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Copper Dented"
@@ -1693,7 +1853,9 @@
             "print('Material connected: Copper_Old ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Copper Old"
@@ -1714,7 +1876,9 @@
             "print('Material connected: Copper_Wrought ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Copper Wrought"
@@ -1735,7 +1899,9 @@
             "print('Material connected: Generic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Generic"
@@ -1756,7 +1922,9 @@
             "print('Material connected: Gold ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Gold"
@@ -1777,7 +1945,9 @@
             "print('Material connected: Gold_Foil_Rough ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Gold Foil Rough"
@@ -1798,7 +1968,9 @@
             "print('Material connected: Gold_Paint ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Gold Paint"
@@ -1819,7 +1991,9 @@
             "print('Material connected: Gold_Paint_Cracked ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Gold Paint Cracked"
@@ -1840,7 +2014,9 @@
             "print('Material connected: Gold_Rough ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Gold Rough"
@@ -1861,7 +2037,9 @@
             "print('Material connected: Iron_Hammered ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Iron Hammered"
@@ -1882,7 +2060,9 @@
             "print('Material connected: Iron_Oxidized ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Iron Oxidized"
@@ -1903,7 +2083,9 @@
             "print('Material connected: Iron_Rugged ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Iron Rugged"
@@ -1924,7 +2106,9 @@
             "print('Material connected: Iron_Smooth ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Iron Smooth"
@@ -1945,7 +2129,9 @@
             "print('Material connected: Iron_Worn ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Iron Worn"
@@ -1966,7 +2152,9 @@
             "print('Material connected: Lead_Matte ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Lead Matte"
@@ -1987,7 +2175,9 @@
             "print('Material connected: Lead_Rough ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Lead Rough"
@@ -2008,7 +2198,9 @@
             "print('Material connected: Lead_Rusted ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Lead Rusted"
@@ -2029,7 +2221,9 @@
             "print('Material connected: Lead_Sandblasted ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Lead Sandblasted"
@@ -2050,7 +2244,9 @@
             "print('Material connected: Lead_Smooth ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Lead Smooth"
@@ -2071,7 +2267,9 @@
             "print('Material connected: Steel_Blue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Steel Blue"
@@ -2092,7 +2290,9 @@
             "print('Material connected: Steel_Galvanized ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Steel Galvanized"
@@ -2113,7 +2313,9 @@
             "print('Material connected: Steel_Oxidized ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Steel Oxidized"
@@ -2134,7 +2336,9 @@
             "print('Material connected: Steel_Smooth ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Steel Smooth"
@@ -2155,7 +2359,9 @@
             "print('Material connected: Steel_Worn ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Steel Worn"
@@ -2176,7 +2382,9 @@
             "print('Material connected: Fabric_Matte_Solid_Beige ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Fabric Matte Solid Beige"
@@ -2197,7 +2405,9 @@
             "print('Material connected: Fabric_Matte_Solid_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Fabric Matte Solid Red"
@@ -2218,7 +2428,9 @@
             "print('Material connected: Fabric_Matte_Transparent_Beige ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Fabric Matte Transparent Beige"
@@ -2239,7 +2451,9 @@
             "print('Material connected: Fabric_Matte_Transparent_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Fabric Matte Transparent Red"
@@ -2260,7 +2474,9 @@
             "print('Material connected: Fabric_Silk ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Fabric Silk"
@@ -2281,7 +2497,9 @@
             "print('Material connected: Fur_Carpet_Displacement ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Fur Carpet Displacement"
@@ -2302,7 +2520,9 @@
             "print('Material connected: Glass_Antique ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Antique"
@@ -2323,7 +2543,9 @@
             "print('Material connected: Glass_CarBreakLight ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass CarBreakLight"
@@ -2344,7 +2566,9 @@
             "print('Material connected: Glass_CarHeadLight ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass CarHeadLight"
@@ -2365,7 +2589,9 @@
             "print('Material connected: Glass_CarIndicatorLight ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass CarIndicatorLight"
@@ -2386,7 +2612,9 @@
             "print('Material connected: Glass_Clear_Window ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Clear Window"
@@ -2407,7 +2635,9 @@
             "print('Material connected: Glass_Solid_Blue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid Blue"
@@ -2428,7 +2658,9 @@
             "print('Material connected: Glass_Solid_Brown ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid Brown"
@@ -2449,7 +2681,9 @@
             "print('Material connected: Glass_Solid_Clear ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid Clear"
@@ -2470,7 +2704,9 @@
             "print('Material connected: Glass_Solid_Clear_Scratched ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid Clear Scratched"
@@ -2491,7 +2727,9 @@
             "print('Material connected: Glass_Solid_Frosted ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid Frosted"
@@ -2512,7 +2750,9 @@
             "print('Material connected: Glass_Solid_Green ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid Green"
@@ -2533,7 +2773,9 @@
             "print('Material connected: Glass_Solid_GreenBlue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid GreenBlue"
@@ -2554,7 +2796,9 @@
             "print('Material connected: Glass_Solid_GreenBlue_Scratched ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid GreenBlue Scratched"
@@ -2575,7 +2819,9 @@
             "print('Material connected: Glass_Solid_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid Red"
@@ -2596,7 +2842,9 @@
             "print('Material connected: Glass_Solid_Tinted ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid Tinted"
@@ -2617,7 +2865,9 @@
             "print('Material connected: Glass_Solid_Yellow ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Solid Yellow"
@@ -2638,7 +2888,9 @@
             "print('Material connected: Glass_Thin_Bronze ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Thin Bronze"
@@ -2659,7 +2911,9 @@
             "print('Material connected: Glass_Thin_Green ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Thin Green"
@@ -2680,7 +2934,9 @@
             "print('Material connected: Glass_Tinted_Dark ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Tinted Dark"
@@ -2701,7 +2957,9 @@
             "print('Material connected: Glass_Used ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Glass Used"
@@ -2722,7 +2980,9 @@
             "print('Material connected: Mirror ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Mirror"
@@ -2743,7 +3003,9 @@
             "print('Material connected: Ground_Dark_Displacement ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Ground Dark Displacement"
@@ -2764,7 +3026,9 @@
             "print('Material connected: Ground_Dark ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Ground Dark"
@@ -2785,7 +3049,9 @@
             "print('Material connected: Ground_Grass ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Ground Grass"
@@ -2806,7 +3072,9 @@
             "print('Material connected: Ground_Grass_Displacement ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Ground Grass Displacement"
@@ -2827,7 +3095,9 @@
             "print('Material connected: Ground_Grass_Cut_Displacement ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Ground Grass Cut Displacement"
@@ -2848,7 +3118,9 @@
             "print('Material connected: Jewels_Diamond ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Jewels Diamond"
@@ -2869,7 +3141,9 @@
             "print('Material connected: Jewels_Emerald ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Jewels Emerald"
@@ -2890,7 +3164,9 @@
             "print('Material connected: Jewels_Ruby ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Jewels Ruby"
@@ -2911,7 +3187,9 @@
             "print('Material connected: Leather_Beige ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Leather Beige"
@@ -2932,7 +3210,9 @@
             "print('Material connected: Leather_Black ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Leather Black"
@@ -2953,7 +3233,9 @@
             "print('Material connected: Leather_Brown ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Leather Brown"
@@ -2974,7 +3256,9 @@
             "print('Material connected: Liquids_Alcohol_Champagne ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Liquids Alcohol Champagne"
@@ -2995,7 +3279,9 @@
             "print('Material connected: Water_Transparent ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Water Transparent"
@@ -3016,7 +3302,9 @@
             "print('Material connected: Water_Transparent_Bump ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Water Transparent Bump"
@@ -3037,7 +3325,9 @@
             "print('Material connected: Water_Transparent_Displacement ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Water Transparent Displacement"
@@ -3058,7 +3348,9 @@
             "print('Material connected: Car_Paint_Black ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Black"
@@ -3079,7 +3371,9 @@
             "print('Material connected: Car_Paint_Bue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Bue"
@@ -3100,7 +3394,9 @@
             "print('Material connected: Car_Paint_Dark_Grey ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Dark Grey"
@@ -3121,7 +3417,9 @@
             "print('Material connected: Car_Paint_Ice_Silver ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Ice Silver"
@@ -3142,7 +3440,9 @@
             "print('Material connected: Car_Paint_Indy_Yellow ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Indy Yellow"
@@ -3163,7 +3463,9 @@
             "print('Material connected: Car_Paint_Inferno ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Inferno"
@@ -3184,7 +3486,9 @@
             "print('Material connected: Car_Paint_Jasmine_Green ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Jasmine Green"
@@ -3205,7 +3509,9 @@
             "print('Material connected: Car_Paint_Lapis_Blue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Lapis Blue"
@@ -3226,7 +3532,9 @@
             "print('Material connected: Car_Paint_Lava_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Lava Red"
@@ -3247,7 +3555,9 @@
             "print('Material connected: Car_Paint_North_Grey ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint North Grey"
@@ -3268,7 +3578,9 @@
             "print('Material connected: Car_Paint_Tungsten ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Tungsten"
@@ -3289,7 +3601,9 @@
             "print('Material connected: Car_Paint_Venetian_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Venetian Red"
@@ -3310,7 +3624,9 @@
             "print('Material connected: Car_Paint_Vibrant_Violet ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Vibrant Violet"
@@ -3331,7 +3647,9 @@
             "print('Material connected: Car_Paint_Wilderness_Green ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Car Paint Wilderness Green"
@@ -3352,7 +3670,9 @@
             "print('Material connected: Metallic_Paint_Matte_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Metallic Paint Matte Red"
@@ -3373,7 +3693,9 @@
             "print('Material connected: Metallic_Paint_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Metallic Paint Red"
@@ -3394,7 +3716,9 @@
             "print('Material connected: Metallic_Paint_Silver ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Metallic Paint Silver"
@@ -3415,7 +3739,9 @@
             "print('Material connected: Scratched_Metallic_Paint_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Scratched Metallic Paint Red"
@@ -3436,7 +3762,9 @@
             "print('Material connected: Scratched_Metallic_Paint_Yellow ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Scratched Metallic Paint Yellow"
@@ -3457,7 +3785,9 @@
             "print('Material connected: Aluminium_Brushed ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Aluminium Brushed"
@@ -3478,7 +3808,9 @@
             "print('Material connected: Aluminium_Cast ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Aluminium Cast"
@@ -3499,7 +3831,9 @@
             "print('Material connected: Aluminium_Corrugated ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Aluminium Corrugated"
@@ -3520,7 +3854,9 @@
             "print('Material connected: Aluminium_Matte ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Aluminium Matte"
@@ -3541,7 +3877,9 @@
             "print('Material connected: Brass_Brushed ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brass Brushed"
@@ -3562,7 +3900,9 @@
             "print('Material connected: Brass_Polished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brass Polished"
@@ -3583,7 +3923,9 @@
             "print('Material connected: Brass_Satin ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brass Satin"
@@ -3604,7 +3946,9 @@
             "print('Material connected: Cast_Iron ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Cast Iron"
@@ -3625,7 +3969,9 @@
             "print('Material connected: Chrome ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Chrome"
@@ -3646,7 +3992,9 @@
             "print('Material connected: Copper_Brushed ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Copper Brushed"
@@ -3667,7 +4015,9 @@
             "print('Material connected: Copper_Polished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Copper Polished"
@@ -3688,7 +4038,9 @@
             "print('Material connected: Copper_Satin ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Copper Satin"
@@ -3709,7 +4061,9 @@
             "print('Material connected: Galvanized-Steel ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Galvanized Steel"
@@ -3730,7 +4084,9 @@
             "print('Material connected: Gun_Metal ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Gun Metal"
@@ -3751,7 +4107,9 @@
             "print('Material connected: Mercury ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Mercury"
@@ -3772,7 +4130,9 @@
             "print('Material connected: Metal_Plate ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Metal Plate"
@@ -3793,7 +4153,9 @@
             "print('Material connected: Rust_Metal ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rust Metal"
@@ -3814,7 +4176,9 @@
             "print('Material connected: Stainless_Steel ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stainless Steel"
@@ -3835,7 +4199,9 @@
             "print('Material connected: Stainless_Steel_Brushed ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stainless Steel Brushed"
@@ -3856,7 +4222,9 @@
             "print('Material connected: Paint_EggShell_LaserLemon ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint EggShell LaserLemon"
@@ -3877,7 +4245,9 @@
             "print('Material connected: Paint_EggShell_SleekWhite ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint EggShell SleekWhite"
@@ -3898,7 +4268,9 @@
             "print('Material connected: Paint_EggShell_SunValley ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint EggShell SunValley"
@@ -3919,7 +4291,9 @@
             "print('Material connected: Paint_EggShell_Tanzanite ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint EggShell Tanzanite"
@@ -3940,7 +4314,9 @@
             "print('Material connected: Paint_EggShell_TartOrange ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint EggShell TartOrange"
@@ -3961,7 +4337,9 @@
             "print('Material connected: Paint_EggShell_TropicalSea ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint EggShell TropicalSea"
@@ -3982,7 +4360,9 @@
             "print('Material connected: Paint_Flat_LaserLemon ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Flat LaserLemon"
@@ -4003,7 +4383,9 @@
             "print('Material connected: Paint_Flat_SleekWhite ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Flat SleekWhite"
@@ -4024,7 +4406,9 @@
             "print('Material connected: Paint_Flat_SunValley ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Flat SunValley"
@@ -4045,7 +4429,9 @@
             "print('Material connected: Paint_Flat_Tanzanite ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Flat Tanzanite"
@@ -4066,7 +4452,9 @@
             "print('Material connected: Paint_Flat_TartOrange ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Flat TartOrange"
@@ -4087,7 +4475,9 @@
             "print('Material connected: Paint_Flat_TawnyDayLily ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Flat TawnyDayLily"
@@ -4108,7 +4498,9 @@
             "print('Material connected: Paint_Flat_TropicalSea ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Flat TropicalSea"
@@ -4129,7 +4521,9 @@
             "print('Material connected: Paint_Flat_VoilePink ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Flat VoilePink"
@@ -4150,7 +4544,9 @@
             "print('Material connected: Paint_Glossy_LaserLemon ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Glossy LaserLemon"
@@ -4171,7 +4567,9 @@
             "print('Material connected: Paint_Glossy_SleekWhite ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Glossy SleekWhite"
@@ -4192,7 +4590,9 @@
             "print('Material connected: Paint_Glossy_SunValley ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Glossy SunValley"
@@ -4213,7 +4613,9 @@
             "print('Material connected: Paint_Glossy_Tanzanite ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Glossy Tanzanite"
@@ -4234,7 +4636,9 @@
             "print('Material connected: Paint_Glossy_TartOrange ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Glossy TartOrange"
@@ -4255,7 +4659,9 @@
             "print('Material connected: Paint_Glossy_TropicalSea ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Paint Glossy TropicalSea"
@@ -4276,7 +4682,9 @@
             "print('Material connected: Plastic_Glossy_Black ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Plastic Glossy Black"
@@ -4297,7 +4705,9 @@
             "print('Material connected: Plastic_Glossy_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Plastic Glossy Red"
@@ -4318,7 +4728,9 @@
             "print('Material connected: Plastic_Matte_Black ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Plastic Matte Black"
@@ -4339,7 +4751,9 @@
             "print('Material connected: Plastic_Matte_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Plastic Matte Red"
@@ -4360,7 +4774,9 @@
             "print('Material connected: Plastic_Matte_White ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Plastic Matte White"
@@ -4381,7 +4797,9 @@
             "print('Material connected: Styrofoam ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Styrofoam"
@@ -4402,7 +4820,9 @@
             "print('Material connected: Porcelain_Black ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Porcelain Black"
@@ -4423,7 +4843,9 @@
             "print('Material connected: Porcelain_Blue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Porcelain Blue"
@@ -4444,7 +4866,9 @@
             "print('Material connected: Porcelain_Cracked_White ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Porcelain Cracked White"
@@ -4465,7 +4889,9 @@
             "print('Material connected: Porcelain_Matte_White ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Porcelain Matte White"
@@ -4486,7 +4912,9 @@
             "print('Material connected: Porcelain_New_White ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Porcelain New White"
@@ -4507,7 +4935,9 @@
             "print('Material connected: Porcelain_Old_White ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Porcelain Old White"
@@ -4528,7 +4958,9 @@
             "print('Material connected: Porcelain_White ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Porcelain White"
@@ -4549,7 +4981,9 @@
             "print('Material connected: Bronze_Brushed ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Bronze Brushed"
@@ -4570,7 +5004,9 @@
             "print('Material connected: Bronze_Polished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Bronze Polished"
@@ -4591,7 +5027,9 @@
             "print('Material connected: Bronze_Satin ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Bronze Satin"
@@ -4612,7 +5050,9 @@
             "print('Material connected: Gold_Brushed ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Gold Brushed"
@@ -4633,7 +5073,9 @@
             "print('Material connected: Gold_Polished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Gold Polished"
@@ -4654,7 +5096,9 @@
             "print('Material connected: Gold_Satin ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Gold Satin"
@@ -4675,7 +5119,9 @@
             "print('Material connected: Silver_Brushed ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Silver Brushed"
@@ -4696,7 +5142,9 @@
             "print('Material connected: Silver_Polished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Silver Polished"
@@ -4717,7 +5165,9 @@
             "print('Material connected: Silver_Satin ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Silver Satin"
@@ -4738,7 +5188,9 @@
             "print('Material connected: Stone_Marble_Blue_Matte ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stone Marble Blue Matte"
@@ -4759,7 +5211,9 @@
             "print('Material connected: Stone_Marble_Pink_Matte ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stone Marble Pink Matte"
@@ -4780,7 +5234,9 @@
             "print('Material connected: Stone_Cladding ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stone Cladding"
@@ -4801,7 +5257,9 @@
             "print('Material connected: Stone_Granit_BWB ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stone Granit BWB"
@@ -4822,7 +5280,9 @@
             "print('Material connected: Stone_Marble_Blue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stone Marble Blue"
@@ -4843,7 +5303,9 @@
             "print('Material connected: Stone_Marble_Pink ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stone Marble Pink"
@@ -4864,7 +5326,9 @@
             "print('Material connected: Stone_Marble_Grey ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stone Marble Grey"
@@ -4885,7 +5349,9 @@
             "print('Material connected: Stone_Rough_Marble ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stone Rough Marble"
@@ -4906,7 +5372,9 @@
             "print('Material connected: Brick_Color_Displacement ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brick Color Displacement"
@@ -4927,7 +5395,9 @@
             "print('Material connected: Brick_Natural_V1 ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brick Natural V1"
@@ -4948,7 +5418,9 @@
             "print('Material connected: Brick_Old_V3 ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brick Old V3"
@@ -4969,7 +5441,9 @@
             "print('Material connected: Brick_Old_V2 ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brick Old V2"
@@ -4990,7 +5464,9 @@
             "print('Material connected: Brick_Basic_V2 ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brick Basic V2"
@@ -5011,7 +5487,9 @@
             "print('Material connected: Brick_Irregular ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brick Irregular"
@@ -5032,7 +5510,9 @@
             "print('Material connected: Brick_Damage ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Brick Damage"
@@ -5053,7 +5533,9 @@
             "print('Material connected: Stone_Marble_Yellow_Matte ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Stone Marble Yellow Matte"
@@ -5074,7 +5556,9 @@
             "print('Material connected: Floor_Ceramic_Tiles_Checker ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Floor Ceramic Tiles Checker"
@@ -5095,7 +5579,9 @@
             "print('Material connected: Floor_Ceramic_Tiles_Color ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Floor Ceramic Tiles Color"
@@ -5116,7 +5602,9 @@
             "print('Material connected: Floor_Ceramic_Tiles_Color_Variation_8x8 ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Floor Ceramic Tiles Color Variation 8x8"
@@ -5137,7 +5625,9 @@
             "print('Material connected: Floor_Tiles_Rustic_Color_4x4 ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Floor Tiles Rustic Color 4x4"
@@ -5158,7 +5648,9 @@
             "print('Material connected: Tiling_BeigeMarble ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Tiling BeigeMarble"
@@ -5179,7 +5671,9 @@
             "print('Material connected: Tiling_Blue_Checkered ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Tiling Blue Checkered"
@@ -5200,7 +5694,9 @@
             "print('Material connected: Tiling_BLueMarble ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Tiling BLueMarble"
@@ -5221,7 +5717,9 @@
             "print('Material connected: tiling_Checkered ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: tiling Checkered"
@@ -5242,7 +5740,9 @@
             "print('Material connected: Tiling_Old ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Tiling Old"
@@ -5263,7 +5763,9 @@
             "print('Material connected: Tiling_White ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Tiling White"
@@ -5284,7 +5786,9 @@
             "print('Material connected: Tiling_White_Marble ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Tiling White Marble"
@@ -5305,7 +5809,9 @@
             "print('Material connected: Roofing_ClayShingles_Beige ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Roofing ClayShingles Beige"
@@ -5326,7 +5832,9 @@
             "print('Material connected: Roofing_CorrugatedIron ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Roofing CorrugatedIron"
@@ -5347,7 +5855,9 @@
             "print('Material connected: Roofing_RedClayTiles ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Roofing RedClay Tiles"
@@ -5368,7 +5878,9 @@
             "print('Material connected: Rubber_Bumpy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber Bumpy"
@@ -5389,7 +5901,9 @@
             "print('Material connected: Rubber_Diamonds ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber Diamonds"
@@ -5410,7 +5924,9 @@
             "print('Material connected: Rubber_Ribbed ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber Ribbed"
@@ -5431,7 +5947,9 @@
             "print('Material connected: Rubber_Smooth_Clear ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber Smooth Clear"
@@ -5452,7 +5970,9 @@
             "print('Material connected: Rubber_SmoothMatte ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte"
@@ -5473,7 +5993,9 @@
             "print('Material connected: Rubber_SmoothMatte_Black ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte Black"
@@ -5494,7 +6016,9 @@
             "print('Material connected: Rubber_SmoothMatte_Blue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte Blue"
@@ -5515,7 +6039,9 @@
             "print('Material connected: Rubber_SmoothMatte_Green ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte Green"
@@ -5536,7 +6062,9 @@
             "print('Material connected: Rubber_SmoothMatte_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte Red"
@@ -5557,7 +6085,9 @@
             "print('Material connected: Rubber_SmoothShiny ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny"
@@ -5578,7 +6108,9 @@
             "print('Material connected: Rubber_SmoothShiny_Black ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny Black"
@@ -5599,7 +6131,9 @@
             "print('Material connected: Rubber_SmoothShiny_Blue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny Blue"
@@ -5620,7 +6154,9 @@
             "print('Material connected: Rubber_SmoothShiny_Green ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny Green"
@@ -5641,7 +6177,9 @@
             "print('Material connected: Rubber_SmoothShiny_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny Red"
@@ -5662,7 +6200,9 @@
             "print('Material connected: Rubber_Used ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Rubber Used"
@@ -5683,7 +6223,9 @@
             "print('Material connected: Diffuse_Shadow_Catcher ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Diffuse Shadow Catcher"
@@ -5704,7 +6246,9 @@
             "print('Material connected: Reflective_Shadow_Catcher ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Reflective Shadow Catcher"
@@ -5725,7 +6269,9 @@
             "print('Material connected: Acrylic_Refractive_Glossy_Green ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Acrylic Refractive Glossy Green"
@@ -5746,7 +6292,9 @@
             "print('Material connected: Acrylic_Refractive_Glossy_Neon_Green ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Acrylic Refractive Glossy Neon Green"
@@ -5767,7 +6315,9 @@
             "print('Material connected: Acrylic_Refractive_Glossy_Neon_Orange ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Acrylic Refractive Glossy Neon Orange"
@@ -5788,7 +6338,9 @@
             "print('Material connected: Acrylic_Refractive_Glossy_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Acrylic Refractive Glossy Red"
@@ -5809,7 +6361,9 @@
             "print('Material connected: Acrylic_Refractive_Matte_Green ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Acrylic Refractive Matte Green"
@@ -5830,7 +6384,9 @@
             "print('Material connected: Acrylic_Refractive_Matte_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Acrylic Refractive Matte Red"
@@ -5851,7 +6407,9 @@
             "print('Material connected: Acrylic_Transparent_Matte_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Acrylic Transparent Matte Red"
@@ -5872,7 +6430,9 @@
             "print('Material connected: Acrylic_Transparent_Glossy_Red ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Acrylic Transparent Glossy Red"
@@ -5893,7 +6453,9 @@
             "print('Material connected: Plastic_Transparent_Solid_ClearBlue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Plastic Transparent Solid ClearBlue"
@@ -5914,7 +6476,9 @@
             "print('Material connected: Plastic_Transparent_Thin_ClearBlue ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Plastic Transparent Thin ClearBlue"
@@ -5935,7 +6499,9 @@
             "print('Material connected: Colored_Glass ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Colored Glass"
@@ -5956,7 +6522,9 @@
             "print('Material connected: Jade ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Jade"
@@ -5977,7 +6545,9 @@
             "print('Material connected: Milk ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Milk"
@@ -5998,7 +6568,9 @@
             "print('Material connected: Wax ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wax"
@@ -6019,7 +6591,9 @@
             "print('Material connected: Wood_Bark ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Bark"
@@ -6040,7 +6614,9 @@
             "print('Material connected: Wood_Beech_Glossy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Beech Glossy"
@@ -6061,7 +6637,9 @@
             "print('Material connected: Wood_Beech_Unfinished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Beech Unfinished"
@@ -6082,7 +6660,9 @@
             "print('Material connected: Wood_Cedar_Glossy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Cedar Glossy"
@@ -6103,7 +6683,9 @@
             "print('Material connected: Wood_Cedar_Unfinished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Cedar Unfinished"
@@ -6124,7 +6706,9 @@
             "print('Material connected: Wood_Clear_Rustic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Clear Rustic"
@@ -6145,7 +6729,9 @@
             "print('Material connected: Wood_Mahogany_Glossy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Mahogany Glossy"
@@ -6166,7 +6752,9 @@
             "print('Material connected: Wood_Mahogany_Unfinished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Mahogany Unfinished"
@@ -6187,7 +6775,9 @@
             "print('Material connected: Wood_Maple_Glossy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Maple Glossy"
@@ -6208,7 +6798,9 @@
             "print('Material connected: Wood_Maple_Unfinished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Maple Unfinished"
@@ -6229,7 +6821,9 @@
             "print('Material connected: Wood_Natural_Maple ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Natural Maple"
@@ -6250,7 +6844,9 @@
             "print('Material connected: Wood_Oak_Glossy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Oak Glossy"
@@ -6271,7 +6867,9 @@
             "print('Material connected: Wood_Oak_Unfinished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Oak Unfinished"
@@ -6292,7 +6890,9 @@
             "print('Material connected: Wood_Planks_Oak_Glossy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Planks Oak Glossy"
@@ -6313,7 +6913,9 @@
             "print('Material connected: Wood_Planks_Oak_Unfinished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Planks Oak Unfinished"
@@ -6334,7 +6936,9 @@
             "print('Material connected: Wood_Rustic ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Rustic"
@@ -6355,7 +6959,9 @@
             "print('Material connected: Wood_Rustic_Cherry ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Rustic Cherry"
@@ -6376,7 +6982,9 @@
             "print('Material connected: Wood_Wenge_Glossy ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Wenge Glossy"
@@ -6397,7 +7005,9 @@
             "print('Material connected: Wood_Wenge_Unfinished ')",
             "cmd.sets(e=True, forceElement=rpr_sg)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('materialTestNode')"
+            "cmd.delete('materialTestNode')",
+            "rpr_sg = cmd.listConnections('lambert1', type='shadingEngine')[0]",
+            "cmd.sets(e=True, forceElement=rpr_sg)"
         ],
         "script_info": [
             "Material: Wood Wenge Unfinished"
