@@ -160,6 +160,21 @@ def main(args):
 				temp.append(case)
 		cases = temp
 
+	active_cases_default_tool = 0
+	for case in cases:
+		if (case['status'] not in ['error', 'skipped', 'done']):
+			try:
+				tool = case['tool']
+			except:
+				active_cases_default_tool += 1
+			else: 
+				case['status'] = 'need another tool'
+	if (active_cases_default_tool == 0):
+		for case in cases:
+			if (case['status'] == 'need another tool'):
+				case['status'] = 'active'
+				args.tool = case['tool']
+
 	core_config.main_logger.info('Create empty report files')
 
 	for case in cases:
@@ -299,7 +314,7 @@ if __name__ == "__main__":
 				else:
 					failed_count = 0
 
-				if (case['status'] in ['active', 'fail', 'inprogress']):
+				if (case['status'] in ['active', 'fail', 'inprogress', 'need another tool']):
 					active_cases += 1
 
 		if (active_cases == 0):
