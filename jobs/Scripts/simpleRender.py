@@ -10,6 +10,7 @@ from shutil import copyfile
 import sys
 import re
 import time
+import platform
 
 sys.path.append(os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
@@ -174,6 +175,12 @@ def main(args):
 			if (case['status'] == 'need another tool'):
 				case['status'] = 'active'
 				args.tool = case['tool']
+
+	for case in cases:
+		try:
+			if ((args.render_device in case['skip on']) or ([a for a in list(platform.architecture()) if a in case['skip on']])):
+				case['status'] = 'skipped'
+		except:pass
 
 	core_config.main_logger.info('Create empty report files')
 
