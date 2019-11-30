@@ -1457,7 +1457,7 @@
             "Sun Glow - 0",
             "Sun Disk Size - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_064",
@@ -1480,7 +1480,7 @@
             "Sun Glow - 50",
             "Sun Disk Size - 10"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_065",
@@ -1501,7 +1501,7 @@
             "Ground Color - sunsky_groundcolor.png",
             "Sun Glow - 100"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_066",
@@ -1522,7 +1522,7 @@
             "Ground Color - sunsky_groundcolor.png",
             "Sun Disk Size - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_067",
@@ -1545,7 +1545,7 @@
             "Sun Glow - 0",
             "Sun Disk Size - 10"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_068",
@@ -1564,7 +1564,7 @@
             "Ground Color - sunsky_groundcolor.png",
             "Sun Glow - 50"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_069",
@@ -1581,7 +1581,7 @@
             "Ground Color - HSV: 0, 0, 1",
             "Sun Glow - 100"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_070",
@@ -1598,7 +1598,7 @@
             "Filter Color - HSV: 0, 0, 1",
             "Ground Color - HSV: 0, 0, 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_071",
@@ -1615,7 +1615,7 @@
             "Filter Color - sunsky_filtercolor.tga",
             "Ground Color - sunsky_groundcolor.tga"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_072",
@@ -1634,7 +1634,7 @@
             "Ground Color - HSV: 0, 0, 1",
             "Sun Disk Size - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_073",
@@ -1649,7 +1649,7 @@
             "Ground Color - HSV: 0, 0, 0",
             "Sun Disk Size - 10"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_074",
@@ -1666,7 +1666,7 @@
             "Ground Color - sunsky_groundcolor.tga",
             "Sun Glow - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_075",
@@ -1682,7 +1682,7 @@
             "Ground Color - sunsky_groundcolor.png",
             "Sun Glow - 50"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_076",
@@ -1701,7 +1701,7 @@
             "Ground Color - sunsky_groundcolor.tga",
             "Sun Glow - 100"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_077",
@@ -1718,7 +1718,7 @@
             "Filter Color - sunsky_filtercolor.tga",
             "Ground Color - sunsky_groundcolor.png"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_078",
@@ -1735,7 +1735,7 @@
             "Ground Color - sunsky_groundcolor.png",
             "Sun Disk Size - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_079",
@@ -1744,14 +1744,15 @@
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "cmd.file('Sun_Sky_New.ma', f=True, op='v=0;', iv=True, o=True)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.tga",
             "Ground Color - sunsky_groundcolor.tga",
             "Sun Disk Size - 10"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_080",
@@ -1765,7 +1766,7 @@
             "Filter Color - sunsky_filtercolor.png",
             "Ground Color - sunsky_groundcolor.png"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_081",
@@ -1784,7 +1785,7 @@
             "Ground Color - HSV: 0, 0, 1",
             "Sun Glow - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_082",
@@ -1803,7 +1804,7 @@
             "Ground Color - HSV: 0, 0, 0",
             "Sun Glow - 50"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_083",
@@ -1820,7 +1821,7 @@
             "Ground Color - sunsky_groundcolor.tga",
             "Sun Glow - 100"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_084",
@@ -1838,7 +1839,7 @@
             "Sun Glow - 100",
             "Sun Disk Size - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_085",
@@ -1854,7 +1855,7 @@
             "Ground Color - HSV: 0, 0, 0",
             "Sun Disk Size - 10"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_086",
@@ -1871,7 +1872,7 @@
             "Filter Color - sunsky_filtercolor.png",
             "Ground Color - sunsky_groundcolor.tga"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_087",
@@ -1886,7 +1887,7 @@
             "Intensity - 2",
             "Filter Color - sunsky_filtercolor.png"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_088",
@@ -1905,7 +1906,7 @@
             "Ground Color - sunsky_groundcolor.tga",
             "Sun Glow - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_089",
@@ -1921,7 +1922,7 @@
             "Ground Color - sunsky_groundcolor.png",
             "Sun Glow - 50"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_090",
@@ -1939,7 +1940,7 @@
             "Sun Glow - 50",
             "Sun Disk Size - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_091",
@@ -1958,7 +1959,7 @@
             "Sun Glow - 100",
             "Sun Disk Size - 10"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_092",
@@ -1975,7 +1976,7 @@
             "Filter Color - HSV: 0, 0, 1",
             "Ground Color - sunsky_groundcolor.png"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_093",
@@ -1992,7 +1993,7 @@
             "Filter Color - sunsky_filtercolor.tga",
             "Ground Color - HSV: 0, 0, 1"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_094",
@@ -2006,7 +2007,7 @@
             "Filter Color - sunsky_filtercolor.png",
             "Ground Color - HSV: 0, 0, 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_095",
@@ -2022,7 +2023,7 @@
             "Ground Color - sunsky_groundcolor.tga",
             "Sun Glow - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_096",
@@ -2039,7 +2040,7 @@
             "Horizon Blur - 0",
             "Horizon Height - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_097",
@@ -2056,7 +2057,7 @@
             "Horizon Blur - 0.5",
             "Horizon Height - 0.1"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_098",
@@ -2073,7 +2074,7 @@
             "Horizon Blur - 1",
             "Horizon Height - 0.5"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_099",
@@ -2090,7 +2091,7 @@
             "Horizon Blur - 1",
             "Horizon Height - 1"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_100",
@@ -2105,7 +2106,7 @@
             "Intensity - 1",
             "Saturation - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_101",
@@ -2120,7 +2121,7 @@
             "Intensity - 1",
             "Saturation - 1"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_102",
@@ -2137,7 +2138,7 @@
             "Sun Position - Altitude & Azimuth",
             "Altitude - 0"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_103",
@@ -2154,7 +2155,7 @@
             "Sun Position - Altitude & Azimuth",
             "Altitude - 90"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_104",
@@ -2171,7 +2172,7 @@
             "Sun Position - Altitude & Azimuth",
             "Azimuth - -360"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_105",
@@ -2188,7 +2189,7 @@
             "Sun Position - Altitude & Azimuth",
             "Azimuth - 360"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_106",
@@ -2205,7 +2206,7 @@
             "Sun Position - Altitude & Azimuth",
             "Altitude - 150"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_107",
@@ -2229,7 +2230,7 @@
             "Timezone - 3",
             "DaylightSaving - Activated"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_108",
@@ -2251,7 +2252,7 @@
             "Longitude - 37.616",
             "Timezone - 3"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_109",
@@ -2275,7 +2276,7 @@
             "Timezone - 3",
             "DaylightSaving - Activated"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_110",
@@ -2304,7 +2305,7 @@
             "Minutes - 1",
             "Seconds - 60"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_111",
@@ -2335,7 +2336,7 @@
             "Minutes - 60",
             "Longitude - -180"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_112",
@@ -2364,7 +2365,7 @@
             "Seconds - 1",
             "Timezone - 18"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_113",
@@ -2393,7 +2394,7 @@
             "Minutes - 1",
             "DaylightSaving - Activated"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_114",
@@ -2424,7 +2425,7 @@
             "Seconds - 1",
             "Latitude - -90"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_115",
@@ -2451,7 +2452,7 @@
             "Seconds - 60",
             "Latitude - 90"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_116",
@@ -2482,7 +2483,7 @@
             "DaylightSaving - Activated",
             "Longitude - -180"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_117",
@@ -2511,7 +2512,7 @@
             "Seconds - 60",
             "Longitude - 180"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_118",
@@ -2530,7 +2531,7 @@
             "Ground Color - sunsky_groundcolor.png",
             "Sun Position - Time Location"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_119",
@@ -2557,7 +2558,7 @@
             "Seconds - 1",
             "Latitude - -90"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_120",
@@ -2584,7 +2585,7 @@
             "Seconds - 60",
             "Latitude - 90"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_121",
@@ -2611,7 +2612,7 @@
             "Timezone - -18",
             "Longitude - -180"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_122",
@@ -2634,7 +2635,7 @@
             "Minutes - 60",
             "Seconds - 1"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_123",
@@ -2657,7 +2658,7 @@
             "Seconds - 60",
             "Timezone - -18"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_124",
@@ -2686,7 +2687,7 @@
             "Timezone - 18",
             "DayLight Saving - Activated"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_125",
@@ -2713,7 +2714,7 @@
             "Latitude - 56",
             "Longitude - 38"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_126",
@@ -2740,7 +2741,7 @@
             "Latitude - 56",
             "Longitude - 38"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_127",
@@ -2767,7 +2768,7 @@
             "Latitude - 56",
             "Longitude - 38"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_128",
@@ -2794,7 +2795,7 @@
             "Latitude - 56",
             "Longitude - 38"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_129",
@@ -2821,7 +2822,7 @@
             "Latitude - 56",
             "Longitude - 38"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_130",
@@ -2850,7 +2851,7 @@
             "Longitude - -80",
             "Timezone - -5"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_131",
@@ -2879,7 +2880,7 @@
             "Longitude - -80",
             "Timezone - -5"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_132",
@@ -2908,7 +2909,7 @@
             "Longitude - -80",
             "Timezone - -5"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_133",
@@ -2937,7 +2938,7 @@
             "Longitude - 149",
             "Timezone - 11"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_134",
@@ -2966,7 +2967,7 @@
             "Longitude - 149",
             "Timezone - 11"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_135",
@@ -2995,7 +2996,7 @@
             "Longitude - 149",
             "Timezone - 11"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     },
     {
         "case": "MAYA_RS_SS_136",
@@ -3016,6 +3017,6 @@
             "Longitude - 37.616",
             "Timezone - 3"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky_New.ma"
     }
 ]

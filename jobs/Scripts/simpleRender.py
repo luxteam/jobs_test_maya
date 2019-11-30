@@ -164,18 +164,19 @@ def main(args):
 
 	for case in cases:
 		if (case['status'] != 'done'):
-			with open(os.path.join(work_dir, (case['case'] + core_config.CASE_REPORT_SUFFIX)), 'w') as f:
-				if (case["status"] == 'inprogress'):
-					case['status'] = 'fail'
+			if ((case['case'] + core_config.CASE_REPORT_SUFFIX) not in [f for f in os.listdir(work_dir)]):
+				with open(os.path.join(work_dir, (case['case'] + core_config.CASE_REPORT_SUFFIX)), 'w') as f:
+					if (case["status"] == 'inprogress'):
+						case['status'] = 'fail'
 
-				template = core_config.RENDER_REPORT_BASE
-				template["test_case"] = case["case"]
-				template["test_status"] = case["status"]
-				try:
-					template["scene_name"] = case["scene"]
-				except:pass
-				template["script_info"] = case["script_info"]
-				f.write(json.dumps([template], indent=4))
+					template = core_config.RENDER_REPORT_BASE
+					template["test_case"] = case["case"]
+					template["test_status"] = case["status"]
+					try:
+						template["scene_name"] = case["scene"]
+					except:pass
+					template["script_info"] = case["script_info"]
+					f.write(json.dumps([template], indent=4))
 
 	with open(os.path.join(work_dir, 'test_cases.json'), "w+") as f:
 		json.dump(cases, f, indent=4)
