@@ -76,7 +76,7 @@ def check_test_cases_fail_save(test_case, script_info):
 	test = TEST_CASES
 	tests = test.split(',')
 
-	if (test != "all"):
+	if test != "all":
 		for test in tests:
 			if test == test_case:
 				rpr_fail_save(test_case, script_info)
@@ -103,8 +103,7 @@ def rpr_render(test_case, script_info):
 	cmd.sysFile(path.join(WORK_DIR, "Color"), makeDir=True)
 	test_case_path = path.join(WORK_DIR, "Color", test_case)
 	cmd.renderWindowEditor('renderView', edit=1,  dst="color")
-	cmd.renderWindowEditor('renderView', edit=1, com=1,
-						   writeImage=test_case_path)
+	cmd.renderWindowEditor('renderView', edit=1, com=1, writeImage=test_case_path)
 	test_time = time.time() - start_time
 
 	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
@@ -122,22 +121,21 @@ def rpr_render(test_case, script_info):
 def check_test_cases_success_save(test_case, script_info):
 	test_cases = TEST_CASES
 	tests = test_cases.split(',')
-	if (test_cases != "all"):
+	if test_cases != "all":
 		for test in tests:
-			if (test == test_case):
+			if test == test_case:
 				rpr_success_save(test_case, script_info)
 	else:
 		rpr_success_save(test_case, script_info)
 
 
 def rpr_success_save(test_case, script_info):
-	if(cmd.pluginInfo('RadeonProRender', query=True, loaded=True) == 0):
-		mel.eval('loadPlugin RadeonProRender')
+	if not cmd.pluginInfo('RadeonProRender', query=True, loaded=True):
+		cmd.loadPlugin("RadeonProRender", quiet=True)
 
 	cmd.sysFile(path.join(WORK_DIR, "Color"), makeDir=True)
 	work_folder = path.join(WORK_DIR, "Color", (test_case + ".jpg"))
-	cmd.sysFile(path.join(WORK_DIR, "..", "..", "..",
-						  "..", "jobs", "Tests", "pass.jpg"), copy=(work_folder))
+	cmd.sysFile(path.join(WORK_DIR, "..", "..", "..", "..", "jobs", "Tests", "pass.jpg"), copy=(work_folder))
 
 	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
 
@@ -151,13 +149,12 @@ def rpr_success_save(test_case, script_info):
 
 
 def rpr_fail_save(test_case, script_info):
-	if(cmd.pluginInfo('RadeonProRender', query=True, loaded=True) == 0):
-		mel.eval('loadPlugin RadeonProRender')
+	if not cmd.pluginInfo('RadeonProRender', query=True, loaded=True):
+		cmd.loadPlugin("RadeonProRender", quiet=True)
 
 	cmd.sysFile(path.join(WORK_DIR, "Color"), makeDir=True)
 	work_folder = path.join(WORK_DIR, "Color", (test_case + ".jpg"))
-	cmd.sysFile(path.join(WORK_DIR, "..", "..", "..", "..",
-						  "jobs", "Tests", "failed.jpg"), copy=(work_folder))
+	cmd.sysFile(path.join(WORK_DIR, "..", "..", "..", "..", "jobs", "Tests", "failed.jpg"), copy=(work_folder))
 
 	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
 
@@ -171,61 +168,58 @@ def rpr_fail_save(test_case, script_info):
 
 
 def validateFiles():
-	unresolved_files = cmd.filePathEditor(
-		query=True, listFiles="", unresolved=True, attributeOnly=True)
+	unresolved_files = cmd.filePathEditor(query=True, listFiles="", unresolved=True, attributeOnly=True)
 	new_path = RES_PATH
-	if (unresolved_files is not None):
+	if unresolved_files:
 		for item in unresolved_files:
 			cmd.filePathEditor(item, repath=new_path, recursive=True, ra=1)
 
 
 def check_rpr_load():
-	if(cmd.pluginInfo('RadeonProRender', query=True, loaded=True) == 0):
-		mel.eval('loadPlugin RadeonProRender')
-	if(cmd.pluginInfo('fbxmaya', query=True, loaded=True) == 0):
-		mel.eval('loadPlugin fbxmaya')
+	if not cmd.pluginInfo('RadeonProRender', query=True, loaded=True):
+		cmd.loadPlugin("RadeonProRender", quiet=True)
+	if not cmd.pluginInfo('fbxmaya', query=True, loaded=True):
+		cmd.loadPlugin("fbxmaya", quiet=True)
 
 
 def prerender(test_case, script_info, scene):
 	scene_name = cmd.file(q=True, sn=True, shn=True)
-	if (scene_name != scene):
+	if scene_name != scene:
 		try:
 			cmd.file(scene, f=True, op='v=0;', iv=True, o=True)
 		except:
-			cmd.evalDeferred("maya.cmds.quit(abort=True)")
+			cmd.evalDeferred(cmd.quit(abort=True))
+
 	validateFiles()
 
-	if(cmd.pluginInfo('RadeonProRender', query=True, loaded=True) == 0):
-		mel.eval('loadPlugin RadeonProRender')
+	if not cmd.pluginInfo('RadeonProRender', query=True, loaded=True):
+		cmd.loadPlugin("RadeonProRender", quiet=True)
+	if not cmd.pluginInfo('fbxmaya', query=True, loaded=True):
+		cmd.loadPlugin("fbxmaya", quiet=True)
 
-	if(cmd.pluginInfo('fbxmaya', query=True, loaded=True) == 0):
-		mel.eval('loadPlugin fbxmaya')
-
-	if (RESOLUTION_X & RESOLUTION_Y):
+	if RESOLUTION_X and RESOLUTION_Y:
 		cmd.setAttr("defaultResolution.width", RESOLUTION_X)
 		cmd.setAttr("defaultResolution.height", RESOLUTION_Y)
 
-	cmd.setAttr("defaultRenderGlobals.currentRenderer",
-				type="string" "FireRender")
+	cmd.setAttr("defaultRenderGlobals.currentRenderer", type="string" "FireRender")
 	cmd.setAttr("defaultRenderGlobals.imageFormat", 8)
-	cmd.setAttr(
-		"RadeonProRenderGlobals.completionCriteriaIterations", PASS_LIMIT)
+	# TODO 
+	cmd.setAttr("RadeonProRenderGlobals.completionCriteriaIterations", PASS_LIMIT)
 
 	with open(path.join(WORK_DIR, "test_cases.json"), 'r') as json_file:
 		cases = json.load(json_file)
 
 	for case in cases:
-		if (case['case'] == test_case):
+		if case['case'] == test_case:
 			try:
 				for function in case['functions']:
 					try:
-						if (re.match('(^\w+ = |^print)', function)):
+						if re.match('(^\w+ = |^print)', function):
 							exec(function)
 						else:
 							eval(function)
 					except Exception as e:
-						print('Error: ' + str(e) +
-							' with string: \"' + function + '\"')
+						print('Error {{}} with string {{}}'.format(e, function))
 			except Exception as e:
 				rpr_render(test_case, script_info)
 
@@ -233,7 +227,7 @@ def prerender(test_case, script_info, scene):
 def check_test_cases(test_case, script_info, scene):
 	test = TEST_CASES
 	tests = test.split(',')
-	if (test != "all"):
+	if test != "all":
 		for test in tests:
 			if test == test_case:
 				prerender(test_case, script_info, scene)
@@ -251,12 +245,12 @@ def case_function(case):
 	func = 0
 
 	try:
-		if (case['functions'][0] == "check_test_cases_success_save"):
+		if case['functions'][0] == "check_test_cases_success_save":
 			func = 1
 	except:
 		pass
 
-	if (case['status'] == "fail"):
+	if case['status'] == "fail":
 		func = 2
 		case['status'] = "error"
 
@@ -265,7 +259,7 @@ def case_function(case):
 	except:
 		scene_name = ''
 
-	if (func == 0):
+	if not func:
 		functions[func](case['case'], case['script_info'], scene_name)
 	else:
 		functions[func](case['case'], case['script_info'])
@@ -273,7 +267,7 @@ def case_function(case):
 
 def main():
 
-	mel.eval('setProject (\"' + RES_PATH + '\");')
+	mel.eval('setProject(\"{{}}\")'.format(RES_PATH))
 
 	check_rpr_load()
 
@@ -282,94 +276,89 @@ def main():
 	with open(path.join(WORK_DIR, "test_cases.json"), 'r') as json_file:
 		cases = json.load(json_file)
 
-#	active- case need to be executed
-# 	inprogress- case executing (if maya crushed it still be inprogress)
-#	fail- maya was crushed while executing this case and script need to create report for this case
-#	error- maya was crushed while executing this case and script don't need to touch this case
-#	done- case was executed successfully
-#	skipped- case don't need to be executed
+	#   Possible case statuses:
+	# - Active: Case will be executed.
+	# - Inprogress: Case is in progress (if maya was crashed, case will be inprogress).
+	# - Fail: Maya was crashed during case. Fail report will be created.
+	# - Error: Maya was crashed during case. Fail report is already created.
+	# - Done: Case was finished successfully.
+	# - Skipped: Case will be skipped. Skip report will be created.
 
 	for case in cases:
-		if (case['status'] == 'active'):
+		if case['status'] == 'active':
 			case['status'] = 'inprogress'
-		if ((case['status'] == 'inprogress') | (case['status'] == 'fail')):
+		if case['status'] == 'inprogress' or case['status'] == 'fail':
 			with open(path.join(WORK_DIR, "test_cases.json"), 'w') as file:
 				json.dump(cases, file, indent=4)
 
-			if (not path.exists(render_tool_log_path(case['case']))):
+			if not path.exists(render_tool_log_path(case['case'])):
 				with open(render_tool_log_path(case['case']), 'w'):
 					pass
 
-			cmd.scriptEditorInfo(historyFilename=render_tool_log_path(
-				case['case']), writeHistory=True)
+			cmd.scriptEditorInfo(historyFilename=render_tool_log_path(case['case']), writeHistory=True)
 			print(case['case'])
 			case_function(case)
 
-			if (case['status'] == 'inprogress'):
+			if case['status'] == 'inprogress':
 				case['status'] = 'done'
 
 			with open(path.join(WORK_DIR, "test_cases.json"), 'w') as file:
 				json.dump(cases, file, indent=4)
 
-	cmd.evalDeferred("maya.cmds.quit(abort=True)")
+	cmd.evalDeferred(cmd.quit(abort=True))
 
-
-# special functions for one group
 
 def setAttribute(attr, value):
-	file = mel.eval('shadingNode -asTexture -isColorManaged file')
-	texture = mel.eval('shadingNode -asUtility place2dTexture')
-	cmd.connectAttr((texture+".coverage"), (file+".coverage"), f=True)
-	cmd.connectAttr((texture+".translateFrame"),
-					(file+".translateFrame"), f=True)
-	cmd.connectAttr((texture+".rotateFrame"),
-					(file+".rotateFrame"), f=True)
-	cmd.connectAttr((texture+".mirrorU"), (file+".mirrorU"), f=True)
-	cmd.connectAttr((texture+".mirrorV"), (file+".mirrorV"), f=True)
-	cmd.connectAttr((texture+".stagger"), (file+".stagger"), f=True)
-	cmd.connectAttr((texture+".wrapU"), (file+".wrapU"), f=True)
-	cmd.connectAttr((texture+".wrapV"), (file+".wrapV"), f=True)
-	cmd.connectAttr((texture+".repeatUV"), (file+".repeatUV"), f=True)
-	cmd.connectAttr((texture+".offset"), (file+".offset"), f=True)
-	cmd.connectAttr((texture+".rotateUV"), (file+".rotateUV"), f=True)
-	cmd.connectAttr((texture+".noiseUV"), (file+".noiseUV"), f=True)
-	cmd.connectAttr((texture+".vertexUvTwo"),
-					(file+".vertexUvTwo"), f=True)
-	cmd.connectAttr((texture+".vertexUvThree"),
-					(file+".vertexUvThree"), f=True)
-	cmd.connectAttr((texture+".vertexCameraOne"),
-					(file+".vertexCameraOne"), f=True)
-	cmd.connectAttr((texture+".outUV"), (file+".uv"), f=True)
-	cmd.connectAttr((texture+".outUvFilterSize"), (file+".uvFilterSize"))
-	cmd.connectAttr((texture+".vertexUvOne"), (file+".vertexUvOne"))
+	file = cmd.shadingNode("file", asTexture=True, isColorManaged=True)
+	texture = cmd.shadingNode("place2dTexture", asUtility=True)
+	cmd.connectAttr(texture + ".coverage", file + ".coverage", f=True)
+	cmd.connectAttr(texture + ".translateFrame", file + ".translateFrame", f=True)
+	cmd.connectAttr(texture + ".rotateFrame", file + ".rotateFrame", f=True)
+	cmd.connectAttr(texture + ".mirrorU", file + ".mirrorU", f=True)
+	cmd.connectAttr(texture + ".mirrorV", file + ".mirrorV", f=True)
+	cmd.connectAttr(texture + ".stagger", file + ".stagger", f=True)
+	cmd.connectAttr(texture + ".wrapU", file + ".wrapU", f=True)
+	cmd.connectAttr(texture + ".wrapV", file + ".wrapV", f=True)
+	cmd.connectAttr(texture + ".repeatUV", file + ".repeatUV", f=True)
+	cmd.connectAttr(texture + ".offset", file + ".offset", f=True)
+	cmd.connectAttr(texture + ".rotateUV", file + ".rotateUV", f=True)
+	cmd.connectAttr(texture + ".noiseUV", file + ".noiseUV", f=True)
+	cmd.connectAttr(texture + ".vertexUvTwo", file + ".vertexUvTwo" , f=True)
+	cmd.connectAttr(texture + ".vertexUvThree", file + ".vertexUvThree", f=True)
+	cmd.connectAttr(texture + ".vertexCameraOne", file + ".vertexCameraOne", f=True)
+	cmd.connectAttr(texture + ".outUV", file + ".uv", f=True)
+	cmd.connectAttr(texture + ".outUvFilterSize", file + ".uvFilterSize")
+	cmd.connectAttr(texture + ".vertexUvOne", file + ".vertexUvOne")
+
 	return file
 
 
-def setAttributeSS(attr, value):  # for sun sky
+def setAttributeSS(attr, value):
 	file = setAttribute(attr, value)
-	cmd.connectAttr((file+".outColor"), ("RPRSkyShape."+attr), force=True)
-	cmd.setAttr((file+".fileTextureName"), value, type="string")
+	cmd.connectAttr(file + ".outColor", "RPRSkyShape." + attr, force=True)
+	cmd.setAttr(file + ".fileTextureName", value, type="string")
+
 	return file
 
 
-def removeIBL():  # for sun sky
+def removeIBL():
 	objects = cmd.ls(g=True)
 	for obj in objects:
-		if (obj == 'RPRIBLShape'):
+		if obj == 'RPRIBLShape':
 			cmd.delete('RPRIBL')
-		if (obj == 'RPRSkyShape'):
+		if obj == 'RPRSkyShape':
 			cmd.delete('RPRSky')
 	cmd.createNode('RPRSky', n='RPRSkyShape')
 
 
-def removeIBLBL():  # for base lights
+def removeIBLBL():
 	objects = cmd.ls(g=True)
 	for obj in objects:
-		if (obj == 'RPRIBLShape'):
+		if obj == 'RPRIBLShape':
 			cmd.delete('RPRIBL')
 
 
-def resetAttributesV():    # for volume
+def resetAttributesV():
     cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')
     cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')
     cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 0, 1, type='double3')
@@ -377,27 +366,32 @@ def resetAttributesV():    # for volume
     cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.096)
     cmd.setAttr('RPRVolumeMaterial1.multiscatter', 1)
 
-def setAttributeV(volume_attr, file_attr, value):  # for volume
+
+def setAttributeV(volume_attr, file_attr, value):
 	file = setAttribute(volume_attr, value)
-	cmd.connectAttr((file+"."+file_attr), ("RPRVolumeMaterial1."+volume_attr), force=True)
-	cmd.setAttr((file+".fileTextureName"), value, type="string")
+	cmd.connectAttr(file + "." + file_attr, "RPRVolumeMaterial1." + volume_attr, force=True)
+	cmd.setAttr(file + ".fileTextureName", value, type="string")
+
 	return file
 
 
-def setAttributePBR(pbr_attr, file_attr, value):  # for pbr
+def setAttributePBR(pbr_attr, file_attr, value):
 	file = setAttribute(pbr_attr, value)
-	cmd.connectAttr((file+"."+file_attr), ("R_PBRMat."+pbr_attr), force=True)
-	cmd.setAttr((file+".fileTextureName"), value, type="string")
+	cmd.connectAttr(file + "." + file_attr, "R_PBRMat." + pbr_attr, force=True)
+	cmd.setAttr(file + ".fileTextureName", value, type="string")
+
 	return file
 
-def resetAttributePBR():    # for pbr
+
+def resetAttributePBR():
 	cmd.setAttr('R_PBRMat.color', 0.0719, 0.31, 0.0719, type='double3')
 	cmd.setAttr('R_PBRMat.metalness', 0)
 	cmd.setAttr('R_PBRMat.specular', 1)
 	cmd.setAttr('R_PBRMat.roughness', 0.1)
 	try:
 		cmd.connectAttr('RPRNormal4.out', 'R_PBRMat.normalMap', f=True)
-	except:pass
+	except:
+		pass
 	cmd.setAttr('file14.fileTextureName', 'sourceimages/normal.tif', type='string' )
 	cmd.setAttr('R_PBRMat.glass', 1)
 	cmd.setAttr('R_PBRMat.glassIOR', 1.2)
@@ -412,11 +406,13 @@ def resetAttributePBR():    # for pbr
 
 def setAttributeU(pbr_attr, file_attr, value):  # for Uber
 	file = setAttribute(pbr_attr, value)
-	cmd.connectAttr((file+"."+file_attr), ("R_UberMat."+pbr_attr), force=True)
-	cmd.setAttr((file+".fileTextureName"), value, type="string")
+	cmd.connectAttr(file + "." + file_attr, "R_UberMat." + pbr_attr, force=True)
+	cmd.setAttr(file + ".fileTextureName", value, type="string")
+
 	return file
 
-def resetAttributeU():    # for Uber
+
+def resetAttributeU():
 	cmd.setAttr('R_UberMat.diffuse', 1)
 	cmd.setAttr('R_UberMat.diffuseColor', 0.05285, 0.298014, 0.303, type='double3')
 	cmd.setAttr('R_UberMat.diffuseWeight', 1)
@@ -480,9 +476,12 @@ def resetAttributeU():    # for Uber
 	cmd.setAttr('R_UberMat.transparencyEnable', 0)
 	cmd.setAttr('R_UberMat.transparencyLevel', 1)
 	cmd.setAttr('R_UberMat.normalMapEnable', 1)
+
 	try:
 		cmd.connectAttr('RPRNormal3.out', 'R_UberMat.normalMap', force=True)
-	except:pass
+	except:
+		pass
+
 	cmd.setAttr('file13.fileTextureName', 'sourceimages/normal_normalmap.png', type='string')
 	cmd.setAttr('R_UberMat.displacementEnable', 0)
 	cmd.setAttr('R_UberMat.displacementMap', 0, 0, 0, type='double3')
@@ -493,7 +492,7 @@ def resetAttributeU():    # for Uber
 	cmd.setAttr('R_UberMat.displacementBoundary', 1)
 
 
-def resetAttributesQ():	#for quality
+def resetAttributesQ():
     cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 8)
     cmd.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 3)
     cmd.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 5)
@@ -505,16 +504,13 @@ def resetAttributesQ():	#for quality
     cmd.setAttr('RadeonProRenderGlobals.textureCacheSize', 512)
 
 
-def ibl():	# for IBL
+def ibl():
 	exist = 0		
 	objects = cmd.ls(g=True)
 	for obj in objects:
-		if (obj == 'RPRIBLShape'):
+		if obj == 'RPRIBLShape':
 			exist = 1
-	if (exist == 0):
-		cmd.createNode('RPRIBL', n='RPRIBLShape')
-		parent = cmd.listRelatives('RPRIBLShape', p=True)
-		cmd.setAttr((parent[0] + '.scaleX'), 1001.25663706144)
-		cmd.setAttr((parent[0] + '.scaleY'), 1001.25663706144)
-		cmd.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)
-		cmd.rename(parent[0], 'RPRIBLShape')
+	if exist == 0:
+		ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')
+		ibl_transform = cmd.listRelatives(ibl_shape, p=True)[0]
+		cmd.setAttr(ibl_transform + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)
