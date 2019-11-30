@@ -36,10 +36,8 @@ def get_windows_titles():
 	try:
 		if platform.system() == 'Darwin':
 			ws_options = kCGWindowListOptionOnScreenOnly
-			windows_list = CGWindowListCopyWindowInfo(
-				ws_options, kCGNullWindowID)
-			maya_titles = {x.get('kCGWindowName', u'Unknown') for x in windows_list if
-						   'Maya' in x['kCGWindowOwnerName']}
+			windows_list = CGWindowListCopyWindowInfo(ws_options, kCGNullWindowID)
+			maya_titles = {x.get('kCGWindowName', u'Unknown') for x in windows_list if 'Maya' in x['kCGWindowOwnerName']}
 
 			# duct tape for windows with empty title
 			expected = {'Maya', 'Render View', 'Rendering...'}
@@ -50,8 +48,7 @@ def get_windows_titles():
 
 		elif platform.system() == 'Windows':
 			EnumWindows = ctypes.windll.user32.EnumWindows
-			EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int),
-												 ctypes.POINTER(ctypes.c_int))
+			EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int))
 			GetWindowText = ctypes.windll.user32.GetWindowTextW
 			GetWindowTextLength = ctypes.windll.user32.GetWindowTextLengthW
 			IsWindowVisible = ctypes.windll.user32.IsWindowVisible
@@ -70,8 +67,7 @@ def get_windows_titles():
 
 			return titles
 	except Exception as err:
-		core_config.main_logger.error(
-			"Exception has occurred while pull windows titles: {}".format(str(err)))
+		core_config.main_logger.error("Exception has occurred while pull windows titles: {}".format(str(err)))
 
 	return []
 
@@ -121,10 +117,9 @@ def main(args):
 		testCases_mel = "all"
 
 	try:
-		with open(os.path.realpath(os.path.join(os.path.dirname(
-				__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
+		with open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
 			script_template = f.read()
-		with open(os.path.join(os.path.dirname(__file__), "script.py")) as f:
+		with open(os.path.join(os.path.dirname(__file__), "base_functions.py")) as f:
 			script = f.read()
 	except OSError as e:
 		core_config.main_logger.error(str(e))
@@ -136,45 +131,43 @@ def main(args):
 	res_path = args.res_path
 	res_path = res_path.replace('\\', '/')
 	work_dir = os.path.abspath(args.output).replace('\\', '/')
-	melScript = script.format(work_dir=work_dir,
-							  testType=args.testType,
-							  render_device=args.render_device, res_path=res_path,
-							  pass_limit=args.pass_limit, resolution_x=args.resolution_x,
-							  resolution_y=args.resolution_y, testCases=testCases_mel,
-							  SPU=args.SPU)
+	melScript = script.format(work_dir=work_dir, testType=args.testType, render_device=args.render_device, res_path=res_path, pass_limit=args.pass_limit, 
+							  resolution_x=args.resolution_x, resolution_y=args.resolution_y, testCases=testCases_mel, SPU=args.SPU)
 
-	with open(os.path.join(args.output, 'script.py'), 'w') as file:
+	with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
 		file.write(melScript)
 
 	try:
 		cases = json.load(open(os.path.realpath(
 			os.path.join(work_dir, 'test_cases.json'))))
 	except:
-		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
-			__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
+		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
 	temp = []
-	if (testCases_mel != "all"):
+	if testCases_mel != "all":
 		for case in cases:
-			if (case['case'] in testCases_mel):
+			if case['case'] in testCases_mel:
 				temp.append(case)
 		cases = temp
 
 	core_config.main_logger.info('Create empty report files')
 
 	for case in cases:
-		if (case['status'] != 'done'):
-			with open(os.path.join(work_dir, (case['case'] + core_config.CASE_REPORT_SUFFIX)), 'w') as f:
-				if (case["status"] == 'inprogress'):
-					case['status'] = 'fail'
+		if case['status'] != 'done':
+			if case["status"] == 'inprogress':
+				case['status'] = 'fail'
 
-				template = core_config.RENDER_REPORT_BASE
-				template["test_case"] = case["case"]
-				template["test_status"] = case["status"]
-				try:
-					template["scene_name"] = case["scene"]
-				except:pass
-				template["script_info"] = case["script_info"]
+			template = core_config.RENDER_REPORT_BASE
+			template["test_case"] = case["case"]
+			template["test_status"] = case["status"]
+
+			try:
+				template["scene_name"] = case["scene"]
+			except:
+				pass
+				
+			template["script_info"] = case["script_info"]
+			with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
 				f.write(json.dumps([template], indent=4))
 
 	with open(os.path.join(work_dir, 'test_cases.json'), "w+") as f:
@@ -183,21 +176,23 @@ def main(args):
 	system_pl = platform.system()
 	if system_pl == 'Windows':
 		cmdRun = '''
-		set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
-		set PYTHONPATH=%cd%;PYTHONPATH
-		set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-		"{tool}" -command "python(\\"import script\\"); python(\\"script.main()\\");"''' \
-																		.format(tool=args.tool)
+		  set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
+		  set PYTHONPATH=%cd%;PYTHONPATH
+		  set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
+		  "{tool}" -command "python(\\"import base_functions\\"); python(\\"base_functions.main()\\");"
+		'''.format(tool=args.tool)
 
 		cmdScriptPath = os.path.join(args.output, 'script.bat')
 		with open(cmdScriptPath, 'w') as file:
 			file.write(cmdRun)
+
 	elif system_pl == 'Darwin':
 		cmdRun = '''
-		export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
-		export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
-		"{tool}" -command "source script.py; evalDeferred -lp (main());"'''\
-		.format(tool=args.tool)
+		  export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
+		  export PYTHONPATH=$PWD:$PYTHONPATH
+		  export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
+		  "{tool}" -command "python(\\"import base_functions\\"); python(\\"base_functions.main()\\");"
+		'''.format(tool=args.tool)
 
 		cmdScriptPath = os.path.join(args.output, 'script.sh')
 		with open(cmdScriptPath, 'w') as file:
@@ -247,14 +242,12 @@ def main(args):
 
 def group_failed(args):
 	try:
-		cases = json.load(open(os.path.realpath(os.path.join(
-			os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+		cases = json.load(open(os.path.realpath(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
 	except:
-		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
-			__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
+		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
 	for case in cases:
-		if (case['status'] == 'active'):
+		if case['status'] == 'active':
 			case['status'] = 'skipped'
 
 	with open(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'), "w+") as f:
@@ -280,26 +273,24 @@ if __name__ == "__main__":
 		rc = main(args)
 
 		try:
-			cases = json.load(open(os.path.realpath(os.path.join(
-				os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+			cases = json.load(open(os.path.realpath(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
 		except:
-			cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
-				__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
+			cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
 		active_cases = 0
 		failed_count = 0
 
 		for case in cases:
-			if (case['status'] not in ['skipped']):
-				if (case['status'] in ['fail', 'error', 'inprogress']):
+			if case['status'] not in ['skipped']:
+				if case['status'] in ['fail', 'error', 'inprogress']:
 					failed_count += 1
-					if (args.fail_count == failed_count):
+					if args.fail_count == failed_count:
 						group_failed(args)
 				else:
 					failed_count = 0
 
-				if (case['status'] in ['active', 'fail', 'inprogress']):
+				if case['status'] in ['active', 'fail', 'inprogress']:
 					active_cases += 1
 
-		if (active_cases == 0):
+		if active_cases == 0:
 			exit()
