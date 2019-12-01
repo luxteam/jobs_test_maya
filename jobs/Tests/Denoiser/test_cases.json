@@ -8,8 +8,8 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -22,8 +22,8 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -36,8 +36,8 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -50,11 +50,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -67,11 +67,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 5.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -84,11 +84,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 10.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -101,11 +101,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -118,11 +118,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 10.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -135,11 +135,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.1001)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -152,11 +152,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.5)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -171,11 +171,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.1001)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -190,11 +190,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 5.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.5)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -209,11 +209,11 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 10.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserSamples', 10.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -226,12 +226,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -244,12 +244,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 0.1001)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -262,12 +262,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 0.5)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -280,12 +280,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.1001)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -298,12 +298,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.5)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -316,12 +316,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.1001)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -334,12 +334,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.5)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -352,12 +352,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.1001)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -370,12 +370,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.5)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -391,12 +391,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 0.1001)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.1001)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.1001)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.1001)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.1001)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -412,12 +412,12 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserColor', 0.5)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.5)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.5)",
-            "cmd.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.5)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.5)",
             "rpr_render(test_case, script_info)"
         ]
     }

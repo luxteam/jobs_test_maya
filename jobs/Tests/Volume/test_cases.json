@@ -4,12 +4,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('scatterColor', 'outColor', 'sourceimages/ColorVariation.jpg')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 0.05)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 0.05)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -22,12 +22,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('transmissionColor', 'outColor', 'sourceimages/TransmissionVariation.png')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 0.1)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 0.1)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -40,12 +40,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('emissionColor', 'outColor', 'sourceimages/EmissiveVariation1.exr')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 0.2)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 0.2)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -58,12 +58,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('scatterColor', 'outColor', 'sourceimages/ColorVariation.tiff')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 0.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -75,11 +75,11 @@
         "case": "MAYA_MAT_VM_005",
         "status": "active",
         "functions": [
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 1)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 1)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -92,12 +92,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('transmissionColor', 'outColor', 'sourceimages/TransmissionVariation.png')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 2.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -110,12 +110,12 @@
         "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('emissionColor', 'outColor', 'sourceimages/EmissiveVariation.exr')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 2.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -127,11 +127,11 @@
         "case": "MAYA_MAT_VM_008",
         "status": "active",
         "functions": [
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 2.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
             "resetAttributes()"
         ],
@@ -145,12 +145,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('scatterColor', 'outColor', 'sourceimages/ColorVariation.png')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 2.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -163,12 +163,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('transmissionColor', 'outColor', 'sourceimages/TransmissionVariation.png')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 2.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -180,11 +180,11 @@
         "case": "MAYA_MAT_VM_011",
         "status": "active",
         "functions": [
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
             "rpr_render(test_case, script_info)",
             "resetAttributes()"
         ],
@@ -198,12 +198,12 @@
         "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('emissionColor', 'outColor', 'sourceimages/EmissiveVariation.exr')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -216,12 +216,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('scatterColor', 'outColor', 'sourceimages/ColorVariation.jpg')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -234,12 +234,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('transmissionColor', 'outColor', 'sourceimages/TransmissionVariation.png')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -252,12 +252,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('scatterColor', 'outColor', 'sourceimages/ColorVariation.jpg')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -270,12 +270,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('transmissionColor', 'outColor', 'sourceimages/TransmissionVariation.png')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 7.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 7.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -288,12 +288,12 @@
         "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('emissionColor', 'outColor', 'sourceimages/EmissiveVariation.exr')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 7.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 7.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -306,12 +306,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('scatterColor', 'outColor', 'sourceimages/ColorVariation.exr')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 7.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 7.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -323,11 +323,11 @@
         "case": "MAYA_MAT_VM_019",
         "status": "active",
         "functions": [
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 7.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 7.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
             "rpr_render(test_case, script_info)",
             "resetAttributes()"
         ],
@@ -341,12 +341,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('transmissionColor', 'outColor', 'sourceimages/TransmissionVariation.png')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 7.5)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 7.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -359,12 +359,12 @@
         "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('emissionColor', 'outColor', 'sourceimages/EmissiveVariation.exr')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 10)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 10)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -376,11 +376,11 @@
         "case": "MAYA_MAT_VM_022",
         "status": "active",
         "functions": [
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 10)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 10)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 0)",
             "rpr_render(test_case, script_info)",
             "resetAttributes()"
         ],
@@ -394,12 +394,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('scatterColor', 'outColor', 'sourceimages/ColorVariation.png')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 10)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 10)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.scatterColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -412,12 +412,12 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('transmissionColor', 'outColor', 'sourceimages/TransmissionVariation.png')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 10)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 10)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.transmissionColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -430,12 +430,12 @@
         "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('emissionColor', 'outColor', 'sourceimages/EmissiveVariation.exr')",
-            "cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
-            "cmd.setAttr('RPRVolumeMaterial1.density', 10)",
-            "cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 10)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', -0.5)",
             "rpr_render(test_case, script_info)",
-            "cmd.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'RPRVolumeMaterial1.emissionColor')",
             "resetAttributes()"
         ],
         "script_info": [

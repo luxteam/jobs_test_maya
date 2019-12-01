@@ -9,12 +9,12 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 0.0)",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 0.0)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -27,12 +27,12 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 1.0)",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 1.0)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -45,12 +45,12 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 2.0)",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 2.0)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -63,12 +63,12 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 3.0)",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 3.0)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -81,12 +81,12 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 5.0)",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 5.0)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -99,12 +99,12 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 7.0)",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 7.0)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -117,12 +117,12 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 10.0)",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 10.0)",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -135,13 +135,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 0.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 0.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -154,13 +154,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 1.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 1.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -173,13 +173,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 2.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 2.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -192,13 +192,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 3.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 3.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -211,13 +211,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 5.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 5.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -230,13 +230,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 7.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 7.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -249,13 +249,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 10.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 10.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/Tropical_Beach_3k.hdr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -268,13 +268,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 0.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 0.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -287,13 +287,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 1.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 1.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -306,13 +306,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 2.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 2.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -325,13 +325,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 3.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 3.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -344,13 +344,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 5.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 5.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -363,13 +363,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 7.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 7.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     },
     {
@@ -382,13 +382,13 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "removeEnvironment()",
-            "ibl_shape = cmd.createNode('RPRIBL', n='RPRIBLShape')",
-            "ibl_transform = cmd.listRelatives('RPRIBLShape', p=True)[0]",
-            "cmd.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "cmd.setAttr(ibl_shape + '.intensity', 10.0)",
-            "cmd.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.intensity', 10.0)",
+            "cmds.setAttr(ibl_shape + '.filePath', 'sourceimages/ibl_test.exr', type='string')",
             "rpr_render(test_case, script_info)",
-            "cmd.delete(ibl_shape)"
+            "cmds.delete(ibl_shape)"
         ]
     }
 ]

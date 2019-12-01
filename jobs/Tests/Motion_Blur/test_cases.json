@@ -7,11 +7,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(440.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -23,11 +23,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(440.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -39,11 +39,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(440.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -55,11 +55,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(440.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 5.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -71,11 +71,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(440.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 10.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 10.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -87,11 +87,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(440.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 30.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 30.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 30.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 30.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -103,11 +103,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(440.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 50.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 50.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 50.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 50.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -119,11 +119,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(440.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 75.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 75.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 75.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 75.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -135,11 +135,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(440.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 100.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 100.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -151,11 +151,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(1520.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -167,11 +167,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(1520.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -183,11 +183,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(1520.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -199,11 +199,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(1520.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 5.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -215,11 +215,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(1520.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 10.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 10.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -231,11 +231,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(1520.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 30.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 30.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 30.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 30.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -247,11 +247,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(1520.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 50.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 50.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 50.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 50.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -263,11 +263,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(1520.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 75.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 75.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 75.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 75.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -279,11 +279,11 @@
         ],
         "scene": "motion_blur.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmd.currentTime(1520.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 100.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.motionBlurScale', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 100.0)",
             "rpr_render(test_case, script_info)"
         ]
     }

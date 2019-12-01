@@ -23,9 +23,9 @@
         "case": "MAYA_SAN_003",
         "status": "active",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -38,9 +38,9 @@
         "case": "MAYA_SAN_004",
         "status": "active",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -53,9 +53,9 @@
         "case": "MAYA_SAN_005",
         "status": "active",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"cpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"cpu\" in ['cpu', 'dual'])))",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"cpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"cpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -68,9 +68,9 @@
         "case": "MAYA_SAN_006",
         "status": "active",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"dual\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"dual\" in ['cpu', 'dual'])))",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"dual\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"dual\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -83,17 +83,17 @@
         "case": "MAYA_SAN_007",
         "status": "active",
         "functions": [
-            "rpr = cmd.shadingNode('lambert', asShader=True)",
-            "cmd.setAttr(rpr + '.color', 1, 0, 1)",
+            "rpr = cmds.shadingNode('lambert', asShader=True)",
+            "cmds.setAttr(rpr + '.color', 1, 0, 1)",
             "sge = rpr + 'SG'",
-            "cmd.sets(renderable=True, noSurfaceShader=True, empty=True, name=sge)",
-            "cmd.connectAttr((rpr + '.outColor'), (sge + '.surfaceShader'), f=True)",
-            "cmd.select('shaderball', r=True)",
+            "cmds.sets(renderable=True, noSurfaceShader=True, empty=True, name=sge)",
+            "cmds.connectAttr((rpr + '.outColor'), (sge + '.surfaceShader'), f=True)",
+            "cmds.select('shaderball', r=True)",
             "sgs = mel.eval('listConnections -type shadingEngine \"' + rpr + '\"')",
-            "cmd.sets(e=True, forceElement=sgs[0])",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.sets(e=True, forceElement=sgs[0])",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -106,20 +106,20 @@
         "case": "MAYA_SAN_008",
         "status": "active",
         "functions": [
-            "rpr = cmd.shadingNode('RPRUberMaterial', asShader=True)",
-            "cmd.setAttr(rpr + '.diffuse', 1)",
-            "cmd.setAttr(rpr + '.diffuseColor', 1, 0, 0)",
-            "cmd.setAttr('RPRUberMaterial1.reflections', 1)",
-            "cmd.setAttr('RPRUberMaterial1.reflectWeight', 1)",
+            "rpr = cmds.shadingNode('RPRUberMaterial', asShader=True)",
+            "cmds.setAttr(rpr + '.diffuse', 1)",
+            "cmds.setAttr(rpr + '.diffuseColor', 1, 0, 0)",
+            "cmds.setAttr('RPRUberMaterial1.reflections', 1)",
+            "cmds.setAttr('RPRUberMaterial1.reflectWeight', 1)",
             "sge = rpr + 'SG'",
-            "cmd.sets(renderable=True, noSurfaceShader=True, empty=True, name=sge)",
-            "cmd.connectAttr((rpr + '.outColor'), (sge + '.surfaceShader'), f=True)",
-            "cmd.select('shaderball', r=True)",
+            "cmds.sets(renderable=True, noSurfaceShader=True, empty=True, name=sge)",
+            "cmds.connectAttr((rpr + '.outColor'), (sge + '.surfaceShader'), f=True)",
+            "cmds.select('shaderball', r=True)",
             "sgs = mel.eval('listConnections -type shadingEngine \"' + rpr + '\"')",
-            "cmd.sets(e=True, forceElement=sgs[0])",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.sets(e=True, forceElement=sgs[0])",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -132,17 +132,17 @@
         "case": "MAYA_SAN_009",
         "status": "active",
         "functions": [
-            "rpr = cmd.shadingNode('RPRPbrMaterial', asShader=True)",
-            "cmd.setAttr(rpr + '.color', 0, 0, 1)",
+            "rpr = cmds.shadingNode('RPRPbrMaterial', asShader=True)",
+            "cmds.setAttr(rpr + '.color', 0, 0, 1)",
             "sge = rpr + 'SG'",
-            "cmd.sets(renderable=True, noSurfaceShader=True, empty=True, name=sge)",
-            "cmd.connectAttr((rpr + '.outColor'), (sge + '.surfaceShader'), f=True)",
-            "cmd.select('shaderball', r=True)",
+            "cmds.sets(renderable=True, noSurfaceShader=True, empty=True, name=sge)",
+            "cmds.connectAttr((rpr + '.outColor'), (sge + '.surfaceShader'), f=True)",
+            "cmds.select('shaderball', r=True)",
             "sgs = mel.eval('listConnections -type shadingEngine \"' + rpr + '\"')",
-            "cmd.sets(e=True, forceElement=sgs[0])",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.sets(e=True, forceElement=sgs[0])",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -155,14 +155,14 @@
         "case": "MAYA_SAN_010",
         "status": "active",
         "functions": [
-            "cmd.setAttr('defaultResolution.width', 4000)",
-            "cmd.setAttr('defaultResolution.height', 4000)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.setAttr('defaultResolution.width', 4000)",
+            "cmds.setAttr('defaultResolution.height', 4000)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)",
-            "cmd.setAttr('defaultResolution.width', 600)",
-            "cmd.setAttr('defaultResolution.height', 600)"
+            "cmds.setAttr('defaultResolution.width', 600)",
+            "cmds.setAttr('defaultResolution.height', 600)"
         ],
         "script_info": [
             "Render in 4K",
@@ -174,16 +174,16 @@
         "case": "MAYA_SAN_012",
         "status": "active",
         "functions": [
-            "cmd.setAttr('Camera001.translateX', 265)",
-            "cmd.setAttr('Camera001.translateY', 10)",
-            "cmd.setAttr('Camera001.translateZ', 1350)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.setAttr('Camera001.translateX', 265)",
+            "cmds.setAttr('Camera001.translateY', 10)",
+            "cmds.setAttr('Camera001.translateZ', 1350)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)",
-            "cmd.setAttr('Camera001.translateX', 267.558)",
-            "cmd.setAttr('Camera001.translateY', 8.359)",
-            "cmd.setAttr('Camera001.translateZ', 1236.609)"
+            "cmds.setAttr('Camera001.translateX', 267.558)",
+            "cmds.setAttr('Camera001.translateY', 8.359)",
+            "cmds.setAttr('Camera001.translateZ', 1236.609)"
         ],
         "script_info": [
             "Change camera view",
@@ -196,12 +196,12 @@
         "status": "active",
         "functions": [
             "mel.eval('defaultDirectionalLight(1, 1,1,1, \"0\", 0,0,0, 0)')",
-            "cmd.setAttr('directionalLightShape1.intensity', 5)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.setAttr('directionalLightShape1.intensity', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('directionalLight1')"
+            "cmds.delete('directionalLight1')"
         ],
         "script_info": [
             "Directional light",
@@ -214,16 +214,16 @@
         "status": "active",
         "functions": [
             "mel.eval('source shelfCommands.mel; createIESLight();')",
-            "cmd.setAttr('RPRIESLight.iesFile',  RES_PATH + 'sourceimages/1.IES', type='string')",
-            "cmd.select('RPRIES1', r=True)",
-            "cmd.move(270, 50, 1185, r=True)",
-            "cmd.rotate(90, 0, r=True, os=True, fo=0)",
-            "cmd.setAttr('directionalLightShape1.intensity', 5)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.setAttr('RPRIESLight.iesFile',  RES_PATH + 'sourceimages/1.IES', type='string')",
+            "cmds.select('RPRIES1', r=True)",
+            "cmds.move(270, 50, 1185, r=True)",
+            "cmds.rotate(90, 0, r=True, os=True, fo=0)",
+            "cmds.setAttr('directionalLightShape1.intensity', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)",
-            "cmd.delete('RPRIES1')"
+            "cmds.delete('RPRIES1')"
         ],
         "script_info": [
             "Create IES Light",
@@ -235,12 +235,12 @@
         "case": "MAYA_SAN_015",
         "status": "active",
         "functions": [
-            "cmd.setAttr('defaultRenderGlobals.imageFormat', 32)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
-            "cmd.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
+            "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations',  10)",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['gpu', 'dual'])))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected', ( \"gpu\" in ['cpu', 'dual'])))",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile((WORK_DIR + '/../../../../jobs/Tests/pass.jpg'), copy=(WORK_DIR + '/Color/MAYA_SAN_015.jpg'))"
+            "cmds.sysFile((WORK_DIR + '/../../../../jobs/Tests/pass.jpg'), copy=(WORK_DIR + '/Color/MAYA_SAN_015.jpg'))"
         ],
         "script_info": [
             "Save image as png",

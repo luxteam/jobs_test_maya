@@ -7,8 +7,8 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -20,8 +20,8 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -33,8 +33,8 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -46,8 +46,8 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1000.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1000.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -59,8 +59,8 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 5000.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 5000.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -72,8 +72,8 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 10000.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 10000.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -85,9 +85,9 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 10.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -99,9 +99,9 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 30.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 30.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -113,9 +113,9 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 59.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 59.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -127,9 +127,9 @@
         ],
         "scene": "easy_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 2.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 2.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -141,8 +141,8 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -154,8 +154,8 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -167,8 +167,8 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -180,8 +180,8 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1000.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1000.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -193,8 +193,8 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 5000.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 5000.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -206,8 +206,8 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 10000.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 10000.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -219,9 +219,9 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 10.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -233,9 +233,9 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 30.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 30.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -247,9 +247,9 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 59.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 59.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -261,9 +261,9 @@
         ],
         "scene": "normal_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 2.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 2.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -275,8 +275,8 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -288,8 +288,8 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -301,8 +301,8 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -314,8 +314,8 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1000.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1000.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -327,8 +327,8 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 5000.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 5000.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -340,8 +340,8 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 10000.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 10000.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -353,9 +353,9 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 10.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -367,9 +367,9 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 30.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 30.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -381,9 +381,9 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 59.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 59.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0.0)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -395,9 +395,9 @@
         ],
         "scene": "complex_scene.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 1.0)",
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 2.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 2.0)",
             "rpr_render(test_case, script_info)"
         ]
     }

@@ -8,8 +8,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -22,8 +22,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 5)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -36,8 +36,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 10)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -50,8 +50,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -64,8 +64,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 5)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -78,8 +78,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 10)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -92,8 +92,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 3)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 3)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -106,8 +106,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 3)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 3)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 5)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -120,8 +120,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 3)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 3)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 10)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -134,8 +134,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 4)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 4)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -148,8 +148,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 4)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 4)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 5)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -162,8 +162,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 4)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 4)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 10)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -176,8 +176,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 5)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -190,8 +190,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 5)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 5)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -204,8 +204,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 5)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 10)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -218,8 +218,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 6)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 6)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -232,8 +232,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 6)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 5)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 6)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 5)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -246,8 +246,8 @@
         ],
         "scene": "maya_shaderball.ma", 
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.filter', 6)",
-            "cmd.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "cmds.setAttr('RadeonProRenderGlobals.filter', 6)",
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 10)",
             "rpr_render(test_case, script_info)"
         ]
     }

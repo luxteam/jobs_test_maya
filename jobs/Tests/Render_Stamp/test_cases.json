@@ -7,8 +7,8 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmd.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -20,8 +20,8 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmd.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | CPU %c | GPU %g | Render mode %r | Render device %h\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | CPU %c | GPU %g | Render mode %r | Render device %h\", type='string')",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -33,8 +33,8 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmd.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | Computer name %i | Current date %d\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | Computer name %i | Current date %d\", type='string')",
             "rpr_render(test_case, script_info)"
         ]
     }

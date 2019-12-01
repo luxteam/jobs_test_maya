@@ -7,7 +7,7 @@
         ],
         "scene": "IntensityLight.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 300)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 300)", 
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -19,7 +19,7 @@
         ],
         "scene": "IntensityLight1.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 200)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 200)", 
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -31,7 +31,7 @@
         ],
         "scene": "IntensityLight2.ma",
         "functions": [
-            "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 300)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 300)", 
             "rpr_render(test_case, script_info)"
         ]
     }
