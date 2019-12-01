@@ -341,30 +341,21 @@ def setAttributeSS(attr, value):
 	return file
 
 
-def removeIBL():
+def removeEnvironment():
 	objects = cmd.ls(g=True)
 	for obj in objects:
-		if obj == 'RPRIBLShape':
-			cmd.delete('RPRIBL')
-		if obj == 'RPRSkyShape':
-			cmd.delete('RPRSky')
-	cmd.createNode('RPRSky', n='RPRSkyShape')
-
-
-def removeIBLBL():
-	objects = cmd.ls(g=True)
-	for obj in objects:
-		if obj == 'RPRIBLShape':
-			cmd.delete('RPRIBL')
+		if cmd.objectType(obj) in ('RPRIBL', 'RPRSky'):
+			transform = cmd.listRelatives(obj, p=True)[0]
+			cmd.delete(transform)	
 
 
 def resetAttributesV():
-    cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')
-    cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')
-    cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 0, 1, type='double3')
-    cmd.setAttr('RPRVolumeMaterial1.density', 0.5)
-    cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.096)
-    cmd.setAttr('RPRVolumeMaterial1.multiscatter', 1)
+	cmd.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')
+	cmd.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')
+	cmd.setAttr('RPRVolumeMaterial1.emissionColor', 1, 0, 1, type='double3')
+	cmd.setAttr('RPRVolumeMaterial1.density', 0.5)
+	cmd.setAttr('RPRVolumeMaterial1.scatteringDirection', 0.096)
+	cmd.setAttr('RPRVolumeMaterial1.multiscatter', 1)
 
 
 def setAttributeV(volume_attr, file_attr, value):
@@ -493,15 +484,15 @@ def resetAttributeU():
 
 
 def resetAttributesQ():
-    cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 8)
-    cmd.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 3)
-    cmd.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 5)
-    cmd.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 5)
-    cmd.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 5)
-    cmd.setAttr('RadeonProRenderGlobals.maxDepthShadow', 5)
-    cmd.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0.02)
-    cmd.setAttr('RadeonProRenderGlobals.enableOOC', 0)
-    cmd.setAttr('RadeonProRenderGlobals.textureCacheSize', 512)
+	cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 8)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 3)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 5)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 5)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 5)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthShadow', 5)
+	cmd.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0.02)
+	cmd.setAttr('RadeonProRenderGlobals.enableOOC', 0)
+	cmd.setAttr('RadeonProRenderGlobals.textureCacheSize', 512)
 
 
 def ibl():

@@ -7,7 +7,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.ambientLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -26,7 +26,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.ambientLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -45,7 +45,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.ambientLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -64,7 +64,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.ambientLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -83,7 +83,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_transform = cmd.shadingNode('areaLight', asLight=True)",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmd.setAttr(light_transform + '.rotate', -90, 0, 0)",
@@ -101,7 +101,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_transform = cmd.shadingNode('areaLight', asLight=True)",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmd.setAttr(light_transform + '.rotate', -90, 0, 0)",
@@ -119,7 +119,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_transform = cmd.shadingNode('areaLight', asLight=True)",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmd.setAttr(light_transform + '.rotate', -90, 0, 0)",
@@ -137,7 +137,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_transform = cmd.shadingNode('areaLight', asLight=True)",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmd.setAttr(light_transform + '.rotate', -90, 0, 0)",
@@ -155,7 +155,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_transform = cmd.shadingNode('areaLight', asLight=True)",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmd.setAttr(light_transform + '.rotate', -90, 0, 0)",
@@ -173,7 +173,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.directionalLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -191,7 +191,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.directionalLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -209,7 +209,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.pointLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -228,7 +228,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.pointLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -247,7 +247,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.pointLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -266,7 +266,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.pointLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -285,7 +285,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.pointLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -304,7 +304,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.pointLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -323,7 +323,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.spotLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -345,7 +345,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.spotLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -367,7 +367,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.spotLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -389,7 +389,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.spotLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -411,7 +411,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.spotLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -433,7 +433,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.spotLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -455,7 +455,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.spotLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",
@@ -477,7 +477,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "removeIBLBL()",
+            "removeEnvironment()",
             "light_shape = cmd.spotLight()",
             "light_transform = cmd.listRelatives(light_shape, p=True)[0]",
             "cmd.setAttr(light_transform + '.translate', 267, 40, 1184)",

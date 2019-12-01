@@ -3,7 +3,7 @@
         "case": "MAYA_RS_SS_001",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
@@ -28,7 +28,7 @@
         "case": "MAYA_RS_SS_002",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
@@ -53,7 +53,7 @@
         "case": "MAYA_RS_SS_003",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
@@ -76,7 +76,7 @@
         "case": "MAYA_RS_SS_004",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
@@ -95,7 +95,7 @@
         "case": "MAYA_RS_SS_005",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
@@ -114,7 +114,7 @@
         "case": "MAYA_RS_SS_006",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
             "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
@@ -131,7 +131,7 @@
         "case": "MAYA_RS_SS_007",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
@@ -154,7 +154,7 @@
         "case": "MAYA_RS_SS_008",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
@@ -179,7 +179,7 @@
         "case": "MAYA_RS_SS_009",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
@@ -200,7 +200,7 @@
         "case": "MAYA_RS_SS_010",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
@@ -219,7 +219,7 @@
         "case": "MAYA_RS_SS_011",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
@@ -238,7 +238,7 @@
         "case": "MAYA_RS_SS_012",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
@@ -259,7 +259,7 @@
         "case": "MAYA_RS_SS_013",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -280,7 +280,7 @@
         "case": "MAYA_RS_SS_014",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
@@ -297,7 +297,7 @@
         "case": "MAYA_RS_SS_015",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
             "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.exr')",
@@ -334,7 +334,7 @@
         "case": "MAYA_RS_SS_017",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
@@ -355,7 +355,7 @@
         "case": "MAYA_RS_SS_018",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
@@ -374,7 +374,7 @@
         "case": "MAYA_RS_SS_019",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 1, 1, 1, type='double3')",
@@ -427,7 +427,7 @@
         "case": "MAYA_RS_SS_022",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -448,7 +448,7 @@
         "case": "MAYA_RS_SS_023",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
@@ -469,7 +469,7 @@
         "case": "MAYA_RS_SS_024",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
             "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
@@ -526,7 +526,7 @@
         "case": "MAYA_RS_SS_027",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
@@ -545,7 +545,7 @@
         "case": "MAYA_RS_SS_028",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
@@ -562,7 +562,7 @@
         "case": "MAYA_RS_SS_029",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
@@ -621,7 +621,7 @@
         "case": "MAYA_RS_SS_032",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
             "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
@@ -642,7 +642,7 @@
         "case": "MAYA_RS_SS_033",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
@@ -661,7 +661,7 @@
         "case": "MAYA_RS_SS_034",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -714,7 +714,7 @@
         "case": "MAYA_RS_SS_037",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
@@ -745,7 +745,7 @@
         "case": "MAYA_RS_SS_038",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
@@ -778,7 +778,7 @@
         "case": "MAYA_RS_SS_039",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
@@ -809,7 +809,7 @@
         "case": "MAYA_RS_SS_040",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
@@ -840,7 +840,7 @@
         "case": "MAYA_RS_SS_041",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
@@ -873,7 +873,7 @@
         "case": "MAYA_RS_SS_042",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
@@ -902,7 +902,7 @@
         "case": "MAYA_RS_SS_043",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -935,7 +935,7 @@
         "case": "MAYA_RS_SS_044",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
@@ -966,7 +966,7 @@
         "case": "MAYA_RS_SS_045",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
@@ -987,7 +987,7 @@
         "case": "MAYA_RS_SS_046",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -1016,7 +1016,7 @@
         "case": "MAYA_RS_SS_047",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
@@ -1045,7 +1045,7 @@
         "case": "MAYA_RS_SS_048",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
             "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
@@ -1074,7 +1074,7 @@
         "case": "MAYA_RS_SS_049",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
@@ -1099,7 +1099,7 @@
         "case": "MAYA_RS_SS_050",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
@@ -1124,7 +1124,7 @@
         "case": "MAYA_RS_SS_051",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
@@ -1155,7 +1155,7 @@
         "case": "MAYA_RS_SS_052",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1180,7 +1180,7 @@
         "case": "MAYA_RS_SS_053",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1205,7 +1205,7 @@
         "case": "MAYA_RS_SS_054",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1230,7 +1230,7 @@
         "case": "MAYA_RS_SS_055",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1255,7 +1255,7 @@
         "case": "MAYA_RS_SS_056",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1280,7 +1280,7 @@
         "case": "MAYA_RS_SS_057",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1307,7 +1307,7 @@
         "case": "MAYA_RS_SS_058",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1334,7 +1334,7 @@
         "case": "MAYA_RS_SS_059",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1361,7 +1361,7 @@
         "case": "MAYA_RS_SS_060",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1388,7 +1388,7 @@
         "case": "MAYA_RS_SS_061",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1415,7 +1415,7 @@
         "case": "MAYA_RS_SS_062",
         "status": "skipped",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
             "cmd.setAttr('RPRSkyShape.month', 8)",
@@ -1442,7 +1442,7 @@
         "case": "MAYA_RS_SS_063",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -1463,7 +1463,7 @@
         "case": "MAYA_RS_SS_064",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
@@ -1486,7 +1486,7 @@
         "case": "MAYA_RS_SS_065",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
@@ -1507,7 +1507,7 @@
         "case": "MAYA_RS_SS_066",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
@@ -1528,7 +1528,7 @@
         "case": "MAYA_RS_SS_067",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
@@ -1551,7 +1551,7 @@
         "case": "MAYA_RS_SS_068",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
@@ -1570,7 +1570,7 @@
         "case": "MAYA_RS_SS_069",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
@@ -1587,7 +1587,7 @@
         "case": "MAYA_RS_SS_070",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
@@ -1604,7 +1604,7 @@
         "case": "MAYA_RS_SS_071",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
@@ -1621,7 +1621,7 @@
         "case": "MAYA_RS_SS_072",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 3)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -1640,7 +1640,7 @@
         "case": "MAYA_RS_SS_073",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)"
@@ -1655,7 +1655,7 @@
         "case": "MAYA_RS_SS_074",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
@@ -1688,7 +1688,7 @@
         "case": "MAYA_RS_SS_076",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
@@ -1707,7 +1707,7 @@
         "case": "MAYA_RS_SS_077",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
@@ -1724,7 +1724,7 @@
         "case": "MAYA_RS_SS_078",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
@@ -1772,7 +1772,7 @@
         "case": "MAYA_RS_SS_081",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -1791,7 +1791,7 @@
         "case": "MAYA_RS_SS_082",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
@@ -1810,7 +1810,7 @@
         "case": "MAYA_RS_SS_083",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
@@ -1861,7 +1861,7 @@
         "case": "MAYA_RS_SS_086",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
@@ -1878,7 +1878,7 @@
         "case": "MAYA_RS_SS_087",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "rpr_render(test_case, script_info)"
@@ -1893,7 +1893,7 @@
         "case": "MAYA_RS_SS_088",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
@@ -1946,7 +1946,7 @@
         "case": "MAYA_RS_SS_091",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
@@ -1965,7 +1965,7 @@
         "case": "MAYA_RS_SS_092",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
@@ -1982,7 +1982,7 @@
         "case": "MAYA_RS_SS_093",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -2029,7 +2029,7 @@
         "case": "MAYA_RS_SS_096",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.horizonHeight', 0)",
             "cmd.setAttr('RPRSkyShape.horizonBlur', 0)",
@@ -2046,7 +2046,7 @@
         "case": "MAYA_RS_SS_097",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.horizonHeight', 0.1)",
             "cmd.setAttr('RPRSkyShape.horizonBlur', 0.5)",
@@ -2063,7 +2063,7 @@
         "case": "MAYA_RS_SS_098",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.horizonHeight', 0.5)",
             "cmd.setAttr('RPRSkyShape.horizonBlur', 1)",
@@ -2080,7 +2080,7 @@
         "case": "MAYA_RS_SS_099",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.horizonHeight', 1)",
             "cmd.setAttr('RPRSkyShape.horizonBlur', 1)",
@@ -2097,7 +2097,7 @@
         "case": "MAYA_RS_SS_100",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.saturation', 0)",
             "rpr_render(test_case, script_info)"
@@ -2112,7 +2112,7 @@
         "case": "MAYA_RS_SS_101",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.saturation', 1)",
             "rpr_render(test_case, script_info)"
@@ -2127,7 +2127,7 @@
         "case": "MAYA_RS_SS_102",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 0)",
             "cmd.setAttr('RPRSkyShape.altitude', 0)",
@@ -2144,7 +2144,7 @@
         "case": "MAYA_RS_SS_103",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 0)",
             "cmd.setAttr('RPRSkyShape.altitude', 90)",
@@ -2161,7 +2161,7 @@
         "case": "MAYA_RS_SS_104",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 0)",
             "cmd.setAttr('RPRSkyShape.azimuth', -360)",
@@ -2178,7 +2178,7 @@
         "case": "MAYA_RS_SS_105",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 0)",
             "cmd.setAttr('RPRSkyShape.altitude', 90)",
@@ -2195,7 +2195,7 @@
         "case": "MAYA_RS_SS_106",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.altitude', 45)",
@@ -2212,7 +2212,7 @@
         "case": "MAYA_RS_SS_107",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.latitude', 65.543)",
@@ -2236,7 +2236,7 @@
         "case": "MAYA_RS_SS_108",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.latitude', 65.543)",
@@ -2258,7 +2258,7 @@
         "case": "MAYA_RS_SS_109",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.latitude', 55.752)",
@@ -2282,7 +2282,7 @@
         "case": "MAYA_RS_SS_110",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
@@ -2311,7 +2311,7 @@
         "case": "MAYA_RS_SS_111",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
@@ -2342,7 +2342,7 @@
         "case": "MAYA_RS_SS_112",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
@@ -2371,7 +2371,7 @@
         "case": "MAYA_RS_SS_113",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
@@ -2400,7 +2400,7 @@
         "case": "MAYA_RS_SS_114",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
@@ -2431,7 +2431,7 @@
         "case": "MAYA_RS_SS_115",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
@@ -2458,7 +2458,7 @@
         "case": "MAYA_RS_SS_116",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -2489,7 +2489,7 @@
         "case": "MAYA_RS_SS_117",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
@@ -2518,7 +2518,7 @@
         "case": "MAYA_RS_SS_118",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
@@ -2537,7 +2537,7 @@
         "case": "MAYA_RS_SS_119",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
@@ -2564,7 +2564,7 @@
         "case": "MAYA_RS_SS_120",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
@@ -2591,7 +2591,7 @@
         "case": "MAYA_RS_SS_121",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
@@ -2618,7 +2618,7 @@
         "case": "MAYA_RS_SS_122",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
             "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
@@ -2641,7 +2641,7 @@
         "case": "MAYA_RS_SS_123",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
@@ -2664,7 +2664,7 @@
         "case": "MAYA_RS_SS_124",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
@@ -2693,7 +2693,7 @@
         "case": "MAYA_RS_SS_125",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2720,7 +2720,7 @@
         "case": "MAYA_RS_SS_126",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2747,7 +2747,7 @@
         "case": "MAYA_RS_SS_127",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2774,7 +2774,7 @@
         "case": "MAYA_RS_SS_128",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2801,7 +2801,7 @@
         "case": "MAYA_RS_SS_129",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2828,7 +2828,7 @@
         "case": "MAYA_RS_SS_130",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2857,7 +2857,7 @@
         "case": "MAYA_RS_SS_131",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2886,7 +2886,7 @@
         "case": "MAYA_RS_SS_132",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2915,7 +2915,7 @@
         "case": "MAYA_RS_SS_133",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2944,7 +2944,7 @@
         "case": "MAYA_RS_SS_134",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -2973,7 +2973,7 @@
         "case": "MAYA_RS_SS_135",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 2018)",
@@ -3002,7 +3002,7 @@
         "case": "MAYA_RS_SS_136",
         "status": "active",
         "functions": [
-            "removeIBL()",
+            "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.latitude', 55.752)",
             "cmd.setAttr('RPRSkyShape.longitude', 37.616)",
