@@ -280,7 +280,7 @@ def group_failed(args):
 
 
 if __name__ == "__main__":
-	i = 0
+	iteration = 0
 
 	args = createArgsParser().parse_args()
 
@@ -290,8 +290,8 @@ if __name__ == "__main__":
 		pass
 
 	while True:
-		i += 1
-		core_config.main_logger.info('Iteration: ' + str(i))
+		iteration += 1
+		core_config.main_logger.info('Iteration: ' + str(iteration))
 		rc = main(args)
 
 		try:

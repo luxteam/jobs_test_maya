@@ -9,7 +9,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 6)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_001.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_001.jpg'))"
         ]
     },
     {
@@ -22,7 +22,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 11)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_002.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_002.jpg'))"
         ]
     },
     {
@@ -35,7 +35,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 35)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_003.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_003.jpg'))"
         ]
     },
     {
@@ -48,7 +48,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 9)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_004.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_004.jpg'))"
         ]
     },
     {
@@ -61,7 +61,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 0)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_005.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_005.jpg'))"
         ]
     },
     {
@@ -74,7 +74,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 8)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_006.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_006.jpg'))"
         ]
     },
     {
@@ -87,7 +87,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 7)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_007.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_007.jpg'))"
         ]
     },
     {
@@ -100,7 +100,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 10)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_008.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_008.jpg'))"
         ]
     },
     {
@@ -113,7 +113,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 31)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_009.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_009.jpg'))"
         ]
     },
     {
@@ -126,7 +126,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 36)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_010.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_010.jpg'))"
         ]
     },
     {
@@ -139,7 +139,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 32)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_011.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_011.jpg'))"
         ]
     },
     {
@@ -152,7 +152,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 12)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_012.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_012.jpg'))"
         ]
     },
     {
@@ -165,7 +165,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 2)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_013.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_013.jpg'))"
         ]
     },
     {
@@ -178,7 +178,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 5)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_014.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_014.jpg'))"
         ]
     },
     {
@@ -191,7 +191,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 13)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_015.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_015.jpg'))"
         ]
     },
     {
@@ -204,7 +204,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 1)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_016.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_016.jpg'))"
         ]
     },
     {
@@ -217,7 +217,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 19)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_017.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_017.jpg'))"
         ]
     },
     {
@@ -230,7 +230,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 3)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_018.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_018.jpg'))"
         ]
     },
     {
@@ -243,7 +243,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 4)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_019.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_019.jpg'))"
         ]
     },
     {
@@ -256,7 +256,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 20)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_020.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_020.jpg'))"
         ]
     },
     {
@@ -269,7 +269,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 40)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_021.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_021.jpg'))"
         ]
     },
     {
@@ -282,7 +282,7 @@
         "functions": [
             "cmd.setAttr('defaultRenderGlobals.imageFormat', 63)",
             "rpr_render(test_case, script_info)",
-            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, ', 'Color', 'MAYA_RS_IF_022.jpg'))"
+            "cmd.sysFile(path.join(WORK_DIR, ', '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_022.jpg'))"
         ]
     }
 ]
