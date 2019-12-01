@@ -17,6 +17,7 @@ sys.path.append(os.path.abspath(os.path.join(
 
 import jobs_launcher.core.config as core_config
 from jobs_launcher.core.kill_process import kill_process
+from jobs_launcher.core.system_info import get_gpu
 
 PROCESS = ['Maya', 'maya.exe']
 
@@ -174,7 +175,7 @@ def main(args):
 
 	for case in cases:
 		try:
-			if ((args.render_device in case['skip on']) or ([a for a in list(platform.architecture()) if a in case['skip on']])):
+			if ((get_gpu() in case['skip_on']) or ([a for a in list(platform.architecture()) if a in case['skip_on']])):
 				case['status'] = 'skipped'
 		except:pass
 
@@ -188,13 +189,13 @@ def main(args):
 			template = core_config.RENDER_REPORT_BASE
 			template["test_case"] = case["case"]
 			template["test_status"] = case["status"]
+			template["script_info"] = case["script_info"]
 
 			try:
 				template["scene_name"] = case["scene"]
 			except:
 				pass
 				
-			template["script_info"] = case["script_info"]
 			with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
 				f.write(json.dumps([template], indent=4))
 

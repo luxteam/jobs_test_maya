@@ -84,6 +84,21 @@ def check_test_cases_fail_save(test_case, script_info):
 		rpr_fail_save(test_case, script_info)
 
 
+def skipped_case_report(case):	
+	cmds.sysFile(path.join(WORK_DIR, "..", "..", "..", "..", "jobs", "Tests", "skipped.jpg"), copy=path.join(WORK_DIR, 'Color'))
+	test_case = case['case']
+	script_info = case['script_info']
+	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
+
+	report = RPR_report_json()
+	report.test_case = test_case
+	report.difference_color = "skipped"
+	report.test_status = "skipped"
+	report.script_info = script_info
+
+	report.toJSON(report_JSON)
+
+
 def rpr_render(test_case, script_info):
 	render_device = RENDER_DEVICE
 	cmds.setAttr("RadeonProRenderGlobals.samplesPerUpdate", SPU)
@@ -304,6 +319,9 @@ def main():
 
 			with open(path.join(WORK_DIR, "test_cases.json"), 'w') as file:
 				json.dump(cases, file, indent=4)
+		if case['status'] == 'skipped':
+			skipped_case_report(case)
+
 
 	cmds.evalDeferred(cmds.quit(abort=True))
 
