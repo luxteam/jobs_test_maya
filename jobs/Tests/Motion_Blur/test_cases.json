@@ -3,7 +3,10 @@
         "case": "MAYA_RS_MB_001",
         "status": "active",
         "script_info": [
-            "440"
+            "Camera Exposure: 0",
+            "Scale: 0",
+            "Frame: 440",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -19,7 +22,10 @@
         "case": "MAYA_RS_MB_002",
         "status": "active",
         "script_info": [
-            "440"
+            "Camera Exposure: 0.1",
+            "Scale: 1",
+            "Frame: 440",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -35,7 +41,10 @@
         "case": "MAYA_RS_MB_003",
         "status": "active",
         "script_info": [
-            "440"
+            "Camera Exposure: 1",
+            "Scale: 1",
+            "Frame: 440",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -51,7 +60,10 @@
         "case": "MAYA_RS_MB_004",
         "status": "active",
         "script_info": [
-            "440"
+            "Camera Exposure: 5",
+            "Scale: 5",
+            "Frame: 440",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -67,7 +79,10 @@
         "case": "MAYA_RS_MB_005",
         "status": "active",
         "script_info": [
-            "440"
+            "Camera Exposure: 10",
+            "Scale: 10",
+            "Frame: 440",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -83,7 +98,10 @@
         "case": "MAYA_RS_MB_006",
         "status": "active",
         "script_info": [
-            "440"
+            "Camera Exposure: 30",
+            "Scale: 30",
+            "Frame: 440",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -99,7 +117,10 @@
         "case": "MAYA_RS_MB_007",
         "status": "active",
         "script_info": [
-            "440"
+            "Camera Exposure: 50",
+            "Scale: 50",
+            "Frame: 440",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -115,7 +136,10 @@
         "case": "MAYA_RS_MB_008",
         "status": "active",
         "script_info": [
-            "440"
+            "Camera Exposure: 75",
+            "Scale: 75",
+            "Frame: 440",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -131,7 +155,10 @@
         "case": "MAYA_RS_MB_009",
         "status": "active",
         "script_info": [
-            "440"
+            "Camera Exposure: 100",
+            "Scale: 100",
+            "Frame: 440",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -147,7 +174,10 @@
         "case": "MAYA_RS_MB_010",
         "status": "active",
         "script_info": [
-            "1520"
+            "Camera Exposure: 0",
+            "Scale: 0",
+            "Frame: 1520",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -163,7 +193,10 @@
         "case": "MAYA_RS_MB_011",
         "status": "active",
         "script_info": [
-            "1520"
+            "Camera Exposure: 0.1",
+            "Scale: 1",
+            "Frame: 1520",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -179,7 +212,10 @@
         "case": "MAYA_RS_MB_012",
         "status": "active",
         "script_info": [
-            "1520"
+            "Camera Exposure: 1",
+            "Scale: 1",
+            "Frame: 1520",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -195,7 +231,10 @@
         "case": "MAYA_RS_MB_013",
         "status": "active",
         "script_info": [
-            "1520"
+            "Camera Exposure: 5",
+            "Scale: 5",
+            "Frame: 1520",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -211,7 +250,10 @@
         "case": "MAYA_RS_MB_014",
         "status": "active",
         "script_info": [
-            "1520"
+            "Camera Exposure: 10",
+            "Scale: 10",
+            "Frame: 1520",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -227,7 +269,10 @@
         "case": "MAYA_RS_MB_015",
         "status": "active",
         "script_info": [
-            "1520"
+            "Camera Exposure: 30",
+            "Scale: 30",
+            "Frame: 1520",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -243,7 +288,10 @@
         "case": "MAYA_RS_MB_016",
         "status": "active",
         "script_info": [
-            "1520"
+            "Camera Exposure: 50",
+            "Scale: 50",
+            "Frame: 1520",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -259,7 +307,10 @@
         "case": "MAYA_RS_MB_017",
         "status": "active",
         "script_info": [
-            "1520"
+            "Camera Exposure: 75",
+            "Scale: 75",
+            "Frame: 1520",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [
@@ -275,7 +326,10 @@
         "case": "MAYA_RS_MB_018",
         "status": "active",
         "script_info": [
-            "1520"
+            "Camera Exposure: 100",
+            "Scale: 100",
+            "Frame: 1520",
+            "Iterations: 100"
         ],
         "scene": "motion_blur.ma",
         "functions": [

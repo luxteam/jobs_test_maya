@@ -3,7 +3,7 @@
         "case": "MAYA_L_INT_001",
         "status": "active",
         "script_info": [
-            "Intensity Scene"
+            "Iterations: 300"
         ],
         "scene": "IntensityLight.ma",
         "functions": [
@@ -15,7 +15,7 @@
         "case": "MAYA_L_INT_002",
         "status": "active",
         "script_info": [
-            "Intensity Scene"
+            "Iterations: 200"
         ],
         "scene": "IntensityLight1.ma",
         "functions": [
@@ -27,7 +27,7 @@
         "case": "MAYA_L_INT_003",
         "status": "active",
         "script_info": [
-            "Intensity Scene"
+            "Iterations: 300"
         ],
         "scene": "IntensityLight2.ma",
         "functions": [
