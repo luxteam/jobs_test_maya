@@ -1,34 +1,34 @@
 def removeEnvironment():
-	objects = cmd.ls(g=True)
+	objects = cmds.ls(g=True)
 	for obj in objects:
-		if cmd.objectType(obj) in ('RPRIBL', 'RPRSky'):
-			transform = cmd.listRelatives(obj, p=True)[0]
-			cmd.delete(transform)	
+		if cmds.objectType(obj) in ('RPRIBL', 'RPRSky'):
+			transform = cmds.listRelatives(obj, p=True)[0]
+			cmds.delete(transform)	
 
 
 def setAttribute(attr, value):
-	file = cmd.shadingNode("file", asTexture=True, isColorManaged=True)
-	texture = cmd.shadingNode("place2dTexture", asUtility=True)
-	cmd.connectAttr(texture + ".coverage", file + ".coverage", f=True)
-	cmd.connectAttr(texture + ".translateFrame", file + ".translateFrame", f=True)
-	cmd.connectAttr(texture + ".rotateFrame", file + ".rotateFrame", f=True)
-	cmd.connectAttr(texture + ".mirrorU", file + ".mirrorU", f=True)
-	cmd.connectAttr(texture + ".mirrorV", file + ".mirrorV", f=True)
-	cmd.connectAttr(texture + ".stagger", file + ".stagger", f=True)
-	cmd.connectAttr(texture + ".wrapU", file + ".wrapU", f=True)
-	cmd.connectAttr(texture + ".wrapV", file + ".wrapV", f=True)
-	cmd.connectAttr(texture + ".repeatUV", file + ".repeatUV", f=True)
-	cmd.connectAttr(texture + ".offset", file + ".offset", f=True)
-	cmd.connectAttr(texture + ".rotateUV", file + ".rotateUV", f=True)
-	cmd.connectAttr(texture + ".noiseUV", file + ".noiseUV", f=True)
-	cmd.connectAttr(texture + ".vertexUvTwo", file + ".vertexUvTwo" , f=True)
-	cmd.connectAttr(texture + ".vertexUvThree", file + ".vertexUvThree", f=True)
-	cmd.connectAttr(texture + ".vertexCameraOne", file + ".vertexCameraOne", f=True)
-	cmd.connectAttr(texture + ".outUV", file + ".uv", f=True)
-	cmd.connectAttr(texture + ".outUvFilterSize", file + ".uvFilterSize")
-	cmd.connectAttr(texture + ".vertexUvOne", file + ".vertexUvOne")
+	file = cmds.shadingNode("file", asTexture=True, isColorManaged=True)
+	texture = cmds.shadingNode("place2dTexture", asUtility=True)
+	cmds.connectAttr(texture + ".coverage", file + ".coverage", f=True)
+	cmds.connectAttr(texture + ".translateFrame", file + ".translateFrame", f=True)
+	cmds.connectAttr(texture + ".rotateFrame", file + ".rotateFrame", f=True)
+	cmds.connectAttr(texture + ".mirrorU", file + ".mirrorU", f=True)
+	cmds.connectAttr(texture + ".mirrorV", file + ".mirrorV", f=True)
+	cmds.connectAttr(texture + ".stagger", file + ".stagger", f=True)
+	cmds.connectAttr(texture + ".wrapU", file + ".wrapU", f=True)
+	cmds.connectAttr(texture + ".wrapV", file + ".wrapV", f=True)
+	cmds.connectAttr(texture + ".repeatUV", file + ".repeatUV", f=True)
+	cmds.connectAttr(texture + ".offset", file + ".offset", f=True)
+	cmds.connectAttr(texture + ".rotateUV", file + ".rotateUV", f=True)
+	cmds.connectAttr(texture + ".noiseUV", file + ".noiseUV", f=True)
+	cmds.connectAttr(texture + ".vertexUvTwo", file + ".vertexUvTwo" , f=True)
+	cmds.connectAttr(texture + ".vertexUvThree", file + ".vertexUvThree", f=True)
+	cmds.connectAttr(texture + ".vertexCameraOne", file + ".vertexCameraOne", f=True)
+	cmds.connectAttr(texture + ".outUV", file + ".uv", f=True)
+	cmds.connectAttr(texture + ".outUvFilterSize", file + ".uvFilterSize")
+	cmds.connectAttr(texture + ".vertexUvOne", file + ".vertexUvOne")
 
-	cmd.connectAttr(file + ".outColor", "RPRSkyShape." + attr, force=True)
-	cmd.setAttr(file + ".fileTextureName", value, type="string")
+	cmds.connectAttr(file + ".outColor", "RPRSkyShape." + attr, force=True)
+	cmds.setAttr(file + ".fileTextureName", value, type="string")
 
 	return file

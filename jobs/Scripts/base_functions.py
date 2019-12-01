@@ -1,5 +1,5 @@
 import maya.mel as mel
-import maya.cmds as cmd
+import maya.cmdss as cmds
 import datetime
 import time
 import json
@@ -22,7 +22,7 @@ LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 class RPR_report_json:
 	def __init__(self, render_color_path='', render_time='', test_case='', difference_color='', test_status='', script_info=[], render_log=''):
-		self.render_device = cmd.optionVar(q="RPR_DevicesName")[0]
+		self.render_device = cmds.optionVar(q="RPR_DevicesName")[0]
 		self.tool = mel.eval('about -iv')
 		self.date_time = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
 		self.render_version = mel.eval('getRPRPluginVersion()')
@@ -66,7 +66,7 @@ def render_tool_log_path(name):
 
 
 def get_scene_name():
-	scene_name = cmd.file(q=True, sn=True, shn=True)
+	scene_name = cmds.file(q=True, sn=True, shn=True)
 	if (scene_name == ""):
 		scene_name = "untitled"
 	return scene_name
@@ -86,24 +86,24 @@ def check_test_cases_fail_save(test_case, script_info):
 
 def rpr_render(test_case, script_info):
 	render_device = RENDER_DEVICE
-	cmd.setAttr("RadeonProRenderGlobals.samplesPerUpdate", SPU)
-	cmd.optionVar(rm="RPR_DevicesSelected")
+	cmds.setAttr("RadeonProRenderGlobals.samplesPerUpdate", SPU)
+	cmds.optionVar(rm="RPR_DevicesSelected")
 
-	cmd.optionVar(iva=("RPR_DevicesSelected",
+	cmds.optionVar(iva=("RPR_DevicesSelected",
 					   (render_device in ["gpu", "dual"])))
-	cmd.optionVar(iva=("RPR_DevicesSelected",
+	cmds.optionVar(iva=("RPR_DevicesSelected",
 					   (render_device in ["cpu", "dual"])))
 
-	cmd.setAttr("RadeonProRenderGlobals.adaptiveThreshold", 0)
-	cmd.setAttr("RadeonProRenderGlobals.completionCriteriaSeconds", 0)
+	cmds.setAttr("RadeonProRenderGlobals.adaptiveThreshold", 0)
+	cmds.setAttr("RadeonProRenderGlobals.completionCriteriaSeconds", 0)
 
 	mel.eval('fireRender -waitForItTwo')
 	start_time = time.time()
 	mel.eval('renderIntoNewWindow render')
-	cmd.sysFile(path.join(WORK_DIR, "Color"), makeDir=True)
+	cmds.sysFile(path.join(WORK_DIR, "Color"), makeDir=True)
 	test_case_path = path.join(WORK_DIR, "Color", test_case)
-	cmd.renderWindowEditor('renderView', edit=1,  dst="color")
-	cmd.renderWindowEditor('renderView', edit=1, com=1, writeImage=test_case_path)
+	cmds.renderWindowEditor('renderView', edit=1,  dst="color")
+	cmds.renderWindowEditor('renderView', edit=1, com=1, writeImage=test_case_path)
 	test_time = time.time() - start_time
 
 	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
@@ -130,12 +130,12 @@ def check_test_cases_success_save(test_case, script_info):
 
 
 def rpr_success_save(test_case, script_info):
-	if not cmd.pluginInfo('RadeonProRender', query=True, loaded=True):
-		cmd.loadPlugin("RadeonProRender", quiet=True)
+	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
+		cmds.loadPlugin("RadeonProRender", quiet=True)
 
-	cmd.sysFile(path.join(WORK_DIR, "Color"), makeDir=True)
+	cmds.sysFile(path.join(WORK_DIR, "Color"), makeDir=True)
 	work_folder = path.join(WORK_DIR, "Color", (test_case + ".jpg"))
-	cmd.sysFile(path.join(WORK_DIR, "..", "..", "..", "..", "jobs", "Tests", "pass.jpg"), copy=(work_folder))
+	cmds.sysFile(path.join(WORK_DIR, "..", "..", "..", "..", "jobs", "Tests", "pass.jpg"), copy=(work_folder))
 
 	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
 
@@ -149,12 +149,12 @@ def rpr_success_save(test_case, script_info):
 
 
 def rpr_fail_save(test_case, script_info):
-	if not cmd.pluginInfo('RadeonProRender', query=True, loaded=True):
-		cmd.loadPlugin("RadeonProRender", quiet=True)
+	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
+		cmds.loadPlugin("RadeonProRender", quiet=True)
 
-	cmd.sysFile(path.join(WORK_DIR, "Color"), makeDir=True)
+	cmds.sysFile(path.join(WORK_DIR, "Color"), makeDir=True)
 	work_folder = path.join(WORK_DIR, "Color", (test_case + ".jpg"))
-	cmd.sysFile(path.join(WORK_DIR, "..", "..", "..", "..", "jobs", "Tests", "failed.jpg"), copy=(work_folder))
+	cmds.sysFile(path.join(WORK_DIR, "..", "..", "..", "..", "jobs", "Tests", "failed.jpg"), copy=(work_folder))
 
 	report_JSON = path.join(WORK_DIR, (test_case + "_RPR.json"))
 
@@ -168,43 +168,43 @@ def rpr_fail_save(test_case, script_info):
 
 
 def validateFiles():
-	unresolved_files = cmd.filePathEditor(query=True, listFiles="", unresolved=True, attributeOnly=True)
+	unresolved_files = cmds.filePathEditor(query=True, listFiles="", unresolved=True, attributeOnly=True)
 	new_path = RES_PATH
 	if unresolved_files:
 		for item in unresolved_files:
-			cmd.filePathEditor(item, repath=new_path, recursive=True, ra=1)
+			cmds.filePathEditor(item, repath=new_path, recursive=True, ra=1)
 
 
 def check_rpr_load():
-	if not cmd.pluginInfo('RadeonProRender', query=True, loaded=True):
-		cmd.loadPlugin("RadeonProRender", quiet=True)
-	if not cmd.pluginInfo('fbxmaya', query=True, loaded=True):
-		cmd.loadPlugin("fbxmaya", quiet=True)
+	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
+		cmds.loadPlugin("RadeonProRender", quiet=True)
+	if not cmds.pluginInfo('fbxmaya', query=True, loaded=True):
+		cmds.loadPlugin("fbxmaya", quiet=True)
 
 
 def prerender(test_case, script_info, scene):
-	scene_name = cmd.file(q=True, sn=True, shn=True)
+	scene_name = cmds.file(q=True, sn=True, shn=True)
 	if scene_name != scene:
 		try:
-			cmd.file(scene, f=True, op='v=0;', iv=True, o=True)
+			cmds.file(scene, f=True, op='v=0;', iv=True, o=True)
 		except:
-			cmd.evalDeferred(cmd.quit(abort=True))
+			cmds.evalDeferred(cmds.quit(abort=True))
 
 	validateFiles()
 
-	if not cmd.pluginInfo('RadeonProRender', query=True, loaded=True):
-		cmd.loadPlugin("RadeonProRender", quiet=True)
-	if not cmd.pluginInfo('fbxmaya', query=True, loaded=True):
-		cmd.loadPlugin("fbxmaya", quiet=True)
+	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
+		cmds.loadPlugin("RadeonProRender", quiet=True)
+	if not cmds.pluginInfo('fbxmaya', query=True, loaded=True):
+		cmds.loadPlugin("fbxmaya", quiet=True)
 
 	if RESOLUTION_X and RESOLUTION_Y:
-		cmd.setAttr("defaultResolution.width", RESOLUTION_X)
-		cmd.setAttr("defaultResolution.height", RESOLUTION_Y)
+		cmds.setAttr("defaultResolution.width", RESOLUTION_X)
+		cmds.setAttr("defaultResolution.height", RESOLUTION_Y)
 
-	cmd.setAttr("defaultRenderGlobals.currentRenderer", type="string" "FireRender")
-	cmd.setAttr("defaultRenderGlobals.imageFormat", 8)
+	cmds.setAttr("defaultRenderGlobals.currentRenderer", type="string" "FireRender")
+	cmds.setAttr("defaultRenderGlobals.imageFormat", 8)
 	# TODO 
-	cmd.setAttr("RadeonProRenderGlobals.completionCriteriaIterations", PASS_LIMIT)
+	cmds.setAttr("RadeonProRenderGlobals.completionCriteriaIterations", PASS_LIMIT)
 
 	with open(path.join(WORK_DIR, "test_cases.json"), 'r') as json_file:
 		cases = json.load(json_file)
@@ -271,7 +271,7 @@ def main():
 
 	check_rpr_load()
 
-	cmd.sysFile(LOGS_DIR, makeDir=True)
+	cmds.sysFile(LOGS_DIR, makeDir=True)
 
 	with open(path.join(WORK_DIR, "test_cases.json"), 'r') as json_file:
 		cases = json.load(json_file)
@@ -295,7 +295,7 @@ def main():
 				with open(render_tool_log_path(case['case']), 'w'):
 					pass
 
-			cmd.scriptEditorInfo(historyFilename=render_tool_log_path(case['case']), writeHistory=True)
+			cmds.scriptEditorInfo(historyFilename=render_tool_log_path(case['case']), writeHistory=True)
 			print(case['case'])
 			case_function(case)
 
@@ -305,5 +305,6 @@ def main():
 			with open(path.join(WORK_DIR, "test_cases.json"), 'w') as file:
 				json.dump(cases, file, indent=4)
 
-	cmd.evalDeferred(cmd.quit(abort=True))
+	cmds.evalDeferred(cmds.quit(abort=True))
+
 

@@ -1,6 +1,6 @@
 def removeEnvironment():
-	objects = cmd.ls(g=True)
+	objects = cmds.ls(g=True)
 	for obj in objects:
-		if cmd.objectType(obj) in ('RPRIBL', 'RPRSky'):
-			transform = cmd.listRelatives(obj, p=True)[0]
-			cmd.delete(transform)	
+		if cmds.objectType(obj) in ('RPRIBL', 'RPRSky'):
+			transform = cmds.listRelatives(obj, p=True)[0]
+			cmds.delete(transform)	
