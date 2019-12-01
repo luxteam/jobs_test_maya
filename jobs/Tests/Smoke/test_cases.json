@@ -67,9 +67,7 @@
             "cmds.hide('ground')", 
             "cmds.createNode('RPRIBL', n='RPRIBLShape')", 
             "parent = cmds.listRelatives(\"RPRIBLShape\", p=True)", 
-            "cmds.setAttr((parent[0] + '.scaleX'), 1001.25663706144)", 
-            "cmds.setAttr((parent[0] + '.scaleY'), 1001.25663706144)", 
-            "cmds.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)", 
+            "cmds.setAttr(parent[0] + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
             "cmds.rename(parent[0], 'RPRIBLShape')", 
             "rpr_render(test_case, script_info)", 
             "cmds.showHidden('ground')",
@@ -88,11 +86,9 @@
             "cmds.hide('ground')", 
             "cmds.createNode('RPRIBL', n='RPRIBLShape')", 
             "parent = cmds.listRelatives('RPRIBLShape', p=True)", 
-            "cmds.setAttr((parent[0] + '.scaleX'), 1001.25663706144)", 
-            "cmds.setAttr((parent[0] + '.scaleY'), 1001.25663706144)", 
-            "cmds.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)", 
+            "cmds.setAttr(parent[0] + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
             "cmds.rename(parent[0], 'RPRIBLShape')", 
-            "mel.eval('setAttr -type \"string\" RPRIBLShape.filePath (\"' + RES_PATH + '\" + \"/sourceimages/Tropical_Beach_3k.hdr\")')", 
+            "cmds.setAttr('RPRIBLShape.filePath', RES_PATH + '/sourceimages/Tropical_Beach_3k.hdr', type='string')", 
             "rpr_render(test_case, script_info)", 
             "cmds.showHidden('ground')",
             "cmds.delete('RPRIBLShape')"
@@ -110,11 +106,9 @@
             "cmds.hide('ground')", 
             "cmds.createNode('RPRIBL', n='RPRIBLShape')", 
             "parent = cmds.listRelatives('RPRIBLShape', p=True)", 
-            "cmds.setAttr((parent[0] + '.scaleX'), 1001.25663706144)", 
-            "cmds.setAttr((parent[0] + '.scaleY'), 1001.25663706144)", 
-            "cmds.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)", 
+            "cmds.setAttr(parent[0] + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
             "cmds.rename(parent[0], 'RPRIBLShape')", 
-            "mel.eval('setAttr -type \"string\" RPRIBLShape.filePath (\"' + RES_PATH + '\" + \"/sourceimages/ibl_test.exr\")')", 
+            "cmds.setAttr('RPRIBLShape.filePath', RES_PATH + '/sourceimages/ibl_test.exr', type='string')", 
             "rpr_render(test_case, script_info)", 
             "cmds.showHidden('ground')",
             "cmds.delete('RPRIBLShape')"
@@ -304,8 +298,9 @@
         "status": "active", 
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)", 
-            "rpr_render(test_case, script_info)", 
-            "cmds.sysFile((WORK_DIR + '/../../../../jobs/Tests/pass.jpg'), copy=(WORK_DIR + '/Color/MAYA_SM_020.jpg'))"
+            "rpr_render(test_case, script_info)",             
+            "cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_020.jpg'))"
+
         ], 
         "script_info": [
             "Save image as png", 
@@ -376,12 +371,12 @@
         "case": "MAYA_SM_025", 
         "status": "active", 
         "functions": [
-            "mel.eval('defaultAreaLight(1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0)')", 
-            "cmds.setAttr('areaLightShape1.intensity', 20)", 
-            "cmds.setAttr('areaLight1.translateY', 400)", 
-            "cmds.setAttr('areaLight1.rotateX', 270)", 
+            "light_transform = cmd.shadingNode('areaLight', asLight=True)",
+            "cmds.setAttr(light_transform + '.intensity', 20)", 
+            "cmds.setAttr(light_transform + '.translateY', 400)", 
+            "cmds.setAttr(light_transform + '.rotateX', 270)", 
             "rpr_render(test_case, script_info)", 
-            "cmds.delete('areaLight1')"
+            "cmds.delete(light_transform)"
         ], 
         "script_info": [
             "Base Light Area Light", 
@@ -466,7 +461,7 @@
         "case": "MAYA_SM_030", 
         "status": "active", 
         "functions": [
-            "rpr = mel.eval('shadingNode -asShader \"RPRUberMaterial\"')", 
+            "rpr = cmd.shadingNode('RPRUberMaterial', asShader=True)",
             "cmds.setAttr((rpr + '.diffuse'), 1)", 
             "cmds.setAttr((rpr + '.diffuseColor'), 1, 0, 0)", 
             "sge = rpr + 'SG'", 
@@ -581,10 +576,8 @@
         "functions": [
             "cmds.hide('ground')", 
             "cmds.createNode('RPRIBL', n='RPRIBLShape')", 
-            "parent = cmds.listRelatives(\"RPRIBLShape\", p=True)", 
-            "cmds.setAttr((parent[0] + '.scaleX'), 1001.25663706144)", 
-            "cmds.setAttr((parent[0] + '.scaleY'), 1001.25663706144)", 
-            "cmds.setAttr((parent[0] + '.scaleZ'), 1001.25663706144)", 
+            "parent = cmds.listRelatives('RPRIBLShape', p=True)", 
+            "cmds.setAttr(parent[0] + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
             "cmds.rename(parent[0], 'RPRIBLShape')", 
             "rpr_render(test_case, script_info)", 
             "cmds.showHidden('ground')",

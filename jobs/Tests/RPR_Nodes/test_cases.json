@@ -5,9 +5,9 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_BlendUberPBRMaterials modelPanel4')",
+            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
             "rpr_render(test_case, script_info)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -22,11 +22,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_BlendUberPBRMaterials modelPanel4')",
+            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
             "cmds.disconnectAttr('file1.outAlpha', 'BlendMaterial.weight')",
             "rpr_render(test_case, script_info)",
             "cmds.connectAttr('file1.outAlpha', 'BlendMaterial.weight')",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -41,13 +41,13 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_BlendUberPBRMaterials modelPanel4')",
+            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
             "cmds.disconnectAttr('file1.outAlpha', 'BlendMaterial.weight')",
             "cmds.setAttr('BlendMaterial.weight', 0.5)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('BlendMaterial.weight', 1)",
             "cmds.connectAttr('file1.outAlpha', 'BlendMaterial.weight')",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -62,13 +62,13 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_BlendUberPBRMaterials modelPanel4')",
+            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
             "cmds.disconnectAttr('file1.outAlpha', 'BlendMaterial.weight')",
             "cmds.setAttr('BlendMaterial.weight', 0)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('BlendMaterial.weight', 1)",
             "cmds.connectAttr('file1.outAlpha', 'BlendMaterial.weight')",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -83,9 +83,9 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Subsurface modelPanel4')",
+            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "rpr_render(test_case, script_info)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -100,11 +100,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Subsurface modelPanel4')",
+            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.density', 5)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('Mat_Subsurface.density', 18.072)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -119,11 +119,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Subsurface modelPanel4')",
+            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.density', 20)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('Mat_Subsurface.density', 18.072)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -138,11 +138,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Subsurface modelPanel4')",
+            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.scatterAmount', 0)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('Mat_Subsurface.scatterAmount', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -157,11 +157,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Subsurface modelPanel4')",
+            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.scatterAmount', 0.5)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('Mat_Subsurface.scatterAmount', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -176,11 +176,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Subsurface modelPanel4')",
+            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.emissionColor', 0.0392, 1, 0.0392, type='double3')",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('Mat_Subsurface.emissionColor', 0, 0, 0, type='double3')",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -195,11 +195,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Subsurface modelPanel4')",
+            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.emissionColor', 1, 1, 0, type='double3')",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('Mat_Subsurface.emissionColor', 0, 0, 0, type='double3')",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -214,9 +214,9 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Arythmetic_Blend_Gradient modelPanel4')",
+            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "rpr_render(test_case, script_info)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -231,11 +231,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Arythmetic_Blend_Gradient modelPanel4')",
+            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRArithmetic1.operation', 0)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRArithmetic1.operation', 0)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -250,11 +250,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Arythmetic_Blend_Gradient modelPanel4')",
+            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRArithmetic1.operation', 1)", 
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRArithmetic1.operation', 0)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -269,11 +269,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Arythmetic_Blend_Gradient modelPanel4')",
+            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRArithmetic1.operation', 2)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRArithmetic1.operation', 0)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -288,11 +288,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Arythmetic_Blend_Gradient modelPanel4')",
+            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRGradient1.color0', 0, 1, 1, type='double3')",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRGradient1.color0', 0, 0, 0, type='double3')",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -307,11 +307,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Arythmetic_Blend_Gradient modelPanel4')",
+            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRGradient1.color0', 0, 1, 1, type='double3')",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRGradient1.color0', 1, 1, 1, type='double3')",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -326,9 +326,9 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_LookUp_Noise_Passthrough modelPanel4')",
+            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "rpr_render(test_case, script_info)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -343,11 +343,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_LookUp_Noise_Passthrough modelPanel4')",
+            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "cmds.setAttr('RPRLookup1.type', 1)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRLookup1.type', 5)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -362,11 +362,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_LookUp_Noise_Passthrough modelPanel4')",
+            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "cmds.setAttr('RPRLookup1.type', 2)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRLookup1.type', 5)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -381,11 +381,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_LookUp_Noise_Passthrough modelPanel4')",
+            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "cmds.setAttr('RPRLookup1.type', 3)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRLookup1.type', 5)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -400,11 +400,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_LookUp_Noise_Passthrough modelPanel4')",
+            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "cmds.setAttr('RPRLookup1.type', 5)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRLookup1.type', 5)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -419,9 +419,9 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BumpNormal.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_BumpNormal modelPanel4')",
+            "cmds.lookThru('Camera_BumpNormal', 'modelPanel4')",
             "rpr_render(test_case, script_info)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('BumpNormal.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -460,9 +460,9 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Fresnel modelPanel4')",
+            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "rpr_render(test_case, script_info)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Fresnel.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -477,11 +477,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Fresnel modelPanel4')",
+            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnelSchlick2.reflectance', 0.5)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRFresnelSchlick2.reflectance', 0)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Fresnel.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -496,11 +496,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Fresnel modelPanel4')",
+            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnelSchlick2.reflectance', 1)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRFresnelSchlick2.reflectance', 0)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Fresnel.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -515,11 +515,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Fresnel modelPanel4')",
+            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnel1.ior', 1)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRFresnel1.ior', 1.2)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Fresnel.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -534,11 +534,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Fresnel modelPanel4')",
+            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnel1.ior', 3)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRFresnel1.ior', 1.2)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Fresnel.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -553,11 +553,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Fresnel modelPanel4')",
+            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnel1.ior', 5)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRFresnel1.ior', 1.2)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Fresnel.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
@@ -572,11 +572,11 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "mel.eval('lookThroughModelPanel Camera_Fresnel modelPanel4')",
+            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnel1.ior', 10)",
             "rpr_render(test_case, script_info)",
             "cmds.setAttr('RPRFresnel1.ior', 1.2)",
-            "mel.eval('lookThroughModelPanel Camera_Checker_Dot_Texture modelPanel4')",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Fresnel.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
