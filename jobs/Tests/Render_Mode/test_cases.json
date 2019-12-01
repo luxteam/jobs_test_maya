@@ -8,7 +8,6 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 1)",
-            "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -21,7 +20,6 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 2)",
-            "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -34,7 +32,6 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 3)",
-            "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -48,7 +45,6 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 4)",
-            "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -62,7 +58,6 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 5)",
-            "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -76,7 +71,6 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 6)",
-            "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -90,7 +84,6 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 7)",
-            "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -104,7 +97,6 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 8)",
-            "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
@@ -117,7 +109,6 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.renderMode', 9)",
-            "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 1)",
             "rpr_render(test_case, script_info)"
         ]
     },
