@@ -5,7 +5,7 @@
         "functions": [        
             "cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 2)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Ray Depth - 2"
@@ -18,7 +18,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 50)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Ray Depth - 50"
@@ -31,7 +31,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 2)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Diffuse - 2"
@@ -44,7 +44,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 50)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Diffuse - 50"
@@ -57,7 +57,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 2)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Glossy - 2"
@@ -70,7 +70,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 50)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Glossy - 50"
@@ -83,7 +83,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 2)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Refraction - 2"
@@ -96,7 +96,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 50)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Refraction - 50"
@@ -109,7 +109,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 2)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Glossy Refraction - 2"
@@ -122,7 +122,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 50)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Glossy Refraction - 50"
@@ -135,7 +135,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthShadow', 2)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Shadow - 2"
@@ -148,7 +148,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthShadow', 50)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Shadow - 50"
@@ -161,7 +161,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Ray Epsilon - 0"
@@ -174,7 +174,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.raycastEpsilon', 2)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Ray Epsilon - 2"
@@ -187,7 +187,7 @@
         "functions": [
             "cmd.setAttr('RadeonProRenderGlobals.enableOOC', 1)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Activate Enable Out of Core Textures checkbox"
@@ -201,7 +201,7 @@
             "cmd.setAttr('RadeonProRenderGlobals.enableOOC', 1)",
             "cmd.setAttr('RadeonProRenderGlobals.textureCacheSize', 4096)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Enable Out of Core Textures checkbox"
@@ -220,7 +220,7 @@
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthShadow', 2)",
             "cmd.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Ray Depth - 2"
@@ -239,7 +239,7 @@
             "cmd.setAttr('RadeonProRenderGlobals.maxDepthShadow', 50)",
             "cmd.setAttr('RadeonProRenderGlobals.raycastEpsilon', 2)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Max Ray Depth - 50"
@@ -253,7 +253,7 @@
             "cmd.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Clamp Irradience Value - 50"
@@ -267,7 +267,7 @@
             "cmd.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Clamp Irradience Value - 100"
@@ -282,7 +282,7 @@
             "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
             "cmd.setAttr('RadeonProRenderGlobals.textureCompression', 1)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Clamp Irradience Value - 50"
@@ -297,7 +297,7 @@
             "cmd.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
             "cmd.setAttr('RadeonProRenderGlobals.textureCompression', 1)",
             "rpr_render(test_case, script_info)",
-            "resetAttributesQ()"
+            "resetAttributes()"
         ],
         "script_info": [
             "Clamp Irradience Value - 100"

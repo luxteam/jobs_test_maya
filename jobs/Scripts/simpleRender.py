@@ -126,6 +126,12 @@ def main(args):
 		core_config.main_logger.error(str(e))
 		return 1
 
+	try:		
+		with open(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')) as f:
+			extension_script = f.read()
+		script += extension_script
+	except:pass
+
 	maya_scenes = set(re.findall(r"\w*\.ma\"", script_template))
 	check_licenses(args.res_path, maya_scenes)
 

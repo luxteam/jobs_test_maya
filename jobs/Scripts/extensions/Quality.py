@@ -1,0 +1,10 @@
+def resetAttributes():
+	cmd.setAttr('RadeonProRenderGlobals.maxRayDepth', 8)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 3)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 5)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 5)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 5)
+	cmd.setAttr('RadeonProRenderGlobals.maxDepthShadow', 5)
+	cmd.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0.02)
+	cmd.setAttr('RadeonProRenderGlobals.enableOOC', 0)
+	cmd.setAttr('RadeonProRenderGlobals.textureCacheSize', 512)

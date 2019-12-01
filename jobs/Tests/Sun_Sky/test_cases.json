@@ -33,7 +33,7 @@
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.jpeg')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
             "rpr_render(test_case, script_info)"
@@ -57,9 +57,9 @@
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -78,9 +78,9 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.exr')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.png')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -97,9 +97,9 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.exr')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tiff')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.exr')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.exr')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -116,8 +116,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tiff')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.tiff')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -134,9 +134,9 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.exr')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.exr')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -157,9 +157,9 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.exr')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.exr')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.tiff')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)"
@@ -181,8 +181,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tiff')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "rpr_render(test_case, script_info)"
@@ -223,7 +223,7 @@
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -241,9 +241,9 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.jpeg')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.png')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -261,9 +261,9 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -282,7 +282,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.png')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)"
         ],
@@ -299,8 +299,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.exr')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.exr')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -316,9 +316,9 @@
         "case": "MAYA_RS_SS_016",
         "status": "skipped",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.jpeg')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.tiff')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "rpr_render(test_case, script_info)"
         ],
@@ -336,8 +336,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.exr')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "rpr_render(test_case, script_info)"
@@ -357,8 +357,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.exr')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
             "rpr_render(test_case, script_info)"
         ],
@@ -376,7 +376,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "rpr_render(test_case, script_info)"
@@ -393,8 +393,8 @@
         "case": "MAYA_RS_SS_020",
         "status": "skipped",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.jpeg')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.exr')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)"
@@ -411,9 +411,9 @@
         "case": "MAYA_RS_SS_021",
         "status": "skipped",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tiff')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -429,9 +429,9 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.exr')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.png')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -450,9 +450,9 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.exr')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.exr')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "rpr_render(test_case, script_info)"
         ],
@@ -471,8 +471,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.tiff')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "rpr_render(test_case, script_info)"
         ],
@@ -488,9 +488,9 @@
         "case": "MAYA_RS_SS_025",
         "status": "skipped",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.exr')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.exr')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "rpr_render(test_case, script_info)"
@@ -508,9 +508,9 @@
         "case": "MAYA_RS_SS_026",
         "status": "skipped",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.exr')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.tiff')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)"
         ],
@@ -528,8 +528,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tiff')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 1, 1, 1, type='double3')",
             "rpr_render(test_case, script_info)"
         ],
@@ -547,7 +547,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
             "rpr_render(test_case, script_info)"
         ],
@@ -565,8 +565,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.exr')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -583,9 +583,9 @@
         "case": "MAYA_RS_SS_030",
         "status": "skipped",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.jpeg')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tiff')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.png')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "rpr_render(test_case, script_info)"
         ],
@@ -601,9 +601,9 @@
         "case": "MAYA_RS_SS_031",
         "status": "skipped",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tiff')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "rpr_render(test_case, script_info)"
@@ -623,8 +623,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.exr')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.png')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)"
@@ -645,8 +645,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.exr')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.exr')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -663,9 +663,9 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.jpeg')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.tiff')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -680,7 +680,7 @@
         "case": "MAYA_RS_SS_035",
         "status": "skipped",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 1, 1, 1, type='double3')",
             "rpr_render(test_case, script_info)"
@@ -696,8 +696,8 @@
         "case": "MAYA_RS_SS_036",
         "status": "skipped",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.exr')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "rpr_render(test_case, script_info)"
@@ -748,7 +748,7 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.jpeg')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
@@ -781,9 +781,9 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', -2000)",
@@ -812,9 +812,9 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.exr')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.exr')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.month', 1)",
@@ -843,9 +843,9 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.exr')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.exr')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.tiff')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
@@ -876,9 +876,9 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.jpeg')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.jpeg')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.png')",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.day', 31)",
             "cmd.setAttr('RPRSkyShape.seconds', 60)",
@@ -904,9 +904,9 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.month', 1)",
@@ -937,8 +937,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.exr')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
@@ -968,8 +968,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.exr')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "rpr_render(test_case, script_info)"
@@ -989,9 +989,9 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.exr')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.exr')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.png')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.png')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.day', 1)",
@@ -1018,9 +1018,9 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tiff')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.exr')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.exr')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.day', 31)",
@@ -1047,8 +1047,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.tiff')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.tiff')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 6000)",
@@ -1076,8 +1076,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tiff')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.jpeg')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tiff')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.jpeg')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.minutes', 60)",
@@ -1101,7 +1101,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.groundAlbedo', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 6000)",
@@ -1127,8 +1127,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.exr')",
-            "setAttributeSS('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.exr')",
+            "setAttribute('groundAlbedo', 'sunsky_groundalbedo.jpeg')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', -2000)",
@@ -1466,7 +1466,7 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
@@ -1489,8 +1489,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1510,8 +1510,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1531,8 +1531,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)"
@@ -1553,8 +1553,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1606,8 +1606,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -1623,7 +1623,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 3)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "rpr_render(test_case, script_info)"
@@ -1657,7 +1657,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1672,8 +1672,8 @@
         "case": "MAYA_RS_SS_075",
         "status": "active",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1690,8 +1690,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1709,8 +1709,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -1726,7 +1726,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1741,8 +1741,8 @@
         "case": "MAYA_RS_SS_079",
         "status": "active",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)",
             "cmd.file('Sun_Sky_New.ma', f=True, op='v=0;', iv=True, o=True)"
@@ -1758,8 +1758,8 @@
         "case": "MAYA_RS_SS_080",
         "status": "active",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -1774,7 +1774,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "rpr_render(test_case, script_info)"
@@ -1793,7 +1793,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "rpr_render(test_case, script_info)"
@@ -1812,7 +1812,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1827,7 +1827,7 @@
         "case": "MAYA_RS_SS_084",
         "status": "active",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
@@ -1845,7 +1845,7 @@
         "case": "MAYA_RS_SS_085",
         "status": "active",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)"
@@ -1863,8 +1863,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -1880,7 +1880,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -1896,7 +1896,7 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1912,8 +1912,8 @@
         "case": "MAYA_RS_SS_089",
         "status": "active",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "rpr_render(test_case, script_info)"
         ],
@@ -1928,8 +1928,8 @@
         "case": "MAYA_RS_SS_090",
         "status": "active",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "rpr_render(test_case, script_info)"
@@ -1948,7 +1948,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "rpr_render(test_case, script_info)"
@@ -1968,7 +1968,7 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
@@ -1984,7 +1984,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 10)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
             "rpr_render(test_case, script_info)"
         ],
@@ -1999,7 +1999,7 @@
         "case": "MAYA_RS_SS_094",
         "status": "active",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "rpr_render(test_case, script_info)"
         ],
@@ -2013,8 +2013,8 @@
         "case": "MAYA_RS_SS_095",
         "status": "active",
         "functions": [
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "rpr_render(test_case, script_info)"
         ],
@@ -2314,7 +2314,7 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
@@ -2345,8 +2345,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 0)",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', -2000)",
@@ -2374,8 +2374,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.month', 1)",
@@ -2403,8 +2403,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 10)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
@@ -2434,8 +2434,8 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.turbidity', 50)",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.day', 31)",
             "cmd.setAttr('RPRSkyShape.seconds', 60)",
@@ -2460,7 +2460,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunDiskSize', 0)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
@@ -2491,8 +2491,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.month', 12)",
@@ -2520,8 +2520,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "rpr_render(test_case, script_info)"
         ],
@@ -2539,7 +2539,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.tga')",
             "cmd.setAttr('RPRSkyShape.groundColor', 1, 1, 1, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
@@ -2566,7 +2566,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
             "cmd.setAttr('RPRSkyShape.groundColor', 0, 0, 0, type='double3')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 50)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
@@ -2593,7 +2593,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 100)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 6000)",
@@ -2620,8 +2620,8 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 0.1)",
-            "setAttributeSS('filterColor', 'sunsky_filtercolor.png')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('filterColor', 'sunsky_filtercolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.minutes', 60)",
             "cmd.setAttr('RPRSkyShape.seconds', 1)",
@@ -2643,7 +2643,7 @@
         "functions": [
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 2)",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.png')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.png')",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', 6000)",
             "cmd.setAttr('RPRSkyShape.seconds', 60)",
@@ -2667,7 +2667,7 @@
             "removeEnvironment()",
             "cmd.setAttr('RPRSkyShape.intensity', 1)",
             "cmd.setAttr('RPRSkyShape.filterColor', 1, 1, 1, type='double3')",
-            "setAttributeSS('groundColor', 'sunsky_groundcolor.tga')",
+            "setAttribute('groundColor', 'sunsky_groundcolor.tga')",
             "cmd.setAttr('RPRSkyShape.sunGlow', 0)",
             "cmd.setAttr('RPRSkyShape.sunPositionType', 1)",
             "cmd.setAttr('RPRSkyShape.year', -2000)",
