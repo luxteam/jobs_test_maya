@@ -752,7 +752,7 @@
         "script_info": [
             "12. Subsurface Radius 1"
         ],
-        "scene": "1"
+        "scene": "PBR.ma"
     },
     {
         "case": "MAYA_MAT_PBR_056",
@@ -767,6 +767,6 @@
         "script_info": [
             "Subsurface Radius 5"
         ],
-        "scene": "5"
+        "scene": "PBR.ma"
     }
 ]
