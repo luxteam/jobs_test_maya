@@ -85,7 +85,7 @@
         "script_info": [
             "physical_light.ma"
         ],
-        "scene": "AreaWidth-1"
+        "scene": "physical_light.ma"
     },
     {
         "case": "MAYA_L_PL_005",
