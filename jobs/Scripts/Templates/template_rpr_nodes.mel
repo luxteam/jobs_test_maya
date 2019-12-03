@@ -475,7 +475,7 @@ global proc main(){{
     @check_test_cases("MAYA_MAT_NODE_039", "[\"RPRFresnel1 node Set IOR - 1\"]", "RPRNodes.ma");
     @check_test_cases("MAYA_MAT_NODE_040", "[\"RPRFresnel1 node Set IOR - 3\"]", "RPRNodes.ma");
     @check_test_cases("MAYA_MAT_NODE_041", "[\"RPRFresnel1 node Set IOR - 5\"]", "RPRNodes.ma");
-    //check_test_cases("MAYA_MAT_NODE_042", "[\"RPRFresnel1 node Set IOR - 10\"]", "RPRNodes.ma");
+    @check_test_cases("MAYA_MAT_NODE_042", "[\"RPRFresnel1 node Set IOR - 10\"]", "RPRNodes.ma");
 	
     // <-- end -->
 

@@ -36,7 +36,7 @@ global proc rpr_render(string $test_case, string $script_info){{
 	}}
 	string $render_device_name[] = `optionVar -q "RPR_DevicesName"`;
 	string $filePath = "{work_dir}" + "/" + $test_case + "_RPR.json";
-	int $fileID = `fopen $filePath "a"`;
+	int $fileID = `fopen $filePath "w"`;
 	fprint $fileID ("[");
 	fprint $fileID ("\r\n {{");
 	fprint $fileID ("\r\n  \"render_device\": \"" + $render_device_name[0] + "\",");
@@ -95,7 +95,7 @@ global proc rpr_success_save(string $test_case, string $script_info){{
 	}}
 	string $render_device_name[] = `optionVar -q "RPR_DevicesName"`;
 	string $filePath = "{work_dir}" + "/" + $test_case + "_RPR.json";
-	int $fileID = `fopen $filePath "a"`;
+	int $fileID = `fopen $filePath "w"`;
 	fprint $fileID ("[");
 	fprint $fileID ("\r\n {{");
 	fprint $fileID ("\r\n  \"render_device\": \"" + $render_device_name[0] + "\",");
@@ -154,7 +154,7 @@ global proc rpr_fail_save(string $test_case, string $script_info){{
 	}}
 	string $render_device_name[] = `optionVar -q "RPR_DevicesName"`;
 	string $filePath = "{work_dir}" + "/" + $test_case + "_RPR.json";
-	int $fileID = `fopen $filePath "a"`;
+	int $fileID = `fopen $filePath "w"`;
 	fprint $fileID ("[");
 	fprint $fileID ("\r\n {{");
 	fprint $fileID ("\r\n  \"render_device\": \"" + $render_device_name[0] + "\",");
