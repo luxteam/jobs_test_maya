@@ -14,7 +14,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type Area"
+            "Light Type - Area",
+            "Area Width - 0",
+            "Intensity Units - Radience",
+            "Light Shape - Rectangle"
         ],
         "scene": "physical_light.ma"
     },
@@ -32,7 +35,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Area"
+            "Light Type - Area",
+            "Area Width - 0",
+            "Intensity Units - Mesh",
+            "Light Shape - Rectangle"
         ],
         "scene": "physical_light.ma"
     },
@@ -52,7 +58,13 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Area"
+            "Light Type - Area",
+            "Area Width - 1",
+            "Area Lenght - 1",
+            "Light Intensity - 100",
+            "Intensity Units - Radience",
+            "Luminous Efficacy - 100",
+            "Light Shape - Sphere"
         ],
         "scene": "physical_light.ma"
     },
@@ -70,7 +82,14 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "physical_light.ma"
+            "Light Type - Area",
+            "Area Width - 1",
+            "Area Lenght - 0",
+            "Light Intensity - 100",
+            "Intensity Units - Watts",
+            "Luminous Efficacy - 17",
+            "Check Box Visible - Activate",
+            "Light Shape - Cylinder"
         ],
         "scene": "physical_light.ma"
     },
@@ -89,7 +108,12 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Area"
+            "Light Type - Area",
+            "Area Width - 10",
+            "Area Lenght - 10",
+            "Intensity Units - Luminance",
+            "Light Shape - Mesh",
+            "Check Box Shadows - Deactivate"
         ],
         "scene": "physical_light.ma"
     },
@@ -111,7 +135,13 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Area"
+            "Light Type - Area",
+            "Area Width - 10",
+            "Light Intensity - 100",
+            "Intensity Units - Watts",
+            "Luminous Efficacy - 0.1",
+            "Color Mode - Temperature",
+            "Light Shape - Disk"
         ],
         "scene": "physical_light.ma"
     },
@@ -133,7 +163,12 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Area"
+            "Light Type - Area",
+            "Light Intensity - 100",
+            "Intensity Units - Lumen",
+            "Color Mode - Temperature",
+            "Light Shape - Sphere",
+            "Check Box Shadows - Activate"
         ],
         "scene": "physical_light.ma"
     },
@@ -154,7 +189,14 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Area"
+            "Light Type - Area",
+            "Area Lenght - 0",
+            "Intensity Units - Luminance",
+            "Color Mode - Temperature",
+            "Temperature - 40000",
+            "Check Box Visible - Activate",
+            "Light Shape - Rectangle",
+            "Check Box Shadows - Deactivate"
         ],
         "scene": "physical_light.ma"
     },
@@ -175,7 +217,12 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Area"
+            "Light Type - Area",
+            "Area Lenght - 1",
+            "Light Intensity - 0",
+            "Color Mode - Temperature",
+            "Check Box Visible - Deactivate",
+            "Light Shape - Disk"
         ],
         "scene": "physical_light.ma"
     },
@@ -194,7 +241,14 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Area"
+            "Light Type - Area",
+            "Light Intensity - 1",
+            "Intensity Units - Lumen",
+            "Color Mode - Temperature",
+            "Temperature - 40000",
+            "Check Box Visible - Deactivate",
+            "Light Shape - Cylinder",
+            "Check Box Shadows - Activate"
         ],
         "scene": "physical_light.ma"
     },
@@ -211,7 +265,12 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 0",
+            "Intensity Units - Watts",
+            "Luminous Efficacy - 0.1",
+            "Inner Cone Angle - 0",
+            "Outer Cone Angle - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -227,7 +286,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -243,7 +303,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 1",
+            "Outer Cone Angle - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -258,7 +320,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 1",
+            "inner Cone Angle - 0",
+            "Outer Cone Angle - 45"
         ],
         "scene": "physical_light.ma"
     },
@@ -273,7 +338,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 1",
+            "Inner Cone Angle - 45",
+            "Outer Cone Angle - 179"
         ],
         "scene": "physical_light.ma"
     },
@@ -290,7 +358,11 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 1",
+            "Intensity Units - Watts",
+            "Luminous Efficacy - 17",
+            "Color Mode - Temperature"
         ],
         "scene": "physical_light.ma"
     },
@@ -306,7 +378,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 100",
+            "Inner Cone Angle - 179"
         ],
         "scene": "physical_light.ma"
     },
@@ -324,7 +398,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 100",
+            "Color Mode - Temperature"
         ],
         "scene": "physical_light.ma"
     },
@@ -341,7 +417,12 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 100",
+            "Intensity Units - Watts",
+            "Luminous Efficacy - 100",
+            "Inner Cone Angle - 0",
+            "Outer Cone Angle - 179"
         ],
         "scene": "physical_light.ma"
     },
@@ -358,7 +439,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Light Intensity - 100",
+            "Intensity Units - Lumen",
+            "Inner Cone Angle - 45"
         ],
         "scene": "physical_light.ma"
     },
@@ -373,7 +457,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Intensity Units - Watts",
+            "Outer Cone Angle - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -391,7 +477,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Intensity Units - Lumen",
+            "Color Mode - Temperature",
+            "Outer Cone Angle - 45"
         ],
         "scene": "physical_light.ma"
     },
@@ -408,7 +497,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Color Mode - Temperature",
+            "temperature - 40000",
+            "Outer Cone Angle - 179"
         ],
         "scene": "physical_light.ma"
     },
@@ -425,7 +517,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Color Mode - Temperature"
         ],
         "scene": "physical_light.ma"
     },
@@ -442,7 +535,11 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Intensity Units Watts",
+            "Color Mode - Temperature",
+            "Temperature - 40000",
+            "Inner Cone Angle - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -458,7 +555,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Intensity Units - Lumen",
+            "Inner Cone Angle - 45"
         ],
         "scene": "physical_light.ma"
     },
@@ -473,7 +572,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Inner Cone Angle - 179",
+            "Outer Cone Angle - 45"
         ],
         "scene": "physical_light.ma"
     },
@@ -488,7 +589,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Intensity Units - Watts",
+            "Outer Cone Angle - 179"
         ],
         "scene": "physical_light.ma"
     },
@@ -505,7 +608,11 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Spot"
+            "Light Type - Spot",
+            "Color Mode - Temperature",
+            "Temperature - 40000",
+            "Inner Cone Angle - 45",
+            "Outer Cone Angle - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -520,7 +627,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Light Intensity - 0",
+            "Intensity Units - Watts",
+            "Luminous Efficacy - 0.1"
         ],
         "scene": "physical_light.ma"
     },
@@ -534,7 +644,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Light Intensity - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -547,7 +658,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Light Intensity - 1"
         ],
         "scene": "physical_light.ma"
     },
@@ -560,7 +672,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Light Intensity - 1"
         ],
         "scene": "physical_light.ma"
     },
@@ -575,7 +688,12 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Light Intensity - 1",
+            "Intensity Units - Watts",
+            "Luminous Efficacy - 17",
+            "Color Mode - Temperature",
+            "Temperature - 40000"
         ],
         "scene": "physical_light.ma"
     },
@@ -589,7 +707,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Light Intensity - 100"
         ],
         "scene": "physical_light.ma"
     },
@@ -605,7 +724,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Light Intensity - 100",
+            "Color Mode - Temperature"
         ],
         "scene": "physical_light.ma"
     },
@@ -620,7 +741,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Light Intensity - 100",
+            "Intensity Units - Watts",
+            "Luminous Efficacy - 100"
         ],
         "scene": "physical_light.ma"
     },
@@ -635,7 +759,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Light Intensity - 100",
+            "Intensity Units - Lumen"
         ],
         "scene": "physical_light.ma"
     },
@@ -649,7 +775,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Intensity Units - Watts"
         ],
         "scene": "physical_light.ma"
     },
@@ -666,7 +793,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Intensity Units - Lumen",
+            "Color Mode - Temperature"
         ],
         "scene": "physical_light.ma"
     },
@@ -682,7 +811,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Color Mode - Temperature",
+            "Temperature - 40000"
         ],
         "scene": "physical_light.ma"
     },
@@ -698,7 +829,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Color Mode - Temperature"
         ],
         "scene": "physical_light.ma"
     },
@@ -714,7 +846,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Intensity Units - Watts",
+            "Color Mode - Temperature",
+            "Temperature - 40000"
         ],
         "scene": "physical_light.ma"
     },
@@ -729,7 +864,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Intensity Units - Lumen"
         ],
         "scene": "physical_light.ma"
     },
@@ -757,7 +893,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Intensity Units - Watts"
         ],
         "scene": "physical_light.ma"
     },
@@ -773,7 +910,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Point"
+            "Light Type - Point",
+            "Color Mode - Temperature",
+            "Temperature - 40000"
         ],
         "scene": "physical_light.ma"
     },
@@ -790,7 +929,13 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 0",
+            "Intensity Units - Radience",
+            "Luminous Efficacy - 0.1",
+            "Color Mode - Temperature",
+            "Temperature - 40000",
+            "Shadows - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -806,7 +951,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -821,7 +967,8 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 1"
         ],
         "scene": "physical_light.ma"
     },
@@ -836,7 +983,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 1",
+            "Shadows - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -851,7 +1000,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 1",
+            "Shadows - 0.5"
         ],
         "scene": "physical_light.ma"
     },
@@ -868,7 +1019,12 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 1",
+            "Intensity Units - Radience",
+            "Luminous Efficacy - 17",
+            "Color Mode - Temperature",
+            "Temperature - 40000"
         ],
         "scene": "physical_light.ma"
     },
@@ -884,7 +1040,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 100",
+            "Shadows - 1"
         ],
         "scene": "physical_light.ma"
     },
@@ -902,7 +1060,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 100",
+            "Color Mode - Temperature"
         ],
         "scene": "physical_light.ma"
     },
@@ -919,7 +1079,11 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 100",
+            "Intensity Units - Radience",
+            "Luminous Efficacy - 100",
+            "Shadows - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -935,7 +1099,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 100",
+            "Intensity Units - Luminance",
+            "Shadows - 0.5"
         ],
         "scene": "physical_light.ma"
     },
@@ -953,7 +1120,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 50",
+            "Intensity Units - Luminance",
+            "Color Mode - Temperature"
         ],
         "scene": "physical_light.ma"
     },
@@ -971,7 +1141,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 50",
+            "Color Mode - Temperature",
+            "Temperature - 40000"
         ],
         "scene": "physical_light.ma"
     },
@@ -989,7 +1162,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 50",
+            "Temperature - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -1007,7 +1182,12 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 50",
+            "Intensity Units - Radience",
+            "Color Mode - Temperature",
+            "Temperature - 40000",
+            "Shadows - 0"
         ],
         "scene": "physical_light.ma"
     },
@@ -1023,7 +1203,10 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 50",
+            "Intensity Units - Luminance",
+            "Shadows - 0.5"
         ],
         "scene": "physical_light.ma"
     },
@@ -1039,7 +1222,9 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Light Type - Directional"
+            "Light Type - Directional",
+            "Light Intensity - 50",
+            "Shadows - 1"
         ],
         "scene": "physical_light.ma"
     }

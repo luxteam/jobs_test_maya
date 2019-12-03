@@ -31,7 +31,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "Open BlendMaterial"
+            "Open BlendMaterial Disconnect BlendWeight.png map"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -52,7 +52,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "Open BlendMaterial node"
+            "Open BlendMaterial node Set Weight - 0.5"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -73,7 +73,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "Open BlendMaterial node"
+            "Open BlendMaterial node Set Weight - 0"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -109,7 +109,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "SubsurfaceMaterial"
+            "SubsurfaceMaterial, Density - 5"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -128,7 +128,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "SubsurfaceMaterial"
+            "SubsurfaceMaterial, Density - 20"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -147,7 +147,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "SubsurfaceMaterial"
+            "SubsurfaceMaterial, Scatter Amount - 0"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -166,7 +166,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "SubsurfaceMaterial"
+            "SubsurfaceMaterial, Scatter Amount - 0.5"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -185,7 +185,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "SubsurfaceMaterial"
+            "SubsurfaceMaterial, Emission Color - RGB - 10, 255, 0"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -204,7 +204,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "SubsurfaceMaterial"
+            "SubsurfaceMaterial, Emission Color - RGB - 255, 255, 0"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -240,7 +240,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "Operation - Add"
+            "Operation - Add, Arythmetic_Blend_Gradient"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -259,7 +259,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "Operation - Substract"
+            "Operation - Substract, Arythmetic_Blend_Gradient"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -278,7 +278,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "Operation - Multiply"
+            "Operation - Multiply, Arythmetic_Blend_Gradient"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -297,7 +297,8 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "TODO"
+            "Select 'RPRGradient1' node",
+            "Set 'Color 0' - 0, 255, 255"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -316,7 +317,8 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "TODO"
+            "Select 'RPRGradient1' node",
+            "Set 'Color 1' - 0, 255, 255"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -352,7 +354,8 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "Type - Normal"
+            "Type - Normal",            
+            "LookUpNoisePassthrought"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -371,7 +374,8 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "Type - World XYZ"
+            "Type - World XYZ",            
+            "LookUpNoisePassthrought"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -390,7 +394,8 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "TODO"
+            "Type - Incident",            
+            "LookUpNoisePassthrought"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -409,7 +414,8 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
-            "Type - UV1"
+            "Type - UV1",            
+            "LookUpNoisePassthrought"
         ],
         "scene": "RPRNodes.ma"
     },
@@ -450,7 +456,7 @@
             "cmds.setAttr('RPRChecker2.mapChannel', 0)"
         ],
         "script_info": [
-            "TODO"
+            "https://amdrender.atlassian.net/browse/RPRMAYA-790"
         ],
         "scene": "RPRNodes.ma"
     },
