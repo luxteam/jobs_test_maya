@@ -175,7 +175,11 @@ def main(args):
 
 	for case in cases:
 		try:
-			if ((get_gpu() in case['skip_on']) or ([a for a in list(platform.architecture()) if a in case['skip_on']])):
+			temp = list(platform.architecture())
+			temp.append(get_gpu())
+			temp = set(temp)
+			skip_on = set(case['skip_on'])
+			if temp.intersection(skip_on) == skip_on:
 				case['status'] = 'skipped'
 		except:pass
 
