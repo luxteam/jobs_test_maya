@@ -723,7 +723,7 @@ global proc prerender(string $test_case, string $script_info, string $scene){{
 		string $file_tmp2 = setAttribute("coatRoughness", "outAlpha", "sourceimages/coating_roughness.png");
 		string $file_tmp3 = setAttribute("coatNormal", "outColor", "sourceimages/coating_normal.tiff");
 		string $file_tmp4 = setAttribute("coatThickness", "outAlpha", "sourceimages/coating_thickness.png");
-		string $file_tmp5 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_transmissioncolot.jpeg");
+		string $file_tmp5 = setAttribute("coatTransmissionColor", "outColor", "sourceimages/coating_transmissioncolor.jpeg");
 		setAttr "R_UberMat.coatIor" 10;
 		rpr_render($test_case, $script_info);
 		disconnectAttr ($file_tmp1 + ".outAlpha") ("R_UberMat.coatWeight");
@@ -1345,7 +1345,7 @@ global proc main(){{
 	@check_test_cases("MAYA_MAT_UBER_043", "[\" Color - coating_color.tiff, Roughness - coating_roughness.jpeg, Use Shader Normal - Activate , Thickness - coating_thickness.jpeg\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_044", "[\" Weight - 0, Roughness - coating_roughness.tiff , IOR - coating_ior.jpeg, Normal - coating_normal.exr, Thickness - 10\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_045", "[\" Weight - coating_weight.jpeg, IOR - coating_ior.exr, Thickness - coating_thickness.png, Transmission Color - HSV: 20, 0, 0.4\"]", "Uber.ma");
-	@check_test_cases("MAYA_MAT_UBER_046", "[\" Weight - coating_weight.tiff, Roughness - coating_roughness.png, IOR - 10, Normal - coating_normal.tiff, Thickness - coating_thickness.png, Transmission Color - coating_transmissioncolot.jpeg\"]", "Uber.ma");
+	@check_test_cases("MAYA_MAT_UBER_046", "[\" Weight - coating_weight.tiff, Roughness - coating_roughness.png, IOR - 10, Normal - coating_normal.tiff, Thickness - coating_thickness.png, Transmission Color - coating_transmissioncolor.jpeg\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_047", "[\" Roughness - coating_roughness.exr, IOR - coating_ior.jpeg, Use Shader Normal - Activate, Thickness - coating_thickness.exr, Transmission Color - coating_transmissioncolor.png\"]", "Uber.ma");
 	@check_test_cases("MAYA_MAT_UBER_048", "[\" Weight - coating_weight.jpeg, Roughness - 0.5, IOR - 0, Thickness - coating_thickness.tiff, Transmission Color - coating_transmissioncolor.tiff\"]", "Uber.ma");
 	//check_test_cases("MAYA_MAT_UBER_049", "[\"6. Emissive ,Color - emissive_color.jpeg,, Weight - 0, Intensity - 0, Double Sided - Activate\"]", "Uber.ma");
