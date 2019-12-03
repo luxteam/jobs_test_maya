@@ -13,11 +13,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Transmission color - HVS : H -0, S - 0, V -1 
-            Emission color - HVS : H -0, S - 0, V -1 
-           Density - 0
-           Scattering Direction- (-1) 
-           ColorVariation1.jpg"
+            "Transmission color - HVS : H -0, S - 0, V -1",
+            "Emission color - HVS : H -0, S - 0, V -1",
+            "Density - 0",
+            "Scattering Direction- (-1)",
+            "ColorVariation1.jpg"
         ],
         "scene": "VolumeRollingFog.ma"
     },
