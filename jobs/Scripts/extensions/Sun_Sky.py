@@ -6,7 +6,7 @@ def removeEnvironment():
 			cmds.delete(transform)	
 
 
-def setAttribute(attr, value):
+def setAttribute(ss_shape, attr, value):
 	file = cmds.shadingNode("file", asTexture=True, isColorManaged=True)
 	texture = cmds.shadingNode("place2dTexture", asUtility=True)
 	cmds.connectAttr(texture + ".coverage", file + ".coverage", f=True)
@@ -28,7 +28,7 @@ def setAttribute(attr, value):
 	cmds.connectAttr(texture + ".outUvFilterSize", file + ".uvFilterSize")
 	cmds.connectAttr(texture + ".vertexUvOne", file + ".vertexUvOne")
 
-	cmds.connectAttr(file + ".outColor", "RPRSkyShape." + attr, force=True)
+	cmds.connectAttr(file + ".outColor", ss_shape + "." + attr, force=True)
 	cmds.setAttr(file + ".fileTextureName", value, type="string")
 
 	return file

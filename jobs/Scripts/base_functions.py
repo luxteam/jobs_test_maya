@@ -203,7 +203,7 @@ def prerender(test_case, script_info, scene):
 		try:
 			cmds.file(scene, f=True, op='v=0;', iv=True, o=True)
 		except:
-			cmds.evalDeferred(cmds.quit(abort=True))
+			cmds.evalDeferred("cmds.quit(abort=True)")
 
 	validateFiles()
 
@@ -323,6 +323,6 @@ def main():
 			skipped_case_report(case)
 
 
-	cmds.evalDeferred(cmds.quit(abort=True))
+	cmds.evalDeferred("cmds.quit(abort=True)")
 
 
