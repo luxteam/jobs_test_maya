@@ -148,7 +148,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "default +white-balance=9500"
+            "default +white-balance)=9500"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -163,7 +163,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "default +gamma +white-balance=9500"
+            "default +gamma +white-balance)=9500"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -179,7 +179,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "0 0 +gamma +white-balance=9500"
+            "0 0 +gamma +white-balance)=9500"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -195,7 +195,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "5 5 +gamma +white-balance=9500 +gamma"
+            "5 5 +gamma +white-balance)=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -211,7 +211,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "10 10 +gamma +white-balance=9500 +gamma"
+            "10 10 +gamma +white-balance)=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -272,7 +272,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Linear ^Scale=0",
+            "Type: Linear (Scale)=0",
             "0 0 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -290,7 +290,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Linear ^Scale=15",
+            "Type: Linear (Scale)=15",
             "5 5 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -308,7 +308,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Linear ^Scale=30",
+            "Type: Linear (Scale)=30",
             "10 10 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -325,7 +325,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Linear ^Scale=0",
+            "Type: Linear (Scale)=0",
             "0 0 +gamma +white-balance"
         ],
         "scene": "maya_shaderball.ma"
@@ -342,7 +342,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Linear ^Scale=15",
+            "Type: Linear (Scale)=15",
             "5 5 +gamma +white-balance"
         ],
         "scene": "maya_shaderball.ma"
@@ -359,7 +359,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Linear ^Scale=30",
+            "Type: Linear (Scale)=30",
             "10 10 +gamma +white-balance"
         ],
         "scene": "maya_shaderball.ma"
@@ -408,7 +408,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Linear ^Scale=0",
+            "Type: Linear (Scale)=0",
             "0 0 +gamma +white-balance=9500"
         ],
         "scene": "maya_shaderball.ma"
@@ -426,7 +426,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Linear ^Scale=15",
+            "Type: Linear (Scale)=15",
             "5 5 +gamma +white-balance=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -444,7 +444,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Linear ^Scale=30",
+            "Type: Linear (Scale)=30",
             "10 10 +gamma +white-balance=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -508,7 +508,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Photolinear ^0 0 0",
+            "Type: Photolinear (0 0 0)",
             "0 0 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -528,7 +528,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Photolinear ^5 5 25",
+            "Type: Photolinear (5 5 25)",
             "5 5 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -548,7 +548,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Photolinear ^10 10 50",
+            "Type: Photolinear (10 10 50)",
             "10 10 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -567,7 +567,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: PhotoLinear ^0 0 0",
+            "Type: PhotoLinear (0 0 0)",
             "0 0 +gamma +white-balance"
         ],
         "scene": "maya_shaderball.ma"
@@ -586,7 +586,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: PhotoLinear ^5 5 25",
+            "Type: PhotoLinear (5 5 25)",
             "5 5 +gamma +white-balance"
         ],
         "scene": "maya_shaderball.ma"
@@ -605,7 +605,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: PhotoLinear ^10 10 50",
+            "Type: PhotoLinear (10 10 50)",
             "10 10 +gamma +white-balance"
         ],
         "scene": "maya_shaderball.ma"
@@ -656,7 +656,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: PhotoLinear ^0 0 0",
+            "Type: PhotoLinear (0 0 0)",
             "0 0 +gamma +white-balance=9500"
         ],
         "scene": "maya_shaderball.ma"
@@ -676,7 +676,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: PhotoLinear ^5 5 25",
+            "Type: PhotoLinear (5 5 25)",
             "5 5 +gamma +white-balance=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -696,7 +696,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: PhotoLinear ^10 10 50",
+            "Type: PhotoLinear (10 10 50)",
             "10 10 +gamma +white-balance=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -1193,7 +1193,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Reinhard02 ^0 0 0",
+            "Type: Reinhard02 (0 0 0)",
             "0 0 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -1212,7 +1212,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Reinhard02 ^5 5 30",
+            "Type: Reinhard02 (5 5 30)",
             "5 5 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -1232,7 +1232,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Reinhard02 ^10 10 60",
+            "Type: Reinhard02 (10 10 60)",
             "10 10 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -1251,7 +1251,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Reinhard02 ^0 0 0",
+            "Type: Reinhard02 (0 0 0)",
             "0 0 +gamma +white-balance"
         ],
         "scene": "maya_shaderball.ma"
@@ -1269,7 +1269,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Reinhard02 ^5 5 30",
+            "Type: Reinhard02 (5 5 30)",
             "5 5 +gamma +white-balance"
         ],
         "scene": "maya_shaderball.ma"
@@ -1288,7 +1288,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Reinhard02 ^10 10 60",
+            "Type: Reinhard02 (10 10 60)",
             "10 10 +gamma +white-balance"
         ],
         "scene": "maya_shaderball.ma"
@@ -1339,7 +1339,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Reinhard02 ^0 0 0",
+            "Type: Reinhard02 (0 0 0)",
             "0 0 +gamma +white-balance=9500"
         ],
         "scene": "maya_shaderball.ma"
@@ -1358,7 +1358,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Reinhard02 ^5 5 30",
+            "Type: Reinhard02 (5 5 30)",
             "5 5 +gamma +white-balance=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"
@@ -1378,7 +1378,7 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Type: Reinhard02 ^10 10 60",
+            "Type: Reinhard02 (10 10 60)",
             "10 10 +gamma +white-balance=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"

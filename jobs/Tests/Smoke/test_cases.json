@@ -107,7 +107,7 @@
             "cmds.createNode('RPRIBL', n='RPRIBLShape')", 
             "parent = cmds.listRelatives('RPRIBLShape', p=True)", 
             "cmds.setAttr(parent[0] + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
-            "cmds.rename(parent[0], 'RPRIBLShape')", 
+            "cmds.rename(parent[0], 'RPRIBLShape')",
             "cmds.setAttr('RPRIBLShape.filePath', RES_PATH + '/sourceimages/ibl_test.exr', type='string')", 
             "rpr_render(test_case, script_info)", 
             "cmds.showHidden('ground')",

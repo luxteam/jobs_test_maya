@@ -2,7 +2,7 @@
     {
         "case": "MAYA_RS_QL_001",
         "status": "active",
-        "functions": [        
+        "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 2)",
             "rpr_render(test_case, script_info)",
             "resetAttributes()"
@@ -204,7 +204,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Enable Out of Core Textures checkbox"
+            "Activate Enable Out of Core Textures checkbox",
+            "GPU texture cache (MB) - 4096"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -223,7 +224,13 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Max Ray Depth - 2"
+            "Max Ray Depth - 2",
+            "Max Diffse - 2",
+            "Max Glossy - 2",
+            "Max Refraction - 2",
+            "Max Glossy Refraction - 2",
+            "Max Shadow - 0",
+            "Ray Epsilon - 0"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -242,7 +249,13 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Max Ray Depth - 50"
+            "Max Ray Depth - 2",
+            "Max Diffse - 2",
+            "Max Glossy - 2",
+            "Max Refraction - 2",
+            "Max Glossy Refraction - 2",
+            "Max Shadow - 0",
+            "Ray Epsilon - 0"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -285,6 +298,7 @@
             "resetAttributes()"
         ],
         "script_info": [
+            "Activate Enable Out of Core Textures checkbox",
             "Clamp Irradience Value - 50"
         ],
         "scene": "maya_shaderball.ma"
@@ -300,6 +314,7 @@
             "resetAttributes()"
         ],
         "script_info": [
+            "Activate Enable Out of Core Textures checkbox",
             "Clamp Irradience Value - 100"
         ],
         "scene": "maya_shaderball.ma"

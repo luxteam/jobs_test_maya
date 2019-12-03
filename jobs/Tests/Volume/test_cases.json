@@ -13,7 +13,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Transmission color - HVS : H -0"
+            "Transmission color - HVS : H -0, S - 0, V -1",
+            "Emission color - HVS : H -0, S - 0, V -1",
+            "Density - 0",
+            "Scattering Direction- (-1)",
+            "ColorVariation1.jpg"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -31,7 +35,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter color  - HVS : H -0"
+            "Scatter color  - HVS : H -0, S - 0, V -1",
+            "Emission color - HVS : H -0, S - 0, V -1",
+            "Density - 0",
+            "Scattering Direction- 0",
+            "TransmissionVariation1.png"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -49,7 +57,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter color  - HVS : H -0"
+            "Scatter color  - HVS : H -0, S - 0, V -1",
+            "Transmission color - HVS : H -0, S - 0, V -1",
+            "Density - 0",
+            "Scattering Direction- 1",
+            "EmissiveVariation1.exr"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -67,7 +79,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Transmission color - HVS : H -0"
+            "Transmission color - HVS : H -0, S - 0, V -1",
+            "Emission color - HVS : H -0, S - 0, V -1",
+            "Density -0",
+            "Scattering Direction- (-0.5)",
+            "ColorVariation1.tiff"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -83,7 +99,11 @@
             "rpr_render(test_case, script_info)"
         ],
         "script_info": [
-            "Density - 1"
+            "Density - 0",
+            "Scattering Direction- 0.5",
+            "Scatter Color HVS: 300:0:1",
+            "Transmission Color HVS: 0:0:1",
+            "Emission Color HVS: 0:0:1"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -101,7 +121,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter color  - HVS : H -0"
+            "Scatter color  - HVS : H -0, S - 0, V -1",
+            "Emission color - HVS : H -0, S - 0, V -1",
+            "Density - 2.5",
+            "Scattering Direction- (-1)",
+            "TransmissionVariation1.png"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -119,7 +143,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter color  - HVS : H -0"
+            "Scatter color  - HVS : H -0, S - 0, V -1",
+            "Transmission color - HVS : H -0, S - 0, V -1",
+            "Density - 2.5",
+            "Scattering Direction- 1",
+            "EmissiveVariation1.exr"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -136,7 +164,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Density - 2.5"
+            "Density - 2.5",
+            "Scattering Direction- (-0.5)",
+            "Scatter Color HVS: 0:0:1",
+            "Transmission Color HVS: 300:0:1",
+            "Emission Color HVS: 0:0:1"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -154,7 +186,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Transmission color - HVS : H -0"
+            "Transmission color - HVS : H -0, S - 0, V -1",
+            "Emission color - HVS : H -0, S - 0, V -1",
+            "Density - 2.5",
+            "Scattering Direction- 0.5",
+            "ColorVariation1.png"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -172,7 +208,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter color - HVS : H -0"
+            "Scatter color - HVS : H -0, S - 0, V -1",
+            "Emission color - HVS : H -0, S - 0, V -1",
+            "Density - 2.5",
+            "Scattering Direction- 0",
+            "TransmissionVariation1.png"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -189,7 +229,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color HVS: 0:0:1"
+            "Scatter Color HVS: 0:0:1",
+            "Transmission Color HVS: 0:0:1",
+            "Emission Color HVS: 300:0:1",
+            "Density - 5",
+            "Scattering Direction- 1"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -207,7 +251,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color- HVS: 0:0:1"
+            "Scatter Color- HVS: 0:0:1",
+            "Transmission Color- HVS: 0:0:1",
+            "Density - 5",
+            "Scattering Direction- (-0.5)",
+            "EmissiveVariation1.exr"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -225,7 +273,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Transmission Color- HVS: 0:0:1"
+            "Transmission Color- HVS: 0:0:1",
+            "Emission Color- HVS: 0:0:1",
+            "Density - 5",
+            "Scattering Direction- 0.5",
+            "ColorVariation1.jpg"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -243,7 +295,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color- HVS: 0:0:1"
+            "Scatter Color- HVS: 0:0:1",
+            "Emission Color- HVS: 0:0:1",
+            "Density - 5",
+            "Scattering Direction- 0",
+            "TransmissionVariation1.png"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -261,7 +317,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Transmission Color- HVS: 0:0:1"
+            "Transmission Color- HVS: 0:0:1",
+            "Emission Color- HVS: 0:0:1",
+            "Density - 5",
+            "Scattering Direction- (-1)",
+            "ColorVariation1.exr"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -279,7 +339,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color- HVS: 0:0:1"
+            "Scatter Color- HVS: 0:0:1",
+            "Emission Color- HVS: 0:0:1",
+            "Density - 7.5",
+            "Scattering Direction- (-0.5)",
+            "TransmissionVariation1.png"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -297,7 +361,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color- HVS: 0:0:1"
+            "Scatter Color- HVS: 0:0:1",
+            "Transmission Color- HVS: 0:0:1",
+            "Density - 7.5",
+            "Scattering Direction- 0.5",
+            "EmissiveVariation1.exr"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -315,7 +383,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Transmission Color- HVS: 0:0:1"
+            "Transmission Color- HVS: 0:0:1",
+            "Emission Color- HVS: 0:0:1",
+            "Density - 7.5",
+            "Scattering Direction- 0",
+            "ColorVariation1.exr"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -332,7 +404,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color HVS: 300:0:1"
+            "Scatter Color HVS: 300:0:1",
+            "Transmission Color HVS: 0:0:1",
+            "Emission Color HVS: 0:0:1",
+            "Density - 7.5",
+            "Scattering Direction- (-1)"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -350,7 +426,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color- HVS: 0:0:1"
+            "Scatter Color- HVS: 0:0:1",
+            "Emission Color- HVS: 0:0:1",
+            "Density - 7.5",
+            "Scattering Direction-1",
+            "TransmissionVariation1.png"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -368,7 +448,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color- HVS: 0:0:1"
+            "Scatter Color- HVS: 0:0:1",
+            "Transmission Color- HVS: 0:0:1",
+            "Density - 10",
+            "Scattering Direction- 0.5",
+            "EmissiveVariation1.exr"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -385,7 +469,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color HVS: 0:0:1"
+            "Scatter Color HVS: 0:0:1",
+            "Transmission Color HVS: 300:0:1",
+            "Emission Color HVS: 0:0:1",
+            "Density - 10",
+            "Scattering Direction- 0"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -403,7 +491,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Transmission Color- HVS: 0:0:1"
+            "Transmission Color- HVS: 0:0:1",
+            "Emission Color- HVS: 0:0:1",
+            "Density - 10",
+            "Scattering Direction- (-1)",
+            "ColorVariation1.png"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -421,7 +513,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color- HVS: 0:0:1"
+            "Scatter Color- HVS: 0:0:1",
+            "Emission Color- HVS: 0:0:1",
+            "Density - 10",
+            "Scattering Direction- 1",
+            "TransmissionVariation1.png"
         ],
         "scene": "VolumeRollingFog.ma"
     },
@@ -439,7 +535,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Scatter Color- HVS: 0:0:1"
+            "Scatter Color- HVS: 0:0:1",
+            "Transmission Color- HVS: 0:0:1",
+            "Density - 10",
+            "Scattering Direction- (-0.5)",
+            "EmissiveVariation1.exr"
         ],
         "scene": "VolumeRollingFog.ma"
     }

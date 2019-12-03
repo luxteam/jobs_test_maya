@@ -9,7 +9,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "1. Base color .png"
+            "Base color .png"
         ],
         "scene": "PBR.ma"
     },
@@ -78,7 +78,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "2. Metalness .png"
+            "Metalness .png"
         ],
         "scene": "PBR.ma"
     },
@@ -160,7 +160,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "3. Specular .png"
+            "Specular .png"
         ],
         "scene": "PBR.ma"
     },
@@ -242,7 +242,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "4. Roughness .png"
+            "Roughness .png"
         ],
         "scene": "PBR.ma"
     },
@@ -323,7 +323,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "5. Normal Map .png"
+            "Normal Map .png"
         ],
         "scene": "PBR.ma"
     },
@@ -375,7 +375,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "6. Glass .png"
+            "Glass .png"
         ],
         "scene": "PBR.ma"
     },
@@ -457,7 +457,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "7. Glass IOR .exr"
+            "Glass IOR .exr"
         ],
         "scene": "PBR.ma"
     },
@@ -497,7 +497,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "8. Emissive Color .png"
+            "Emissive Color .png"
         ],
         "scene": "PBR.ma"
     },
@@ -581,7 +581,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "9. Emissive Weight .png"
+            "Emissive Weight .png"
         ],
         "scene": "PBR.ma"
     },
@@ -637,7 +637,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "10. Subsurface Weight .png"
+            "Subsurface Weight .png"
         ],
         "scene": "PBR.ma"
     },
@@ -693,7 +693,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "11. Subsurface Color.png"
+            "Subsurface Color.png"
         ],
         "scene": "PBR.ma"
     },
@@ -750,7 +750,7 @@
             "resetAttribute()"
         ],
         "script_info": [
-            "12. Subsurface Radius 1"
+            "Subsurface Radius 1"
         ],
         "scene": "PBR.ma"
     },

@@ -14,7 +14,14 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "1.Diffuse"
+            "Diffuse",
+            "Weight - 0",
+            "Roughness - 0",
+            "Use Shader Normal - Deactivate",
+            "Diffuse Normal - 0, 0, 0",
+            "Backscattering Weight - 0.5",
+            "Separate Backscattering Color - Activate",
+            "Backscattering Color - HSV: 0, 0, 1"
         ],
         "scene": "Uber.ma"
     },
@@ -33,7 +40,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - diffuse_color.png"
+            "Color - diffuse_color.png",
+            "Weight - diffuse_weight.exr",
+            "Use Shader Normal - Deactivate",
+            "Diffuse Normal - 5, 5, 5",
+            "Separate Backscattering Color - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -57,7 +68,14 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - diffuse_color.tiff"
+            "Color - diffuse_color.tiff",
+            "Weight - 0",
+            "Roughness - diffuse_roughness.exr",
+            "Use Shader Normal - Deactivate",
+            "Diffuse Normal - diffuse_normal.png",
+            "Backscattering Weight - 0.5",
+            "Separate Backscattering Color -  Activate",
+            "Backscattering Color - diffuse_backscatteringcolor.exr"
         ],
         "scene": "Uber.ma"
     },
@@ -79,7 +97,12 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - diffuse_weight.exr"
+            "Weight - diffuse_weight.exr",
+            "Roughness - diffuse_roughness.jpeg",
+            "Use Shader Normal - Deactivate",
+            "Diffuse Normal - diffuse_normal.tiff",
+            "Separate Backscattering Color - Activate",
+            "Backscattering Color - diffuse_backscatteringcolor.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -112,7 +135,15 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "2. Reflection"
+            "Reflection",
+            "Weight - 0",
+            "Roughness - 0",
+            "Anisotropy - 1",
+            "Anisotropy Rotation - -1",
+            "Use Shader Normal - Activate",
+            "Reflection Normal - HSV: 0, 0, 0",
+            "Metal Material - Activate",
+            "Metalness - 0.5"
         ],
         "scene": "Uber.ma"
     },
@@ -128,7 +159,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - reflection_weight.tiff"
+            "Weight - reflection_weight.tiff",
+            "Roughness - reflection_roughness.tiff"
         ],
         "scene": "Uber.ma"
     },
@@ -160,7 +192,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - reflection_color.jpeg"
+            "Color - reflection_color.jpeg",
+            "Weight - 0.5",
+            "Roughness - reflection_roughness.jpeg",
+            "Metal Material - Activate",
+            "Metalness - 1"
         ],
         "scene": "Uber.ma"
     },
@@ -182,7 +218,12 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - reflection_color.jpeg"
+            "Color - reflection_color.jpeg",
+            "Weight - reflection_weight.exr",
+            "Roughness - reflection_roughness.tiff",
+            "Anisotropy Rotation - 1",
+            "Use Shader Normal - Activate",
+            "Reflection Normal - reflection_normal.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -201,7 +242,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - reflection_color.png"
+            "Color - reflection_color.png",
+            "Weight -reflection_weight.png",
+            "Roughness - reflection_roughness.tiff",
+            "Anisotropy - -1"
         ],
         "scene": "Uber.ma"
     },
@@ -219,7 +263,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - reflection_color.png"
+            "Color - reflection_color.png",
+            "Weight - reflection_weigh.exr",
+            "Anisotropy - 1",
+            "IOR - 10"
         ],
         "scene": "Uber.ma"
     },
@@ -238,7 +285,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - reflection_color.exr"
+            "Color - reflection_color.exr",
+            "Weight - reflection_weight.exr",
+            "Use Shader Normal - Activate",
+            "Reflection Normal - reflection_normal.exr"
         ],
         "scene": "Uber.ma"
     },
@@ -254,7 +304,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - reflection_color.exr"
+            "Color - reflection_color.exr",
+            "Roughness - 0.5",
+            "Anisotropy Rotation - 1"
         ],
         "scene": "Uber.ma"
     },
@@ -270,7 +322,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - reflection_color.tiff"
+            "Color - reflection_color.tiff",
+            "Weight - reflection_weight.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -289,7 +342,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - reflection_weight.exr"
+            "Weight - reflection_weight.exr",
+            "Roughness - 0.5",
+            "Use Shader Normal - Activate",
+            "Reflection Normal - reflection_normal.png",
+            "IOR - 5"
         ],
         "scene": "Uber.ma"
     },
@@ -308,7 +365,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - reflection_weight.tiff"
+            "Weight - reflection_weight.tiff",
+            "Roughness - reflection_roughness.jpeg",
+            "Anisotropy - -1",
+            "Metal Material - Activate",
+            "Metalness - 0"
         ],
         "scene": "Uber.ma"
     },
@@ -326,7 +387,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - reflection_weight.jpeg"
+            "Weight - reflection_weight.jpeg",
+            "Roughness - 0.5",
+            "Anisotropy - 1",
+            "Anisotropy Rotation - 1",
+            "IOR - 10"
         ],
         "scene": "Uber.ma"
     },
@@ -343,7 +408,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - reflection_weight.png"
+            "Weight - reflection_weight.png",
+            "Roughness - reflection_roughness.jpeg",
+            "Anisotropy Rotation - -1"
         ],
         "scene": "Uber.ma"
     },
@@ -360,7 +427,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - reflection_weight.exr"
+            "Weight - reflection_weight.exr",
+            "Roughness - reflection_roughness.png",
+            "Use Shader Normal - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -378,7 +447,13 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "3. Reflection + Reflection Fresnel"
+            "Reflection + Reflection Fresnel",
+            "Weight - 0",
+            "Roughness - 0",
+            "Link to Reflection - Activate",
+            "Thin Surface - Activate",
+            "Absorbtion Distance - 5",
+            "Allow Caustics - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -410,7 +485,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "4. Refraction"
+            "Refraction",
+            "Color - refraction_color.jpeg",
+            "Weight - refraction_weight.png",
+            "Roughness - refraction_roughness.exr",
+            "Absorbtion Distance - 5"
         ],
         "scene": "Uber.ma"
     },
@@ -425,7 +504,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - refraction_color.jpeg"
+            "Color - refraction_color.jpeg",
+            "Link to Reflection - Activate",
+            "Absorbtion Distance - refraction_absorbtiondistance.png"
         ],
         "scene": "Uber.ma"
     },
@@ -444,7 +525,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - refraction_color.png"
+            "Color - refraction_color.png",
+            "Weight - refraction_weight.exr",
+            "Link to Reflection - Activate",
+            "Thin Surface - Activate",
+            "Allow Caustics - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -463,7 +548,12 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - refraction_color.png"
+            "Color - refraction_color.png",
+            "Weight - 0",
+            "Roughness - refraction_roughness.jpeg",
+            "IOR - 10",
+            "Thin Surface - Activate",
+            "Absorbtion Distance - refraction_absorbtiondistance.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -483,7 +573,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - refraction_color.exr"
+            "Color - refraction_color.exr",
+            "Weight - refraction_weight.jpeg",
+            "Roughness - refraction_roughness.tiff",
+            "Link to Reflection - Activate",
+            "Absorbtion Distance - 10"
         ],
         "scene": "Uber.ma"
     },
@@ -500,7 +594,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - refraction_color.exr"
+            "Color - refraction_color.exr",
+            "Weight - refraction_weight.tiff",
+            "Roughness - 0",
+            "IOR - refraction_ior.jpeg",
+            "Absorbtion Distance - refraction_absorbtiondistance.exr"
         ],
         "scene": "Uber.ma"
     },
@@ -520,7 +618,13 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - refraction_color.tiff"
+            "Color - refraction_color.tiff",
+            "Weight - 0",
+            "Roughness - refraction_roughness.exr",
+            "Link to Reflection - Activate",
+            "Thin Surface - Activate",
+            "Absorbtion Distance - refraction_absorbtiondistance.exr",
+            "Allow Caustics - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -536,7 +640,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - refraction_color.tiff"
+            "Color - refraction_color.tiff",
+            "Weight - refraction_weight.jpeg",
+            "IOR - refraction_ior.png"
         ],
         "scene": "Uber.ma"
     },
@@ -552,7 +658,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Roughness - refraction_roughness.png"
+            "Roughness - refraction_roughness.png",
+            "Link to Reflection - Activate",
+            "Absorbtion Distance - 0"
         ],
         "scene": "Uber.ma"
     },
@@ -567,7 +675,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Roughness - refraction_roughness.exr"
+            "Roughness - refraction_roughness.exr",
+            "IOR - refraction_ior.exr",
+            "Absorbtion Distance - 5"
         ],
         "scene": "Uber.ma"
     },
@@ -585,7 +695,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - refraction_weight.exr"
+            "Weight - refraction_weight.exr",
+            "Roughness - refraction_roughness.jpeg",
+            "Link to Reflection - Activate",
+            "Absorbtion Distance - refraction_absorbtiondistance.jpeg",
+            "Allow Caustics - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -599,7 +713,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - 0.5"
+            "Weight - 0.5",
+            "Roughness - 0",
+            "IOR - refraction_ior.tiff",
+            "Absorbtion Distance - refraction_absorbtiondistance.exr"
         ],
         "scene": "Uber.ma"
     },
@@ -615,7 +732,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - refraction_weight.jpeg"
+            "Weight - refraction_weight.jpeg",
+            "Roughness - 0.5",
+            "Link to Reflection - Activate",
+            "Absorbtion Distance - refraction_absorbtiondistance.tiff"
         ],
         "scene": "Uber.ma"
     },
@@ -635,7 +755,12 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "5. Coating"
+            "Coating",
+            "Color - coating_color.jpeg",
+            "Weight - coating_weight.jpeg",
+            "Roughness - coating_roughness.png",
+            "IOR - coating_ior.exr",
+            "Transmission Color - HSV: 0, 0, 0"
         ],
         "scene": "Uber.ma"
     },
@@ -658,7 +783,12 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - coating_color.jpeg"
+            "Color - coating_color.jpeg",
+            "Weight - coating_weight.exr",
+            "Roughness - coating_roughness.tiff",
+            "Normal - 5",
+            "Thickness - 10",
+            "Transmission Color - coating_trasmissioncolor.png"
         ],
         "scene": "Uber.ma"
     },
@@ -679,7 +809,12 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - coating_color.png"
+            "Color - coating_color.png",
+            "Weight - 0.5",
+            "Roughness - coating_roughness.png",
+            "IOR - coating_ior.tiff",
+            "Normal - 10",
+            "Thickness - coating_thickness.png"
         ],
         "scene": "Uber.ma"
     },
@@ -698,7 +833,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - coating_color.png"
+            "Color - coating_color.png",
+            "Roughness - 0",
+            "IOR - coating_ior.jpeg",
+            "Thickness - 0",
+            "Transmission Color - coating_transmissioncolor.png"
         ],
         "scene": "Uber.ma"
     },
@@ -722,7 +861,13 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - coating_color.exr"
+            "Color - coating_color.exr",
+            "Weight - coating_weight.jpeg",
+            "Roughness - coating_roughness.tiff",
+            "IOR - 0",
+            "Use Shader Normal - Activate",
+            "Thickness - 10",
+            "Transmission Color - coating_transmissioncolor.tiff"
         ],
         "scene": "Uber.ma"
     },
@@ -743,7 +888,12 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - coating_color.exr"
+            "Color - coating_color.exr",
+            "Roughness - 0.5",
+            "IOR - coating_ior.exr",
+            "Normal - coating_normal.jpeg",
+            "Thickness - coating_thickness.tiff",
+            "Transmission Color - HSV: 0, 0, 0"
         ],
         "scene": "Uber.ma"
     },
@@ -764,7 +914,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - coating_color.tiff"
+            "Color - coating_color.tiff",
+            "Weight - coating_weight.png",
+            "IOR - coating_ior.png",
+            "Normal - coating_normal.png",
+            "Transmission Color - coating_transmissioncolor.exr"
         ],
         "scene": "Uber.ma"
     },
@@ -784,7 +938,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - coating_color.tiff"
+            "Color - coating_color.tiff",
+            "Roughness - coating_roughness.jpeg",
+            "Use Shader Normal - Activate",
+            "Thickness - coating_thickness.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -803,7 +960,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - 0"
+            "Weight - 0",
+            "Roughness - coating_roughness.tiff",
+            "IOR - coating_ior.jpeg",
+            "Normal - coating_normal.exr",
+            "Thickness - 10"
         ],
         "scene": "Uber.ma"
     },
@@ -821,7 +982,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - coating_weight.jpeg"
+            "Weight - coating_weight.jpeg",
+            "IOR - coating_ior.exr",
+            "Thickness - coating_thickness.png",
+            "Transmission Color - HSV: 20, 0, 0.4"
         ],
         "scene": "Uber.ma"
     },
@@ -845,7 +1009,12 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - coating_weight.tiff"
+            "Weight - coating_weight.tiff",
+            "Roughness - coating_roughness.png",
+            "IOR - 10",
+            "Normal - coating_normal.tiff",
+            "Thickness - coating_thickness.png",
+            "Transmission Color - coating_transmissioncolor.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -865,7 +1034,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Roughness - coating_roughness.exr"
+            "Roughness - coating_roughness.exr",
+            "IOR - coating_ior.jpeg",
+            "Use Shader Normal - Activate",
+            "Thickness - coating_thickness.exr",
+            "Transmission Color - coating_transmissioncolor.png"
         ],
         "scene": "Uber.ma"
     },
@@ -886,7 +1059,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - coating_weight.jpeg"
+            "Weight - coating_weight.jpeg",
+            "Roughness - 0.5",
+            "IOR - 0",
+            "Thickness - coating_thickness.tiff",
+            "Transmission Color - coating_transmissioncolor.tiff"
         ],
         "scene": "Uber.ma"
     },
@@ -904,7 +1081,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "6. Emissive"
+            "Emissive ",
+            "Color - emissive_color.jpeg",
+            "Weight - 0",
+            "Intensity - 0",
+            "Double Sided - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -923,7 +1104,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.jpeg"
+            "Color - emissive_color.jpeg",
+            "Weight - emissive_weight.jpeg",
+            "Intensity - emissive_intensity.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -942,7 +1125,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.jpeg"
+            "Color - emissive_color.jpeg",
+            "Weight - emissive_weight.tiff",
+            "Intensity - emissive_intensity.tiff"
         ],
         "scene": "Uber.ma"
     },
@@ -960,7 +1145,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.png"
+            "Color - emissive_color.png",
+            "Weight - 0.5",
+            "Intensity - emissive_intensity.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -979,7 +1166,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.png"
+            "Color - emissive_color.png",
+            "Weight - emissive_weight.png",
+            "Intensity - emissive_intensity.exr"
         ],
         "scene": "Uber.ma"
     },
@@ -997,7 +1186,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.png"
+            "Color - emissive_color.png",
+            "Weight - emissive_weight.tiff",
+            "Double Sided - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -1012,7 +1203,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - 0"
+            "Weight - 0",
+            "Intensity - 10"
         ],
         "scene": "Uber.ma"
     },
@@ -1032,7 +1224,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.exr"
+            "Color - emissive_color.exr",
+            "Weight - emissive_weight.png",
+            "Intensity - emissive_intensity.tiff",
+            "Double Sided - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -1048,7 +1243,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.exr"
+            "Color - emissive_color.exr",
+            "Intensity - 10"
         ],
         "scene": "Uber.ma"
     },
@@ -1066,7 +1262,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.exr"
+            "Color - emissive_color.exr",
+            "Weight - 0",
+            "Intensity - emissive_intensity.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -1082,7 +1280,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - 0.5"
+            "Weight - 0.5",
+            "Intensity - emissive_intensity.png"
         ],
         "scene": "Uber.ma"
     },
@@ -1099,7 +1298,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.tiff"
+            "Color - emissive_color.tiff",
+            "Weight - emissive_weight.png"
         ],
         "scene": "Uber.ma"
     },
@@ -1117,7 +1317,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.tiff"
+            "Color - emissive_color.tiff",
+            "Weight - emissive_weight.tiff",
+            "Intensity - 10"
         ],
         "scene": "Uber.ma"
     },
@@ -1136,7 +1338,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Color - emissive_color.tiff"
+            "Color - emissive_color.tiff",
+            "Weight - 0.5",
+            "Intensity - emissive_intensity.exr",
+            "Double Sided - Activate"
         ],
         "scene": "Uber.ma"
     },
@@ -1153,7 +1358,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - emissive_weight.jpeg"
+            "Weight - emissive_weight.jpeg",
+            "Intensity - emissive_intensity.tiff"
         ],
         "scene": "Uber.ma"
     },
@@ -1172,7 +1378,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "7. SSS"
+            "SSS",
+            "Scattering Color - HSV: 0, 0, 0",
+            "Subsurface Radius - SS: 3, 3, 3",
+            "Scattering Direction - 1",
+            "Multiple Scattering - Deactivate"
         ],
         "scene": "Uber.ma"
     },
@@ -1190,7 +1400,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - subsurfacescattering_weight.jpeg"
+            "Weight - subsurfacescattering_weight.jpeg",
+            "Use Diffuse Color - Activate",
+            "Subsurface Radius - subsurfacescattering_subsurfaceradius.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -1210,7 +1422,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - subsurfacescattering_weight.jpeg"
+            "Weight - subsurfacescattering_weight.jpeg",
+            "Scattering Color - subsurfacescattering_scatteringcolor.png",
+            "Subsurface Radius - SS: 3, 3, 3"
         ],
         "scene": "Uber.ma"
     },
@@ -1229,7 +1443,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - subsurfacescattering_weight.png"
+            "Weight - subsurfacescattering_weight.png",
+            "Use Diffuse Color - Activate",
+            "Subsurface Radius - subsurfacescattering_subsurfaceradius.png",
+            "Multiple Scattering - Deactivate"
         ],
         "scene": "Uber.ma"
     },
@@ -1249,7 +1466,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - subsurfacescattering_weight.exr"
+            "Weight - subsurfacescattering_weight.exr",
+            "Scattering Color - subsurfacescattering_scatteringcolor.exr",
+            "Subsurface Radius - subsurfacescattering_subsurfaceradius.exr",
+            "Scattering Direction - -1"
         ],
         "scene": "Uber.ma"
     },
@@ -1268,7 +1488,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - subsurfacescattering_weight.exr"
+            "Weight - subsurfacescattering_weight.exr",
+            "Use Diffuse Color - Activate",
+            "Subsurface Radius - subsurfacescattering_subsurfaceradius.tiff",
+            "Scattering Direction - 1"
         ],
         "scene": "Uber.ma"
     },
@@ -1287,7 +1510,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - subsurfacescattering_weight.tiff"
+            "Weight - subsurfacescattering_weight.tiff",
+            "Scattering Color - HSV: 0, 0, 0",
+            "Subsurface Radius - subsurfacescattering_subsurfaceradius.tiff",
+            "Multiple Scattering - Deactivate"
         ],
         "scene": "Uber.ma"
     },
@@ -1306,7 +1532,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - subsurfacescattering_weight.tiff"
+            "Weight - subsurfacescattering_weight.tiff",
+            "Use Diffuse Color - Activate",
+            "Subsurface Radius - SS: 1, 1, 1"
         ],
         "scene": "Uber.ma"
     },
@@ -1324,7 +1552,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - 0"
+            "Weight - 0",
+            "Use Diffuse Color - Activate",
+            "Subsurface Radius - subsurfacescattering_subsurfaceradius.jpeg",
+            "Scattering Direction - -1"
         ],
         "scene": "Uber.ma"
     },
@@ -1341,7 +1572,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - 0"
+            "Weight - 0",
+            "Scattering Color - subsurfacescattering_scatteringcolor.tiff",
+            "Multiple Scattering - Deactivate"
         ],
         "scene": "Uber.ma"
     },
@@ -1358,7 +1591,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - 0.5"
+            "Weight - 0.5",
+            "Use Diffuse Color - Activate",
+            "Subsurface Radius - subsurfacescattering_subsurfaceradius.exr"
         ],
         "scene": "Uber.ma"
     },
@@ -1376,7 +1611,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Weight - 0.5"
+            "Weight - 0.5",
+            "Scattering Color - HSV: 0, 0, 1",
+            "Subsurface Radius - SS: 1, 1, 1"
         ],
         "scene": "Uber.ma"
     },
@@ -1390,7 +1627,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "8. Material Settings"
+            "Material Settings",
+            "Use Transparency - Yes",
+            "Transparency - 0.5"
         ],
         "scene": "Uber.ma"
     },
@@ -1405,7 +1644,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Use Transparency - Yes"
+            "Use Transparency - Yes",
+            "Transparency - transparency_transparency.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -1420,7 +1660,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Use Transparency - Yes"
+            "Use Transparency - Yes",
+            "Transparency - transparency_transparency.png"
         ],
         "scene": "Uber.ma"
     },
@@ -1434,7 +1675,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Use Transparency - Yes"
+            "Use Transparency - Yes",
+            "Transparency - 0"
         ],
         "scene": "Uber.ma"
     },
@@ -1449,7 +1691,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Use Normal Map - Yes"
+            "Use Normal Map - Yes",
+            "Normal Map - HSV: 0, 0, 0"
         ],
         "scene": "Uber.ma"
     },
@@ -1463,7 +1706,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Use Normal Map - Yes"
+            "Use Normal Map - Yes",
+            "Normal Map - normal_normalmap.jpeg"
         ],
         "scene": "Uber.ma"
     },
@@ -1477,7 +1721,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Use Normal Map - Yes"
+            "Use Normal Map - Yes",
+            "Normal Map - normal_normalmap.png"
         ],
         "scene": "Uber.ma"
     },
@@ -1491,7 +1736,8 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Use Normal Map - Yes"
+            "Use Normal Map - Yes",
+            "Normal Map - normal_normalmap.exr"
         ],
         "scene": "Uber.ma"
     },
@@ -1510,7 +1756,12 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - HSV: 0"
+            "Displacement Map - HSV: 0, 0, 1",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 1",
+            "Subdivision - 1",
+            "Crease Weight - 10",
+            "Boundary - Edge and Corner"
         ],
         "scene": "Uber.ma"
     },
@@ -1528,7 +1779,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - HSV: 0"
+            "Displacement Map - HSV: 0, 0, 1",
+            "Displacement Min Value - 10",
+            "Displacement Max Value - 10",
+            "Subdivision - 7",
+            "Crease Weight - 50"
         ],
         "scene": "Uber.ma"
     },
@@ -1546,7 +1801,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - HSV: 0"
+            "Displacement Map - HSV: 0, 0, 1",
+            "Displacement Min Value - 50",
+            "Displacement Max Value - 50",
+            "Subdivision - 8",
+            "Crease Weight - 100"
         ],
         "scene": "Uber.ma"
     },
@@ -1562,7 +1821,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - HSV: 0"
+            "Displacement Map - HSV: 0, 0, 1",
+            "Displacement Min Value - 100",
+            "Displacement Max Value - 100"
         ],
         "scene": "Uber.ma"
     },
@@ -1581,7 +1842,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.jpeg"
+            "Displacement Map - displacement_displacementmap.jpeg",
+            "Displacement Min Value - 50",
+            "Displacement Max Value - 100",
+            "Crease Weight - 10",
+            "Boundary - Edge and Corner"
         ],
         "scene": "Uber.ma"
     },
@@ -1599,7 +1864,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.jpeg"
+            "Displacement Map - displacement_displacementmap.jpeg",
+            "Displacement Min Value - 100",
+            "Subdivision - 1",
+            "Crease Weight - 50"
         ],
         "scene": "Uber.ma"
     },
@@ -1617,7 +1885,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.jpeg"
+            "Displacement Map - displacement_displacementmap.jpeg",
+            "Displacement Max Value - 1",
+            "Subdivision - 7",
+            "Crease Weight - 100"
         ],
         "scene": "Uber.ma"
     },
@@ -1635,7 +1906,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.jpeg"
+            "Displacement Map - displacement_displacementmap.jpeg",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 10",
+            "Subdivision - 2"
         ],
         "scene": "Uber.ma"
     },
@@ -1653,7 +1927,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.png"
+            "Displacement Map - displacement_displacementmap.png",
+            "Displacement Min Value - 100",
+            "Displacement Max Value - 1",
+            "Subdivision - 4"
         ],
         "scene": "Uber.ma"
     },
@@ -1670,7 +1947,9 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.png"
+            "Displacement Map - displacement_displacementmap.png",
+            "Displacement Max Value - 10",
+            "Crease Weight - 10"
         ],
         "scene": "Uber.ma"
     },
@@ -1689,7 +1968,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.png"
+            "Displacement Map - displacement_displacementmap.png",
+            "Displacement Min Value - 10",
+            "Displacement Max Value - 100",
+            "Subdivision - 1",
+            "Crease Weight - 100"
         ],
         "scene": "Uber.ma"
     },
@@ -1707,7 +1990,11 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.exr"
+            "Displacement Map - displacement_displacementmap.exr",
+            "Displacement Min Value - 10",
+            "Subdivision - 8",
+            "Crease Weight - 10",
+            "Boundary - Edge and Corner"
         ],
         "scene": "Uber.ma"
     },
@@ -1725,7 +2012,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.exr"
+            "Displacement Map - displacement_displacementmap.exr",
+            "Displacement Min Value - 50",
+            "Displacement Max Value - 1",
+            "Crease Weight - 50"
         ],
         "scene": "Uber.ma"
     },
@@ -1743,7 +2033,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.tiff"
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 10",
+            "Displacement Max Value - 1",
+            "Boundary - Edge and Corner"
         ],
         "scene": "Uber.ma"
     },
@@ -1761,7 +2054,10 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "Displacement Map - displacement_displacementmap.tiff"
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 50",
+            "Displacement Max Value - 10",
+            "Subdivision - 1"
         ],
         "scene": "Uber.ma"
     }

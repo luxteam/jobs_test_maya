@@ -3,7 +3,8 @@
         "case": "MAYA_RS_RS_001",
         "status": "active",
         "script_info": [
-            "Base stamp"
+            "Base stamp",
+            "Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl"
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
@@ -16,7 +17,8 @@
         "case": "MAYA_RS_RS_002",
         "status": "active",
         "script_info": [
-            "CPU&GPU stamp"
+            "CPU&GPU stamp",
+            "Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl"
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
@@ -29,7 +31,8 @@
         "case": "MAYA_RS_RS_003",
         "status": "active",
         "script_info": [
-            "Computer name stamp"
+            "Computer name stamp",
+            "Radeon ProRender for Blender %b | Computer name %i | Current date %d"
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
