@@ -10,7 +10,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 1)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.417)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.945)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -24,7 +25,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 2)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.417)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.945)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -38,7 +40,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 3)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.417)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.945)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -52,7 +55,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 4)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.417)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.945)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -66,7 +70,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.404)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.295)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -80,7 +85,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.493)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.292)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -94,7 +100,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.864)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.63)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -108,7 +115,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.816)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.612)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -122,7 +130,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.98)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.735)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -136,7 +145,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.825)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.446)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -150,7 +160,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.864)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.732)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -164,7 +175,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 2.066)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.906)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -178,7 +190,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.485)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.991)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {
@@ -192,7 +205,8 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 2.772)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 2.072)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
         ]
     },
     {

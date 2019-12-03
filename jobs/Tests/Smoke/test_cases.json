@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_SM_001", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "check_test_cases_success_save"
         ], 
@@ -11,7 +11,7 @@
     }, 
     {
         "case": "MAYA_SM_002", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "check_test_cases_success_save"
         ], 
@@ -21,7 +21,7 @@
     }, 
     {
         "case": "MAYA_SM_003", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "mel.eval('FBXImport -f (\"' + RES_PATH + '\" + \"/sourceimages/park_bench1.fbx\")')", 
             "rpr_render(test_case, script_info)", 
@@ -35,7 +35,7 @@
     }, 
     {
         "case": "MAYA_SM_004", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.file(RES_PATH + '/sourceimages/example.obj', i=True, type='OBJ', options='mo=-1', pr=True)",
             "cmds.rename('polySurface1', 'Shader_Ball')",
@@ -52,7 +52,7 @@
     }, 
     {
         "case": "MAYA_SM_005", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "check_test_cases_success_save"
         ], 
@@ -62,16 +62,15 @@
     }, 
     {
         "case": "MAYA_SM_006", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.hide('ground')", 
-            "cmds.createNode('RPRIBL', n='RPRIBLShape')", 
-            "parent = cmds.listRelatives(\"RPRIBLShape\", p=True)", 
-            "cmds.setAttr(parent[0] + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
-            "cmds.rename(parent[0], 'RPRIBLShape')", 
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')", 
+            "ibl_transform = cmds.listRelatives(ibl_shape, p=True)[0]", 
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
             "rpr_render(test_case, script_info)", 
             "cmds.showHidden('ground')",
-            "cmds.delete('RPRIBLShape')"
+            "cmds.delete(ibl_transform)"
         ], 
         "script_info": [
             "Create IBL", 
@@ -81,17 +80,16 @@
     }, 
     {
         "case": "MAYA_SM_007", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.hide('ground')", 
-            "cmds.createNode('RPRIBL', n='RPRIBLShape')", 
-            "parent = cmds.listRelatives('RPRIBLShape', p=True)", 
-            "cmds.setAttr(parent[0] + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
-            "cmds.rename(parent[0], 'RPRIBLShape')", 
-            "cmds.setAttr('RPRIBLShape.filePath', RES_PATH + '/sourceimages/Tropical_Beach_3k.hdr', type='string')", 
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')", 
+            "ibl_transform = cmds.listRelatives(ibl_shape, p=True)[0]", 
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "cmds.setAttr(ibl_shape + '.filePath', RES_PATH + '/sourceimages/Tropical_Beach_3k.hdr', type='string')", 
             "rpr_render(test_case, script_info)", 
             "cmds.showHidden('ground')",
-            "cmds.delete('RPRIBLShape')"
+            "cmds.delete(ibl_transform)"
         ], 
         "script_info": [
             "Test IBL HDR", 
@@ -101,17 +99,16 @@
     }, 
     {
         "case": "MAYA_SM_008", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.hide('ground')", 
-            "cmds.createNode('RPRIBL', n='RPRIBLShape')", 
-            "parent = cmds.listRelatives('RPRIBLShape', p=True)", 
-            "cmds.setAttr(parent[0] + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
-            "cmds.rename(parent[0], 'RPRIBLShape')",
-            "cmds.setAttr('RPRIBLShape.filePath', RES_PATH + '/sourceimages/ibl_test.exr', type='string')", 
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')", 
+            "ibl_transform = cmds.listRelatives(ibl_shape, p=True)[0]", 
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
+            "cmds.setAttr(ibl_shape + '.filePath', RES_PATH + '/sourceimages/ibl_test.exr', type='string')", 
             "rpr_render(test_case, script_info)", 
             "cmds.showHidden('ground')",
-            "cmds.delete('RPRIBLShape')"
+            "cmds.delete(ibl_transform)"
         ], 
         "script_info": [
             "Test IBL EXR", 
@@ -121,13 +118,14 @@
     }, 
     {
         "case": "MAYA_SM_009", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
-            "cmds.createNode('RPRSky', n='RPRSkyShape')", 
-            "cmds.setAttr('RPRSkyShape.turbidity', 30)", 
-            "cmds.setAttr('RPRSkyShape.intensity', 6)", 
+            "sky_shape = cmds.createNode('RPRSky', n='RPRSkyShape')", 
+            "sky_transform = cmds.listRelatives(sky_shape, p=True)[0]", 
+            "cmds.setAttr(sky_shape + '.turbidity', 30)", 
+            "cmds.setAttr(sky_shape + '.intensity', 6)", 
             "rpr_render(test_case, script_info)", 
-            "cmds.delete('RPRSkyShape')"
+            "cmds.delete(sky_transform)"
         ], 
         "script_info": [
             "Create Sun&Sky", 
@@ -137,16 +135,16 @@
     }, 
     {
         "case": "MAYA_SM_010", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
-            "mel.eval('source shelfCommands.mel; createIESLight()')", 
-            "cmds.setAttr('RPRIESLight.iesFile', RES_PATH + '/sourceimages/1.IES', type='string')", 
-            "cmds.select('RPRIES1', r=True)", 
-            "cmds.setAttr('RPRIES1.translate', 15, 320, -100)", 
-            "cmds.rotate(90, 0, r=True, os=True, fo=0)", 
-            "cmds.setAttr('RPRIESLight.intensity', 20)", 
+            "rprLightShape = cmds.createNode('RPRIES', n='RPRIESLight')", 
+            "rprTransform = cmds.listRelatives(rprLightShape, p=True)[0]",
+            "cmds.setAttr(rprLightShape + '.iesFile', RES_PATH + '/sourceimages/1.IES', type='string')", 
+            "cmds.setAttr(rprTransform + '.translate', 15, 320, -100)", 
+            "cmds.setAttr(rprTransform + '.rotate', 90, 0, 0)", 
+            "cmds.setAttr(rprLightShape + '.intensity', 20)", 
             "rpr_render(test_case, script_info)", 
-            "cmds.delete('RPRIES1')"
+            "cmds.delete(rprTransform)"
         ], 
         "script_info": [
             "Create IES Light", 
@@ -156,7 +154,7 @@
     }, 
     {
         "case": "MAYA_SM_011", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "Render 1 pass"
         ], 
@@ -168,7 +166,7 @@
     }, 
     {
         "case": "MAYA_SM_012", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "Render 100 pass"
         ], 
@@ -180,7 +178,7 @@
     }, 
     {
         "case": "MAYA_SM_013", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "Render 500 pass"
         ], 
@@ -192,7 +190,7 @@
     }, 
     {
         "case": "MAYA_SM_014", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)", 
@@ -208,7 +206,7 @@
     }, 
     {
         "case": "MAYA_SM_015", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', 1)", 
             "rpr_render(test_case, script_info)", 
@@ -222,7 +220,7 @@
     }, 
     {
         "case": "MAYA_SM_016", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 4)", 
             "rpr_render(test_case, script_info)", 
@@ -236,7 +234,7 @@
     }, 
     {
         "case": "MAYA_SM_017", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.samples', 8)", 
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 15)", 
@@ -252,7 +250,7 @@
     }, 
     {
         "case": "MAYA_SM_018", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('defaultResolution.width', 1280)", 
             "cmds.setAttr('defaultResolution.height', 720)", 
@@ -274,7 +272,7 @@
     }, 
     {
         "case": "MAYA_SM_019", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('defaultResolution.width', 1500)", 
             "cmds.setAttr('defaultResolution.height', 1125)", 
@@ -293,7 +291,7 @@
     }, 
     {
         "case": "MAYA_SM_020", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)", 
             "rpr_render(test_case, script_info)",             
@@ -308,7 +306,7 @@
     }, 
     {
         "case": "MAYA_SM_021", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 8)", 
             "rpr_render(test_case, script_info)"
@@ -321,7 +319,7 @@
     }, 
     {
         "case": "MAYA_SM_022", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
@@ -337,7 +335,7 @@
     }, 
     {
         "case": "MAYA_SM_023", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
@@ -352,7 +350,7 @@
     }, 
     {
         "case": "MAYA_SM_024", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
@@ -367,9 +365,9 @@
     }, 
     {
         "case": "MAYA_SM_025", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
-            "light_transform = cmd.shadingNode('areaLight', asLight=True)",
+            "light_transform = cmds.shadingNode('areaLight', asLight=True)",
             "cmds.setAttr(light_transform + '.intensity', 20)", 
             "cmds.setAttr(light_transform + '.translateY', 400)", 
             "cmds.setAttr(light_transform + '.rotateX', 270)", 
@@ -384,7 +382,7 @@
     }, 
     {
         "case": "MAYA_SM_026", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 3)", 
             "rpr_render(test_case, script_info)", 
@@ -398,16 +396,16 @@
     }, 
     {
         "case": "MAYA_SM_027", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
-            "mel.eval('source shelfCommands.mel; createPhysicalLight()')", 
-            "cmds.select('RPRPhysicalLight1', r=True)", 
-            "cmds.setAttr('RPRPhysicalLight1.translateY', 400)", 
-            "cmds.setAttr('RPRPhysicalLight1.rotateX', 270)", 
-            "cmds.setAttr('RPRPhysicalLight1Shape.lightIntensity', 100)", 
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)", 
+            "rprLightShape = cmds.createNode('RPRPhysicalLight', n='RPRPhysicalLightShape')", 
+            "rprTransform = cmds.listRelatives(rprLightShape, p=True)[0]",
+            "cmds.setAttr(rprTransform + '.translateY', 400)", 
+            "cmds.setAttr(rprTransform + '.rotateX', 270)", 
+            "cmds.setAttr(rprLightShape + '.lightIntensity', 100)", 
+            "cmds.setAttr(rprLightShape + '.intensityUnits', 0)", 
             "rpr_render(test_case, script_info)", 
-            "cmds.delete('RPRPhysicalLight1')"
+            "cmds.delete(rprTransform)"
         ], 
         "script_info": [
             "Physical Light", 
@@ -417,7 +415,7 @@
     }, 
     {
         "case": "MAYA_SM_028", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "libraryPath = fireRender.rpr_material_browser.getLibPath()", 
             "material = 'Fiberglass'", 
@@ -437,7 +435,7 @@
     }, 
     {
         "case": "MAYA_SM_029", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "rpr = cmds.shadingNode('RPRPbrMaterial', asShader=True)", 
             "cmds.setAttr(rpr + '.color', 0, 0, 1)", 
@@ -445,12 +443,12 @@
             "cmds.sets(renderable=True, noSurfaceShader=True, empty=True, name=sge)", 
             "cmds.connectAttr(rpr + '.outColor', sge + '.surfaceShader', f=True)", 
             "cmds.select('Lamborginhi_Aventador', r=True)", 
-            "sgs = cmds.listConnections( -type shadingEngine \"' + rpr + '\"')", 
+            "sgs = cmds.listConnections(rpr, type='shadingEngine')", 
             "cmds.sets(e=True, forceElement=sgs[0])", 
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
-            "Assign Pbr to object", 
+            "Assign Pbr to objec00t", 
             "Pass Limit: 50"
         ], 
         "scene": "Lamborginhi_Aventador.ma"
@@ -459,14 +457,14 @@
         "case": "MAYA_SM_030", 
         "status": "active", 
         "functions": [
-            "rpr = cmd.shadingNode('RPRUberMaterial', asShader=True)",
-            "cmds.setAttr((rpr + '.diffuse'), 1)", 
-            "cmds.setAttr((rpr + '.diffuseColor'), 1, 0, 0)", 
+            "rpr = cmds.shadingNode('RPRUberMaterial', asShader=True)",
+            "cmds.setAttr(rpr + '.diffuse', 1)", 
+            "cmds.setAttr(rpr + '.diffuseColor', 1, 0, 0)", 
             "sge = rpr + 'SG'", 
             "cmds.sets(renderable=True, noSurfaceShader=True, empty=True, name=sge)", 
-            "cmds.connectAttr((rpr + '.outColor'), (sge + '.surfaceShader'), f=True)", 
+            "cmds.connectAttr(rpr + '.outColor', sge + '.surfaceShader', f=True)", 
             "cmds.select('Lamborginhi_Aventador', r=True)", 
-            "sgs = mel.eval('listConnections -type shadingEngine \"' + rpr +'\"')", 
+            "sgs = cmds.listConnections(rpr, type='shadingEngine')", 
             "cmds.sets(e=True, forceElement=sgs[0])", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -478,7 +476,7 @@
     }, 
     {
         "case": "MAYA_SM_031", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.select('Cube', r=True)", 
             "mel.eval('instance; rotate -r 0 10 0; move -r 0.025 0.025 0.025; for ($i=1; $i<500; ++$i) instance -st;')", 
@@ -492,7 +490,7 @@
     }, 
     {
         "case": "MAYA_SM_032", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RPRIESLight1.iesFile', (RES_PATH + '/sourceimages/1.IES'), type='string')", 
             "cmds.setAttr('RPRIESLight1.intensity', 2)", 
@@ -510,7 +508,7 @@
     }, 
     {
         "case": "MAYA_SM_033", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.aovOpacity', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.aovBackground', 1)", 
@@ -532,7 +530,7 @@
     }, 
     {
         "case": "MAYA_SM_034", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "SSS", 
             "Pass Limit: 100"
@@ -545,7 +543,7 @@
     }, 
     {
         "case": "MAYA_SM_035", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 15)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 400)", 
@@ -561,7 +559,7 @@
     }, 
     {
         "case": "MAYA_SM_036", 
-        "status": "active", 
+        "status": "skipped", 
         "script_info": [
             "Displacement", 
             "Pass Limit: 50"
@@ -572,14 +570,11 @@
         "case": "MAYA_SM_037", 
         "status": "active", 
         "functions": [
-            "cmds.hide('ground')", 
-            "cmds.createNode('RPRIBL', n='RPRIBLShape')", 
-            "parent = cmds.listRelatives('RPRIBLShape', p=True)", 
-            "cmds.setAttr(parent[0] + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
-            "cmds.rename(parent[0], 'RPRIBLShape')", 
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')", 
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]", 
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
             "rpr_render(test_case, script_info)", 
-            "cmds.showHidden('ground')",
-            "cmds.delete('RPRIBLShape')"
+            "cmds.delete(ibl_transform)"
         ], 
         "script_info": [
             "Bifrost"
