@@ -292,7 +292,11 @@ if __name__ == "__main__":
                 cases += re.findall(pattern, script_template)
 
             # prepare needed reports
-            render_device = get_gpu()
+            render_device = get_gpu().replace('NVIDIA', '')
+            # TODO: fix get_gpu() function
+            if platform.system() == 'Darwin':
+                render_device = 'AMD ' + get_gpu() + ' (Metal)'
+                
             for case in cases:
                 name = re.search('MAYA_\w*', case).group(0)
 
