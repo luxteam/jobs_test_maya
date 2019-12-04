@@ -24,15 +24,15 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardi
 PROCESS = ['Maya', 'maya.exe']
 
 if platform.system() == 'Darwin':
-    # from PyObjCTools import AppHelper
-    # import objc
-    # from objc import super
-    # from Cocoa import NSWorkspace
-    # from AppKit import NSWorkspace
-    from Quartz import CGWindowListCopyWindowInfo
-    from Quartz import kCGWindowListOptionOnScreenOnly
-    from Quartz import kCGNullWindowID
-    from Quartz import kCGWindowName
+	# from PyObjCTools import AppHelper
+	# import objc
+	# from objc import super
+	# from Cocoa import NSWorkspace
+	# from AppKit import NSWorkspace
+	from Quartz import CGWindowListCopyWindowInfo
+	from Quartz import kCGWindowListOptionOnScreenOnly
+	from Quartz import kCGNullWindowID
+	from Quartz import kCGWindowName
 
 
 def get_windows_titles():
@@ -95,17 +95,17 @@ def createArgsParser():
 
 def check_licenses(res_path, maya_scenes):
 	try:
-    	for scene in maya_scenes:
-    		with open(os.path.join(res_path, scene[:-1])) as f:
-    			scene_file = f.read()
+		for scene in maya_scenes:
+			with open(os.path.join(res_path, scene[:-1])) as f:
+				scene_file = f.read()
 
-    		license = "fileInfo \"license\" \"student\";"
-    		scene_file = scene_file.replace(license, '')
+			license = "fileInfo \"license\" \"student\";"
+			scene_file = scene_file.replace(license, '')
 
-    		with open(os.path.join(res_path, scene[:-1]), "w") as f:
-    			f.write(scene_file)
-    except Exception as ex:
-        core_config.main_logger.error("Error while deleting student license: {}".format(ex))
+			with open(os.path.join(res_path, scene[:-1]), "w") as f:
+				f.write(scene_file)
+	except Exception as ex:
+		core_config.main_logger.error("Error while deleting student license: {}".format(ex))
 
 
 def main(args):
@@ -237,66 +237,66 @@ def main(args):
 		os.system('chmod +x {}'.format(cmdScriptPath))
 
 	core_config.main_logger.info("Starting maya")
-    os.chdir(args.output)
-    p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    rc = -1
+	os.chdir(args.output)
+	p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+	rc = -1
 
-    while True:
-        try:
-            p.communicate(timeout=40)
-            window_titles = get_windows_titles()
-            core_config.main_logger.info("Found windows: {}".format(window_titles))
-        except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
-            fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
-                'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
-                'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
-                'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
-            window_titles = get_windows_titles()
-            error_window = set(fatal_errors_titles).intersection(window_titles)
-            if error_window:
-                core_config.main_logger.info("Error window found: {}".format(error_window))
-                core_config.main_logger.info("Found windows: {}".format(window_titles))
-                rc = -1
+	while True:
+		try:
+			p.communicate(timeout=40)
+			window_titles = get_windows_titles()
+			core_config.main_logger.info("Found windows: {}".format(window_titles))
+		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
+			fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
+				'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
+				'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
+				'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
+			window_titles = get_windows_titles()
+			error_window = set(fatal_errors_titles).intersection(window_titles)
+			if error_window:
+				core_config.main_logger.info("Error window found: {}".format(error_window))
+				core_config.main_logger.info("Found windows: {}".format(window_titles))
+				rc = -1
 
-                if system_pl == 'Windows':
-                    try:
-                        error_screen = pyscreenshot.grab()
-                        error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
-                    except Exception as ex:
-                        pass
+				if system_pl == 'Windows':
+					try:
+						error_screen = pyscreenshot.grab()
+						error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
+					except Exception as ex:
+						pass
 
-                core_config.main_logger.info("Killing maya....")
+				core_config.main_logger.info("Killing maya....")
 
-                child_processes = p.children()
-                core_config.main_logger.info("Child processes: {}".format(child_processes))
-                for ch in child_processes:
-                    try:
-                        ch.terminate()
-                        time.sleep(10)
-                        ch.kill()
-                        time.sleep(10)
-                        status = ch.status()
-                        core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
-                    except psutil.NoSuchProcess:
-                        core_config.main_logger.info("Process is killed: {}".format(ch))
+				child_processes = p.children()
+				core_config.main_logger.info("Child processes: {}".format(child_processes))
+				for ch in child_processes:
+					try:
+						ch.terminate()
+						time.sleep(10)
+						ch.kill()
+						time.sleep(10)
+						status = ch.status()
+						core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
+					except psutil.NoSuchProcess:
+						core_config.main_logger.info("Process is killed: {}".format(ch))
 
-                try:
-                    p.terminate()
-                    time.sleep(10)
-                    p.kill()
-                    time.sleep(10)
-                    status = ch.status()
-                    core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
-                except psutil.NoSuchProcess:
-                    core_config.main_logger.info("Process is killed: {}".format(ch))
-                
-                break
-        else:
-            rc = 0
-            break
+				try:
+					p.terminate()
+					time.sleep(10)
+					p.kill()
+					time.sleep(10)
+					status = ch.status()
+					core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
+				except psutil.NoSuchProcess:
+					core_config.main_logger.info("Process is killed: {}".format(ch))
+				
+				break
+		else:
+			rc = 0
+			break
 
-    core_config.main_logger.info("Main func return : {}".format(rc))
-    return rc
+	core_config.main_logger.info("Main func return : {}".format(rc))
+	return rc
 
 
 def group_failed(args):
