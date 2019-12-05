@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_RS_DEN_001",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Bilateral Denoiser",
             "Radius - 1"
@@ -15,7 +15,7 @@
     },
     {
         "case": "MAYA_RS_DEN_002",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Bilateral Denoiser",
             "Radius - 5"
@@ -29,7 +29,7 @@
     },
     {
         "case": "MAYA_RS_DEN_003",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Bilateral Denoiser",
             "Radius - 10"
@@ -43,7 +43,7 @@
     },
     {
         "case": "MAYA_RS_DEN_004",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Default settings"
@@ -60,7 +60,7 @@
     },
     {
         "case": "MAYA_RS_DEN_005",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Samples - 5"
@@ -77,7 +77,7 @@
     },
     {
         "case": "MAYA_RS_DEN_006",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Samples - 10"
@@ -94,7 +94,7 @@
     },
     {
         "case": "MAYA_RS_DEN_007",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Filter Radius - 5"
@@ -111,7 +111,7 @@
     },
     {
         "case": "MAYA_RS_DEN_008",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Filter Radius - 10"
@@ -128,7 +128,7 @@
     },
     {
         "case": "MAYA_RS_DEN_009",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Bandwidth - 0.1"
@@ -145,7 +145,7 @@
     },
     {
         "case": "MAYA_RS_DEN_010",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Bandwidth - 0.5"
@@ -162,7 +162,7 @@
     },
     {
         "case": "MAYA_RS_DEN_011",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Samples - 2",
@@ -181,7 +181,7 @@
     },
     {
         "case": "MAYA_RS_DEN_012",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Samples - 5",
@@ -200,7 +200,7 @@
     },
     {
         "case": "MAYA_RS_DEN_013",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR Denoiser",
             "Samples - 10",
@@ -219,7 +219,7 @@
     },
     {
         "case": "MAYA_RS_DEN_014",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Default Settings"
@@ -237,7 +237,7 @@
     },
     {
         "case": "MAYA_RS_DEN_015",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Color - 0.1"
@@ -255,7 +255,7 @@
     },
     {
         "case": "MAYA_RS_DEN_016",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Color - 0.5"
@@ -273,7 +273,7 @@
     },
     {
         "case": "MAYA_RS_DEN_017",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Depth - 0.1"
@@ -291,7 +291,7 @@
     },
     {
         "case": "MAYA_RS_DEN_018",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Depth - 0.5"
@@ -309,7 +309,7 @@
     },
     {
         "case": "MAYA_RS_DEN_019",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Normal - 0.1"
@@ -327,7 +327,7 @@
     },
     {
         "case": "MAYA_RS_DEN_020",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Normal - 0.5"
@@ -345,7 +345,7 @@
     },
     {
         "case": "MAYA_RS_DEN_021",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Trans - 0.1"
@@ -363,7 +363,7 @@
     },
     {
         "case": "MAYA_RS_DEN_022",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Trans - 0.5"
@@ -381,7 +381,7 @@
     },
     {
         "case": "MAYA_RS_DEN_023",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Color - 0.1",
@@ -402,7 +402,7 @@
     },
     {
         "case": "MAYA_RS_DEN_024",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW Denoiser",
             "Color - 0.5",
@@ -423,7 +423,7 @@
     },
     {
         "case": "MAYA_RS_DEN_025",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Machine Learning type"
         ],
@@ -436,7 +436,7 @@
     },
     {
         "case": "MAYA_RS_DEN_026",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser ML Metal Material",
             "Color"
@@ -451,7 +451,7 @@
     },
     {
         "case": "MAYA_RS_DEN_027",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser ML Metal Material",
             "Color+AOV"
@@ -466,7 +466,7 @@
     },
     {
         "case": "MAYA_RS_DEN_028",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser ML Metal Material",
             "Color",
@@ -484,7 +484,7 @@
     },
     {
         "case": "MAYA_RS_DEN_029",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser ML Metal Material",
             "Color+AOV",
@@ -502,7 +502,7 @@
     },
     {
         "case": "MAYA_RS_DEN_030",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser Bilateral Metal Material",
             "Radius 1"
@@ -517,7 +517,7 @@
     },
     {
         "case": "MAYA_RS_DEN_031",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser Bilateral Metal Material",
             "Radius 5"
@@ -532,7 +532,7 @@
     },
     {
         "case": "MAYA_RS_DEN_032",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser Bilateral Metal Material",
             "Radius 10"
@@ -547,7 +547,7 @@
     },
     {
         "case": "MAYA_RS_DEN_033",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser Bilateral Metal Material",
             "Radius 1",
@@ -565,7 +565,7 @@
     },
     {
         "case": "MAYA_RS_DEN_034",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser LWR Metal Material",
             "Samples  5"
@@ -581,7 +581,7 @@
     },
     {
         "case": "MAYA_RS_DEN_035",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser LWR Metal Material",
             "Samples 10"
@@ -597,7 +597,7 @@
     },
     {
         "case": "MAYA_RS_DEN_036",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser LWR Metal Material",
             "Filter Radius - 5"
@@ -613,7 +613,7 @@
     },
     {
         "case": "MAYA_RS_DEN_037",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser LWR Metal Material",
             "Filter Radius - 10"
@@ -629,7 +629,7 @@
     },
     {
         "case": "MAYA_RS_DEN_038",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser LWR Metal Material",
             "Bandwidth - 0.1"
@@ -645,7 +645,7 @@
     },
     {
         "case": "MAYA_RS_DEN_039",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser EAW Metal Material",
             "Color - 0.1",
@@ -670,7 +670,7 @@
     },
     {
         "case": "MAYA_RS_DEN_040",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser EAW Metal Material",
             "Color - 0.5",
@@ -695,7 +695,7 @@
     },
     {
         "case": "MAYA_RS_DEN_041",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "ML denoiser Lights "
         ],
@@ -711,7 +711,7 @@
     },
     {
         "case": "MAYA_RS_DEN_042",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "ML denoiser Lights AOV+Color"
         ],
@@ -727,7 +727,7 @@
     },
     {
         "case": "MAYA_RS_DEN_043",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "ML denoiser IES and Physcial"
         ],
@@ -743,7 +743,7 @@
     },
     {
         "case": "MAYA_RS_DEN_044",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "ML denoiser IES and Physcial"
         ],
@@ -759,7 +759,7 @@
     },
     {
         "case": "MAYA_RS_DEN_045",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW IES"
         ],
@@ -774,7 +774,7 @@
     },
     {
         "case": "MAYA_RS_DEN_046",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "EAW IES and Physcial Light"
         ],
@@ -789,7 +789,7 @@
     },
     {
         "case": "MAYA_RS_DEN_047",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Bilateral IES"
         ],
@@ -804,7 +804,7 @@
     },
     {
         "case": "MAYA_RS_DEN_048",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Bilateral IES and Physcal Light"
         ],
@@ -819,7 +819,7 @@
     },
     {
         "case": "MAYA_RS_DEN_049",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR IES"
         ],
@@ -834,7 +834,7 @@
     },
     {
         "case": "MAYA_RS_DEN_050",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "LWR IES and Physical Light"
         ],
@@ -849,7 +849,7 @@
     },
     {
         "case": "MAYA_RS_DEN_051",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "DOF ML Denoiser Color"
         ],
@@ -863,7 +863,7 @@
     },
     {
         "case": "MAYA_RS_DEN_052",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "DOF ML Denoiser Color+AOV"
         ],
@@ -877,7 +877,7 @@
     },
     {
         "case": "MAYA_RS_DEN_053",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "DOF EAW"
         ],
@@ -890,7 +890,7 @@
     },
     {
         "case": "MAYA_RS_DEN_054",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "DOF LWR"
         ],
@@ -903,7 +903,7 @@
     },
     {
         "case": "MAYA_RS_DEN_055",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "DOF Bilateral"
         ],
@@ -916,7 +916,7 @@
     },
     {
         "case": "MAYA_RS_DEN_056",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser IBL",
             "ML Denoiser",
@@ -932,7 +932,7 @@
     },
     {
         "case": "MAYA_RS_DEN_057",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser IBL",
             "ML Denoiser",
@@ -948,7 +948,7 @@
     },
     {
         "case": "MAYA_RS_DEN_058",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser IBL",
             "EAW"
@@ -962,7 +962,7 @@
     },
     {
         "case": "MAYA_RS_DEN_059",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser IBL",
             "LWR"
@@ -976,7 +976,7 @@
     },
     {
         "case": "MAYA_RS_DEN_060",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Denoiser IBL",
             "Bilateral"
@@ -990,7 +990,7 @@
     },
     {
         "case": "MAYA_RS_DEN_061",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Complex Lighting",
             "ML denoiser",
@@ -1006,7 +1006,7 @@
     },
     {
         "case": "MAYA_RS_DEN_062",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Complex Lighting",
             "Color+AOV",
@@ -1022,7 +1022,7 @@
     },
     {
         "case": "MAYA_RS_DEN_063",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Complex Lighting",
             "EAW",
@@ -1037,7 +1037,7 @@
     },
     {
         "case": "MAYA_RS_DEN_064",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Complex Lighting",
             "LWR",
@@ -1052,7 +1052,7 @@
     },
     {
         "case": "MAYA_RS_DEN_065",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Complex Lighting",
             "Bilateral",
@@ -1067,7 +1067,7 @@
     },
     {
         "case": "MAYA_RS_DEN_066",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Materials",
             "Color",
@@ -1083,7 +1083,7 @@
     },
     {
         "case": "MAYA_RS_DEN_067",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Materials",
             "Color+AOV",
@@ -1099,7 +1099,7 @@
     },
     {
         "case": "MAYA_RS_DEN_068",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Materials",
             "Denoiser EAW"
@@ -1113,7 +1113,7 @@
     },
     {
         "case": "MAYA_RS_DEN_069",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Materials",
             "Denoiser LWR"
@@ -1127,7 +1127,7 @@
     },
     {
         "case": "MAYA_RS_DEN_070",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Materials",
             "Denoiser Bilateral"
