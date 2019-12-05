@@ -633,7 +633,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.1001)", 
             "rpr_render(test_case, script_info)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1)"
         ], 
@@ -649,10 +649,10 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 0.1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 0.1001)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.1001)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.1001)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.1001)", 
             "rpr_render(test_case, script_info)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1)", 
