@@ -600,7 +600,7 @@
         "status": "skipped",
         "script_info": [
             "Denoiser LWR Metal Material",
-            "“Filter Radius” - 5"
+            "Filter Radius - 5"
         ],
         "scene": "DenoiserMetal.ma",
         "functions": [
@@ -616,7 +616,7 @@
         "status": "skipped",
         "script_info": [
             "Denoiser LWR Metal Material",
-            "“Filter Radius” - 10"
+            "Filter Radius - 10"
         ],
         "scene": "DenoiserMetal.ma",
         "functions": [
@@ -632,7 +632,7 @@
         "status": "skipped",
         "script_info": [
             "Denoiser LWR Metal Material",
-            "Bandwidth” - 0.1"
+            "Bandwidth - 0.1"
         ],
         "scene": "DenoiserMetal.ma",
         "functions": [
@@ -648,10 +648,10 @@
         "status": "skipped",
         "script_info": [
             "Denoiser EAW Metal Material",
-            "“Color” - 0.1",
-            "“Depth” - 0.1",
-            "“Normal” - 0.1",
-            "“Trans” - 0.1"
+            "Color - 0.1",
+            "Depth - 0.1",
+            "Normal - 0.1",
+            "Trans - 0.1"
         ],
         "scene": "DenoiserMetal.ma",
         "functions": [
@@ -673,10 +673,10 @@
         "status": "skipped",
         "script_info": [
             "Denoiser EAW Metal Material",
-            "“Color” - 0.5",
-            "“Depth” - 0.5",
-            "“Normal” - 0.5",
-            "“Trans” - 0.5"
+            "Color - 0.5",
+            "Depth - 0.5",
+            "Normal - 0.5",
+            "Trans - 0.5"
         ],
         "scene": "DenoiserMetal.ma",
         "functions": [
