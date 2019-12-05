@@ -585,6 +585,7 @@
         "case": "MAYA_SM_038", 
         "status": "active", 
         "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 10)",
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
@@ -596,6 +597,9 @@
         "case": "MAYA_SM_039", 
         "status": "active", 
         "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
@@ -607,6 +611,7 @@
         "case": "MAYA_SM_040", 
         "status": "active", 
         "functions": [
+            "cmds.editRenderLayerGlobals(crl='rs_ALL_SHADOW')",
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
@@ -618,6 +623,9 @@
         "case": "MAYA_SM_041", 
         "status": "active", 
         "functions": [
+            "cmds.setAttr('CheckerDotTexture.visibility', 0)",
+            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
+            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
@@ -629,6 +637,11 @@
         "case": "MAYA_SM_042", 
         "status": "active", 
         "functions": [
+            "file_tmp = setAttribute('emissionColor', 'outColor', 'sourceimages/EmissiveVariation1.exr')",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 0, 0, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 0, 0, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
@@ -640,7 +653,9 @@
         "case": "MAYA_SM_043", 
         "status": "active", 
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "rpr_render(test_case, script_info)",
+            "time.sleep(30)",
+            "with open(render_tool_log_path('MAYA_SM_043')) as f: if 'successfully uploaded data to AWS!' in f.read(): cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_SM_043.jpg'))"
         ], 
         "script_info": [
             "Athena check"
@@ -649,31 +664,34 @@
     }, 
     {
         "case": "MAYA_SM_044", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
             "Converter should convert scene with no error"
         ], 
-        "scene": "_Dragon.ma"
+        "scene": "09_Dragon.ma"
     }, 
     {
         "case": "MAYA_SM_045", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
             "Converter should convert scene with no error"
         ], 
-        "scene": "_Gun.ma"
+        "scene": "04_Gun.ma"
     }, 
     {
         "case": "MAYA_SM_046", 
         "status": "active", 
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "rpr_render(test_case, script_info)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
             "Machine Learning"
@@ -689,7 +707,8 @@
         "script_info": [
             "Maya 2017 checking"
         ], 
-        "scene": "Lambo_Lebrov.ma"
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2017"
     }, 
     {
         "case": "MAYA_SM_048", 
@@ -700,28 +719,37 @@
         "script_info": [
             "Maya 2018 checking"
         ], 
-        "scene": "Lambo_Lebrov.ma"
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2018"
     }, 
     {
         "case": "MAYA_SM_049", 
         "status": "active", 
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "rpr_render(test_case, script_info)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
             "Maya ML 2017 checking"
         ], 
-        "scene": "Lambo_Lebrov.ma"
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2017"
     }, 
     {
         "case": "MAYA_SM_050", 
         "status": "active", 
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "rpr_render(test_case, script_info)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
             "Maya ML 2018 checking"
         ], 
-        "scene": "Lambo_Lebrov.ma"
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2018"
     }
 ]
