@@ -313,6 +313,8 @@ def group_failed(args):
 		json.dump(cases, f, indent=4)
 
 	rc = main(args)
+	kill_process(PROCESS)
+	core_config.main_logger.info("Finish simpleRender with code: {}".format(rc))
 	exit(rc)
 
 
