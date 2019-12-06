@@ -354,8 +354,10 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 10)", 
             "rpr_render(test_case, script_info)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)"
         ], 
         "script_info": [
             "Denoiser EAW default", 
@@ -597,9 +599,10 @@
         "case": "MAYA_SM_039", 
         "status": "active", 
         "functions": [
+            "cmds.currentTime(440.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.0)",
-            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1)",
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
@@ -609,7 +612,7 @@
     }, 
     {
         "case": "MAYA_SM_040", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.editRenderLayerGlobals(crl='rs_ALL_SHADOW')",
             "rpr_render(test_case, script_info)"
@@ -621,7 +624,7 @@
     }, 
     {
         "case": "MAYA_SM_041", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
@@ -638,8 +641,8 @@
         "status": "active", 
         "functions": [
             "file_tmp = setAttribute('emissionColor', 'outColor', 'sourceimages/EmissiveVariation1.exr')",
-            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 0, 0, 1, type='double3')",
-            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 0, 0, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
             "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
             "rpr_render(test_case, script_info)"
