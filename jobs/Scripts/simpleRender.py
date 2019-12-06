@@ -175,7 +175,8 @@ def main(args):
 		for case in cases:
 			if (case['status'] == 'need another tool'):
 				args.tool = re.sub('[0-9]{4}', case['tool'], args.tool)
-				if not os.path.isfile(args.tool):					
+				if not os.path.isfile(args.tool):	
+					core_config.main_logger.error('Can\'t find tool ' + args.tool)
 					case['status'] = 'error'
 
 	for case in cases:
@@ -330,7 +331,7 @@ if __name__ == "__main__":
 
 	while True:
 		iteration += 1
-		core_config.main_logger.info('Iteration: ' + str(iteration))
+		core_config.main_logger.info('Try to run script in maya (#' + str(iteration) + ')')
 		rc = main(args)
 
 		try:

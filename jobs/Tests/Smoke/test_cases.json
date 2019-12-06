@@ -295,7 +295,7 @@
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)", 
             "rpr_render(test_case, script_info)",             
-            "cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_020.jpg'))"
+            "cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_SM_020.jpg'))"
 
         ], 
         "script_info": [
@@ -617,7 +617,7 @@
         "script_info": [
             "Render Layer Check"
         ], 
-        "scene": "render_layers.ma"
+        "scene": "render_layer.ma"
     }, 
     {
         "case": "MAYA_SM_041", 
@@ -651,7 +651,7 @@
     }, 
     {
         "case": "MAYA_SM_043", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "rpr_render(test_case, script_info)",
             "time.sleep(30)",
