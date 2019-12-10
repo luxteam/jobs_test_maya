@@ -174,10 +174,13 @@ def main(args):
 	if not active_cases_default_tool:
 		for case in cases:
 			if (case['status'] == 'need another tool'):
+				case['status'] = 'active'
 				args.tool = re.sub('[0-9]{4}', case['tool'], args.tool)
 				if not os.path.isfile(args.tool):	
 					core_config.main_logger.error('Can\'t find tool ' + args.tool)
 					case['status'] = 'error'
+				else:
+					break
 
 	for case in cases:
 		try:
