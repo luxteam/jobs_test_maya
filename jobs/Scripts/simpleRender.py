@@ -202,6 +202,7 @@ def main(args):
 
 			template = core_config.RENDER_REPORT_BASE
 			template["test_case"] = case["case"]
+			template["render_device"] = get_gpu()
 			template["test_status"] = 'error'
 			template["script_info"] = case["script_info"]
 
