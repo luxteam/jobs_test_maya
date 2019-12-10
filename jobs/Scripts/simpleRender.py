@@ -175,17 +175,23 @@ def main(args):
 		for case in cases:
 			if (case['status'] == 'need another tool'):
 				case['status'] = 'active'
-				args.tool = case['tool']
+				args.tool = re.sub('[0-9]{4}', case['tool'], args.tool)
+				if not os.path.isfile(args.tool):	
+					core_config.main_logger.error('Can\'t find tool ' + args.tool)
+					case['status'] = 'error'
+				else:
+					break
 
 	for case in cases:
 		try:
-			temp = list(platform.architecture())
+			temp = [platform.system()]
 			temp.append(get_gpu())
 			temp = set(temp)
-			skip_on = set(case['skip_on'])
-			if temp.intersection(skip_on) == skip_on:
-				case['status'] = 'skipped'
-		except:pass
+			for i in case['skip_on']:
+				skip_on = set(i)
+				if temp.intersection(skip_on) == skip_on:
+					case['status'] = 'skipped'
+		except Exception as e:pass
 
 	core_config.main_logger.info('Create empty report files')
 
@@ -313,6 +319,8 @@ def group_failed(args):
 		json.dump(cases, f, indent=4)
 
 	rc = main(args)
+	kill_process(PROCESS)
+	core_config.main_logger.info("Finish simpleRender with code: {}".format(rc))
 	exit(rc)
 
 
@@ -329,7 +337,7 @@ if __name__ == "__main__":
 
 	while True:
 		iteration += 1
-		core_config.main_logger.info('Iteration: ' + str(iteration))
+		core_config.main_logger.info('Try to run script in maya (#' + str(iteration) + ')')
 		rc = main(args)
 
 		try:
