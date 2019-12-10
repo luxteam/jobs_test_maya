@@ -187,9 +187,10 @@ def main(args):
 			temp = list(platform.architecture())
 			temp.append(get_gpu())
 			temp = set(temp)
-			skip_on = set(case['skip_on'])
-			if temp.intersection(skip_on) == skip_on:
-				case['status'] = 'skipped'
+			for i in case['skip_on']:
+				skip_on = set(i)
+				if temp.intersection(skip_on) == skip_on:
+					case['status'] = 'skipped'
 		except:pass
 
 	core_config.main_logger.info('Create empty report files')
@@ -318,6 +319,8 @@ def group_failed(args):
 		json.dump(cases, f, indent=4)
 
 	rc = main(args)
+	kill_process(PROCESS)
+	core_config.main_logger.info("Finish simpleRender with code: {}".format(rc))
 	exit(rc)
 
 
