@@ -295,7 +295,7 @@
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)", 
             "rpr_render(test_case, script_info)",             
-            "cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_RS_IF_020.jpg'))"
+            "cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_SM_020.jpg'))"
 
         ], 
         "script_info": [
@@ -354,8 +354,10 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 10)", 
             "rpr_render(test_case, script_info)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)"
         ], 
         "script_info": [
             "Denoiser EAW default", 
@@ -565,20 +567,5 @@
             "Pass Limit: 50"
         ], 
         "scene": "displacement.ma"
-    }, 
-    {
-        "case": "MAYA_SM_037", 
-        "status": "active", 
-        "functions": [
-            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')", 
-            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]", 
-            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "rpr_render(test_case, script_info)", 
-            "cmds.delete(ibl_transform)"
-        ], 
-        "script_info": [
-            "Bifrost"
-        ], 
-        "scene": "bifrost.ma"
     }
 ]
