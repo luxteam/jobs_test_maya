@@ -567,5 +567,190 @@
             "Pass Limit: 50"
         ], 
         "scene": "displacement.ma"
+    }, 
+    {
+        "case": "MAYA_SM_037", 
+        "status": "active", 
+        "functions": [
+            "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')", 
+            "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]", 
+            "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
+            "rpr_render(test_case, script_info)", 
+            "cmds.delete(ibl_transform)"
+        ], 
+        "script_info": [
+            "Bifrost"
+        ], 
+        "scene": "bifrost.ma"
+    }, 
+    {
+        "case": "MAYA_SM_038", 
+        "status": "active", 
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.filterSize', 10)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Anti-Aliasing"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_039", 
+        "status": "active", 
+        "functions": [
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Motion_Blur"
+        ], 
+        "scene": "motion_blur.ma"
+    }, 
+    {
+        "case": "MAYA_SM_040", 
+        "status": "skipped", 
+        "functions": [
+            "cmds.editRenderLayerGlobals(crl='rs_ALL_SHADOW')",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Render Layer Check"
+        ], 
+        "scene": "render_layer.ma"
+    }, 
+    {
+        "case": "MAYA_SM_041", 
+        "status": "skipped", 
+        "functions": [
+            "cmds.setAttr('CheckerDotTexture.visibility', 0)",
+            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
+            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "RPR_Nodes, BlendUbernPBRMaterials"
+        ], 
+        "scene": "RPRNodes.ma"
+    }, 
+    {
+        "case": "MAYA_SM_042", 
+        "status": "active", 
+        "functions": [
+            "file_tmp = setAttribute('emissionColor', 'outColor', 'sourceimages/EmissiveVariation1.exr')",
+            "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
+            "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
+            "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Volume material check"
+        ], 
+        "scene": "VolumeRollingFog.ma"
+    }, 
+    {
+        "case": "MAYA_SM_043", 
+        "status": "skipped", 
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Athena check"
+        ], 
+        "scene": "instances.ma"
+    }, 
+    {
+        "case": "MAYA_SM_044", 
+        "status": "skipped", 
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Converter should convert scene with no error"
+        ], 
+        "scene": "09_Dragon.ma"
+    }, 
+    {
+        "case": "MAYA_SM_045", 
+        "status": "skipped", 
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Converter should convert scene with no error"
+        ], 
+        "scene": "04_Gun.ma"
+    }, 
+    {
+        "case": "MAYA_SM_046", 
+        "status": "active", 
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "rpr_render(test_case, script_info)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ], 
+        "script_info": [
+            "Machine Learning"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_047", 
+        "status": "active", 
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Maya 2017 checking"
+        ], 
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2017"
+    }, 
+    {
+        "case": "MAYA_SM_048", 
+        "status": "active", 
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Maya 2018 checking"
+        ], 
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2018"
+    }, 
+    {
+        "case": "MAYA_SM_049", 
+        "status": "active", 
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "rpr_render(test_case, script_info)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ], 
+        "script_info": [
+            "Maya ML 2017 checking"
+        ], 
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2017"
+    }, 
+    {
+        "case": "MAYA_SM_050", 
+        "status": "active", 
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "rpr_render(test_case, script_info)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ], 
+        "script_info": [
+            "Maya ML 2018 checking"
+        ], 
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2018"
     }
 ]
