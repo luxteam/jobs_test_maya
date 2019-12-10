@@ -184,14 +184,14 @@ def main(args):
 
 	for case in cases:
 		try:
-			temp = list(platform.architecture())
+			temp = [platform.system()]
 			temp.append(get_gpu())
 			temp = set(temp)
 			for i in case['skip_on']:
 				skip_on = set(i)
 				if temp.intersection(skip_on) == skip_on:
 					case['status'] = 'skipped'
-		except:pass
+		except Exception as e:pass
 
 	core_config.main_logger.info('Create empty report files')
 
