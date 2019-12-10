@@ -654,11 +654,9 @@
     }, 
     {
         "case": "MAYA_SM_043", 
-        "status": "skipped", 
+        "status": "active", 
         "functions": [
-            "rpr_render(test_case, script_info)",
-            "time.sleep(30)",
-            "with open(render_tool_log_path('MAYA_SM_043')) as f: if 'successfully uploaded data to AWS!' in f.read(): cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_SM_043.jpg'))"
+            "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
             "Athena check"
