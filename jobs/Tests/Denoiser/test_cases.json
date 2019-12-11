@@ -1002,7 +1002,7 @@
             "ML denoiser", 
             "Color"
         ], 
-        "scene": "DenoiserComplexLighting.ma"
+        "scene": "ComplexLighting.ma"
     }, 
     {
         "case": "MAYA_RS_DEN_062", 
@@ -1018,7 +1018,7 @@
             "Color+AOV", 
             "ML denoiser"
         ], 
-        "scene": "DenoiserComplexLighting.ma"
+        "scene": "ComplexLighting.ma"
     }, 
     {
         "case": "MAYA_RS_DEN_063", 
@@ -1033,7 +1033,7 @@
             "EAW", 
             "denoiser"
         ], 
-        "scene": "DenoiserComplexLighting.ma"
+        "scene": "ComplexLighting.ma"
     }, 
     {
         "case": "MAYA_RS_DEN_064", 
@@ -1048,7 +1048,7 @@
             "LWR", 
             "denoiser"
         ], 
-        "scene": "DenoiserComplexLighting.ma"
+        "scene": "ComplexLighting.ma"
     }, 
     {
         "case": "MAYA_RS_DEN_065", 
@@ -1063,7 +1063,7 @@
             "Bilateral", 
             "denoiser"
         ], 
-        "scene": "DenoiserComplexLighting.ma"
+        "scene": "ComplexLighting.ma"
     }, 
     {
         "case": "MAYA_RS_DEN_066", 
