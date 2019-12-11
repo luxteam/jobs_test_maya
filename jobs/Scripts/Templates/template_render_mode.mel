@@ -39,7 +39,7 @@ global proc prerender(string $test_case, int $passes, int $mode, int $clamp, str
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+        if (catch (`file -f -options "v=0;" -prompt 0 -ignoreVersion -o $scene`) == "1") {{
             evalDeferred("quit -abort");
         }}
         validateFiles();
