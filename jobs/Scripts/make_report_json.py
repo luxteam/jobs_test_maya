@@ -15,14 +15,14 @@ result_json = ""
 
 for file in range(len(json_files)):
 
-    if (len(json_files) == 1):
+    if len(json_files) == 1:
         f = open(os.path.join(directory, json_files[file]), 'r')
         text = f.read()
         f.close()
         result_json += text
         break
 
-    if (file == 0):
+    if file == 0:
         f = open(os.path.join(directory, json_files[file]), 'r')
         text = f.read()
         f.close()
@@ -30,7 +30,7 @@ for file in range(len(json_files)):
         text = text + "," + "\r\n"
         result_json += text
 
-    elif (file == (len(json_files))-1):
+    elif file == len(json_files) - 1:
         f = open(os.path.join(directory, json_files[file]), 'r')
         text = f.read()
         f.close()

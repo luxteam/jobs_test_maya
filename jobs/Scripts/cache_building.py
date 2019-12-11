@@ -4,6 +4,7 @@ import maya.mel as mel
 
 def main():
     print("Render simple object for build render cache.")
+    
     try:
         if not cmds.pluginInfo("RadeonProRender", q=True, loaded=True):
             print("Plugin not loaded, try to load...")
@@ -13,6 +14,7 @@ def main():
         cmds.quit(abort=True)
 
     print("Plugin has been loaded")
+
     try:
         print("Render sphere with RPR...")
 

@@ -171,6 +171,7 @@ def main(args):
 				active_cases_default_tool += 1
 			else: 
 				case['status'] = 'need another tool'
+				
 	if not active_cases_default_tool:
 		for case in cases:
 			if (case['status'] == 'need another tool'):

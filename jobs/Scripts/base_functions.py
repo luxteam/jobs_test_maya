@@ -67,7 +67,7 @@ def render_tool_log_path(name):
 
 def get_scene_name():
 	scene_name = cmds.file(q=True, sn=True, shn=True)
-	if (scene_name == ""):
+	if not scene_name:
 		scene_name = "untitled"
 	return scene_name
 
@@ -201,7 +201,7 @@ def prerender(test_case, script_info, scene):
 	scene_name = cmds.file(q=True, sn=True, shn=True)
 	if scene_name != scene:
 		try:
-			cmds.file(scene, f=True, op='v=0;', iv=True, o=True)
+			cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
 		except:
 			cmds.evalDeferred("cmds.quit(abort=True)")
 
