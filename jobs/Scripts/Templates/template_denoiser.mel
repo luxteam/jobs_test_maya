@@ -38,7 +38,7 @@ global proc prerender_bilateral(string $test_case, string $script_info, int $den
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+        if (catch (`file -f -options "v=0;" -prompt 0 -ignoreVersion -o $scene`) == "1") {{
             evalDeferred("quit -abort");
         }}
         validateFiles();
@@ -105,7 +105,7 @@ global proc prerender_lwr(string $test_case, string $script_info, int $samples, 
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+        if (catch (`file -f -options "v=0;" -prompt 0 -ignoreVersion -o $scene`) == "1") {{
             evalDeferred("quit -abort");
         }}
     }}
@@ -175,7 +175,7 @@ global proc prerender_eaw(string $test_case, string $script_info, float $color, 
 
     string $scene_name  = `file -q -sn -shn`;
     if ($scene_name != $scene) {{
-        if (catch (`file -f -options "v=0;"  -ignoreVersion -o $scene`) == "1") {{
+        if (catch (`file -f -options "v=0;" -prompt 0 -ignoreVersion -o $scene`) == "1") {{
             evalDeferred("quit -abort");
         }}
     }}
