@@ -1,0 +1,44 @@
+[
+    {
+        "case": "MAYA_RS_RS_001",
+        "status": "active",
+        "script_info": [
+            "Base stamp",
+            "Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_RS_002",
+        "status": "active",
+        "script_info": [
+            "CPU&GPU stamp",
+            "Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | CPU %c | GPU %g | Render mode %r | Render device %h\", type='string')",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_RS_003",
+        "status": "active",
+        "script_info": [
+            "Computer name stamp",
+            "Radeon ProRender for Blender %b | Computer name %i | Current date %d"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | Computer name %i | Current date %d\", type='string')",
+            "rpr_render(test_case, script_info)"
+        ]
+    }
+]

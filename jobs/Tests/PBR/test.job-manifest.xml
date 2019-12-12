@@ -8,8 +8,7 @@
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType PBR</argument>
-    	<argument>--template "{CWD}/Scripts/Templates/template_pbr.mel"</argument>
-    	<argument>--pass_limit {PassLimit}</argument>
+    	<argument>--pass_limit 200</argument>
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>
     	<argument>--res_path "{ScenesDir}"</argument>

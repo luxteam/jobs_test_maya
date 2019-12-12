@@ -3,12 +3,11 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="900">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="1800">
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Sanity</argument>
-    	<argument>--template "{CWD}/Scripts/Templates/template_sanity.mel"</argument>
     	<argument>--pass_limit {PassLimit}</argument>
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>

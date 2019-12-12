@@ -1,0 +1,317 @@
+[
+    {
+        "case": "MAYA_RS_MB_001",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 0",
+            "Scale: 0"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_002",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 0.1",
+            "Scale: 1"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_003",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 1",
+            "Scale: 1"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_004",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 5",
+            "Scale: 5"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_005",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 10",
+            "Scale: 10"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 10.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_006",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 30",
+            "Scale: 30"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 30.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 30.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_007",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 50",
+            "Scale: 50"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 50.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 50.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_008",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 75",
+            "Scale: 75"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 75.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 75.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_009",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 100",
+            "Scale: 100"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(440.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 100.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_010",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 0",
+            "Scale: 0",
+            "Frame: 1520"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_011",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 0.1",
+            "Scale: 1",
+            "Frame: 1520"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_012",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 1",
+            "Scale: 1",
+            "Frame: 1520"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_013",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 5",
+            "Scale: 5",
+            "Frame: 1520"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_014",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 10",
+            "Scale: 10",
+            "Frame: 1520"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 10.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 10.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_015",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 30",
+            "Scale: 30",
+            "Frame: 1520"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 30.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 30.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_016",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 50",
+            "Scale: 50",
+            "Frame: 1520"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 50.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 50.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_017",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 75",
+            "Scale: 75",
+            "Frame: 1520"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 75.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 75.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_018",
+        "status": "active",
+        "script_info": [
+            "Camera Exposure: 100",
+            "Scale: 100",
+            "Frame: 1520"
+        ],
+        "scene": "motion_blur.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(1520.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 100.0)",
+            "rpr_render(test_case, script_info)"
+        ]
+    }
+]

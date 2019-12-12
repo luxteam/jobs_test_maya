@@ -2,7 +2,7 @@ set PATH=c:\python35\;c:\python35\scripts\;%PATH%
 set RENDER_DEVICE=%1
 set FILE_FILTER=%2
 set TESTS_FILTER="%3"
-set SPU=%4
+rem set SPU=%4
 
 rem if "%SPU%" EQU "" set SPU=10
 
