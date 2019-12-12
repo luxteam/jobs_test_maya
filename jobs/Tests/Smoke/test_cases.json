@@ -698,59 +698,5 @@
             "Machine Learning"
         ], 
         "scene": "Lamborginhi_Aventador.ma"
-    }, 
-    {
-        "case": "MAYA_SM_047", 
-        "status": "active", 
-        "functions": [
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Maya 2017 checking"
-        ], 
-        "scene": "Lambo_Lebrov.ma",
-        "tool":"2017"
-    }, 
-    {
-        "case": "MAYA_SM_048", 
-        "status": "active", 
-        "functions": [
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Maya 2018 checking"
-        ], 
-        "scene": "Lambo_Lebrov.ma",
-        "tool":"2018"
-    }, 
-    {
-        "case": "MAYA_SM_049", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "rpr_render(test_case, script_info)",
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
-        ], 
-        "script_info": [
-            "Maya ML 2017 checking"
-        ], 
-        "scene": "Lambo_Lebrov.ma",
-        "tool":"2017"
-    }, 
-    {
-        "case": "MAYA_SM_050", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "rpr_render(test_case, script_info)",
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
-        ], 
-        "script_info": [
-            "Maya ML 2018 checking"
-        ], 
-        "scene": "Lambo_Lebrov.ma",
-        "tool":"2018"
     }
 ]
