@@ -1,6 +1,6 @@
 [
     {
-        "case": "MAYA_SM_043", 
+        "case": "MAYA_RS_AWS_001", 
         "status": "active", 
         "functions": [
             "rpr_render(test_case, script_info)"

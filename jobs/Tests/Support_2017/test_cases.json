@@ -1,6 +1,6 @@
 [
     {
-        "case": "MAYA_SM_047", 
+        "case": "MAYA_RS_2017_001", 
         "status": "active", 
         "functions": [
             "rpr_render(test_case, script_info)"
@@ -12,7 +12,7 @@
         "tool":"2017"
     },
     {
-        "case": "MAYA_SM_049", 
+        "case": "MAYA_RS_2017_002", 
         "status": "active", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
