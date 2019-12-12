@@ -651,18 +651,7 @@
             "Volume material check"
         ], 
         "scene": "VolumeRollingFog.ma"
-    }, 
-    {
-        "case": "MAYA_SM_043", 
-        "status": "skipped", 
-        "functions": [
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Athena check"
-        ], 
-        "scene": "instances.ma"
-    }, 
+    },
     {
         "case": "MAYA_SM_044", 
         "status": "skipped", 

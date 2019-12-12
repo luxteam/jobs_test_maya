@@ -301,6 +301,8 @@ def main(args):
 			rc = 0
 			break
 
+	if args.testType in ['Athena']:
+		exec(os.path.realpath(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')))
 	core_config.main_logger.info("Main func return : {}".format(rc))
 	return rc
 
