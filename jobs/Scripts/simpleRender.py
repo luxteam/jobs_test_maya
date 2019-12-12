@@ -114,9 +114,9 @@ def main(args):
 	try:
 		with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
 			tc = f.read()
-			testCases_mel = json.loads(tc)[args.testType]
+			testCases = json.loads(tc)[args.testType]
 	except Exception as e:
-		testCases_mel = "all"
+		testCases = "all"
 
 	try:
 		with open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
@@ -140,11 +140,11 @@ def main(args):
 	res_path = args.res_path
 	res_path = res_path.replace('\\', '/')
 	work_dir = os.path.abspath(args.output).replace('\\', '/')
-	melScript = script.format(work_dir=work_dir, testType=args.testType, render_device=args.render_device, res_path=res_path, pass_limit=args.pass_limit, 
-							  resolution_x=args.resolution_x, resolution_y=args.resolution_y, testCases=testCases_mel, SPU=args.SPU)
+	script = script.format(work_dir=work_dir, testType=args.testType, render_device=args.render_device, res_path=res_path, pass_limit=args.pass_limit, 
+							  resolution_x=args.resolution_x, resolution_y=args.resolution_y, SPU=args.SPU)
 
 	with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
-		file.write(melScript)
+		file.write(script)
 
 	try:
 		cases = json.load(open(os.path.realpath(
@@ -153,9 +153,9 @@ def main(args):
 		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
 	temp = []
-	if testCases_mel != "all":
+	if testCases != "all":
 		for case in cases:
-			if case['case'] in testCases_mel:
+			if case['case'] in testCases:
 				temp.append(case)
 		cases = temp
 

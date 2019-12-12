@@ -15,7 +15,6 @@ RES_PATH = '{res_path}'
 PASS_LIMIT = {pass_limit}
 RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
-TEST_CASES = "{testCases}"
 SPU = {SPU}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
@@ -71,19 +70,6 @@ def get_scene_name():
 		scene_name = "untitled"
 	return scene_name
 
-
-def check_test_cases_fail_save(test_case, script_info):
-	test = TEST_CASES
-	tests = test.split(',')
-
-	if test != "all":
-		for test in tests:
-			if test == test_case:
-				rpr_fail_save(test_case, script_info)
-	else:
-		rpr_fail_save(test_case, script_info)
-
-
 def skipped_case_report(case):	
 	test_case = case['case']
 	cmds.sysFile(path.join(WORK_DIR, "..", "..", "..", "..", "jobs", "Tests", "skipped.jpg"), copy=path.join(WORK_DIR, 'Color', test_case + '.jpg'))
@@ -131,17 +117,6 @@ def rpr_render(test_case, script_info):
 	report.script_info = script_info
 
 	report.toJSON(report_JSON)
-
-
-def check_test_cases_success_save(test_case, script_info):
-	test_cases = TEST_CASES
-	tests = test_cases.split(',')
-	if test_cases != "all":
-		for test in tests:
-			if test == test_case:
-				rpr_success_save(test_case, script_info)
-	else:
-		rpr_success_save(test_case, script_info)
 
 
 def rpr_success_save(test_case, script_info):
@@ -239,22 +214,11 @@ def prerender(test_case, script_info, scene):
 				rpr_render(test_case, script_info)
 
 
-def check_test_cases(test_case, script_info, scene):
-	test = TEST_CASES
-	tests = test.split(',')
-	if test != "all":
-		for test in tests:
-			if test == test_case:
-				prerender(test_case, script_info, scene)
-	else:
-		prerender(test_case, script_info, scene)
-
-
 def case_function(case):
 	functions = {{
-		0: check_test_cases,
-		1: check_test_cases_success_save,
-		2: check_test_cases_fail_save
+		0: prerender,
+		1: rpr_success_save,
+		2: rpr_fail_save
 	}}
 
 	func = 0
