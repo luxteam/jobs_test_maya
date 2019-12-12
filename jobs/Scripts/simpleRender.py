@@ -144,7 +144,7 @@ def main(args):
 	res_path = res_path.replace('\\', '/')
 	work_dir = os.path.abspath(args.output).replace('\\', '/')
 	melScript = script.format(work_dir=work_dir, testType=args.testType, render_device=args.render_device, res_path=res_path, pass_limit=args.pass_limit, 
-							  resolution_x=args.resolution_x, resolution_y=args.resolution_y, testCases=testCases_mel, SPU=args.SPU)
+							  resolution_x=args.resolution_x, resolution_y=args.resolution_y, SPU=args.SPU)
 
 	with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
 		file.write(melScript)
