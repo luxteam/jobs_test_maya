@@ -302,7 +302,7 @@ def main(args):
 			break
 
 	if args.testType in ['Athena']:
-		exec(os.path.realpath(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')))
+		subprocess.call([sys.executable, os.path.realpath(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
 	core_config.main_logger.info("Main func return : {}".format(rc))
 	return rc
 

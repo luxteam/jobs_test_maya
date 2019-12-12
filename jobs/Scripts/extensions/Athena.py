@@ -1,5 +1,10 @@
+import os.path as path
+from shutil import copyfile
+import sys
+
+
 try:
-	with open(path.join(WORK_DIR, 'renderTool.log')) as f: 
+	with open(path.join(sys.argv[1], 'renderTool.log')) as f: 
 		if 'successfully uploaded data to AWS!' in f.read(): 
-			cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_SM_043.jpg'))
+			copyfile(path.join(sys.argv[1], '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), path.join(sys.argv[1], 'Color', 'MAYA_SM_043.jpg'))
 except:pass
