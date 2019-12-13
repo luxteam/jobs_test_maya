@@ -1,0 +1,29 @@
+[
+    {
+        "case": "MAYA_RS_2017_001", 
+        "status": "active", 
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Maya 2017 checking"
+        ], 
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2017"
+    },
+    {
+        "case": "MAYA_RS_2017_002", 
+        "status": "active", 
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "rpr_render(test_case, script_info)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ], 
+        "script_info": [
+            "Maya ML 2017 checking"
+        ], 
+        "scene": "Lambo_Lebrov.ma",
+        "tool":"2017"
+    }
+]
