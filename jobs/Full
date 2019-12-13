@@ -14,7 +14,6 @@ Denoiser
 Base_Lights
 Physical_Lights
 Tone_Mapping
-Sanity
 Intensity_Light
 Emissive
 Render_Layer

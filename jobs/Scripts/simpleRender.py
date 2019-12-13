@@ -15,7 +15,6 @@ import time
 sys.path.append(os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 
-
 import jobs_launcher.core.config as core_config
 from jobs_launcher.core.system_info import get_gpu
 from jobs_launcher.core.kill_process import kill_process
