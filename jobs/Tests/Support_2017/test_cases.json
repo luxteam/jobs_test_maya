@@ -3,6 +3,7 @@
         "case": "MAYA_RS_2017_001", 
         "status": "active", 
         "functions": [
+            "cmds.lookThru('persp3', 'modelPanel4')",
             "rpr_render(test_case, script_info)"
         ], 
         "script_info": [
@@ -15,6 +16,7 @@
         "case": "MAYA_RS_2017_002", 
         "status": "active", 
         "functions": [
+            "cmds.lookThru('persp3', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "rpr_render(test_case, script_info)",

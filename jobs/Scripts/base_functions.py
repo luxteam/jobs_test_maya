@@ -193,7 +193,6 @@ def prerender(test_case, script_info, scene):
 
 	cmds.setAttr("defaultRenderGlobals.currentRenderer", type="string" "FireRender")
 	cmds.setAttr("defaultRenderGlobals.imageFormat", 8)
-	# TODO 
 	cmds.setAttr("RadeonProRenderGlobals.completionCriteriaIterations", PASS_LIMIT)
 
 	with open(path.join(WORK_DIR, "test_cases.json"), 'r') as json_file:
