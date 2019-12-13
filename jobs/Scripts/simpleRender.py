@@ -15,7 +15,6 @@ import time
 sys.path.append(os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 
-
 import jobs_launcher.core.config as core_config
 from jobs_launcher.core.system_info import get_gpu
 from jobs_launcher.core.kill_process import kill_process
@@ -159,26 +158,17 @@ def main(args):
 				temp.append(case)
 		cases = temp
 
-	active_cases_default_tool = 0
-	for case in cases:
-		if case['status'] not in ['error', 'skipped', 'done']:
-			try:
-				tool = case['tool']
-			except:
-				active_cases_default_tool += 1
-			else: 
-				case['status'] = 'need another tool'
-				
-	if not active_cases_default_tool:
-		for case in cases:
-			if case['status'] == 'need another tool':
-				case['status'] = 'active'
-				args.tool = re.sub('[0-9]{4}', case['tool'], args.tool)
-				if not os.path.isfile(args.tool):	
-					core_config.main_logger.error('Can\'t find tool ' + args.tool)
-					case['status'] = 'error'
-				else:
-					break
+	if args.testType in ['Support_2017', 'Support_2018']:
+		args.tool = re.sub('[0-9]{4}', args.testType[-4:], args.tool)
+
+	if platform.system() == 'Windows':
+		if not os.path.isfile(args.tool):
+			core_config.main_logger.error('Can\'t find tool ' + args.tool)
+			exit(-1)
+	if platform.system() == 'Darwin':
+		if not os.path.islink(args.tool):
+			core_config.main_logger.error('Can\'t find tool ' + args.tool)
+			exit(-1)
 
 	for case in cases:
 		try:
@@ -301,6 +291,8 @@ def main(args):
 			rc = 0
 			break
 
+	if args.testType in ['Athena']:
+		subprocess.call([sys.executable, os.path.realpath(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
 	core_config.main_logger.info("Main func return : {}".format(rc))
 	return rc
 
@@ -357,7 +349,7 @@ if __name__ == "__main__":
 				else:
 					failed_count = 0
 
-				if case['status'] in ['active', 'fail', 'inprogress', 'need another tool']:
+				if case['status'] in ['active', 'fail', 'inprogress']:
 					active_cases += 1
 
 		if active_cases == 0:

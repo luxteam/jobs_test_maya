@@ -14,7 +14,6 @@ Denoiser
 Base_Lights
 Physical_Lights
 Tone_Mapping
-Sanity
 Intensity_Light
 Emissive
 Render_Layer
@@ -26,3 +25,6 @@ Quality
 Anti_Aliasing
 Animation
 Motion_Blur
+Athena
+Support_2017
+Support_2018
