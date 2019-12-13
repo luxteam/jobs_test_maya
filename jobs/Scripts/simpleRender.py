@@ -104,24 +104,25 @@ def check_licenses(res_path, maya_scenes):
 
 
 def main(args):
-	testsList = None
-	script_template = None
-	cmdScriptPath = None
+	if args.testType in ['Support_2017', 'Support_2018']:
+		args.tool = re.sub('[0-9]{4}', args.testType[-4:], args.tool)
+
+	if platform.system() == 'Windows':
+		if not os.path.isfile(args.tool):
+			core_config.main_logger.error('Can\'t find tool ' + args.tool)
+			exit(-1)
+	if platform.system() == 'Darwin':
+		if not os.path.islink(args.tool):
+			core_config.main_logger.error('Can\'t find tool ' + args.tool)
+			exit(-1)
 
 	core_config.main_logger.info('Make script')
 
 	try:
-		with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
-			tc = f.read()
-			testCases = json.loads(tc)[args.testType]
-	except Exception as e:
-		testCases = "all"
-
-	try:
-		with open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
-			script_template = f.read()
 		with open(os.path.join(os.path.dirname(__file__), "base_functions.py")) as f:
 			script = f.read()
+		with open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
+			test_cases = f.read()
 	except OSError as e:
 		core_config.main_logger.error(str(e))
 		return 1
@@ -133,7 +134,7 @@ def main(args):
 	except:
 		pass
 
-	maya_scenes = set(re.findall(r"\w*\.ma\"", script_template))
+	maya_scenes = set(re.findall(r"\w*\.ma\"", test_cases))
 	check_licenses(args.res_path, maya_scenes)
 
 	res_path = args.res_path
@@ -151,30 +152,25 @@ def main(args):
 	except:
 		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
-	temp = []
-	if testCases != "all":
+	try:
+		with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
+			tc = f.read()
+			testCases = json.loads(tc)[args.testType]
+		temp = []
 		for case in cases:
 			if case['case'] in testCases:
 				temp.append(case)
 		cases = temp
+	except:pass
 
-	if args.testType in ['Support_2017', 'Support_2018']:
-		args.tool = re.sub('[0-9]{4}', args.testType[-4:], args.tool)
+	core_config.main_logger.info('Create empty report files')
 
-	if platform.system() == 'Windows':
-		if not os.path.isfile(args.tool):
-			core_config.main_logger.error('Can\'t find tool ' + args.tool)
-			exit(-1)
-	if platform.system() == 'Darwin':
-		if not os.path.islink(args.tool):
-			core_config.main_logger.error('Can\'t find tool ' + args.tool)
-			exit(-1)
+	temp = [platform.system()]
+	temp.append(get_gpu())
+	temp = set(temp)
 
 	for case in cases:
-		try:
-			temp = [platform.system()]
-			temp.append(get_gpu())
-			temp = set(temp)
+		try:			
 			for i in case['skip_on']:
 				skip_on = set(i)
 				if temp.intersection(skip_on) == skip_on:
@@ -182,9 +178,6 @@ def main(args):
 		except Exception as e:
 			pass
 
-	core_config.main_logger.info('Create empty report files')
-
-	for case in cases:
 		if case['status'] != 'done':
 			if case["status"] == 'inprogress':
 				case['status'] = 'fail'
