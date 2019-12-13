@@ -354,10 +354,8 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 10)", 
             "rpr_render(test_case, script_info)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)", 
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)"
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
             "Denoiser EAW default", 
