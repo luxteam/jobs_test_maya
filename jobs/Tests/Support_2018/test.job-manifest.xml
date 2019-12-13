@@ -4,7 +4,7 @@
     <outpath value="{OutputDir}"/>
 
     <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="500">
-        <argument>--tool "C:\Program Files\Autodesk\Maya2017\bin\maya.exe"</argument>
+        <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Support_2018</argument>

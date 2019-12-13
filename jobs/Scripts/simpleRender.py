@@ -159,6 +159,18 @@ def main(args):
 				temp.append(case)
 		cases = temp
 
+	if args.testType in ['Support_2017', 'Support_2018']:
+		args.tool = re.sub('[0-9]{4}', args.testType[-4:], args.tool)
+
+	if platform.system() == 'Windows':
+		if not os.path.isfile(args.tool):
+			core_config.main_logger.error('Can\'t find tool ' + args.tool)
+			exit(-1)
+	if platform.system() == 'Darwin':
+		if not os.path.islink(args.tool):
+			core_config.main_logger.error('Can\'t find tool ' + args.tool)
+			exit(-1)
+
 	for case in cases:
 		try:
 			temp = [platform.system()]
