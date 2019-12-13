@@ -15,6 +15,7 @@ import time
 sys.path.append(os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 
+
 import jobs_launcher.core.config as core_config
 from jobs_launcher.core.system_info import get_gpu
 from jobs_launcher.core.kill_process import kill_process
@@ -24,11 +25,6 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardi
 PROCESS = ['Maya', 'maya.exe']
 
 if platform.system() == 'Darwin':
-	# from PyObjCTools import AppHelper
-	# import objc
-	# from objc import super
-	# from Cocoa import NSWorkspace
-	# from AppKit import NSWorkspace
 	from Quartz import CGWindowListCopyWindowInfo
 	from Quartz import kCGWindowListOptionOnScreenOnly
 	from Quartz import kCGNullWindowID
@@ -45,7 +41,7 @@ def get_windows_titles():
 			# duct tape for windows with empty title
 			expected = {'Maya', 'Render View', 'Rendering...'}
 			if maya_titles - expected:
-				maya_titles.add('Radeon ProRender Error')
+				maya_titles.add('Detected windows ERROR')
 
 			return list(maya_titles)
 
@@ -135,7 +131,8 @@ def main(args):
 		with open(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')) as f:
 			extension_script = f.read()
 		script += extension_script
-	except:pass
+	except:
+		pass
 
 	maya_scenes = set(re.findall(r"\w*\.ma\"", script_template))
 	check_licenses(args.res_path, maya_scenes)
@@ -171,7 +168,8 @@ def main(args):
 				skip_on = set(i)
 				if temp.intersection(skip_on) == skip_on:
 					case['status'] = 'skipped'
-		except Exception as e:pass
+		except Exception as e:
+			pass
 
 	core_config.main_logger.info('Create empty report files')
 
@@ -234,7 +232,7 @@ def main(args):
 			window_titles = get_windows_titles()
 			core_config.main_logger.info("Found windows: {}".format(window_titles))
 		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
-			fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
+			fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
 				'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
 				'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
 				'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
@@ -347,3 +345,4 @@ if __name__ == "__main__":
 			kill_process(PROCESS)
 			core_config.main_logger.info("Finish simpleRender with code: {}".format(rc))
 			exit(rc)
+
