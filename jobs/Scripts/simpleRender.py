@@ -41,7 +41,7 @@ def get_windows_titles():
 			# duct tape for windows with empty title
 			expected = {'Maya', 'Render View', 'Rendering...'}
 			if maya_titles - expected:
-				maya_titles.add('Radeon ProRender Error')
+				maya_titles.add('Detected windows ERROR')
 
 			return list(maya_titles)
 
@@ -253,7 +253,7 @@ def main(args):
 			window_titles = get_windows_titles()
 			core_config.main_logger.info("Found windows: {}".format(window_titles))
 		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
-			fatal_errors_titles = ['maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
+			fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
 				'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
 				'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
 				'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
