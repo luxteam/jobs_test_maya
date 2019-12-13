@@ -7,7 +7,7 @@
         <argument>--tool "C:\Program Files\Autodesk\Maya2017\bin\maya.exe"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Smoke</argument>
+        <argument>--testType Support_2017</argument>
     	<argument>--pass_limit {PassLimit}</argument>
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>
