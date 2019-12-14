@@ -165,22 +165,9 @@ def main(args):
 
 	core_config.main_logger.info('Create empty report files')
 
-<<<<<<< HEAD
-	if platform.system() == 'Windows':
-		if not os.path.isfile(args.tool):
-			core_config.main_logger.error('Can\'t find tool ' + args.tool)
-			exit(-1)
-	'''
-	if platform.system() == 'Darwin':
-		if not os.path.islink(args.tool):
-			core_config.main_logger.error('Can\'t find tool ' + args.tool)
-			exit(-1)
-	'''
-=======
 	temp = [platform.system()]
 	temp.append(get_gpu())
 	temp = set(temp)
->>>>>>> a11382114c982315fa7ca6e5080a223a53f89967
 
 	for case in cases:
 		try:			
