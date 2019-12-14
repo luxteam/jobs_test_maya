@@ -111,10 +111,12 @@ def main(args):
 		if not os.path.isfile(args.tool):
 			core_config.main_logger.error('Can\'t find tool ' + args.tool)
 			exit(-1)
+	'''
 	if platform.system() == 'Darwin':
 		if not os.path.islink(args.tool):
 			core_config.main_logger.error('Can\'t find tool ' + args.tool)
 			exit(-1)
+	'''
 
 	core_config.main_logger.info('Make script')
 
