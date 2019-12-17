@@ -1,4 +1,4 @@
-def removeEnvironment():
+def resetAttributes():
 	cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)
 	cmds.setAttr('RadeonProRenderGlobals.toneMappingLinearScale', 1)
 	cmds.setAttr('RadeonProRenderGlobals.toneMappingPhotolinearSensitivity', 1)

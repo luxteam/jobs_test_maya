@@ -148,7 +148,7 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "default +white-balance)=9500"
+            "default +white-balance=9500"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -163,7 +163,7 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "default +gamma +white-balance)=9500"
+            "default +gamma +white-balance=9500"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -179,7 +179,7 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "0 0 +gamma +white-balance)=9500"
+            "0 0 +gamma +white-balance=9500"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -195,7 +195,7 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "5 5 +gamma +white-balance)=9500 +gamma"
+            "5 5 +gamma +white-balance=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"
     },
@@ -211,7 +211,7 @@
             "resetAttributes()"
         ],
         "script_info": [
-            "10 10 +gamma +white-balance)=9500 +gamma"
+            "10 10 +gamma +white-balance=9500 +gamma"
         ],
         "scene": "maya_shaderball.ma"
     },
