@@ -21,6 +21,7 @@ LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 class RPR_report_json:
 	def __init__(self, render_color_path='', render_time='', test_case='', difference_color='', test_status='', script_info=[], render_log=''):
+		#TODO: render device may be incorrect (if it changes in case)
 		self.render_device = cmds.optionVar(q="RPR_DevicesName")[0]
 		self.tool = mel.eval('about -iv')
 		self.date_time = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
