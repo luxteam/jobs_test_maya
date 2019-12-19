@@ -402,7 +402,7 @@
             "rprTransform = cmds.listRelatives(rprLightShape, p=True)[0]",
             "cmds.setAttr(rprTransform + '.translateY', 400)", 
             "cmds.setAttr(rprTransform + '.rotateX', 270)", 
-            "cmds.setAttr(rprLightShape + '.lightIntensity', 100)", 
+            "cmds.setAttr(rprLightShape + '.intensity', 100)", 
             "cmds.setAttr(rprLightShape + '.intensityUnits', 0)", 
             "rpr_render(test_case, script_info)", 
             "cmds.delete(rprTransform)"
