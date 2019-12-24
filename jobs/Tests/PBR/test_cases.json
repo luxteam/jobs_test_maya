@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_MAT_PBR_001",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('color', 'outColor', 'sourceimages/base_color.png')",
             "rpr_render(test_case, script_info)",
@@ -15,7 +15,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_002",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('color', 'outColor', 'sourceimages/base_color.jpg')",
             "rpr_render(test_case, script_info)",
@@ -29,7 +29,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_003",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('color', 'outColor', 'sourceimages/base_color.tif')",
             "rpr_render(test_case, script_info)",
@@ -43,7 +43,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_004",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('color', 'outColor', 'sourceimages/base_color.exr')",
             "rpr_render(test_case, script_info)",
@@ -57,7 +57,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_005",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.color', 1, 0, 1, type='double3')",
             "rpr_render(test_case, script_info)",
@@ -70,7 +70,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_006",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('metalness', 'outAlpha', 'sourceimages/metalness.png')",
             "rpr_render(test_case, script_info)",
@@ -84,7 +84,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_007",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('metalness', 'outAlpha', 'sourceimages/metalness.jpg')",
             "rpr_render(test_case, script_info)",
@@ -98,7 +98,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_008",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('metalness', 'outAlpha', 'sourceimages/metalness.tif')",
             "rpr_render(test_case, script_info)",
@@ -112,7 +112,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_009",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('metalness', 'outAlpha', 'sourceimages/metalness.exr')",
             "rpr_render(test_case, script_info)",
@@ -126,7 +126,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_010",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.metalness', 0.5)",
             "rpr_render(test_case, script_info)",
@@ -139,7 +139,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_011",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.metalness', 1)",
             "rpr_render(test_case, script_info)",
@@ -152,7 +152,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_012",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('specular', 'outAlpha', 'sourceimages/specular.png')",
             "rpr_render(test_case, script_info)",
@@ -166,7 +166,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_013",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('specular', 'outAlpha', 'sourceimages/specular.jpg')",
             "rpr_render(test_case, script_info)",
@@ -180,7 +180,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_014",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('specular', 'outAlpha', 'sourceimages/specular.tif')",
             "rpr_render(test_case, script_info)",
@@ -194,7 +194,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_015",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('specular', 'outAlpha', 'sourceimages/specular.exr')",
             "rpr_render(test_case, script_info)",
@@ -208,7 +208,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_016",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.specular', 0.5)",
             "rpr_render(test_case, script_info)",
@@ -221,7 +221,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_017",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.specular', 1)",
             "rpr_render(test_case, script_info)",
@@ -234,7 +234,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_018",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('roughness', 'outAlpha', 'sourceimages/roughness.png')",
             "rpr_render(test_case, script_info)",
@@ -248,7 +248,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_019",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('roughness', 'outAlpha', 'sourceimages/roughness.jpg')",
             "rpr_render(test_case, script_info)",
@@ -262,7 +262,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_020",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('roughness', 'outAlpha', 'sourceimages/roughness.tif')",
             "rpr_render(test_case, script_info)",
@@ -276,7 +276,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_021",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('roughness', 'outAlpha', 'sourceimages/roughness.exr')",
             "rpr_render(test_case, script_info)",
@@ -290,7 +290,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_022",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.roughness', 0.5)",
             "rpr_render(test_case, script_info)",
@@ -303,7 +303,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_023",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.roughness', 1)",
             "rpr_render(test_case, script_info)",
@@ -316,7 +316,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_024",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('file14.fileTextureName', 'sourceimages/normal.png', type='string')",
             "rpr_render(test_case, script_info)",
@@ -329,7 +329,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_025",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('file14.fileTextureName', 'sourceimages/normal.jpg', type='string')",
             "rpr_render(test_case, script_info)",
@@ -342,7 +342,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_026",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "rpr_render(test_case, script_info)",
             "resetAttributes()"
@@ -354,7 +354,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_027",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('file14.fileTextureName', 'sourceimages/normal.exr', type='string')",
             "rpr_render(test_case, script_info)",
@@ -367,7 +367,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_028",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('glass', 'outAlpha', 'sourceimages/glass.png')",
             "rpr_render(test_case, script_info)",
@@ -381,7 +381,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_029",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('glass', 'outAlpha', 'sourceimages/glass.jpg')",
             "rpr_render(test_case, script_info)",
@@ -395,7 +395,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_030",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('glass', 'outAlpha', 'sourceimages/glass.tif')",
             "rpr_render(test_case, script_info)",
@@ -409,7 +409,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_031",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('glass', 'outAlpha', 'sourceimages/glass.exr')",
             "rpr_render(test_case, script_info)",
@@ -423,7 +423,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_032",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.glass', 0.5)",
             "rpr_render(test_case, script_info)",
@@ -436,7 +436,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_033",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.glass', 1)",
             "rpr_render(test_case, script_info)",
@@ -449,7 +449,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_034",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('glassIOR', 'outAlpha', 'sourceimages/glass_ior_t.exr')",
             "rpr_render(test_case, script_info)",
@@ -463,7 +463,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_035",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.glassIOR', 0.5)",
             "rpr_render(test_case, script_info)",
@@ -476,7 +476,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_036",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.glassIOR', 1)",
             "rpr_render(test_case, script_info)",
@@ -489,7 +489,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_037",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('emissiveColor', 'outColor', 'sourceimages/emissive.png')",
             "rpr_render(test_case, script_info)",
@@ -503,9 +503,9 @@
     },
     {
         "case": "MAYA_MAT_PBR_038",
-        "status": "active",
+        "status": "skipped",
         "functions": [
-            "file_tmp = setAttribute('emissiveColor', 'outColor', 'sourceimages/emissive.tif')",
+            "file_tmp = setAttribute('emissiveColor', 'outColor', 'sourceimages/emissive.jpg')",
             "rpr_render(test_case, script_info)",
             "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.emissiveColor')",
             "resetAttributes()"
@@ -517,9 +517,9 @@
     },
     {
         "case": "MAYA_MAT_PBR_039",
-        "status": "active",
+        "status": "skipped",
         "functions": [
-            "file_tmp = setAttribute('emissiveColor', 'outColor', 'sourceimages/emissive.exr')",
+            "file_tmp = setAttribute('emissiveColor', 'outColor', 'sourceimages/emissive.tif')",
             "rpr_render(test_case, script_info)",
             "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.emissiveColor')",
             "resetAttributes()"
@@ -531,11 +531,11 @@
     },
     {
         "case": "MAYA_MAT_PBR_040",
-        "status": "active",
+        "status": "skipped",
         "functions": [
-            "cmds.setAttr('R_PBRMat.emissiveColor', 1, 0.667, 0, type='double3')",
-            "cmds.setAttr('R_PBRMat.emissiveWeight', 0.5)",
+            "file_tmp = setAttribute('emissiveColor', 'outColor', 'sourceimages/emissive.exr')",
             "rpr_render(test_case, script_info)",
+            "cmds.disconnectAttr(str(file_tmp) + '.outColor', 'R_PBRMat.emissiveColor')",
             "resetAttributes()"
         ],
         "script_info": [
@@ -545,7 +545,21 @@
     },
     {
         "case": "MAYA_MAT_PBR_041",
-        "status": "active",
+        "status": "skipped",
+        "functions": [
+            "cmds.setAttr('R_PBRMat.emissiveColor', 1, 0.667, 0, type='double3')",
+            "cmds.setAttr('R_PBRMat.emissiveWeight', 0.5)",
+            "rpr_render(test_case, script_info)",
+            "resetAttributes()"
+        ],
+        "script_info": [
+            "Emissive Color HSV color: 40:1:1"
+        ],
+        "scene": "PBR.ma"
+    },
+    {
+        "case": "MAYA_MAT_PBR_042",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.emissiveColor', 1, 0.667, 0, type='double3')",
             "cmds.setAttr('R_PBRMat.emissiveWeight', 1)",
@@ -558,22 +572,8 @@
         "scene": "PBR.ma"
     },
     {
-        "case": "MAYA_MAT_PBR_042",
-        "status": "active",
-        "functions": [
-            "file_tmp = setAttribute('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.png')",
-            "rpr_render(test_case, script_info)",
-            "cmds.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.emissiveWeight')",
-            "resetAttributes()"
-        ],
-        "script_info": [
-            "Emissive Color HSV color: 40:1:1"
-        ],
-        "scene": "PBR.ma"
-    },
-    {
         "case": "MAYA_MAT_PBR_043",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.png')",
             "rpr_render(test_case, script_info)",
@@ -587,7 +587,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_044",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.jpg')",
             "rpr_render(test_case, script_info)",
@@ -604,6 +604,7 @@
         "status": "active",
         "functions": [
             "file_tmp = setAttribute('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.tif')",
+            "cmds.setAttr(file_tmp + '.alphaIsLuminance', 1)",
             "rpr_render(test_case, script_info)",
             "cmds.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.emissiveWeight')",
             "resetAttributes()"
@@ -615,9 +616,10 @@
     },
     {
         "case": "MAYA_MAT_PBR_046",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('emissiveWeight', 'outAlpha', 'sourceimages/emissiveWeight.exr')",
+            "cmds.setAttr(file_tmp + '.alphaIsLuminance', 1)",
             "rpr_render(test_case, script_info)",
             "cmds.disconnectAttr(str(file_tmp) + '.outAlpha', 'R_PBRMat.emissiveWeight')",
             "resetAttributes()"
@@ -629,7 +631,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_047",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.png')",
             "rpr_render(test_case, script_info)",
@@ -643,7 +645,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_048",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.jpeg')",
             "rpr_render(test_case, script_info)",
@@ -657,7 +659,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_049",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.tiff')",
             "rpr_render(test_case, script_info)",
@@ -671,7 +673,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_050",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('subsurfaceWeight', 'outAlpha', 'sourceimages/subsurface_weight.exr')",
             "rpr_render(test_case, script_info)",
@@ -685,7 +687,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_051",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.png')",
             "rpr_render(test_case, script_info)",
@@ -699,7 +701,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_052",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.jpeg')",
             "rpr_render(test_case, script_info)",
@@ -713,7 +715,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_053",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.tiff')",
             "rpr_render(test_case, script_info)",
@@ -727,7 +729,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_054",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "file_tmp = setAttribute('subsurfaceColor', 'outColor', 'sourceimages/subsurface_color.exr')",
             "rpr_render(test_case, script_info)",
@@ -741,7 +743,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_055",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.subsurfaceRadius0', 1)",
             "cmds.setAttr('R_PBRMat.subsurfaceRadius1', 1)",
@@ -756,7 +758,7 @@
     },
     {
         "case": "MAYA_MAT_PBR_056",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_PBRMat.subsurfaceRadius0', 5)",
             "cmds.setAttr('R_PBRMat.subsurfaceRadius1', 5)",
