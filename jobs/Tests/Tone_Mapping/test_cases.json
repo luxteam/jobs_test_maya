@@ -2,7 +2,8 @@
     {
         "case": "MAYA_RS_TM_001",
         "status": "active",
-        "functions": [
+        "functions": [            
+            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.textureGamma', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 0)",
