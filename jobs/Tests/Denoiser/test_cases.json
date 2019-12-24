@@ -700,7 +700,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 0)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -716,7 +716,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 0)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -732,7 +732,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 3)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -748,7 +748,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 3)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -763,7 +763,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 0)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -778,7 +778,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 3)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -793,7 +793,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 0)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -808,7 +808,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 3)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -823,7 +823,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 0)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
@@ -838,7 +838,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "cmds.setAttr('RPRPhysicalLight2Shape.lightIntensity', 3)", 
+            "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
             "rpr_render(test_case, script_info)"
         ], 
