@@ -323,6 +323,8 @@ if __name__ == "__main__":
 	while True:
 		iteration += 1
 		core_config.main_logger.info('Try to run script in maya (#' + str(iteration) + ')')
+		if iteration > 1:
+			copyfile(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'), os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration-1) + '.log'))
 		rc = main(args)
 
 		try:
