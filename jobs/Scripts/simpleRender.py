@@ -183,13 +183,16 @@ def main(args):
 			pass
 
 		if case['status'] != 'done':
+			if case["status"] == 'fail':
+				case['status'] = 'error'
+				template["test_status"] = 'error'
 			if case["status"] == 'inprogress':
 				case['status'] = 'fail'
+				template["test_status"] = 'fail'
 
 			template = core_config.RENDER_REPORT_BASE
 			template["test_case"] = case["case"]
 			template["render_device"] = get_gpu()
-			template["test_status"] = 'error'
 			template["script_info"] = case["script_info"]
 			template['scene_name'] = case.get('scene', '')
 			template['file_name'] = 'failed.jpg'
