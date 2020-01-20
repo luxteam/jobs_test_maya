@@ -16,7 +16,7 @@ PASS_LIMIT = {pass_limit}
 RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
 SPU = {SPU}
-THRESHOLD = {THRESHOLD}
+THRESHOLD = {threshold}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
