@@ -83,6 +83,7 @@ def createArgsParser():
 	parser.add_argument('--testCases', required=True)
 	parser.add_argument('--SPU', required=False, default=10)
 	parser.add_argument('--fail_count', required=False, default=0, type=int)
+	parser.add_argument('--threshold', required=True)
 
 	return parser
 
