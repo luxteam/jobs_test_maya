@@ -68,7 +68,7 @@ def render_tool_log_path(name):
 def get_scene_name():
 	scene_name = cmds.file(q=True, sn=True, shn=True)
 	if not scene_name:
-		print('Error while trying to get scene name from context')
+		scene_name = 'untitled'
 	return scene_name
 
 def skipped_case_report(case):	
@@ -82,8 +82,6 @@ def skipped_case_report(case):
 	report.difference_color = 'skipped'
 	report.test_status = 'skipped'
 	report.script_info = script_info
-	if not report.scene_name:
-		report.scene_name = case['scene']
 
 	report.toJSON(report_JSON)
 
@@ -118,8 +116,6 @@ def rpr_render(test_case, script_info):
 	report.difference_color = 'not compared yet'
 	report.test_status = 'passed'
 	report.script_info = script_info
-	if not report.scene_name:
-		report.scene_name = case['scene']
 
 	report.toJSON(report_JSON)
 
@@ -139,8 +135,6 @@ def rpr_success_save(test_case, script_info):
 	report.difference_color = 'not compared yet'
 	report.test_status = 'passed'
 	report.script_info = script_info
-	if not report.scene_name:
-		report.scene_name = case['scene']
 
 	report.toJSON(report_JSON)
 
@@ -160,8 +154,6 @@ def rpr_fail_save(test_case, script_info):
 	report.difference_color = 'not compared yet'
 	report.test_status = 'error'
 	report.script_info = script_info
-	if not report.scene_name:
-		report.scene_name = case['scene']
 
 	report.toJSON(report_JSON)
 
