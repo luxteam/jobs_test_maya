@@ -83,7 +83,7 @@ def skipped_case_report(case):
 	report.test_status = 'skipped'
 	report.script_info = script_info
 	if not report.scene_name:
-		report.scene_name = case['scene']
+		report.scene_name = case.get('scene', '')
 
 	report.toJSON(report_JSON)
 
@@ -140,7 +140,7 @@ def rpr_success_save(case):
 	report.test_status = 'passed'
 	report.script_info = script_info
 	if not report.scene_name:
-		report.scene_name = case['scene']
+		report.scene_name = case.get('scene', '')
 
 	report.toJSON(report_JSON)
 
@@ -161,7 +161,7 @@ def rpr_fail_save(case):
 	report.test_status = 'error'
 	report.script_info = script_info
 	if not report.scene_name:
-		report.scene_name = case['scene']
+		report.scene_name = case.get('scene', '')
 
 	report.toJSON(report_JSON)
 
@@ -241,11 +241,8 @@ def case_function(case):
 		func = 2
 		case['status'] = 'error'
 
-	try:
-		scene_name = case['scene']
-	except:
-		scene_name = ''
-
+	scene_name = case.get('scene', '')
+	
 	functions[func](case)
 
 
