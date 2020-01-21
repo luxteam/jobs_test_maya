@@ -18,7 +18,6 @@ sys.path.append(os.path.abspath(os.path.join(
 import jobs_launcher.core.config as core_config
 from jobs_launcher.core.system_info import get_gpu
 from jobs_launcher.core.kill_process import kill_process
-from jobs_launcher.core.system_info import get_gpu
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 PROCESS = ['Maya', 'maya.exe']
@@ -183,16 +182,13 @@ def main(args):
 			pass
 
 		if case['status'] != 'done':
-			if case["status"] == 'fail':
-				case['status'] = 'error'
-				template["test_status"] = 'error'
 			if case["status"] == 'inprogress':
 				case['status'] = 'fail'
-				template["test_status"] = 'fail'
 
 			template = core_config.RENDER_REPORT_BASE
 			template["test_case"] = case["case"]
 			template["render_device"] = get_gpu()
+			template["test_status"] = 'error'
 			template["script_info"] = case["script_info"]
 			template['scene_name'] = case.get('scene', '')
 			template['file_name'] = 'failed.jpg'
@@ -250,8 +246,8 @@ def main(args):
 			window_titles = get_windows_titles()
 			error_window = set(fatal_errors_titles).intersection(window_titles)
 			if error_window:
-				core_config.main_logger.info("Error window found: {}".format(error_window))
-				core_config.main_logger.info("Found windows: {}".format(window_titles))
+				core_config.main_logger.error("Error window found: {}".format(error_window))
+				core_config.main_logger.error("Found windows: {}".format(window_titles))
 				rc = -1
 
 				if system_pl == 'Windows':
@@ -261,7 +257,7 @@ def main(args):
 					except Exception as ex:
 						pass
 
-				core_config.main_logger.info("Killing maya....")
+				core_config.main_logger.error("Killing maya....")
 
 				child_processes = p.children()
 				core_config.main_logger.info("Child processes: {}".format(child_processes))
