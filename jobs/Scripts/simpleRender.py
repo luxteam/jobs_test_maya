@@ -77,13 +77,13 @@ def createArgsParser():
 	parser.add_argument('--output', required=True, metavar="<dir>")
 	parser.add_argument('--testType', required=True)
 	parser.add_argument('--res_path', required=True)
-	parser.add_argument('--pass_limit', required=True)
-	parser.add_argument('--resolution_x', required=True)
-	parser.add_argument('--resolution_y', required=True)
+	parser.add_argument('--pass_limit', required=False, default=50, type=int)
+	parser.add_argument('--resolution_x', required=False, default=960, type=int)
+	parser.add_argument('--resolution_y', required=False, default=540, type=int)
 	parser.add_argument('--testCases', required=True)
-	parser.add_argument('--SPU', required=False, default=10)
+	parser.add_argument('--SPU', required=False, default=25, type=int)
 	parser.add_argument('--fail_count', required=False, default=0, type=int)
-	parser.add_argument('--threshold', required=True)
+	parser.add_argument('--threshold', required=False, default=0.05, type=float)
 
 	return parser
 
