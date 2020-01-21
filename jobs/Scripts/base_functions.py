@@ -119,12 +119,12 @@ def rpr_render(test_case, script_info):
 	report.test_status = 'passed'
 	report.script_info = script_info
 	if not report.scene_name:
-		report.scene_name = case['scene']
+		report.scene_name = case.get('scene', '')
 
 	report.toJSON(report_JSON)
 
 
-def rpr_success_save(test_case, script_info):
+def rpr_success_save(case):
 	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
 		cmds.loadPlugin('RadeonProRender', quiet=True)
 
@@ -145,7 +145,7 @@ def rpr_success_save(test_case, script_info):
 	report.toJSON(report_JSON)
 
 
-def rpr_fail_save(test_case, script_info):
+def rpr_fail_save(case):
 	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
 		cmds.loadPlugin('RadeonProRender', quiet=True)
 
@@ -246,10 +246,7 @@ def case_function(case):
 	except:
 		scene_name = ''
 
-	if not func:
-		functions[func](case['case'], case['script_info'], scene_name)
-	else:
-		functions[func](case['case'], case['script_info'])
+	functions[func](case)
 
 
 def main():
