@@ -560,6 +560,9 @@
     {
         "case": "MAYA_SM_036", 
         "status": "active", 
+        "functions": [
+            "rpr_render(test_case, script_info)"
+        ], 
         "script_info": [
             "Displacement", 
             "Pass Limit: 50"

@@ -174,7 +174,7 @@ def rpr_save(case):
     cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
     work_folder = path.join(WORK_DIR, 'Color', test_case + '.jpg')
 
-    if case['status'] == 'done':
+    if case['status'] == 'inprogress':
         cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..',
                                'jobs', 'Tests', 'pass.jpg'), copy=work_folder)
     elif case['status'] == 'error':
@@ -193,7 +193,7 @@ def rpr_save(case):
     if not report.scene_name:
         report.scene_name = case.get('scene', '')
 
-    if case['status'] == 'done':
+    if case['status'] == 'inprogress':
         report.test_status = 'passed'
     else:
         report.test_status = case['status']
