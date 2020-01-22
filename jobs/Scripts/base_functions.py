@@ -112,7 +112,7 @@ def rpr_render(test_case, script_info):
                             writeImage=test_case_path)
     test_time = time.time() - start_time
 
-    report_JSON = path.join(WORK_DIR, (test_case + '_RPR.json'))
+    report_JSON = path.join(WORK_DIR, test_case + '_RPR.json')
 
     report = RPR_report_json()
     report.render_time = test_time
@@ -176,10 +176,10 @@ def rpr_save(case):
 
     if case['status'] == 'done':
         cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..',
-                               'jobs', 'Tests', 'pass.jpg'), copy=(work_folder))
+                               'jobs', 'Tests', 'pass.jpg'), copy=work_folder)
     elif case['status'] == 'error':
         cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..',
-                               'jobs', 'Tests', 'failed.jpg'), copy=(work_folder))
+                               'jobs', 'Tests', 'failed.jpg'), copy=work_folder)
     elif case['status'] == 'skipped':
         cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..',
                                'jobs', 'Tests', 'skipped.jpg'), copy=work_folder)
