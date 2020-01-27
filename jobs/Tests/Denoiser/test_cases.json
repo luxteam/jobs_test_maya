@@ -1,4 +1,195 @@
 [
+	    {
+        "case": "MAYA_RS_DEN_061", 
+        "status": "skipped", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Complex Lighting", 
+            "ML denoiser", 
+            "Color"
+        ], 
+        "scene": "ComplexLighting.ma"
+    }, 
+    {
+        "case": "MAYA_RS_DEN_062", 
+        "status": "skipped", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Complex Lighting", 
+            "Color+AOV", 
+            "ML denoiser"
+        ], 
+        "scene": "ComplexLighting.ma"
+    }, 
+    {
+        "case": "MAYA_RS_DEN_063", 
+        "status": "skipped", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Complex Lighting", 
+            "EAW", 
+            "denoiser"
+        ], 
+        "scene": "ComplexLighting.ma"
+    }, 
+    {
+        "case": "MAYA_RS_DEN_064", 
+        "status": "active", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Complex Lighting", 
+            "LWR", 
+            "denoiser"
+        ], 
+        "scene": "ComplexLighting.ma"
+    }, 
+    {
+        "case": "MAYA_RS_DEN_065", 
+        "status": "active", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Complex Lighting", 
+            "Bilateral", 
+            "denoiser"
+        ], 
+        "scene": "ComplexLighting.ma"
+    }, 
+    {
+        "case": "MAYA_RS_DEN_066", 
+        "status": "active", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Materials", 
+            "Color", 
+            "ML denoiser"
+        ], 
+        "scene": "DenoiserMaterials.ma"
+    }, 
+    {
+        "case": "MAYA_RS_DEN_067", 
+        "status": "active", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Materials", 
+            "Color+AOV", 
+            "ML denoiser"
+        ], 
+        "scene": "DenoiserMaterials.ma"
+    }, 
+    {
+        "case": "MAYA_RS_DEN_068", 
+        "status": "active", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Materials", 
+            "Denoiser EAW"
+        ], 
+        "scene": "DenoiserMaterials.ma"
+    }, 
+    {
+        "case": "MAYA_RS_DEN_069", 
+        "status": "active", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Materials", 
+            "Denoiser LWR"
+        ], 
+        "scene": "DenoiserMaterials.ma"
+    }, 
+    {
+        "case": "MAYA_RS_DEN_070", 
+        "status": "active", 
+        "functions": [
+        	"cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Materials", 
+            "Denoiser Bilateral"
+        ], 
+        "scene": "DenoiserMaterials.ma"
+    }
     {
         "case": "MAYA_RS_DEN_001", 
         "status": "active", 
@@ -987,156 +1178,5 @@
             "Bilateral"
         ], 
         "scene": "DenoiserIBL.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_061", 
-        "status": "skipped", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Complex Lighting", 
-            "ML denoiser", 
-            "Color"
-        ], 
-        "scene": "ComplexLighting.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_062", 
-        "status": "skipped", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Complex Lighting", 
-            "Color+AOV", 
-            "ML denoiser"
-        ], 
-        "scene": "ComplexLighting.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_063", 
-        "status": "skipped", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Complex Lighting", 
-            "EAW", 
-            "denoiser"
-        ], 
-        "scene": "ComplexLighting.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_064", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Complex Lighting", 
-            "LWR", 
-            "denoiser"
-        ], 
-        "scene": "ComplexLighting.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_065", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Complex Lighting", 
-            "Bilateral", 
-            "denoiser"
-        ], 
-        "scene": "ComplexLighting.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_066", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Materials", 
-            "Color", 
-            "ML denoiser"
-        ], 
-        "scene": "DenoiserMaterials.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_067", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Materials", 
-            "Color+AOV", 
-            "ML denoiser"
-        ], 
-        "scene": "DenoiserMaterials.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_068", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Materials", 
-            "Denoiser EAW"
-        ], 
-        "scene": "DenoiserMaterials.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_069", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Materials", 
-            "Denoiser LWR"
-        ], 
-        "scene": "DenoiserMaterials.ma"
-    }, 
-    {
-        "case": "MAYA_RS_DEN_070", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Materials", 
-            "Denoiser Bilateral"
-        ], 
-        "scene": "DenoiserMaterials.ma"
     }
 ]
