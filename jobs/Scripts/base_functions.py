@@ -137,7 +137,7 @@ def prerender(case):
 			else:
 				eval(function)
 		except Exception as e:
-			print('Error {{}} with string {{}}'.format(e, function))
+			print('Error "{{}}" with string "{{}}"'.format(e, function))
 
 
 def rpr_save(case):
@@ -148,10 +148,9 @@ def rpr_save(case):
 
 	if case['status'] == 'inprogress':
 		cmds.sysFile(path.join(source_dir, 'passed.jpg'), copy=work_dir)
-	elif case['status'] == 'error':
-		cmds.sysFile(path.join(source_dir, 'error.jpg'), copy=work_dir)
-	elif case['status'] == 'skipped':
-		cmds.sysFile(path.join(source_dir, 'skipped.jpg'), copy=work_dir)
+	else:
+		cmds.sysFile(
+			path.join(source_dir, case['status'] + '.jpg'), copy=work_dir)
 
 	check_rpr_load()
 
@@ -161,14 +160,14 @@ def rpr_save(case):
 def case_function(case):
 	try:
 		projPath = RES_PATH + '/' + TEST_TYPE
-		temp = RES_PATH + '/' + TEST_TYPE + '/' + case['scene'][:-3]
+		temp = projPath + '/' + case['scene'][:-3]
 		if os.path.isdir(temp):
 			projPath = temp
 		mel.eval('setProject(\"{{}}\")'.format(projPath))
 	except:
-		print('Can\'t set project (' + projPath + ')')
+		print('Can\'t set project in "' + projPath + '"')
 		cmds.evalDeferred('cmds.quit(abort=True)')
-		
+
 	functions = {{
 		'render': prerender,
 		'save_report': rpr_save
@@ -227,3 +226,5 @@ def main():
 # - Error: Maya was crashed during case. Fail report is already created.
 # - Done: Case was finished successfully.
 # - Skipped: Case will be skipped. Skip report will be created.
+
+
