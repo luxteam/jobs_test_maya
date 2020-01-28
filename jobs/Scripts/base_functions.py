@@ -74,7 +74,7 @@ def get_scene_name():
 
 def skipped_case_report(case):	
 	test_case = case['case']
-	cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'skipped.jpg'), copy=path.join(WORK_DIR, 'Color', test_case + '.jpg'))
+	cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs_launcher', 'common', 'img', 'skipped.jpg'), copy=path.join(WORK_DIR, 'Color', test_case + '.jpg'))
 	script_info = case['script_info']
 	report_JSON = path.join(WORK_DIR, (test_case + '_RPR.json'))
 
@@ -127,7 +127,7 @@ def rpr_success_save(test_case, script_info):
 
 	cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
 	work_folder = path.join(WORK_DIR, 'Color', (test_case + '.jpg'))
-	cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=(work_folder))
+	cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs_launcher', 'common', 'img', 'passed.jpg'), copy=(work_folder))
 
 	report_JSON = path.join(WORK_DIR, (test_case + '_RPR.json'))
 
@@ -146,7 +146,7 @@ def rpr_fail_save(test_case, script_info):
 
 	cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
 	work_folder = path.join(WORK_DIR, 'Color', (test_case + '.jpg'))
-	cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'failed.jpg'), copy=(work_folder))
+	cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs_launcher', 'common', 'img', 'error.jpg'), copy=(work_folder))
 
 	report_JSON = path.join(WORK_DIR, (test_case + '_RPR.json'))
 
@@ -216,6 +216,19 @@ def prerender(test_case, script_info, scene):
 
 
 def case_function(case):
+	projPath = RES_PATH + '/' + TEST_TYPE
+	try:
+		temp = RES_PATH + '/' + TEST_TYPE + '/' + case['scene'][:-3]
+		if os.path.isdir(temp):
+			projPath = temp
+	except:
+		pass
+	try:
+		mel.eval('setProject(\"{{}}\")'.format(projPath))
+	except:
+		print('Can\'t set project (' + projPath + ')')
+		cmds.evalDeferred('cmds.quit(abort=True)')
+
 	functions = {{
 		0: prerender,
 		1: rpr_success_save,
@@ -246,9 +259,6 @@ def case_function(case):
 
 
 def main():
-
-	mel.eval('setProject(\"{{}}\")'.format(RES_PATH))
-
 	check_rpr_load()
 
 	cmds.sysFile(LOGS_DIR, makeDir=True)
