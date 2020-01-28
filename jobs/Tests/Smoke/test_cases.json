@@ -375,7 +375,7 @@
             "cmds.delete(light_transform)"
         ], 
         "script_info": [
-            "Base Light Area Light, 100000 iterations", 
+            "Base Light Area Light, 50 - iterations, intensity - 100.000", 
             "Pass Limit: 50"
         ], 
         "scene": "Lamborginhi_Aventador.ma"
