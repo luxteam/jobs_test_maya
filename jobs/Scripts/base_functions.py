@@ -163,7 +163,7 @@ def case_function(case):
 		temp = projPath + '/' + case['scene'][:-3]
 		if os.path.isdir(temp):
 			projPath = temp
-		mel.eval('setProject(\"{{}}\")'.format(projPath))
+		mel.eval('setProject("{{}}")'.format(projPath))
 	except:
 		print('Can\'t set project in "' + projPath + '"')
 		cmds.evalDeferred('cmds.quit(abort=True)')
