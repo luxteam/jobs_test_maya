@@ -256,8 +256,8 @@ def main(args):
 			window_titles = get_windows_titles()
 			error_window = set(fatal_errors_titles).intersection(window_titles)
 			if error_window:
-				core_config.main_logger.info('Error window found: {}'.format(error_window))
-				core_config.main_logger.info('Found windows: {}'.format(window_titles))
+				core_config.main_logger.error('Error window found: {}'.format(error_window))
+				core_config.main_logger.warn('Found windows: {}'.format(window_titles))
 				rc = -1
 
 				if system_pl == 'Windows':
@@ -267,10 +267,10 @@ def main(args):
 					except Exception as ex:
 						pass
 
-				core_config.main_logger.info('Killing maya....')
+				core_config.main_logger.warn('Killing maya....')
 
 				child_processes = p.children()
-				core_config.main_logger.info('Child processes: {}'.format(child_processes))
+				core_config.main_logger.warn('Child processes: {}'.format(child_processes))
 				for ch in child_processes:
 					try:
 						ch.terminate()
@@ -280,7 +280,7 @@ def main(args):
 						status = ch.status()
 						core_config.main_logger.error('Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
 					except psutil.NoSuchProcess:
-						core_config.main_logger.info('Process is killed: {}'.format(ch))
+						core_config.main_logger.warn('Process is killed: {}'.format(ch))
 
 				try:
 					p.terminate()
@@ -290,7 +290,7 @@ def main(args):
 					status = ch.status()
 					core_config.main_logger.error('Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
 				except psutil.NoSuchProcess:
-					core_config.main_logger.info('Process is killed: {}'.format(ch))
+					core_config.main_logger.warn('Process is killed: {}'.format(ch))
 				
 				break
 		else:
