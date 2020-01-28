@@ -79,7 +79,7 @@
         "case": "MAYA_L_BL_005",
         "status": "active",
         "script_info": [
-            "Area light. Intensity: 1."
+            "Area light. Intensity: 500."
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
@@ -87,7 +87,7 @@
             "light_transform = cmds.shadingNode('areaLight', asLight=True)",
             "cmds.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
-            "cmds.setAttr(light_transform + '.intensity', 1)",
+            "cmds.setAttr(light_transform + '.intensity', 500)",
             "cmds.setAttr(light_transform + '.decayRate', 0)",
             "rpr_render(test_case, script_info)",
             "cmds.delete(light_transform)"
@@ -97,7 +97,7 @@
         "case": "MAYA_L_BL_006",
         "status": "active",
         "script_info": [
-            "Area light. Intensity: 3."
+            "Area light. Intensity: 1500."
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
@@ -105,7 +105,7 @@
             "light_transform = cmds.shadingNode('areaLight', asLight=True)",
             "cmds.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
-            "cmds.setAttr(light_transform + '.intensity', 3)",
+            "cmds.setAttr(light_transform + '.intensity', 1500)",
             "cmds.setAttr(light_transform + '.decayRate', 0)",
             "rpr_render(test_case, script_info)",
             "cmds.delete(light_transform)"
@@ -115,7 +115,7 @@
         "case": "MAYA_L_BL_007",
         "status": "active",
         "script_info": [
-            "Area light. Intensity: 3. Decay Rate: Linear"
+            "Area light. Intensity: 1500. Decay Rate: Linear"
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
@@ -123,7 +123,7 @@
             "light_transform = cmds.shadingNode('areaLight', asLight=True)",
             "cmds.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
-            "cmds.setAttr(light_transform + '.intensity', 3)",
+            "cmds.setAttr(light_transform + '.intensity', 1500)",
             "cmds.setAttr(light_transform + '.decayRate', 1)",
             "rpr_render(test_case, script_info)",
             "cmds.delete(light_transform)"
@@ -133,7 +133,7 @@
         "case": "MAYA_L_BL_008",
         "status": "active",
         "script_info": [
-            "Area light. Intensity: 3. Decay Rate: Quadratic"
+            "Area light. Intensity: 1500. Decay Rate: Quadratic"
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
@@ -141,7 +141,7 @@
             "light_transform = cmds.shadingNode('areaLight', asLight=True)",
             "cmds.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
-            "cmds.setAttr(light_transform + '.intensity', 3)",
+            "cmds.setAttr(light_transform + '.intensity', 1500)",
             "cmds.setAttr(light_transform + '.decayRate', 2)",
             "rpr_render(test_case, script_info)",
             "cmds.delete(light_transform)"
@@ -151,7 +151,7 @@
         "case": "MAYA_L_BL_009",
         "status": "active",
         "script_info": [
-            "Area light. Intensity: 3. Decay Rate: Cubic"
+            "Area light. Intensity: 1500. Decay Rate: Cubic"
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
@@ -159,7 +159,7 @@
             "light_transform = cmds.shadingNode('areaLight', asLight=True)",
             "cmds.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
-            "cmds.setAttr(light_transform + '.intensity', 3)",
+            "cmds.setAttr(light_transform + '.intensity', 1500)",
             "cmds.setAttr(light_transform + '.decayRate', 3)",
             "rpr_render(test_case, script_info)",
             "cmds.delete(light_transform)"
