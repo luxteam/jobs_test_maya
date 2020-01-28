@@ -1,19 +1,5 @@
 [
 	{
-        "case": "MAYA_RS_DEN_001", 
-        "status": "active", 
-        "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
-        ], 
-        "script_info": [
-            "Bilateral Denoiser", 
-            "Radius - 1"
-        ], 
-        "scene": "maya_shaderball.ma"
-    }, 
-	{
         "case": "MAYA_RS_DEN_061", 
         "status": "skipped", 
         "functions": [
@@ -203,7 +189,21 @@
             "Denoiser Bilateral"
         ], 
         "scene": "DenoiserMaterials.ma"
-    }
+    },
+    {
+        "case": "MAYA_RS_DEN_001", 
+        "status": "active", 
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "rpr_render(test_case, script_info)"
+        ], 
+        "script_info": [
+            "Bilateral Denoiser", 
+            "Radius - 1"
+        ], 
+        "scene": "maya_shaderball.ma"
+    }, 
     {
         "case": "MAYA_RS_DEN_002", 
         "status": "active", 
