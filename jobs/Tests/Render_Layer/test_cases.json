@@ -8,7 +8,7 @@
         "scene": "render_layer.ma",
         "functions": [
             "cmds.editRenderLayerGlobals(crl='rs_L03_BEAUTY')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -20,7 +20,7 @@
         "scene": "render_layer.ma",
         "functions": [
             "cmds.editRenderLayerGlobals(crl='rs_ALL_SHADOW')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -32,7 +32,7 @@
         "scene": "render_layer.ma",
         "functions": [
             "cmds.editRenderLayerGlobals(crl='rs_L02_BEAUTY')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -44,7 +44,7 @@
         "scene": "render_layer.ma",
         "functions": [
             "cmds.editRenderLayerGlobals(crl='rs_POL_BEAUTY')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -56,7 +56,7 @@
         "scene": "render_layer.ma",
         "functions": [
             "cmds.editRenderLayerGlobals(crl='rs_L01_BEAUTY')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -68,7 +68,7 @@
         "scene": "render_layer.ma",
         "functions": [
             "cmds.editRenderLayerGlobals(crl='defaultRenderLayer')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     }
 ]

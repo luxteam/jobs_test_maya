@@ -79,7 +79,7 @@ def check_rpr_load():
 		cmds.loadPlugin('fbxmaya', quiet=True)
 
 
-def rpr_render(test_case, script_info):
+def rpr_render(case):
 	render_device = RENDER_DEVICE
 	cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', SPU)
 	cmds.optionVar(rm='RPR_DevicesSelected')
@@ -96,7 +96,7 @@ def rpr_render(test_case, script_info):
 	start_time = time.time()
 	mel.eval('renderIntoNewWindow render')
 	cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
-	test_case_path = path.join(WORK_DIR, 'Color', test_case)
+	test_case_path = path.join(WORK_DIR, 'Color', case['case'])
 	cmds.renderWindowEditor('renderView', edit=1,  dst='color')
 	cmds.renderWindowEditor('renderView', edit=1, com=1,
 							writeImage=test_case_path)
@@ -159,14 +159,11 @@ def rpr_save(case):
 
 
 def case_function(case):
-	projPath = RES_PATH + '/' + TEST_TYPE
 	try:
+		projPath = RES_PATH + '/' + TEST_TYPE
 		temp = RES_PATH + '/' + TEST_TYPE + '/' + case['scene'][:-3]
 		if os.path.isdir(temp):
 			projPath = temp
-	except:
-		pass
-	try:
 		mel.eval('setProject(\"{{}}\")'.format(projPath))
 	except:
 		print('Can\'t set project (' + projPath + ')')
@@ -190,8 +187,6 @@ def case_function(case):
 
 
 def main():
-	mel.eval('setProject(\"{{}}\")'.format(RES_PATH))
-
 	cmds.sysFile(LOGS_DIR, makeDir=True)
 
 	with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
