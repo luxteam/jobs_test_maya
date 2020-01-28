@@ -145,12 +145,13 @@ def prerender(case):
 def rpr_save(case):
     cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
     work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
-    source_dir = path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests')
+    source_dir = path.join(WORK_DIR, '..', '..', '..',
+                           '..', 'jobs_launcher', 'common', 'img')
 
     if case['status'] == 'inprogress':
-        cmds.sysFile(path.join(source_dir, 'pass.jpg'), copy=work_dir)
+        cmds.sysFile(path.join(source_dir, 'passed.jpg'), copy=work_dir)
     elif case['status'] == 'error':
-        cmds.sysFile(path.join(source_dir, 'failed.jpg'), copy=work_dir)
+        cmds.sysFile(path.join(source_dir, 'error.jpg'), copy=work_dir)
     elif case['status'] == 'skipped':
         cmds.sysFile(path.join(source_dir, 'skipped.jpg'), copy=work_dir)
 
@@ -160,6 +161,19 @@ def rpr_save(case):
 
 
 def case_function(case):
+    projPath = RES_PATH + '/' + TEST_TYPE
+    try:
+		temp = RES_PATH + '/' + TEST_TYPE + '/' + case['scene'][:-3]
+		if os.path.isdir(temp):
+			projPath = temp
+	except:
+		pass
+	try:
+		mel.eval('setProject(\"{{}}\")'.format(projPath))
+	except:
+		print('Can\'t set project (' + projPath + ')')
+		cmds.evalDeferred('cmds.quit(abort=True)')
+        
     functions = {{
         'render': prerender,
         'save_report': rpr_save
