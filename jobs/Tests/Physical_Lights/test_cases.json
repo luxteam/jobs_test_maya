@@ -8,7 +8,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 3)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightShape', 3)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightVisible', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -27,7 +27,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.areaWidth', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightShape', 4)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightVisible', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -48,7 +48,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightShape', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightVisible', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -71,7 +71,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLength', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightShape', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightVisible', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -97,7 +97,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightShape', 4)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightVisible', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsEnabled', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -122,7 +122,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightVisible', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -148,7 +148,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightVisible', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -174,7 +174,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsEnabled', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 4000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -200,7 +200,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightVisible', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 4000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -222,7 +222,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightShape', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaLightVisible', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -246,7 +246,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 0.1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -267,7 +267,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 43)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -284,7 +284,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 43)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -301,7 +301,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -319,7 +319,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 45)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 149)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -339,7 +339,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -359,7 +359,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 179)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -379,7 +379,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -398,7 +398,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 149)",
             "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -420,7 +420,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -438,7 +438,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 43)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -458,7 +458,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -478,7 +478,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 149)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -498,7 +498,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -516,7 +516,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -536,7 +536,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 45)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -553,7 +553,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 179)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -570,7 +570,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 43)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 149)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -589,7 +589,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -608,7 +608,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 0.100001)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -625,7 +625,7 @@
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -639,7 +639,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -653,7 +653,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -669,7 +669,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -688,7 +688,7 @@
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -705,7 +705,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -722,7 +722,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -740,7 +740,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -756,7 +756,7 @@
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 30)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -774,7 +774,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 30)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -792,7 +792,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 30)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -810,7 +810,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 30)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -827,7 +827,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 30)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -845,7 +845,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 30)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -860,7 +860,7 @@
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 30)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -874,7 +874,7 @@
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 30)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -891,7 +891,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 30)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -910,7 +910,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 0.100001)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -932,7 +932,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 3)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -948,7 +948,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 3)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -964,7 +964,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 3)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -981,7 +981,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 3)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1000,7 +1000,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1021,7 +1021,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 3)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1041,7 +1041,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1060,7 +1060,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1080,7 +1080,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1101,7 +1101,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1122,7 +1122,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1143,7 +1143,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1163,7 +1163,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 40000)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1184,7 +1184,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 50)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -1203,7 +1203,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 3)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 50)",
             "cmds.setAttr('RPRPhysicalLight1Shape.shadowsSoftness', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [

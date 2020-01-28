@@ -8,7 +8,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -20,7 +20,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 2)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -32,7 +32,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 3)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -45,7 +45,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 4)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -58,7 +58,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 5)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -71,7 +71,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 6)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -84,7 +84,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 7)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -97,7 +97,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 8)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -109,7 +109,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 9)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -122,7 +122,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -135,7 +135,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -148,7 +148,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -162,7 +162,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 4)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -176,7 +176,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 5)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -190,7 +190,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 6)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -204,7 +204,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 7)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -218,7 +218,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 8)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -231,7 +231,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 9)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -244,7 +244,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -257,7 +257,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -270,7 +270,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -284,7 +284,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 4)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -298,7 +298,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 5)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -312,7 +312,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 6)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -326,7 +326,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 7)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -340,7 +340,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 8)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -353,7 +353,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 9)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     }
 ]
