@@ -368,14 +368,14 @@
         "status": "active", 
         "functions": [
             "light_transform = cmds.shadingNode('areaLight', asLight=True)",
-            "cmds.setAttr(light_transform + '.intensity', 20)", 
+            "cmds.setAttr(light_transform + '.intensity', 100000)", 
             "cmds.setAttr(light_transform + '.translateY', 400)", 
             "cmds.setAttr(light_transform + '.rotateX', 270)", 
             "rpr_render(test_case, script_info)", 
             "cmds.delete(light_transform)"
         ], 
         "script_info": [
-            "Base Light Area Light", 
+            "Base Light Area Light, 100000 iterations", 
             "Pass Limit: 50"
         ], 
         "scene": "Lamborginhi_Aventador.ma"
