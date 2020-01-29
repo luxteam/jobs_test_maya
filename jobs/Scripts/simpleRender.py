@@ -112,7 +112,7 @@ def check_licenses(res_path, maya_scenes, testType):
 
 
 def main(args):
-	if args.testType in ['Support_2017', 'Support_2018']:
+	if args.testType in ['Support_2019', 'Support_2018']:
 		args.tool = re.sub('[0-9]{4}', args.testType[-4:], args.tool)
 
 	if platform.system() == 'Windows':
