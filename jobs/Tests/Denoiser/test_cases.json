@@ -3,8 +3,6 @@
         "case": "MAYA_RS_DEN_061", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
@@ -23,8 +21,6 @@
         "case": "MAYA_RS_DEN_062", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
@@ -43,8 +39,6 @@
         "case": "MAYA_RS_DEN_063", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
@@ -62,8 +56,6 @@
         "case": "MAYA_RS_DEN_064", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
@@ -81,8 +73,6 @@
         "case": "MAYA_RS_DEN_065", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
@@ -100,8 +90,6 @@
         "case": "MAYA_RS_DEN_066", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
@@ -120,8 +108,6 @@
         "case": "MAYA_RS_DEN_067", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
@@ -140,8 +126,6 @@
         "case": "MAYA_RS_DEN_068", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
@@ -158,8 +142,6 @@
         "case": "MAYA_RS_DEN_069", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
@@ -176,8 +158,6 @@
         "case": "MAYA_RS_DEN_070", 
         "status": "active", 
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
-            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Blender %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
