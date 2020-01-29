@@ -7,12 +7,12 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType Support_2017</argument>
-    	<argument>--pass_limit {PassLimit}</argument>
-    	<argument>--resolution_x {rx}</argument>
-    	<argument>--resolution_y {ry}</argument>
-    	<argument>--res_path "{ScenesDir}"</argument>
-	    <argument>--testCases "{TestCases}"</argument>
+        <argument>--testType Support_2019</argument>
+        <argument>--pass_limit {PassLimit}</argument>
+        <argument>--resolution_x {rx}</argument>
+        <argument>--resolution_y {ry}</argument>
+        <argument>--res_path "{ScenesDir}"</argument>
+        <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU {SPU}</argument>     
     </execute>
 
