@@ -10,7 +10,7 @@
             "cmds.setAttr(ss_shape + '.groundColor', 1, 1, 1, type='double3')",
             "cmds.setAttr(ss_shape + '.sunGlow', 0)",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Turbidity - 0",
@@ -33,7 +33,7 @@
             "cmds.setAttr(ss_shape + '.groundColor', 0, 0, 0, type='double3')",
             "cmds.setAttr(ss_shape + '.sunGlow', 50)",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 10)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -56,7 +56,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
             "cmds.setAttr(ss_shape + '.sunGlow', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -78,7 +78,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 2",
@@ -101,7 +101,7 @@
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.tga')",
             "cmds.setAttr(ss_shape + '.sunGlow', 0)",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 10)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -123,7 +123,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
             "cmds.setAttr(ss_shape + '.sunGlow', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Turbidity - 50",
@@ -142,7 +142,7 @@
             "cmds.setAttr(ss_shape + '.turbidity', 50)",
             "cmds.setAttr(ss_shape + '.groundColor', 1, 1, 1, type='double3')",
             "cmds.setAttr(ss_shape + '.sunGlow', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Turbidity - 50",
@@ -160,7 +160,7 @@
             "cmds.setAttr(ss_shape + '.turbidity', 50)",
             "cmds.setAttr(ss_shape + '.filterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr(ss_shape + '.groundColor', 0, 0, 0, type='double3')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Turbidity - 50",
@@ -178,7 +178,7 @@
             "cmds.setAttr(ss_shape + '.turbidity', 50)",
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.tga')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Turbidity - 50",
@@ -197,7 +197,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
             "cmds.setAttr(ss_shape + '.groundColor', 1, 1, 1, type='double3')",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 3",
@@ -215,7 +215,7 @@
             "ss_shape = cmds.createNode('RPRSky', n='RPRSkyShape')",
             "cmds.setAttr(ss_shape + '.groundColor', 0, 0, 0, type='double3')",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 10)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Ground Color - HSV: 0, 0, 0",
@@ -232,7 +232,7 @@
             "cmds.setAttr(ss_shape + '.filterColor', 1, 1, 1, type='double3')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.tga')",
             "cmds.setAttr(ss_shape + '.sunGlow', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - HSV: 0, 0, 1",
@@ -250,7 +250,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
             "cmds.setAttr(ss_shape + '.sunGlow', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.tga",
@@ -269,7 +269,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.tga')",
             "cmds.setAttr(ss_shape + '.sunGlow', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 0.1",
@@ -288,7 +288,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -306,7 +306,7 @@
             "cmds.setAttr(ss_shape + '.filterColor', 1, 1, 1, type='double3')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - HSV: 0, 0, 1",
@@ -324,7 +324,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.tga')",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 10)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.tga",
@@ -341,7 +341,7 @@
             "ss_shape = cmds.createNode('RPRSky', n='RPRSkyShape')",
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.png",
@@ -359,7 +359,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "cmds.setAttr(ss_shape + '.groundColor', 1, 1, 1, type='double3')",
             "cmds.setAttr(ss_shape + '.sunGlow', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 0.1",
@@ -379,7 +379,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
             "cmds.setAttr(ss_shape + '.groundColor', 0, 0, 0, type='double3')",
             "cmds.setAttr(ss_shape + '.sunGlow', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 2",
@@ -398,7 +398,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 10)",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.tga')",
             "cmds.setAttr(ss_shape + '.sunGlow', 100)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 10",
@@ -417,7 +417,7 @@
             "cmds.setAttr(ss_shape + '.groundColor', 1, 1, 1, type='double3')",
             "cmds.setAttr(ss_shape + '.sunGlow', 100)",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.png",
@@ -436,7 +436,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "cmds.setAttr(ss_shape + '.groundColor', 0, 0, 0, type='double3')",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 10)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.tga",
@@ -454,7 +454,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.tga')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -471,7 +471,7 @@
             "ss_shape = cmds.createNode('RPRSky', n='RPRSkyShape')",
             "cmds.setAttr(ss_shape + '.intensity', 2)",
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 2",
@@ -489,7 +489,7 @@
             "cmds.setAttr(ss_shape + '.filterColor', 1, 1, 1, type='double3')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.tga')",
             "cmds.setAttr(ss_shape + '.sunGlow', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -508,7 +508,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
             "cmds.setAttr(ss_shape + '.sunGlow', 50)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.tga",
@@ -527,7 +527,7 @@
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
             "cmds.setAttr(ss_shape + '.sunGlow', 50)",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.png",
@@ -547,7 +547,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "cmds.setAttr(ss_shape + '.sunGlow', 100)",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 10)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 0.1",
@@ -566,7 +566,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 2)",
             "cmds.setAttr(ss_shape + '.filterColor', 1, 1, 1, type='double3')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 2",
@@ -584,7 +584,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 10)",
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "cmds.setAttr(ss_shape + '.groundColor', 1, 1, 1, type='double3')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 10",
@@ -601,7 +601,7 @@
             "ss_shape = cmds.createNode('RPRSky', n='RPRSkyShape')",
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.png')",
             "cmds.setAttr(ss_shape + '.groundColor', 0, 0, 0, type='double3')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.png",
@@ -618,7 +618,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.tga')",
             "cmds.setAttr(ss_shape + '.sunGlow', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Filter Color - sunsky_filtercolor.tga",
@@ -636,7 +636,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.horizonHeight', 0)",
             "cmds.setAttr(ss_shape + '.horizonBlur', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -654,7 +654,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.horizonHeight', 0.1)",
             "cmds.setAttr(ss_shape + '.horizonBlur', 0.5)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -672,7 +672,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.horizonHeight', 0.5)",
             "cmds.setAttr(ss_shape + '.horizonBlur', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -690,7 +690,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.horizonHeight', 1)",
             "cmds.setAttr(ss_shape + '.horizonBlur', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -707,7 +707,7 @@
             "ss_shape = cmds.createNode('RPRSky', n='RPRSkyShape')",
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.saturation', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -723,7 +723,7 @@
             "ss_shape = cmds.createNode('RPRSky', n='RPRSkyShape')",
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.saturation', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -740,7 +740,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.sunPositionType', 0)",
             "cmds.setAttr(ss_shape + '.altitude', 0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -758,7 +758,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.sunPositionType', 0)",
             "cmds.setAttr(ss_shape + '.altitude', 90)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -776,7 +776,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.sunPositionType', 0)",
             "cmds.setAttr(ss_shape + '.azimuth', -360)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -794,7 +794,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.sunPositionType', 0)",
             "cmds.setAttr(ss_shape + '.altitude', 90)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -812,7 +812,7 @@
             "cmds.setAttr(ss_shape + '.intensity', 1)",
             "cmds.setAttr(ss_shape + '.sunPositionType', 1)",
             "cmds.setAttr(ss_shape + '.altitude', 45)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -833,7 +833,7 @@
             "cmds.setAttr(ss_shape + '.longitude', 37.616)",
             "cmds.setAttr(ss_shape + '.timeZone', 3)",
             "cmds.setAttr(ss_shape + '.daylightSaving', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -857,7 +857,7 @@
             "cmds.setAttr(ss_shape + '.latitude', 65.543)",
             "cmds.setAttr(ss_shape + '.longitude', 37.616)",
             "cmds.setAttr(ss_shape + '.timeZone', 3)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -881,7 +881,7 @@
             "cmds.setAttr(ss_shape + '.longitude', 37.616)",
             "cmds.setAttr(ss_shape + '.timeZone', 3)",
             "cmds.setAttr(ss_shape + '.daylightSaving', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -909,7 +909,7 @@
             "cmds.setAttr(ss_shape + '.sunPositionType', 1)",
             "cmds.setAttr(ss_shape + '.minutes', 1)",
             "cmds.setAttr(ss_shape + '.seconds', 60)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -940,7 +940,7 @@
             "cmds.setAttr(ss_shape + '.hours', 1)",
             "cmds.setAttr(ss_shape + '.minutes', 60)",
             "cmds.setAttr(ss_shape + '.longitude', -180)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -971,7 +971,7 @@
             "cmds.setAttr(ss_shape + '.year', -2000)",
             "cmds.setAttr(ss_shape + '.seconds', 1)",
             "cmds.setAttr(ss_shape + '.timeZone', 18)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 0.1",
@@ -1001,7 +1001,7 @@
             "cmds.setAttr(ss_shape + '.month', 1)",
             "cmds.setAttr(ss_shape + '.minutes', 1)",
             "cmds.setAttr(ss_shape + '.daylightSaving', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 2",
@@ -1032,7 +1032,7 @@
             "cmds.setAttr(ss_shape + '.day', 1)",
             "cmds.setAttr(ss_shape + '.seconds', 1)",
             "cmds.setAttr(ss_shape + '.latitude', -90)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1062,7 +1062,7 @@
             "cmds.setAttr(ss_shape + '.day', 31)",
             "cmds.setAttr(ss_shape + '.seconds', 60)",
             "cmds.setAttr(ss_shape + '.latitude', 90)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 0.1",
@@ -1092,7 +1092,7 @@
             "cmds.setAttr(ss_shape + '.seconds', 1)",
             "cmds.setAttr(ss_shape + '.daylightSaving', 1)",
             "cmds.setAttr(ss_shape + '.longitude', -180)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1123,7 +1123,7 @@
             "cmds.setAttr(ss_shape + '.hours', 24)",
             "cmds.setAttr(ss_shape + '.seconds', 60)",
             "cmds.setAttr(ss_shape + '.longitude', 180)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1148,7 +1148,7 @@
             "setAttribute(ss_shape, 'filterColor', 'sunsky_filtercolor.tga')",
             "setAttribute(ss_shape, 'groundColor', 'sunsky_groundcolor.png')",
             "cmds.setAttr(ss_shape + '.sunPositionType', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 2",
@@ -1172,7 +1172,7 @@
             "cmds.setAttr(ss_shape + '.day', 1)",
             "cmds.setAttr(ss_shape + '.seconds', 1)",
             "cmds.setAttr(ss_shape + '.latitude', -90)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1200,7 +1200,7 @@
             "cmds.setAttr(ss_shape + '.day', 31)",
             "cmds.setAttr(ss_shape + '.seconds', 60)",
             "cmds.setAttr(ss_shape + '.latitude', 90)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 2",
@@ -1228,7 +1228,7 @@
             "cmds.setAttr(ss_shape + '.hours', 1)",
             "cmds.setAttr(ss_shape + '.timeZone', -18)",
             "cmds.setAttr(ss_shape + '.longitude', -180)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1254,7 +1254,7 @@
             "cmds.setAttr(ss_shape + '.sunPositionType', 1)",
             "cmds.setAttr(ss_shape + '.minutes', 60)",
             "cmds.setAttr(ss_shape + '.seconds', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 0.1",
@@ -1278,7 +1278,7 @@
             "cmds.setAttr(ss_shape + '.year', 6000)",
             "cmds.setAttr(ss_shape + '.seconds', 60)",
             "cmds.setAttr(ss_shape + '.timeZone', -18)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 2",
@@ -1305,7 +1305,7 @@
             "cmds.setAttr(ss_shape + '.month', 1)",
             "cmds.setAttr(ss_shape + '.timeZone', 18)",
             "cmds.setAttr(ss_shape + '.daylightSaving', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1334,7 +1334,7 @@
             "cmds.setAttr(ss_shape + '.hours', 0)",
             "cmds.setAttr(ss_shape + '.latitude', 56)",
             "cmds.setAttr(ss_shape + '.longitude', 38)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1362,7 +1362,7 @@
             "cmds.setAttr(ss_shape + '.hours', 6)",
             "cmds.setAttr(ss_shape + '.latitude', 56)",
             "cmds.setAttr(ss_shape + '.longitude', 38)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1390,7 +1390,7 @@
             "cmds.setAttr(ss_shape + '.hours', 12)",
             "cmds.setAttr(ss_shape + '.latitude', 56)",
             "cmds.setAttr(ss_shape + '.longitude', 38)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1418,7 +1418,7 @@
             "cmds.setAttr(ss_shape + '.hours', 18)",
             "cmds.setAttr(ss_shape + '.latitude', 56)",
             "cmds.setAttr(ss_shape + '.longitude', 38)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1446,7 +1446,7 @@
             "cmds.setAttr(ss_shape + '.hours', 24)",
             "cmds.setAttr(ss_shape + '.latitude', 56)",
             "cmds.setAttr(ss_shape + '.longitude', 38)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1475,7 +1475,7 @@
             "cmds.setAttr(ss_shape + '.latitude', 26)",
             "cmds.setAttr(ss_shape + '.longitude', -80)",
             "cmds.setAttr(ss_shape + '.timeZone', -5)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1505,7 +1505,7 @@
             "cmds.setAttr(ss_shape + '.latitude', 26)",
             "cmds.setAttr(ss_shape + '.longitude', -80)",
             "cmds.setAttr(ss_shape + '.timeZone', -5)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1535,7 +1535,7 @@
             "cmds.setAttr(ss_shape + '.latitude', 26)",
             "cmds.setAttr(ss_shape + '.longitude', -80)",
             "cmds.setAttr(ss_shape + '.timeZone', -5)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1565,7 +1565,7 @@
             "cmds.setAttr(ss_shape + '.latitude', -35)",
             "cmds.setAttr(ss_shape + '.longitude', 149)",
             "cmds.setAttr(ss_shape + '.timeZone', 11)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1595,7 +1595,7 @@
             "cmds.setAttr(ss_shape + '.latitude', -35)",
             "cmds.setAttr(ss_shape + '.longitude', 149)",
             "cmds.setAttr(ss_shape + '.timeZone', 11)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1625,7 +1625,7 @@
             "cmds.setAttr(ss_shape + '.latitude', -35)",
             "cmds.setAttr(ss_shape + '.longitude', 149)",
             "cmds.setAttr(ss_shape + '.timeZone', 11)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",
@@ -1650,7 +1650,7 @@
             "cmds.setAttr(ss_shape + '.latitude', 55.752)",
             "cmds.setAttr(ss_shape + '.longitude', 37.616)",
             "cmds.setAttr(ss_shape + '.timeZone', 3)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Intensity - 1",

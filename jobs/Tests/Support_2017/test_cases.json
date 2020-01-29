@@ -4,7 +4,7 @@
         "status": "active", 
         "functions": [
             "cmds.lookThru('persp3', 'modelPanel4')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Maya 2017 checking"
@@ -19,7 +19,7 @@
             "cmds.lookThru('persp3', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
