@@ -8,7 +8,7 @@
         "scene": "EmissiveLight.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 400)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     }
 ]

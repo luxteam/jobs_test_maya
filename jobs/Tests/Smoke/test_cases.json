@@ -24,7 +24,7 @@
         "status": "active", 
         "functions": [
             "mel.eval('FBXImport -f (\"' + RES_PATH + '\" + \"/Smoke/default/park_bench1.fbx\")')", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.delete('Default')"
         ], 
         "script_info": [
@@ -41,7 +41,7 @@
             "cmds.rename('polySurface1', 'Shader_Ball')",
             "cmds.setAttr('Shader_Ball.translate', -3.774, -1.4, -3.865)",
             "cmds.setAttr('Shader_Ball.scale', 2, 2, 2)",
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.delete('Shader_Ball')"
         ], 
         "script_info": [
@@ -68,7 +68,7 @@
             "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')", 
             "ibl_transform = cmds.listRelatives(ibl_shape, p=True)[0]", 
             "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.showHidden('ground')",
             "cmds.delete(ibl_transform)"
         ], 
@@ -87,7 +87,7 @@
             "ibl_transform = cmds.listRelatives(ibl_shape, p=True)[0]", 
             "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
             "cmds.setAttr(ibl_shape + '.filePath', RES_PATH + '/Smoke/Lamborginhi_Aventador/sourceimages/Tropical_Beach_3k.hdr', type='string')", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.showHidden('ground')",
             "cmds.delete(ibl_transform)"
         ], 
@@ -106,7 +106,7 @@
             "ibl_transform = cmds.listRelatives(ibl_shape, p=True)[0]", 
             "cmds.setAttr(ibl_transform + '.scale', 1001.25663706144, 1001.25663706144, 1001.25663706144)",
             "cmds.setAttr(ibl_shape + '.filePath', RES_PATH + '/Lamborginhi_Aventador/ibl_test.exr', type='string')", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.showHidden('ground')",
             "cmds.delete(ibl_transform)"
         ], 
@@ -124,7 +124,7 @@
             "sky_transform = cmds.listRelatives(sky_shape, p=True)[0]", 
             "cmds.setAttr(sky_shape + '.turbidity', 30)", 
             "cmds.setAttr(sky_shape + '.intensity', 6)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.delete(sky_transform)"
         ], 
         "script_info": [
@@ -143,7 +143,7 @@
             "cmds.setAttr(rprTransform + '.translate', 15, 320, -100)", 
             "cmds.setAttr(rprTransform + '.rotate', 90, 0, 0)", 
             "cmds.setAttr(rprLightShape + '.intensity', 20)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.delete(rprTransform)"
         ], 
         "script_info": [
@@ -161,7 +161,7 @@
         "scene": "Lamborginhi_Aventador.ma", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     }, 
     {
@@ -173,7 +173,7 @@
         "scene": "Lamborginhi_Aventador.ma", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     }, 
     {
@@ -185,7 +185,7 @@
         "scene": "Lamborginhi_Aventador.ma", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     }, 
     {
@@ -194,7 +194,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 0)"
         ], 
@@ -209,7 +209,7 @@
         "status": "active", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', 1)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', 0)"
         ], 
         "script_info": [
@@ -223,7 +223,7 @@
         "status": "active", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 4)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.renderMode', 1)"
         ], 
         "script_info": [
@@ -238,7 +238,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.samples', 8)", 
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 15)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.samples', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 5)"
         ], 
@@ -257,7 +257,7 @@
             "cmds.setAttr('defaultResolution.dotsPerInch', 72)", 
             "cmds.setAttr('defaultResolution.deviceAspectRatio', 1.778)", 
             "cmds.setAttr('defaultResolution.pixelAspect', 1.00)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('defaultResolution.width', 1480)",
             "cmds.setAttr('defaultResolution.height', 800)",
             "cmds.setAttr('defaultResolution.dotsPerInch', 72)",
@@ -276,7 +276,7 @@
         "functions": [
             "cmds.setAttr('defaultResolution.width', 1500)", 
             "cmds.setAttr('defaultResolution.height', 1125)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('defaultResolution.width', 1480)",
             "cmds.setAttr('defaultResolution.height', 800)",
             "cmds.setAttr('defaultResolution.dotsPerInch', 72)",
@@ -294,7 +294,7 @@
         "status": "active", 
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)", 
-            "rpr_render(test_case, script_info)",             
+            "rpr_render(case)",             
             "cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_SM_020.jpg'))"
 
         ], 
@@ -309,7 +309,7 @@
         "status": "active", 
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 8)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Save image as jpg", 
@@ -324,7 +324,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
@@ -339,7 +339,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
@@ -354,7 +354,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
@@ -368,14 +368,14 @@
         "status": "active", 
         "functions": [
             "light_transform = cmds.shadingNode('areaLight', asLight=True)",
-            "cmds.setAttr(light_transform + '.intensity', 20)", 
+            "cmds.setAttr(light_transform + '.intensity', 100000)", 
             "cmds.setAttr(light_transform + '.translateY', 400)", 
             "cmds.setAttr(light_transform + '.rotateX', 270)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.delete(light_transform)"
         ], 
         "script_info": [
-            "Base Light Area Light", 
+            "Base Light Area Light, 50 - iterations, intensity - 100.000", 
             "Pass Limit: 50"
         ], 
         "scene": "Lamborginhi_Aventador.ma"
@@ -385,7 +385,7 @@
         "status": "active", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 3)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)"
         ], 
         "script_info": [
@@ -404,7 +404,7 @@
             "cmds.setAttr(rprTransform + '.rotateX', 270)", 
             "cmds.setAttr(rprLightShape + '.intensity', 100)", 
             "cmds.setAttr(rprLightShape + '.intensityUnits', 0)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.delete(rprTransform)"
         ], 
         "script_info": [
@@ -425,7 +425,7 @@
             "cmds.hyperShade(objects='Lamborginhi_base_phong')",
             "rpr_sg = cmds.listConnections('test_material', type='shadingEngine')[0]",
             "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Assign material from Mat Library", 
@@ -445,7 +445,7 @@
             "cmds.select('Lamborginhi_Aventador', r=True)", 
             "sgs = cmds.listConnections(rpr, type='shadingEngine')", 
             "cmds.sets(e=True, forceElement=sgs[0])", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Assign Pbr to objec00t", 
@@ -466,7 +466,7 @@
             "cmds.select('Lamborginhi_Aventador', r=True)", 
             "sgs = cmds.listConnections(rpr, type='shadingEngine')", 
             "cmds.sets(e=True, forceElement=sgs[0])", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Assign Uber to object", 
@@ -480,7 +480,7 @@
         "functions": [
             "cmds.select('Cube', r=True)", 
             "mel.eval('instance; rotate -r 0 10 0; move -r 0.025 0.025 0.025; for ($i=1; $i<500; ++$i) instance -st;')", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Instances", 
@@ -498,7 +498,7 @@
             "cmds.setAttr('RPRIESLight6.intensity', 2)", 
             "cmds.setAttr('RPRIESLight12.iesFile', (RES_PATH + '/Smoke/Lamborginhi_Aventador/sourceimages/1.IES'), type='string')", 
             "cmds.setAttr('RPRIESLight12.intensity', 2)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "12 lights in one scene", 
@@ -520,7 +520,7 @@
             "cmds.select('Plane01', r=True)", 
             "sgs = mel.eval('listConnections -type shadingEngine \"' + rpr + '\"')", 
             "cmds.sets(e=True, forceElement=sgs[0])", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "AOV Shadow Catcher", 
@@ -538,7 +538,7 @@
         "scene": "Uber_SSS.ma", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     }, 
     {
@@ -547,7 +547,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 15)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 400)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 5)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 50)"
         ], 
@@ -560,6 +560,9 @@
     {
         "case": "MAYA_SM_036", 
         "status": "active", 
+        "functions": [
+            "rpr_render(case)"
+        ], 
         "script_info": [
             "Displacement", 
             "Pass Limit: 50"
@@ -573,7 +576,7 @@
             "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')", 
             "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]", 
             "cmds.setAttr(ibl_transform + '.scale', 1001.25, 1001.25, 1001.25)",
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.delete(ibl_transform)"
         ], 
         "script_info": [
@@ -586,7 +589,7 @@
         "status": "active", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.filterSize', 10)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Anti-Aliasing"
@@ -601,7 +604,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Motion_Blur"
@@ -613,7 +616,7 @@
         "status": "skipped", 
         "functions": [
             "cmds.editRenderLayerGlobals(crl='rs_ALL_SHADOW')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Render Layer Check"
@@ -627,7 +630,7 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
             "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "RPR_Nodes, BlendUbernPBRMaterials"
@@ -644,7 +647,7 @@
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
             "cmds.setAttr('RPRVolumeMaterial1.scatteringDirection', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Volume material check"
@@ -655,7 +658,7 @@
         "case": "MAYA_SM_043", 
         "status": "skipped", 
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Converter should convert scene with no error"
@@ -666,7 +669,7 @@
         "case": "MAYA_SM_044", 
         "status": "skipped", 
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Converter should convert scene with no error"
@@ -679,7 +682,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
