@@ -5,7 +5,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Bilateral Denoiser", 
@@ -19,7 +19,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Bilateral Denoiser", 
@@ -33,7 +33,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Bilateral Denoiser", 
@@ -50,7 +50,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -67,7 +67,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 5.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -84,7 +84,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 10.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -101,7 +101,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -118,7 +118,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 10.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -135,7 +135,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.1001)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -152,7 +152,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.5)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -169,7 +169,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.1001)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -188,7 +188,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 5.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.5)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -207,7 +207,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 10.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 10.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR Denoiser", 
@@ -227,7 +227,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -245,7 +245,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -263,7 +263,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -281,7 +281,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.1001)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -299,7 +299,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.5)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -317,7 +317,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.1001)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -335,7 +335,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.5)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 1.0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -353,7 +353,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.1001)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -371,7 +371,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1.0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.5)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -389,7 +389,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.1001)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.1001)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.1001)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -410,7 +410,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.5)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.5)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.5)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW Denoiser", 
@@ -427,7 +427,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Machine Learning type"
@@ -441,7 +441,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser ML Metal Material", 
@@ -456,7 +456,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser ML Metal Material", 
@@ -472,7 +472,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 0)"
         ], 
         "script_info": [
@@ -490,7 +490,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 0)"
         ], 
         "script_info": [
@@ -507,7 +507,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser Bilateral Metal Material", 
@@ -522,7 +522,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 5)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser Bilateral Metal Material", 
@@ -537,7 +537,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 10)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser Bilateral Metal Material", 
@@ -553,7 +553,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 0)"
         ], 
         "script_info": [
@@ -570,7 +570,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 5)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2)"
         ], 
         "script_info": [
@@ -586,7 +586,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 10)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserSamples', 2)"
         ], 
         "script_info": [
@@ -602,7 +602,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1)"
         ], 
         "script_info": [
@@ -618,7 +618,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 10)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 1)"
         ], 
         "script_info": [
@@ -634,7 +634,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 0.1001)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserBandwidth', 1)"
         ], 
         "script_info": [
@@ -653,7 +653,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.1001)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.1001)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.1001)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1)", 
@@ -678,7 +678,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 0.5)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 0.5)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserTrans', 0.5)", 
-            "rpr_render(test_case, script_info)", 
+            "rpr_render(case)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColor', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserDepth', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserNormal', 1)", 
@@ -702,7 +702,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "ML denoiser Lights "
@@ -718,7 +718,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "ML denoiser Lights AOV+Color"
@@ -734,7 +734,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "ML denoiser IES and Physical"
@@ -750,7 +750,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "ML denoiser IES and Physcial"
@@ -765,7 +765,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW IES"
@@ -780,7 +780,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "EAW IES and Physcial Light"
@@ -795,7 +795,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Bilateral IES"
@@ -810,7 +810,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Bilateral IES and Physcal Light"
@@ -825,7 +825,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 0)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR IES"
@@ -840,7 +840,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RPRPhysicalLight2Shape.intensity', 3)", 
             "cmds.setAttr('RPRIESLight.intensity', 3)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "LWR IES and Physical Light"
@@ -854,7 +854,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "DOF ML Denoiser Color"
@@ -868,7 +868,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "DOF ML Denoiser Color+AOV"
@@ -881,7 +881,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "DOF EAW"
@@ -894,7 +894,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "DOF LWR"
@@ -907,7 +907,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "DOF Bilateral"
@@ -921,7 +921,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser IBL", 
@@ -937,7 +937,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser IBL", 
@@ -952,7 +952,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser IBL", 
@@ -966,7 +966,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser IBL", 
@@ -980,7 +980,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser IBL", 
@@ -995,7 +995,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -1011,7 +1011,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -1026,7 +1026,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -1041,7 +1041,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -1056,7 +1056,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -1072,7 +1072,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 
@@ -1088,7 +1088,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 
@@ -1103,7 +1103,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 
@@ -1117,7 +1117,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 
@@ -1131,7 +1131,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 

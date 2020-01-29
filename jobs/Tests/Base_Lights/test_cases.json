@@ -14,7 +14,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 1)",
             "cmds.setAttr(light_transform + '.ambientShade', 0.450)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -33,7 +33,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 3)",
             "cmds.setAttr(light_transform + '.ambientShade', 0.450)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -52,7 +52,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 3)",
             "cmds.setAttr(light_transform + '.ambientShade', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -71,7 +71,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 3)",
             "cmds.setAttr(light_transform + '.ambientShade', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -89,7 +89,7 @@
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 500)",
             "cmds.setAttr(light_transform + '.decayRate', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_transform)"
         ]
     },
@@ -107,7 +107,7 @@
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 1500)",
             "cmds.setAttr(light_transform + '.decayRate', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_transform)"
         ]
     },
@@ -125,7 +125,7 @@
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 1500)",
             "cmds.setAttr(light_transform + '.decayRate', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_transform)"
         ]
     },
@@ -143,7 +143,7 @@
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 1500)",
             "cmds.setAttr(light_transform + '.decayRate', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_transform)"
         ]
     },
@@ -161,7 +161,7 @@
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 1500)",
             "cmds.setAttr(light_transform + '.decayRate', 3)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_transform)"
         ]
     },
@@ -179,7 +179,7 @@
             "cmds.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -197,7 +197,7 @@
             "cmds.setAttr(light_transform + '.translate', 267, 40, 1184)",
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -216,7 +216,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 1)",
             "cmds.setAttr(light_transform + '.decayRate', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -235,7 +235,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 50)",
             "cmds.setAttr(light_transform + '.decayRate', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -254,7 +254,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 100)",
             "cmds.setAttr(light_transform + '.decayRate', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -273,7 +273,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 50)",
             "cmds.setAttr(light_transform + '.decayRate', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -292,7 +292,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 50)",
             "cmds.setAttr(light_transform + '.decayRate', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -311,7 +311,7 @@
             "cmds.setAttr(light_transform + '.rotate', 0, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 50)",
             "cmds.setAttr(light_transform + '.decayRate', 3)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -333,7 +333,7 @@
             "cmds.setAttr(light_transform + '.coneAngle', 40)",
             "cmds.setAttr(light_transform + '.penumbraAngle', 0)",
             "cmds.setAttr(light_transform + '.dropoff', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -355,7 +355,7 @@
             "cmds.setAttr(light_transform + '.coneAngle', 40)",
             "cmds.setAttr(light_transform + '.penumbraAngle', 0)",
             "cmds.setAttr(light_transform + '.dropoff', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -377,7 +377,7 @@
             "cmds.setAttr(light_transform + '.coneAngle', 0.006)",
             "cmds.setAttr(light_transform + '.penumbraAngle', -10)",
             "cmds.setAttr(light_transform + '.dropoff', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -399,7 +399,7 @@
             "cmds.setAttr(light_transform + '.coneAngle', 90)",
             "cmds.setAttr(light_transform + '.penumbraAngle', -10)",
             "cmds.setAttr(light_transform + '.dropoff', 125)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -421,7 +421,7 @@
             "cmds.setAttr(light_transform + '.coneAngle', 179.994)",
             "cmds.setAttr(light_transform + '.penumbraAngle', 10)",
             "cmds.setAttr(light_transform + '.dropoff', 255)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -443,7 +443,7 @@
             "cmds.setAttr(light_transform + '.coneAngle', 40)",
             "cmds.setAttr(light_transform + '.penumbraAngle', 0)",
             "cmds.setAttr(light_transform + '.dropoff', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -465,7 +465,7 @@
             "cmds.setAttr(light_transform + '.coneAngle', 40)",
             "cmds.setAttr(light_transform + '.penumbraAngle', 0)",
             "cmds.setAttr(light_transform + '.dropoff', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     },
@@ -487,7 +487,7 @@
             "cmds.setAttr(light_transform + '.coneAngle', 40)",
             "cmds.setAttr(light_transform + '.penumbraAngle', 0)",
             "cmds.setAttr(light_transform + '.dropoff', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.delete(light_shape)"
         ]
     }

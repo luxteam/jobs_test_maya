@@ -10,7 +10,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.aovOpacity', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -24,7 +24,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.aovWorldCoordinate', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -38,7 +38,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.aovUV', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -52,7 +52,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 4)",
             "cmds.setAttr('RadeonProRenderGlobals.aovMaterialIndex', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -66,7 +66,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 5)",
             "cmds.setAttr('RadeonProRenderGlobals.aovGeometricNormal', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -80,7 +80,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 6)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadingNormal', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -94,7 +94,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 7)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDepth', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -108,7 +108,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 8)",
             "cmds.setAttr('RadeonProRenderGlobals.aovObjectId', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -122,7 +122,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -136,7 +136,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 11)",
             "cmds.setAttr('RadeonProRenderGlobals.aovBackground', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -150,7 +150,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 12)",
             "cmds.setAttr('RadeonProRenderGlobals.aovEmission', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -165,7 +165,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 13)",
             "cmds.setAttr('RadeonProRenderGlobals.aovVelocity', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -179,7 +179,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 14)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDirectIllumination', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -193,7 +193,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 15)",
             "cmds.setAttr('RadeonProRenderGlobals.aovIndirectIllumination', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -207,7 +207,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 16)",
             "cmds.setAttr('RadeonProRenderGlobals.aovAO', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -221,7 +221,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 17)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDiffuseDirect', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -235,7 +235,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 18)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDiffuseDirect', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -249,7 +249,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 19)",
             "cmds.setAttr('RadeonProRenderGlobals.aovReflectionDirect', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -263,7 +263,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 20)",
             "cmds.setAttr('RadeonProRenderGlobals.aovReflectionIndirect', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -277,7 +277,7 @@
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 21)",
             "cmds.setAttr('RadeonProRenderGlobals.aovRefraction', 1)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -294,7 +294,7 @@
             "cmds.showHidden('ShaderBall_4_UntitledFBXASC046005')",
             "cmds.showHidden('RPRPhysicalLight1')",
             "cmds.delete('RPRIBL')",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ]
     }
 ]
