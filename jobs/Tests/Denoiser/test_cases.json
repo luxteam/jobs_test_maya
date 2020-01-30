@@ -8,7 +8,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -26,7 +26,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -43,7 +43,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -60,7 +60,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -77,7 +77,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Complex Lighting", 
@@ -95,7 +95,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 
@@ -113,7 +113,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 
@@ -130,7 +130,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 
@@ -146,7 +146,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 
@@ -162,7 +162,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Materials", 
