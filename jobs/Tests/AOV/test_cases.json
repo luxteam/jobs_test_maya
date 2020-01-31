@@ -174,7 +174,7 @@
         "script_info": [
             "AOV: Direct Illumination"
         ],
-        "scene": "AOV_Better.ma",
+        "scene": "AOVConstruct.ma",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 14)",
@@ -188,7 +188,7 @@
         "script_info": [
             "AOV: Indirect Illumination"
         ],
-        "scene": "AOV_Better.ma",
+        "scene": "AOVConstruct.ma",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 15)",
