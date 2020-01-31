@@ -81,18 +81,6 @@ def check_rpr_load():
 
 
 def rpr_render(case):
-	render_device = RENDER_DEVICE
-	cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', SPU)
-	cmds.optionVar(rm='RPR_DevicesSelected')
-
-	cmds.optionVar(iva=('RPR_DevicesSelected',
-						(render_device in ['gpu', 'dual'])))
-	cmds.optionVar(iva=('RPR_DevicesSelected',
-						(render_device in ['cpu', 'dual'])))
-
-	cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', THRESHOLD)
-	cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 0)
-
 	mel.eval('fireRender -waitForItTwo')
 	start_time = time.time()
 	mel.eval('renderIntoNewWindow render')
@@ -130,6 +118,17 @@ def prerender(case):
 	cmds.setAttr('defaultRenderGlobals.imageFormat', 8)
 	cmds.setAttr(
 		'RadeonProRenderGlobals.completionCriteriaIterations', PASS_LIMIT)
+	render_device = RENDER_DEVICE
+	cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', SPU)
+	cmds.optionVar(rm='RPR_DevicesSelected')
+
+	cmds.optionVar(iva=('RPR_DevicesSelected',
+						(render_device in ['gpu', 'dual'])))
+	cmds.optionVar(iva=('RPR_DevicesSelected',
+						(render_device in ['cpu', 'dual'])))
+
+	cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', THRESHOLD)
+	cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 0)
 
 	for function in case['functions']:
 		try:
