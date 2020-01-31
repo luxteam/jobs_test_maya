@@ -16,6 +16,7 @@ PASS_LIMIT = {pass_limit}
 RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
 SPU = {SPU}
+THRESHOLD = {threshold}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
@@ -89,7 +90,7 @@ def rpr_render(case):
 	cmds.optionVar(iva=('RPR_DevicesSelected',
 						(render_device in ['cpu', 'dual'])))
 
-	cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', 0)
+	cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', THRESHOLD)
 	cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 0)
 
 	mel.eval('fireRender -waitForItTwo')

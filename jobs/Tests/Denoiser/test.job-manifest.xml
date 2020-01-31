@@ -14,6 +14,7 @@
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU 25</argument>
+        <argument>--threshold {threshold}</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"'>
