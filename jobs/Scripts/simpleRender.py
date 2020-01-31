@@ -77,12 +77,13 @@ def createArgsParser():
 	parser.add_argument('--output', required=True, metavar='<dir>')
 	parser.add_argument('--testType', required=True)
 	parser.add_argument('--res_path', required=True)
-	parser.add_argument('--pass_limit', required=True)
-	parser.add_argument('--resolution_x', required=True)
-	parser.add_argument('--resolution_y', required=True)
+	parser.add_argument('--pass_limit', required=False, default=50, type=int)
+	parser.add_argument('--resolution_x', required=False, default=0, type=int)
+	parser.add_argument('--resolution_y', required=False, default=0, type=int)
 	parser.add_argument('--testCases', required=True)
-	parser.add_argument('--SPU', required=False, default=10)
+	parser.add_argument('--SPU', required=False, default=25, type=int)
 	parser.add_argument('--fail_count', required=False, default=0, type=int)
+	parser.add_argument('--threshold', required=False, default=0.05, type=float)
 
 	return parser
 
@@ -112,7 +113,7 @@ def check_licenses(res_path, maya_scenes, testType):
 
 
 def main(args):
-	if args.testType in ['Support_2017', 'Support_2018']:
+	if args.testType in ['Support_2019', 'Support_2018']:
 		args.tool = re.sub('[0-9]{4}', args.testType[-4:], args.tool)
 
 	if platform.system() == 'Windows':
@@ -149,7 +150,7 @@ def main(args):
 	res_path = res_path.replace('\\', '/')
 	work_dir = os.path.abspath(args.output).replace('\\', '/')
 	script = script.format(work_dir=work_dir, testType=args.testType, render_device=args.render_device, res_path=res_path, pass_limit=args.pass_limit, 
-							  resolution_x=args.resolution_x, resolution_y=args.resolution_y, SPU=args.SPU)
+							  resolution_x=args.resolution_x, resolution_y=args.resolution_y, SPU=args.SPU, threshold=args.threshold)
 
 	with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
 		file.write(script)
@@ -249,14 +250,14 @@ def main(args):
 			core_config.main_logger.info('Found windows: {}'.format(window_titles))
 		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
 			fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
-				'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report', 'Autodesk Maya 2017 Error Report',
 				'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
-				'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report']
+				'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report',
+				'Autodesk Maya 2020 Error Report', 'Autodesk Maya 2020 Error Report', 'Autodesk Maya 2020 Error Report']
 			window_titles = get_windows_titles()
 			error_window = set(fatal_errors_titles).intersection(window_titles)
 			if error_window:
-				core_config.main_logger.info('Error window found: {}'.format(error_window))
-				core_config.main_logger.info('Found windows: {}'.format(window_titles))
+				core_config.main_logger.error('Error window found: {}'.format(error_window))
+				core_config.main_logger.warn('Found windows: {}'.format(window_titles))
 				rc = -1
 
 				if system_pl == 'Windows':
@@ -266,10 +267,10 @@ def main(args):
 					except Exception as ex:
 						pass
 
-				core_config.main_logger.info('Killing maya....')
+				core_config.main_logger.warn('Killing maya....')
 
 				child_processes = p.children()
-				core_config.main_logger.info('Child processes: {}'.format(child_processes))
+				core_config.main_logger.warn('Child processes: {}'.format(child_processes))
 				for ch in child_processes:
 					try:
 						ch.terminate()
@@ -279,7 +280,7 @@ def main(args):
 						status = ch.status()
 						core_config.main_logger.error('Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
 					except psutil.NoSuchProcess:
-						core_config.main_logger.info('Process is killed: {}'.format(ch))
+						core_config.main_logger.warn('Process is killed: {}'.format(ch))
 
 				try:
 					p.terminate()
@@ -289,7 +290,7 @@ def main(args):
 					status = ch.status()
 					core_config.main_logger.error('Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
 				except psutil.NoSuchProcess:
-					core_config.main_logger.info('Process is killed: {}'.format(ch))
+					core_config.main_logger.warn('Process is killed: {}'.format(ch))
 				
 				break
 		else:
