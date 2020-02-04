@@ -8,12 +8,12 @@
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Image_Size</argument>
-        <argument>--pass_limit {PassLimit}</argument>
+        <argument>--pass_limit 25</argument>
         <argument>--resolution_x {rx}</argument>
         <argument>--resolution_y {ry}</argument>
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--testCases "{TestCases}"</argument>
-        <argument>--SPU {SPU}</argument>
+        <argument>--SPU 25</argument>
         <argument>--threshold {threshold}</argument>
     </execute>
 
