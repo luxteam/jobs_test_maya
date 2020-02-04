@@ -9,7 +9,6 @@ import platform
 from datetime import datetime
 from shutil import copyfile
 import sys
-import re
 import time
 
 sys.path.append(os.path.abspath(os.path.join(
@@ -143,7 +142,7 @@ def main(args):
 	except:
 		pass
 
-	maya_scenes = set(re.findall(r'scene.*"(\w*\.ma)', test_cases))
+	maya_scenes = {x.get('scene', '') for x in a if not x}
 	check_licenses(args.res_path, maya_scenes, args.testType)
 
 	res_path = args.res_path
@@ -248,7 +247,7 @@ def main(args):
 			p.communicate(timeout=40)
 			window_titles = get_windows_titles()
 			core_config.main_logger.info('Found windows: {}'.format(window_titles))
-		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:# TODO: add explaning
+		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
 			fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
 				'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
 				'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report',

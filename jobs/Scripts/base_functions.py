@@ -21,7 +21,7 @@ LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
 def logging(massage):
-	print('base_function.py [' + datetime.datetime.now().strftime('%H:%M:%S') + '] ' + massage)
+	print(' >>> [RPR TEST] [' +  datetime.datetime.now().strftime('%H:%M:%S') + '] ' + massage)
 
 
 def reportToJSON(case, render_time=0):
@@ -65,7 +65,7 @@ def render_tool_log_path(name):
 def get_scene_name():
 	scene_name = cmds.file(q=True, sn=True, shn=True)
 	if not scene_name:
-		logging('Can\'t get scene name from context')
+		logging("Can't get scene name from contex"')
 	return scene_name
 
 
@@ -112,7 +112,7 @@ def prerender(case):
 		try:
 			cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
 		except:
-			logging('Can\'t load scene')
+			logging("Can't load scene")
 			cmds.evalDeferred('cmds.quit(abort=True)')
 
 	validateFiles()
@@ -176,7 +176,7 @@ def case_function(case):
 			projPath = temp
 		mel.eval('setProject("{{}}")'.format(projPath))
 	except:
-		logging('Can\'t set project in "' + projPath + '"')
+		logging("Can't set project in '" + projPath + "'")
 		cmds.evalDeferred('cmds.quit(abort=True)')
 
 	functions = {{
