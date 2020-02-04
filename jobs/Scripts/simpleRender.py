@@ -143,7 +143,7 @@ def main(args):
 	except:
 		pass
 
-	maya_scenes = set(re.findall(r'(?:scene.*)\w*\.ma', test_cases))
+	maya_scenes = set(re.findall(r'\w*\.ma', test_cases))
 	check_licenses(args.res_path, maya_scenes, args.testType)
 
 	res_path = args.res_path
