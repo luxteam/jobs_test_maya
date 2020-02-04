@@ -248,7 +248,7 @@ def main(args):
 			p.communicate(timeout=40)
 			window_titles = get_windows_titles()
 			core_config.main_logger.info('Found windows: {}'.format(window_titles))
-		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
+		except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:# TODO: add explaning
 			fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
 				'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
 				'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report',
