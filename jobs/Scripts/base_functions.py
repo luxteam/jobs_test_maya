@@ -20,12 +20,12 @@ THRESHOLD = {threshold}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
-def logging(massage):
-	print(' >>> [RPR TEST] [' +  datetime.datetime.now().strftime('%H:%M:%S') + '] ' + massage)
+def logging(message):
+	print(' >>> [RPR TEST] [' +  datetime.datetime.now().strftime('%H:%M:%S') + '] ' + message)
 
 
 def reportToJSON(case, render_time=0):
-	logging('Create report')
+	logging('Create report json')
 	path_to_file = path.join(WORK_DIR, case['case'] + '_RPR.json')
 	with open(path_to_file, 'r') as file:
 		report = json.loads(file.read())[0]
@@ -70,7 +70,7 @@ def get_scene_name():
 
 
 def validateFiles():
-	logging('Validate files')
+	logging('Repath scene')
 	unresolved_files = cmds.filePathEditor(
 		query=True, listFiles='', unresolved=True, attributeOnly=True)
 	new_path = RES_PATH
@@ -80,7 +80,7 @@ def validateFiles():
 
 
 def check_rpr_load():
-	logging('Checking rpr load')
+	logging('Load rpr and fbx if not loaded')
 	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
 		cmds.loadPlugin('RadeonProRender', quiet=True)
 	if not cmds.pluginInfo('fbxmaya', query=True, loaded=True):
@@ -216,7 +216,7 @@ def main():
 					logging('Create log file')
 			cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
 
-			logging(case['case'])
+			logging(case['case'] + ' in progress')
 			case_function(case)
 
 			if case['status'] == 'inprogress':
