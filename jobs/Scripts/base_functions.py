@@ -20,7 +20,12 @@ THRESHOLD = {threshold}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
+def logging(massage):
+	print('base_function.py [' + datetime.datetime.now().strftime('%H:%M:%S') + '] ' + massage)
+
+
 def reportToJSON(case, render_time=0):
+	logging('Create report')
 	path_to_file = path.join(WORK_DIR, case['case'] + '_RPR.json')
 	with open(path_to_file, 'r') as file:
 		report = json.loads(file.read())[0]
@@ -60,11 +65,12 @@ def render_tool_log_path(name):
 def get_scene_name():
 	scene_name = cmds.file(q=True, sn=True, shn=True)
 	if not scene_name:
-		print('Problem with scene')
+		logging('Can\'t get scene name from context')
 	return scene_name
 
 
 def validateFiles():
+	logging('Validate files')
 	unresolved_files = cmds.filePathEditor(
 		query=True, listFiles='', unresolved=True, attributeOnly=True)
 	new_path = RES_PATH
@@ -74,6 +80,7 @@ def validateFiles():
 
 
 def check_rpr_load():
+	logging('Checking rpr load')
 	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
 		cmds.loadPlugin('RadeonProRender', quiet=True)
 	if not cmds.pluginInfo('fbxmaya', query=True, loaded=True):
@@ -81,6 +88,7 @@ def check_rpr_load():
 
 
 def rpr_render(case):
+	logging('Render image')
 	mel.eval('fireRender -waitForItTwo')
 	start_time = time.time()
 	mel.eval('renderIntoNewWindow render')
@@ -95,6 +103,7 @@ def rpr_render(case):
 
 
 def prerender(case):
+	logging('Prerender')
 	test_case = case['case']  # for call in functions in case
 	script_info = case['script_info']  # for call in functions in case
 	scene = case.get('scene', '')
@@ -103,6 +112,7 @@ def prerender(case):
 		try:
 			cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
 		except:
+			logging('Can\'t load scene')
 			cmds.evalDeferred('cmds.quit(abort=True)')
 
 	validateFiles()
@@ -137,11 +147,11 @@ def prerender(case):
 			else:
 				eval(function)
 		except Exception as e:
-			print('Error "{{}}" with string "{{}}"'.format(e, function))
+			logging('Error "{{}}" with string "{{}}"'.format(e, function))
 
 
 def rpr_save(case):
-	print('Save report without rendering')
+	logging('Save report without rendering')
 	cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
 	work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
 	source_dir = path.join(WORK_DIR, '..', '..', '..',
@@ -166,7 +176,7 @@ def case_function(case):
 			projPath = temp
 		mel.eval('setProject("{{}}")'.format(projPath))
 	except:
-		print('Can\'t set project in "' + projPath + '"')
+		logging('Can\'t set project in "' + projPath + '"')
 		cmds.evalDeferred('cmds.quit(abort=True)')
 
 	functions = {{
@@ -203,10 +213,10 @@ def main():
 			log_path = render_tool_log_path(case['case'])
 			if not path.exists(log_path):
 				with open(log_path, 'w'):
-					pass
+					logging('Create log file')
 			cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
 
-			print(case['case'])
+			logging(case['case'])
 			case_function(case)
 
 			if case['status'] == 'inprogress':
