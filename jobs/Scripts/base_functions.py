@@ -141,6 +141,7 @@ def prerender(case):
 
 
 def rpr_save(case):
+	print('Save report without rendering')
 	cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
 	work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
 	source_dir = path.join(WORK_DIR, '..', '..', '..',
