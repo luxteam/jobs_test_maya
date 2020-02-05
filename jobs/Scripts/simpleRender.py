@@ -128,10 +128,14 @@ def main(args):
 	core_config.main_logger.info('Make script')
 
 	try:
+		cases = json.load(open(os.path.realpath(
+			os.path.join(work_dir, 'test_cases.json'))))
+	except:
+		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'Tests', args.testType, 'test_cases.json'))))
+		
+	try:
 		with open(os.path.join(os.path.dirname(__file__), 'base_functions.py')) as f:
 			script = f.read()
-		with open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
-			test_cases = f.read()
 	except OSError as e:
 		core_config.main_logger.error(str(e))
 		return 1
@@ -143,7 +147,7 @@ def main(args):
 	except:
 		pass
 
-	maya_scenes = {x.get('scene', '') for x in test_cases if not x}
+	maya_scenes = {x.get('scene', '') for x in cases if x.get('scene', '')}
 	check_licenses(args.res_path, maya_scenes, args.testType)
 
 	res_path = args.res_path
@@ -154,12 +158,6 @@ def main(args):
 
 	with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
 		file.write(script)
-
-	try:
-		cases = json.load(open(os.path.realpath(
-			os.path.join(work_dir, 'test_cases.json'))))
-	except:
-		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
 	try:
 		with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
