@@ -21,7 +21,8 @@ LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
 def logging(message):
-	print(' >>> [RPR TEST] [' +  datetime.datetime.now().strftime('%H:%M:%S') + '] ' + message)
+	print(' >>> [RPR TEST] [' +
+		  datetime.datetime.now().strftime('%H:%M:%S') + '] ' + message)
 
 
 def reportToJSON(case, render_time=0):
@@ -237,5 +238,3 @@ def main():
 # - Error: Maya was crashed during case. Fail report is already created.
 # - Done: Case was finished successfully.
 # - Skipped: Case will be skipped. Skip report will be created.
-
-

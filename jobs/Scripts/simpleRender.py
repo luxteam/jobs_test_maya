@@ -142,7 +142,7 @@ def main(args):
 	except:
 		pass
 
-	maya_scenes = {x.get('scene', '') for x in a if not x}
+	maya_scenes = {x.get('scene', '') for x in test_cases if not x}
 	check_licenses(args.res_path, maya_scenes, args.testType)
 
 	res_path = args.res_path
