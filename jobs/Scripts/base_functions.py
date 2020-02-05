@@ -208,6 +208,8 @@ def main():
 			if case['status'] == 'active':
 				case['status'] = 'inprogress'
 
+			logging(case['case'] + ' in progress')
+
 			with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
 				json.dump(cases, file, indent=4)
 
@@ -217,7 +219,6 @@ def main():
 					logging('Create log file')
 			cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
 
-			logging(case['case'] + ' in progress')
 			case_function(case)
 
 			if case['status'] == 'inprogress':
