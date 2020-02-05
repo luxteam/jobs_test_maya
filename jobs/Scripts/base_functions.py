@@ -66,7 +66,7 @@ def render_tool_log_path(name):
 def get_scene_name():
 	scene_name = cmds.file(q=True, sn=True, shn=True)
 	if not scene_name:
-		logging("Can't get scene name from contex"')
+		logging("Can't get scene name from contex")
 	return scene_name
 
 
