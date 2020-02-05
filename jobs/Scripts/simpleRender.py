@@ -6,6 +6,7 @@ import json
 import ctypes
 import pyscreenshot
 import platform
+import re
 from datetime import datetime
 from shutil import copyfile
 import sys
