@@ -113,7 +113,7 @@ def prerender(case):
 		try:
 			cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
 		except:
-			logging("Can't load scene")
+			logging("Can't load scene. Exit Maya")
 			cmds.evalDeferred('cmds.quit(abort=True)')
 
 	validateFiles()
