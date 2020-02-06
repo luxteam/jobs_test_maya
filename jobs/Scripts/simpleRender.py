@@ -6,10 +6,10 @@ import json
 import ctypes
 import pyscreenshot
 import platform
+import re
 from datetime import datetime
 from shutil import copyfile
 import sys
-import re
 import time
 
 sys.path.append(os.path.abspath(os.path.join(
@@ -128,10 +128,14 @@ def main(args):
 	core_config.main_logger.info('Make script')
 
 	try:
+		cases = json.load(open(os.path.realpath(
+			os.path.join(work_dir, 'test_cases.json'))))
+	except:
+		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'Tests', args.testType, 'test_cases.json'))))
+		
+	try:
 		with open(os.path.join(os.path.dirname(__file__), 'base_functions.py')) as f:
 			script = f.read()
-		with open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))) as f:
-			test_cases = f.read()
 	except OSError as e:
 		core_config.main_logger.error(str(e))
 		return 1
@@ -143,7 +147,7 @@ def main(args):
 	except:
 		pass
 
-	maya_scenes = set(re.findall(r'\w*\.ma', test_cases))
+	maya_scenes = {x.get('scene', '') for x in cases if x.get('scene', '')}
 	check_licenses(args.res_path, maya_scenes, args.testType)
 
 	res_path = args.res_path
@@ -154,12 +158,6 @@ def main(args):
 
 	with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
 		file.write(script)
-
-	try:
-		cases = json.load(open(os.path.realpath(
-			os.path.join(work_dir, 'test_cases.json'))))
-	except:
-		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__),  '..', 'Tests', args.testType, 'test_cases.json'))))
 
 	try:
 		with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
@@ -257,7 +255,7 @@ def main(args):
 			error_window = set(fatal_errors_titles).intersection(window_titles)
 			if error_window:
 				core_config.main_logger.error('Error window found: {}'.format(error_window))
-				core_config.main_logger.warn('Found windows: {}'.format(window_titles))
+				core_config.main_logger.warning('Found windows: {}'.format(window_titles))
 				rc = -1
 
 				if system_pl == 'Windows':
@@ -267,10 +265,10 @@ def main(args):
 					except Exception as ex:
 						pass
 
-				core_config.main_logger.warn('Killing maya....')
+				core_config.main_logger.warning('Killing maya....')
 
 				child_processes = p.children()
-				core_config.main_logger.warn('Child processes: {}'.format(child_processes))
+				core_config.main_logger.warning('Child processes: {}'.format(child_processes))
 				for ch in child_processes:
 					try:
 						ch.terminate()
@@ -280,7 +278,7 @@ def main(args):
 						status = ch.status()
 						core_config.main_logger.error('Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
 					except psutil.NoSuchProcess:
-						core_config.main_logger.warn('Process is killed: {}'.format(ch))
+						core_config.main_logger.warning('Process is killed: {}'.format(ch))
 
 				try:
 					p.terminate()
@@ -290,7 +288,7 @@ def main(args):
 					status = ch.status()
 					core_config.main_logger.error('Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
 				except psutil.NoSuchProcess:
-					core_config.main_logger.warn('Process is killed: {}'.format(ch))
+					core_config.main_logger.warning('Process is killed: {}'.format(ch))
 				
 				break
 		else:
@@ -337,7 +335,10 @@ if __name__ == '__main__':
 		iteration += 1
 		core_config.main_logger.info('Try to run script in maya (#' + str(iteration) + ')')
 		if iteration > 1:
-			copyfile(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'), os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration-1) + '.log'))
+			try:
+				copyfile(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'), os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration-1) + '.log'))
+			except:
+				core_config.main_logger.error('No renderTool.log')
 		rc = main(args)
 
 		try:

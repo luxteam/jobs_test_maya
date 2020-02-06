@@ -9,8 +9,7 @@
         "script_info": [
             "Maya 2019 checking"
         ], 
-        "scene": "Lambo_Lebrov.ma",
-        "tool":"2019"
+        "scene": "Lambo_Lebrov.ma"
     },
     {
         "case": "MAYA_RS_2019_002", 
@@ -25,7 +24,6 @@
         "script_info": [
             "Maya ML 2019 checking"
         ], 
-        "scene": "Lambo_Lebrov.ma",
-        "tool":"2019"
+        "scene": "Lambo_Lebrov.ma"
     }
 ]
