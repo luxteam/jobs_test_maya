@@ -15,7 +15,7 @@
     },
     {
         "case": "MAYA_RS_AOV_002",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: World Coordinate"
         ],
@@ -43,7 +43,7 @@
     },
     {
         "case": "MAYA_RS_AOV_004",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Material Index"
         ],
@@ -99,7 +99,7 @@
     },
     {
         "case": "MAYA_RS_AOV_008",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Object ID"
         ],
@@ -155,7 +155,7 @@
     },
     {
         "case": "MAYA_RS_AOV_012",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Velocity"
         ],
@@ -282,7 +282,7 @@
     },
     {
         "case": "MAYA_RS_AOV_021",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Volume"
         ],
