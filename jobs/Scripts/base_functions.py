@@ -26,10 +26,17 @@ def logging(message):
 
 
 def reportToJSON(case, render_time=0):
-	logging('Create report json')
 	path_to_file = path.join(WORK_DIR, case['case'] + '_RPR.json')
+
 	with open(path_to_file, 'r') as file:
 		report = json.loads(file.read())[0]
+
+	if case['status'] == 'inprogress':
+		report['test_status'] = 'passed'
+	else:
+		report['test_status'] = case['status']
+
+	logging('Create report json ({{}} {{}})'.format(case['case'], report['test_status']))
 
 	report['file_name'] = case['case'] + '.jpg'
 	# TODO: render device may be incorrect (if it changes in case)
@@ -49,11 +56,6 @@ def reportToJSON(case, render_time=0):
 		report['scene_name'] = case.get('scene', '')
 	else:
 		report['scene_name'] = get_scene_name()
-
-	if case['status'] == 'inprogress':
-		report['test_status'] = 'passed'
-	else:
-		report['test_status'] = case['status']
 
 	with open(path_to_file, 'w') as file:
 		file.write(json.dumps([report], indent=4))
@@ -223,6 +225,7 @@ def main():
 
 			if case['status'] == 'inprogress':
 				case['status'] = 'done'
+				logging(case['case'] + ' done')
 
 			with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
 				json.dump(cases, file, indent=4)
