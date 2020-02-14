@@ -130,7 +130,11 @@ def main(args):
 	try:
 		cases = json.load(open(os.path.realpath(
 			os.path.join(work_dir, 'test_cases.json'))))
-	except:
+	except Exception as e:
+		core_config.main_logger.error(str(e))
+	
+	if not cases:
+		core_config.main_logger.info('Get cases from Tests folder')
 		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'Tests', args.testType, 'test_cases.json'))))
 		
 	try:
