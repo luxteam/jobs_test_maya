@@ -83,11 +83,12 @@ def validateFiles():
 
 
 def check_rpr_load():
-	logging('Load rpr and fbx if not loaded')
 	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
 		cmds.loadPlugin('RadeonProRender', quiet=True)
+		logging('Load rpr')
 	if not cmds.pluginInfo('fbxmaya', query=True, loaded=True):
 		cmds.loadPlugin('fbxmaya', quiet=True)
+		logging('Load fbx')
 
 
 def rpr_render(case):
