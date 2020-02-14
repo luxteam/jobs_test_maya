@@ -216,7 +216,7 @@ def main():
 			log_path = render_tool_log_path(case['case'])
 			if not path.exists(log_path):
 				with open(log_path, 'w'):
-					logging('Create log file')
+					logging('Create log file for ' + case['case'])
 			cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
 
 			logging(case['case'] + ' in progress')
