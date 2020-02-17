@@ -26,10 +26,17 @@ def logging(message):
 
 
 def reportToJSON(case, render_time=0):
-	logging('Create report json')
 	path_to_file = path.join(WORK_DIR, case['case'] + '_RPR.json')
+
 	with open(path_to_file, 'r') as file:
 		report = json.loads(file.read())[0]
+
+	if case['status'] == 'inprogress':
+		report['test_status'] = 'passed'
+	else:
+		report['test_status'] = case['status']
+
+	logging('Create report json ({{}} {{}})'.format(case['case'], report['test_status']))
 
 	report['file_name'] = case['case'] + '.jpg'
 	# TODO: render device may be incorrect (if it changes in case)
@@ -49,11 +56,6 @@ def reportToJSON(case, render_time=0):
 		report['scene_name'] = case.get('scene', '')
 	else:
 		report['scene_name'] = get_scene_name()
-
-	if case['status'] == 'inprogress':
-		report['test_status'] = 'passed'
-	else:
-		report['test_status'] = case['status']
 
 	with open(path_to_file, 'w') as file:
 		file.write(json.dumps([report], indent=4))
@@ -81,11 +83,12 @@ def validateFiles():
 
 
 def check_rpr_load():
-	logging('Load rpr and fbx if not loaded')
 	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
 		cmds.loadPlugin('RadeonProRender', quiet=True)
+		logging('Load rpr')
 	if not cmds.pluginInfo('fbxmaya', query=True, loaded=True):
 		cmds.loadPlugin('fbxmaya', quiet=True)
+		logging('Load fbx')
 
 
 def rpr_render(case):
@@ -152,7 +155,7 @@ def prerender(case):
 
 
 def rpr_save(case):
-	logging('Save report without rendering')
+	logging('Save report without rendering for '+ case['case'])
 	cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
 	work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
 	source_dir = path.join(WORK_DIR, '..', '..', '..',
@@ -208,21 +211,22 @@ def main():
 			if case['status'] == 'active':
 				case['status'] = 'inprogress'
 
-			logging(case['case'] + ' in progress')
-
 			with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
 				json.dump(cases, file, indent=4)
 
 			log_path = render_tool_log_path(case['case'])
 			if not path.exists(log_path):
 				with open(log_path, 'w'):
-					logging('Create log file')
+					logging('Create log file for ' + case['case'])
 			cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
+
+			logging(case['case'] + ' in progress')
 
 			case_function(case)
 
 			if case['status'] == 'inprogress':
 				case['status'] = 'done'
+				logging(case['case'] + ' done')
 
 			with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
 				json.dump(cases, file, indent=4)
