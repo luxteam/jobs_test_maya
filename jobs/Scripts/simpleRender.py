@@ -386,9 +386,9 @@ if __name__ == '__main__':
 				os.remove(f)
 
 			if 'rprCachingShadersWarningWindow' in logs:
-				logs += '\n\n\n!!!Cache built during cases!!!'
+				logs += '\n\n\n!!!Render cache built during cases!!!'
 			if 'Error: Radeon ProRender: IO error' in logs:
-				logs += '\n\n\n!!!Some files are missing!!!'
+				logs += '\n\n\n!!!Some files/textures are missing!!!'
 
 			with open('renderTool.log', 'w') as f:
 				f.write(logs)
