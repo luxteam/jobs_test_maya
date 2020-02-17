@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_RS_AS_001",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Max Iterations - 0"
         ],
