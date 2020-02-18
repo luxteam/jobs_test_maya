@@ -389,7 +389,6 @@
         "scene": "adaptive_sampling.ma", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderX', 16)",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderY', 16)",
@@ -417,7 +416,6 @@
         "scene": "adaptive_sampling.ma", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderX', 512)",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderY', 512)",
