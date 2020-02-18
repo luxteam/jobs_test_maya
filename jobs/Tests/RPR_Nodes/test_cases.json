@@ -103,6 +103,7 @@
         "case": "MAYA_MAT_NODE_007",
         "status": "active",
         "functions": [
+            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
@@ -121,6 +122,7 @@
         "case": "MAYA_MAT_NODE_008",
         "status": "active",
         "functions": [
+            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
@@ -138,6 +140,7 @@
         "case": "MAYA_MAT_NODE_009",
         "status": "active",
         "functions": [
+            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RPRMatteMaterial1.bgColor', 0.5, 0.5, 0.5)",
@@ -157,6 +160,7 @@
         "case": "MAYA_MAT_NODE_010",
         "status": "active",
         "functions": [
+            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
@@ -175,6 +179,7 @@
         "case": "MAYA_MAT_NODE_011",
         "status": "active",
         "functions": [
+            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
@@ -194,6 +199,7 @@
         "case": "MAYA_MAT_NODE_012",
         "status": "active",
         "functions": [
+            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
@@ -213,6 +219,7 @@
         "case": "MAYA_MAT_NODE_013",
         "status": "active",
         "functions": [
+            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
