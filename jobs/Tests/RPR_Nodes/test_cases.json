@@ -946,5 +946,33 @@
             "RPR Lookup Vertex Color"
         ],
         "scene": "RPRLookup.ma"
+    },
+    {
+        "case": "MAYA_MAT_NODE_055",
+        "status": "active",
+        "functions": [
+            "cmds.select('shaderball')",
+            "cmds.hyperShade(assign='RPRTransparentMaterial')",
+            "rpr_render(case)",
+            "cmds.hyperShade(assign='pasted__RPRUberMaterial1')"
+        ],
+        "script_info": [
+            "RPRTransparentMaterial"
+        ],
+        "scene": "maya_shaderball.ma"
+    },
+    {
+        "case": "MAYA_MAT_NODE_056",
+        "status": "active",
+        "functions": [
+            "cmds.select('shaderball')",
+            "cmds.hyperShade(assign='RPRFlatColorMaterial')",
+            "rpr_render(case)",
+            "cmds.hyperShade(assign='pasted__RPRUberMaterial1')"
+        ],
+        "script_info": [
+            "RPRFlatColorMaterial"
+        ],
+        "scene": "maya_shaderball.ma"
     }
 ]
