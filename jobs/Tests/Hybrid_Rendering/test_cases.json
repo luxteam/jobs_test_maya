@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_RS_HR_001",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Complex scene Quality High"
         ],
@@ -13,7 +13,7 @@
     },
     {
         "case": "MAYA_RS_HR_002",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Complex scene Quality Medium"
         ],
@@ -25,7 +25,7 @@
     },
     {
         "case": "MAYA_RS_HR_003",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Complex scene Quality Low"
         ],
