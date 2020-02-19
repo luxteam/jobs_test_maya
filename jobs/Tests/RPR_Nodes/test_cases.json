@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_MAT_NODE_001",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
@@ -18,7 +18,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_002",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
@@ -37,7 +37,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_003",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
@@ -58,7 +58,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_004",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
@@ -237,7 +237,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_014",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
@@ -254,7 +254,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_015",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
@@ -273,7 +273,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_016",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
@@ -292,7 +292,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_017",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
@@ -311,7 +311,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_018",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
@@ -330,7 +330,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_019",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
@@ -349,7 +349,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_020",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
@@ -368,7 +368,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_021",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -385,7 +385,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_022",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -404,7 +404,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_023",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -423,7 +423,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_024",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -482,7 +482,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_028",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
@@ -499,7 +499,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_029",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
@@ -519,7 +519,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_030",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
@@ -559,7 +559,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_032",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
@@ -579,7 +579,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_033",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BumpNormal.visibility', 1)",
@@ -596,7 +596,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_034",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "rpr_render(case)"
         ],
@@ -620,7 +620,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_036",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
@@ -637,7 +637,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_037",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
@@ -656,7 +656,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_038",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
@@ -675,7 +675,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_039",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
@@ -694,7 +694,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_040",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
@@ -713,7 +713,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_041",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Fresnel.visibility', 1)",
@@ -751,7 +751,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_043",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
@@ -769,7 +769,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_044",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
@@ -789,7 +789,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_045",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
@@ -809,7 +809,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_046",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
@@ -829,7 +829,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_047",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('Lookup.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 5)",
@@ -844,7 +844,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_048",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('Lookup.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 1)",
@@ -859,7 +859,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_049",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('Lookup.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 2)",
@@ -874,7 +874,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_050",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('Lookup.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 3)",
@@ -889,7 +889,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_051",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('Lookup.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 5)",
@@ -904,7 +904,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_052",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('Lookup.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 4)",
@@ -919,7 +919,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_053",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('Lookup.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 11)",
@@ -934,7 +934,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_054",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('Vertex_Color.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 256)",
