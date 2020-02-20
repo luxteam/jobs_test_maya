@@ -65,65 +65,6 @@
             "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
         ],
         "script_info": [
-            "Open BlendMaterial node Set Weight - 0"
-        ],
-        "scene": "RPRNodes.ma"
-    },
-    {
-        "case": "MAYA_MAT_NODE_005",
-        "status": "skipped",
-        "functions": [
-
-        ],
-        "script_info": [
-            "https://amdrender.atlassian.net/browse/RPRMAYA-774"
-        ],
-        "scene": "RPRNodes.ma"
-    },
-    {
-        "case": "MAYA_MAT_NODE_006",
-        "status": "skipped",
-        "functions": [
-
-        ],
-        "script_info": [
-            "https://amdrender.atlassian.net/browse/RPRMAYA-774"
-        ],
-        "scene": "RPRNodes.ma"
-    },
-    {
-        "case": "MAYA_MAT_NODE_007",
-        "status": "active",
-        "functions": [
-            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
-            "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
-            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
-            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
-            "rpr_render(case)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
-            "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)"
-        ],
-        "script_info": [
-            "Shadow Catcher Matte Material AOV"
-        ],
-        "scene": "RPRNodes.ma"
-    },
-    {
-        "case": "MAYA_MAT_NODE_008",
-        "status": "active",
-        "functions": [
-            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
-            "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
-            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
-            "rpr_render(case)",
-            "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
-        ],
-        "script_info": [
             "Shadow Catcher Matte Material"
         ],
         "scene": "RPRNodes.ma"
@@ -687,24 +628,6 @@
             "rpr_render(case)",
             "cmds.setAttr('RPRFresnel1.ior', 1.2)",
             "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
-        ],
-        "script_info": [
-            "RPRFresnel1 node Set IOR - 10"
-        ],
-        "scene": "RPRNodes.ma"
-    },
-    {
-        "case": "MAYA_MAT_NODE_043",
-        "status": "active",
-        "functions": [
-            "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
-            "cmds.setAttr('CheckerDotTexture.visibility', 0)",
-            "cmds.setAttr('Displacement.visibility', 1)",
-            "cmds.lookThru('Camera_Displacement', 'modelPanel4')",
-            "rpr_render(case)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
-            "cmds.setAttr('Displacement.visibility', 0)",
-            "cmds.setAttr('CheckerDotTexture.visibility', 1)"
         ],
         "script_info": [
             "Displacement node"
