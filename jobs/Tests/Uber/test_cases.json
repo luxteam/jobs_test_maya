@@ -1817,7 +1817,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_084",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "cmds.setAttr('R_UberMat.displacementMap', 1, 1, 1, type='double3')",
@@ -1841,7 +1841,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_085",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "cmds.setAttr('R_UberMat.displacementMap', 1, 1, 1, type='double3')",
@@ -1863,7 +1863,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_086",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "cmds.setAttr('R_UberMat.displacementMap', 1, 1, 1, type='double3')",
@@ -1885,7 +1885,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_087",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "cmds.setAttr('R_UberMat.displacementMap', 1, 1, 1, type='double3')",
@@ -1903,7 +1903,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_088",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.jpeg')",
@@ -1926,7 +1926,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_089",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.jpeg')",
@@ -1947,12 +1947,12 @@
     },
     {
         "case": "MAYA_MAT_UBER_090",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.jpeg')",
             "cmds.setAttr('R_UberMat.displacementMax', 1)",
-            "cmds.setAttr('R_UberMat.displacementSubdiv', 7)",
+            "cmds.setAttr('R_UberMat.displacementSubdiv', 3)",
             "cmds.setAttr('R_UberMat.displacementCreaseWeight', 100)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
@@ -1968,7 +1968,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_091",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.jpeg')",
@@ -1989,7 +1989,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_092",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.png')",
@@ -2010,7 +2010,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_093",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.png')",
@@ -2029,7 +2029,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_094",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.png')",
@@ -2052,7 +2052,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_095",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.exr')",
@@ -2076,7 +2076,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_096",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.exr')",
@@ -2099,7 +2099,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_097",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
@@ -2120,7 +2120,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_098",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
