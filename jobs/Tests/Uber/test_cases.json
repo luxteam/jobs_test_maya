@@ -496,7 +496,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_023",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "file_tmp1 = setAttribute('refractColor', 'outColor', 'sourceimages/refraction_color.jpeg')",
             "file_tmp2 = setAttribute('refractWeight', 'outAlpha', 'sourceimages/refraction_weight.png')",
@@ -587,7 +587,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_027",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "file_tmp1 = setAttribute('refractColor', 'outColor', 'sourceimages/refraction_color.exr')",
             "file_tmp2 = setAttribute('refractWeight', 'outAlpha', 'sourceimages/refraction_weight.jpeg')",
@@ -702,7 +702,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_032",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "file_tmp1 = setAttribute('refractRoughness', 'outAlpha', 'sourceimages/refraction_roughness.exr')",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 1)",
@@ -1452,7 +1452,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_065",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.sssEnable', 1)",
             "file_tmp1 = setAttribute('subsurfaceRadius', 'outColor', 'sourceimages/subsurfacescattering_subsurfaceradius.jpeg')",
@@ -1494,7 +1494,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_067",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.sssEnable', 1)",
             "file_tmp1 = setAttribute('subsurfaceRadius', 'outColor', 'sourceimages/subsurfacescattering_subsurfaceradius.png')",
@@ -1516,7 +1516,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_068",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.sssEnable', 1)",
             "file_tmp1 = setAttribute('volumeScatter', 'outColor', 'sourceimages/subsurfacescattering_scatteringcolor.exr')",
@@ -1545,7 +1545,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_069",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.sssEnable', 1)",
             "file_tmp1 = setAttribute('subsurfaceRadius', 'outColor', 'sourceimages/subsurfacescattering_subsurfaceradius.tiff')",
@@ -1591,7 +1591,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_071",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.sssEnable', 1)",
             "file_tmp1 = setAttribute('sssWeight', 'outAlpha', 'sourceimages/subsurfacescattering_weight.tiff')",
@@ -1652,7 +1652,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_074",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.sssEnable', 1)",
             "file_tmp1 = setAttribute('subsurfaceRadius', 'outColor', 'sourceimages/subsurfacescattering_subsurfaceradius.exr')",
@@ -1673,7 +1673,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_075",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.sssEnable', 1)",
             "cmds.setAttr('R_UberMat.sssWeight', 0.5)",
@@ -1817,7 +1817,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_084",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "cmds.setAttr('R_UberMat.displacementMap', 1, 1, 1, type='double3')",
@@ -1841,7 +1841,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_085",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "cmds.setAttr('R_UberMat.displacementMap', 1, 1, 1, type='double3')",
@@ -1863,7 +1863,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_086",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "cmds.setAttr('R_UberMat.displacementMap', 1, 1, 1, type='double3')",
@@ -1885,7 +1885,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_087",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "cmds.setAttr('R_UberMat.displacementMap', 1, 1, 1, type='double3')",
@@ -1903,7 +1903,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_088",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.jpeg')",
@@ -1926,7 +1926,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_089",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.jpeg')",
@@ -1947,7 +1947,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_090",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.jpeg')",
@@ -1968,7 +1968,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_091",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.jpeg')",
@@ -1989,7 +1989,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_092",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.png')",
@@ -2010,7 +2010,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_093",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.png')",
@@ -2029,7 +2029,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_094",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.png')",
@@ -2052,7 +2052,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_095",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.exr')",
@@ -2076,7 +2076,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_096",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.exr')",
@@ -2099,7 +2099,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_097",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
@@ -2120,7 +2120,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_098",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
             "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
