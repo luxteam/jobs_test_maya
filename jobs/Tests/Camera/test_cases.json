@@ -10,7 +10,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 1)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.417)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.945)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -25,7 +25,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 2)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.417)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.945)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -40,7 +40,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 3)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.417)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.945)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -55,7 +55,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 4)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.417)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.945)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -70,7 +70,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.404)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.295)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -85,7 +85,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.493)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.292)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -100,7 +100,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.864)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.63)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -115,7 +115,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.816)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.612)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -130,7 +130,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.98)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.735)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -145,7 +145,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.825)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.446)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -160,7 +160,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.864)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.732)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -175,7 +175,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 2.066)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.906)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -190,7 +190,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.485)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.991)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -205,7 +205,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)",
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 2.772)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 2.072)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -218,7 +218,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.focalLength', 1432.36)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -231,7 +231,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.focalLength', 16.29)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -244,7 +244,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.focalLength', 2.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -257,7 +257,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.focalLength', 50.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -270,7 +270,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.focalLength', 100.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -283,7 +283,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.focalLength', 200.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -296,7 +296,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.cameraScale', 1e-05)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -309,7 +309,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.cameraScale', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -323,7 +323,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 0.5)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -337,7 +337,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.horizontalFilmAperture', 1.0)",
             "cmds.setAttr('Camera00Shape1.verticalFilmAperture', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -350,7 +350,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.lensSqueezeRatio', 0.1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -363,7 +363,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.lensSqueezeRatio', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -376,7 +376,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.lensSqueezeRatio', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -391,7 +391,7 @@
             "cmds.setAttr('Camera00Shape1.shakeEnabled', 1.0)",
             "cmds.setAttr('Camera00Shape1.horizontalShake', 0.2)",
             "cmds.setAttr('Camera00Shape1.verticalShake', 0.2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -407,7 +407,7 @@
             "cmds.setAttr('Camera00Shape1.horizontalShake', 0.2)",
             "cmds.setAttr('Camera00Shape1.verticalShake', 0.2)",
             "cmds.setAttr('Camera00Shape1.shakeOverscanEnabled', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -420,7 +420,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.preScale', 0.1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -433,7 +433,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.preScale', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -446,7 +446,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.preScale', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -460,7 +460,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmTranslateH', 0.1)",
             "cmds.setAttr('Camera00Shape1.filmTranslateV', 0.1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -474,7 +474,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.horizontalRollPivot', 0.1)",
             "cmds.setAttr('Camera00Shape1.verticalRollPivot', 0.1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -487,7 +487,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollValue', 0.1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -500,7 +500,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollValue', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -513,7 +513,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollValue', 90.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -526,7 +526,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollValue', 180.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -539,7 +539,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.postScale', 0.1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -552,7 +552,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.postScale', 0.5)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -564,8 +564,8 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-             "cmds.setAttr('Camera00Shape1.postScale', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "cmds.setAttr('Camera00Shape1.postScale', 1.0)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -579,7 +579,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.preScale', 0.1)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -593,7 +593,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.preScale', 0.5)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -606,7 +606,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -621,7 +621,7 @@
             "cmds.setAttr('Camera00Shape1.filmTranslateH', 0.1)",
             "cmds.setAttr('Camera00Shape1.filmTranslateV', 0.1)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -636,7 +636,7 @@
             "cmds.setAttr('Camera00Shape1.horizontalRollPivot', 0.1)",
             "cmds.setAttr('Camera00Shape1.verticalRollPivot', 0.1)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -650,7 +650,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollValue', 0.1)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -664,7 +664,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollValue', 1.0)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -678,7 +678,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollValue', 90.0)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -692,7 +692,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollValue', 180.0)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -706,7 +706,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.postScale', 0.1)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -720,7 +720,7 @@
         "functions": [
             "cmds.setAttr('Camera00Shape1.postScale', 0.5)",
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     },
@@ -733,7 +733,7 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ]
     }

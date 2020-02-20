@@ -8,12 +8,13 @@
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType PBR</argument>
-    	<argument>--pass_limit 200</argument>
-    	<argument>--resolution_x {rx}</argument>
-    	<argument>--resolution_y {ry}</argument>
-    	<argument>--res_path "{ScenesDir}"</argument>
-    	<argument>--testCases "{TestCases}"</argument>
-        <argument>--SPU {SPU}</argument>
+        <argument>--pass_limit 100</argument>
+        <argument>--resolution_x 800</argument>
+        <argument>--resolution_y 600</argument>
+        <argument>--res_path "{ScenesDir}"</argument>
+        <argument>--testCases "{TestCases}"</argument>
+        <argument>--SPU 100</argument>
+        <argument>--threshold {threshold}</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"'>

@@ -3,17 +3,18 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="1800">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="3600">
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Denoiser</argument>
-    	<argument>--pass_limit 50</argument>
-    	<argument>--resolution_x {rx}</argument>
-    	<argument>--resolution_y {ry}</argument>
-    	<argument>--res_path "{ScenesDir}"</argument>
-	<argument>--testCases "{TestCases}"</argument>
+        <argument>--pass_limit 50</argument>
+        <argument>--resolution_x {rx}</argument>
+        <argument>--resolution_y {ry}</argument>
+        <argument>--res_path "{ScenesDir}"</argument>
+        <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU 25</argument>
+        <argument>--threshold {threshold}</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"'>

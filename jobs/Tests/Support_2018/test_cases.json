@@ -3,13 +3,12 @@
         "case": "MAYA_RS_2018_001", 
         "status": "active", 
         "functions": [
-            "rpr_render(test_case, script_info)"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Maya 2018 checking"
         ], 
-        "scene": "Lambo_Lebrov.ma",
-        "tool":"2018"
+        "scene": "Lambo_Lebrov.ma"
     },
     {
         "case": "MAYA_RS_2018_002", 
@@ -17,13 +16,12 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
             "Maya ML 2018 checking"
         ], 
-        "scene": "Lambo_Lebrov.ma",
-        "tool":"2018"
+        "scene": "Lambo_Lebrov.ma"
     }
 ]

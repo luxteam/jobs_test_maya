@@ -4,7 +4,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -17,7 +17,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 50)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -30,7 +30,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -43,7 +43,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 50)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -56,7 +56,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -69,7 +69,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 50)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -82,7 +82,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -95,7 +95,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 50)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -108,7 +108,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -121,7 +121,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 50)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -134,7 +134,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -147,7 +147,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 50)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -160,7 +160,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -173,7 +173,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.raycastEpsilon', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -186,7 +186,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.enableOOC', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -200,7 +200,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.enableOOC', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.textureCacheSize', 4096)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -220,7 +220,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -245,7 +245,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.raycastEpsilon', 2)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -265,7 +265,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -279,7 +279,7 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -294,7 +294,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.textureCompression', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
@@ -310,7 +310,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
             "cmds.setAttr('RadeonProRenderGlobals.textureCompression', 1)",
-            "rpr_render(test_case, script_info)",
+            "rpr_render(case)",
             "resetAttributes()"
         ],
         "script_info": [
