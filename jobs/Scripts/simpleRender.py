@@ -8,7 +8,7 @@ import pyscreenshot
 import platform
 import re
 from datetime import datetime
-from shutil import copyfile
+from shutil import copyfile, move
 import sys
 import time
 
@@ -127,10 +127,16 @@ def main(args):
 
 	core_config.main_logger.info('Make script')
 
+	cases = []
+
 	try:
 		cases = json.load(open(os.path.realpath(
-			os.path.join(work_dir, 'test_cases.json'))))
-	except:
+			os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+	except Exception as e:
+		core_config.main_logger.error(str(e))
+	
+	if not cases:
+		core_config.main_logger.info('Get cases from Tests folder')
 		cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'Tests', args.testType, 'test_cases.json'))))
 		
 	try:
@@ -294,7 +300,7 @@ def main(args):
 		else:
 			rc = 0
 			break
-
+		
 	if args.testType in ['Athena']:
 		subprocess.call([sys.executable, os.path.realpath(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
 	core_config.main_logger.info('Main func return : {}'.format(rc))
@@ -334,12 +340,13 @@ if __name__ == '__main__':
 	while True:
 		iteration += 1
 		core_config.main_logger.info('Try to run script in maya (#' + str(iteration) + ')')
-		if iteration > 1:
-			try:
-				copyfile(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'), os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration-1) + '.log'))
-			except:
-				core_config.main_logger.error('No renderTool.log')
+
 		rc = main(args)
+
+		try:
+			move(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'), os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration) + '.log'))
+		except:
+			core_config.main_logger.error('No renderTool.log')
 
 		try:
 			cases = json.load(open(os.path.realpath(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
@@ -364,5 +371,27 @@ if __name__ == '__main__':
 		if active_cases == 0:
 			kill_process(PROCESS)
 			core_config.main_logger.info('Finish simpleRender with code: {}'.format(rc))
+
+			work_dir = os.path.abspath(args.output).replace('\\', '/')
+			files = [f for f in os.listdir(
+				work_dir) if os.path.isfile(os.path.join(work_dir, f))]
+			files = [f for f in files if 'renderTool' in f]
+
+			logs = ''
+
+			for f in files:
+				logs += '\n\n\n\n----------LOGS FROM FILE ' + f + '----------\n\n\n\n'
+				with open(os.path.realpath(os.path.join(os.path.abspath(args.output).replace('\\', '/'), f))) as log:
+					logs += log.read()
+				os.remove(f)
+
+			if 'rprCachingShadersWarningWindow' in logs:
+				logs += '\n\n\n!!!Render cache built during cases!!!'
+			if 'Error: Radeon ProRender: IO error' in logs:
+				logs += '\n\n\n!!!Some files/textures are missing!!!'
+
+			with open('renderTool.log', 'w') as f:
+				f.write(logs)
+
 			exit(rc)
 

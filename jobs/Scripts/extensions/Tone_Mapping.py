@@ -1,5 +1,6 @@
 def resetAttributes():
-	cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)
+	cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 0)
+	cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 0)
 	cmds.setAttr('RadeonProRenderGlobals.toneMappingLinearScale', 1)
 	cmds.setAttr('RadeonProRenderGlobals.toneMappingPhotolinearSensitivity', 1)
 	cmds.setAttr('RadeonProRenderGlobals.toneMappingPhotolinearExposure', 1)
@@ -8,5 +9,5 @@ def resetAttributes():
 	cmds.setAttr('RadeonProRenderGlobals.toneMappingReinhard02Postscale', 1)
 	cmds.setAttr('RadeonProRenderGlobals.toneMappingReinhard02Burn', 30)
 	cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceValue', 3200)
-	cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)
+	cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 0)
 	cmds.setAttr('RadeonProRenderGlobals.displayGamma', 2.2)
