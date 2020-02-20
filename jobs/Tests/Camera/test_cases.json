@@ -564,7 +564,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-             "cmds.setAttr('Camera00Shape1.postScale', 1.0)",
+            "cmds.setAttr('Camera00Shape1.postScale', 1.0)",
             "rpr_render(case)",
             "resetAttributes()"
         ]
