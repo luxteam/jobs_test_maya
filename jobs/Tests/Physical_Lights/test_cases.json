@@ -1898,7 +1898,7 @@
             "Light Intensity Unit - Luminance",
             "Intensity - 1"
         ],
-        "scene": "DirectionLightNew.ma"
+        "scene": "DirectLightNew.ma"
     },
     {
         "case": "MAYA_L_PL_104",
@@ -1915,7 +1915,7 @@
             "Light Intensity Unit - Luminance",
             "Intensity - 2"
         ],
-        "scene": "DirectionLightNew.ma"
+        "scene": "DirectLightNew.ma"
     },
     {
         "case": "MAYA_L_PL_105",
@@ -1934,7 +1934,7 @@
             "Intensity - 2",
             "Shadow Softness - 0"
         ],
-        "scene": "DirectionLightNew.ma"
+        "scene": "DirectLightNew.ma"
     },
     {
         "case": "MAYA_L_PL_106",
@@ -1953,7 +1953,7 @@
             "Intensity - 2",
             "Shadow Softness - 0.5"
         ],
-        "scene": "DirectionLightNew.ma"
+        "scene": "DirectLightNew.ma"
     },
     {
         "case": "MAYA_L_PL_107",
@@ -1972,7 +1972,7 @@
             "Intensity - 2",
             "Shadow Softness - 1"
         ],
-        "scene": "DirectionLightNew.ma"
+        "scene": "DirectLightNew.ma"
     },
     {
         "case": "MAYA_L_PL_108",
@@ -1991,7 +1991,7 @@
             "Intensity - 1",
             "Shadow Softness - 0.2"
         ],
-        "scene": "DirectionLightNew.ma"
+        "scene": "DirectLightNew.ma"
     },
     {
         "case": "MAYA_L_PL_109",
@@ -2010,7 +2010,7 @@
             "Intensity - 2",
             "Shadow Softness - 0.2"
         ],
-        "scene": "DirectionLightNew.ma"
+        "scene": "DirectLightNew.ma"
     },
     {
         "case": "MAYA_L_PL_110",
@@ -2033,7 +2033,7 @@
             "Color Mode - Temperature",
             "Temperature - 3700"
         ],
-        "scene": "DirectionLightNew.ma"
+        "scene": "DirectLightNew.ma"
     },
     {
         "case": "MAYA_L_PL_111",
@@ -2056,6 +2056,6 @@
             "Color Mode - Temperature",
             "Temperature - 7900"
         ],
-        "scene": "DirectionLightNew.ma"
+        "scene": "DirectLightNew.ma"
     }
 ]
