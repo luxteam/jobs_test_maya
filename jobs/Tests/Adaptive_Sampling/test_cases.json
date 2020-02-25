@@ -1,12 +1,15 @@
 [
     {
         "case": "MAYA_RS_AS_001",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Max Iterations - 0"
         ],
         "scene": "adaptive_sampling.ma", 
         "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaHours', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "rpr_render(case)"
         ]
@@ -30,7 +33,7 @@
     },
     {
         "case": "MAYA_RS_AS_003",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Max Iterations - 1000",
             "Max Time Seconds - 0"
@@ -377,7 +380,7 @@
     },
     {
         "case": "MAYA_RS_AS_020",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Max Iterations - 100",
             "Max Time Seconds - 0",
@@ -457,13 +460,14 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', 0)",
             "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', 0.05)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)"
         ]
     },
     {
         "case": "MAYA_RS_AS_023",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Min iteration- 20",
             "Max Iterations - 1000",
