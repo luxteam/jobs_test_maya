@@ -70,9 +70,47 @@
         "scene": "RPRNodes.ma"
     },
     {
+        "case": "MAYA_MAT_NODE_007",
+        "status": "skipped",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
+            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
+            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
+            "rpr_render(case)",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
+            "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)"
+        ],
+        "script_info": [
+            "Shadow Catcher Matte Material AOV"
+        ],
+        "scene": "RPRNodes.ma"
+    },
+    {
+        "case": "MAYA_MAT_NODE_008",
+        "status": "skipped",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
+            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
+            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
+            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+        ],
+        "script_info": [
+            "Shadow Catcher Matte Material"
+        ],
+        "scene": "RPRNodes.ma"
+    },
+    {
         "case": "MAYA_MAT_NODE_009",
         "status": "active",
         "functions": [
+            "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
@@ -93,6 +131,7 @@
         "case": "MAYA_MAT_NODE_010",
         "status": "active",
         "functions": [
+            "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
@@ -112,6 +151,7 @@
         "case": "MAYA_MAT_NODE_011",
         "status": "active",
         "functions": [
+            "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
@@ -132,6 +172,7 @@
         "case": "MAYA_MAT_NODE_012",
         "status": "active",
         "functions": [
+            "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
@@ -152,6 +193,7 @@
         "case": "MAYA_MAT_NODE_013",
         "status": "active",
         "functions": [
+            "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
             "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
@@ -638,6 +680,7 @@
         "case": "MAYA_MAT_NODE_044",
         "status": "active",
         "functions": [
+            "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Displacement.visibility', 1)",
@@ -658,6 +701,7 @@
         "case": "MAYA_MAT_NODE_045",
         "status": "active",
         "functions": [
+            "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Displacement.visibility', 1)",
@@ -678,6 +722,7 @@
         "case": "MAYA_MAT_NODE_046",
         "status": "active",
         "functions": [
+            "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Displacement.visibility', 1)",
