@@ -10,7 +10,7 @@
             "cmds.setAttr('auduo_node.visibility', 1)",
             "cmds.currentTime(40)",
             "rpr_render(case)",
-            "cmds.setAttr('audio_node.visibility', 0)"
+            "cmds.setAttr('auduo_node.visibility', 0)"
         ]
     },
     {

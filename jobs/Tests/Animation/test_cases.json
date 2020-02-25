@@ -104,7 +104,10 @@
         "scene": "KeyedAnimation.ma", 
         "functions": [
             "cmds.currentTime(293)",
-            "rpr_render(case)"
+            "rpr_render(case)",
+            "cmds.loadPlugin('AbcImport.mll')",
+            "cmds.loadPlugin('AbcBullet.mll')",
+            "cmds.loadPlugin('AbcExport.mll')"
         ]
     },
     {
