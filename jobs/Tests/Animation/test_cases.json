@@ -104,10 +104,7 @@
         "scene": "KeyedAnimation.ma", 
         "functions": [
             "cmds.currentTime(293)",
-            "rpr_render(case)",
-            "cmds.loadPlugin('AbcImport.mll')",
-            "cmds.loadPlugin('AbcBullet.mll')",
-            "cmds.loadPlugin('AbcExport.mll')"
+            "rpr_render(case)"
         ]
     },
     {
@@ -226,8 +223,6 @@
         ],
         "scene": "Blue_Fire.ma", 
         "functions": [
-            "cmds.renderer('RadeonProRender')",
-            "time.sleep(5)",
             "cmds.currentTime(60)",
             "rpr_render(case)"
         ]

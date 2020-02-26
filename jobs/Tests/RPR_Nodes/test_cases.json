@@ -81,6 +81,7 @@
             "rpr_render(case)",
             "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)"
         ],
         "script_info": [
@@ -99,6 +100,7 @@
             "rpr_render(case)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
         ],
         "script_info": [
@@ -119,6 +121,7 @@
             "rpr_render(case)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
+            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
             "cmds.setAttr('RPRMatteMaterial1.bgColor', 0, 0, 0)"
         ],
@@ -139,6 +142,7 @@
             "cmds.setAttr('RPRMatteMaterial1.bgColor', 0, 0, 0)",
             "rpr_render(case)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
             "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
         ],
@@ -160,6 +164,7 @@
             "rpr_render(case)",
             "cmds.setAttr('RPRMatteMaterial1.shadowWeight', 1)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
             "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
         ],
@@ -180,6 +185,7 @@
             "cmds.setAttr('RPRMatteMaterial1.shadowWeight', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RPRMatteMaterial1.shadowWeight', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
             "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
@@ -202,6 +208,7 @@
             "rpr_render(case)",
             "cmds.setAttr('RPRMatteMaterial1.reflectionWeight', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
         ],
