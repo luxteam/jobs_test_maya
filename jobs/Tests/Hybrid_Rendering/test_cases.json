@@ -272,19 +272,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'BarnFindOrange_Solid')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: BarnFindOrange_Solid ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: BarnFindOrange_Solid ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'BarnFindOrange_Solid')"
         ]
     },
     {
@@ -296,19 +284,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'BarnFindOrange_Solid')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: BarnFindOrange_Solid ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: BarnFindOrange_Solid ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'BarnFindOrange_Solid')"
         ]
     },
     {
@@ -320,19 +296,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'BarnFindOrange_Solid')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: BarnFindOrange_Solid ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: BarnFindOrange_Solid ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'BarnFindOrange_Solid')"
         ]
     },
     {
@@ -344,19 +308,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'Chrome')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: Chrome ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: Chrome ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'Chrome')"
         ]
     },
     {
@@ -368,19 +320,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'Chrome')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: Chrome ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: Chrome ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'Chrome')"
         ]
     },
     {
@@ -392,19 +332,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'Chrome')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: Chrome ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: Chrome ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'Chrome')"
         ]
     },
     {
@@ -416,19 +344,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'Glass_Clear_Window')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: Glass_Clear_Window ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: Glass_Clear_Window ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'Glass_Clear_Window')"
         ]
     },
     {
@@ -440,19 +356,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'Glass_Clear_Window')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: Glass_Clear_Window ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: Glass_Clear_Window ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'Glass_Clear_Window')"
         ]
     },
     {
@@ -464,19 +368,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'Glass_Clear_Window')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: Glass_Clear_Window ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: Glass_Clear_Window ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'Glass_Clear_Window')"
         ]
     },
     {
@@ -488,19 +380,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'Wood_Planks_Oak_Glossy')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: Wood_Planks_Oak_Glossy ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: Wood_Planks_Oak_Glossy ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'Wood_Planks_Oak_Glossy')"
         ]
     },
     {
@@ -512,19 +392,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'Wood_Planks_Oak_Glossy')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: Wood_Planks_Oak_Glossy ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: Wood_Planks_Oak_Glossy ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'Wood_Planks_Oak_Glossy')"
         ]
     },
     {
@@ -536,19 +404,7 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "libraryPath = fireRender.rpr_material_browser.getLibPath()",
-            "material_path = path.join(libraryPath, 'Wood_Planks_Oak_Glossy')",
-            "xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]",
-            "print('Material to import: Wood_Planks_Oak_Glossy ')",
-            "cmds.RPRXMLImport(file=path.join(material_path,xml[0]), ii=False, mn='materialTestNode')",
-            "cmds.hyperShade(objects='lambert1')",
-            "rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]",
-            "print('Material connected: Wood_Planks_Oak_Glossy ')",
-            "cmds.sets(e=True, forceElement=rpr_sg)",
-            "rpr_render(case)",
-            "cmds.delete('materialTestNode')",
-            "rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]",
-            "cmds.sets(e=True, forceElement=rpr_sg)"
+            "applyMaterial(case, 'Wood_Planks_Oak_Glossy')"
         ]
     },
     {
