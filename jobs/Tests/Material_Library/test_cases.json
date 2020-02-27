@@ -65,7 +65,8 @@
         "case": "MAYA_MAT_LIB_007",
         "status": "active",
         "functions": [
-            "applyMaterial(case, 'CandyPantsViolet_Metallic')"],
+            "applyMaterial(case, 'CandyPantsViolet_Metallic')"
+        ],
         "script_info": [
             "Material: CandyPantsViolet Metallic"
         ],
