@@ -9,7 +9,7 @@ def applyMaterial(material):
     print('Material connected: ' + material)
     cmds.sets(e=True, forceElement=rpr_sg)
 
-def detachMaterial(material):
+def detachMaterial():
     cmds.delete('materialTestNode')
     rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]
     cmds.sets(e=True, forceElement=rpr_sg)

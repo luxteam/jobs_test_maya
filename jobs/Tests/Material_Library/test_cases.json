@@ -5,7 +5,7 @@
         "functions": [
             "applyMaterial('BarnFindOrange_Solid')",
             "rpr_render(case)",
-            "detachMaterial('BarnFindOrange_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: BarnFindOrange Solid"
@@ -18,7 +18,7 @@
         "functions": [
             "applyMaterial('BasketCaseBlue_Solid')",
             "rpr_render(case)",
-            "detachMaterial('BasketCaseBlue_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: BasketCaseBlue Solid"
@@ -31,7 +31,7 @@
         "functions": [
             "applyMaterial('BeachBumAqua_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('BeachBumAqua_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: BeachBumAqua Metallic"
@@ -44,7 +44,7 @@
         "functions": [
             "applyMaterial('BlueBayou_Solid')",
             "rpr_render(case)",
-            "detachMaterial('BlueBayou_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: BlueBayou Solid"
@@ -57,7 +57,7 @@
         "functions": [
             "applyMaterial('BoulevardBlack_Solid')",
             "rpr_render(case)",
-            "detachMaterial('BoulevardBlack_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: BoulevardBlack Solid"
@@ -70,7 +70,7 @@
         "functions": [
             "applyMaterial('BurnOutBlue_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('BurnOutBlue_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: BurnOutBlue Metallic"
@@ -83,7 +83,7 @@
         "functions": [
             "applyMaterial('CandyPantsViolet_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('CandyPantsViolet_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: CandyPantsViolet Metallic"
@@ -96,7 +96,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Metallic"
@@ -109,7 +109,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Pearlescent')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Pearlescent')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Pearlescent"
@@ -122,7 +122,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Solid')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Solid"
@@ -135,7 +135,7 @@
         "functions": [
             "applyMaterial('Champagne_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('Champagne_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Champagne Metallic"
@@ -148,7 +148,7 @@
         "functions": [
             "applyMaterial('CherryGumball_Solid')",
             "rpr_render(case)",
-            "detachMaterial('CherryGumball_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: CherryGumball Solid"
@@ -161,7 +161,7 @@
         "functions": [
             "applyMaterial('ChopTopSilver_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('ChopTopSilver_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: ChopTopSilver Metallic"
@@ -174,7 +174,7 @@
         "functions": [
             "applyMaterial('CruiseNightBlue_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('CruiseNightBlue_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: CruiseNightBlue Metallic"
@@ -187,7 +187,7 @@
         "functions": [
             "applyMaterial('DesertedTan_Flat')",
             "rpr_render(case)",
-            "detachMaterial('DesertedTan_Flat')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: DesertedTan Flat"
@@ -200,7 +200,7 @@
         "functions": [
             "applyMaterial('EastwoodBluePearl_Pearlescent')",
             "rpr_render(case)",
-            "detachMaterial('EastwoodBluePearl_Pearlescent')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: EastwoodBluePearl Pearlescent"
@@ -213,7 +213,7 @@
         "functions": [
             "applyMaterial('EastwoodRoyalBlue_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('EastwoodRoyalBlue_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: EastwoodRoyalBlue Metallic"
@@ -226,7 +226,7 @@
         "functions": [
             "applyMaterial('ElectricYellow_Solid')",
             "rpr_render(case)",
-            "detachMaterial('ElectricYellow_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: ElectricYellow Solid"
@@ -239,7 +239,7 @@
         "functions": [
             "applyMaterial('EuroRacingGreen_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('EuroRacingGreen_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: EuroRacingGreen Metallic"
@@ -252,7 +252,7 @@
         "functions": [
             "applyMaterial('EyeCandyGreen_Solid')",
             "rpr_render(case)",
-            "detachMaterial('EyeCandyGreen_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: EyeCandyGreen Solid"
@@ -265,7 +265,7 @@
         "functions": [
             "applyMaterial('GasserGreen_Pearlescent')",
             "rpr_render(case)",
-            "detachMaterial('GasserGreen_Pearlescent')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: GasserGreen Pearlescent"
@@ -278,7 +278,7 @@
         "functions": [
             "applyMaterial('HugginOrange_Solid')",
             "rpr_render(case)",
-            "detachMaterial('GasserGreen_Pearlescent')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: HugginOrange Solid"
@@ -291,7 +291,7 @@
         "functions": [
             "applyMaterial('LimeSqueezinGreen_Solid')",
             "rpr_render(case)",
-            "detachMaterial('LimeSqueezinGreen_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: LimeSqueezinGreen Solid"
@@ -304,7 +304,7 @@
         "functions": [
             "applyMaterial('MalibuSunsetOrange_Pearlescent')",
             "rpr_render(case)",
-            "detachMaterial('MalibuSunsetOrange_Pearlescent')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: MalibuSunsetOrange Pearlescent"
@@ -317,7 +317,7 @@
         "functions": [
             "applyMaterial('OrangeUBad_Solid')",
             "rpr_render(case)",
-            "detachMaterial('OrangeUBad_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: OrangeUBad Solid"
@@ -330,7 +330,7 @@
         "functions": [
             "applyMaterial('PinupRed_Solid')",
             "rpr_render(case)",
-            "detachMaterial('PinupRed_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: PinupRed Solid"
@@ -343,7 +343,7 @@
         "functions": [
             "applyMaterial('PlumCrazy_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('PlumCrazy_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: PlumCrazy Metallic"
@@ -356,7 +356,7 @@
         "functions": [
             "applyMaterial('ProStreetRed_Solid')",
             "rpr_render(case)",
-            "detachMaterial('ProStreetRed_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: ProStreetRed Solid"
@@ -369,7 +369,7 @@
         "functions": [
             "applyMaterial('PureWhite_Solid')",
             "rpr_render(case)",
-            "detachMaterial('PureWhite_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: PureWhite Solid"
@@ -382,7 +382,7 @@
         "functions": [
             "applyMaterial('QuarterMileCandyRed_Solid')",
             "rpr_render(case)",
-            "detachMaterial('QuarterMileCandyRed_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: QuarterMileCandyRed Solid"
@@ -395,7 +395,7 @@
         "functions": [
             "applyMaterial('RatRodBlack_Solid')",
             "rpr_render(case)",
-            "detachMaterial('RatRodBlack_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: RatRodBlack Solid"
@@ -408,7 +408,7 @@
         "functions": [
             "applyMaterial('ReptileRed_Solid')",
             "rpr_render(case)",
-            "detachMaterial('ReptileRed_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: ReptileRed Solid"
@@ -421,7 +421,7 @@
         "functions": [
             "applyMaterial('RodzBerry_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('RodzBerry_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: RodzBerry Metallic"
@@ -434,7 +434,7 @@
         "functions": [
             "applyMaterial('RottenLimeGreen_Solid')",
             "rpr_render(case)",
-            "detachMaterial('RottenLimeGreen_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: RottenLimeGreen Solid"
@@ -447,7 +447,7 @@
         "functions": [
             "applyMaterial('SaltWaterTaffyTeal_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('SaltWaterTaffyTeal_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: SaltWaterTaffyTeal Metallic"
@@ -460,7 +460,7 @@
         "functions": [
             "applyMaterial('StraightAxleRedPearl_Pearlescent')",
             "rpr_render(case)",
-            "detachMaterial('StraightAxleRedPearl_Pearlescent')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: StraightAxleRedPearl Pearlescent"
@@ -473,7 +473,7 @@
         "functions": [
             "applyMaterial('SugarCoatItGold_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('SugarCoatItGold_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: SugarCoatItGold Metallic"
@@ -486,7 +486,7 @@
         "functions": [
             "applyMaterial('TequilaLimeNGold_Solid')",
             "rpr_render(case)",
-            "detachMaterial('TequilaLimeNGold_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: TequilaLimeNGold Solid"
@@ -499,7 +499,7 @@
         "functions": [
             "applyMaterial('TunnelRamGray_Metallic')",
             "rpr_render(case)",
-            "detachMaterial('TunnelRamGray_Metallic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: TunnelRamGray Metallic"
@@ -512,7 +512,7 @@
         "functions": [
             "applyMaterial('USABrightWhite_Solid')",
             "rpr_render(case)",
-            "detachMaterial('USABrightWhite_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: USABrightWhite Solid"
@@ -525,7 +525,7 @@
         "functions": [
             "applyMaterial('USABrightWhiteFlat_Solid')",
             "rpr_render(case)",
-            "detachMaterial('USABrightWhiteFlat_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: USABrightWhiteFlat Solid"
@@ -538,7 +538,7 @@
         "functions": [
             "applyMaterial('VinoRojo_Solid')",
             "rpr_render(case)",
-            "detachMaterial('VinoRojo_Solid')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: VinoRojo Solid"
@@ -551,7 +551,7 @@
         "functions": [
             "applyMaterial('Carbon_Fiber')",
             "rpr_render(case)",
-            "detachMaterial('Carbon_Fiber')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Carbon Fiber"
@@ -564,7 +564,7 @@
         "functions": [
             "applyMaterial('Carbon_Fiber_Glossy')",
             "rpr_render(case)",
-            "detachMaterial('Carbon_Fiber_Glossy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Carbon Fiber Glossy"
@@ -577,7 +577,7 @@
         "functions": [
             "applyMaterial('Carbon_Fiber_GlossyCoat')",
             "rpr_render(case)",
-            "detachMaterial('Carbon_Fiber_GlossyCoat')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Carbon Fiber GlossyCoat"
@@ -590,7 +590,7 @@
         "functions": [
             "applyMaterial('Carbon_Fiber_SemiGlossy')",
             "rpr_render(case)",
-            "detachMaterial('Carbon_Fiber_SemiGlossy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Carbon Fiber SemiGlossy"
@@ -603,7 +603,7 @@
         "functions": [
             "applyMaterial('FiberGlass')",
             "rpr_render(case)",
-            "detachMaterial('FiberGlass')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: FiberGlass"
@@ -616,7 +616,7 @@
         "functions": [
             "applyMaterial('Concrete_BrickCracks_Grey')",
             "rpr_render(case)",
-            "detachMaterial('Concrete_BrickCracks_Grey')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Concrete BrickCracks Grey"
@@ -629,7 +629,7 @@
         "functions": [
             "applyMaterial('Concrete_PaintedCracks')",
             "rpr_render(case)",
-            "detachMaterial('Concrete_PaintedCracks')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Concrete PaintedCracks"
@@ -642,7 +642,7 @@
         "functions": [
             "applyMaterial('Concrete_PaintedRough')",
             "rpr_render(case)",
-            "detachMaterial('Concrete_PaintedRough')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Concrete PaintedRough"
@@ -655,7 +655,7 @@
         "functions": [
             "applyMaterial('Concrete_Stone')",
             "rpr_render(case)",
-            "detachMaterial('Concrete_Stone')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Concrete Stone"
@@ -668,7 +668,7 @@
         "functions": [
             "applyMaterial('Concrete_Tiles')",
             "rpr_render(case)",
-            "detachMaterial('Concrete_Tiles')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Concrete Tiles"
@@ -681,7 +681,7 @@
         "functions": [
             "applyMaterial('Concrete_WornBare')",
             "rpr_render(case)",
-            "detachMaterial('Concrete_WornBare')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Concrete WornBare"
@@ -694,7 +694,7 @@
         "functions": [
             "applyMaterial('Concrete_WornBare_SmoothBump')",
             "rpr_render(case)",
-            "detachMaterial('Concrete_WornBare_SmoothBump')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Concrete WornBare SmoothBump"
@@ -707,7 +707,7 @@
         "functions": [
             "applyMaterial('Emissive_Fluorescent_Yellow')",
             "rpr_render(case)",
-            "detachMaterial('Emissive_Fluorescent_Yellow')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Emissive Fluorescent Yellow"
@@ -720,7 +720,7 @@
         "functions": [
             "applyMaterial('Emissive_Fluorescent_Cyan')",
             "rpr_render(case)",
-            "detachMaterial('Emissive_Fluorescent_Cyan')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Emissive Fluorescent Cyan"
@@ -733,7 +733,7 @@
         "functions": [
             "applyMaterial('Emissive_Fluorescent_Magenta')",
             "rpr_render(case)",
-            "detachMaterial('Emissive_Fluorescent_Magenta')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Emissive Fluorescent Magenta"
@@ -746,7 +746,7 @@
         "functions": [
             "applyMaterial('Emissive_Fluorescent_White')",
             "rpr_render(case)",
-            "detachMaterial('Emissive_Fluorescent_White')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Emissive Fluorescent White"
@@ -759,7 +759,7 @@
         "functions": [
             "applyMaterial('Emissive_CoolLight')",
             "rpr_render(case)",
-            "detachMaterial('Emissive_CoolLight')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Emissive CoolLight"
@@ -772,7 +772,7 @@
         "functions": [
             "applyMaterial('Aluminium_Anodized')",
             "rpr_render(case)",
-            "detachMaterial('Aluminium_Anodized')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Aluminium Anodized"
@@ -785,7 +785,7 @@
         "functions": [
             "applyMaterial('Aluminium_Directional')",
             "rpr_render(case)",
-            "detachMaterial('Aluminium_Directional')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Aluminium Directional"
@@ -798,7 +798,7 @@
         "functions": [
             "applyMaterial('Aluminium_Oxidiazed')",
             "rpr_render(case)",
-            "detachMaterial('Aluminium_Oxidiazed')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Aluminium Oxidiazed"
@@ -811,7 +811,7 @@
         "functions": [
             "applyMaterial('Aluminium_Polished')",
             "rpr_render(case)",
-            "detachMaterial('Aluminium_Polished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Aluminium Polished"
@@ -824,7 +824,7 @@
         "functions": [
             "applyMaterial('Aluminium_SandBlasted')",
             "rpr_render(case)",
-            "detachMaterial('Aluminium_SandBlasted')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Aluminium SandBlasted"
@@ -837,7 +837,7 @@
         "functions": [
             "applyMaterial('Brass_Cartridge')",
             "rpr_render(case)",
-            "detachMaterial('Brass_Cartridge')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brass Cartridge"
@@ -848,9 +848,9 @@
         "case": "MAYA_MAT_LIB_066",
         "status": "active",
         "functions": [
-            "applyMaterial('Brass_Matte')",
+            "applyMaterial('Brass Matte')",
             "rpr_render(case)",
-            "detachMaterial('Brass_Matte')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brass Matte"
@@ -863,7 +863,7 @@
         "functions": [
             "applyMaterial('Brass_Oxidized')",
             "rpr_render(case)",
-            "detachMaterial('Brass_Oxidized')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brass Oxidized"
@@ -876,7 +876,7 @@
         "functions": [
             "applyMaterial('Brass_Patinated')",
             "rpr_render(case)",
-            "detachMaterial('Brass_Patinated')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brass Patinated"
@@ -889,7 +889,7 @@
         "functions": [
             "applyMaterial('Brass_Standard')",
             "rpr_render(case)",
-            "detachMaterial('Brass_Standard')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brass Standard"
@@ -902,7 +902,7 @@
         "functions": [
             "applyMaterial('Bronze_Corrision')",
             "rpr_render(case)",
-            "detachMaterial('Bronze_Corrision')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Bronze Corrision"
@@ -915,7 +915,7 @@
         "functions": [
             "applyMaterial('Bronze_Matte')",
             "rpr_render(case)",
-            "detachMaterial('Bronze_Matte')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Bronze Matte"
@@ -928,7 +928,7 @@
         "functions": [
             "applyMaterial('Bronze_Oxidized')",
             "rpr_render(case)",
-            "detachMaterial('Bronze_Oxidized')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Bronze Oxidized"
@@ -941,7 +941,7 @@
         "functions": [
             "applyMaterial('Bronze_Polished2')",
             "rpr_render(case)",
-            "detachMaterial('Bronze_Polished2')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Bronze Polished2"
@@ -954,7 +954,7 @@
         "functions": [
             "applyMaterial('Bronze_Rough')",
             "rpr_render(case)",
-            "detachMaterial('Bronze_Rough')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Bronze Rough"
@@ -967,7 +967,7 @@
         "functions": [
             "applyMaterial('Chrome_Dusty')",
             "rpr_render(case)",
-            "detachMaterial('Chrome_Dusty')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Chrome Dusty"
@@ -980,7 +980,7 @@
         "functions": [
             "applyMaterial('Chrome_Matte')",
             "rpr_render(case)",
-            "detachMaterial('Chrome_Matte')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Chrome Matte"
@@ -993,7 +993,7 @@
         "functions": [
             "applyMaterial('Chrome_Sandblasted')",
             "rpr_render(case)",
-            "detachMaterial('Chrome_Sandblasted')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Chrome Sandblasted"
@@ -1006,7 +1006,7 @@
         "functions": [
             "applyMaterial('Chrome_Scratched')",
             "rpr_render(case)",
-            "detachMaterial('Chrome_Scratched')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Chrome Scratched"
@@ -1019,7 +1019,7 @@
         "functions": [
             "applyMaterial('Copper_Brushed2')",
             "rpr_render(case)",
-            "detachMaterial('Copper_Brushed2')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Copper Brushed2"
@@ -1032,7 +1032,7 @@
         "functions": [
             "applyMaterial('Copper_Dented')",
             "rpr_render(case)",
-            "detachMaterial('Copper_Dented')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Copper Dented"
@@ -1045,7 +1045,7 @@
         "functions": [
             "applyMaterial('Copper_Old')",
             "rpr_render(case)",
-            "detachMaterial('Copper_Old')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Copper Old"
@@ -1058,7 +1058,7 @@
         "functions": [
             "applyMaterial('Copper_Wrought')",
             "rpr_render(case)",
-            "detachMaterial('Copper_Wrought')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Copper Wrought"
@@ -1071,7 +1071,7 @@
         "functions": [
             "applyMaterial('Generic')",
             "rpr_render(case)",
-            "detachMaterial('Generic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Generic"
@@ -1084,7 +1084,7 @@
         "functions": [
             "applyMaterial('Gold')",
             "rpr_render(case)",
-            "detachMaterial('Gold')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Gold"
@@ -1097,7 +1097,7 @@
         "functions": [
             "applyMaterial('Gold_Foil_Rough')",
             "rpr_render(case)",
-            "detachMaterial('Gold_Foil_Rough')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Gold Foil Rough"
@@ -1110,7 +1110,7 @@
         "functions": [
             "applyMaterial('Gold_Paint')",
             "rpr_render(case)",
-            "detachMaterial('Gold_Paint')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Gold Paint"
@@ -1123,7 +1123,7 @@
         "functions": [
             "applyMaterial('Gold_Paint_Cracked')",
             "rpr_render(case)",
-            "detachMaterial('Gold_Paint_Cracked')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Gold Paint Cracked"
@@ -1136,7 +1136,7 @@
         "functions": [
             "applyMaterial('Gold_Rough')",
             "rpr_render(case)",
-            "detachMaterial('Gold_Rough')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Gold Rough"
@@ -1149,7 +1149,7 @@
         "functions": [
             "applyMaterial('Iron_Hammered')",
             "rpr_render(case)",
-            "detachMaterial('Iron_Hammered')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Iron Hammered"
@@ -1162,7 +1162,7 @@
         "functions": [
             "applyMaterial('Iron_Oxidized')",
             "rpr_render(case)",
-            "detachMaterial('Iron_Oxidized')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Iron Oxidized"
@@ -1175,7 +1175,7 @@
         "functions": [
             "applyMaterial('Iron_Rugged')",
             "rpr_render(case)",
-            "detachMaterial('Iron_Rugged')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Iron Rugged"
@@ -1188,7 +1188,7 @@
         "functions": [
             "applyMaterial('Iron_Smooth')",
             "rpr_render(case)",
-            "detachMaterial('Iron_Smooth')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Iron Smooth"
@@ -1201,7 +1201,7 @@
         "functions": [
             "applyMaterial('Iron_Worn')",
             "rpr_render(case)",
-            "detachMaterial('Iron_Worn')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Iron Worn"
@@ -1214,7 +1214,7 @@
         "functions": [
             "applyMaterial('Lead_Matte')",
             "rpr_render(case)",
-            "detachMaterial('Lead_Matte')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Lead Matte"
@@ -1227,7 +1227,7 @@
         "functions": [
             "applyMaterial('Lead_Rough')",
             "rpr_render(case)",
-            "detachMaterial('Lead_Rough')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Lead Rough"
@@ -1240,7 +1240,7 @@
         "functions": [
             "applyMaterial('Lead_Rusted')",
             "rpr_render(case)",
-            "detachMaterial('Lead_Rusted')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Lead Rusted"
@@ -1253,7 +1253,7 @@
         "functions": [
             "applyMaterial('Lead_Sandblasted')",
             "rpr_render(case)",
-            "detachMaterial('Lead_Sandblasted')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Lead Sandblasted"
@@ -1266,7 +1266,7 @@
         "functions": [
             "applyMaterial('Lead_Smooth')",
             "rpr_render(case)",
-            "detachMaterial('Lead_Smooth')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Lead Smooth"
@@ -1279,7 +1279,7 @@
         "functions": [
             "applyMaterial('Steel_Blue')",
             "rpr_render(case)",
-            "detachMaterial('Steel_Blue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Steel Blue"
@@ -1292,7 +1292,7 @@
         "functions": [
             "applyMaterial('Steel_Galvanized')",
             "rpr_render(case)",
-            "detachMaterial('Steel_Galvanized')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Steel Galvanized"
@@ -1305,7 +1305,7 @@
         "functions": [
             "applyMaterial('Steel_Oxidized')",
             "rpr_render(case)",
-            "detachMaterial('Steel_Oxidized')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Steel Oxidized"
@@ -1318,7 +1318,7 @@
         "functions": [
             "applyMaterial('Steel_Smooth')",
             "rpr_render(case)",
-            "detachMaterial('Steel_Smooth')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Steel Smooth"
@@ -1331,7 +1331,7 @@
         "functions": [
             "applyMaterial('Steel_Worn')",
             "rpr_render(case)",
-            "detachMaterial('Steel_Worn')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Steel Worn"
@@ -1344,7 +1344,7 @@
         "functions": [
             "applyMaterial('Fabric_Matte_Solid_Beige')",
             "rpr_render(case)",
-            "detachMaterial('Fabric_Matte_Solid_Beige')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Fabric Matte Solid Beige"
@@ -1357,7 +1357,7 @@
         "functions": [
             "applyMaterial('Fabric_Matte_Solid_Red')",
             "rpr_render(case)",
-            "detachMaterial('Fabric_Matte_Solid_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Fabric Matte Solid Red"
@@ -1370,7 +1370,7 @@
         "functions": [
             "applyMaterial('Fabric_Matte_Transparent_Beige')",
             "rpr_render(case)",
-            "detachMaterial('Fabric_Matte_Transparent_Beige')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Fabric Matte Transparent Beige"
@@ -1383,7 +1383,7 @@
         "functions": [
             "applyMaterial('Fabric_Matte_Transparent_Red')",
             "rpr_render(case)",
-            "detachMaterial('Fabric_Matte_Transparent_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Fabric Matte Transparent Red"
@@ -1396,7 +1396,7 @@
         "functions": [
             "applyMaterial('Fabric_Silk')",
             "rpr_render(case)",
-            "detachMaterial('Fabric_Silk')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Fabric Silk"
@@ -1409,7 +1409,7 @@
         "functions": [
             "applyMaterial('Fur_Carpet_Displacement')",
             "rpr_render(case)",
-            "detachMaterial('Fur_Carpet_Displacement')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Fur Carpet Displacement"
@@ -1422,7 +1422,7 @@
         "functions": [
             "applyMaterial('Glass_Antique')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Antique')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Antique"
@@ -1435,7 +1435,7 @@
         "functions": [
             "applyMaterial('Glass_CarBreakLight')",
             "rpr_render(case)",
-            "detachMaterial('Glass_CarBreakLight')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass CarBreakLight"
@@ -1448,7 +1448,7 @@
         "functions": [
             "applyMaterial('Glass_CarHeadLight')",
             "rpr_render(case)",
-            "detachMaterial('Glass_CarHeadLight')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass CarHeadLight"
@@ -1461,7 +1461,7 @@
         "functions": [
             "applyMaterial('Glass_CarIndicatorLight')",
             "rpr_render(case)",
-            "detachMaterial('Glass_CarIndicatorLight')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass CarIndicatorLight"
@@ -1474,7 +1474,7 @@
         "functions": [
             "applyMaterial('Glass_Clear_Window')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Clear_Window')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Clear Window"
@@ -1487,7 +1487,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_Blue')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_Blue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid Blue"
@@ -1500,7 +1500,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_Brown')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_Brown')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid Brown"
@@ -1513,7 +1513,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_Clear')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_Clear')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid Clear"
@@ -1526,7 +1526,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_Clear_Scratched')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_Clear_Scratched')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid Clear Scratched"
@@ -1539,7 +1539,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_Frosted')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_Frosted')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid Frosted"
@@ -1552,7 +1552,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_Green')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_Green')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid Green"
@@ -1565,7 +1565,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_GreenBlue')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_GreenBlue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid GreenBlue"
@@ -1578,7 +1578,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_GreenBlue_Scratched')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_GreenBlue_Scratched')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid GreenBlue Scratched"
@@ -1591,7 +1591,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_Red')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid Red"
@@ -1604,7 +1604,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_Tinted')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_Tinted')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid Tinted"
@@ -1617,7 +1617,7 @@
         "functions": [
             "applyMaterial('Glass_Solid_Yellow')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Solid_Yellow')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Solid Yellow"
@@ -1630,7 +1630,7 @@
         "functions": [
             "applyMaterial('Glass_Thin_Bronze')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Thin_Bronze')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Thin Bronze"
@@ -1643,7 +1643,7 @@
         "functions": [
             "applyMaterial('Glass_Thin_Green')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Thin_Green')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Thin Green"
@@ -1656,7 +1656,7 @@
         "functions": [
             "applyMaterial('Glass_Tinted_Dark')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Tinted_Dark')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Tinted Dark"
@@ -1669,7 +1669,7 @@
         "functions": [
             "applyMaterial('Glass_Used')",
             "rpr_render(case)",
-            "detachMaterial('Glass_Used')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Glass Used"
@@ -1682,7 +1682,7 @@
         "functions": [
             "applyMaterial('Mirror')",
             "rpr_render(case)",
-            "detachMaterial('Mirror')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Mirror"
@@ -1695,7 +1695,7 @@
         "functions": [
             "applyMaterial('Ground_Dark_Displacement')",
             "rpr_render(case)",
-            "detachMaterial('Ground_Dark_Displacement')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Ground Dark Displacement"
@@ -1708,7 +1708,7 @@
         "functions": [
             "applyMaterial('Ground_Dark')",
             "rpr_render(case)",
-            "detachMaterial('Ground_Dark')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Ground Dark"
@@ -1721,7 +1721,7 @@
         "functions": [
             "applyMaterial('Ground_Grass')",
             "rpr_render(case)",
-            "detachMaterial('Ground_Grass')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Ground Grass"
@@ -1734,7 +1734,7 @@
         "functions": [
             "applyMaterial('Ground_Grass_Displacement')",
             "rpr_render(case)",
-            "detachMaterial('Ground_Grass_Displacement')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Ground Grass Displacement"
@@ -1747,7 +1747,7 @@
         "functions": [
             "applyMaterial('Ground_Grass_Cut_Displacement')",
             "rpr_render(case)",
-            "detachMaterial('Ground_Grass_Cut_Displacement')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Ground Grass Cut Displacement"
@@ -1760,7 +1760,7 @@
         "functions": [
             "applyMaterial('Jewels_Diamond')",
             "rpr_render(case)",
-            "detachMaterial('Jewels_Diamond')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Jewels Diamond"
@@ -1773,7 +1773,7 @@
         "functions": [
             "applyMaterial('Jewels_Emerald')",
             "rpr_render(case)",
-            "detachMaterial('Jewels_Emerald')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Jewels Emerald"
@@ -1786,7 +1786,7 @@
         "functions": [
             "applyMaterial('Jewels_Ruby')",
             "rpr_render(case)",
-            "detachMaterial('Jewels_Ruby')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Jewels Ruby"
@@ -1799,7 +1799,7 @@
         "functions": [
             "applyMaterial('Leather_Beige')",
             "rpr_render(case)",
-            "detachMaterial('Leather_Beige')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Leather Beige"
@@ -1812,7 +1812,7 @@
         "functions": [
             "applyMaterial('Leather_Black')",
             "rpr_render(case)",
-            "detachMaterial('Leather_Black')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Leather Black"
@@ -1825,7 +1825,7 @@
         "functions": [
             "applyMaterial('Leather_Brown')",
             "rpr_render(case)",
-            "detachMaterial('Leather_Brown')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Leather Brown"
@@ -1838,7 +1838,7 @@
         "functions": [
             "applyMaterial('Liquids_Alcohol_Champagne')",
             "rpr_render(case)",
-            "detachMaterial('Liquids_Alcohol_Champagne')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Liquids Alcohol Champagne"
@@ -1851,7 +1851,7 @@
         "functions": [
             "applyMaterial('Water_Transparent')",
             "rpr_render(case)",
-            "detachMaterial('Water_Transparent')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Water Transparent"
@@ -1864,7 +1864,7 @@
         "functions": [
             "applyMaterial('Water_Transparent_Bump')",
             "rpr_render(case)",
-            "detachMaterial('Water_Transparent_Bump')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Water Transparent Bump"
@@ -1877,7 +1877,7 @@
         "functions": [
             "applyMaterial('Water_Transparent_Displacement')",
             "rpr_render(case)",
-            "detachMaterial('Water_Transparent_Displacement')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Water Transparent Displacement"
@@ -1890,7 +1890,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Black')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Black')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Black"
@@ -1903,7 +1903,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Bue')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Bue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Bue"
@@ -1916,7 +1916,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Dark_Grey')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Dark_Grey')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Dark Grey"
@@ -1929,7 +1929,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Ice_Silver')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Ice_Silver')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Ice Silver"
@@ -1942,7 +1942,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Indy_Yellow')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Indy_Yellow')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Indy Yellow"
@@ -1955,7 +1955,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Inferno')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Inferno')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Inferno"
@@ -1968,7 +1968,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Jasmine_Green')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Jasmine_Green')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Jasmine Green"
@@ -1981,7 +1981,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Lapis_Blue')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Lapis_Blue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Lapis Blue"
@@ -1994,7 +1994,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Lava_Red')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Lava_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Lava Red"
@@ -2007,7 +2007,7 @@
         "functions": [
             "applyMaterial('Car_Paint_North_Grey')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_North_Grey')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint North Grey"
@@ -2020,7 +2020,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Tungsten')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Tungsten')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Tungsten"
@@ -2033,7 +2033,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Venetian_Red')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Venetian_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Venetian Red"
@@ -2046,7 +2046,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Vibrant_Violet')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Vibrant_Violet')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Vibrant Violet"
@@ -2059,7 +2059,7 @@
         "functions": [
             "applyMaterial('Car_Paint_Wilderness_Green')",
             "rpr_render(case)",
-            "detachMaterial('Car_Paint_Wilderness_Green')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Car Paint Wilderness Green"
@@ -2072,7 +2072,7 @@
         "functions": [
             "applyMaterial('Metallic_Paint_Matte_Red')",
             "rpr_render(case)",
-            "detachMaterial('Metallic_Paint_Matte_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Metallic Paint Matte Red"
@@ -2085,7 +2085,7 @@
         "functions": [
             "applyMaterial('Metallic_Paint_Red')",
             "rpr_render(case)",
-            "detachMaterial('Metallic_Paint_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Metallic Paint Red"
@@ -2098,7 +2098,7 @@
         "functions": [
             "applyMaterial('Metallic_Paint_Silver')",
             "rpr_render(case)",
-            "detachMaterial('Metallic_Paint_Silver')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Metallic Paint Silver"
@@ -2111,7 +2111,7 @@
         "functions": [
             "applyMaterial('Scratched_Metallic_Paint_Red')",
             "rpr_render(case)",
-            "detachMaterial('Scratched_Metallic_Paint_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Scratched Metallic Paint Red"
@@ -2124,7 +2124,7 @@
         "functions": [
             "applyMaterial('Scratched_Metallic_Paint_Yellow')",
             "rpr_render(case)",
-            "detachMaterial('Scratched_Metallic_Paint_Yellow')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Scratched Metallic Paint Yellow"
@@ -2137,7 +2137,7 @@
         "functions": [
             "applyMaterial('Aluminium_Brushed')",
             "rpr_render(case)",
-            "detachMaterial('Aluminium_Brushed')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Aluminium Brushed"
@@ -2150,7 +2150,7 @@
         "functions": [
             "applyMaterial('Aluminium_Cast')",
             "rpr_render(case)",
-            "detachMaterial('Aluminium_Cast')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Aluminium Cast"
@@ -2163,7 +2163,7 @@
         "functions": [
             "applyMaterial('Aluminium_Corrugated')",
             "rpr_render(case)",
-            "detachMaterial('Aluminium_Corrugated')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Aluminium Corrugated"
@@ -2176,7 +2176,7 @@
         "functions": [
             "applyMaterial('Aluminium_Matte')",
             "rpr_render(case)",
-            "detachMaterial('Aluminium_Matte')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Aluminium Matte"
@@ -2189,7 +2189,7 @@
         "functions": [
             "applyMaterial('Brass_Brushed')",
             "rpr_render(case)",
-            "detachMaterial('Brass_Brushed')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brass Brushed"
@@ -2202,7 +2202,7 @@
         "functions": [
             "applyMaterial('Brass_Polished')",
             "rpr_render(case)",
-            "detachMaterial('Brass_Polished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brass Polished"
@@ -2215,7 +2215,7 @@
         "functions": [
             "applyMaterial('Brass_Satin')",
             "rpr_render(case)",
-            "detachMaterial('Brass_Satin')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brass Satin"
@@ -2228,7 +2228,7 @@
         "functions": [
             "applyMaterial('Cast_Iron')",
             "rpr_render(case)",
-            "detachMaterial('Cast_Iron')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Cast Iron"
@@ -2241,7 +2241,7 @@
         "functions": [
             "applyMaterial('Chrome')",
             "rpr_render(case)",
-            "detachMaterial('Chrome')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Chrome"
@@ -2254,7 +2254,7 @@
         "functions": [
             "applyMaterial('Copper_Brushed')",
             "rpr_render(case)",
-            "detachMaterial('Copper_Brushed')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Copper Brushed"
@@ -2267,7 +2267,7 @@
         "functions": [
             "applyMaterial('Copper_Polished')",
             "rpr_render(case)",
-            "detachMaterial('Copper_Polished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Copper Polished"
@@ -2280,7 +2280,7 @@
         "functions": [
             "applyMaterial('Copper_Satin')",
             "rpr_render(case)",
-            "detachMaterial('Copper_Satin')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Copper Satin"
@@ -2293,7 +2293,7 @@
         "functions": [
             "applyMaterial('Galvanized-Steel')",
             "rpr_render(case)",
-            "detachMaterial('Galvanized')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Galvanized Steel"
@@ -2306,7 +2306,7 @@
         "functions": [
             "applyMaterial('Gun_Metal')",
             "rpr_render(case)",
-            "detachMaterial('Gun_Metal')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Gun Metal"
@@ -2319,7 +2319,7 @@
         "functions": [
             "applyMaterial('Mercury')",
             "rpr_render(case)",
-            "detachMaterial('Mercury')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Mercury"
@@ -2332,7 +2332,7 @@
         "functions": [
             "applyMaterial('Metal_Plate')",
             "rpr_render(case)",
-            "detachMaterial('Metal_Plate')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Metal Plate"
@@ -2345,7 +2345,7 @@
         "functions": [
             "applyMaterial('Rust_Metal')",
             "rpr_render(case)",
-            "detachMaterial('Rust_Metal')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rust Metal"
@@ -2358,7 +2358,7 @@
         "functions": [
             "applyMaterial('Stainless_Steel')",
             "rpr_render(case)",
-            "detachMaterial('Stainless_Steel')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stainless Steel"
@@ -2371,7 +2371,7 @@
         "functions": [
             "applyMaterial('Stainless_Steel_Brushed')",
             "rpr_render(case)",
-            "detachMaterial('Stainless_Steel_Brushed')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stainless Steel Brushed"
@@ -2384,7 +2384,7 @@
         "functions": [
             "applyMaterial('Paint_EggShell_LaserLemon')",
             "rpr_render(case)",
-            "detachMaterial('Paint_EggShell_LaserLemon')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint EggShell LaserLemon"
@@ -2397,7 +2397,7 @@
         "functions": [
             "applyMaterial('Paint_EggShell_SleekWhite')",
             "rpr_render(case)",
-            "detachMaterial('Paint_EggShell_SleekWhite')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint EggShell SleekWhite"
@@ -2410,7 +2410,7 @@
         "functions": [
             "applyMaterial('Paint_EggShell_SunValley')",
             "rpr_render(case)",
-            "detachMaterial('Paint_EggShell_SunValley')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint EggShell SunValley"
@@ -2423,7 +2423,7 @@
         "functions": [
             "applyMaterial('Paint_EggShell_Tanzanite')",
             "rpr_render(case)",
-            "detachMaterial('Paint_EggShell_Tanzanite')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint EggShell Tanzanite"
@@ -2436,7 +2436,7 @@
         "functions": [
             "applyMaterial('Paint_EggShell_TartOrange')",
             "rpr_render(case)",
-            "detachMaterial('Paint_EggShell_TartOrange')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint EggShell TartOrange"
@@ -2449,7 +2449,7 @@
         "functions": [
             "applyMaterial('Paint_EggShell_TropicalSea')",
             "rpr_render(case)",
-            "detachMaterial('Paint_EggShell_TropicalSea')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint EggShell TropicalSea"
@@ -2462,7 +2462,7 @@
         "functions": [
             "applyMaterial('Paint_Flat_LaserLemon')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Flat_LaserLemon')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Flat LaserLemon"
@@ -2475,7 +2475,7 @@
         "functions": [
             "applyMaterial('Paint_Flat_SleekWhite')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Flat_SleekWhite')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Flat SleekWhite"
@@ -2488,7 +2488,7 @@
         "functions": [
             "applyMaterial('Paint_Flat_SunValley')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Flat_SunValley')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Flat SunValley"
@@ -2501,7 +2501,7 @@
         "functions": [
             "applyMaterial('Paint_Flat_Tanzanite')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Flat_Tanzanite')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Flat Tanzanite"
@@ -2514,7 +2514,7 @@
         "functions": [
             "applyMaterial('Paint_Flat_TartOrange')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Flat_TartOrange')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Flat TartOrange"
@@ -2527,7 +2527,7 @@
         "functions": [
             "applyMaterial('Paint_Flat_TawnyDayLily')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Flat_TawnyDayLily')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Flat TawnyDayLily"
@@ -2540,7 +2540,7 @@
         "functions": [
             "applyMaterial('Paint_Flat_TropicalSea')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Flat_TropicalSea')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Flat TropicalSea"
@@ -2553,7 +2553,7 @@
         "functions": [
             "applyMaterial('Paint_Flat_VoilePink')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Flat_VoilePink')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Flat VoilePink"
@@ -2566,7 +2566,7 @@
         "functions": [
             "applyMaterial('Paint_Glossy_LaserLemon')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Glossy_LaserLemon')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Glossy LaserLemon"
@@ -2579,7 +2579,7 @@
         "functions": [
             "applyMaterial('Paint_Glossy_SleekWhite')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Glossy_SleekWhite')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Glossy SleekWhite"
@@ -2592,7 +2592,7 @@
         "functions": [
             "applyMaterial('Paint_Glossy_SunValley')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Glossy_SunValley')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Glossy SunValley"
@@ -2605,7 +2605,7 @@
         "functions": [
             "applyMaterial('Paint_Glossy_Tanzanite')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Glossy_Tanzanite')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Glossy Tanzanite"
@@ -2618,7 +2618,7 @@
         "functions": [
             "applyMaterial('Paint_Glossy_TartOrange')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Glossy_TartOrange')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Glossy TartOrange"
@@ -2631,7 +2631,7 @@
         "functions": [
             "applyMaterial('Paint_Glossy_TropicalSea')",
             "rpr_render(case)",
-            "detachMaterial('Paint_Glossy_TropicalSea')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Paint Glossy TropicalSea"
@@ -2644,7 +2644,7 @@
         "functions": [
             "applyMaterial('Plastic_Glossy_Black')",
             "rpr_render(case)",
-            "detachMaterial('Plastic_Glossy_Black')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Plastic Glossy Black"
@@ -2657,7 +2657,7 @@
         "functions": [
             "applyMaterial('Plastic_Glossy_Red')",
             "rpr_render(case)",
-            "detachMaterial('Plastic_Glossy_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Plastic Glossy Red"
@@ -2670,7 +2670,7 @@
         "functions": [
             "applyMaterial('Plastic_Matte_Black')",
             "rpr_render(case)",
-            "detachMaterial('Plastic_Matte_Black')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Plastic Matte Black"
@@ -2683,7 +2683,7 @@
         "functions": [
             "applyMaterial('Plastic_Matte_Red')",
             "rpr_render(case)",
-            "detachMaterial('Plastic_Matte_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Plastic Matte Red"
@@ -2696,7 +2696,7 @@
         "functions": [
             "applyMaterial('Plastic_Matte_White')",
             "rpr_render(case)",
-            "detachMaterial('Plastic_Matte_White')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Plastic Matte White"
@@ -2709,7 +2709,7 @@
         "functions": [
             "applyMaterial('Styrofoam')",
             "rpr_render(case)",
-            "detachMaterial('Styrofoam')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Styrofoam"
@@ -2722,7 +2722,7 @@
         "functions": [
             "applyMaterial('Porcelain_Black')",
             "rpr_render(case)",
-            "detachMaterial('Porcelain_Black')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Porcelain Black"
@@ -2735,7 +2735,7 @@
         "functions": [
             "applyMaterial('Porcelain_Blue')",
             "rpr_render(case)",
-            "detachMaterial('Porcelain_Blue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Porcelain Blue"
@@ -2748,7 +2748,7 @@
         "functions": [
             "applyMaterial('Porcelain_Cracked_White')",
             "rpr_render(case)",
-            "detachMaterial('Porcelain_Cracked_White')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Porcelain Cracked White"
@@ -2761,7 +2761,7 @@
         "functions": [
             "applyMaterial('Porcelain_Matte_White')",
             "rpr_render(case)",
-            "detachMaterial('Porcelain_Matte_White')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Porcelain Matte White"
@@ -2774,7 +2774,7 @@
         "functions": [
             "applyMaterial('Porcelain_New_White')",
             "rpr_render(case)",
-            "detachMaterial('Porcelain_New_White')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Porcelain New White"
@@ -2787,7 +2787,7 @@
         "functions": [
             "applyMaterial('Porcelain_Old_White')",
             "rpr_render(case)",
-            "detachMaterial('Porcelain_Old_White')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Porcelain Old White"
@@ -2800,7 +2800,7 @@
         "functions": [
             "applyMaterial('Porcelain_White')",
             "rpr_render(case)",
-            "detachMaterial('Porcelain_White')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Porcelain White"
@@ -2813,7 +2813,7 @@
         "functions": [
             "applyMaterial('Bronze_Brushed')",
             "rpr_render(case)",
-            "detachMaterial('Bronze_Brushed')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Bronze Brushed"
@@ -2826,7 +2826,7 @@
         "functions": [
             "applyMaterial('Bronze_Polished')",
             "rpr_render(case)",
-            "detachMaterial('Bronze_Polished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Bronze Polished"
@@ -2839,7 +2839,7 @@
         "functions": [
             "applyMaterial('Bronze_Satin')",
             "rpr_render(case)",
-            "detachMaterial('Bronze_Satin')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Bronze Satin"
@@ -2852,7 +2852,7 @@
         "functions": [
             "applyMaterial('Gold_Brushed')",
             "rpr_render(case)",
-            "detachMaterial('Gold_Brushed')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Gold Brushed"
@@ -2865,7 +2865,7 @@
         "functions": [
             "applyMaterial('Gold_Polished')",
             "rpr_render(case)",
-            "detachMaterial('Gold_Polished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Gold Polished"
@@ -2878,7 +2878,7 @@
         "functions": [
             "applyMaterial('Gold_Satin')",
             "rpr_render(case)",
-            "detachMaterial('Gold_Satin')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Gold Satin"
@@ -2891,7 +2891,7 @@
         "functions": [
             "applyMaterial('Silver_Brushed')",
             "rpr_render(case)",
-            "detachMaterial('Silver_Brushed')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Silver Brushed"
@@ -2904,7 +2904,7 @@
         "functions": [
             "applyMaterial('Silver_Polished')",
             "rpr_render(case)",
-            "detachMaterial('Silver_Polished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Silver Polished"
@@ -2917,7 +2917,7 @@
         "functions": [
             "applyMaterial('Silver_Satin')",
             "rpr_render(case)",
-            "detachMaterial('Silver_Satin')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Silver Satin"
@@ -2930,7 +2930,7 @@
         "functions": [
             "applyMaterial('Stone_Marble_Blue_Matte')",
             "rpr_render(case)",
-            "detachMaterial('Stone_Marble_Blue_Matte')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stone Marble Blue Matte"
@@ -2943,7 +2943,7 @@
         "functions": [
             "applyMaterial('Stone_Marble_Pink_Matte')",
             "rpr_render(case)",
-            "detachMaterial('Stone_Marble_Pink_Matte')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stone Marble Pink Matte"
@@ -2956,7 +2956,7 @@
         "functions": [
             "applyMaterial('Stone_Cladding')",
             "rpr_render(case)",
-            "detachMaterial('Stone_Cladding')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stone Cladding"
@@ -2969,7 +2969,7 @@
         "functions": [
             "applyMaterial('Stone_Granit_BWB')",
             "rpr_render(case)",
-            "detachMaterial('Stone_Granit_BWB')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stone Granit BWB"
@@ -2982,7 +2982,7 @@
         "functions": [
             "applyMaterial('Stone_Marble_Blue')",
             "rpr_render(case)",
-            "detachMaterial('Stone_Marble_Blue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stone Marble Blue"
@@ -2995,7 +2995,7 @@
         "functions": [
             "applyMaterial('Stone_Marble_Pink')",
             "rpr_render(case)",
-            "detachMaterial('Stone_Marble_Pink')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stone Marble Pink"
@@ -3008,7 +3008,7 @@
         "functions": [
             "applyMaterial('Stone_Marble_Grey')",
             "rpr_render(case)",
-            "detachMaterial('Stone_Marble_Grey')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stone Marble Grey"
@@ -3021,7 +3021,7 @@
         "functions": [
             "applyMaterial('Stone_Rough_Marble')",
             "rpr_render(case)",
-            "detachMaterial('Stone_Rough_Marble')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stone Rough Marble"
@@ -3034,7 +3034,7 @@
         "functions": [
             "applyMaterial('Brick_Color_Displacement')",
             "rpr_render(case)",
-            "detachMaterial('Brick_Color_Displacement')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brick Color Displacement"
@@ -3047,7 +3047,7 @@
         "functions": [
             "applyMaterial('Brick_Natural_V1')",
             "rpr_render(case)",
-            "detachMaterial('Brick_Natural_V1')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brick Natural V1"
@@ -3060,7 +3060,7 @@
         "functions": [
             "applyMaterial('Brick_Old_V3')",
             "rpr_render(case)",
-            "detachMaterial('Brick_Old_V3')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brick Old V3"
@@ -3073,7 +3073,7 @@
         "functions": [
             "applyMaterial('Brick_Old_V2')",
             "rpr_render(case)",
-            "detachMaterial('Brick_Old_V2')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brick Old V2"
@@ -3086,7 +3086,7 @@
         "functions": [
             "applyMaterial('Brick_Basic_V2')",
             "rpr_render(case)",
-            "detachMaterial('Brick_Basic_V2')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brick Basic V2"
@@ -3099,7 +3099,7 @@
         "functions": [
             "applyMaterial('Brick_Irregular')",
             "rpr_render(case)",
-            "detachMaterial('Brick_Irregular')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brick Irregular"
@@ -3112,7 +3112,7 @@
         "functions": [
             "applyMaterial('Brick_Damage')",
             "rpr_render(case)",
-            "detachMaterial('Brick_Damage')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Brick Damage"
@@ -3125,7 +3125,7 @@
         "functions": [
             "applyMaterial('Stone_Marble_Yellow_Matte')",
             "rpr_render(case)",
-            "detachMaterial('Stone_Marble_Yellow_Matte')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Stone Marble Yellow Matte"
@@ -3138,7 +3138,7 @@
         "functions": [
             "applyMaterial('Floor_Ceramic_Tiles_Checker')",
             "rpr_render(case)",
-            "detachMaterial('Floor_Ceramic_Tiles_Checker')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Floor Ceramic Tiles Checker"
@@ -3151,7 +3151,7 @@
         "functions": [
             "applyMaterial('Floor_Ceramic_Tiles_Color')",
             "rpr_render(case)",
-            "detachMaterial('Floor_Ceramic_Tiles_Color')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Floor Ceramic Tiles Color"
@@ -3164,7 +3164,7 @@
         "functions": [
             "applyMaterial('Floor_Ceramic_Tiles_Color_Variation_8x8')",
             "rpr_render(case)",
-            "detachMaterial('Floor_Ceramic_Tiles_Color_Variation_8x8')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Floor Ceramic Tiles Color Variation 8x8"
@@ -3177,7 +3177,7 @@
         "functions": [
             "applyMaterial('Floor_Tiles_Rustic_Color_4x4')",
             "rpr_render(case)",
-            "detachMaterial('Floor_Tiles_Rustic_Color_4x4')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Floor Tiles Rustic Color 4x4"
@@ -3190,7 +3190,7 @@
         "functions": [
             "applyMaterial('Tiling_BeigeMarble')",
             "rpr_render(case)",
-            "detachMaterial('Tiling_BeigeMarble')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Tiling BeigeMarble"
@@ -3203,7 +3203,7 @@
         "functions": [
             "applyMaterial('Tiling_Blue_Checkered')",
             "rpr_render(case)",
-            "detachMaterial('Tiling_Blue_Checkered')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Tiling Blue Checkered"
@@ -3216,7 +3216,7 @@
         "functions": [
             "applyMaterial('Tiling_BLueMarble')",
             "rpr_render(case)",
-            "detachMaterial('Tiling_BLueMarble')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Tiling BLueMarble"
@@ -3229,7 +3229,7 @@
         "functions": [
             "applyMaterial('tiling_Checkered')",
             "rpr_render(case)",
-            "detachMaterial('tiling_Checkered')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: tiling Checkered"
@@ -3242,7 +3242,7 @@
         "functions": [
             "applyMaterial('Tiling_Old')",
             "rpr_render(case)",
-            "detachMaterial('Tiling_Old')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Tiling Old"
@@ -3255,7 +3255,7 @@
         "functions": [
             "applyMaterial('Tiling_White')",
             "rpr_render(case)",
-            "detachMaterial('Tiling_White')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Tiling White"
@@ -3268,7 +3268,7 @@
         "functions": [
             "applyMaterial('Tiling_White_Marble')",
             "rpr_render(case)",
-            "detachMaterial('Tiling_White_Marble')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Tiling White Marble"
@@ -3281,7 +3281,7 @@
         "functions": [
             "applyMaterial('Roofing_ClayShingles_Beige')",
             "rpr_render(case)",
-            "detachMaterial('Roofing_ClayShingles_Beige')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Roofing ClayShingles Beige"
@@ -3294,7 +3294,7 @@
         "functions": [
             "applyMaterial('Roofing_CorrugatedIron')",
             "rpr_render(case)",
-            "detachMaterial('Roofing_CorrugatedIron')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Roofing CorrugatedIron"
@@ -3307,7 +3307,7 @@
         "functions": [
             "applyMaterial('Roofing_RedClayTiles')",
             "rpr_render(case)",
-            "detachMaterial('Roofing_RedClayTiles')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Roofing RedClay Tiles"
@@ -3320,7 +3320,7 @@
         "functions": [
             "applyMaterial('Rubber_Bumpy')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_Bumpy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber Bumpy"
@@ -3333,7 +3333,7 @@
         "functions": [
             "applyMaterial('Rubber_Diamonds')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_Diamonds')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber Diamonds"
@@ -3346,7 +3346,7 @@
         "functions": [
             "applyMaterial('Rubber_Ribbed')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_Ribbed')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber Ribbed"
@@ -3359,7 +3359,7 @@
         "functions": [
             "applyMaterial('Rubber_Smooth_Clear')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_Smooth_Clear')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber Smooth Clear"
@@ -3372,7 +3372,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothMatte')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothMatte')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte"
@@ -3385,7 +3385,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothMatte_Black')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothMatte_Black')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte Black"
@@ -3398,7 +3398,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothMatte_Blue')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothMatte_Blue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte Blue"
@@ -3411,7 +3411,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothMatte_Green')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothMatte_Green')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte Green"
@@ -3424,7 +3424,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothMatte_Red')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothMatte_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothMatte Red"
@@ -3437,7 +3437,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothShiny')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothShiny')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny"
@@ -3450,7 +3450,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothShiny_Black')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothShiny_Black')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny Black"
@@ -3463,7 +3463,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothShiny_Blue')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothShiny_Blue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny Blue"
@@ -3476,7 +3476,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothShiny_Green')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothShiny_Green')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny Green"
@@ -3489,7 +3489,7 @@
         "functions": [
             "applyMaterial('Rubber_SmoothShiny_Red')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_SmoothShiny_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber SmoothShiny Red"
@@ -3502,7 +3502,7 @@
         "functions": [
             "applyMaterial('Rubber_Used')",
             "rpr_render(case)",
-            "detachMaterial('Rubber_Used')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Rubber Used"
@@ -3515,7 +3515,7 @@
         "functions": [
             "applyMaterial('Diffuse_Shadow_Catcher')",
             "rpr_render(case)",
-            "detachMaterial('Diffuse_Shadow_Catcher')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Diffuse Shadow Catcher"
@@ -3528,7 +3528,7 @@
         "functions": [
             "applyMaterial('Reflective_Shadow_Catcher')",
             "rpr_render(case)",
-            "detachMaterial('Reflective_Shadow_Catcher')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Reflective Shadow Catcher"
@@ -3541,7 +3541,7 @@
         "functions": [
             "applyMaterial('Acrylic_Refractive_Glossy_Green')",
             "rpr_render(case)",
-            "detachMaterial('Acrylic_Refractive_Glossy_Green')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Acrylic Refractive Glossy Green"
@@ -3554,7 +3554,7 @@
         "functions": [
             "applyMaterial('Acrylic_Refractive_Glossy_Neon_Green')",
             "rpr_render(case)",
-            "detachMaterial('Acrylic_Refractive_Glossy_Neon_Green')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Acrylic Refractive Glossy Neon Green"
@@ -3567,7 +3567,7 @@
         "functions": [
             "applyMaterial('Acrylic_Refractive_Glossy_Neon_Orange')",
             "rpr_render(case)",
-            "detachMaterial('Acrylic_Refractive_Glossy_Neon_Orange')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Acrylic Refractive Glossy Neon Orange"
@@ -3580,7 +3580,7 @@
         "functions": [
             "applyMaterial('Acrylic_Refractive_Glossy_Red')",
             "rpr_render(case)",
-            "detachMaterial('Acrylic_Refractive_Glossy_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Acrylic Refractive Glossy Red"
@@ -3593,7 +3593,7 @@
         "functions": [
             "applyMaterial('Acrylic_Refractive_Matte_Green')",
             "rpr_render(case)",
-            "detachMaterial('Acrylic_Refractive_Matte_Green')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Acrylic Refractive Matte Green"
@@ -3606,7 +3606,7 @@
         "functions": [
             "applyMaterial('Acrylic_Refractive_Matte_Red')",
             "rpr_render(case)",
-            "detachMaterial('Acrylic_Refractive_Matte_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Acrylic Refractive Matte Red"
@@ -3619,7 +3619,7 @@
         "functions": [
             "applyMaterial('Acrylic_Transparent_Matte_Red')",
             "rpr_render(case)",
-            "detachMaterial('Acrylic_Transparent_Matte_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Acrylic Transparent Matte Red"
@@ -3632,7 +3632,7 @@
         "functions": [
             "applyMaterial('Acrylic_Transparent_Glossy_Red')",
             "rpr_render(case)",
-            "detachMaterial('Acrylic_Transparent_Glossy_Red')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Acrylic Transparent Glossy Red"
@@ -3645,7 +3645,7 @@
         "functions": [
             "applyMaterial('Plastic_Transparent_Solid_ClearBlue')",
             "rpr_render(case)",
-            "detachMaterial('Plastic_Transparent_Solid_ClearBlue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Plastic Transparent Solid ClearBlue"
@@ -3658,7 +3658,7 @@
         "functions": [
             "applyMaterial('Plastic_Transparent_Thin_ClearBlue')",
             "rpr_render(case)",
-            "detachMaterial('Plastic_Transparent_Thin_ClearBlue')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Plastic Transparent Thin ClearBlue"
@@ -3671,7 +3671,7 @@
         "functions": [
             "applyMaterial('Colored_Glass')",
             "rpr_render(case)",
-            "detachMaterial('Colored_Glass')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Colored Glass"
@@ -3684,7 +3684,7 @@
         "functions": [
             "applyMaterial('Jade')",
             "rpr_render(case)",
-            "detachMaterial('Jade')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Jade"
@@ -3697,7 +3697,7 @@
         "functions": [
             "applyMaterial('Milk')",
             "rpr_render(case)",
-            "detachMaterial('Milk')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Milk"
@@ -3710,7 +3710,7 @@
         "functions": [
             "applyMaterial('Wax')",
             "rpr_render(case)",
-            "detachMaterial('Wax')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wax"
@@ -3723,7 +3723,7 @@
         "functions": [
             "applyMaterial('Wood_Bark')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Bark')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Bark"
@@ -3736,7 +3736,7 @@
         "functions": [
             "applyMaterial('Wood_Beech_Glossy')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Beech_Glossy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Beech Glossy"
@@ -3749,7 +3749,7 @@
         "functions": [
             "applyMaterial('Wood_Beech_Unfinished')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Beech_Unfinished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Beech Unfinished"
@@ -3762,7 +3762,7 @@
         "functions": [
             "applyMaterial('Wood_Cedar_Glossy')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Cedar_Glossy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Cedar Glossy"
@@ -3775,7 +3775,7 @@
         "functions": [
             "applyMaterial('Wood_Cedar_Unfinished')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Cedar_Unfinished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Cedar Unfinished"
@@ -3788,7 +3788,7 @@
         "functions": [
             "applyMaterial('Wood_Clear_Rustic')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Clear_Rustic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Clear Rustic"
@@ -3801,7 +3801,7 @@
         "functions": [
             "applyMaterial('Wood_Mahogany_Glossy')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Mahogany_Glossy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Mahogany Glossy"
@@ -3814,7 +3814,7 @@
         "functions": [
             "applyMaterial('Wood_Mahogany_Unfinished')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Mahogany_Unfinished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Mahogany Unfinished"
@@ -3827,7 +3827,7 @@
         "functions": [
             "applyMaterial('Wood_Maple_Glossy')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Maple_Glossy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Maple Glossy"
@@ -3840,7 +3840,7 @@
         "functions": [
             "applyMaterial('Wood_Maple_Unfinished')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Maple_Unfinished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Maple Unfinished"
@@ -3853,7 +3853,7 @@
         "functions": [
             "applyMaterial('Wood_Natural_Maple')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Natural_Maple')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Natural Maple"
@@ -3866,7 +3866,7 @@
         "functions": [
             "applyMaterial('Wood_Oak_Glossy')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Oak_Glossy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Oak Glossy"
@@ -3879,7 +3879,7 @@
         "functions": [
             "applyMaterial('Wood_Oak_Unfinished')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Oak_Unfinished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Oak Unfinished"
@@ -3892,7 +3892,7 @@
         "functions": [
             "applyMaterial('Wood_Planks_Oak_Glossy')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Planks_Oak_Glossy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Planks Oak Glossy"
@@ -3905,7 +3905,7 @@
         "functions": [
             "applyMaterial('Wood_Planks_Oak_Unfinished')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Planks_Oak_Unfinished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Planks Oak Unfinished"
@@ -3918,7 +3918,7 @@
         "functions": [
             "applyMaterial('Wood_Rustic')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Rustic')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Rustic"
@@ -3931,7 +3931,7 @@
         "functions": [
             "applyMaterial('Wood_Rustic_Cherry')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Rustic_Cherry')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Rustic Cherry"
@@ -3944,7 +3944,7 @@
         "functions": [
             "applyMaterial('Wood_Wenge_Glossy')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Wenge_Glossy')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Wenge Glossy"
@@ -3957,7 +3957,7 @@
         "functions": [
             "applyMaterial('Wood_Wenge_Unfinished')",
             "rpr_render(case)",
-            "detachMaterial('Wood_Wenge_Unfinished')"
+            "detachMaterial()"
         ],
         "script_info": [
             "Material: Wood Wenge Unfinished"
