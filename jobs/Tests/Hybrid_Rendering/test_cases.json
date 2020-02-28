@@ -272,7 +272,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "applyMaterial(case, 'BarnFindOrange_Solid')"
+            "applyMaterial(case, 'BarnFindOrange_Solid')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -284,7 +286,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "applyMaterial(case, 'BarnFindOrange_Solid')"
+            "applyMaterial(case, 'BarnFindOrange_Solid')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -296,7 +300,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "applyMaterial(case, 'BarnFindOrange_Solid')"
+            "applyMaterial(case, 'BarnFindOrange_Solid')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -308,7 +314,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "applyMaterial(case, 'Chrome')"
+            "applyMaterial(case, 'Chrome')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -320,7 +328,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "applyMaterial(case, 'Chrome')"
+            "applyMaterial(case, 'Chrome')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -332,7 +342,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "applyMaterial(case, 'Chrome')"
+            "applyMaterial(case, 'Chrome')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -344,7 +356,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "applyMaterial(case, 'Glass_Clear_Window')"
+            "applyMaterial(case, 'Glass_Clear_Window')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -356,7 +370,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "applyMaterial(case, 'Glass_Clear_Window')"
+            "applyMaterial(case, 'Glass_Clear_Window')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -368,7 +384,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "applyMaterial(case, 'Glass_Clear_Window')"
+            "applyMaterial(case, 'Glass_Clear_Window')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -380,7 +398,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "applyMaterial(case, 'Wood_Planks_Oak_Glossy')"
+            "applyMaterial(case, 'Wood_Planks_Oak_Glossy')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -392,7 +412,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "applyMaterial(case, 'Wood_Planks_Oak_Glossy')"
+            "applyMaterial(case, 'Wood_Planks_Oak_Glossy')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {
@@ -404,7 +426,9 @@
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "applyMaterial(case, 'Wood_Planks_Oak_Glossy')"
+            "applyMaterial(case, 'Wood_Planks_Oak_Glossy')",
+            "rpr_render(case)",
+            "detachMaterial()"
         ]
     },
     {

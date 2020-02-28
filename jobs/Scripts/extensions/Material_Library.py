@@ -1,4 +1,4 @@
-def applyMaterial(case, material):
+def applyMaterial(material):
     libraryPath = fireRender.rpr_material_browser.getLibPath()
     material_path = path.join(libraryPath, material)
     xml = [f for f in os.listdir(material_path) if f.endswith('.xml')]
@@ -8,7 +8,8 @@ def applyMaterial(case, material):
     rpr_sg = cmds.listConnections('materialTestNode', type='shadingEngine')[0]
     print('Material connected: ' + material)
     cmds.sets(e=True, forceElement=rpr_sg)
-    rpr_render(case)
+
+def detachMaterial(material):
     cmds.delete('materialTestNode')
     rpr_sg = cmds.listConnections('lambert1', type='shadingEngine')[0]
     cmds.sets(e=True, forceElement=rpr_sg)
