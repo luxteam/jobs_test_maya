@@ -3,6 +3,8 @@
         "case": "MAYA_RS_DEN_061", 
         "status": "active", 
         "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)", 
@@ -21,6 +23,8 @@
         "case": "MAYA_RS_DEN_062", 
         "status": "active", 
         "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
@@ -39,6 +43,8 @@
         "case": "MAYA_RS_DEN_063", 
         "status": "active", 
         "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
@@ -56,6 +62,8 @@
         "case": "MAYA_RS_DEN_064", 
         "status": "active", 
         "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
@@ -73,6 +81,8 @@
         "case": "MAYA_RS_DEN_065", 
         "status": "active", 
         "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",

@@ -14,6 +14,7 @@
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU 50</argument>
+        <argument>--fail_count 20</argument>
         <argument>--threshold {threshold}</argument>
     </execute>
     
