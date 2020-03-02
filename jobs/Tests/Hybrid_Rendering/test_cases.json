@@ -309,12 +309,12 @@
         "case": "MAYA_RS_HR_025",
         "status": "active",
         "script_info": [
-            "Matlib Material Chrome Quality High"
+            "Matlib Material BasketCaseBlue Solid Quality High"
         ],
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "applyMaterial('Chrome')",
+            "applyMaterial('BasketCaseBlue_Solid')",
             "rpr_render(case)",
             "detachMaterial()"
         ]
@@ -323,12 +323,12 @@
         "case": "MAYA_RS_HR_026",
         "status": "active",
         "script_info": [
-            "Matlib Material Chrome Quality Medium"
+            "Matlib Material BasketCaseBlue Solid Quality Medium"
         ],
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "applyMaterial('Chrome')",
+            "applyMaterial('BasketCaseBlue_Solid')",
             "rpr_render(case)",
             "detachMaterial()"
         ]
@@ -337,12 +337,12 @@
         "case": "MAYA_RS_HR_027",
         "status": "active",
         "script_info": [
-            "Matlib Material Chrome Quality Low"
+            "Matlib Material BasketCaseBlue Solid Quality Low"
         ],
         "scene": "HybridMatlibMaterial.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "applyMaterial('Chrome')",
+            "applyMaterial('BasketCaseBlue_Solid')",
             "rpr_render(case)",
             "detachMaterial()"
         ]
