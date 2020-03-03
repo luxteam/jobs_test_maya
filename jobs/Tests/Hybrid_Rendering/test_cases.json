@@ -476,7 +476,19 @@
         "scene": "HybridSamples.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "rpr_render(case)"
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 13)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 14)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 19)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 17)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 22)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 14)"
         ]
     },
     {
@@ -488,7 +500,19 @@
         "scene": "HybridSamples.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "rpr_render(case)"
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 13)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 14)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 19)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 17)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 22)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 14)"
         ]
     },
     {
@@ -500,7 +524,19 @@
         "scene": "HybridSamples.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "rpr_render(case)"
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 13)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 14)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 19)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 17)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 22)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 14)"
         ]
     },
     {
@@ -512,7 +548,19 @@
         "scene": "HybridSamples.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "rpr_render(case)"
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 18)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 13)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 14)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 19)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 17)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 22)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 14)"
         ]
     },
     {
@@ -524,7 +572,19 @@
         "scene": "HybridSamples.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "rpr_render(case)"
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 18)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 13)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 14)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 19)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 17)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 22)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 14)"
         ]
     },
     {
@@ -536,7 +596,61 @@
         "scene": "HybridSamples.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "rpr_render(case)"
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 18)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 18)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 13)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 14)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 19)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 17)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 22)",
+            "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 14)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_043",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Tile rendering Quality High"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_044",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Tile rendering Quality Medium"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_045",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Tile rendering Quality Low"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 0)"
         ]
     }
 ]
