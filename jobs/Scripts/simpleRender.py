@@ -162,12 +162,13 @@ def main(args):
 	with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
 		file.write(script)
 
-	if (os.path.exists(os.path.join(os.path.dirname(__file__), args.testCases))):
-		with open(os.path.join(os.path.dirname(__file__), args.testCases)) as f:
+	if (os.path.exists(args.testCases) and '.json' in args.testCases):
+		with open(os.path.join(args.testCases)) as f:
 			tc = f.read()
 			test_cases = json.loads(tc)[args.testType]
 		necessary_cases = [
 			item for item in cases if item['case'] in test_cases]
+		cases = necessary_cases
 
 	core_config.main_logger.info('Create empty report files')
 

@@ -313,7 +313,7 @@
     },
     {
         "case": "MAYA_RS_AOV_023",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "AOV: Variance"
         ],

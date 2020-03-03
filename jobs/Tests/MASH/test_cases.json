@@ -1,6 +1,6 @@
 [
     {
-        "case": "MAYA_RS_AN_001",
+        "case": "MAYA_RS_MASH_001",
         "status": "active",
         "script_info": [
             "Audio node"
@@ -14,7 +14,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_002",
+        "case": "MAYA_RS_MASH_002",
         "status": "active",
         "script_info": [
             "Curve node"
@@ -28,7 +28,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_003",
+        "case": "MAYA_RS_MASH_003",
         "status": "active",
         "script_info": [
             "Color node"
@@ -42,7 +42,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_004",
+        "case": "MAYA_RS_MASH_004",
         "status": "active",
         "script_info": [
             "Delay node"
@@ -56,7 +56,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_005",
+        "case": "MAYA_RS_MASH_005",
         "status": "active",
         "script_info": [
             "Dynamics node"
@@ -70,7 +70,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_006",
+        "case": "MAYA_RS_MASH_006",
         "status": "active",
         "script_info": [
             "Flight node"
@@ -84,7 +84,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_007",
+        "case": "MAYA_RS_MASH_007",
         "status": "active",
         "script_info": [
             "ID node"
@@ -98,7 +98,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_008",
+        "case": "MAYA_RS_MASH_008",
         "status": "active",
         "script_info": [
             "Influence node"
@@ -112,7 +112,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_009",
+        "case": "MAYA_RS_MASH_009",
         "status": "active",
         "script_info": [
             "Merge node"
@@ -126,7 +126,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_010",
+        "case": "MAYA_RS_MASH_010",
         "status": "active",
         "script_info": [
             "Offset node"
@@ -140,7 +140,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_011",
+        "case": "MAYA_RS_MASH_011",
         "status": "active",
         "script_info": [
             "Orient node"
@@ -154,7 +154,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_012",
+        "case": "MAYA_RS_MASH_012",
         "status": "active",
         "script_info": [
             "Placer node"
@@ -168,7 +168,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_013",
+        "case": "MAYA_RS_MASH_013",
         "status": "active",
         "script_info": [
             "Random node"
@@ -182,7 +182,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_014",
+        "case": "MAYA_RS_MASH_014",
         "status": "active",
         "script_info": [
             "Replicator node"
@@ -196,7 +196,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_015",
+        "case": "MAYA_RS_MASH_015",
         "status": "active",
         "script_info": [
             "Signal node"
@@ -210,7 +210,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_016",
+        "case": "MAYA_RS_MASH_016",
         "status": "active",
         "script_info": [
             "Spring node"
@@ -224,7 +224,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_017",
+        "case": "MAYA_RS_MASH_017",
         "status": "active",
         "script_info": [
             "Strength node"
@@ -238,7 +238,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_018",
+        "case": "MAYA_RS_MASH_018",
         "status": "active",
         "script_info": [
             "Symmetry node"
@@ -252,7 +252,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_019",
+        "case": "MAYA_RS_MASH_019",
         "status": "active",
         "script_info": [
             "Time node"
@@ -266,7 +266,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_020",
+        "case": "MAYA_RS_MASH_020",
         "status": "active",
         "script_info": [
             "Transform node"
@@ -280,7 +280,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_021",
+        "case": "MAYA_RS_MASH_021",
         "status": "active",
         "script_info": [
             "Visibility node"
@@ -294,7 +294,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_022",
+        "case": "MAYA_RS_MASH_022",
         "status": "active",
         "script_info": [
             "World node"
@@ -308,7 +308,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_023",
+        "case": "MAYA_RS_MASH_023",
         "status": "active",
         "script_info": [
             "Breakout node"
@@ -322,7 +322,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_024",
+        "case": "MAYA_RS_MASH_024",
         "status": "active",
         "script_info": [
             "Explode node"
@@ -336,7 +336,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_025",
+        "case": "MAYA_RS_MASH_025",
         "status": "active",
         "script_info": [
             "Points node"
@@ -350,7 +350,7 @@
         ]
     },
     {
-        "case": "MAYA_RS_AN_026",
+        "case": "MAYA_RS_MASH_026",
         "status": "active",
         "script_info": [
             "Trails node"
