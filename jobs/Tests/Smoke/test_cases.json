@@ -689,5 +689,31 @@
             "Machine Learning"
         ], 
         "scene": "Lamborginhi_Aventador.ma"
+    },
+    {
+        "case": "MAYA_SM_047", 
+        "status": "active", 
+        "functions": [
+            "cmds.setAttr('Vertex_Color.visibility', 1)",
+            "cmds.setAttr('RPRLookup1.type', 256)",
+            "rpr_render(case)",
+            "cmds.setAttr('RPRLookup1.type', 0)",
+            "cmds.setAttr('Vertex_Color.visibility', 0)"
+        ], 
+        "script_info": [
+            "Mash Vertex color"
+        ], 
+        "scene": "lookup.ma"
+    }, 
+    {
+        "case": "MAYA_SM_048", 
+        "status": "active", 
+        "functions": [
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "SVG"
+        ], 
+        "scene": "SVG.ma"
     }
 ]
