@@ -620,9 +620,9 @@
         "scene": "HybridSamples.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
             "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 0)"
         ]
     },
     {
@@ -634,9 +634,9 @@
         "scene": "HybridSamples.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
-            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
             "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 0)"
         ]
     },
     {
@@ -648,9 +648,9 @@
         "scene": "HybridSamples.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
-            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
             "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.tileRenderingEnabled', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 0)"
         ]
     }
 ]
