@@ -106,13 +106,11 @@ def prerender(case):
 	if scene_name != scene:
 		try:
 			cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
+			validateFiles()
+			enable_rpr()
 		except:
 			logging("Can't load scene. Exit Maya")
 			cmds.evalDeferred('cmds.quit(abort=True)')
-
-	validateFiles()
-
-	enable_rpr()
 
 	cmds.optionVar(rm='RPR_DevicesSelected')
 	cmds.optionVar(iva=('RPR_DevicesSelected',
