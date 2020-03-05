@@ -220,7 +220,11 @@ def main():
 
 			logging(case['case'] + ' in progress')
 
+			start_time = datetime.datetime.now()
 			case_function(case)
+			stop_time = (datetime.datetime.now() - start_time).total_seconds()
+
+			logging('Time taken: ' + str(stop_time))
 
 			if case['status'] == 'inprogress':
 				case['status'] = 'done'
