@@ -192,7 +192,6 @@ def launchMaya(cmdScriptPath, work_dir):
 	if args.testType in ['Athena']:
 		subprocess.call([sys.executable, os.path.realpath(os.path.join(
 			os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
-	core_config.main_logger.info('Main func return : {}'.format(rc))
 	return rc
 
 
