@@ -237,7 +237,7 @@ def main():
 		if case['status'] == 'skipped':
 			save_report(case)
 
-	logging('Total time: ' + str(datetime.datetime.utcfromtimestamp(total_time).('%H:%M:%S')))
+	logging('Total time: ' + str(datetime.datetime.utcfromtimestamp(total_time).strftime('%H:%M:%S')))
 	cmds.evalDeferred('cmds.quit(abort=True)')
 
 
