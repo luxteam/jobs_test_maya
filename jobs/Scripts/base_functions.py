@@ -224,7 +224,7 @@ def main():
 			case_function(case)
 			stop_time = (datetime.datetime.now() - start_time).total_seconds()
 
-			logging('Time taken: ' + str(stop_time.strftime('%H:%M:%S')))
+			logging('Time taken: ' + str(datetime.datetime.utcfromtimestamp(stop_time).strftime('%H:%M:%S')))
 			total_time += stop_time
 
 			if case['status'] == 'inprogress':
@@ -237,7 +237,7 @@ def main():
 		if case['status'] == 'skipped':
 			save_report(case)
 
-	logging('Total time: ' + str(total_time.strftime('%H:%M:%S')))
+	logging('Total time: ' + str(datetime.datetime.utcfromtimestamp(total_time).('%H:%M:%S')))
 	cmds.evalDeferred('cmds.quit(abort=True)')
 
 
