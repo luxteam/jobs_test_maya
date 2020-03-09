@@ -357,13 +357,10 @@ if __name__ == '__main__':
 	iteration = 0
 
 	system_pl = platform.system()
+	script_dir = os.path.join(args.output, '..', '..', '..', '..', 'scripts')
 	if system_pl == 'Windows':
-		script_dir = os.path.join(args.output, '..', '..', '..',
-							'..', 'scripts')
 		script_path = os.path.join(script_dir, 'build_rpr_cache.bat')
 	elif system_pl == 'Darwin':
-		script_dir = os.path.join(args.output, '..', '..', '..',
-							'..', 'scripts')
 		script_path = os.path.join(script_dir, 'build_rpr_cache.sh')
 
 	core_config.main_logger.info('Check cache')
