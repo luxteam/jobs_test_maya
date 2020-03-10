@@ -363,18 +363,10 @@ if __name__ == '__main__':
 	elif system_pl == 'Darwin':
 		script_path = os.path.join(script_dir, 'build_rpr_cache.sh')
 
-	core_config.main_logger.info('Check cache')
-
-	local_app_data = os.path.join(os.getenv('LOCALAPPDATA'), 'RadeonProRender')
-	if [f for f in os.listdir(
-		local_app_data) if os.path.isfile(os.path.join(local_app_data, f))]:
-		if launchMaya(script_path, script_dir) != 0:	# launchMaya ends with error
-			core_config.main_logger.info("Can't build cache")
-			exit(rc)
-		else:
-			core_config.main_logger.info("Cache built successfully")
-	else:
-		core_config.main_logger.info("Cache already exists")
+	core_config.main_logger.info('Build cache')
+	if launchMaya(script_path, script_dir) != 0:	# launchMaya ends with error
+		core_config.main_logger.info("Can't build cache")
+		exit(rc)
 
 	try:
 		copyfile(os.path.realpath(os.path.join(os.path.dirname(
