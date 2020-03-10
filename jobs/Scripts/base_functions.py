@@ -204,8 +204,6 @@ def main():
 	with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
 		cases = json.load(json_file)
 
-	total_time = 0
-
 	for case in cases:
 		if case['status'] in ['active', 'fail']:
 			if case['status'] == 'active':
@@ -225,9 +223,7 @@ def main():
 			start_time = datetime.datetime.now()
 			case_function(case)
 			stop_time = (datetime.datetime.now() - start_time).total_seconds()
-
-			logging('Time taken: ' + str(datetime.datetime.utcfromtimestamp(stop_time).strftime('%H:%M:%S')))
-			total_time += stop_time
+			case['time_taken'] = stop_time
 
 			if case['status'] == 'inprogress':
 				case['status'] = 'done'
@@ -239,7 +235,6 @@ def main():
 		if case['status'] == 'skipped':
 			save_report(case)
 
-	logging('Total time: ' + str(datetime.datetime.utcfromtimestamp(total_time).strftime('%H:%M:%S')))
 	cmds.evalDeferred('cmds.quit(abort=True)')
 
 
