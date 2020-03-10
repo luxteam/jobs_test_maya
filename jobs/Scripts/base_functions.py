@@ -112,6 +112,8 @@ def prerender(case):
 			logging("Can't load scene. Exit Maya")
 			cmds.evalDeferred('cmds.quit(abort=True)')
 
+	mel.eval('athenaEnable -ae false')
+
 	cmds.optionVar(rm='RPR_DevicesSelected')
 	cmds.optionVar(iva=('RPR_DevicesSelected',
 						(RENDER_DEVICE in ['gpu', 'dual'])))
