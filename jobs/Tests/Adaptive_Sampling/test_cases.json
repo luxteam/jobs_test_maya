@@ -3,13 +3,13 @@
         "case": "MAYA_RS_AS_001",
         "status": "active",
         "script_info": [
-            "Max Iterations - 0"
+            "Max time - 10 seconds"
         ],
         "scene": "adaptive_sampling.ma", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaHours', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 10)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
@@ -667,7 +667,7 @@
     },
     {
         "case": "MAYA_RS_AS_029",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Min iteration- 20",
             "Max Iterations - 1000",
