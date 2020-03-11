@@ -222,8 +222,8 @@ def main():
 
 			start_time = datetime.datetime.now()
 			case_function(case)
-			stop_time = (datetime.datetime.now() - start_time).total_seconds()
-			case['time_taken'] = stop_time
+			case_time = (datetime.datetime.now() - start_time).total_seconds()
+			case['time_taken'] = case_time
 
 			if case['status'] == 'inprogress':
 				case['status'] = 'done'
