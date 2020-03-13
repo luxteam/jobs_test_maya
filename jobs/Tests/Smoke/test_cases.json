@@ -295,14 +295,15 @@
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)", 
             "rpr_render(case)",             
-            "cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs', 'Tests', 'pass.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_SM_020.jpg'))"
+            "cmds.sysFile(path.join(WORK_DIR, '..', '..', '..', '..', 'jobs_launcher', 'common', 'img', 'passed.jpg'), copy=path.join(WORK_DIR, 'Color', 'MAYA_SM_020.jpg'))"
 
         ], 
         "script_info": [
             "Save image as png", 
             "Pass Limit: 50"
         ], 
-        "scene": "Lamborginhi_Aventador.ma"
+        "scene": "Lamborginhi_Aventador.ma",
+        "extension": ".png"
     }, 
     {
         "case": "MAYA_SM_021", 
@@ -613,7 +614,7 @@
     }, 
     {
         "case": "MAYA_SM_040", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.editRenderLayerGlobals(crl='rs_ALL_SHADOW')",
             "rpr_render(case)"

@@ -40,7 +40,7 @@ def reportToJSON(case, render_time=0):
 	logging('Create report json ({{}} {{}})'.format(
 		case['case'], report['test_status']))
 
-	report['file_name'] = case['case'] + '.jpg'
+	report['file_name'] = case['case'] + case.get('extension', '.jpg')
 	# TODO: render device may be incorrect (if it changes in case)
 	report['render_device'] = cmds.optionVar(q='RPR_DevicesName')[0]
 	report['tool'] = mel.eval('about -iv')
@@ -106,13 +106,13 @@ def prerender(case):
 	if scene_name != scene:
 		try:
 			cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
+			validateFiles()
+			enable_rpr()
 		except:
 			logging("Can't load scene. Exit Maya")
 			cmds.evalDeferred('cmds.quit(abort=True)')
 
-	validateFiles()
-
-	enable_rpr()
+	mel.eval('athenaEnable -ae false')
 
 	cmds.optionVar(rm='RPR_DevicesSelected')
 	cmds.optionVar(iva=('RPR_DevicesSelected',
@@ -220,7 +220,10 @@ def main():
 
 			logging(case['case'] + ' in progress')
 
+			start_time = datetime.datetime.now()
 			case_function(case)
+			case_time = (datetime.datetime.now() - start_time).total_seconds()
+			case['time_taken'] = case_time
 
 			if case['status'] == 'inprogress':
 				case['status'] = 'done'
