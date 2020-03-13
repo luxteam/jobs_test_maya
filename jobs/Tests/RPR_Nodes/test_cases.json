@@ -844,7 +844,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_053",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('Lookup.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 11)",
