@@ -838,7 +838,7 @@
     },
     {
         "case": "MAYA_MAT_NODE_053",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('Lookup.visibility', 1)",
             "cmds.setAttr('RPRLookup1.type', 11)",
@@ -847,7 +847,8 @@
             "cmds.setAttr('Lookup.visibility', 0)"
         ],
         "script_info": [
-            "RPR Lookup Random Color"
+            "RPR Lookup Random Color",
+            "(Seed required)"
         ],
         "scene": "RPRLookup.ma"
     },
