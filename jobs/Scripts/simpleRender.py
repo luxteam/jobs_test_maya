@@ -268,6 +268,7 @@ def main(args):
 		if case['status'] != 'done':
 			if case['status'] == 'inprogress':
 				case['status'] = 'active'
+				case['number_of_tries'] = case.get('number_of_tries', 0) + 1
 
 			template = core_config.RENDER_REPORT_BASE
 			template['test_case'] = case['case']
