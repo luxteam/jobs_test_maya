@@ -65,7 +65,7 @@ Skipped: Case will be skipped. Skip report will be created.
 		total_time = 0
 
 		for case in cases:
-			f.write('{} - {} ({})\n'.format(case['case'], case['status'], case.get('time_taken', 'null')))
+			f.write('{} - {} time taken: {} tries {}\n'.format(case['case'], case['status'], case.get('time_taken', 'null'), case.get('number_of_tries', 1)))
 			total_time += float(case.get('time_taken', '0'))
 
 		f.write('Time taken: ' + str(datetime.datetime.utcfromtimestamp(total_time).strftime('%H:%M:%S')))
