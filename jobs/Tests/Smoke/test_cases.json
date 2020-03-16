@@ -302,7 +302,8 @@
             "Save image as png", 
             "Pass Limit: 50"
         ], 
-        "scene": "Lamborginhi_Aventador.ma"
+        "scene": "Lamborginhi_Aventador.ma",
+        "extension": ".png"
     }, 
     {
         "case": "MAYA_SM_021", 
