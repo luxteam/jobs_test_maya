@@ -57,7 +57,7 @@
     },
     {
         "case": "MAYA_RS_MASH_005",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Dynamics node"
         ],
@@ -361,6 +361,18 @@
             "cmds.currentTime(40)",
             "rpr_render(case)",
             "cmds.setAttr('flight_trails_node.visibility', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MASH_027",
+        "status": "active",
+        "script_info": [
+            "Mash Complex Driving by Boss cache"
+        ],
+        "scene": "Ocean_Mash.ma", 
+        "functions": [
+            "cmds.currentTime(20)",
+            "rpr_render(case)"
         ]
     }
 ]
