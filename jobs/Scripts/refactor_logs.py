@@ -59,13 +59,14 @@ Inprogress: Case is in progress (if maya was crashed, case will be inprogress).
 Fail: Maya was crashed during case. Fail report will be created.
 Error: Maya was crashed during case. Fail report is already created.
 Done: Case was finished successfully.
-Skipped: Case will be skipped. Skip report will be created.
+Skipped: Case will be skipped. Skip report will be created.\n
+Case\t\tStatus\tTime\tTries
 \n''')
 
 		total_time = 0
 
 		for case in cases:
-			f.write('{} - {} time taken: {} tries {}\n'.format(case['case'], case['status'], case.get('time_taken', 'null'), case.get('number_of_tries', 1)))
+			f.write('{}\t{}\t{}\t{}\n'.format(case['case'], case['status'], case.get('time_taken', 'null'), case.get('number_of_tries', 1)))
 			total_time += float(case.get('time_taken', '0'))
 
 		f.write('Time taken: ' + str(datetime.datetime.utcfromtimestamp(total_time).strftime('%H:%M:%S')))
