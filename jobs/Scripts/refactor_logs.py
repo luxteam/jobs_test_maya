@@ -66,7 +66,8 @@ Case\t\tStatus\tTime\tTries
 		total_time = 0
 
 		for case in cases:
-			f.write('{}\t{}\t{}\t{}\n'.format(case['case'], case['status'], case.get('time_taken', 'null'), case.get('number_of_tries', 1)))
+			case_time = f'{float(case.get("time_taken", "null")):.2f}'
+			f.write('{}\t{}\t{}\t{}\n'.format(case['case'], case['status'], case_time, case.get('number_of_tries', 1)))
 			total_time += float(case.get('time_taken', '0'))
 
 		f.write('Time taken: ' + str(datetime.datetime.utcfromtimestamp(total_time).strftime('%H:%M:%S')))
