@@ -415,7 +415,7 @@ if __name__ == '__main__':
 			if case['status'] in ['active', 'fail', 'inprogress']:
 				active_cases += 1
 
-		if active_cases == 0 or iteration > len(cases):
+		if active_cases == 0 or iteration > len(cases) * 3:	# 3- retries count
 			# exit script if base_functions don't change number of active cases
 			kill_process(PROCESS)
 			core_config.main_logger.info('Finish simpleRender with code: {}'.format(rc))
