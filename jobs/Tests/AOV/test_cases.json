@@ -323,5 +323,19 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 28)",
             "rpr_render(case)"
         ]
+    },
+    {
+        "case": "MAYA_RS_AOV_024",
+        "status": "skipped",
+        "script_info": [
+            "AOV: Reflection Catcher"
+        ],
+        "scene": "AOVConstruct.ma",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 30)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovReflectionCatcher', 1)",
+            "rpr_render(case)"
+        ]
     }
 ]
