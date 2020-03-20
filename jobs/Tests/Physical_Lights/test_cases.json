@@ -244,7 +244,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 0.1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 0.1001)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 0)",
             "rpr_render(case)",
             "resetAttributes()"
@@ -1574,6 +1574,7 @@
         "case": "MAYA_L_PL_082",
         "status": "skipped",
         "functions": [
+            "rpr_render(case)"
         ],
         "script_info": [
             "Create a Cube object",
