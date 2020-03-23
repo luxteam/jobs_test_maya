@@ -1572,7 +1572,7 @@
     },
     {
         "case": "MAYA_L_PL_082",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "rpr_render(case)"
         ],
@@ -1636,7 +1636,7 @@
     },
     {
         "case": "MAYA_L_PL_086",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
