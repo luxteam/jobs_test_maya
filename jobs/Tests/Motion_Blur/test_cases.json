@@ -313,5 +313,36 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 100.0)",
             "rpr_render(case)"
         ]
+    },
+    {
+        "case": "MAYA_RS_MB_019",
+        "status": "active",
+        "script_info": [
+            "Camera Motion blur"
+        ],
+        "scene": "CameraMotion.ma",
+        "functions": [
+            "cmds.currentTime(60)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.375)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_020",
+        "status": "active",
+        "script_info": [
+            "Motion blur object override"
+        ],
+        "scene": "MotionBlurOverride.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
+            "cmds.currentTime(60)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.375)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 0)"
+        ]
     }
 ]
