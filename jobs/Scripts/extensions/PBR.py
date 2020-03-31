@@ -7,7 +7,6 @@ def resetAttributes():
 		cmds.connectAttr('RPRNormal4.out', 'R_PBRMat.normalMap', f=True)
 	except:
 		pass
-	cmds.setAttr('file14.fileTextureName', 'sourceimages/normal.tif', type='string' )
 	cmds.setAttr('R_PBRMat.glass', 1)
 	cmds.setAttr('R_PBRMat.glassIOR', 1.2)
 	cmds.setAttr('R_PBRMat.emissiveColor', 0.5, 0.5, 0.5, type='double3')
