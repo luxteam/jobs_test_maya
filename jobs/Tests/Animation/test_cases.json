@@ -408,7 +408,7 @@
     },
     {
         "case": "MAYA_RS_AN_032",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Frame - 10"
         ],
@@ -420,7 +420,7 @@
     },
     {
         "case": "MAYA_RS_AN_033",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Frame - 30"
         ],
@@ -432,7 +432,7 @@
     },
     {
         "case": "MAYA_RS_AN_034",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Frame - 60"
         ],
