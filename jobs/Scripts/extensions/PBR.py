@@ -16,7 +16,7 @@ def resetAttributes():
 	cmds.setAttr('R_PBRMat.subsurfaceRadius0', 3.67)
 	cmds.setAttr('R_PBRMat.subsurfaceRadius1', 1.37)
 	cmds.setAttr('R_PBRMat.subsurfaceRadius2', 0.68)
-	cmds.connectAttr("RPRNormal4.out", "R_PBRMat.normalMap")
+	cmds.setAttr('file14.fileTextureName', 'sourceimages/normal.tif', type='string')
 
 def setAttribute(pbr_attr, file_attr, value):
 	file = cmds.shadingNode("file", asTexture=True, isColorManaged=True)
