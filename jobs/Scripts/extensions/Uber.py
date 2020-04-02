@@ -75,8 +75,6 @@ def resetAttributes():
 		cmds.connectAttr('RPRNormal3.out', 'R_UberMat.normalMap', force=True)
 	except:
 		pass
-
-	cmds.setAttr('file13.fileTextureName', 'sourceimages/normal_normalmap.png', type='string')
 	cmds.setAttr('R_UberMat.displacementEnable', 0)
 	cmds.setAttr('R_UberMat.displacementMap', 0, 0, 0, type='double3')
 	cmds.setAttr('R_UberMat.displacementMin', 13.986)
