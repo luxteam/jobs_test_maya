@@ -294,7 +294,7 @@ def main(args):
 		  set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
 		  set PYTHONPATH=%cd%;PYTHONPATH
 		  set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-		  "{tool}" -r FireRender -preRender "python(\\"import base_functions\\");" "C:\\TestResources\\MayaAssets\\cache.mb"
+		  "{tool}" -r FireRender -preRender "python(\\"import base_functions\\");" -log "renderTool.Batch.log" "C:\\TestResources\\MayaAssets\\cache.mb"
 		'''.format(tool=args.tool)
 
 		cmdScriptPath = os.path.join(args.output, 'script.bat')
@@ -380,6 +380,11 @@ if __name__ == '__main__':
 				 os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration) + '.log'))
 		except:
 			core_config.main_logger.error('No renderTool.log')
+		try:
+			move(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.Batch.log'),
+				 os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration) + '.Batch.log'))
+		except:
+			core_config.main_logger.error('No renderTool.Batch.log')
 
 		try:
 			cases = json.load(open(os.path.realpath(
