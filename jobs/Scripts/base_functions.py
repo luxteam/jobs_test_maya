@@ -6,7 +6,7 @@ import json
 import re
 import os.path as path
 import os
-from shutil import copyfile
+from shutil import copyfile, move
 import fireRender.rpr_material_browser
 
 WORK_DIR = '{work_dir}'
@@ -89,14 +89,12 @@ def rpr_render(case):
 	cameras = cmds.ls(type="camera")
 	cam = [c for c in cameras if cmds.getAttr(c + ".renderable")]
 
-	mel.eval('fireRender -waitForItTwo')
+	cmds.fireRender(waitForItTwo=True)
 	start_time = time.time()
 	cmds.render(cam[0])
-	cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
-	test_case_path = path.join(WORK_DIR, 'Color', case['case'])
-	cmds.renderWindowEditor('renderView', edit=1,  dst='color')
-	cmds.renderWindowEditor('renderView', edit=1, com=1,
-							writeImage=test_case_path)
+	test_case_dest_path = path.join(WORK_DIR, 'Color', case['case'] + case.get('extension', '.jpg'))
+	test_case_path = path.join(case.get('render_path', RES_PATH), 'images', case['scene'][:-3] + case.get('extension', '.jpg'))
+	move(test_case_path, test_case_dest_path)
 	test_time = time.time() - start_time
 
 	reportToJSON(case, test_time)
@@ -113,7 +111,7 @@ def prerender(case):
 			enable_rpr()
 		except:
 			logging("Can't load scene. Exit Maya")
-			cmds.evalDeferred('cmds.quit(abort=True)')
+			cmds.evalDeferred(cmds.quit(abort=True))
 
 	mel.eval('athenaEnable -ae false')
 
@@ -151,9 +149,6 @@ def prerender(case):
 def save_report(case):
 	logging('Save report without rendering for ' + case['case'])
 
-	if not os.path.exists(os.path.join(WORK_DIR, 'Color')):
-		os.makedirs(os.path.join(WORK_DIR, 'Color'))
-
 	work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
 	source_dir = path.join(WORK_DIR, '..', '..', '..',
 						   '..', 'jobs_launcher', 'common', 'img')
@@ -188,7 +183,9 @@ def case_function(case):
 			mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
 		except:
 			logging("Can't set project in '" + projPath + "'")
-			cmds.evalDeferred('cmds.quit(abort=True)')
+			cmds.evalDeferred(cmds.quit(abort=True))
+		finally:
+			case['render_path'] = projPath
 
 	if case['status'] == 'fail' or case.get('number_of_tries', 1) == 3:	# 3- retries count
 		case['status'] = 'error'
@@ -207,6 +204,9 @@ def case_function(case):
 def main():
 	if not os.path.exists(os.path.join(WORK_DIR, LOGS_DIR)):
 		os.makedirs(os.path.join(WORK_DIR, LOGS_DIR))
+
+	if not os.path.exists(os.path.join(WORK_DIR, 'Color')):
+		os.makedirs(os.path.join(WORK_DIR, 'Color'))
 
 	with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
 		cases = json.load(json_file)
@@ -239,7 +239,7 @@ def main():
 			with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
 				json.dump(cases, file, indent=4)
 
-	cmds.evalDeferred('cmds.quit(abort=True)')
+	cmds.evalDeferred(cmds.quit(abort=True))
 
 
 main()
