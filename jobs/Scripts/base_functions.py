@@ -86,9 +86,12 @@ def enable_rpr():
 def rpr_render(case):
 	logging('Render image')
 
+	cameras = cmds.ls(type="camera")
+	cam = [c for c in cameras if cmds.getAttr(c + ".renderable")]
+
 	mel.eval('fireRender -waitForItTwo')
 	start_time = time.time()
-	mel.eval('renderIntoNewWindow render')
+	cmds.render(cam[0])
 	cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
 	test_case_path = path.join(WORK_DIR, 'Color', case['case'])
 	cmds.renderWindowEditor('renderView', edit=1,  dst='color')
@@ -220,7 +223,7 @@ def main():
 			if not path.exists(log_path):
 				with open(log_path, 'w'):
 					logging('Create log file for ' + case['case'])
-			cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
+			# cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
 
 			logging(case['case'] + ' in progress')
 
