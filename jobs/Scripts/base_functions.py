@@ -111,7 +111,7 @@ def prerender(case):
 			enable_rpr()
 		except:
 			logging("Can't load scene. Exit Maya")
-			cmds.evalDeferred(cmds.quit(abort=True))
+			cmds.evalDeferred('cmds.quit(abort=True)')
 
 	mel.eval('athenaEnable -ae false')
 
@@ -183,7 +183,7 @@ def case_function(case):
 			mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
 		except:
 			logging("Can't set project in '" + projPath + "'")
-			cmds.evalDeferred(cmds.quit(abort=True))
+			cmds.evalDeferred('cmds.quit(abort=True)')
 		finally:
 			case['render_path'] = projPath
 
@@ -239,7 +239,7 @@ def main():
 			with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
 				json.dump(cases, file, indent=4)
 
-	cmds.evalDeferred(cmds.quit(abort=True))
+	cmds.evalDeferred('cmds.quit(abort=True)')
 
 
 main()
