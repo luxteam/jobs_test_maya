@@ -2058,5 +2058,16 @@
             "Temperature - 7900"
         ],
         "scene": "DirectLightNew.ma"
+    },
+    {
+        "case": "MAYA_L_PL_112",
+        "status": "active",
+        "functions": [
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Portal Light"
+        ],
+        "scene": "portal_light.ma"
     }
 ]
