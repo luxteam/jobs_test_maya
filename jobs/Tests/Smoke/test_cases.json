@@ -716,5 +716,16 @@
             "SVG"
         ], 
         "scene": "SVG.ma"
+    }, 
+    {
+        "case": "MAYA_SM_049", 
+        "status": "active", 
+        "functions": [
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "Portal Light"
+        ], 
+        "scene": "portal_light.ma"
     }
 ]
