@@ -294,7 +294,7 @@ def main(args):
 		  set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log 
 		  set PYTHONPATH=%cd%;PYTHONPATH
 		  set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-		  "{tool}" -r FireRender -preRender "python(\\"import base_functions\\");" -log "renderTool.Batch.log" "C:\\TestResources\\MayaAssets\\cache.mb"
+		  "{tool}" -r FireRender -s 1 -e 1 -preRender "python(\\"import base_functions\\");" -log "renderTool.Batch.log" "C:\\TestResources\\MayaAssets\\cache.mb"
 		'''.format(tool=args.tool)
 
 		cmdScriptPath = os.path.join(args.output, 'script.bat')
