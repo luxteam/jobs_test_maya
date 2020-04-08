@@ -727,5 +727,51 @@
             "Portal Light"
         ], 
         "scene": "portal_light.ma"
+    }, 
+    {
+        "case": "MAYA_SM_050", 
+        "status": "active", 
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
+            "cmds.optionVar(rm='RPR_DevicesSelected')",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "rpr_render(case)",
+            "cmds.optionVar(rm='RPR_DevicesSelected')",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
+            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ], 
+        "script_info": [
+            "Denoiser in CPU mode"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
+    }, 
+    {
+        "case": "MAYA_SM_051", 
+        "status": "active", 
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
+            "cmds.optionVar(rm='RPR_DevicesSelected')",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "rpr_render(case)", 
+            "cmds.optionVar(rm='RPR_DevicesSelected')",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
+            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ], 
+        "script_info": [
+            "Denoiser in CPU+GPU mode"
+        ], 
+        "scene": "Lamborginhi_Aventador.ma"
     }
 ]
