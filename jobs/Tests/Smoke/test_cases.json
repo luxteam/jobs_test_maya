@@ -733,13 +733,16 @@
         "status": "active", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
             "cmds.optionVar(rm='RPR_DevicesSelected')",
             "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
             "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
             "cmds.optionVar(q='RPR_DevicesSelected')",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Render mode: %r | Hardware: %h\", type='string')",
             "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', False)",
             "cmds.optionVar(rm='RPR_DevicesSelected')",
             "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
             "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
@@ -747,22 +750,26 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
+            "Don't compare",
             "Denoiser in CPU mode"
         ], 
-        "scene": "Lamborginhi_Aventador.ma"
+        "scene": "maya_shaderball.ma"
     }, 
     {
         "case": "MAYA_SM_051", 
         "status": "active", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
             "cmds.optionVar(rm='RPR_DevicesSelected')",
             "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
             "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
             "cmds.optionVar(q='RPR_DevicesSelected')",
-            "rpr_render(case)", 
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Render mode: %r | Hardware: %h\", type='string')",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', False)",
             "cmds.optionVar(rm='RPR_DevicesSelected')",
             "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
             "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
@@ -770,8 +777,55 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
+            "Don't compare",
             "Denoiser in CPU+GPU mode"
         ], 
-        "scene": "Lamborginhi_Aventador.ma"
+        "scene": "maya_shaderball.ma"
+    }, 
+    {
+        "case": "MAYA_SM_052", 
+        "status": "active", 
+        "functions": [
+            "cmds.optionVar(rm='RPR_DevicesSelected')",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Render mode: %r | Hardware: %h\", type='string')",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', False)",
+            "cmds.optionVar(rm='RPR_DevicesSelected')",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
+            "cmds.optionVar(q='RPR_DevicesSelected')"
+        ], 
+        "script_info": [
+            "Don't compare",
+            "Denoiser in CPU mode"
+        ], 
+        "scene": "maya_shaderball.ma"
+    }, 
+    {
+        "case": "MAYA_SM_053", 
+        "status": "active", 
+        "functions": [
+            "cmds.optionVar(rm='RPR_DevicesSelected')",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Render mode: %r | Hardware: %h\", type='string')",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', False)",
+            "cmds.optionVar(rm='RPR_DevicesSelected')",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
+            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
+            "cmds.optionVar(q='RPR_DevicesSelected')"
+        ], 
+        "script_info": [
+            "Don't compare",
+            "Denoiser in CPU+GPU mode"
+        ], 
+        "scene": "maya_shaderball.ma"
     }
 ]
