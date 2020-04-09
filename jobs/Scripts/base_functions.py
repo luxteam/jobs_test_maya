@@ -187,7 +187,7 @@ def case_function(case):
 			logging("Can't set project in '" + projPath + "'")
 			cmds.evalDeferred('cmds.quit(abort=True)')
 
-	if case['status'] == 'fail' or case.get('number_of_tries', 1) == 3:	# 3- retries count
+	if case['status'] == 'fail' or case.get('number_of_tries', 1) == 2:	# 2- retries count
 		case['status'] = 'error'
 		func = 'save_report'
 	elif case['status'] == 'skipped':
