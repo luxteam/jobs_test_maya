@@ -749,7 +749,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
-            "Don't compare",
             "Denoiser in CPU mode"
         ], 
         "scene": "normal_scene.ma"
@@ -775,7 +774,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
-            "Don't compare",
             "Denoiser in CPU+GPU mode"
         ], 
         "scene": "normal_scene.ma"
@@ -797,7 +795,6 @@
             "cmds.optionVar(q='RPR_DevicesSelected')"
         ], 
         "script_info": [
-            "Don't compare",
             "Denoiser in CPU mode"
         ], 
         "scene": "normal_scene.ma"
@@ -819,7 +816,6 @@
             "cmds.optionVar(q='RPR_DevicesSelected')"
         ], 
         "script_info": [
-            "Don't compare",
             "Denoiser in CPU+GPU mode"
         ], 
         "scene": "normal_scene.ma"
