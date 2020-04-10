@@ -737,19 +737,12 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
-            "cmds.optionVar(rm='RPR_DevicesSelected')",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "set_render_device('cpu')",
             "rpr_render(case)",
-            "cmds.optionVar(rm='RPR_DevicesSelected')",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
-            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "set_render_device(RENDER_DEVICE)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
-            "Don't compare",
             "Denoiser in CPU mode"
         ], 
         "scene": "normal_scene.ma"
@@ -763,19 +756,12 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
-            "cmds.optionVar(rm='RPR_DevicesSelected')",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "set_render_device('dual')",
             "rpr_render(case)",
-            "cmds.optionVar(rm='RPR_DevicesSelected')",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
-            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "set_render_device(RENDER_DEVICE)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
-            "Don't compare",
             "Denoiser in CPU+GPU mode"
         ], 
         "scene": "normal_scene.ma"
@@ -786,18 +772,11 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 20.0)",
-            "cmds.optionVar(rm='RPR_DevicesSelected')",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "set_render_device('cpu')",
             "rpr_render(case)",
-            "cmds.optionVar(rm='RPR_DevicesSelected')",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
-            "cmds.optionVar(q='RPR_DevicesSelected')"
+            "set_render_device(RENDER_DEVICE)"
         ], 
         "script_info": [
-            "Don't compare",
             "Denoiser in CPU mode"
         ], 
         "scene": "normal_scene.ma"
@@ -808,18 +787,11 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 20.0)",
-            "cmds.optionVar(rm='RPR_DevicesSelected')",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(q='RPR_DevicesSelected')",
+            "set_render_device('dual')",
             "rpr_render(case)",
-            "cmds.optionVar(rm='RPR_DevicesSelected')",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',1L))",
-            "cmds.optionVar(iva=('RPR_DevicesSelected',0L))",
-            "cmds.optionVar(q='RPR_DevicesSelected')"
+            "set_render_device(RENDER_DEVICE)"
         ], 
         "script_info": [
-            "Don't compare",
             "Denoiser in CPU+GPU mode"
         ], 
         "scene": "normal_scene.ma"
