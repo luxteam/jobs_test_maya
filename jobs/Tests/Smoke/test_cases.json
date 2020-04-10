@@ -739,7 +739,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
             "set_render_device('cpu')",
             "rpr_render(case)",
-            "set_render_device(RENDER_DEVICE)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
@@ -758,7 +757,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 1)", 
             "set_render_device('dual')",
             "rpr_render(case)",
-            "set_render_device(RENDER_DEVICE)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
@@ -773,8 +771,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 20.0)",
             "set_render_device('cpu')",
-            "rpr_render(case)",
-            "set_render_device('gpu')"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser in CPU mode"
@@ -788,8 +785,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 0.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 20.0)",
             "set_render_device('dual')",
-            "rpr_render(case)",
-            "set_render_device('gpu')"
+            "rpr_render(case)"
         ], 
         "script_info": [
             "Denoiser in CPU+GPU mode"
