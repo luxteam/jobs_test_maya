@@ -774,7 +774,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 20.0)",
             "set_render_device('cpu')",
             "rpr_render(case)",
-            "set_render_device(RENDER_DEVICE)"
+            "set_render_device('gpu')"
         ], 
         "script_info": [
             "Denoiser in CPU mode"
@@ -789,7 +789,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 20.0)",
             "set_render_device('dual')",
             "rpr_render(case)",
-            "set_render_device(RENDER_DEVICE)"
+            "set_render_device('gpu')"
         ], 
         "script_info": [
             "Denoiser in CPU+GPU mode"
