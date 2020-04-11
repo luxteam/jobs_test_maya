@@ -7,7 +7,7 @@
  `git submodule init`  
  `git submodule update`
  3. Run `scripts/auto_config.bat`. This script will create `scripts/Devices.config.json` for your hardware configuration.  
- 4. Check that `maya_assets` scenes placed in `C:/TestResources`
+ 4. Check that `maya_assets` scenes placed in `c:/JN/TestResources`
  5. Run `scripts/run.bat` with customised `--cmd_variables`. For example:  
  
      > --cmd_variables Tool "C:\Program Files\Autodesk\Maya2017\bin\maya.exe" RenderDevice 0 TestsFilter small  
