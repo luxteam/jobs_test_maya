@@ -43,8 +43,9 @@
     },
     {
         "case": "MAYA_RS_AOV_004",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
+            "Do not compare",
             "AOV: Material Index"
         ],
         "scene": "AOVConstruct.ma",
@@ -99,8 +100,9 @@
     },
     {
         "case": "MAYA_RS_AOV_008",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
+            "Do not compare",
             "AOV: Object ID"
         ],
         "scene": "AOVConstruct.ma",
@@ -313,8 +315,9 @@
     },
     {
         "case": "MAYA_RS_AOV_023",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
+            "Do not compare",
             "AOV: Variance"
         ],
         "scene": "AOVConstruct.ma",
