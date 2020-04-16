@@ -1,0 +1,399 @@
+[
+    {
+        "case": "MAYA_RS_VIEW_001",
+        "status": "skipped",
+        "script_info": [
+            "Global Illumination"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_002",
+        "status": "skipped",
+        "script_info": [
+            "Standart viewport"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"directIllumination\"')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_003",
+        "status": "skipped",
+        "script_info": [
+            "Standart viewport"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"directIlluminationNoShadow\"')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_004",
+        "status": "active",
+        "script_info": [
+            "Standart viewport"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "print(cmds.getPanel(type=\"modelPanel\"))",
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"wireframe\"')",
+            "time.sleep(10)",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_005",
+        "status": "skipped",
+        "script_info": [
+            "Standart viewport"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"materialId\"')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_006",
+        "status": "skipped",
+        "script_info": [
+            "Standart viewport"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"position\"')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_007",
+        "status": "skipped",
+        "script_info": [
+            "Standart viewport"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"normal\"')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_008",
+        "status": "skipped",
+        "script_info": [
+            "Standart viewport"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"texcoord\"')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_009",
+        "status": "skipped",
+        "script_info": [
+            "Standart viewport"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"ambientOcclusion\"')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_010",
+        "status": "active",
+        "script_info": [
+            "Opacity"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 1')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_011",
+        "status": "active",
+        "script_info": [
+            "World Corrdinate"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 2')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_012",
+        "status": "active",
+        "script_info": [
+            "UV"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 3')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_013",
+        "status": "active",
+        "script_info": [
+            "Material Idx"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 4')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_014",
+        "status": "active",
+        "script_info": [
+            "Geometric Normal"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 5')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_015",
+        "status": "active",
+        "script_info": [
+            "Shading Normal"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 6')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_016",
+        "status": "active",
+        "script_info": [
+            "Depth"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 7')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_017",
+        "status": "active",
+        "script_info": [
+            "Object ID"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 8')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_018",
+        "status": "active",
+        "script_info": [
+            "Object Group ID"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 9')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_019",
+        "status": "active",
+        "script_info": [
+            "Shadow Catcher"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 10')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_020",
+        "status": "active",
+        "script_info": [
+            "Background"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 11')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_021",
+        "status": "active",
+        "script_info": [
+            "Emission"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 12')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_022",
+        "status": "active",
+        "script_info": [
+            "Velocity"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 13')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_023",
+        "status": "active",
+        "script_info": [
+            "Direct Illumination"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 14')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_024",
+        "status": "active",
+        "script_info": [
+            "Indirect Illumination"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 15')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_025",
+        "status": "active",
+        "script_info": [
+            "AO"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 16')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_026",
+        "status": "active",
+        "script_info": [
+            "Direct Diffuse"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 17')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_027",
+        "status": "active",
+        "script_info": [
+            "Direct Reflect"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 18')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_028",
+        "status": "active",
+        "script_info": [
+            "Indirect Diffuse"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 19')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_029",
+        "status": "active",
+        "script_info": [
+            "Indirect Reflect"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 20')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_030",
+        "status": "active",
+        "script_info": [
+            "Refract"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 21')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_031",
+        "status": "active",
+        "script_info": [
+            "Subsurface / Volume"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 22')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_032",
+        "status": "active",
+        "script_info": [
+            "Albedo"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 23')",
+            "save_viewport(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_VIEW_033",
+        "status": "active",
+        "script_info": [
+            "Variance"
+        ],
+        "scene": "House.ma",
+        "functions": [
+            "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 24')",
+            "save_viewport(case)"
+        ]
+    }
+]
