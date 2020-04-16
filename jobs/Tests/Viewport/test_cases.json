@@ -42,10 +42,9 @@
         ],
         "scene": "House.ma",
         "functions": [
-            "print(cmds.getPanel(type=\"modelPanel\"))",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"wireframe\"')",
-            "time.sleep(10)",
-            "save_viewport(case)"
+            "save_viewport(case)",
+            "rpr_render(case)"
         ]
     },
     {
