@@ -1,35 +1,38 @@
 [
     {
         "case": "MAYA_RS_VIEW_001",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Global Illumination"
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "save_viewport(case)"
         ]
     },
     {
         "case": "MAYA_RS_VIEW_002",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
-            "Standart viewport"
+            "Direct Illumination"
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"directIllumination\"')",
             "save_viewport(case)"
         ]
     },
     {
         "case": "MAYA_RS_VIEW_003",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
-            "Standart viewport"
+            "SDirect Illumination No Shadow"
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"directIlluminationNoShadow\"')",
             "save_viewport(case)"
         ]
@@ -38,70 +41,76 @@
         "case": "MAYA_RS_VIEW_004",
         "status": "active",
         "script_info": [
-            "Standart viewport"
+            "Wireframe"
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"wireframe\"')",
             "save_viewport(case)"
         ]
     },
     {
         "case": "MAYA_RS_VIEW_005",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
-            "Standart viewport"
+            "Material ID"
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"materialId\"')",
             "save_viewport(case)"
         ]
     },
     {
         "case": "MAYA_RS_VIEW_006",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
-            "Standart viewport"
+            "Position"
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"position\"')",
             "save_viewport(case)"
         ]
     },
     {
         "case": "MAYA_RS_VIEW_007",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
-            "Standart viewport"
+            "Normal"
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"normal\"')",
             "save_viewport(case)"
         ]
     },
     {
         "case": "MAYA_RS_VIEW_008",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
-            "Standart viewport"
+            "TexCoord"
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"texcoord\"')",
             "save_viewport(case)"
         ]
     },
     {
         "case": "MAYA_RS_VIEW_009",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
-            "Standart viewport"
+            "Ambient Occlusion"
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"ambientOcclusion\"')",
             "save_viewport(case)"
         ]
@@ -114,6 +123,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 1')",
             "save_viewport(case)"
         ]
@@ -126,6 +136,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 2')",
             "save_viewport(case)"
         ]
@@ -138,6 +149,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 3')",
             "save_viewport(case)"
         ]
@@ -150,6 +162,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 4')",
             "save_viewport(case)"
         ]
@@ -162,6 +175,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 5')",
             "save_viewport(case)"
         ]
@@ -174,6 +188,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 6')",
             "save_viewport(case)"
         ]
@@ -186,6 +201,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 7')",
             "save_viewport(case)"
         ]
@@ -198,6 +214,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 8')",
             "save_viewport(case)"
         ]
@@ -210,6 +227,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 9')",
             "save_viewport(case)"
         ]
@@ -222,6 +240,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 10')",
             "save_viewport(case)"
         ]
@@ -234,6 +253,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 11')",
             "save_viewport(case)"
         ]
@@ -246,6 +266,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 12')",
             "save_viewport(case)"
         ]
@@ -258,6 +279,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 13')",
             "save_viewport(case)"
         ]
@@ -270,6 +292,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 14')",
             "save_viewport(case)"
         ]
@@ -282,6 +305,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 15')",
             "save_viewport(case)"
         ]
@@ -294,6 +318,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 16')",
             "save_viewport(case)"
         ]
@@ -306,6 +331,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 17')",
             "save_viewport(case)"
         ]
@@ -318,6 +344,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 18')",
             "save_viewport(case)"
         ]
@@ -330,6 +357,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 19')",
             "save_viewport(case)"
         ]
@@ -342,6 +370,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 20')",
             "save_viewport(case)"
         ]
@@ -354,6 +383,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 21')",
             "save_viewport(case)"
         ]
@@ -366,6 +396,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 22')",
             "save_viewport(case)"
         ]
@@ -378,6 +409,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 23')",
             "save_viewport(case)"
         ]
@@ -390,6 +422,7 @@
         ],
         "scene": "House.ma",
         "functions": [
+            "rpr_render(case)",
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -va 24')",
             "save_viewport(case)"
         ]
