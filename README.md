@@ -7,7 +7,8 @@
  `git submodule init`  
  `git submodule update`
  3. Run `scripts/auto_config.bat`. This script will create `scripts/Devices.config.json` for your hardware configuration.  
- 4. Check that `maya_assets` scenes placed in `c:/JN/TestResources` (`git clone https://gitlab.cts.luxoft.com/dtarasenko/maya_assets.git`)
+ 4. Check that `maya_assets` scenes placed in `/TestResources` (`git clone https://gitlab.cts.luxoft.com/dtarasenko/maya_assets.git`) and environment variable CIS_TOOLS is set on your TestResources folder. If not follow this guide https://docs.oracle.com/en/database/oracle/r-enterprise/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0
+ Variable name should be "CIS_TOOLS" and value is path to TestResources (include "TestResources" in the end)
  5. Run `scripts/run.bat` with customised `--cmd_variables`. For example:  
  
      > --cmd_variables Tool "C:\Program Files\Autodesk\Maya2017\bin\maya.exe" RenderDevice 0 TestsFilter small  
