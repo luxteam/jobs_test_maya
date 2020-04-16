@@ -43,8 +43,7 @@
         "scene": "House.ma",
         "functions": [
             "mel.eval('fireRenderViewport -p \"modelPanel4\" -vm \"wireframe\"')",
-            "save_viewport(case)",
-            "rpr_render(case)"
+            "save_viewport(case)"
         ]
     },
     {
