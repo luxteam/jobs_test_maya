@@ -52,7 +52,7 @@
     },
     {
         "case": "MAYA_RS_VIEW_005",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Material ID"
         ],
@@ -156,7 +156,7 @@
     },
     {
         "case": "MAYA_RS_VIEW_013",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Material Idx"
         ],
@@ -208,7 +208,7 @@
     },
     {
         "case": "MAYA_RS_VIEW_017",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Object ID"
         ],
@@ -221,7 +221,7 @@
     },
     {
         "case": "MAYA_RS_VIEW_018",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Object Group ID"
         ],
