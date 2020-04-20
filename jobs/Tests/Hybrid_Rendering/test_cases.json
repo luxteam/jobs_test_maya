@@ -688,7 +688,7 @@
     },
     {
         "case": "MAYA_RS_HR_043",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Hybrid + Tile rendering Quality High"
         ],
@@ -702,7 +702,7 @@
     },
     {
         "case": "MAYA_RS_HR_044",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Hybrid + Tile rendering Quality Medium"
         ],
@@ -716,7 +716,7 @@
     },
     {
         "case": "MAYA_RS_HR_045",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Hybrid + Tile rendering Quality Low"
         ],
