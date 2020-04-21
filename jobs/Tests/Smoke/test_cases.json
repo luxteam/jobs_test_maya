@@ -742,9 +742,12 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
-            "Denoiser in CPU mode"
+            "ML in CPU mode"
         ], 
-        "scene": "normal_scene.ma"
+        "scene": "normal_scene.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }, 
     {
         "case": "MAYA_SM_051", 
@@ -760,7 +763,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ], 
         "script_info": [
-            "Denoiser in CPU+GPU mode"
+            "ML in CPU+GPU mode"
         ], 
         "scene": "normal_scene.ma"
     }, 
@@ -774,7 +777,7 @@
             "rpr_render(case)"
         ], 
         "script_info": [
-            "Denoiser in CPU mode"
+            "CPU mode"
         ], 
         "scene": "normal_scene.ma"
     }, 
@@ -788,7 +791,7 @@
             "rpr_render(case)"
         ], 
         "script_info": [
-            "Denoiser in CPU+GPU mode"
+            "CPU+GPU mode"
         ], 
         "scene": "normal_scene.ma"
     }
