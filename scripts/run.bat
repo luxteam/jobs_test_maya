@@ -17,6 +17,8 @@ if not defined THRESHOLD set THRESHOLD=0.05
 if not defined TOOL set TOOL=2020
 if not defined CIS_TOOLS setx CIS_TOOLS "C:\TestResources"
 
+IF not EXIST "%CIS_TOOLS%\rpr_maya" ECHO "rpr_maya assets don't exists"
+
 python -m pip install -r ..\jobs_launcher\install\requirements.txt
 
 python ..\jobs_launcher\executeTests.py --test_filter %TESTS_FILTER% --file_filter %FILE_FILTER% --tests_root ..\jobs --work_root ..\Work\Results --work_dir Maya --cmd_variables Tool "C:\Program Files\Autodesk\Maya%TOOL%\bin\maya.exe" RenderDevice %RENDER_DEVICE% ResPath "%CIS_TOOLS%\..\TestResources\rpr_maya" PassLimit %ITER% rx %RX% ry %RY% SPU %SPU% threshold %THRESHOLD%
