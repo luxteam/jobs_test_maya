@@ -11,6 +11,7 @@ TOOL=${9:-2020}
 
 if ! [ -d "$CIS_TOOLS\rpr_maya" ]; then
     echo "rpr_maya assets don't exists"
+    exit 1
 fi
 
 python3 -m pip install -r ../jobs_launcher/install/requirements.txt
