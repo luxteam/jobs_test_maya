@@ -9,7 +9,7 @@ ITER=${7:-50}
 THRESHOLD=${8:-0.05}
 TOOL=${9:-2020}
 
-if ! [ -d "$CIS_TOOLS\rpr_maya" ]; then
+if ! [ -d "$CIS_TOOLS/../TestResources/rpr_maya" ]; then
     echo "rpr_maya assets don't exists"
     exit 1
 fi
