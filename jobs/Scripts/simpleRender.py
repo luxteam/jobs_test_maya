@@ -18,6 +18,9 @@ sys.path.append(os.path.abspath(os.path.join(
 from jobs_launcher.core.kill_process import kill_process
 from jobs_launcher.core.system_info import get_gpu
 import jobs_launcher.core.config as core_config
+from jobs_launcher.image_service_client import ISClient
+from jobs_launcher.rbs_client import RBS_Client, str2bool
+from jobs_launcher.rbs_client import logger as rbs_logger
 
 ROOT_DIR = os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir))
@@ -347,7 +350,29 @@ def group_failed(args):
 
 if __name__ == '__main__':
 	core_config.main_logger.info('simpleRender start working...')
-	
+
+	is_client = None
+    rbs_client = None
+    rbs_use = str2bool(os.getenv('RBS_USE'))
+
+    if rbs_use:
+        try:
+            is_client = ISClient(os.getenv("IMAGE_SERVICE_URL"))
+            core_config.main_logger.info("Image Service client created")
+        except Exception as e:
+            core_config.main_logger.info("Image Service client creation error: {}".format(str(e)))
+
+        try:
+            rbs_client = RBS_Client(
+                job_id = os.getenv("RBS_JOB_ID"),
+                url = os.getenv("RBS_URL"),
+                build_id = os.getenv("RBS_BUILD_ID"),
+                env_label = os.getenv("RBS_ENV_LABEL"),
+                suite_id = None)
+            core_config.main_logger.info("RBS Client created")
+        except Exception as e:
+            core_config.main_logger.info(" RBS Client creation error: {}".format(str(e)))
+
 	args = createArgsParser().parse_args()
 
 	try:
