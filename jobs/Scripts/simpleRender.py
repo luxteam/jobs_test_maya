@@ -431,5 +431,45 @@ if __name__ == '__main__':
 		if active_cases == 0 or iteration > len(cases) * 3:	# 3- retries count
 			# exit script if base_functions don't change number of active cases
 			kill_process(PROCESS)
+
+			#sent info to RBS
+            if rbs_client:
+                res = []
+                try:
+                    core_config.main_logger.info('Try to send results to RBS')
+
+                    for case in cases:
+                        case_info =  json.load(open(os.path.realpath(
+                                            os.path.join(os.path.abspath(args.output), '{}_RPR.json'.format(case['case'])))))
+                        image_id = is_client.send_image(os.path.realpath(
+                                            os.path.join(os.path.abspath(args.output), case_info[0]['render_color_path'])))
+                        res.append({
+                                    'name': case['case'],
+                                    'status': case_info[0]['test_status'],
+                                    'metrics': {
+                                        'render_time': case_info[0]['render_time']
+                                    },
+                                    "artefacts": {
+                                        "rendered_image": {
+                                            "id": image_id
+                                        }
+                                    }
+                                })
+
+                    rbs_client.get_suite_id_by_name(str(args.testType))
+                    print(rbs_client.suite_id)
+                    # send machine info to rbs
+                    env = {"gpu": get_gpu(), **get_machine_info()}
+                    env.pop('os')
+                    env.update({'hostname': env.pop('host'), 'cpu_count': int(env['cpu_count'])})
+                    core_config.main_logger.info(env)
+
+                    response = rbs_client.send_test_suite(res=res, env=env)
+                    core_config.main_logger.info('Test suite results sent with code {}'.format(response.status_code))
+                    core_config.main_logger.info(response.content)
+
+                except Exception as e:
+                    core_config.main_logger.info("Test case result creation error: {}".format(str(e)))
+
 			core_config.main_logger.info('Finish simpleRender with code: {}'.format(rc))
 			exit(rc)
