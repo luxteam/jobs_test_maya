@@ -87,7 +87,7 @@ def createArgsParser():
 	parser.add_argument('--resolution_y', required=False, default=0, type=int)
 	parser.add_argument('--testCases', required=True)
 	parser.add_argument('--SPU', required=False, default=25, type=int)
-	parser.add_argument('--fail_count', required=False, default=0, type=int)
+	parser.add_argument('--error_count', required=False, default=0, type=int)
 	parser.add_argument('--threshold', required=False,
 						default=0.05, type=float)
 
@@ -390,20 +390,20 @@ if __name__ == '__main__':
 			exit(-1)
 
 		active_cases = 0
-		failed_count = 0
+		current_error_count = 0
 
 		for case in cases:
 			if case['status'] in ['fail', 'error', 'inprogress']:
-				failed_count += 1
-				if args.fail_count == failed_count:
+				current_error_count += 1
+				if args.error_count == current_error_count:
 					group_failed(args)
 			else:
-				failed_count = 0
+				current_error_count = 0
 
 			if case['status'] in ['active', 'fail', 'inprogress']:
 				active_cases += 1
 
-		if active_cases == 0 or iteration > len(cases) * 3:	# 3- retries count
+		if active_cases == 0 or iteration > len(cases) * 2:	# 2- retries count
 			# exit script if base_functions don't change number of active cases
 			kill_process(PROCESS)
 			core_config.main_logger.info('Finish simpleRender with code: {}'.format(rc))
