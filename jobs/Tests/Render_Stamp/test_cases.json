@@ -3,6 +3,7 @@
         "case": "MAYA_RS_RS_001",
         "status": "active",
         "script_info": [
+            "Do not compare",
             "Base stamp",
             "Radeon ProRender for Maya %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl"
         ],
@@ -17,6 +18,7 @@
         "case": "MAYA_RS_RS_002",
         "status": "active",
         "script_info": [
+            "Do not compare",
             "CPU&GPU stamp",
             "Radeon ProRender for Maya %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl"
         ],
@@ -31,6 +33,7 @@
         "case": "MAYA_RS_RS_003",
         "status": "active",
         "script_info": [
+            "Do not compare",
             "Computer name stamp",
             "Radeon ProRender for Maya %b | Computer name %i | Current date %d"
         ],
