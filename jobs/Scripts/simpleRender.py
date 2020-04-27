@@ -351,27 +351,27 @@ def group_failed(args):
 if __name__ == '__main__':
 	core_config.main_logger.info('simpleRender start working...')
 
-   	is_client = None
+	is_client = None
 	rbs_client = None
-    rbs_use = str2bool(os.getenv('RBS_USE'))
+	rbs_use = str2bool(os.getenv('RBS_USE'))
 
-    if rbs_use:
-        try:
-            is_client = ISClient(os.getenv("IMAGE_SERVICE_URL"))
-            core_config.main_logger.info("Image Service client created")
-        except Exception as e:
-            core_config.main_logger.info("Image Service client creation error: {}".format(str(e)))
+	if rbs_use:
+		try:
+			is_client = ISClient(os.getenv("IMAGE_SERVICE_URL"))
+			core_config.main_logger.info("Image Service client created")
+		except Exception as e:
+			core_config.main_logger.info("Image Service client creation error: {}".format(str(e)))
 
-        try:
-            rbs_client = RBS_Client(
-                job_id = os.getenv("RBS_JOB_ID"),
-                url = os.getenv("RBS_URL"),
-                build_id = os.getenv("RBS_BUILD_ID"),
-                env_label = os.getenv("RBS_ENV_LABEL"),
-                suite_id = None)
-            core_config.main_logger.info("RBS Client created")
-        except Exception as e:
-            core_config.main_logger.info(" RBS Client creation error: {}".format(str(e)))
+		try:
+			rbs_client = RBS_Client(
+				job_id = os.getenv("RBS_JOB_ID"),
+				url = os.getenv("RBS_URL"),
+				build_id = os.getenv("RBS_BUILD_ID"),
+				env_label = os.getenv("RBS_ENV_LABEL"),
+				suite_id = None)
+			core_config.main_logger.info("RBS Client created")
+		except Exception as e:
+			core_config.main_logger.info(" RBS Client creation error: {}".format(str(e)))
 
 	args = createArgsParser().parse_args()
 
@@ -433,43 +433,43 @@ if __name__ == '__main__':
 			kill_process(PROCESS)
 
 			#sent info to RBS
-            if rbs_client:
-                res = []
-                try:
-                    core_config.main_logger.info('Try to send results to RBS')
+			if rbs_client:
+				res = []
+				try:
+					core_config.main_logger.info('Try to send results to RBS')
 
-                    for case in cases:
-                        case_info =  json.load(open(os.path.realpath(
-                                            os.path.join(os.path.abspath(args.output), '{}_RPR.json'.format(case['case'])))))
-                        image_id = is_client.send_image(os.path.realpath(
-                                            os.path.join(os.path.abspath(args.output), case_info[0]['render_color_path'])))
-                        res.append({
-                                    'name': case['case'],
-                                    'status': case_info[0]['test_status'],
-                                    'metrics': {
-                                        'render_time': case_info[0]['render_time']
-                                    },
-                                    "artefacts": {
-                                        "rendered_image": {
-                                            "id": image_id
-                                        }
-                                    }
-                                })
+					for case in cases:
+						case_info =  json.load(open(os.path.realpath(
+											os.path.join(os.path.abspath(args.output), '{}_RPR.json'.format(case['case'])))))
+						image_id = is_client.send_image(os.path.realpath(
+											os.path.join(os.path.abspath(args.output), case_info[0]['render_color_path'])))
+						res.append({
+									'name': case['case'],
+									'status': case_info[0]['test_status'],
+									'metrics': {
+										'render_time': case_info[0]['render_time']
+									},
+									"artefacts": {
+										"rendered_image": {
+											"id": image_id
+										}
+									}
+								})
 
-                    rbs_client.get_suite_id_by_name(str(args.testType))
-                    print(rbs_client.suite_id)
-                    # send machine info to rbs
-                    env = {"gpu": get_gpu(), **get_machine_info()}
-                    env.pop('os')
-                    env.update({'hostname': env.pop('host'), 'cpu_count': int(env['cpu_count'])})
-                    core_config.main_logger.info(env)
+					rbs_client.get_suite_id_by_name(str(args.testType))
+					print(rbs_client.suite_id)
+					# send machine info to rbs
+					env = {"gpu": get_gpu(), **get_machine_info()}
+					env.pop('os')
+					env.update({'hostname': env.pop('host'), 'cpu_count': int(env['cpu_count'])})
+					core_config.main_logger.info(env)
 
-                    response = rbs_client.send_test_suite(res=res, env=env)
-                    core_config.main_logger.info('Test suite results sent with code {}'.format(response.status_code))
-                    core_config.main_logger.info(response.content)
+					response = rbs_client.send_test_suite(res=res, env=env)
+					core_config.main_logger.info('Test suite results sent with code {}'.format(response.status_code))
+					core_config.main_logger.info(response.content)
 
-                except Exception as e:
-                    core_config.main_logger.info("Test case result creation error: {}".format(str(e)))
+				except Exception as e:
+					core_config.main_logger.info("Test case result creation error: {}".format(str(e)))
 
 			core_config.main_logger.info('Finish simpleRender with code: {}'.format(rc))
 			exit(rc)
