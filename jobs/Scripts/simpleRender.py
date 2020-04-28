@@ -16,7 +16,7 @@ sys.path.append(os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 
 from jobs_launcher.core.kill_process import kill_process
-from jobs_launcher.core.system_info import get_gpu
+from jobs_launcher.core.system_info import get_gpu, get_machine_info
 import jobs_launcher.core.config as core_config
 from jobs_launcher.image_service_client import ISClient
 from jobs_launcher.rbs_client import RBS_Client, str2bool
