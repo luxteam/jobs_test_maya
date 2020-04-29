@@ -353,7 +353,11 @@ if __name__ == '__main__':
 
 	is_client = None
 	rbs_client = None
-	rbs_use = str2bool(os.getenv('RBS_USE'))
+
+	try:
+        use_rbs = str2bool(os.getenv('RBS_USE'))
+    except Exception as e:
+        print('Exception when getenv RBS USE: {}'.format(str(e)))
 
 	if rbs_use:
 		try:
