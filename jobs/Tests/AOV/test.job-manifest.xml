@@ -30,8 +30,4 @@
         <argument>--base_dir "{BaselineDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"'>
-        <argument>--work_dir "{OutputDir}"</argument>
-    </execute>
-
 </job-manifest>
