@@ -354,6 +354,7 @@ if __name__ == '__main__':
 	is_client = None
 	rbs_client = None
 
+	rbs_use = None
 	try:
         rbs_use = str2bool(os.getenv('RBS_USE'))
     except Exception as e:
