@@ -355,7 +355,7 @@ if __name__ == '__main__':
 	rbs_client = None
 
 	try:
-        use_rbs = str2bool(os.getenv('RBS_USE'))
+        rbs_use = str2bool(os.getenv('RBS_USE'))
     except Exception as e:
         core_config.main_logger.warning('Exception when getenv RBS USE: {}'.format(str(e)))
 
