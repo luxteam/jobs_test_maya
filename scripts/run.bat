@@ -17,6 +17,7 @@ shift
 shift
 shift
 shift
+shift
 
 set RBS_BUILD_ID=%1
 set RBS_JOB_ID=%2
