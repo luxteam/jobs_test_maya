@@ -356,9 +356,9 @@ if __name__ == '__main__':
 
 	rbs_use = None
 	try:
-        rbs_use = str2bool(os.getenv('RBS_USE'))
-    except Exception as e:
-        core_config.main_logger.warning('Exception when getenv RBS USE: {}'.format(str(e)))
+		rbs_use = str2bool(os.getenv('RBS_USE'))
+	except Exception as e:
+		core_config.main_logger.warning('Exception when getenv RBS USE: {}'.format(str(e)))
 
 	if rbs_use:
 		try:
