@@ -288,6 +288,9 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
             "rpr_render(case)"
+        ],
+        "skip_on": [
+            ["AMD Radeon RX 5700 XT"]
         ]
     },
     {
@@ -359,6 +362,9 @@
             "applyMaterial('BasketCaseBlue_Solid')",
             "rpr_render(case)",
             "detachMaterial()"
+        ],
+        "skip_on": [
+            ["AMD Radeon RX 5700 XT"]
         ]
     },
     {
