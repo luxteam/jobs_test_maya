@@ -19,12 +19,12 @@ shift
 shift
 shift
 
-RBS_BUILD_ID=$1
-RBS_JOB_ID=$2
-RBS_URL=$3
-RBS_ENV_LABEL=$4
-IMAGE_SERVICE_URL=$5
-RBS_USE=$6
+export RBS_BUILD_ID=$1
+export RBS_JOB_ID=$2
+export RBS_URL=$3
+export RBS_ENV_LABEL=$4
+export IMAGE_SERVICE_URL=$5
+export RBS_USE=$6
 
 python3 -m pip install -r ../jobs_launcher/install/requirements.txt
 
