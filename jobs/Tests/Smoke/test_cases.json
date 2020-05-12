@@ -689,7 +689,10 @@
         "script_info": [
             "Machine Learning"
         ], 
-        "scene": "Lamborginhi_Aventador.ma"
+        "scene": "Lamborginhi_Aventador.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_SM_047", 
