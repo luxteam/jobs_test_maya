@@ -768,7 +768,10 @@
         "script_info": [
             "ML in CPU+GPU mode"
         ], 
-        "scene": "normal_scene.ma"
+        "scene": "normal_scene.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }, 
     {
         "case": "MAYA_SM_052", 
