@@ -8,7 +8,7 @@ SPU=${6:-25}
 ITER=${7:-50}
 THRESHOLD=${8:-0.05}
 TOOL=${9:-2020}
-ENGINE=${10:-2}
+ENGINE=${10:-1}
 
 python3 -m pip install -r ../jobs_launcher/install/requirements.txt
 
