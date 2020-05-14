@@ -211,7 +211,7 @@
     },
     {
         "case": "MAYA_RS_QL_017",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 2)",

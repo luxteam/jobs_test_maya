@@ -22,6 +22,9 @@
         "script_info": [
             "Maya ML 2018 checking"
         ], 
-        "scene": "Lambo_Lebrov.ma"
+        "scene": "Lambo_Lebrov.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }
 ]
