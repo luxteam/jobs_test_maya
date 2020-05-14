@@ -17,7 +17,7 @@ if not defined THRESHOLD set THRESHOLD=0.05
 if not defined TOOL set TOOL=2020
 if not defined CIS_TOOLS set CIS_TOOLS "C:\TestResources"
 
-IF not EXIST "%CIS_TOOLS%\\..\\TestResources\\rpr_maya" (
+IF not EXIST "%CIS_TOOLS%\..\TestResources\rpr_maya" (
     ECHO "rpr_maya assets don't exists"
     Exit 1
 )
