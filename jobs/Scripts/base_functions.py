@@ -18,6 +18,7 @@ RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
 SPU = {SPU}
 THRESHOLD = {threshold}
+ENGINE = {engine}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
@@ -113,6 +114,8 @@ def prerender(case):
 			cmds.evalDeferred('cmds.quit(abort=True)')
 
 	mel.eval('athenaEnable -ae false')
+
+	cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', ENGINE)
 
 	cmds.optionVar(rm='RPR_DevicesSelected')
 	cmds.optionVar(iva=('RPR_DevicesSelected',
