@@ -935,7 +935,10 @@
         "script_info": [
             "ML denoiser IES and Physical"
         ], 
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }, 
     {
         "case": "MAYA_RS_DEN_044", 
