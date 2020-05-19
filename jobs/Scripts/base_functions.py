@@ -18,6 +18,7 @@ RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
 SPU = {SPU}
 THRESHOLD = {threshold}
+ENGINE = {engine}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
@@ -114,6 +115,8 @@ def prerender(case):
 
 	mel.eval('athenaEnable -ae false')
 
+	cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', ENGINE)
+
 	cmds.optionVar(rm='RPR_DevicesSelected')
 	cmds.optionVar(iva=('RPR_DevicesSelected',
 						(RENDER_DEVICE in ['gpu', 'dual'])))
@@ -187,7 +190,7 @@ def case_function(case):
 			logging("Can't set project in '" + projPath + "'")
 			cmds.evalDeferred('cmds.quit(abort=True)')
 
-	if case['status'] == 'fail' or case.get('number_of_tries', 1) == 3:	# 3- retries count
+	if case['status'] == 'fail' or case.get('number_of_tries', 1) == 2:	# 2- retries count
 		case['status'] = 'error'
 		func = 'save_report'
 	elif case['status'] == 'skipped':

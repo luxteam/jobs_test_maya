@@ -14,8 +14,9 @@
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU 50</argument>
-        <argument>--fail_count 20</argument>
+        <argument>--error_count 20</argument>
         <argument>--threshold {threshold}</argument>
+        <argument>--engine "{engine}"</argument>
     </execute>
     
     <execute command='python "{CWD}/Scripts/refactor_logs.py"' timeout="60">
@@ -29,10 +30,6 @@
     <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
-    </execute>
-
-    <execute command='python "{CommonDir}/scripts/HtmlTemplate/htmlBuilder.py"'>
-        <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 
 </job-manifest>
