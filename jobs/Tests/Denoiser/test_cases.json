@@ -17,7 +17,10 @@
             "ML denoiser", 
             "Color"
         ], 
-        "scene": "ComplexLighting.ma"
+        "scene": "ComplexLighting.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }, 
     {
         "case": "MAYA_RS_DEN_062", 
@@ -37,7 +40,10 @@
             "Color+AOV", 
             "ML denoiser"
         ], 
-        "scene": "ComplexLighting.ma"
+        "scene": "ComplexLighting.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }, 
     {
         "case": "MAYA_RS_DEN_063", 
@@ -98,7 +104,7 @@
     }, 
     {
         "case": "MAYA_RS_DEN_066", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
@@ -116,7 +122,7 @@
     }, 
     {
         "case": "MAYA_RS_DEN_067", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
@@ -134,7 +140,7 @@
     }, 
     {
         "case": "MAYA_RS_DEN_068", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
@@ -150,7 +156,7 @@
     }, 
     {
         "case": "MAYA_RS_DEN_069", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
@@ -166,7 +172,7 @@
     }, 
     {
         "case": "MAYA_RS_DEN_070", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
@@ -613,7 +619,10 @@
         "script_info": [
             "Machine Learning type"
         ], 
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }, 
     {
         "case": "MAYA_RS_DEN_026", 
@@ -628,11 +637,14 @@
             "Denoiser ML Metal Material", 
             "Color"
         ], 
-        "scene": "DenoiserMetal.ma"
+        "scene": "DenoiserMetal.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }, 
     {
         "case": "MAYA_RS_DEN_027", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
@@ -643,7 +655,10 @@
             "Denoiser ML Metal Material", 
             "Color+AOV"
         ], 
-        "scene": "DenoiserMetal.ma"
+        "scene": "DenoiserMetal.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }, 
     {
         "case": "MAYA_RS_DEN_028", 
@@ -920,7 +935,10 @@
         "script_info": [
             "ML denoiser IES and Physical"
         ], 
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_on": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }, 
     {
         "case": "MAYA_RS_DEN_044", 
