@@ -19,6 +19,7 @@ shift
 shift
 shift
 shift
+shift
 
 export RBS_BUILD_ID=$1
 export RBS_JOB_ID=$2
