@@ -28,6 +28,11 @@ export RBS_ENV_LABEL=$4
 export IMAGE_SERVICE_URL=$5
 export RBS_USE=$6
 
+if ! [ -d "$CIS_TOOLS/../TestResources/rpr_maya_autotests" ]; then
+    echo "rpr_maya_autotests assets don't exists"
+    exit 1
+fi
+
 python3 -m pip install -r ../jobs_launcher/install/requirements.txt
 
-python3 ../jobs_launcher/executeTests.py --file_filter $FILE_FILTER --test_filter $TESTS_FILTER --tests_root ../jobs --work_root ../Work/Results --work_dir Maya --cmd_variables Tool "maya${TOOL}" RenderDevice "$RENDER_DEVICE" ResPath "$CIS_TOOLS/../TestResources/MayaAssets" PassLimit $ITER rx $RX ry $RY SPU $SPU threshold $THRESHOLD engine $ENGINE
+python3 ../jobs_launcher/executeTests.py --file_filter $FILE_FILTER --test_filter $TESTS_FILTER --tests_root ../jobs --work_root ../Work/Results --work_dir Maya --cmd_variables Tool "maya${TOOL}" RenderDevice "$RENDER_DEVICE" ResPath "$CIS_TOOLS/../TestResources/rpr_maya_autotests" PassLimit $ITER rx $RX ry $RY SPU $SPU threshold $THRESHOLD engine $ENGINE

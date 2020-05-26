@@ -1,15 +1,15 @@
 set PATH=c:\python35\;c:\python35\scripts\;%PATH%
-set RENDER_DEVICE=%~1
-set FILE_FILTER=%~2
-set TESTS_FILTER="%~3"
-set RX=%~4
-set RY=%~5
-set SPU=%~6
-set ITER=%~7
-set THRESHOLD=%~8
-set TOOL=%~9
+set RENDER_DEVICE=%1
+set FILE_FILTER=%2
+set TESTS_FILTER="%3"
+set RX=%4
+set RY=%5
+set SPU=%6
+set ITER=%7
+set THRESHOLD=%8
+set TOOL=%9
 shift
-set ENGINE=%~9
+set ENGINE=%9
 
 shift
 shift
@@ -35,7 +35,13 @@ if not defined ITER set ITER=50
 if not defined THRESHOLD set THRESHOLD=0.05
 if not defined TOOL set TOOL=2020
 if not defined ENGINE set ENGINE=1
+if not defined CIS_TOOLS set CIS_TOOLS "C:\JN\cis_tools"
+
+IF not EXIST "%CIS_TOOLS%\..\TestResources\rpr_maya_autotests" (
+    ECHO "rpr_maya_autotests assets don't exists"
+    Exit 1
+)
 
 python -m pip install -r ..\jobs_launcher\install\requirements.txt
 
-python ..\jobs_launcher\executeTests.py --test_filter %TESTS_FILTER% --file_filter %FILE_FILTER% --tests_root ..\jobs --work_root ..\Work\Results --work_dir Maya --cmd_variables Tool "C:\Program Files\Autodesk\Maya%TOOL%\bin\maya.exe" RenderDevice %RENDER_DEVICE% ResPath "C:\TestResources\MayaAssets" PassLimit %ITER% rx %RX% ry %RY% SPU %SPU% threshold %THRESHOLD% engine %ENGINE%
+python ..\jobs_launcher\executeTests.py --test_filter %TESTS_FILTER% --file_filter %FILE_FILTER% --tests_root ..\jobs --work_root ..\Work\Results --work_dir Maya --cmd_variables Tool "C:\Program Files\Autodesk\Maya%TOOL%\bin\maya.exe" RenderDevice %RENDER_DEVICE% ResPath "%CIS_TOOLS%\..\TestResources\rpr_maya_autotests" PassLimit %ITER% rx %RX% ry %RY% SPU %SPU% threshold %THRESHOLD% engine %ENGINE%
