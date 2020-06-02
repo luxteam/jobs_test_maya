@@ -1,0 +1,134 @@
+[
+    {
+        "case": "MAYA_MAT_VDB_001", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "bunny.vdb"
+        ],
+        "scene": "bunny.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_002", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "bunny_cloud.vdb"
+        ],
+        "scene": "bunny_cloud.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_003", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "explosion.vdb"
+        ],
+        "scene": "explosion.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_004", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "fire.vdb"
+        ],
+        "scene": "fire.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_005", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "smoke1.vdb"
+        ],
+        "scene": "smoke1.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_006", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "smoke2.vdb"
+        ],
+        "scene": "smoke2.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_007", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "space.vdb"
+        ],
+        "scene": "space.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_008", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "sphere.vdb"
+        ],
+        "scene": "sphere.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_009", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "torus.vdb"
+        ],
+        "scene": "torus.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_010", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "torus_knot.vdb"
+        ],
+        "scene": "torus_knot.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_011", 
+        "status": "active", 
+        "functions": [
+            
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "venusstatue.vdb"
+        ],
+        "scene": "venusstatue.ma"
+    }
+]
