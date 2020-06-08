@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_MAT_VDB_001", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.densityMultiplier', 300)",
             "rpr_render(case)"
@@ -13,7 +13,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_002", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.densityMultiplier', 3000)",
             "rpr_render(case)"
@@ -25,7 +25,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_003", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.emissionSelectedGrid', 'density', type='string')",
@@ -39,7 +39,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_004", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.emissionSelectedGrid', 'density', type='string')",
@@ -55,7 +55,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_005", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.albedoEnabled', 1)",
             "cmds.setAttr('vdbObj.albedoSelectedGrid', 'density', type='string')",
@@ -69,7 +69,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_006", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.albedoEnabled', 1)",
@@ -86,7 +86,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_007", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.albedoEnabled', 1)",
@@ -109,7 +109,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_008", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.emissionSelectedGrid', 'temperature', type='string')",
@@ -123,7 +123,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_009", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.emissionSelectedGrid', 'temperature', type='string')",
@@ -138,7 +138,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_010", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.emissionSelectedGrid', 'temperature', type='string')",
@@ -152,7 +152,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_011", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.emissionSelectedGrid', 'density', type='string')",
@@ -166,7 +166,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_012", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.densityMultiplier', 6000)",
             "rpr_render(case)"
@@ -178,7 +178,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_013", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.densityMultiplier', 6000)",
             "rpr_render(case)"
@@ -201,7 +201,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_015", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.albedoEnabled', 1)",
             "cmds.setAttr('vdbObj.albedoSelectedGrid', 'density', type='string')",
@@ -215,7 +215,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_016", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.albedoEnabled', 1)",
             "cmds.setAttr('vdbObj.albedoSelectedGrid', 'density', type='string')",
@@ -229,7 +229,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_017", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.albedoEnabled', 1)",
             "cmds.setAttr('vdbObj.albedoSelectedGrid', 'density', type='string')",
@@ -243,7 +243,7 @@
     },
     {
         "case": "MAYA_MAT_VDB_018", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('vdbObj.albedoEnabled', 1)",
             "cmds.setAttr('vdb.scaleX', 8)",
