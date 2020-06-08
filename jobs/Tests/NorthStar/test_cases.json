@@ -1002,7 +1002,8 @@
         ],
         "scene": "Ray_epsilon.ma",
         "skip_on":[
-            ["AMD Radeon RX Vega 56 (Metal)"]
+            ["AMD Radeon RX Vega 56 (Metal)"],
+            ["GeForce GTX 1080 Ti"]
         ]
     },
     {
