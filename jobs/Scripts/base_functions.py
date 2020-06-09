@@ -110,7 +110,7 @@ def prerender(case):
 			validateFiles()
 			enable_rpr()
 		except Exception as e:
-			logging("Can't load scene because of {}. Exit Maya".format(str(e)))
+			logging("Can't load scene because of {{}}. Exit Maya".format(str(e)))
 			cmds.quit(abort=True)
 
 	mel.eval('athenaEnable -ae false')
