@@ -110,8 +110,7 @@ def prerender(case):
 			validateFiles()
 			enable_rpr()
 		except Exception as e:
-			logging("Can't load scene because of {{}}. Exit Maya".format(str(e)))
-			cmds.quit(abort=True)
+			logging("Can't prepare for render scene because of {{}}".format(str(e)))
 
 	mel.eval('athenaEnable -ae false')
 
@@ -188,7 +187,6 @@ def case_function(case):
 			mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
 		except:
 			logging("Can't set project in '" + projPath + "'")
-			cmds.quit(abort=True)
 
 	if case['status'] == 'fail' or case.get('number_of_tries', 1) == 2:	# 2- retries count
 		case['status'] = 'error'
