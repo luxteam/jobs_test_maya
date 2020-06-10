@@ -114,7 +114,7 @@
         "script_info": [
             "Max Glossy Refraction - 2"
         ],
-        "scene": "Glossy_ray_depth.ma"
+        "scene": "Refraction_ray_depth.ma"
     },
     {
         "case": "MAYA_RS_QL_010",
@@ -127,7 +127,7 @@
         "script_info": [
             "Max Glossy Refraction - 50"
         ],
-        "scene": "Glossy_ray_depth.ma"
+        "scene": "Refraction_ray_depth.ma"
     },
     {
         "case": "MAYA_RS_QL_011",
