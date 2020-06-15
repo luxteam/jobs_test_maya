@@ -39,8 +39,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp2 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.diffuseColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.diffuseWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.diffuseWeight')"
         ],
         "script_info": [
             "Color - diffuse_color.png",
@@ -72,8 +71,7 @@
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.diffuseColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.diffuseRoughness')",
             "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.diffuseNormal')",
-            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.backscatteringColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.backscatteringColor')"
         ],
         "script_info": [
             "Color - diffuse_color.tiff",
@@ -104,8 +102,7 @@
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.diffuseWeight')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.diffuseRoughness')",
             "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.diffuseNormal')",
-            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.backscatteringColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.backscatteringColor')"
         ],
         "script_info": [
             "Weight - diffuse_weight.exr",
@@ -167,8 +164,7 @@
             "file_tmp2 = setAttribute('reflectRoughness', 'outAlpha', 'sourceimages/reflection_roughness.tiff')",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')"
         ],
         "script_info": [
             "Weight - reflection_weight.tiff",
@@ -201,8 +197,7 @@
             "cmds.setAttr('R_UberMat.reflectMetalness', 1)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.reflectColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')"
         ],
         "script_info": [
             "Color - reflection_color.jpeg",
@@ -230,8 +225,7 @@
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.reflectColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectWeight')",
             "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.reflectRoughness')",
-            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.reflectNormal')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.reflectNormal')"
         ],
         "script_info": [
             "Color - reflection_color.jpeg",
@@ -255,8 +249,7 @@
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.reflectColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.reflectRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.reflectRoughness')"
         ],
         "script_info": [
             "Color - reflection_color.png",
@@ -279,8 +272,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp2 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.reflectColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectWeight')"
         ],
         "script_info": [
             "Color - reflection_color.png",
@@ -308,8 +300,7 @@
             "cmds.setAttr(file_tmp3 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.reflectColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.reflectNormal')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.reflectNormal')"
         ],
         "script_info": [
             "Color - reflection_color.exr",
@@ -330,8 +321,7 @@
             "cmds.setAttr('R_UberMat.reflectAnisotropyRotation', 1)",
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.reflectColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.reflectColor')"
         ],
         "script_info": [
             "Color - reflection_color.exr",
@@ -349,8 +339,7 @@
             "file_tmp2 = setAttribute('reflectWeight', 'outAlpha', 'sourceimages/reflection_weight.jpeg')",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.reflectColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectWeight')"
         ],
         "script_info": [
             "Color - reflection_color.tiff",
@@ -372,8 +361,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outColor', 'R_UberMat.reflectNormal')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outColor', 'R_UberMat.reflectNormal')"
         ],
         "script_info": [
             "Weight - reflection_weight.exr",
@@ -396,8 +384,7 @@
             "cmds.setAttr('R_UberMat.reflectMetalness', 0)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')"
         ],
         "script_info": [
             "Weight - reflection_weight.tiff",
@@ -419,8 +406,7 @@
             "cmds.setAttr('R_UberMat.reflectAnisotropyRotation', 1)",
             "cmds.setAttr('R_UberMat.reflectIOR', 10)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.reflectWeight')"
         ],
         "script_info": [
             "Weight - reflection_weight.jpeg",
@@ -441,8 +427,7 @@
             "cmds.setAttr('R_UberMat.reflectAnisotropyRotation', -1)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')"
         ],
         "script_info": [
             "Weight - reflection_weight.png",
@@ -463,8 +448,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.reflectWeight')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.reflectRoughness')"
         ],
         "script_info": [
             "Weight - reflection_weight.exr",
@@ -524,8 +508,7 @@
             "cmds.setAttr(file_tmp3 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.refractColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.refractRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.refractRoughness')"
         ],
         "script_info": [
             "Refraction",
@@ -544,8 +527,7 @@
             "file_tmp1 = setAttribute('refractColor', 'outColor', 'sourceimages/refraction_color.jpeg')",
             "cmds.setAttr('R_UberMat.refractLinkToReflect', 1)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.refractColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.refractColor')"
         ],
         "script_info": [
             "Color - refraction_color.jpeg",
@@ -568,8 +550,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp2 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.refractColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractWeight')"
         ],
         "script_info": [
             "Color - refraction_color.png",
@@ -592,8 +573,7 @@
             "cmds.setAttr('R_UberMat.reflectIOR', 10)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.refractColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractRoughness')"
         ],
         "script_info": [
             "Color - refraction_color.png",
@@ -620,8 +600,7 @@
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.refractColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.refractRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.refractRoughness')"
         ],
         "script_info": [
             "Color - refraction_color.exr",
@@ -644,8 +623,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.refractColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractWeight')"
         ],
         "script_info": [
             "Color - refraction_color.exr",
@@ -671,8 +649,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp2 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.refractColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractRoughness')"
         ],
         "script_info": [
             "Color - refraction_color.tiff",
@@ -694,8 +671,7 @@
             "file_tmp2 = setAttribute('refractWeight', 'outAlpha', 'sourceimages/refraction_weight.jpeg')",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.refractColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractWeight')"
         ],
         "script_info": [
             "Color - refraction_color.tiff",
@@ -715,8 +691,7 @@
             "cmds.setAttr('R_UberMat.refractAbsorptionDistance', 0)",
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.refractRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.refractRoughness')"
         ],
         "script_info": [
             "Roughness - refraction_roughness.png",
@@ -735,8 +710,7 @@
             "cmds.setAttr('R_UberMat.refractAbsorptionDistance', 5)",
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.refractRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.refractRoughness')"
         ],
         "script_info": [
             "Roughness - refraction_roughness.exr",
@@ -758,8 +732,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.refractWeight')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.refractRoughness')"
         ],
         "script_info": [
             "Weight - refraction_weight.exr",
@@ -796,8 +769,7 @@
             "cmds.setAttr('R_UberMat.refractRoughness', 0)",
             "cmds.setAttr('R_UberMat.refractLinkToReflect', 1)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.refractWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.refractWeight')"
         ],
         "script_info": [
             "Weight - refraction_weight.jpeg",
@@ -820,8 +792,7 @@
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.coatColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.coatWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatRoughness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatRoughness')"
         ],
         "script_info": [
             "Coating",
@@ -851,8 +822,7 @@
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.coatColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.coatWeight')",
             "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatRoughness')",
-            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.coatTransmissionColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.coatTransmissionColor')"
         ],
         "script_info": [
             "Color - coating_color.jpeg",
@@ -878,8 +848,7 @@
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.coatColor')",
             "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatRoughness')",
-            "cmds.disconnectAttr(str(file_tmp4) + '.outAlpha', 'R_UberMat.coatThickness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp4) + '.outAlpha', 'R_UberMat.coatThickness')"
         ],
         "script_info": [
             "Color - coating_color.png",
@@ -903,8 +872,7 @@
             "cmds.setAttr('R_UberMat.coatThickness', 0)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.coatColor')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.coatTransmissionColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.coatTransmissionColor')"
         ],
         "script_info": [
             "Color - coating_color.png",
@@ -934,8 +902,7 @@
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.coatColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.coatWeight')",
             "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatRoughness')",
-            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.coatTransmissionColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.coatTransmissionColor')"
         ],
         "script_info": [
             "Color - coating_color.exr",
@@ -964,8 +931,7 @@
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.coatColor')",
             "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.coatNormal')",
-            "cmds.disconnectAttr(str(file_tmp4) + '.outAlpha', 'R_UberMat.coatThickness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp4) + '.outAlpha', 'R_UberMat.coatThickness')"
         ],
         "script_info": [
             "Color - coating_color.exr",
@@ -993,8 +959,7 @@
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.coatColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.coatWeight')",
             "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.coatNormal')",
-            "cmds.disconnectAttr(str(file_tmp5) + '.outColor', 'R_UberMat.coatTransmissionColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp5) + '.outColor', 'R_UberMat.coatTransmissionColor')"
         ],
         "script_info": [
             "Color - coating_color.tiff",
@@ -1018,8 +983,7 @@
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.coatColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.coatRoughness')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatThickness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatThickness')"
         ],
         "script_info": [
             "Color - coating_color.tiff",
@@ -1043,8 +1007,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp3 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.coatRoughness')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.coatNormal')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.coatNormal')"
         ],
         "script_info": [
             "Weight - 0",
@@ -1066,8 +1029,7 @@
             "cmds.setAttr('R_UberMat.coatTransmissionColor', 0.4, 0.4, 0.4, type='double3')",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.coatWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatThickness')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatThickness')"
         ],
         "script_info": [
             "Weight - coating_weight.jpeg",
@@ -1094,8 +1056,7 @@
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.coatRoughness')",
             "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.coatNormal')",
             "cmds.disconnectAttr(str(file_tmp4) + '.outAlpha', 'R_UberMat.coatThickness')",
-            "cmds.disconnectAttr(str(file_tmp5) + '.outColor', 'R_UberMat.coatTransmissionColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp5) + '.outColor', 'R_UberMat.coatTransmissionColor')"
         ],
         "script_info": [
             "Weight - coating_weight.tiff",
@@ -1124,8 +1085,7 @@
             "cmds.setAttr(file_tmp3 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.coatRoughness')",
             "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.coatThickness')",
-            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.coatTransmissionColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp4) + '.outColor', 'R_UberMat.coatTransmissionColor')"
         ],
         "script_info": [
             "Roughness - coating_roughness.exr",
@@ -1150,8 +1110,7 @@
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.coatWeight')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.coatThickness')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.coatTransmissionColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outColor', 'R_UberMat.coatTransmissionColor')"
         ],
         "script_info": [
             "Weight - coating_weight.jpeg",
@@ -1173,8 +1132,7 @@
             "cmds.setAttr('R_UberMat.emissiveIntensity', 0)",
             "cmds.setAttr('R_UberMat.emissiveDoubleSided', 1)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')"
         ],
         "script_info": [
             "Emissive ",
@@ -1197,8 +1155,7 @@
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.emissiveIntensity')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.emissiveIntensity')"
         ],
         "script_info": [
             "Color - emissive_color.jpeg",
@@ -1219,8 +1176,7 @@
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.emissiveIntensity')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.emissiveIntensity')"
         ],
         "script_info": [
             "Color - emissive_color.jpeg",
@@ -1240,8 +1196,7 @@
             "cmds.setAttr('R_UberMat.emissiveWeight', 0.5)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveIntensity')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveIntensity')"
         ],
         "script_info": [
             "Color - emissive_color.png",
@@ -1264,8 +1219,7 @@
             "cmds.setAttr(file_tmp3 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.emissiveIntensity')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.emissiveIntensity')"
         ],
         "script_info": [
             "Color - emissive_color.png",
@@ -1285,8 +1239,7 @@
             "cmds.setAttr('R_UberMat.emissiveDoubleSided', 1)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')"
         ],
         "script_info": [
             "Color - emissive_color.png",
@@ -1326,8 +1279,7 @@
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.emissiveIntensity')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.emissiveIntensity')"
         ],
         "script_info": [
             "Color - emissive_color.exr",
@@ -1348,8 +1300,7 @@
             "cmds.setAttr('R_UberMat.emissiveIntensity', 10)",
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')"
         ],
         "script_info": [
             "Color - emissive_color.exr",
@@ -1370,8 +1321,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveIntensity')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveIntensity')"
         ],
         "script_info": [
             "Color - emissive_color.exr",
@@ -1389,8 +1339,7 @@
             "file_tmp1 = setAttribute('emissiveIntensity', 'outAlpha', 'sourceimages/emissive_intensity.png')",
             "cmds.setAttr('R_UberMat.emissiveWeight', 0.5)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.emissiveIntensity')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.emissiveIntensity')"
         ],
         "script_info": [
             "Weight - 0.5",
@@ -1408,8 +1357,7 @@
             "file_tmp2 = setAttribute('emissiveWeight', 'outAlpha', 'sourceimages/emissive_weight.png')",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')"
         ],
         "script_info": [
             "Color - emissive_color.tiff",
@@ -1428,8 +1376,7 @@
             "cmds.setAttr('R_UberMat.emissiveIntensity', 10)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveWeight')"
         ],
         "script_info": [
             "Color - emissive_color.tiff",
@@ -1452,8 +1399,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp2 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.emissiveColor')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveIntensity')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveIntensity')"
         ],
         "script_info": [
             "Color - emissive_color.tiff",
@@ -1473,8 +1419,7 @@
             "file_tmp2 = setAttribute('emissiveIntensity', 'outAlpha', 'sourceimages/emissive_intensity.tiff')",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.emissiveWeight')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveIntensity')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.emissiveIntensity')"
         ],
         "script_info": [
             "Weight - emissive_weight.jpeg",
@@ -1516,8 +1461,7 @@
             "cmds.setAttr('R_UberMat.sssUseDiffuseColor', 1)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.subsurfaceRadius')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')"
         ],
         "script_info": [
             "Weight - subsurfacescattering_weight.jpeg",
@@ -1539,8 +1483,7 @@
             "cmds.setAttr('R_UberMat.subsurfaceRadius2', 3)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.volumeScatter')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')"
         ],
         "script_info": [
             "Weight - subsurfacescattering_weight.jpeg",
@@ -1561,8 +1504,7 @@
             "cmds.setAttr('R_UberMat.multipleScattering', 0)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.subsurfaceRadius')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')"
         ],
         "script_info": [
             "Weight - subsurfacescattering_weight.png",
@@ -1591,8 +1533,7 @@
             "cmds.setAttr(file_tmp3 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.volumeScatter')",
             "cmds.disconnectAttr(str(file_tmp2) + '.outColor', 'R_UberMat.subsurfaceRadius')",
-            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.sssWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp3) + '.outAlpha', 'R_UberMat.sssWeight')"
         ],
         "script_info": [
             "Weight - subsurfacescattering_weight.exr",
@@ -1616,8 +1557,7 @@
             "rpr_render(case)",
             "cmds.setAttr(file_tmp2 + '.alphaIsLuminance', 0)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.subsurfaceRadius')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')"
         ],
         "script_info": [
             "Weight - subsurfacescattering_weight.exr",
@@ -1639,8 +1579,7 @@
             "cmds.setAttr('R_UberMat.multipleScattering', 0)",
             "rpr_render(case)",
             "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.subsurfaceRadius')",
-            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp2) + '.outAlpha', 'R_UberMat.sssWeight')"
         ],
         "script_info": [
             "Weight - subsurfacescattering_weight.tiff",
@@ -1662,8 +1601,7 @@
             "cmds.setAttr('R_UberMat.subsurfaceRadius1', 1)",
             "cmds.setAttr('R_UberMat.subsurfaceRadius2', 1)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.sssWeight')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.sssWeight')"
         ],
         "script_info": [
             "Weight - subsurfacescattering_weight.tiff",
@@ -1683,8 +1621,7 @@
             "cmds.setAttr('R_UberMat.sssUseDiffuseColor', 1)",
             "cmds.setAttr('R_UberMat.scatteringDirection', -1)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.subsurfaceRadius')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.subsurfaceRadius')"
         ],
         "script_info": [
             "Weight - 0",
@@ -1704,8 +1641,7 @@
             "cmds.setAttr('R_UberMat.sssWeight', 0)",
             "cmds.setAttr('R_UberMat.multipleScattering', 0)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.volumeScatter')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.volumeScatter')"
         ],
         "script_info": [
             "Weight - 0",
@@ -1726,8 +1662,7 @@
             "cmds.setAttr('R_UberMat.sssUseDiffuseColor', 1)",
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.subsurfaceRadius')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.subsurfaceRadius')"
         ],
         "script_info": [
             "Weight - 0.5",
@@ -1780,8 +1715,7 @@
             "cmds.setAttr('R_UberMat.transparencyEnable', 1)",
             "file_tmp1 = setAttribute('transparencyLevel', 'outAlpha', 'sourceimages/transparency_transparency.jpeg')",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.transparencyLevel')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.transparencyLevel')"
         ],
         "script_info": [
             "Use Transparency - Yes",
@@ -1797,8 +1731,7 @@
             "cmds.setAttr('R_UberMat.transparencyEnable', 1)",
             "file_tmp1 = setAttribute('transparencyLevel', 'outAlpha', 'sourceimages/transparency_transparency.png')",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.transparencyLevel')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outAlpha', 'R_UberMat.transparencyLevel')"
         ],
         "script_info": [
             "Use Transparency - Yes",
@@ -1980,8 +1913,7 @@
             "cmds.setAttr('R_UberMat.displacementCreaseWeight', 10)",
             "cmds.setAttr('R_UberMat.displacementBoundary', 0)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.jpeg",
@@ -2003,8 +1935,7 @@
             "cmds.setAttr('R_UberMat.displacementSubdiv', 1)",
             "cmds.setAttr('R_UberMat.displacementCreaseWeight', 50)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.jpeg",
@@ -2025,8 +1956,7 @@
             "cmds.setAttr('R_UberMat.displacementSubdiv', 3)",
             "cmds.setAttr('R_UberMat.displacementCreaseWeight', 100)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.jpeg",
@@ -2047,8 +1977,7 @@
             "cmds.setAttr('R_UberMat.displacementMax', 10)",
             "cmds.setAttr('R_UberMat.displacementSubdiv', 2)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.jpeg",
@@ -2069,8 +1998,7 @@
             "cmds.setAttr('R_UberMat.displacementMax', 1)",
             "cmds.setAttr('R_UberMat.displacementSubdiv', 4)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.png",
@@ -2090,8 +2018,7 @@
             "cmds.setAttr('R_UberMat.displacementMax', 10)",
             "cmds.setAttr('R_UberMat.displacementCreaseWeight', 10)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.png",
@@ -2112,8 +2039,7 @@
             "cmds.setAttr('R_UberMat.displacementSubdiv', 1)",
             "cmds.setAttr('R_UberMat.displacementCreaseWeight', 100)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.png",
@@ -2137,8 +2063,7 @@
             "cmds.setAttr('R_UberMat.displacementCreaseWeight', 10)",
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.exr",
@@ -2162,8 +2087,7 @@
             "cmds.setAttr('R_UberMat.displacementCreaseWeight', 50)",
             "rpr_render(case)",
             "cmds.setAttr(file_tmp1 + '.alphaIsLuminance', 0)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.exr",
@@ -2184,8 +2108,7 @@
             "cmds.setAttr('R_UberMat.displacementMax', 1)",
             "cmds.setAttr('R_UberMat.displacementBoundary', 0)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.tiff",
@@ -2206,8 +2129,7 @@
             "cmds.setAttr('R_UberMat.displacementMax', 10)",
             "cmds.setAttr('R_UberMat.displacementSubdiv', 1)",
             "rpr_render(case)",
-            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')",
-            "resetAttributes()"
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
         ],
         "script_info": [
             "Displacement Map - displacement_displacementmap.tiff",
