@@ -18,10 +18,6 @@
         <argument>--threshold {threshold}</argument>
         <argument>--engine "{engine}"</argument>
     </execute>
-    
-    <execute command='python "{CWD}/Scripts/refactor_logs.py"' timeout="60">
-        <argument>--output "{OutputDir}"</argument>
-    </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
@@ -30,6 +26,10 @@
     <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
+    </execute>
+
+    <execute command='python "{CWD}/Scripts/refactor_logs.py"' timeout="60">
+        <argument>--output "{OutputDir}"</argument>
     </execute>
 
 </job-manifest>
