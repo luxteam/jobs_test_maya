@@ -291,7 +291,7 @@
     }, 
     {
         "case": "MAYA_SM_020", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)", 
             "rpr_render(case)",             
