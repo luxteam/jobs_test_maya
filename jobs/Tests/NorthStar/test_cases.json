@@ -780,7 +780,7 @@
     },
     {
         "case": "MAYA_RS_NRT_045",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.areaWidth', 1)",
