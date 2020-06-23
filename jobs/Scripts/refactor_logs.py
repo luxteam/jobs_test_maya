@@ -32,8 +32,8 @@ def performance_count(work_dir):
 			event = json.load(json_file)
 		if old_event['name'] == event['name'] and old_event['start'] and not event['start']:
 			time_diff = datetime.datetime.strptime(
-                    event['time'], '%d/%m/%Y %H:%M:%S') - datetime.datetime.strptime(
-                    old_event['time'], '%d/%m/%Y %H:%M:%S')
+                    event['time'], '%d/%m/%Y %H:%M:%S.%f') - datetime.datetime.strptime(
+                    old_event['time'], '%d/%m/%Y %H:%M:%S.%f')
 			time_diffs.append({'name': event['name'], 'time': time_diff.total_seconds()})
 		old_event = event.copy()
 	return time_diffs
@@ -91,7 +91,7 @@ Case\t\tStatus\tTime\tTries
 
 		f.write(logs)
 
-	with open(os.path.realpath(os.path.join(work_dir, '..', work_dir.split('\\')[-1] + '_performance.json')), 'w') as f:
+	with open(os.path.realpath(os.path.join(work_dir, '..', work_dir.replace('\\', '/').split('/')[-1] + '_performance.json')), 'w') as f:
 		f.write(json.dumps(performance_count(work_dir)))
 
 

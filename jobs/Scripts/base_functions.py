@@ -26,7 +26,7 @@ LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 def event(name, start):
 	os.chdir('events')
 	with open(path.join(str(glob.glob('./*.json').__len__() + 1) + '.json'), 'w') as f:
-		f.write(json.dumps({{'name': name, 'time': datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S'), 'start': start}}, indent=4))
+		f.write(json.dumps({{'name': name, 'time': datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S.%f'), 'start': start}}, indent=4))
 	os.chdir('..')
 
 
