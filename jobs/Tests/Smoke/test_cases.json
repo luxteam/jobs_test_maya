@@ -23,6 +23,7 @@
         "case": "MAYA_SM_003", 
         "status": "active", 
         "functions": [
+            "if not cmds.pluginInfo('fbxmaya', query=True, loaded=True): cmds.loadPlugin('fbxmaya', quiet=True)",
             "mel.eval('FBXImport -f (\"' + RES_PATH + '\" + \"/Smoke/default/park_bench1.fbx\")')", 
             "rpr_render(case)", 
             "cmds.delete('Default')"

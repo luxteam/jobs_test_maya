@@ -89,9 +89,6 @@ def enable_rpr(case):
 		cmds.loadPlugin('RadeonProRender', quiet=True)
 		event('Load rpr', False, case)
 		logging('Load rpr')
-	if not cmds.pluginInfo('fbxmaya', query=True, loaded=True):
-		cmds.loadPlugin('fbxmaya', quiet=True)
-		logging('Load fbx')
 
 
 def rpr_render(case):

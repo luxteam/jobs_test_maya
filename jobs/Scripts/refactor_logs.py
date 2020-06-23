@@ -2,7 +2,7 @@ import argparse
 import os
 import json
 import datetime
-from pathlib import Path
+import glob
 
 
 errors = [
@@ -27,7 +27,9 @@ def performance_count(work_dir):
 	old_event = {'name': 'init', 'time': '', 'start': True}
 	time_diffs = []
 	work_dir = os.path.join(work_dir, 'events')
-	for f in sorted(Path(work_dir).iterdir(), key=os.path.getmtime):
+	files = glob.glob(os.path.join(work_dir, '*.json'))
+	files.sort(key=lambda x: os.path.getmtime(x))
+	for f in files:
 		with open(f, 'r') as json_file:
 			event = json.load(json_file)
 		if old_event['name'] == event['name'] and old_event['start'] and not event['start']:
