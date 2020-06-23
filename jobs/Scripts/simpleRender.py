@@ -18,6 +18,7 @@ sys.path.append(os.path.abspath(os.path.join(
 from jobs_launcher.core.kill_process import kill_process
 from jobs_launcher.core.system_info import get_gpu
 import jobs_launcher.core.config as core_config
+import jobs_launcher.core.performance_counter as perf_count
 
 ROOT_DIR = os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir))
@@ -124,6 +125,7 @@ def launchMaya(cmdScriptPath, work_dir):
 	system_pl = platform.system()
 	core_config.main_logger.info('Launch script on Maya ({})'.format(cmdScriptPath))
 	os.chdir(work_dir)
+	perf_count.event_record(args.output, 'Open tool', True)
 	p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 
 
@@ -190,6 +192,8 @@ def launchMaya(cmdScriptPath, work_dir):
 			rc = 0
 			break
 
+	perf_count.event_record(args.output, 'Close tool', False)
+
 	if args.testType in ['Athena']:
 		subprocess.call([sys.executable, os.path.realpath(os.path.join(
 			os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
@@ -197,6 +201,7 @@ def launchMaya(cmdScriptPath, work_dir):
 
 
 def main(args):
+	perf_count.event_record(args.output, 'Prepare tests', True)
 	if args.testType in ['Support_2019', 'Support_2018']:
 		args.tool = re.sub('[0-9]{4}', args.testType[-4:], args.tool)
 
@@ -314,6 +319,8 @@ def main(args):
 		with open(cmdScriptPath, 'w') as file:
 			file.write(cmdRun)
 		os.system('chmod +x {}'.format(cmdScriptPath))
+
+	perf_count.event_record(args.output, 'Prepare tests', False)
 
 	rc = launchMaya(cmdScriptPath, args.output)
 

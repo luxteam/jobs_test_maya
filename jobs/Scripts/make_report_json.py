@@ -2,12 +2,18 @@ import argparse
 import os
 import json
 
+import sys
+sys.path.append(os.path.abspath(os.path.join(
+	os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
+import jobs_launcher.core.performance_counter as perf_count
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--work_dir', required=True)
 
 args = parser.parse_args()
 directory = args.work_dir
+perf_count.event_record(directory, 'Make report json', True)
 
 files = os.listdir(directory)
 json_files = list(filter(lambda x: x.endswith('RPR.json'), files))
@@ -38,7 +44,7 @@ for file in range(len(json_files)):
         result_json += text
 
     else:
-        f = open(os.path.join(directory, json_files[file]), 'r')    
+        f = open(os.path.join(directory, json_files[file]), 'r')
         text = f.read()
         f.close()
         text = text[2:]
@@ -48,3 +54,5 @@ for file in range(len(json_files)):
 
 with open(os.path.join(directory, "report.json"), 'w') as file:
     file.write(result_json)
+
+perf_count.event_record(directory, 'Make report json', False)
