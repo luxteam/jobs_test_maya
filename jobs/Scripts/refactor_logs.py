@@ -34,7 +34,13 @@ def performance_count(work_dir):
 			time_diff = datetime.datetime.strptime(
                     event['time'], '%d/%m/%Y %H:%M:%S.%f') - datetime.datetime.strptime(
                     old_event['time'], '%d/%m/%Y %H:%M:%S.%f')
-			time_diffs.append({'name': event['name'], 'time': time_diff.total_seconds()})
+			event_case = old_event.get('case', '')
+			if not event_case:
+				event_case = event.get('case', '')
+			if event_case:
+				time_diffs.append({'name': event['name'], 'time': time_diff.total_seconds(), 'case': event_case})
+			else:
+				time_diffs.append({'name': event['name'], 'time': time_diff.total_seconds()})
 		old_event = event.copy()
 	return time_diffs
 

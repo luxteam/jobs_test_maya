@@ -23,10 +23,10 @@ ENGINE = {engine}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
-def event(name, start):
+def event(name, start, case):
 	os.chdir('events')
 	with open(path.join(str(glob.glob('./*.json').__len__() + 1) + '.json'), 'w') as f:
-		f.write(json.dumps({{'name': name, 'time': datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S.%f'), 'start': start}}, indent=4))
+		f.write(json.dumps({{'name': name, 'time': datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S.%f'), 'start': start, 'case': case}}, indent=4))
 	os.chdir('..')
 
 
@@ -83,11 +83,11 @@ def validateFiles():
 			cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
 
 
-def enable_rpr():
+def enable_rpr(case):
 	if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
-		event('Load rpr', True)
+		event('Load rpr', True, case)
 		cmds.loadPlugin('RadeonProRender', quiet=True)
-		event('Load rpr', False)
+		event('Load rpr', False, case)
 		logging('Load rpr')
 	if not cmds.pluginInfo('fbxmaya', query=True, loaded=True):
 		cmds.loadPlugin('fbxmaya', quiet=True)
@@ -95,7 +95,7 @@ def enable_rpr():
 
 
 def rpr_render(case):
-	event('Prerender', False)
+	event('Prerender', False, case['case'])
 	logging('Render image')
 
 	mel.eval('fireRender -waitForItTwo')
@@ -108,7 +108,7 @@ def rpr_render(case):
 							writeImage=test_case_path)
 	test_time = time.time() - start_time
 
-	event('Postrender', True)
+	event('Postrender', True, case['case'])
 	reportToJSON(case, test_time)
 
 
@@ -118,15 +118,15 @@ def prerender(case):
 	scene_name = cmds.file(q=True, sn=True, shn=True)
 	if scene_name != scene:
 		try:
-			event('Open scene', True)
+			event('Open scene', True, case['case'])
 			cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
-			event('Open scene', False)
+			event('Open scene', False, case['case'])
 			validateFiles()
-			enable_rpr()
+			enable_rpr(case['case'])
 		except Exception as e:
 			logging("Can't prepare for render scene because of {{}}".format(str(e)))
 
-	event('Prerender', True)
+	event('Prerender', True, case['case'])
 
 	mel.eval('athenaEnable -ae false')
 
@@ -161,7 +161,7 @@ def prerender(case):
 				eval(function)
 		except Exception as e:
 			logging('Error "{{}}" with string "{{}}"'.format(e, function))
-	event('Postrender', False)
+	event('Postrender', False, case['case'])
 
 
 def save_report(case):
@@ -180,7 +180,7 @@ def save_report(case):
 		copyfile(
 			path.join(source_dir, case['status'] + '.jpg'), work_dir)
 
-	enable_rpr()
+	enable_rpr(case['case'])
 
 	reportToJSON(case)
 
@@ -220,12 +220,13 @@ def case_function(case):
 
 
 def main():
-	event('Open tool', False)
 	if not os.path.exists(os.path.join(WORK_DIR, LOGS_DIR)):
 		os.makedirs(os.path.join(WORK_DIR, LOGS_DIR))
 
 	with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
 		cases = json.load(json_file)
+
+	event('Open tool', False, next(case['case'] for case in cases if case['status'] in ['active', 'fail', 'skipped']))
 
 	for case in cases:
 		if case['status'] in ['active', 'fail', 'skipped']:
@@ -255,7 +256,7 @@ def main():
 			with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
 				json.dump(cases, file, indent=4)
 
-	event('Close tool', True)
+	event('Close tool', True, cases[-1]['case'])
 	cmds.quit(abort=True)
 
 
