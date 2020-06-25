@@ -736,5 +736,239 @@
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 0)"
         ]
+    },
+    {
+        "case": "MAYA_RS_HR_046",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser Bileteral High"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 5)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_047",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser Bileteral Medium"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 5)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_048",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser Bileteral Low"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserRadius', 5)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_049",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser LWR High"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_050",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser LWR Medium"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_051",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser LWR Low"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserFilterRadius', 5)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_052",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser EAW High"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_053",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser EAW Medium"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_054",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser EAW Low"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_055",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser ML High"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_056",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser ML Medium"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_057",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser ML Low"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_058",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser ML Color+AOV High"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_059",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser ML Color+AOV Medium"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_HR_060",
+        "status": "active",
+        "script_info": [
+            "Hybrid + Denoiser ML Color+AOV Low"
+        ],
+        "scene": "HybridSamples.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)", 
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)", 
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
     }
 ]

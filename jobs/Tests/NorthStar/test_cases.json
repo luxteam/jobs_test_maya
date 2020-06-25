@@ -1423,5 +1423,28 @@
         "skip_on":[
             ["AMD Radeon RX Vega 56 (Metal)"]
         ]
+    },
+    {
+        "case": "MAYA_RS_NRT_076",
+        "status": "active",
+        "functions": [
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "UDIM"
+        ],
+        "scene": "Udim.ma"
+    },
+    {
+        "case": "MAYA_RS_NRT_077",
+        "status": "active",
+        "functions": [
+            "mel.eval('OnAutoObjectIdAssign')",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Object ID"
+        ],
+        "scene": "AOVConstruct.ma"
     }
 ]
