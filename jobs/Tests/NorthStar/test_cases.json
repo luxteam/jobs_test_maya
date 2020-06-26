@@ -1439,6 +1439,8 @@
         "case": "MAYA_RS_NRT_077",
         "status": "active",
         "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 8)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovObjectId', 1)",
             "mel.eval('OnAutoObjectIdAssign')",
             "rpr_render(case)"
         ],
