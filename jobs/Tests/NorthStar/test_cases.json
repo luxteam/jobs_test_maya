@@ -811,7 +811,7 @@
     },
     {
         "case": "MAYA_RS_NRT_046",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 45)",
@@ -853,7 +853,7 @@
     },
     {
         "case": "MAYA_RS_NRT_048",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
@@ -876,7 +876,7 @@
     },
     {
         "case": "MAYA_RS_NRT_049",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 2)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 3)",
