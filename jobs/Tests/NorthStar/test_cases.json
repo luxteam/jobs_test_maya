@@ -163,7 +163,7 @@
     },
     {
         "case": "MAYA_RS_NRT_011",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Do not compare",
             "AOV: UV"
@@ -180,7 +180,7 @@
     },
     {
         "case": "MAYA_RS_NRT_012",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Do not compare",
             "AOV: Velocity"
@@ -198,7 +198,7 @@
     },
     {
         "case": "MAYA_RS_NRT_013",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Do not compare",
             "AOV: Albedo"
