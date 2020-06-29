@@ -880,7 +880,7 @@
     },
     {
         "case": "MAYA_RS_HR_055",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Hybrid + Denoiser ML High"
         ],
@@ -895,7 +895,7 @@
     },
     {
         "case": "MAYA_RS_HR_056",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Hybrid + Denoiser ML Medium"
         ],
@@ -910,7 +910,7 @@
     },
     {
         "case": "MAYA_RS_HR_057",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Hybrid + Denoiser ML Low"
         ],
@@ -925,7 +925,7 @@
     },
     {
         "case": "MAYA_RS_HR_058",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Hybrid + Denoiser ML Color+AOV High"
         ],
@@ -941,7 +941,7 @@
     },
     {
         "case": "MAYA_RS_HR_059",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Hybrid + Denoiser ML Color+AOV Medium"
         ],
@@ -957,7 +957,7 @@
     },
     {
         "case": "MAYA_RS_HR_060",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Hybrid + Denoiser ML Color+AOV Low"
         ],

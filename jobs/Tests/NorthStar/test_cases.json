@@ -1433,7 +1433,10 @@
         "script_info": [
             "UDIM"
         ],
-        "scene": "Udim.ma"
+        "scene": "Udim.ma",
+        "skip_on":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_RS_NRT_077",
@@ -1447,6 +1450,9 @@
         "script_info": [
             "Object ID"
         ],
-        "scene": "AOVConstruct.ma"
+        "scene": "AOVConstruct.ma",
+        "skip_on":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }
 ]
