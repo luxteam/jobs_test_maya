@@ -109,9 +109,8 @@ def prerender(case):
 			cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
 			validateFiles()
 			enable_rpr()
-		except:
-			logging("Can't load scene. Exit Maya")
-			cmds.evalDeferred('cmds.quit(abort=True)')
+		except Exception as e:
+			logging("Can't prepare for render scene because of {{}}".format(str(e)))
 
 	mel.eval('athenaEnable -ae false')
 
@@ -188,7 +187,6 @@ def case_function(case):
 			mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
 		except:
 			logging("Can't set project in '" + projPath + "'")
-			cmds.evalDeferred('cmds.quit(abort=True)')
 
 	if case['status'] == 'fail' or case.get('number_of_tries', 1) == 2:	# 2- retries count
 		case['status'] = 'error'
@@ -239,7 +237,7 @@ def main():
 			with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
 				json.dump(cases, file, indent=4)
 
-	cmds.evalDeferred('cmds.quit(abort=True)')
+	cmds.quit(abort=True)
 
 
 main()
