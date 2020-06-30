@@ -291,7 +291,7 @@
     }, 
     {
         "case": "MAYA_SM_020", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)", 
             "rpr_render(case)",             
@@ -800,5 +800,16 @@
             "CPU+GPU mode"
         ], 
         "scene": "normal_scene.ma"
+    }, 
+    {
+        "case": "MAYA_SM_054", 
+        "status": "active", 
+        "functions": [
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "NHair"
+        ], 
+        "scene": "Nhair.ma"
     }
 ]
