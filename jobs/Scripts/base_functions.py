@@ -125,6 +125,7 @@ def prerender(case):
 
 	event('Prerender', True, case['case'])
 
+	cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
 	mel.eval('athenaEnable -ae false')
 
 	cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', ENGINE)
