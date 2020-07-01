@@ -237,7 +237,10 @@ def main():
 			with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
 				json.dump(cases, file, indent=4)
 
-	cmds.quit(abort=True)
+	if TEST_TYPE not in ['Athena']:
+		cmds.quit(abort=True)
+	else:
+		cmds.evalDeferred('cmds.quit(abort=True)')
 
 
 main()
