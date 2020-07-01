@@ -3,6 +3,7 @@ import os
 import json
 import datetime
 import glob
+import re
 
 
 errors = [
@@ -23,32 +24,7 @@ def createArgsParser():
 	return parser
 
 
-def performance_count(work_dir):
-	old_event = {'name': 'init', 'time': '', 'start': True}
-	time_diffs = []
-	work_dir = os.path.join(work_dir, 'events')
-	files = glob.glob(os.path.join(work_dir, '*.json'))
-	files.sort(key=lambda x: os.path.getmtime(x))
-	for f in files:
-		with open(f, 'r') as json_file:
-			event = json.load(json_file)
-		if old_event['name'] == event['name'] and old_event['start'] and not event['start']:
-			time_diff = datetime.datetime.strptime(
-                    event['time'], '%d/%m/%Y %H:%M:%S.%f') - datetime.datetime.strptime(
-                    old_event['time'], '%d/%m/%Y %H:%M:%S.%f')
-			event_case = old_event.get('case', '')
-			if not event_case:
-				event_case = event.get('case', '')
-			if event_case:
-				time_diffs.append({'name': event['name'], 'time': time_diff.total_seconds(), 'case': event_case})
-			else:
-				time_diffs.append({'name': event['name'], 'time': time_diff.total_seconds()})
-		old_event = event.copy()
-	return time_diffs
-
-
-def main(args):
-	work_dir = os.path.abspath(args.output).replace('\\', '/')
+def render_log(work_dir):
 	files = [f for f in os.listdir(
 		work_dir) if os.path.isfile(os.path.join(work_dir, f))]
 	files = [f for f in files if 'renderTool' in f]
@@ -98,6 +74,37 @@ Case\t\tStatus\tTime\tTries
 		f.write('Time taken: ' + str(datetime.datetime.utcfromtimestamp(total_time).strftime('%H:%M:%S')))
 
 		f.write(logs)
+
+
+
+def performance_count(work_dir):
+	old_event = {'name': 'init', 'time': '', 'start': True}
+	time_diffs = []
+	work_dir = os.path.join(work_dir, 'events')
+	files = glob.glob(os.path.join(work_dir, '*.json'))
+	files.sort(key=lambda x: os.path.getmtime(x))
+	for f in files:
+		with open(f, 'r') as json_file:
+			event = json.load(json_file)
+		if old_event['name'] == event['name'] and old_event['start'] and not event['start']:
+			time_diff = datetime.datetime.strptime(
+                    event['time'], '%d/%m/%Y %H:%M:%S.%f') - datetime.datetime.strptime(
+                    old_event['time'], '%d/%m/%Y %H:%M:%S.%f')
+			event_case = old_event.get('case', '')
+			if not event_case:
+				event_case = event.get('case', '')
+			if event_case:
+				time_diffs.append({'name': event['name'], 'time': time_diff.total_seconds(), 'case': event_case})
+			else:
+				time_diffs.append({'name': event['name'], 'time': time_diff.total_seconds()})
+		old_event = event.copy()
+	return time_diffs
+
+
+def main(args):
+	work_dir = os.path.abspath(args.output).replace('\\', '/')
+
+	render_log(work_dir)
 
 	with open(os.path.realpath(os.path.join(work_dir, '..', work_dir.replace('\\', '/').split('/')[-1] + '_performance.json')), 'w') as f:
 		f.write(json.dumps(performance_count(work_dir)))

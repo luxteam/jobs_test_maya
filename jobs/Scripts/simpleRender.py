@@ -353,6 +353,30 @@ def group_failed(args):
 	exit(rc)
 
 
+def sync_time(work_dir):
+	for rpr_json_path in os.listdir(work_dir):
+		if rpr_json_path.endswith('_RPR.json'):
+			with open(os.path.join(work_dir, rpr_json_path)) as rpr_json_file:
+				rpr_json = json.load(rpr_json_file)
+
+			with open(os.path.join(work_dir, rpr_json[0]['render_log'])) as logs_file:
+				logs = logs_file.read()
+
+			sync_minutes = re.findall('RPR scene synchronization time: (\d*)m', logs)
+			sync_seconds = re.findall('RPR scene synchronization time: .*?(\d*)s', logs)
+			sync_milisec = re.findall('RPR scene synchronization time: .*?(\d*)ms', logs)
+
+			sync_minutes = float(next(iter(sync_minutes or []), 0))
+			sync_seconds = float(next(iter(sync_seconds or []), 0))
+			sync_milisec = float(next(iter(sync_milisec or []), 0))
+
+			synchronization_time = sync_minutes * 60 + sync_seconds + sync_milisec / 1000
+			rpr_json[0]['sync_time'] = synchronization_time
+
+			with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
+				rpr_json_file.write(json.dumps(rpr_json, indent=4))
+
+
 if __name__ == '__main__':
 	core_config.main_logger.info('simpleRender start working...')
 	
@@ -415,4 +439,5 @@ if __name__ == '__main__':
 			# exit script if base_functions don't change number of active cases
 			kill_process(PROCESS)
 			core_config.main_logger.info('Finish simpleRender with code: {}'.format(rc))
+			sync_time(args.output)
 			exit(rc)
