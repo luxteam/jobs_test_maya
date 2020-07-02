@@ -1,0 +1,82 @@
+[
+    {
+        "case": "MAYA_NHR_001",
+        "status": "active",
+        "script_info": [
+            "Braids"
+        ],
+        "scene": "NHair.ma",
+        "functions": [
+            "cmds.setAttr('Braids.visibility', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('Braids.visibility', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_NHR_002",
+        "status": "active",
+        "script_info": [
+            "Long hair"
+        ],
+        "scene": "NHair.ma",
+        "functions": [
+            "cmds.setAttr('longhair.visibility', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('longhair.visibility', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_NHR_003",
+        "status": "active",
+        "script_info": [
+            "Pig tail"
+        ],
+        "scene": "NHair.ma",
+        "functions": [
+            "cmds.setAttr('layer3.visibility', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('layer3.visibility', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_NHR_004",
+        "status": "active",
+        "script_info": [
+            "Spiky"
+        ],
+        "scene": "NHair.ma",
+        "functions": [
+            "cmds.setAttr('layer4.visibility', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('layer4.visibility', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_NHR_005",
+        "status": "active",
+        "script_info": [
+            "Straight long"
+        ],
+        "scene": "NHair.ma",
+        "functions": [
+            "cmds.setAttr('layer5.visibility', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('layer5.visibility', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_NHR_006",
+        "status": "active",
+        "script_info": [
+            "Animation"
+        ],
+        "scene": "NHair.ma",
+        "functions": [
+            "cmds.setAttr('Braids.visibility', 1)",
+            "cmds.playbackOptions(loop='once')",
+            "cmds.evalDeferred('cmds.play(forward=True)')",
+            "rpr_render(case)",
+            "cmds.setAttr('Braids.visibility', 0)"
+        ]
+    }
+]
