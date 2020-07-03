@@ -15,7 +15,7 @@
         <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU {SPU}</argument>
         <argument>--threshold {threshold}</argument>
-        <argument>--engine 1</argument>
+        <argument>--engine "{engine}"</argument>
     </execute>
     
     <execute command='python "{CWD}/Scripts/refactor_logs.py"' timeout="60">
