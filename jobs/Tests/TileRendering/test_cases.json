@@ -1,0 +1,225 @@
+[
+    {
+        "case": "MAYA_RS_TR_001",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_002",
+        "status": "active",
+        "script_info": [
+            "Do not compare",
+            "Tile Rendering + Render Stamp"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_003",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering + ML Denoiser"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_004",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering + LWR Denoiser"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_005",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering + EAW Denoiser"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_006",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering + Bileteral Denoiser"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_007",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering 512x256"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderX', 512)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderY', 256)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderX', 128)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderY', 128)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_008",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering 200x300"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderX', 200)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderY', 300)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderX', 128)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderY', 128)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_009",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering NorthStar"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 2)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 1)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_010",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering Hybrid Low"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_011",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering Hybrid Medium"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_012",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering Hybrid High"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_013",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering 3000x3000"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderX', 3000)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderY', 3000)",
+            "rpr_render(case)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderX', 128)",
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderY', 128)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_014",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering 4k"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('defaultResolution.width', 4096.0)",
+            "cmds.setAttr('defaultResolution.height', 4096.0)",
+            "rpr_render(case)",
+            "cmds.setAttr('defaultResolution.width', 1280.0)",
+            "cmds.setAttr('defaultResolution.height', 720.0)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_TR_015",
+        "status": "active",
+        "script_info": [
+            "Tile Rendering 8k"
+        ],
+        "scene": "CorvetteLayers.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
+            "cmds.setAttr('defaultResolution.width', 8192.0)",
+            "cmds.setAttr('defaultResolution.height', 8192.0)",
+            "rpr_render(case)",
+            "cmds.setAttr('defaultResolution.width', 1280.0)",
+            "cmds.setAttr('defaultResolution.height', 720.0)"
+        ]
+    }
+]
