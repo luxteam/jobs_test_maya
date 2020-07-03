@@ -7,7 +7,7 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--testType TileRendering</argument>
+        <argument>--testType Tile_Rendering</argument>
         <argument>--pass_limit 30</argument>
         <argument>--resolution_x {rx}</argument>
         <argument>--resolution_y {ry}</argument>
