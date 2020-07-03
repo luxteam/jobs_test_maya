@@ -73,8 +73,7 @@
         "scene": "NHair.ma",
         "functions": [
             "cmds.setAttr('Braids.visibility', 1)",
-            "cmds.playbackOptions(loop='once')",
-            "cmds.evalDeferred('cmds.play(forward=True)')",
+            "cmds.currentTime(2);cmds.currentTime(3);cmds.currentTime(4);cmds.currentTime(5);cmds.currentTime(6);",
             "rpr_render(case)",
             "cmds.setAttr('Braids.visibility', 0)"
         ]
