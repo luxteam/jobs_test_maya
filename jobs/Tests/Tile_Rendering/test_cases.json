@@ -3,7 +3,7 @@
         "case": "MAYA_RS_TR_001",
         "status": "active",
         "script_info": [
-            "Tile Rendering"
+            "Tile Rendering 128x128"
         ],
         "scene": "CorvetteLayers.ma",
         "functions": [
