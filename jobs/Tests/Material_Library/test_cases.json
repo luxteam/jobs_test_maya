@@ -1210,7 +1210,7 @@
     },
     {
         "case": "MAYA_MAT_LIB_094",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "applyMaterial('Lead_Matte')",
             "rpr_render(case)",
@@ -3511,7 +3511,7 @@
     },
     {
         "case": "MAYA_MAT_LIB_271",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "applyMaterial('Diffuse_Shadow_Catcher')",
             "rpr_render(case)",
@@ -3524,7 +3524,7 @@
     },
     {
         "case": "MAYA_MAT_LIB_272",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "applyMaterial('Reflective_Shadow_Catcher')",
             "rpr_render(case)",

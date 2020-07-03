@@ -50,7 +50,7 @@
     },
     {
         "case": "MAYA_RS_RM_005",
-        "status": "skipped",
+        "status": "",
         "script_info": [
             "Render mode: Material index"
         ],
@@ -167,7 +167,7 @@
     },
     {
         "case": "MAYA_RS_RM_014",
-        "status": "skipped",
+        "status": "",
         "script_info": [
             "Render mode: Material index. Clamp Irradiance Value: 50"
         ],
@@ -289,7 +289,7 @@
     },
     {
         "case": "MAYA_RS_RM_023",
-        "status": "skipped",
+        "status": "",
         "script_info": [
             "Render mode: Material index. Clamp Irradiance Value: 100"
         ],
