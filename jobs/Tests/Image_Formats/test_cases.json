@@ -131,7 +131,7 @@
     },
     {
         "case": "MAYA_RS_IF_011",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Image format: PNG (png)"
         ],
