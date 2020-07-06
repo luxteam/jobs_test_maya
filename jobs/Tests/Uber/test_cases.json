@@ -2052,7 +2052,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_095",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -2076,7 +2076,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_096",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
