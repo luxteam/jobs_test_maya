@@ -8,7 +8,6 @@ Image_Formats
 Material_Library
 Render_Mode
 Render_Stamp
-Pass_Limit
 Sun_Sky
 Denoiser
 Base_Lights
@@ -34,4 +33,5 @@ Hybrid_Rendering
 Athena
 Adaptive_Sampling
 NorthStar
+VDB
 NHair

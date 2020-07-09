@@ -1123,7 +1123,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_049",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1145,7 +1145,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_050",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1166,7 +1166,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_051",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1187,7 +1187,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_052",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1207,7 +1207,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_053",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1230,7 +1230,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_054",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1250,7 +1250,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_055",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1266,7 +1266,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_056",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1291,7 +1291,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_057",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1310,7 +1310,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_058",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1332,7 +1332,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_059",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1349,7 +1349,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_060",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1367,7 +1367,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_061",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1387,7 +1387,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_062",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1411,7 +1411,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_063",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.emissive', 1)",
@@ -1472,7 +1472,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_066",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.sssEnable', 1)",
@@ -1817,7 +1817,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_084",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -1841,7 +1841,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_085",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -1863,7 +1863,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_086",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -1885,7 +1885,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_087",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -1903,7 +1903,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_088",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -1926,7 +1926,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_089",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -1947,7 +1947,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_090",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -1968,7 +1968,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_091",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -1989,7 +1989,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_092",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -2010,7 +2010,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_093",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -2029,7 +2029,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_094",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -2099,7 +2099,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_097",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",
@@ -2120,7 +2120,7 @@
     },
     {
         "case": "MAYA_MAT_UBER_098",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_UberMat.displacementEnable', 1)",

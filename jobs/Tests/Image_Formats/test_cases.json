@@ -13,19 +13,6 @@
         ]
     },
     {
-        "case": "MAYA_RS_IF_002",
-        "status": "skipped",
-        "script_info": [
-            "Image format: Cineon (cin)"
-        ],
-        "scene": "maya_shaderball.ma",
-        "functions": [
-            "cmds.setAttr('defaultRenderGlobals.imageFormat', 11)",
-            "rpr_render(case)",
-            "setPass(case)"
-        ]
-    },
-    {
         "case": "MAYA_RS_IF_003",
         "status": "active",
         "script_info": [

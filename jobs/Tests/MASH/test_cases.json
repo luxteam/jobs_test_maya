@@ -57,7 +57,7 @@
     },
     {
         "case": "MAYA_RS_MASH_005",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Dynamics node"
         ],
