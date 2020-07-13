@@ -263,13 +263,14 @@
         "functions": [
             "cmds.setAttr('vdbObj.albedoEnabled', 1)",
             "cmds.setAttr('vdbObj.albedoSelectedGrid', 'TorusKnotHelix', type='string')",
+            "cmds.setAttr('vdbObj.densityMultiplier', 6000)",
             "rpr_render(case)",
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "torus_knot.vdb Albedo=On"
+            "torus_knot_helix.vdb Albedo=On"
         ],
-        "scene": "torus_knot.ma"
+        "scene": "torus_knot_helix.ma"
     },
     {
         "case": "MAYA_MAT_VDB_018", 
