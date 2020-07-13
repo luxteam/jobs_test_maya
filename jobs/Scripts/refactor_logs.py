@@ -93,11 +93,11 @@ def performance_count(work_dir):
 
 
 def main(args):
-	work_dir = os.path.abspath(args.output).replace('\\', '/')
+	work_dir = os.path.abspath(args.output) #.replace('\\', '/')
 
 	render_log(work_dir)
 
-	with open(os.path.realpath(os.path.join(work_dir, '..', work_dir.replace('\\', '/').split('/')[-1] + '_performance.json')), 'w') as f:
+	with open(os.path.realpath(os.path.join(work_dir, '..', os.path.basename(work_dir) + '_performance.json')), 'w') as f:
 		f.write(json.dumps(performance_count(work_dir)))
 
 
