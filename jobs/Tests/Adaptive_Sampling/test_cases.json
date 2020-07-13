@@ -426,7 +426,7 @@
     },
     {
         "case": "MAYA_RS_AS_021",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Max Iterations - 100",
             "Max Time Seconds - 0",
@@ -489,7 +489,7 @@
     },
     {
         "case": "MAYA_RS_AS_023",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Min iteration- 20",
             "Max Iterations - 1000",
