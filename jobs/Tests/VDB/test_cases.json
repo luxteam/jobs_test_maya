@@ -10,7 +10,9 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "bunny.vdb Desnity=300 Albedo=On(ls_bunny)"
+            "bunny.vdb",
+            "Desnity=300",
+            "Albedo=On(ls_bunny)"
         ],
         "scene": "bunny.ma"
     },
@@ -25,7 +27,8 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "bunny.vdb Density=3000"
+            "bunny.vdb",
+            "Density=3000"
         ],
         "scene": "bunny.ma"
     },
@@ -40,7 +43,9 @@
             "cmds.setAttr('vdbObj.emissionEnabled', 0)"
         ], 
         "script_info": [
-            "bunny_cloud.vdb Emission=On Albedo=Off"
+            "bunny_cloud.vdb",
+            "Emission=On",
+            "Albedo=Off"
         ],
         "scene": "bunny_cloud.ma"
     },
@@ -59,7 +64,10 @@
             "cmds.setAttr('vdbObj.emissionEnabled', 0)"
         ], 
         "script_info": [
-            "bunny_cloud.vdb Emission=5 Density=5000 Albedo=On(density)"
+            "bunny_cloud.vdb",
+            "Emission=5",
+            "Density=5000",
+            "Albedo=On(density)"
         ],
         "scene": "bunny_cloud.ma"
     },
@@ -73,7 +81,8 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "bunny_cloud.vdb Albedo=On(density)"
+            "bunny_cloud.vdb",
+            "Albedo=On(density)"
         ],
         "scene": "bunny_cloud.ma"
     },
@@ -90,7 +99,9 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "bunny_cloud.vdb Albedo=On(density) Emission=On"
+            "bunny_cloud.vdb",
+            "Albedo=On(density)",
+            "Emission=On"
         ],
         "scene": "bunny_cloud.ma"
     },
@@ -113,7 +124,10 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "bunny_cloud.vdb Albedo=On Emission=On Rotated"
+            "bunny_cloud.vdb",
+            "Albedo=On",
+            "Emission=On",
+            "Rotated"
         ],
         "scene": "bunny_cloud.ma"
     },
@@ -130,7 +144,9 @@
             "cmds.setAttr('vdbObj.emissionEnabled', 0)"
         ], 
         "script_info": [
-            "explosion.vdb Emission=On(Temperature) Albedo=On(temperature)"
+            "explosion.vdb",
+            "Emission=On(Temperature)",
+            "Albedo=On(temperature)"
         ],
         "scene": "explosion.ma"
     },
@@ -148,7 +164,9 @@
             "cmds.setAttr('vdbObj.emissionEnabled', 0)"
         ], 
         "script_info": [
-            "explosion.vdb Density=10000 Albedo=On(density)"
+            "explosion.vdb",
+            "Density=10000",
+            "Albedo=On(density)"
         ],
         "scene": "explosion.ma"
     },
@@ -165,7 +183,9 @@
             "cmds.setAttr('vdbObj.emissionEnabled', 0)"
         ], 
         "script_info": [
-            "fire.vdb Emission=On(Temperature) Albedo=On(Temperature)"
+            "fire.vdb",
+            "Emission=On(Temperature)",
+            "Albedo=On(Temperature)"
         ],
         "scene": "fire.ma"
     },
@@ -182,7 +202,10 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "fire.vdb Emission=On(Density) Density=On(Temperature) Albedo=On(Density)"
+            "fire.vdb",
+            "Emission=On(Density)",
+            "Density=On(Temperature)",
+            "Albedo=On(Density)"
         ],
         "scene": "fire.ma"
     },
@@ -196,7 +219,8 @@
             "rpr_render(case)"
         ], 
         "script_info": [
-            "smoke1.vdb Density=6000"
+            "smoke1.vdb",
+            "Density=6000"
         ],
         "scene": "smoke1.ma"
     },
@@ -211,7 +235,8 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "smoke2.vdb Density=6000"
+            "smoke2.vdb",
+            "Density=6000"
         ],
         "scene": "smoke2.ma"
     },
@@ -239,7 +264,8 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "sphere.vdb Albedo=On"
+            "sphere.vdb",
+            "Albedo=On"
         ],
         "scene": "sphere.ma"
     },
@@ -253,7 +279,8 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "torus.vdb Albedo=On"
+            "torus.vdb",
+            "Albedo=On"
         ],
         "scene": "torus.ma"
     },
@@ -268,7 +295,8 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "torus_knot_helix.vdb Albedo=On"
+            "torus_knot_helix.vdb",
+            "Albedo=On"
         ],
         "scene": "torus_knot_helix.ma"
     },
@@ -284,7 +312,9 @@
             "cmds.setAttr('vdbObj.albedoEnabled', 0)"
         ], 
         "script_info": [
-            "venusstatue.vdb Albedo=On ScaleX=8"
+            "venusstatue.vdb",
+            "Albedo=On",
+            "ScaleX=8"
         ],
         "scene": "venus.ma"
     }
