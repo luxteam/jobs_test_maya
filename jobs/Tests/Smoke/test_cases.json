@@ -573,7 +573,7 @@
     }, 
     {
         "case": "MAYA_SM_037", 
-        "status": "active", 
+        "status": "skipped", 
         "functions": [
             "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')", 
             "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]", 
