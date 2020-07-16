@@ -388,5 +388,70 @@
             "rpr_render(case)",
             "resetMaterial()"
         ]
+    },
+    {
+        "case": "MAYA_MAT_UT_031",
+        "status": "active",
+        "script_info": [
+            "Plus"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Plus')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_032",
+        "status": "active",
+        "script_info": [
+            "Minus"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Minus')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_033",
+        "status": "active",
+        "script_info": [
+            "Average"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Average')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_034",
+        "status": "active",
+        "script_info": [
+            "Multiply"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Multiply')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_035",
+        "status": "active",
+        "script_info": [
+            "Divide"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Divide')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
     }
 ]
