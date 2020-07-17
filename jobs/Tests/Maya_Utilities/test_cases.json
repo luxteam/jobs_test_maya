@@ -94,11 +94,11 @@
         "case": "MAYA_MAT_UT_008",
         "status": "active",
         "script_info": [
-            "Ground_Plane"
+            "Divide"
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
-            "assignMaterial('Ground_Plane')",
+            "assignMaterial('Divide')",
             "rpr_render(case)",
             "resetMaterial()"
         ]
@@ -437,19 +437,6 @@
         "scene": "maya_shaderball.ma",
         "functions": [
             "assignMaterial('Multiply')",
-            "rpr_render(case)",
-            "resetMaterial()"
-        ]
-    },
-    {
-        "case": "MAYA_MAT_UT_035",
-        "status": "active",
-        "script_info": [
-            "Divide"
-        ],
-        "scene": "maya_shaderball.ma",
-        "functions": [
-            "assignMaterial('Divide')",
             "rpr_render(case)",
             "resetMaterial()"
         ]
