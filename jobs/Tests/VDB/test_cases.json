@@ -317,5 +317,35 @@
             "ScaleX=8"
         ],
         "scene": "venus.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_019", 
+        "status": "active", 
+        "functions": [
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "Multiple VDBs"
+        ],
+        "scene": "multi.ma"
+    },
+    {
+        "case": "MAYA_MAT_VDB_020", 
+        "status": "active", 
+        "functions": [
+            "mel.eval('createVolumeRPR()')",
+            "cmds.setAttr('RPRVolume1.scaleX', 2)",
+            "cmds.setAttr('RPRVolume1.scaleY', 2)",
+            "cmds.setAttr('RPRVolume1.scaleZ', 2)",
+            "cmds.setAttr('RPRVolume1.translateX', 2)",
+            "cmds.setAttr('RPRVolume1.translateY', 1)",
+            "cmds.setAttr('RPRVolume1.translateZ', -4)",
+            "cmds.setAttr('RPRVolumeObj.VdbFilePath', RES_PATH + '/VDB/vdb/bunny_cloud.vdb-1.0.0/bunny_cloud.vdb', type='string')",
+            "rpr_render(case)"
+        ], 
+        "script_info": [
+            "Create second VDB"
+        ],
+        "scene": "bunny.ma"
     }
 ]

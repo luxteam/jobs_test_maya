@@ -1,0 +1,444 @@
+[
+    {
+        "case": "MAYA_MAT_UT_001",
+        "status": "active",
+        "script_info": [
+            "Blend_colors"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Blend_colors')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_002",
+        "status": "active",
+        "script_info": [
+            "Buldge"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Buldge')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_003",
+        "status": "active",
+        "script_info": [
+            "Checker"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Checker')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_004",
+        "status": "active",
+        "script_info": [
+            "Color_Correct"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Color_Correct')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_005",
+        "status": "active",
+        "script_info": [
+            "Color_Math"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Color_Math')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_006",
+        "status": "active",
+        "script_info": [
+            "Fractal_noise"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Fractal_noise')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_007",
+        "status": "active",
+        "script_info": [
+            "Grid1"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Grid1')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_008",
+        "status": "active",
+        "script_info": [
+            "Divide"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Divide')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_009",
+        "status": "active",
+        "script_info": [
+            "Layered_texture"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Layered_texture')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_010",
+        "status": "active",
+        "script_info": [
+            "Leather"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Leather')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_011",
+        "status": "active",
+        "script_info": [
+            "Mandelbrot"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Mandelbrot')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_012",
+        "status": "active",
+        "script_info": [
+            "Mandelbrot1"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Mandelbrot1')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_013",
+        "status": "active",
+        "script_info": [
+            "Marble"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Marble')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_014",
+        "status": "active",
+        "script_info": [
+            "Mountain"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Mountain')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_015",
+        "status": "active",
+        "script_info": [
+            "Noise"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Noise')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_016",
+        "status": "active",
+        "script_info": [
+            "Ramp"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Ramp')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_017",
+        "status": "active",
+        "script_info": [
+            "Simplex_noise"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Simplex_noise')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_018",
+        "status": "active",
+        "script_info": [
+            "Stucco"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Stucco')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_019",
+        "status": "active",
+        "script_info": [
+            "bump2d"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('bump2d')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_020",
+        "status": "active",
+        "script_info": [
+            "clamp"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('clamp')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_021",
+        "status": "active",
+        "script_info": [
+            "color_compossit"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('color_compossit')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_022",
+        "status": "active",
+        "script_info": [
+            "color_constant"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('color_constant')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_023",
+        "status": "active",
+        "script_info": [
+            "colormask"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('colormask')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_024",
+        "status": "active",
+        "script_info": [
+            "crater"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('crater')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_025",
+        "status": "active",
+        "script_info": [
+            "gammacorrect"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('gammacorrect')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_026",
+        "status": "active",
+        "script_info": [
+            "granite1"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('granite1')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_027",
+        "status": "active",
+        "script_info": [
+            "rock"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('rock')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_028",
+        "status": "active",
+        "script_info": [
+            "solid_fractel"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('solid_fractel')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_029",
+        "status": "active",
+        "script_info": [
+            "volumeNoise"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('volumeNoise')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_030",
+        "status": "active",
+        "script_info": [
+            "wood"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('wood')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_031",
+        "status": "active",
+        "script_info": [
+            "Plus"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Plus')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_032",
+        "status": "active",
+        "script_info": [
+            "Minus"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Minus')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_033",
+        "status": "active",
+        "script_info": [
+            "Average"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Average')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    },
+    {
+        "case": "MAYA_MAT_UT_034",
+        "status": "active",
+        "script_info": [
+            "Multiply"
+        ],
+        "scene": "maya_shaderball.ma",
+        "functions": [
+            "assignMaterial('Multiply')",
+            "rpr_render(case)",
+            "resetMaterial()"
+        ]
+    }
+]
