@@ -18,7 +18,6 @@ sys.path.append(os.path.abspath(os.path.join(
 from jobs_launcher.core.kill_process import kill_process
 from jobs_launcher.core.system_info import get_gpu
 import jobs_launcher.core.config as core_config
-import jobs_launcher.core.performance_counter as perf_count
 
 ROOT_DIR = os.path.abspath(os.path.join(
 	os.path.dirname(__file__), os.path.pardir, os.path.pardir))
@@ -125,7 +124,6 @@ def launchMaya(cmdScriptPath, work_dir):
 	system_pl = platform.system()
 	core_config.main_logger.info('Launch script on Maya ({})'.format(cmdScriptPath))
 	os.chdir(work_dir)
-	perf_count.event_record(args.output, 'Open tool', True)
 	p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 
 
@@ -192,8 +190,6 @@ def launchMaya(cmdScriptPath, work_dir):
 			rc = 0
 			break
 
-	perf_count.event_record(args.output, 'Close tool', False)
-
 	if args.testType in ['Athena']:
 		subprocess.call([sys.executable, os.path.realpath(os.path.join(
 			os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
@@ -201,7 +197,6 @@ def launchMaya(cmdScriptPath, work_dir):
 
 
 def main(args):
-	perf_count.event_record(args.output, 'Prepare tests', True)
 	if args.testType in ['Support_2019', 'Support_2018']:
 		args.tool = re.sub('[0-9]{4}', args.testType[-4:], args.tool)
 
@@ -320,8 +315,6 @@ def main(args):
 			file.write(cmdRun)
 		os.system('chmod +x {}'.format(cmdScriptPath))
 
-	perf_count.event_record(args.output, 'Prepare tests', False)
-
 	rc = launchMaya(cmdScriptPath, args.output)
 
 	if args.testType in ['Athena']:
@@ -351,30 +344,6 @@ def group_failed(args):
 	core_config.main_logger.info(
 		'Finish simpleRender with code: {}'.format(rc))
 	exit(rc)
-
-
-def sync_time(work_dir):
-	for rpr_json_path in os.listdir(work_dir):
-		if rpr_json_path.endswith('_RPR.json'):
-			with open(os.path.join(work_dir, rpr_json_path)) as rpr_json_file:
-				rpr_json = json.load(rpr_json_file)
-
-			with open(os.path.join(work_dir, rpr_json[0]['render_log'])) as logs_file:
-				logs = logs_file.read()
-
-			sync_minutes = re.findall('RPR scene synchronization time: (\d*)m', logs)
-			sync_seconds = re.findall('RPR scene synchronization time: .*?(\d*)s', logs)
-			sync_milisec = re.findall('RPR scene synchronization time: .*?(\d*)ms', logs)
-
-			sync_minutes = float(next(iter(sync_minutes or []), 0))
-			sync_seconds = float(next(iter(sync_seconds or []), 0))
-			sync_milisec = float(next(iter(sync_milisec or []), 0))
-
-			synchronization_time = sync_minutes * 60 + sync_seconds + sync_milisec / 1000
-			rpr_json[0]['sync_time'] = synchronization_time
-
-			with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
-				rpr_json_file.write(json.dumps(rpr_json, indent=4))
 
 
 if __name__ == '__main__':
@@ -439,5 +408,4 @@ if __name__ == '__main__':
 			# exit script if base_functions don't change number of active cases
 			kill_process(PROCESS)
 			core_config.main_logger.info('Finish simpleRender with code: {}'.format(rc))
-			sync_time(args.output)
 			exit(rc)
