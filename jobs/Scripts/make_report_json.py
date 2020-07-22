@@ -2,6 +2,11 @@ import argparse
 import os
 import json
 
+import sys
+sys.path.append(os.path.abspath(os.path.join(
+    os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
+import jobs_launcher.core.performance_counter as perf_count
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--work_dir', required=True)
@@ -38,7 +43,7 @@ for file in range(len(json_files)):
         result_json += text
 
     else:
-        f = open(os.path.join(directory, json_files[file]), 'r')    
+        f = open(os.path.join(directory, json_files[file]), 'r')
         text = f.read()
         f.close()
         text = text[2:]

@@ -3,7 +3,7 @@
         "case": "MAYA_MAT_VM_001",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('scatterColor', 'outColor', '/Volume/sourceimages/ColorVariation.jpg')",
+            "file_tmp = setAttribute('scatterColor', 'outColor', RES_PATH + '/Volume/sourceimages/ColorVariation.jpg')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 0.05)",
@@ -25,7 +25,7 @@
         "case": "MAYA_MAT_VM_002",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('transmissionColor', 'outColor', '/Volume/sourceimages/TransmissionVariation.png')",
+            "file_tmp = setAttribute('transmissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/TransmissionVariation.png')",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 0.1)",
@@ -47,7 +47,7 @@
         "case": "MAYA_MAT_VM_003",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('emissionColor', 'outColor', '/Volume/sourceimages/EmissiveVariation1.exr')",
+            "file_tmp = setAttribute('emissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/EmissiveVariation1.exr')",
             "cmds.setAttr(file_tmp + '.alphaIsLuminance', 1)",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
@@ -71,7 +71,7 @@
         "case": "MAYA_MAT_VM_004",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('scatterColor', 'outColor', '/Volume/sourceimages/ColorVariation.tiff')",
+            "file_tmp = setAttribute('scatterColor', 'outColor', RES_PATH + '/Volume/sourceimages/ColorVariation.tiff')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 0.5)",
@@ -113,7 +113,7 @@
         "case": "MAYA_MAT_VM_006",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('transmissionColor', 'outColor', '/Volume/sourceimages/TransmissionVariation.png')",
+            "file_tmp = setAttribute('transmissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/TransmissionVariation.png')",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
@@ -133,9 +133,9 @@
     },
     {
         "case": "MAYA_MAT_VM_007",
-        "status": "skipped",
+        "status": "active",
         "functions": [
-            "file_tmp = setAttribute('emissionColor', 'outColor', '/Volume/sourceimages/EmissiveVariation.exr')",
+            "file_tmp = setAttribute('emissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/EmissiveVariation.exr')",
             "cmds.setAttr(file_tmp + '.alphaIsLuminance', 1)",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
@@ -180,7 +180,7 @@
         "case": "MAYA_MAT_VM_009",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('scatterColor', 'outColor', '/Volume/sourceimages/ColorVariation.png')",
+            "file_tmp = setAttribute('scatterColor', 'outColor', RES_PATH + '/Volume/sourceimages/ColorVariation.png')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
@@ -202,7 +202,7 @@
         "case": "MAYA_MAT_VM_010",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('transmissionColor', 'outColor', '/Volume/sourceimages/TransmissionVariation.png')",
+            "file_tmp = setAttribute('transmissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/TransmissionVariation.png')",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 2.5)",
@@ -243,9 +243,9 @@
     },
     {
         "case": "MAYA_MAT_VM_012",
-        "status": "skipped",
+        "status": "active",
         "functions": [
-            "file_tmp = setAttribute('emissionColor', 'outColor', '/Volume/sourceimages/EmissiveVariation.exr')",
+            "file_tmp = setAttribute('emissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/EmissiveVariation.exr')",
             "cmds.setAttr(file_tmp + '.alphaIsLuminance', 1)",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
@@ -269,7 +269,7 @@
         "case": "MAYA_MAT_VM_013",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('scatterColor', 'outColor', '/Volume/sourceimages/ColorVariation.jpg')",
+            "file_tmp = setAttribute('scatterColor', 'outColor', RES_PATH + '/Volume/sourceimages/ColorVariation.jpg')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 5)",
@@ -291,7 +291,7 @@
         "case": "MAYA_MAT_VM_014",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('transmissionColor', 'outColor', '/Volume/sourceimages/TransmissionVariation.png')",
+            "file_tmp = setAttribute('transmissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/TransmissionVariation.png')",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 5)",
@@ -313,7 +313,7 @@
         "case": "MAYA_MAT_VM_015",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('scatterColor', 'outColor', '/Volume/sourceimages/ColorVariation.jpg')",
+            "file_tmp = setAttribute('scatterColor', 'outColor', RES_PATH + '/Volume/sourceimages/ColorVariation.jpg')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 5)",
@@ -335,7 +335,7 @@
         "case": "MAYA_MAT_VM_016",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('transmissionColor', 'outColor', '/Volume/sourceimages/TransmissionVariation.png')",
+            "file_tmp = setAttribute('transmissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/TransmissionVariation.png')",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 7.5)",
@@ -355,9 +355,9 @@
     },
     {
         "case": "MAYA_MAT_VM_017",
-        "status": "skipped",
+        "status": "active",
         "functions": [
-            "file_tmp = setAttribute('emissionColor', 'outColor', '/Volume/sourceimages/EmissiveVariation.exr')",
+            "file_tmp = setAttribute('emissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/EmissiveVariation.exr')",
             "cmds.setAttr(file_tmp + '.alphaIsLuminance', 1)",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
@@ -381,7 +381,7 @@
         "case": "MAYA_MAT_VM_018",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('scatterColor', 'outColor', '/Volume/sourceimages/ColorVariation.exr')",
+            "file_tmp = setAttribute('scatterColor', 'outColor', RES_PATH + '/Volume/sourceimages/ColorVariation.exr')",
             "cmds.setAttr(file_tmp + '.alphaIsLuminance', 1)",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
@@ -426,7 +426,7 @@
         "case": "MAYA_MAT_VM_020",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('transmissionColor', 'outColor', '/Volume/sourceimages/TransmissionVariation.png')",
+            "file_tmp = setAttribute('transmissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/TransmissionVariation.png')",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 7.5)",
@@ -446,9 +446,9 @@
     },
     {
         "case": "MAYA_MAT_VM_021",
-        "status": "skipped",
+        "status": "active",
         "functions": [
-            "file_tmp = setAttribute('emissionColor', 'outColor', '/Volume/sourceimages/EmissiveVariation.exr')",
+            "file_tmp = setAttribute('emissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/EmissiveVariation.exr')",
             "cmds.setAttr(file_tmp + '.alphaIsLuminance', 1)",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
@@ -493,7 +493,7 @@
         "case": "MAYA_MAT_VM_023",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('scatterColor', 'outColor', '/Volume/sourceimages/ColorVariation.png')",
+            "file_tmp = setAttribute('scatterColor', 'outColor', RES_PATH + '/Volume/sourceimages/ColorVariation.png')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 10)",
@@ -515,7 +515,7 @@
         "case": "MAYA_MAT_VM_024",
         "status": "active",
         "functions": [
-            "file_tmp = setAttribute('transmissionColor', 'outColor', '/Volume/sourceimages/TransmissionVariation.png')",
+            "file_tmp = setAttribute('transmissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/TransmissionVariation.png')",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.emissionColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.density', 10)",
@@ -535,9 +535,9 @@
     },
     {
         "case": "MAYA_MAT_VM_025",
-        "status": "skipped",
+        "status": "active",
         "functions": [
-            "file_tmp = setAttribute('emissionColor', 'outColor', '/Volume/sourceimages/EmissiveVariation.exr')",
+            "file_tmp = setAttribute('emissionColor', 'outColor', RES_PATH + '/Volume/sourceimages/EmissiveVariation.exr')",
             "cmds.setAttr(file_tmp + '.alphaIsLuminance', 1)",
             "cmds.setAttr('RPRVolumeMaterial1.scatterColor', 1, 1, 1, type='double3')",
             "cmds.setAttr('RPRVolumeMaterial1.transmissionColor', 1, 1, 1, type='double3')",
