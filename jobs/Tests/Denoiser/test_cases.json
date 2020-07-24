@@ -1196,7 +1196,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Bathroom ML denoiser"
+            "RPRMAYA-2298"
         ],
         "scene": "Bathroom.ma"
     }
