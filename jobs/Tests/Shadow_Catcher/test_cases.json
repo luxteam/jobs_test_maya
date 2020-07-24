@@ -26,11 +26,7 @@
         "case": "MAYA_MAT_SC_003",
         "status": "active",
         "functions": [
-            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 1)",
-            "cmds.setAttr('RPRMatteMaterial1.scenabled', 0)",
-            "rpr_render(case)",
-            "cmds.setAttr('RPRMatteMaterial1.scenabled', 1)",
-            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 0)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "SC Reflection"
@@ -117,7 +113,7 @@
         "script_info": [
             "SC Bileteral Denoiser"
         ],
-        "scene": "SC.ma"
+        "scene": "DenoiserShadowCatcher.ma"
     },
     {
         "case": "MAYA_MAT_SC_011",
@@ -131,7 +127,7 @@
         "script_info": [
             "SC LWR Denoiser"
         ],
-        "scene": "SC.ma"
+        "scene": "DenoiserShadowCatcher.ma"
     },
     {
         "case": "MAYA_MAT_SC_012",
@@ -145,7 +141,7 @@
         "script_info": [
             "SC EAW Denoiser"
         ],
-        "scene": "SC.ma"
+        "scene": "DenoiserShadowCatcher.ma"
     },
     {
         "case": "MAYA_MAT_SC_013",
@@ -159,7 +155,7 @@
         "script_info": [
             "SC ML Denoiser"
         ],
-        "scene": "SC.ma"
+        "scene": "DenoiserShadowCatcher.ma"
     },
     {
         "case": "MAYA_MAT_SC_014",
@@ -175,49 +171,61 @@
         "script_info": [
             "SC ML + AOV Denoiser"
         ],
-        "scene": "SC.ma"
+        "scene": "DenoiserShadowCatcher.ma"
     },
     {
         "case": "MAYA_MAT_SC_015",
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 1)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 0)",
             "rpr_render(case)",
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 0)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ],
         "script_info": [
-            "SC LWR Denoiser"
+            "SC Bileteral Denoiser"
         ],
-        "scene": "Reflection.ma"
+        "scene": "DenoiserShadowCatcher.ma"
     },
     {
         "case": "MAYA_MAT_SC_016",
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 1)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 0)",
             "rpr_render(case)",
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 0)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ],
         "script_info": [
-            "SC EAW Denoiser"
+            "SC LWR Denoiser"
         ],
-        "scene": "Reflection.ma"
+        "scene": "DenoiserShadowCatcher.ma"
     },
     {
         "case": "MAYA_MAT_SC_017",
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2",
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 1)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 0)",
             "rpr_render(case)",
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 0)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ],
         "script_info": [
-            "SC ML Denoiser"
+            "SC EAW Denoiser"
         ],
-        "scene": "Reflection.ma"
+        "scene": "DenoiserShadowCatcher.ma"
     },
     {
         "case": "MAYA_MAT_SC_018",
@@ -225,14 +233,36 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)",
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 1)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 0)",
             "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)"
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 0)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
         ],
         "script_info": [
             "SC ML Denoiser"
         ],
-        "scene": "Reflection.ma"
+        "scene": "DenoiserShadowCatcher.ma"
+    },
+    {
+        "case": "MAYA_MAT_SC_019",
+        "status": "active",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)",
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 1)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 0)",
+            "rpr_render(case)",
+            "cmds.setAttr('RPRMatteMaterial1.rcenabled', 0)",
+            "cmds.setAttr('RPRMatteMaterial1.scenabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)"
+        ],
+        "script_info": [
+            "SC ML+AOV Denoiser"
+        ],
+        "scene": "DenoiserShadowCatcher.ma"
     }
 ]
