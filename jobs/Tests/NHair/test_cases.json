@@ -5,11 +5,9 @@
         "script_info": [
             "Braids"
         ],
-        "scene": "NHair.ma",
+        "scene": "Braids.ma",
         "functions": [
-            "cmds.setAttr('Braids.visibility', 1)",
-            "rpr_render(case)",
-            "cmds.setAttr('Braids.visibility', 0)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -18,11 +16,9 @@
         "script_info": [
             "Long hair"
         ],
-        "scene": "NHair.ma",
+        "scene": "Long.ma",
         "functions": [
-            "cmds.setAttr('longhair.visibility', 1)",
-            "rpr_render(case)",
-            "cmds.setAttr('longhair.visibility', 0)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -31,11 +27,9 @@
         "script_info": [
             "Pig tail"
         ],
-        "scene": "NHair.ma",
+        "scene": "Pig.ma",
         "functions": [
-            "cmds.setAttr('layer3.visibility', 1)",
-            "rpr_render(case)",
-            "cmds.setAttr('layer3.visibility', 0)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -44,11 +38,9 @@
         "script_info": [
             "Spiky"
         ],
-        "scene": "NHair.ma",
+        "scene": "Spiky.ma",
         "functions": [
-            "cmds.setAttr('layer4.visibility', 1)",
-            "rpr_render(case)",
-            "cmds.setAttr('layer4.visibility', 0)"
+            "rpr_render(case)"
         ]
     },
     {
@@ -57,11 +49,9 @@
         "script_info": [
             "Straight long"
         ],
-        "scene": "NHair.ma",
+        "scene": "Straight.ma",
         "functions": [
-            "cmds.setAttr('layer5.visibility', 1)",
-            "rpr_render(case)",
-            "cmds.setAttr('layer5.visibility', 0)"
+            "rpr_render(case)"
         ]
     }
 ]
