@@ -243,7 +243,10 @@
         "script_info": [
             "SC ML Denoiser"
         ],
-        "scene": "DenoiserShadowCatcher.ma"
+        "scene": "DenoiserShadowCatcher.ma",
+        "skip_on":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_SC_019",
