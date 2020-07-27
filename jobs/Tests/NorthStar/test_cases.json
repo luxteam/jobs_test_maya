@@ -1452,6 +1452,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Do not compare",
             "Object ID"
         ],
         "scene": "AOVConstruct.ma",
