@@ -15,7 +15,7 @@
         "case": "MAYA_MAT_SC_002",
         "status": "active",
         "functions": [
-            "alpha_render(case)"
+            "rpr_render(case, 'mask')"
         ],
         "script_info": [
             "SC Alpha"

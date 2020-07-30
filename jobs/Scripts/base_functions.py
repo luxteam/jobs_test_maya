@@ -90,7 +90,7 @@ def enable_rpr(case):
         logging('Load rpr')
 
 
-def rpr_render(case):
+def rpr_render(case, mode='color'):
     event('Prerender', False, case['case'])
     logging('Render image')
 
@@ -99,7 +99,7 @@ def rpr_render(case):
     mel.eval('renderIntoNewWindow render')
     cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
     test_case_path = path.join(WORK_DIR, 'Color', case['case'])
-    cmds.renderWindowEditor('renderView', edit=1,  dst='color')
+    cmds.renderWindowEditor('renderView', edit=1,  dst=mode)
     cmds.renderWindowEditor('renderView', edit=1, com=1,
                             writeImage=test_case_path)
     test_time = time.time() - start_time
