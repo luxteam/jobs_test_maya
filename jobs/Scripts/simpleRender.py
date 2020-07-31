@@ -283,7 +283,7 @@ def main(args):
                     group_timeout = child.attrib['timeout']
                     break
 
-    except Exception:
+    except Exception as e:
         core_config.main_logger.error("Can't get group timeout")
         core_config.main_logger.error(str(e))
 
