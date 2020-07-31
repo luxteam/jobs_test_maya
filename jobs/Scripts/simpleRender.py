@@ -11,6 +11,7 @@ from datetime import datetime
 from shutil import copyfile, move, which
 import sys
 import time
+import xml.etree.ElementTree as ET
 
 sys.path.append(os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
@@ -267,6 +268,25 @@ def main(args):
         core_config.main_logger.error("Can't get gpu name")
     render_platform = {platform.system(), gpu}
 
+    group_timeout = 0
+    try:
+        xml_tree = ET.parse(os.path.realpath(os.path.join(os.path.abspath(args.output), 'test.job-manifest.xml')))
+        xml_root = xml_tree.getroot()
+        for child in xml_root:
+            if child.tag == 'execute':
+                target_execute = False
+                for key, value in child.attrib.items():
+                    if key == 'command' and 'simpleRender' in value:
+                        target_execute = True
+                        break
+                if target_execute and child.attrib['timeout']:
+                    group_timeout = child.attrib['timeout']
+                    break
+
+    except Exception:
+        core_config.main_logger.error("Can't get group timeout")
+        core_config.main_logger.error(str(e))
+
     for case in cases:
         if sum([render_platform & set(skip_conf) == set(skip_conf) for skip_conf in case.get('skip_on', '')]):
             for i in case['skip_on']:
@@ -290,6 +310,8 @@ def main(args):
             template['test_group'] = args.testType
             template['date_time'] = datetime.now().strftime(
                 '%m/%d/%Y %H:%M:%S')
+            if group_timeout:
+                template['timeout'] = group_timeout
 
             with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
                 f.write(json.dumps([template], indent=4))
@@ -403,6 +425,16 @@ if __name__ == '__main__':
                 args.output).replace('\\', '/'), 'test_cases.json')))
     except:
         core_config.logging.error("Can't copy test_cases.json")
+        core_config.main_logger.error(str(e))
+        exit(-1)
+
+    try:
+        copyfile(os.path.realpath(os.path.join(os.path.dirname(
+            __file__), '..', 'Tests', args.testType, 'test.job-manifest.xml')),
+            os.path.realpath(os.path.join(os.path.abspath(
+                args.output), 'test.job-manifest.xml')))
+    except:
+        core_config.logging.error("Can't copy test.job-manifest.xml")
         core_config.main_logger.error(str(e))
         exit(-1)
 
