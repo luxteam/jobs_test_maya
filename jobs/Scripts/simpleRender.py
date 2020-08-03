@@ -279,7 +279,7 @@ def main(args):
                     if key == 'command' and 'simpleRender' in value:
                         target_execute = True
                         break
-                if target_execute and child.attrib['timeout']:
+                if target_execute and 'timeout' in child.attrib:
                     group_timeout = child.attrib['timeout']
                     break
 
@@ -311,7 +311,7 @@ def main(args):
             template['date_time'] = datetime.now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             if group_timeout:
-                template['timeout'] = group_timeout
+                template['group_timeout'] = group_timeout
 
             with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
                 f.write(json.dumps([template], indent=4))
