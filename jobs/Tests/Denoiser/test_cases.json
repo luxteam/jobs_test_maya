@@ -1189,7 +1189,7 @@
     },
     {
         "case": "MAYA_RS_DEN_071",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
