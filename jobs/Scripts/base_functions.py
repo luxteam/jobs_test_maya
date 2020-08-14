@@ -169,8 +169,8 @@ def save_report(case):
         os.makedirs(os.path.join(WORK_DIR, 'Color'))
 
     work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
-    source_dir = path.join(WORK_DIR, '..', '..', '..',
-                           '..', 'jobs_launcher', 'common', 'img')
+    source_dir = path.join(WORK_DIR, os.path.pardir, os.path.pardir, os.path.pardir,
+                           os.path.pardir, 'jobs_launcher', 'common', 'img')
 
     if case['status'] == 'inprogress':
         copyfile(path.join(source_dir, 'passed.jpg'), work_dir)

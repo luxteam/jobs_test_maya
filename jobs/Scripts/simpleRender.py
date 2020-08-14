@@ -259,7 +259,7 @@ def main(args):
 
     if not os.path.exists(os.path.join(work_dir, 'Color')):
         os.makedirs(os.path.join(work_dir, 'Color'))
-    copyfile(os.path.abspath(os.path.join(work_dir, '..', '..', '..', '..', 'jobs_launcher',
+    copyfile(os.path.abspath(os.path.join(work_dir, os.path.pardir, os.path.pardir, os.path.pardir, os.path.pardir, 'jobs_launcher',
                                           'common', 'img', 'error.jpg')), os.path.join(work_dir, 'Color', 'failed.jpg'))
 
     gpu = get_gpu()
@@ -398,7 +398,7 @@ if __name__ == '__main__':
 
     try:
         copyfile(os.path.realpath(os.path.join(os.path.dirname(
-            __file__), '..', 'Tests', args.testType, 'test_cases.json')),
+            __file__), os.path.pardir, 'Tests', args.testType, 'test_cases.json')),
             os.path.realpath(os.path.join(os.path.abspath(
                 args.output).replace('\\', '/'), 'test_cases.json')))
     except:

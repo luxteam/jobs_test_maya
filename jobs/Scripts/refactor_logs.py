@@ -108,7 +108,7 @@ def main(args):
 
     render_log(work_dir)
 
-    with open(os.path.realpath(os.path.join(work_dir, '..', os.path.basename(work_dir) + '_performance.json')), 'w') as f:
+    with open(os.path.realpath(os.path.join(work_dir, os.path.pardir, os.path.basename(work_dir) + '_performance.json')), 'w') as f:
         f.write(json.dumps(performance_count(work_dir)))
 
 
