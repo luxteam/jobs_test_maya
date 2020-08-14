@@ -77,7 +77,7 @@ def get_windows_titles():
     return []
 
 
-def createArgsParser():
+def createArgsParser(): # TODO: add docstrings and help
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--tool', required=True, metavar='<path>')
@@ -235,7 +235,7 @@ def main(args):
         script = script.split('# place for extension functions')
         script = script[0] + extension_script + script[1]
 
-    work_dir = os.path.abspath(args.output).replace('\\', '/')
+    work_dir = os.path.abspath(args.output).replace('\\', '/') #TODO: remove replace
     res_path = os.path.abspath(args.res_path).replace('\\', '/')
 
     maya_scenes = {x.get('scene', '') for x in cases if x.get('scene', '')}

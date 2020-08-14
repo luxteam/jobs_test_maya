@@ -5,15 +5,14 @@ import datetime
 import time
 import json
 import re
-import os.path as path
 import os
 from shutil import copyfile
 import fireRender.rpr_material_browser
 
-WORK_DIR = '{work_dir}'
+WORK_DIR = r'{work_dir}'
 TEST_TYPE = '{testType}'
 RENDER_DEVICE = '{render_device}'
-RES_PATH = '{res_path}'
+RES_PATH = r'{res_path}'
 PASS_LIMIT = {pass_limit}
 RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
@@ -51,10 +50,10 @@ def reportToJSON(case, render_time=0):
     report['file_name'] = case['case'] + case.get('extension', '.jpg')
     # TODO: render device may be incorrect (if it changes in case)
     report['render_device'] = cmds.optionVar(q='RPR_DevicesName')[0]
-    report['tool'] = mel.eval('about -iv')
+    report['tool'] = cmds.about(v=True)
     report['date_time'] = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
-    report['render_version'] = mel.eval('getRPRPluginVersion()')
-    report['core_version'] = mel.eval('getRprCoreVersion()')
+    report['render_version'] = mel.eval('getRPRPluginVersion()') #TODO: cmds alternative
+    report['core_version'] = mel.eval('getRprCoreVersion()') #TODO: cmds alternative
     report['render_color_path'] = path.join('Color', report['file_name'])
     report['render_time'] = render_time
     report['test_group'] = TEST_TYPE
@@ -93,12 +92,11 @@ def enable_rpr(case):
 def rpr_render(case, mode='color'):
     event('Prerender', False, case['case'])
     logging('Render image')
-
-    mel.eval('fireRender -waitForItTwo')
-    start_time = time.time()
-    mel.eval('renderIntoNewWindow render')
-    cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
     test_case_path = path.join(WORK_DIR, 'Color', case['case'])
+
+    mel.eval('fireRender -waitForItTwo') #TODO: cmds alternative
+    start_time = time.time()
+    mel.eval('renderIntoNewWindow render') #TODO: cmds alternative
     cmds.renderWindowEditor('renderView', edit=1,  dst=mode)
     cmds.renderWindowEditor('renderView', edit=1, com=1,
                             writeImage=test_case_path)
@@ -109,7 +107,6 @@ def rpr_render(case, mode='color'):
 
 
 def prerender(case):
-    logging('Prerender')
     scene = case.get('scene', '')
     scene_name = cmds.file(q=True, sn=True, shn=True)
     if scene_name != scene:
@@ -123,10 +120,11 @@ def prerender(case):
             logging(
                 "Can't prepare for render scene because of {{}}".format(str(e)))
 
+    logging('Prerender')
     event('Prerender', True, case['case'])
 
     cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
-    mel.eval('athenaEnable -ae false')
+    mel.eval('athenaEnable -ae false') #TODO: cmds alternative
 
     cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', ENGINE)
 
@@ -165,9 +163,6 @@ def prerender(case):
 def save_report(case):
     logging('Save report without rendering for ' + case['case'])
 
-    if not os.path.exists(os.path.join(WORK_DIR, 'Color')):
-        os.makedirs(os.path.join(WORK_DIR, 'Color'))
-
     work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
     source_dir = path.join(WORK_DIR, os.path.pardir, os.path.pardir, os.path.pardir,
                            os.path.pardir, 'jobs_launcher', 'common', 'img')
@@ -199,9 +194,9 @@ def case_function(case):
             temp = os.path.join(projPath, case['scene'][:-3])
             if os.path.isdir(temp):
                 projPath = temp
-            mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
+            mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/'))) #TODO: cmds alternative
         except:
-            logging("Can't set project in '" + projPath + "'")
+            logging("Can't set project in '{{}}'".format(projPath))
 
     # 2- retries count
     if case['status'] == 'fail' or case.get('number_of_tries', 1) == 2:
@@ -221,6 +216,9 @@ def case_function(case):
 def main():
     if not os.path.exists(os.path.join(WORK_DIR, LOGS_DIR)):
         os.makedirs(os.path.join(WORK_DIR, LOGS_DIR))
+
+    if not os.path.exists(os.path.join(WORK_DIR, 'Color')):
+        os.makedirs(os.path.join(WORK_DIR, 'Color'))
 
     with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
         cases = json.load(json_file)
