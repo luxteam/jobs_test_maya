@@ -36,11 +36,11 @@
     }
      * `TESTS_FILTER` is name of group that you want to render. You can use it with FILE_FILTER if file isn't `json`. You can use quotes to run several groups at the same time. For example:
     > ./run.bat gpu none "Support_2018 Support_2019"
-     * `RX` and `RY` are resolution. If doesn't defines it is taken from case or manifest or run.bat default values (in this order of priority).
-     * `SPU` If doesn't defines it is taken from case or manifest or run.bat default values (in this order of priority).
-     * `ITER` If doesn't defines it is taken from case or manifest or run.bat default values (in this order of priority).
-     * `THRESHOLD` If doesn't defines it is taken from case or manifest or run.bat default values (in this order of priority).
-     * `TOOL` version of maya. 2020 is default, except support groups
+     * `RX` and `RY` are resolution. It is taken from case or manifest or run.bat default values (in this order of priority).
+     * `SPU` It is taken from case or manifest or run.bat default values (in this order of priority).
+     * `ITER` It is taken from case or manifest or run.bat default values (in this order of priority).
+     * `THRESHOLD` It is taken from case or manifest or run.bat default values (in this order of priority).
+     * `TOOL` part of path to maya with maya version. 2020 is default, except support groups
 
 ## Adding test group
 
