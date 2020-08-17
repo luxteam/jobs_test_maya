@@ -218,7 +218,7 @@ def main(args):
         cases = json.load(open(os.path.realpath(
             os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
     except Exception as e:
-        core_config.logging.error("Can't load test_cases.json")
+        core_config.main_logger.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
         exit(-1)
 
@@ -339,7 +339,7 @@ def group_failed(args):
         cases = json.load(open(os.path.realpath(
             os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
     except Exception as e:
-        core_config.logging.error("Can't load test_cases.json")
+        core_config.main_logger.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
         exit(-1)
 
@@ -402,7 +402,7 @@ if __name__ == '__main__':
             os.path.realpath(os.path.join(os.path.abspath(
                 args.output).replace('\\', '/'), 'test_cases.json')))
     except:
-        core_config.logging.error("Can't copy test_cases.json")
+        core_config.main_logger.error("Can't copy test_cases.json")
         core_config.main_logger.error(str(e))
         exit(-1)
 
@@ -424,7 +424,7 @@ if __name__ == '__main__':
             cases = json.load(open(os.path.realpath(
                 os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
         except Exception as e:
-            core_config.logging.error("Can't load test_cases.json")
+            core_config.main_logger.error("Can't load test_cases.json")
             core_config.main_logger.error(str(e))
             exit(-1)
 
