@@ -135,7 +135,7 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
 
     while True:
         try:
-            p.communicate(timeout=2)
+            p.communicate(timeout=40)
             window_titles = get_windows_titles()
             core_config.main_logger.info(
                 'Found windows: {}'.format(window_titles))
