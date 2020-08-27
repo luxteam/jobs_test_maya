@@ -217,6 +217,7 @@ def main(args, error_windows):
     except Exception as e:
         core_config.logging.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
+        group_failed(args, error_windows)
         exit(-1)
 
     try:
@@ -338,13 +339,15 @@ def main(args, error_windows):
 
 
 def group_failed(args, error_windows):
+    core_config.main_logger.error('Group failed')
     try:
         cases = json.load(open(os.path.realpath(
             os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
     except Exception as e:
         core_config.logging.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
-        exit(-1)
+        cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
+            __file__), '..', 'Tests', args.testType, 'test_cases.json'))))
 
     for case in cases:
         if case['status'] == 'active':
