@@ -456,7 +456,7 @@
         "script_info": [
             "Motion Blur + ML (Color only) + Color Managment"
         ],
-        "scene": "adaptive_sampling.ma"
+        "scene": "motion_blur.ma"
     },
     {
         "case": "MAYA_RS_DUAL_030",
