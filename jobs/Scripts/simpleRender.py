@@ -338,29 +338,25 @@ def main(args, error_windows):
     return rc
 
 
-def group_failed(args, error_windows):
+def group_failed(args):
     core_config.main_logger.error('Group failed')
+    status = 'skipped'
     try:
         cases = json.load(open(os.path.realpath(
-            os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+            os.path.join(os.path.abspath(args.output), 'test_cases.json'))))
     except Exception as e:
         core_config.logging.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
         cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
             __file__), '..', 'Tests', args.testType, 'test_cases.json'))))
+        status = 'inprogress'
 
     for case in cases:
         if case['status'] == 'active':
-            case['status'] = 'skipped'
+            case['status'] = status
 
-    with open(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'), 'w+') as f:
+    with open(os.path.join(os.path.abspath(args.output), 'test_cases.json'), "w+") as f:
         json.dump(cases, f, indent=4)
-
-    rc = main(args, error_windows)
-    kill_process(PROCESS)
-    core_config.main_logger.info(
-        'Finish simpleRender with code: {}'.format(rc))
-    exit(rc)
 
 
 def sync_time(work_dir):
