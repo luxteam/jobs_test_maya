@@ -25,7 +25,10 @@
         "script_info": [
             "NorthStar"
         ],
-        "scene": "adaptive_sampling.ma"
+        "scene": "adaptive_sampling.ma",
+        "skip_on":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_RS_DUAL_003",
