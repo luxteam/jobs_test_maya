@@ -247,6 +247,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', False)"
         ],
         "script_info": [
+            "Do not compare",
             "Render Stamp"
         ],
         "scene": "adaptive_sampling.ma"
