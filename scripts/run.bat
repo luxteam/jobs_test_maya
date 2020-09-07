@@ -24,4 +24,4 @@ if not defined RETRIES set RETRIES=2
 
 python -m pip install -r ..\jobs_launcher\install\requirements.txt
 
-python ..\jobs_launcher\executeTests.py --test_filter %TESTS_FILTER% --file_filter %FILE_FILTER% --tests_root ..\jobs --work_root ..\Work\Results --work_dir Maya --cmd_variables Tool "C:\Program Files\Autodesk\Maya%TOOL%\bin\maya.exe" RenderDevice %RENDER_DEVICE% ResPath "D:\JN\TestResources\rpr_maya_autotests" PassLimit %ITER% rx %RX% ry %RY% SPU %SPU% threshold %THRESHOLD% engine %ENGINE% retries %RETRIES%
+python ..\jobs_launcher\executeTests.py --test_filter %TESTS_FILTER% --file_filter %FILE_FILTER% --tests_root ..\jobs --work_root ..\Work\Results --work_dir Maya --cmd_variables Tool "C:\Program Files\Autodesk\Maya%TOOL%\bin\maya.exe" RenderDevice %RENDER_DEVICE% ResPath "C:\TestResources\MayaAssets" PassLimit %ITER% rx %RX% ry %RY% SPU %SPU% threshold %THRESHOLD% engine %ENGINE% retries %RETRIES%
