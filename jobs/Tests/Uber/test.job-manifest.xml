@@ -15,6 +15,7 @@
         <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU 150</argument>
         <argument>--threshold {threshold}</argument>
+        <argument>--retries {retries}</argument>
         <argument>--engine "{engine}"</argument>
     </execute>
 

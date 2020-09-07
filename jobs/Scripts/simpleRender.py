@@ -94,6 +94,7 @@ def createArgsParser():
     parser.add_argument('--error_count', required=False, default=0, type=int)
     parser.add_argument('--threshold', required=False,
                         default=0.05, type=float)
+    parser.add_argument('--retries', required=False, default=2, type=int)
 
     return parser
 
@@ -239,7 +240,8 @@ def main(args, error_windows):
     check_licenses(args.res_path, maya_scenes, args.testType)
 
     script = script.format(work_dir=work_dir, testType=args.testType, render_device=args.render_device, res_path=res_path, pass_limit=args.pass_limit,
-                           resolution_x=args.resolution_x, resolution_y=args.resolution_y, SPU=args.SPU, threshold=args.threshold, engine=args.engine)
+                           resolution_x=args.resolution_x, resolution_y=args.resolution_y, SPU=args.SPU, threshold=args.threshold, engine=args.engine,
+                           retries=args.retries)
 
     with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
         file.write(script)
@@ -447,7 +449,7 @@ if __name__ == '__main__':
             if case['status'] in ['active', 'fail', 'inprogress']:
                 active_cases += 1
 
-        if active_cases == 0 or iteration > len(cases) * 2:  # 2- retries count
+        if active_cases == 0 or iteration > len(cases) * args.retries:
             for case in cases:
                 error_message = ''
                 number_of_tries = case.get('number_of_tries', 0)

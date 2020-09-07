@@ -20,6 +20,7 @@ RESOLUTION_Y = {resolution_y}
 SPU = {SPU}
 THRESHOLD = {threshold}
 ENGINE = {engine}
+RETRIES = {retries}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
@@ -204,8 +205,7 @@ def case_function(case):
         except:
             logging("Can't set project in '" + projPath + "'")
 
-    # 2- retries count
-    if case['status'] == 'fail' or case.get('number_of_tries', 1) == 2:
+    if case['status'] == 'fail' or case.get('number_of_tries', 1) == RETRIES:
         case['status'] = 'error'
         func = 'save_report'
     elif case['status'] == 'skipped':

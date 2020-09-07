@@ -16,6 +16,7 @@
         <argument>--SPU {SPU}</argument>
         <argument>--threshold {threshold}</argument>
         <argument>--engine 2</argument>
+        <argument>--retries {retries}</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"'>
