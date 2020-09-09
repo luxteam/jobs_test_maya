@@ -42,6 +42,7 @@ def reportToJSON(case, render_time=0):
 
     if case['status'] == 'inprogress':
         report['test_status'] = 'passed'
+        report['group_timeout_exceeded'] = False
     else:
         report['test_status'] = case['status']
 
@@ -63,8 +64,6 @@ def reportToJSON(case, render_time=0):
     report['script_info'] = case['script_info']
     report['render_log'] = path.join('render_tool_logs', case['case'] + '.log')
     report['scene_name'] = case.get('scene', '')
-    report['group_timeout_exceeded'] = False
-
     with open(path_to_file, 'w') as file:
         file.write(json.dumps([report], indent=4))
 
