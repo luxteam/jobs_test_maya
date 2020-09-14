@@ -217,7 +217,7 @@ def main(args, error_windows):
     except Exception as e:
         core_config.logging.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
-        group_failed(args, error_windows)
+        group_failed(args)
         exit(-1)
 
     try:
