@@ -358,6 +358,10 @@ def group_failed(args):
     with open(os.path.join(os.path.abspath(args.output), 'test_cases.json'), "w+") as f:
         json.dump(cases, f, indent=4)
 
+    rc = main(args)
+    core_config.main_logger.info(
+        "Finish simpleRender with code: {}".format(rc))
+    exit(rc)
 
 def sync_time(work_dir):
     for rpr_json_path in os.listdir(work_dir):
