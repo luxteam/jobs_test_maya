@@ -217,7 +217,7 @@ def main(args, error_windows):
     except Exception as e:
         core_config.logging.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
-        group_failed(args)
+        group_failed(args, error_windows)
         exit(-1)
 
     try:
@@ -338,7 +338,7 @@ def main(args, error_windows):
     return rc
 
 
-def group_failed(args):
+def group_failed(args, error_windows):
     core_config.main_logger.error('Group failed')
     status = 'skipped'
     try:
@@ -358,7 +358,7 @@ def group_failed(args):
     with open(os.path.join(os.path.abspath(args.output), 'test_cases.json'), "w+") as f:
         json.dump(cases, f, indent=4)
 
-    rc = main(args)
+    rc = main(args, error_windows)
     kill_process(PROCESS)
     core_config.main_logger.info(
         "Finish simpleRender with code: {}".format(rc))
@@ -444,7 +444,7 @@ if __name__ == '__main__':
             if case['status'] in ['fail', 'error', 'inprogress']:
                 current_error_count += 1
                 if args.error_count == current_error_count:
-                    group_failed(args)
+                    group_failed(args, error_windows)
             else:
                 current_error_count = 0
 
