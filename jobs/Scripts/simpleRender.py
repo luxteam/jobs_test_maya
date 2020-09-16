@@ -266,8 +266,14 @@ def main(args, error_windows):
     system_pl = platform.system()
 
     baseline_dir = 'rpr_maya_autotests_baselines'
-    if args.engine == '2' and not 'NorthStar' in args.testType:
-        baseline_dir += '-NorthStar'
+    if args.engine == 'Northstar' and not 'NorthStar' in args.testType:
+        baseline_dir = baseline_dir + '-NorthStar'
+    elif args.engine == 'Hybrid_Low' and not 'Hybrid' in args.testType:
+        baseline_dir = baseline_dir + '-HybridLow'
+    elif args.engine == 'Hybrid_Medium' and not 'Hybrid' in args.testType:
+        baseline_dir = baseline_dir + '-HybridMedium'
+    elif args.engine == 'Hybrid_High' and not 'Hybrid' in args.testType:
+        baseline_dir = baseline_dir + '-HybridHigh'
 
     if system_pl == "Windows":
         baseline_path_tr = os.path.join(
