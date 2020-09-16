@@ -245,7 +245,7 @@ def main(args, error_windows):
         file.write(script)
 
     if os.path.exists(args.testCases) and args.testCases:
-        with open(os.path.join(args.testCases)) as f:
+        with open(args.testCases) as f:
             test_cases = json.load(f)['groups'][args.testType]
             if test_cases:
                 necessary_cases = [
