@@ -1444,7 +1444,7 @@
     },
     {
         "case": "MAYA_RS_NRT_077",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 8)",
             "cmds.setAttr('RadeonProRenderGlobals.aovObjectId', 1)",
