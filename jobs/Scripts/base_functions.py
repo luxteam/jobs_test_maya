@@ -19,7 +19,7 @@ RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
 SPU = {SPU}
 THRESHOLD = {threshold}
-ENGINE = {engine}
+ENGINE = '{engine}'
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
 
@@ -131,7 +131,16 @@ def prerender(case):
     cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
     mel.eval('athenaEnable -ae false')
 
-    cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', ENGINE)
+    if ENGINE == 'Tahoe':
+        cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 1)
+    elif ENGINE == 'Northstar':
+        cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 2)
+    elif ENGINE == 'Hybrid_Low':
+        cmds.setAttr("RadeonProRenderGlobals.renderQualityFinalRender", 3)
+    elif ENGINE == 'Hybrid_Medium':
+        cmds.setAttr("RadeonProRenderGlobals.renderQualityFinalRender", 2)
+    elif ENGINE == 'Hybrid_High':
+        cmds.setAttr("RadeonProRenderGlobals.renderQualityFinalRender", 1)
 
     cmds.optionVar(rm='RPR_DevicesSelected')
     cmds.optionVar(iva=('RPR_DevicesSelected',
