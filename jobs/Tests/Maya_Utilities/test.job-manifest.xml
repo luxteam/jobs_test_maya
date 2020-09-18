@@ -14,7 +14,7 @@
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU {SPU}</argument>
-        <argument>--threshold {threshold}</argument>
+        <argument>--threshold 750</argument>
         <argument>--engine "{engine}"</argument>
     </execute>
 
