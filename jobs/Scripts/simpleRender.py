@@ -218,6 +218,7 @@ def main(args, error_windows):
     except Exception as e:
         core_config.logging.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
+        group_failed(args, error_windows)
         exit(-1)
 
     try:
@@ -265,20 +266,48 @@ def main(args, error_windows):
     if not gpu:
         core_config.main_logger.error("Can't get gpu name")
     render_platform = {platform.system(), gpu}
+    system_pl = platform.system()
+
+    baseline_dir = 'rpr_maya_autotests_baselines'
+    if args.engine == 'Northstar' and not 'NorthStar' in args.testType:
+        baseline_dir = baseline_dir + '-NorthStar'
+    elif args.engine == 'Hybrid_Low' and not 'Hybrid' in args.testType:
+        baseline_dir = baseline_dir + '-HybridLow'
+    elif args.engine == 'Hybrid_Medium' and not 'Hybrid' in args.testType:
+        baseline_dir = baseline_dir + '-HybridMedium'
+    elif args.engine == 'Hybrid_High' and not 'Hybrid' in args.testType:
+        baseline_dir = baseline_dir + '-HybridHigh'
+
+    if system_pl == "Windows":
+        baseline_path_tr = os.path.join(
+            'c:/TestResources', baseline_dir, args.testType)
+    else:
+        baseline_path_tr = os.path.expandvars(os.path.join(
+            '$CIS_TOOLS/../TestResources', baseline_dir, args.testType))
+
+    baseline_path = os.path.join(
+        work_dir, os.path.pardir, os.path.pardir, os.path.pardir, 'Baseline', args.testType)
+
+    if not os.path.exists(baseline_path):
+        os.makedirs(baseline_path)
+        os.makedirs(os.path.join(baseline_path, 'Color'))
 
     for case in cases:
-        if sum([render_platform & set(skip_conf) == set(skip_conf) for skip_conf in case.get('skip_on', '')]):
-            for i in case['skip_on']:
-                skip_on = set(i)
-                if render_platform.intersection(skip_on) == skip_on:
+        if sum([render_platform & set(skip_conf) == set(skip_conf) for skip_conf in case.get('skip_config', '')]):
+            for i in case['skip_config']:
+                skip_config = set(i)
+                if render_platform.intersection(skip_config) == skip_config:
                     case['status'] = 'skipped'
+
+        if any([engine for engine in case.get('skip_engine', []) if engine == args.engine]):
+            case['status'] = 'skipped'
 
         if case['status'] != 'done':
             if case['status'] == 'inprogress':
                 case['status'] = 'active'
                 case['number_of_tries'] = case.get('number_of_tries', 0) + 1
 
-            template = core_config.RENDER_REPORT_BASE
+            template = core_config.RENDER_REPORT_BASE.copy()
             template['test_case'] = case['case']
             template['render_device'] = get_gpu()
             template['test_status'] = 'error'
@@ -295,10 +324,24 @@ def main(args, error_windows):
             with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
                 f.write(json.dumps([template], indent=4))
 
+        try:
+            copyfile(os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX),
+                     os.path.join(baseline_path, case['case'] + core_config.CASE_REPORT_SUFFIX))
+
+            with open(os.path.join(baseline_path, case['case'] + core_config.CASE_REPORT_SUFFIX)) as baseline:
+                baseline_json = json.load(baseline)
+
+            for thumb in [''] + core_config.THUMBNAIL_PREFIXES:
+                if thumb + 'render_color_path' and os.path.exists(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path'])):
+                    copyfile(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path']),
+                             os.path.join(baseline_path, baseline_json[thumb + 'render_color_path']))
+        except:
+            core_config.main_logger.error('Failed to copy baseline ' +
+                                          os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX))
+
     with open(os.path.join(work_dir, 'test_cases.json'), 'w+') as f:
         json.dump(cases, f, indent=4)
 
-    system_pl = platform.system()
     if system_pl == 'Windows':
         cmdRun = '''
 		  set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log
@@ -340,53 +383,60 @@ def main(args, error_windows):
 
 
 def group_failed(args, error_windows):
+    core_config.main_logger.error('Group failed')
+    status = 'skipped'
     try:
         cases = json.load(open(os.path.realpath(
-            os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+            os.path.join(os.path.abspath(args.output), 'test_cases.json'))))
     except Exception as e:
         core_config.logging.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
-        exit(-1)
+        cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
+            __file__), '..', 'Tests', args.testType, 'test_cases.json'))))
+        status = 'inprogress'
 
     for case in cases:
         if case['status'] == 'active':
-            case['status'] = 'skipped'
+            case['status'] = status
 
-    with open(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'), 'w+') as f:
+    with open(os.path.join(os.path.abspath(args.output), 'test_cases.json'), "w+") as f:
         json.dump(cases, f, indent=4)
 
     rc = main(args, error_windows)
     kill_process(PROCESS)
     core_config.main_logger.info(
-        'Finish simpleRender with code: {}'.format(rc))
+        "Finish simpleRender with code: {}".format(rc))
     exit(rc)
-
 
 def sync_time(work_dir):
     for rpr_json_path in os.listdir(work_dir):
         if rpr_json_path.endswith('_RPR.json'):
-            with open(os.path.join(work_dir, rpr_json_path)) as rpr_json_file:
-                rpr_json = json.load(rpr_json_file)
+            try:
+                with open(os.path.join(work_dir, rpr_json_path)) as rpr_json_file:
+                    rpr_json = json.load(rpr_json_file)
 
-            with open(os.path.join(work_dir, rpr_json[0]['render_log'])) as logs_file:
-                logs = logs_file.read()
+                with open(os.path.join(work_dir, rpr_json[0]['render_log'])) as logs_file:
+                    logs = logs_file.read()
 
-            sync_minutes = re.findall(
-                'RPR scene synchronization time: (\d*)m', logs)
-            sync_seconds = re.findall(
-                'RPR scene synchronization time: .*?(\d*)s', logs)
-            sync_milisec = re.findall(
-                'RPR scene synchronization time: .*?(\d*)ms', logs)
+                sync_minutes = re.findall(
+                    'RPR scene synchronization time: (\d*)m', logs)
+                sync_seconds = re.findall(
+                    'RPR scene synchronization time: .*?(\d*)s', logs)
+                sync_milisec = re.findall(
+                    'RPR scene synchronization time: .*?(\d*)ms', logs)
 
-            sync_minutes = float(next(iter(sync_minutes or []), 0))
-            sync_seconds = float(next(iter(sync_seconds or []), 0))
-            sync_milisec = float(next(iter(sync_milisec or []), 0))
+                sync_minutes = float(next(iter(sync_minutes or []), 0))
+                sync_seconds = float(next(iter(sync_seconds or []), 0))
+                sync_milisec = float(next(iter(sync_milisec or []), 0))
 
-            synchronization_time = sync_minutes * 60 + sync_seconds + sync_milisec / 1000
-            rpr_json[0]['sync_time'] = synchronization_time
+                synchronization_time = sync_minutes * 60 + sync_seconds + sync_milisec / 1000
+                rpr_json[0]['sync_time'] = synchronization_time
+                rpr_json[0]['render_time'] -= synchronization_time
 
-            with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
-                rpr_json_file.write(json.dumps(rpr_json, indent=4))
+                with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
+                    rpr_json_file.write(json.dumps(rpr_json, indent=4))
+            except:
+                core_config.logging.error("Can't count sync time for " + rpr_json_path)
 
 
 if __name__ == '__main__':

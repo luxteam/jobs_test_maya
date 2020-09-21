@@ -19,7 +19,7 @@ RESOLUTION_X = {resolution_x}
 RESOLUTION_Y = {resolution_y}
 SPU = {SPU}
 THRESHOLD = {threshold}
-ENGINE = {engine}
+ENGINE = '{engine}'
 RETRIES = {retries}
 LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 
@@ -43,13 +43,17 @@ def reportToJSON(case, render_time=0):
 
     if case['status'] == 'inprogress':
         report['test_status'] = 'passed'
+        report['group_timeout_exceeded'] = False
     else:
         report['test_status'] = case['status']
 
     logging('Create report json ({{}} {{}})'.format(
             case['case'], report['test_status']))
 
-    report['file_name'] = case['case'] + case.get('extension', '.jpg')
+    if case['status'] == 'skipped':
+        report['file_name'] = case['case'] + '.jpg'
+    else:
+        report['file_name'] = case['case'] + case.get('extension', '.jpg')
     # TODO: render device may be incorrect (if it changes in case)
     report['render_device'] = cmds.optionVar(q='RPR_DevicesName')[0]
     report['tool'] = mel.eval('about -iv')
@@ -64,8 +68,6 @@ def reportToJSON(case, render_time=0):
     report['script_info'] = case['script_info']
     report['render_log'] = path.join('render_tool_logs', case['case'] + '.log')
     report['scene_name'] = case.get('scene', '')
-    report['group_timeout_exceeded'] = False
-
     with open(path_to_file, 'w') as file:
         file.write(json.dumps([report], indent=4))
 
@@ -130,7 +132,16 @@ def prerender(case):
     cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
     mel.eval('athenaEnable -ae false')
 
-    cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', ENGINE)
+    if ENGINE == 'Tahoe':
+        cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 1)
+    elif ENGINE == 'Northstar':
+        cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 2)
+    elif ENGINE == 'Hybrid_Low':
+        cmds.setAttr("RadeonProRenderGlobals.renderQualityFinalRender", 3)
+    elif ENGINE == 'Hybrid_Medium':
+        cmds.setAttr("RadeonProRenderGlobals.renderQualityFinalRender", 2)
+    elif ENGINE == 'Hybrid_High':
+        cmds.setAttr("RadeonProRenderGlobals.renderQualityFinalRender", 1)
 
     cmds.optionVar(rm='RPR_DevicesSelected')
     cmds.optionVar(iva=('RPR_DevicesSelected',
