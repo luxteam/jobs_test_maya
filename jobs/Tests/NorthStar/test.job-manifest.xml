@@ -15,7 +15,7 @@
         <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU {SPU}</argument>
         <argument>--threshold {threshold}</argument>
-        <argument>--engine 2</argument>
+        <argument>--engine "Northstar"</argument>
         <argument>--retries {retries}</argument>
     </execute>
 

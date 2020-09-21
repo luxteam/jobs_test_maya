@@ -19,7 +19,7 @@ if not defined SPU set SPU=25
 if not defined ITER set ITER=50
 if not defined THRESHOLD set THRESHOLD=0.05
 if not defined TOOL set TOOL=2020
-if not defined ENGINE set ENGINE=1
+if not defined ENGINE set ENGINE=Tahoe
 if not defined RETRIES set RETRIES=2
 
 python -m pip install -r ..\jobs_launcher\install\requirements.txt
