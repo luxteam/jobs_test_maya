@@ -801,5 +801,34 @@
             "CPU+GPU mode"
         ],
         "scene": "normal_scene.ma"
+    },
+    {
+        "case": "MAYA_SM_054",
+        "status": "active",
+        "functions": [
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "UDIM"
+        ],
+        "scene": "Udim.ma"
+    },
+    {
+        "case": "MAYA_SM_055",
+        "status": "skipped",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 8)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovObjectId', 1)",
+            "mel.eval('OnAutoObjectIdAssign')",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Do not compare",
+            "Object ID"
+        ],
+        "scene": "AOVConstruct.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }
 ]
