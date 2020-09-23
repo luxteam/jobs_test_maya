@@ -403,6 +403,9 @@
         "script_info": [
             "Create second VDB"
         ],
-        "scene": "bunny.ma"
+        "scene": "bunny.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }
 ]
