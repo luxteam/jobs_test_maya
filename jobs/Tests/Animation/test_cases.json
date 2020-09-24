@@ -9,6 +9,9 @@
         "functions": [
             "cmds.currentTime(91)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -45,6 +48,9 @@
         "functions": [
             "cmds.currentTime(201)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -118,6 +124,9 @@
             "cmds.currentTime(11)",
             "rpr_render(case)",
             "cmds.currentTime(1)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -157,6 +166,9 @@
             "cmds.currentTime(14)",
             "rpr_render(case)",
             "cmds.currentTime(1)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -416,6 +428,9 @@
         "functions": [
             "cmds.currentTime(10)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -452,6 +467,9 @@
         "functions": [
             "cmds.currentTime(1)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -476,6 +494,9 @@
         "functions": [
             "cmds.currentTime(80)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     }
 ]

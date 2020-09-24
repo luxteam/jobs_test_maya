@@ -60,7 +60,10 @@
             "Luminous Efficacy - 100",
             "Light Shape - Sphere"
         ],
-        "scene": "Physical_Light.ma"
+        "scene": "Physical_Light.ma",
+        "skip_engine": [
+            "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_L_PL_004",
@@ -84,7 +87,10 @@
             "Check Box Visible - Activate",
             "Light Shape - Cylinder"
         ],
-        "scene": "Physical_Light.ma"
+        "scene": "Physical_Light.ma",
+        "skip_engine": [
+            "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_L_PL_005",
@@ -235,7 +241,10 @@
             "Light Shape - Cylinder",
             "Check Box Shadows - Activate"
         ],
-        "scene": "Physical_Light.ma"
+        "scene": "Physical_Light.ma",
+        "skip_engine": [
+            "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_L_PL_011",
@@ -1266,7 +1275,10 @@
             "Color Mode - Temperature",
             "Temperature - 7900"
         ],
-        "scene": "Physical_Light_Area.ma"
+        "scene": "Physical_Light_Area.ma",
+        "skip_engine": [
+            "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_L_PL_067",
@@ -1287,7 +1299,10 @@
             "Intensity units - Watts",
             "Light Intensity - 1.5"
         ],
-        "scene": "Physical_Light_Area.ma"
+        "scene": "Physical_Light_Area.ma",
+        "skip_engine": [
+            "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_L_PL_068",

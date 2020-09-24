@@ -20,6 +20,9 @@
         "scene": "ComplexLighting.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -43,6 +46,9 @@
         "scene": "ComplexLighting.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -62,7 +68,10 @@
             "EAW",
             "denoiser"
         ],
-        "scene": "ComplexLighting.ma"
+        "scene": "ComplexLighting.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_064",
@@ -81,7 +90,10 @@
             "LWR",
             "denoiser"
         ],
-        "scene": "ComplexLighting.ma"
+        "scene": "ComplexLighting.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_065",
@@ -100,7 +112,10 @@
             "Bilateral",
             "denoiser"
         ],
-        "scene": "ComplexLighting.ma"
+        "scene": "ComplexLighting.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_066",
@@ -226,7 +241,10 @@
             "Bilateral Denoiser",
             "Radius - 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_004",
@@ -277,7 +295,10 @@
             "LWR Denoiser",
             "Samples - 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_007",
@@ -328,7 +349,10 @@
             "LWR Denoiser",
             "Bandwidth - 0.1"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_010",
@@ -383,7 +407,10 @@
             "Filter Radius - 5",
             "Bandwidth - 0.5"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_013",
@@ -402,7 +429,10 @@
             "Filter Radius - 10",
             "Bandwidth - 1"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_014",
@@ -903,7 +933,10 @@
         "script_info": [
             "ML denoiser Lights "
         ],
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_042",
@@ -919,7 +952,10 @@
         "script_info": [
             "ML denoiser Lights AOV+Color"
         ],
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_043",
@@ -938,6 +974,9 @@
         "scene": "Denoiser_Light.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
+        ],
+        "skip_engine": [
+            "Hybrid_Low"
         ]
     },
     {
@@ -954,7 +993,10 @@
         "script_info": [
             "ML denoiser IES and Physcial"
         ],
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_045",
@@ -969,7 +1011,10 @@
         "script_info": [
             "EAW IES"
         ],
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_046",
@@ -984,7 +1029,10 @@
         "script_info": [
             "EAW IES and Physcial Light"
         ],
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_047",
@@ -999,7 +1047,10 @@
         "script_info": [
             "Bilateral IES"
         ],
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_048",
@@ -1014,7 +1065,10 @@
         "script_info": [
             "Bilateral IES and Physcal Light"
         ],
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_049",
@@ -1029,7 +1083,10 @@
         "script_info": [
             "LWR IES"
         ],
-        "scene": "Denoiser_Light.ma"
+        "scene": "Denoiser_Light.ma",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_050",
