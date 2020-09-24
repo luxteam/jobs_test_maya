@@ -20,6 +20,9 @@
         "scene": "ComplexLighting.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -43,6 +46,9 @@
         "scene": "ComplexLighting.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -62,7 +68,10 @@
             "EAW",
             "denoiser"
         ],
-        "scene": "ComplexLighting.ma"
+        "scene": "ComplexLighting.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_064",
@@ -81,7 +90,10 @@
             "LWR",
             "denoiser"
         ],
-        "scene": "ComplexLighting.ma"
+        "scene": "ComplexLighting.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_065",
@@ -100,7 +112,10 @@
             "Bilateral",
             "denoiser"
         ],
-        "scene": "ComplexLighting.ma"
+        "scene": "ComplexLighting.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_066",
@@ -226,7 +241,10 @@
             "Bilateral Denoiser",
             "Radius - 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_004",
@@ -277,7 +295,10 @@
             "LWR Denoiser",
             "Samples - 10"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_007",
@@ -328,7 +349,10 @@
             "LWR Denoiser",
             "Bandwidth - 0.1"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_010",
@@ -383,7 +407,10 @@
             "Filter Radius - 5",
             "Bandwidth - 0.5"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_DEN_013",

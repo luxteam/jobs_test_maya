@@ -18,7 +18,6 @@ Emissive
 Render_Layer
 PBR
 Uber
-Volume
 RPR_Nodes
 Quality
 Anti_Aliasing
@@ -31,7 +30,5 @@ XGen
 MASH
 Hybrid_Rendering
 Adaptive_Sampling
-VDB
 NHair
 Maya_Utilities
-Shadow_Catcher

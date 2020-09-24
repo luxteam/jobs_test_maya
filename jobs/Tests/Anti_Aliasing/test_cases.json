@@ -137,6 +137,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.filter', 4)",
             "cmds.setAttr('RadeonProRenderGlobals.filterSize', 1)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {

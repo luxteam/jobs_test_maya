@@ -10,6 +10,9 @@
             "assignMaterial('Blend_colors')",
             "rpr_render(case)",
             "resetMaterial()"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -23,6 +26,9 @@
             "assignMaterial('Buldge')",
             "rpr_render(case)",
             "resetMaterial()"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -75,6 +81,9 @@
             "assignMaterial('Fractal_noise')",
             "rpr_render(case)",
             "resetMaterial()"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {

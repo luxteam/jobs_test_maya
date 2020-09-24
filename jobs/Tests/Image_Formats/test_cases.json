@@ -10,6 +10,9 @@
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 6)",
             "rpr_render(case)",
             "setPass(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Low"
         ]
     },
     {
@@ -50,7 +53,10 @@
             "rpr_render(case)",
             "setPass(case)"
         ],
-        "extension": ".gif"
+        "extension": ".gif",
+        "skip_engine": [
+            "Hybrid_Low"
+        ]
     },
     {
         "case": "MAYA_RS_IF_006",
@@ -272,6 +278,9 @@
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 63)",
             "rpr_render(case)",
             "setPass(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_High"
         ]
     }
 ]
