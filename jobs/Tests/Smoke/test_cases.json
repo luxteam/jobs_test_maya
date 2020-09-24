@@ -293,7 +293,7 @@
     },
     {
         "case": "MAYA_SM_020",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('defaultRenderGlobals.imageFormat', 32)",
             "rpr_render(case)",
@@ -574,7 +574,7 @@
     },
     {
         "case": "MAYA_SM_037",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "ibl_shape = cmds.createNode('RPRIBL', n='RPRIBLShape')",
             "ibl_transform = cmds.listRelatives('RPRIBLShape', p=True)[0]",
@@ -616,7 +616,7 @@
     },
     {
         "case": "MAYA_SM_040",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.editRenderLayerGlobals(crl='rs_ALL_SHADOW')",
             "rpr_render(case)"
@@ -659,7 +659,7 @@
     },
     {
         "case": "MAYA_SM_043",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "rpr_render(case)"
         ],
@@ -670,7 +670,7 @@
     },
     {
         "case": "MAYA_SM_044",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "rpr_render(case)"
         ],
