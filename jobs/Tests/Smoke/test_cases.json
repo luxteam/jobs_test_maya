@@ -32,7 +32,10 @@
             "Test import FBX",
             "Pass Limit: 50"
         ],
-        "scene": "default.ma"
+        "scene": "default.ma",
+        "skip_engine": [
+            "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_SM_004",
@@ -132,7 +135,10 @@
             "Create Sun&Sky",
             "Pass Limit: 50"
         ],
-        "scene": "Lamborginhi_Aventador.ma"
+        "scene": "Lamborginhi_Aventador.ma",
+        "skip_engine": [
+            "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_SM_010",
@@ -151,7 +157,10 @@
             "Create IES Light",
             "Pass Limit: 50"
         ],
-        "scene": "Lamborginhi_Aventador.ma"
+        "scene": "Lamborginhi_Aventador.ma",
+        "skip_engine": [
+            "Hybrid_Medium", "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_SM_011",
@@ -187,6 +196,9 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_High"
         ]
     },
     {
@@ -506,7 +518,10 @@
             "12 lights in one scene",
             "Pass Limit: 50"
         ],
-        "scene": "IES.ma"
+        "scene": "IES.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_SM_033",
@@ -541,6 +556,9 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_High"
         ]
     },
     {
@@ -730,7 +748,10 @@
         "script_info": [
             "Portal Light"
         ],
-        "scene": "portal_light.ma"
+        "scene": "portal_light.ma",
+        "skip_engine": [
+            "Hybrid_Medium", "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_SM_050",

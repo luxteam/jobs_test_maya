@@ -16,7 +16,7 @@
             "rpr_render(case)"
         ],
         "skip_engine": [
-            "Hybrid_Medium"
+            "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -70,7 +70,7 @@
             "rpr_render(case)"
         ],
         "skip_engine": [
-            "Hybrid_Medium"
+            "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {

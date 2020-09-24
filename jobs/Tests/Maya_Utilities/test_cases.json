@@ -12,7 +12,7 @@
             "resetMaterial()"
         ],
         "skip_engine": [
-            "Hybrid_Medium"
+            "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -28,7 +28,7 @@
             "resetMaterial()"
         ],
         "skip_engine": [
-            "Hybrid_Medium"
+            "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -83,7 +83,7 @@
             "resetMaterial()"
         ],
         "skip_engine": [
-            "Hybrid_Medium"
+            "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
