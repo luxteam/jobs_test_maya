@@ -799,7 +799,7 @@
     },
     {
         "case": "MAYA_RS_AS_032",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Min iteration- 20",
             "Max Iterations - 1000",
