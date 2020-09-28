@@ -489,6 +489,9 @@
             "cmds.setAttr('Camera00Shape1.filmRollValue', 0.1)",
             "rpr_render(case)",
             "resetAttributes()"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -581,6 +584,9 @@
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
             "rpr_render(case)",
             "resetAttributes()"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -638,6 +644,9 @@
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
             "rpr_render(case)",
             "resetAttributes()"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -680,6 +689,9 @@
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
             "rpr_render(case)",
             "resetAttributes()"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -722,6 +734,9 @@
             "cmds.setAttr('Camera00Shape1.filmRollOrder', 1.0)",
             "rpr_render(case)",
             "resetAttributes()"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {

@@ -16,6 +16,9 @@
             "cmds.setAttr(light_transform + '.ambientShade', 0.450)",
             "rpr_render(case)",
             "cmds.delete(light_shape)"
+        ],
+        "skip_engine": [
+            "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -35,6 +38,9 @@
             "cmds.setAttr(light_transform + '.ambientShade', 0.450)",
             "rpr_render(case)",
             "cmds.delete(light_shape)"
+        ],
+        "skip_engine": [
+            "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -54,6 +60,9 @@
             "cmds.setAttr(light_transform + '.ambientShade', 0)",
             "rpr_render(case)",
             "cmds.delete(light_shape)"
+        ],
+        "skip_engine": [
+            "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -73,6 +82,9 @@
             "cmds.setAttr(light_transform + '.ambientShade', 1)",
             "rpr_render(case)",
             "cmds.delete(light_shape)"
+        ],
+        "skip_engine": [
+            "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {

@@ -14,6 +14,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 0.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -65,6 +68,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 5.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -204,6 +210,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
@@ -276,6 +285,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 50.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 50.0)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Hybrid_Medium"
         ]
     },
     {
