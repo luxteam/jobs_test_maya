@@ -825,7 +825,7 @@
     },
     {
         "case": "MAYA_SM_054",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "rpr_render(case)"
         ],
