@@ -832,11 +832,14 @@
         "script_info": [
             "UDIM"
         ],
-        "scene": "Udim.ma"
+        "scene": "Udim.ma",
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+        ]
     },
     {
         "case": "MAYA_SM_055",
-        "status": "skipped",
+        "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 8)",
             "cmds.setAttr('RadeonProRenderGlobals.aovObjectId', 1)",
@@ -850,6 +853,9 @@
         "scene": "AOVConstruct.ma",
         "skip_config":[
             ["AMD Radeon RX Vega 56 (Metal)"]
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     }
 ]
