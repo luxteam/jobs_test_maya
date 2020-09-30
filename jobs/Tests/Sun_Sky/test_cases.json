@@ -983,7 +983,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-			"Black image expected",
+		"Black image expected",
             "Intensity - 0.1",
             "Turbidity - 0",
             "Filter Color - sunsky_filtercolor.png",
@@ -1075,7 +1075,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-			"Black image expected",
+		"Black image expected",
             "Intensity - 0.1",
             "Turbidity - 50",
             "Filter Color - sunsky_filtercolor.tga",
@@ -1268,7 +1268,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-			"Black image expected",
+		"Black image expected",
             "Intensity - 0.1",
             "Filter Color - sunsky_filtercolor.png",
             "Ground Color - sunsky_groundcolor.tga",
