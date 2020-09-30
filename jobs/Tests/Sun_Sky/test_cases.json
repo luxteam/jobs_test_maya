@@ -44,7 +44,7 @@
             "Sun Disk Size - 10"
         ],
         "scene": "Sun_Sky.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -189,7 +189,7 @@
             "Ground Color - sunsky_groundcolor.tga"
         ],
         "scene": "Sun_Sky.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -338,7 +338,7 @@
             "Sun Disk Size - 10"
         ],
         "scene": "Sun_Sky.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },

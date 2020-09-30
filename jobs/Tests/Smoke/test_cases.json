@@ -33,7 +33,7 @@
             "Pass Limit: 50"
         ],
         "scene": "default.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     },
@@ -136,7 +136,7 @@
             "Pass Limit: 50"
         ],
         "scene": "Lamborginhi_Aventador.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     },
@@ -158,7 +158,7 @@
             "Pass Limit: 50"
         ],
         "scene": "Lamborginhi_Aventador.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -197,7 +197,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500)",
             "rpr_render(case)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     },
@@ -519,7 +519,7 @@
             "Pass Limit: 50"
         ],
         "scene": "IES.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -557,7 +557,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
             "rpr_render(case)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     },
@@ -709,7 +709,7 @@
             "Machine Learning"
         ],
         "scene": "Lamborginhi_Aventador.ma",
-        "skip_config": [
+        "skip": [
             ["AMD Radeon RX Vega 56 (Metal)"]
         ]
     },
@@ -749,7 +749,7 @@
             "Portal Light"
         ],
         "scene": "portal_light.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -770,7 +770,7 @@
             "ML in CPU mode"
         ],
         "scene": "normal_scene.ma",
-        "skip_config": [
+        "skip": [
             ["AMD Radeon RX Vega 56 (Metal)"]
         ]
     },
@@ -791,7 +791,7 @@
             "ML in CPU+GPU mode"
         ],
         "scene": "normal_scene.ma",
-        "skip_config": [
+        "skip": [
             ["AMD Radeon RX Vega 56 (Metal)"]
         ]
     },
@@ -833,7 +833,7 @@
             "UDIM"
         ],
         "scene": "Udim.ma",
-        "skip_engine": [
+        "skip": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -851,10 +851,10 @@
             "Object ID"
         ],
         "scene": "AOVConstruct.ma",
-        "skip_config":[
+        "skip":[
             ["AMD Radeon RX Vega 56 (Metal)"]
         ],
-        "skip_engine": [
+        "skip": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     }

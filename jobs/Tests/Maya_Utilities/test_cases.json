@@ -11,7 +11,7 @@
             "rpr_render(case)",
             "resetMaterial()"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -27,7 +27,7 @@
             "rpr_render(case)",
             "resetMaterial()"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -82,7 +82,7 @@
             "rpr_render(case)",
             "resetMaterial()"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium", "Hybrid_High"
         ]
     },

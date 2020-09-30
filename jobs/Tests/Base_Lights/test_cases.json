@@ -17,7 +17,7 @@
             "rpr_render(case)",
             "cmds.delete(light_shape)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -39,7 +39,7 @@
             "rpr_render(case)",
             "cmds.delete(light_shape)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -61,7 +61,7 @@
             "rpr_render(case)",
             "cmds.delete(light_shape)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -83,7 +83,7 @@
             "rpr_render(case)",
             "cmds.delete(light_shape)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },

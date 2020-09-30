@@ -15,7 +15,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 0.0)",
             "rpr_render(case)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -69,7 +69,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
             "rpr_render(case)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium", "Hybrid_High"
         ]
     },
@@ -211,7 +211,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 1.0)",
             "rpr_render(case)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -286,7 +286,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 50.0)",
             "rpr_render(case)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },

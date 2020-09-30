@@ -14,7 +14,7 @@
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -73,7 +73,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -118,7 +118,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -188,7 +188,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -246,7 +246,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -313,7 +313,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -340,7 +340,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -535,7 +535,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -568,7 +568,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -631,7 +631,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -664,7 +664,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -697,7 +697,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -760,7 +760,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },
@@ -793,7 +793,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 1)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Medium"
         ]
     },

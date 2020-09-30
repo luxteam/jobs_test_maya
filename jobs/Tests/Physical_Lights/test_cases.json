@@ -61,7 +61,7 @@
             "Light Shape - Sphere"
         ],
         "scene": "Physical_Light.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     },
@@ -88,7 +88,7 @@
             "Light Shape - Cylinder"
         ],
         "scene": "Physical_Light.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     },
@@ -242,7 +242,7 @@
             "Check Box Shadows - Activate"
         ],
         "scene": "Physical_Light.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     },
@@ -1276,7 +1276,7 @@
             "Temperature - 7900"
         ],
         "scene": "Physical_Light_Area.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     },
@@ -1300,7 +1300,7 @@
             "Light Intensity - 1.5"
         ],
         "scene": "Physical_Light_Area.ma",
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     },

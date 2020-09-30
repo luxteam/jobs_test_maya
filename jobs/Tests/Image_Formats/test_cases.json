@@ -11,7 +11,7 @@
             "rpr_render(case)",
             "setPass(case)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_Low"
         ]
     },
@@ -54,7 +54,7 @@
             "setPass(case)"
         ],
         "extension": ".gif",
-        "skip_engine": [
+        "skip": [
             "Hybrid_Low"
         ]
     },
@@ -279,7 +279,7 @@
             "rpr_render(case)",
             "setPass(case)"
         ],
-        "skip_engine": [
+        "skip": [
             "Hybrid_High"
         ]
     }
