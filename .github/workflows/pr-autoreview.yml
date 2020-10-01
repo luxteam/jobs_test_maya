@@ -2,8 +2,9 @@ name: Automatic pull request review
 
 on:
   pull_request:
-    paths:
-      - jobs/**/*.json
+   paths:
+   - '!**'
+   - 'jobs/**/*.json'
 
 jobs:
   automate-pullrequest-review:
