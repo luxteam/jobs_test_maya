@@ -1,6 +1,8 @@
 {
     "split":false,
     "groups":{
+        "CPU_Mode":"",
+        "CPU_Mode":"",
         "MASH":"MAYA_RS_MASH_003,MAYA_RS_MASH_013,MAYA_RS_MASH_014",
         "Motion_Blur": "MAYA_RS_MB_016",
         "Quality": "MAYA_RS_QL_002,MAYA_RS_QL_003,MAYA_RS_QL_006,MAYA_RS_QL_008,MAYA_RS_QL_018,MAYA_RS_QL_021",
