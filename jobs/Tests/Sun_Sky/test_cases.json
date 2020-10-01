@@ -45,7 +45,7 @@
         ],
         "scene": "Sun_Sky.ma",
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -190,7 +190,7 @@
         ],
         "scene": "Sun_Sky.ma",
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -339,7 +339,7 @@
         ],
         "scene": "Sun_Sky.ma",
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {

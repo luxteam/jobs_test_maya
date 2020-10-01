@@ -62,7 +62,7 @@
         ],
         "scene": "Physical_Light.ma",
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {
@@ -89,7 +89,7 @@
         ],
         "scene": "Physical_Light.ma",
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {
@@ -243,7 +243,7 @@
         ],
         "scene": "Physical_Light.ma",
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {
@@ -1277,7 +1277,7 @@
         ],
         "scene": "Physical_Light_Area.ma",
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {
@@ -1301,7 +1301,7 @@
         ],
         "scene": "Physical_Light_Area.ma",
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {

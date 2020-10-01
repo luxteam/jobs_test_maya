@@ -13,7 +13,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "skip": [
-            "Hybrid_Low"
+            ["Hybrid_Low"]
         ]
     },
     {
@@ -46,7 +46,7 @@
         ],
         "scene": "maya_shaderball.ma",
         "skip": [
-            "Hybrid_Low"
+            ["Hybrid_Low"]
         ]
     },
     {

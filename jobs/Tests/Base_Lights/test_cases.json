@@ -18,7 +18,7 @@
             "cmds.delete(light_shape)"
         ],
         "skip": [
-            "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+            ["Hybrid_Low"], ["Hybrid_Medium"], ["Hybrid_High"]
         ]
     },
     {
@@ -40,7 +40,7 @@
             "cmds.delete(light_shape)"
         ],
         "skip": [
-            "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+            ["Hybrid_Low"], ["Hybrid_Medium"], ["Hybrid_High"]
         ]
     },
     {
@@ -62,7 +62,7 @@
             "cmds.delete(light_shape)"
         ],
         "skip": [
-            "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+            ["Hybrid_Low"], ["Hybrid_Medium"], ["Hybrid_High"]
         ]
     },
     {
@@ -84,7 +84,7 @@
             "cmds.delete(light_shape)"
         ],
         "skip": [
-            "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+            "Hybrid_Low", ["Hybrid_Medium"], "Hybrid_High"
         ]
     },
     {

@@ -34,7 +34,7 @@
         ],
         "scene": "default.ma",
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {
@@ -137,7 +137,7 @@
         ],
         "scene": "Lamborginhi_Aventador.ma",
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {
@@ -159,7 +159,7 @@
         ],
         "scene": "Lamborginhi_Aventador.ma",
         "skip": [
-            "Hybrid_Medium", "Hybrid_High"
+            ["Hybrid_Medium"], ["Hybrid_High"]
         ]
     },
     {
@@ -198,7 +198,7 @@
             "rpr_render(case)"
         ],
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {
@@ -520,7 +520,7 @@
         ],
         "scene": "IES.ma",
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -558,7 +558,7 @@
             "rpr_render(case)"
         ],
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {
@@ -750,7 +750,7 @@
         ],
         "scene": "portal_light.ma",
         "skip": [
-            "Hybrid_Medium", "Hybrid_High"
+            ["Hybrid_Medium"], ["Hybrid_High"]
         ]
     },
     {
@@ -834,7 +834,7 @@
         ],
         "scene": "Udim.ma",
         "skip": [
-            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+            ["1"], ["Hybrid_Low"], ["Hybrid_Medium"], ["Hybrid_High"]
         ]
     },
     {
@@ -855,7 +855,7 @@
             ["AMD Radeon RX Vega 56 (Metal)"]
         ],
         "skip": [
-            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+            "Tahoe", ["Hybrid_Low"], ["Hybrid_Medium"], ["Hybrid_High"]
         ]
     }
 ]

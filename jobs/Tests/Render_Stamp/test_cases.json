@@ -35,7 +35,7 @@
             ["AMD Radeon RX Vega 56 (Metal)"]
         ],
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {

@@ -12,7 +12,7 @@
             "setPass(case)"
         ],
         "skip": [
-            "Hybrid_Low"
+            ["Hybrid_Low"]
         ]
     },
     {
@@ -55,7 +55,7 @@
         ],
         "extension": ".gif",
         "skip": [
-            "Hybrid_Low"
+            ["Hybrid_Low"]
         ]
     },
     {
@@ -280,7 +280,7 @@
             "setPass(case)"
         ],
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     }
 ]

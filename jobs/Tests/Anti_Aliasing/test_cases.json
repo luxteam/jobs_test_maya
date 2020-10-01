@@ -139,7 +139,7 @@
             "rpr_render(case)"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {

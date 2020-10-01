@@ -307,7 +307,7 @@
             "cmds.setAttr('world_color_node.visibility', 0)"
         ],
         "skip": [
-            "Hybrid_High"
+            ["Hybrid_High"]
         ]
     },
     {

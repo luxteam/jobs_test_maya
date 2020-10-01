@@ -11,7 +11,7 @@
             "rpr_render(case)"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -50,7 +50,7 @@
             "rpr_render(case)"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -126,7 +126,7 @@
             "cmds.currentTime(1)"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -168,7 +168,7 @@
             "cmds.currentTime(1)"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -430,7 +430,7 @@
             "rpr_render(case)"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -469,7 +469,7 @@
             "rpr_render(case)"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -496,7 +496,7 @@
             "rpr_render(case)"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     }
 ]

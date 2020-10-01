@@ -491,7 +491,7 @@
             "resetAttributes()"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -586,7 +586,7 @@
             "resetAttributes()"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -646,7 +646,7 @@
             "resetAttributes()"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -691,7 +691,7 @@
             "resetAttributes()"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
@@ -736,7 +736,7 @@
             "resetAttributes()"
         ],
         "skip": [
-            "Hybrid_Medium"
+            ["Hybrid_Medium"]
         ]
     },
     {
