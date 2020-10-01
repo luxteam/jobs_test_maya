@@ -3,10 +3,8 @@
         "case": "MAYA_RS_DUAL_001",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 1)",
-            "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', ENGINE)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "Tahoe"
@@ -17,10 +15,8 @@
         "case": "MAYA_RS_DUAL_002",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 2)",
-            "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', ENGINE)"
+            "rpr_render(case)"
         ],
         "script_info": [
             "NorthStar"
@@ -34,7 +30,6 @@
         "case": "MAYA_RS_DUAL_003",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 3)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 0)"
@@ -48,7 +43,6 @@
         "case": "MAYA_RS_DUAL_004",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 2)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 0)"
@@ -62,7 +56,6 @@
         "case": "MAYA_RS_DUAL_005",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.renderQualityFinalRender', 0)"
@@ -76,7 +69,6 @@
         "case": "MAYA_RS_DUAL_006",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', 0.1)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', 0.05)"
@@ -90,7 +82,6 @@
         "case": "MAYA_RS_DUAL_007",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', 0.05)"
@@ -104,7 +95,6 @@
         "case": "MAYA_RS_DUAL_008",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
             "cmds.currentTime(440.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
@@ -121,7 +111,6 @@
         "case": "MAYA_RS_DUAL_009",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 0)"
@@ -135,7 +124,6 @@
         "case": "MAYA_RS_DUAL_010",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
             "rpr_render(case)",
@@ -150,7 +138,6 @@
         "case": "MAYA_RS_DUAL_011",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
             "rpr_render(case)",
@@ -165,7 +152,6 @@
         "case": "MAYA_RS_DUAL_012",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
@@ -179,7 +165,6 @@
         "case": "MAYA_RS_DUAL_013",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)",
             "rpr_render(case)",
@@ -194,7 +179,6 @@
         "case": "MAYA_RS_DUAL_014",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)",
             "rpr_render(case)",
@@ -209,7 +193,6 @@
         "case": "MAYA_RS_DUAL_015",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.filter', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.filterSize', 5)",
             "rpr_render(case)",
@@ -225,7 +208,6 @@
         "case": "MAYA_RS_DUAL_016",
         "status": "skipped",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.aovUV', 1)",
             "rpr_render(case)",
@@ -240,7 +222,6 @@
         "case": "MAYA_RS_DUAL_017",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.useRenderStamp', True)",
             "cmds.setAttr('RadeonProRenderGlobals.renderStampText',  \"Radeon ProRender for Maya %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl\", type='string')",
             "rpr_render(case)",
@@ -256,7 +237,6 @@
         "case": "MAYA_RS_DUAL_018",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -277,7 +257,6 @@
         "case": "MAYA_RS_DUAL_019",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -289,7 +268,6 @@
         "case": "MAYA_RS_DUAL_020",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('defaultResolution.width', 4096.0)",
             "cmds.setAttr('defaultResolution.height', 4096.0)",
             "rpr_render(case)",
@@ -305,7 +283,6 @@
         "case": "MAYA_RS_DUAL_021",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.emissionSelectedGrid', 'density', type='string')",
             "cmds.setAttr('vdbObj.densityMultiplier', 5000)",
@@ -323,7 +300,6 @@
         "case": "MAYA_RS_DUAL_022",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -335,7 +311,6 @@
         "case": "MAYA_RS_DUAL_023",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -347,7 +322,6 @@
         "case": "MAYA_RS_DUAL_024",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -393,7 +367,6 @@
         "case": "MAYA_RS_DUAL_027",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.filter', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.filterSize', 5)",
@@ -413,7 +386,6 @@
         "case": "MAYA_RS_DUAL_028",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
@@ -442,7 +414,6 @@
         "case": "MAYA_RS_DUAL_029",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
@@ -466,7 +437,6 @@
         "case": "MAYA_RS_DUAL_030",
         "status": "active",
         "functions": [
-            "set_render_device('dual')",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.filter', 1)",
