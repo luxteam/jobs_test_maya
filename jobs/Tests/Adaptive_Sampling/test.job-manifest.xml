@@ -3,7 +3,7 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="4800">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="2400">
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
@@ -16,15 +16,18 @@
         <argument>--SPU 30</argument>
         <argument>--threshold {threshold}</argument>
         <argument>--engine "{engine}"</argument>
+        <argument>--retries {retries}</argument>
+        <argument>--update_refs "{UpdateRefs}"</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}/scripts/ImageComparator/compareByJSON.py"'>
+    <execute command='python "{CommonDir}/scripts/compareByJSON.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
+        <argument>--update_refs "{UpdateRefs}"</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/refactor_logs.py"' timeout="60">

@@ -14,7 +14,10 @@
             "Desnity=300",
             "Albedo=On(ls_bunny)"
         ],
-        "scene": "bunny.ma"
+        "scene": "bunny.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_002",
@@ -30,7 +33,10 @@
             "bunny.vdb",
             "Density=3000"
         ],
-        "scene": "bunny.ma"
+        "scene": "bunny.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_003",
@@ -47,7 +53,10 @@
             "Emission=On",
             "Albedo=Off"
         ],
-        "scene": "bunny_cloud.ma"
+        "scene": "bunny_cloud.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_004",
@@ -69,7 +78,10 @@
             "Density=5000",
             "Albedo=On(density)"
         ],
-        "scene": "bunny_cloud.ma"
+        "scene": "bunny_cloud.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_005",
@@ -84,7 +96,10 @@
             "bunny_cloud.vdb",
             "Albedo=On(density)"
         ],
-        "scene": "bunny_cloud.ma"
+        "scene": "bunny_cloud.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_006",
@@ -103,7 +118,10 @@
             "Albedo=On(density)",
             "Emission=On"
         ],
-        "scene": "bunny_cloud.ma"
+        "scene": "bunny_cloud.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_007",
@@ -129,7 +147,10 @@
             "Emission=On",
             "Rotated"
         ],
-        "scene": "bunny_cloud.ma"
+        "scene": "bunny_cloud.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_008",
@@ -148,7 +169,10 @@
             "Emission=On(Temperature)",
             "Albedo=On(temperature)"
         ],
-        "scene": "explosion.ma"
+        "scene": "explosion.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_009",
@@ -168,7 +192,10 @@
             "Density=10000",
             "Albedo=On(density)"
         ],
-        "scene": "explosion.ma"
+        "scene": "explosion.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_010",
@@ -187,7 +214,10 @@
             "Emission=On(Temperature)",
             "Albedo=On(Temperature)"
         ],
-        "scene": "fire.ma"
+        "scene": "fire.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_011",
@@ -207,7 +237,10 @@
             "Density=On(Temperature)",
             "Albedo=On(Density)"
         ],
-        "scene": "fire.ma"
+        "scene": "fire.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_012",
@@ -222,7 +255,10 @@
             "smoke1.vdb",
             "Density=6000"
         ],
-        "scene": "smoke1.ma"
+        "scene": "smoke1.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_013",
@@ -238,7 +274,10 @@
             "smoke2.vdb",
             "Density=6000"
         ],
-        "scene": "smoke2.ma"
+        "scene": "smoke2.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_014",
@@ -252,7 +291,10 @@
         "script_info": [
             "space.vdb"
         ],
-        "scene": "space.ma"
+        "scene": "space.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_015",
@@ -267,7 +309,10 @@
             "sphere.vdb",
             "Albedo=On"
         ],
-        "scene": "sphere.ma"
+        "scene": "sphere.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_016",
@@ -282,7 +327,10 @@
             "torus.vdb",
             "Albedo=On"
         ],
-        "scene": "torus.ma"
+        "scene": "torus.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_017",
@@ -298,7 +346,10 @@
             "torus_knot_helix.vdb",
             "Albedo=On"
         ],
-        "scene": "torus_knot_helix.ma"
+        "scene": "torus_knot_helix.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_018",
@@ -316,7 +367,10 @@
             "Albedo=On",
             "ScaleX=8"
         ],
-        "scene": "venus.ma"
+        "scene": "venus.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_019",
@@ -327,7 +381,10 @@
         "script_info": [
             "Multiple VDBs"
         ],
-        "scene": "multi.ma"
+        "scene": "multi.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_VDB_020",
@@ -346,6 +403,9 @@
         "script_info": [
             "Create second VDB"
         ],
-        "scene": "bunny.ma"
+        "scene": "bunny.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }
 ]

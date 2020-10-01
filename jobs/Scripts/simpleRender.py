@@ -94,6 +94,8 @@ def createArgsParser():
     parser.add_argument('--error_count', required=False, default=0, type=int)
     parser.add_argument('--threshold', required=False,
                         default=0.05, type=float)
+    parser.add_argument('--retries', required=False, default=2, type=int)
+    parser.add_argument('--update_refs', required=True)
 
     return parser
 
@@ -123,7 +125,7 @@ def check_licenses(res_path, maya_scenes, testType):
             'Error while deleting student license: {}'.format(ex))
 
 
-def launchMaya(cmdScriptPath, work_dir):
+def launchMaya(cmdScriptPath, work_dir, error_windows):
     system_pl = platform.system()
     core_config.main_logger.info(
         'Launch script on Maya ({})'.format(cmdScriptPath))
@@ -150,6 +152,7 @@ def launchMaya(cmdScriptPath, work_dir):
                     'Error window found: {}'.format(error_window))
                 core_config.main_logger.warning(
                     'Found windows: {}'.format(window_titles))
+                error_windows.update(error_window)
                 rc = -1
 
                 if system_pl == 'Windows':
@@ -203,7 +206,7 @@ def launchMaya(cmdScriptPath, work_dir):
     return rc
 
 
-def main(args):
+def main(args, error_windows):
     perf_count.event_record(args.output, 'Prepare tests', True)
     if args.testType in ['Support_2019', 'Support_2018']:
         args.tool = re.sub('[0-9]{4}', args.testType[-4:], args.tool)
@@ -216,6 +219,7 @@ def main(args):
     except Exception as e:
         core_config.logging.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
+        group_failed(args, error_windows)
         exit(-1)
 
     try:
@@ -238,18 +242,19 @@ def main(args):
     check_licenses(args.res_path, maya_scenes, args.testType)
 
     script = script.format(work_dir=work_dir, testType=args.testType, render_device=args.render_device, res_path=res_path, pass_limit=args.pass_limit,
-                           resolution_x=args.resolution_x, resolution_y=args.resolution_y, SPU=args.SPU, threshold=args.threshold, engine=args.engine)
+                           resolution_x=args.resolution_x, resolution_y=args.resolution_y, SPU=args.SPU, threshold=args.threshold, engine=args.engine,
+                           retries=args.retries)
 
     with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
         file.write(script)
 
-    if (os.path.exists(args.testCases) and '.json' in args.testCases):
-        with open(os.path.join(args.testCases)) as f:
-            tc = f.read()
-            test_cases = json.loads(tc)[args.testType]
-        necessary_cases = [
-            item for item in cases if item['case'] in test_cases]
-        cases = necessary_cases
+    if os.path.exists(args.testCases) and args.testCases:
+        with open(args.testCases) as f:
+            test_cases = json.load(f)['groups'][args.testType]
+            if test_cases:
+                necessary_cases = [
+                    item for item in cases if item['case'] in test_cases]
+                cases = necessary_cases
 
     core_config.main_logger.info('Create empty report files')
 
@@ -262,20 +267,48 @@ def main(args):
     if not gpu:
         core_config.main_logger.error("Can't get gpu name")
     render_platform = {platform.system(), gpu}
+    system_pl = platform.system()
+
+    baseline_dir = 'rpr_maya_autotests_baselines'
+    if args.engine == 'Northstar':
+        baseline_dir = baseline_dir + '-NorthStar'
+    elif args.engine == 'Hybrid_Low':
+        baseline_dir = baseline_dir + '-HybridLow'
+    elif args.engine == 'Hybrid_Medium':
+        baseline_dir = baseline_dir + '-HybridMedium'
+    elif args.engine == 'Hybrid_High':
+        baseline_dir = baseline_dir + '-HybridHigh'
+
+    if system_pl == "Windows":
+        baseline_path_tr = os.path.join(
+            'c:/TestResources', baseline_dir, args.testType)
+    else:
+        baseline_path_tr = os.path.expandvars(os.path.join(
+            '$CIS_TOOLS/../TestResources', baseline_dir, args.testType))
+
+    baseline_path = os.path.join(
+        work_dir, os.path.pardir, os.path.pardir, os.path.pardir, 'Baseline', args.testType)
+
+    if not os.path.exists(baseline_path):
+        os.makedirs(baseline_path)
+        os.makedirs(os.path.join(baseline_path, 'Color'))
 
     for case in cases:
-        if sum([render_platform & set(skip_conf) == set(skip_conf) for skip_conf in case.get('skip_on', '')]):
-            for i in case['skip_on']:
-                skip_on = set(i)
-                if render_platform.intersection(skip_on) == skip_on:
+        if sum([render_platform & set(skip_conf) == set(skip_conf) for skip_conf in case.get('skip_config', '')]):
+            for i in case['skip_config']:
+                skip_config = set(i)
+                if render_platform.intersection(skip_config) == skip_config:
                     case['status'] = 'skipped'
+
+        if any([engine for engine in case.get('skip_engine', []) if engine == args.engine]):
+            case['status'] = 'skipped'
 
         if case['status'] != 'done':
             if case['status'] == 'inprogress':
                 case['status'] = 'active'
                 case['number_of_tries'] = case.get('number_of_tries', 0) + 1
 
-            template = core_config.RENDER_REPORT_BASE
+            template = core_config.RENDER_REPORT_BASE.copy()
             template['test_case'] = case['case']
             template['render_device'] = get_gpu()
             template['test_status'] = 'error'
@@ -286,14 +319,31 @@ def main(args):
             template['test_group'] = args.testType
             template['date_time'] = datetime.now().strftime(
                 '%m/%d/%Y %H:%M:%S')
+            if case['status'] == 'skipped':
+                template['group_timeout_exceeded'] = False
 
             with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
                 f.write(json.dumps([template], indent=4))
 
+        if 'Update' not in args.update_refs:
+            try:
+                copyfile(os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX),
+                         os.path.join(baseline_path, case['case'] + core_config.CASE_REPORT_SUFFIX))
+
+                with open(os.path.join(baseline_path, case['case'] + core_config.CASE_REPORT_SUFFIX)) as baseline:
+                    baseline_json = json.load(baseline)
+
+                for thumb in [''] + core_config.THUMBNAIL_PREFIXES:
+                    if thumb + 'render_color_path' and os.path.exists(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path'])):
+                        copyfile(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path']),
+                                 os.path.join(baseline_path, baseline_json[thumb + 'render_color_path']))
+            except:
+                core_config.main_logger.error('Failed to copy baseline ' +
+                                              os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX))
+
     with open(os.path.join(work_dir, 'test_cases.json'), 'w+') as f:
         json.dump(cases, f, indent=4)
 
-    system_pl = platform.system()
     if system_pl == 'Windows':
         cmdRun = '''
 		  set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log
@@ -325,7 +375,7 @@ def main(args):
 
     perf_count.event_record(args.output, 'Prepare tests', False)
 
-    rc = launchMaya(cmdScriptPath, args.output)
+    rc = launchMaya(cmdScriptPath, args.output, error_windows)
 
     if args.testType in ['Athena']:
         subprocess.call([sys.executable, os.path.realpath(os.path.join(
@@ -334,54 +384,61 @@ def main(args):
     return rc
 
 
-def group_failed(args):
+def group_failed(args, error_windows):
+    core_config.main_logger.error('Group failed')
+    status = 'skipped'
     try:
         cases = json.load(open(os.path.realpath(
-            os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+            os.path.join(os.path.abspath(args.output), 'test_cases.json'))))
     except Exception as e:
         core_config.logging.error("Can't load test_cases.json")
         core_config.main_logger.error(str(e))
-        exit(-1)
+        cases = json.load(open(os.path.realpath(os.path.join(os.path.dirname(
+            __file__), '..', 'Tests', args.testType, 'test_cases.json'))))
+        status = 'inprogress'
 
     for case in cases:
         if case['status'] == 'active':
-            case['status'] = 'skipped'
+            case['status'] = status
 
-    with open(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'), 'w+') as f:
+    with open(os.path.join(os.path.abspath(args.output), 'test_cases.json'), "w+") as f:
         json.dump(cases, f, indent=4)
 
-    rc = main(args)
+    rc = main(args, error_windows)
     kill_process(PROCESS)
     core_config.main_logger.info(
-        'Finish simpleRender with code: {}'.format(rc))
+        "Finish simpleRender with code: {}".format(rc))
     exit(rc)
-
 
 def sync_time(work_dir):
     for rpr_json_path in os.listdir(work_dir):
         if rpr_json_path.endswith('_RPR.json'):
-            with open(os.path.join(work_dir, rpr_json_path)) as rpr_json_file:
-                rpr_json = json.load(rpr_json_file)
+            try:
+                with open(os.path.join(work_dir, rpr_json_path)) as rpr_json_file:
+                    rpr_json = json.load(rpr_json_file)
 
-            with open(os.path.join(work_dir, rpr_json[0]['render_log'])) as logs_file:
-                logs = logs_file.read()
+                with open(os.path.join(work_dir, rpr_json[0]['render_log'])) as logs_file:
+                    logs = logs_file.read()
 
-            sync_minutes = re.findall(
-                'RPR scene synchronization time: (\d*)m', logs)
-            sync_seconds = re.findall(
-                'RPR scene synchronization time: .*?(\d*)s', logs)
-            sync_milisec = re.findall(
-                'RPR scene synchronization time: .*?(\d*)ms', logs)
+                sync_minutes = re.findall(
+                    'RPR scene synchronization time: (\d*)m', logs)
+                sync_seconds = re.findall(
+                    'RPR scene synchronization time: .*?(\d*)s', logs)
+                sync_milisec = re.findall(
+                    'RPR scene synchronization time: .*?(\d*)ms', logs)
 
-            sync_minutes = float(next(iter(sync_minutes or []), 0))
-            sync_seconds = float(next(iter(sync_seconds or []), 0))
-            sync_milisec = float(next(iter(sync_milisec or []), 0))
+                sync_minutes = float(next(iter(sync_minutes or []), 0))
+                sync_seconds = float(next(iter(sync_seconds or []), 0))
+                sync_milisec = float(next(iter(sync_milisec or []), 0))
 
-            synchronization_time = sync_minutes * 60 + sync_seconds + sync_milisec / 1000
-            rpr_json[0]['sync_time'] = synchronization_time
+                synchronization_time = sync_minutes * 60 + sync_seconds + sync_milisec / 1000
+                rpr_json[0]['sync_time'] = synchronization_time
+                rpr_json[0]['render_time'] -= synchronization_time
 
-            with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
-                rpr_json_file.write(json.dumps(rpr_json, indent=4))
+                with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
+                    rpr_json_file.write(json.dumps(rpr_json, indent=4))
+            except:
+                core_config.logging.error("Can't count sync time for " + rpr_json_path)
 
 
 if __name__ == '__main__':
@@ -406,13 +463,15 @@ if __name__ == '__main__':
         core_config.main_logger.error(str(e))
         exit(-1)
 
+    error_windows = set()
+
     while True:
         iteration += 1
 
         core_config.main_logger.info(
             'Try to run script in maya (#' + str(iteration) + ')')
 
-        rc = main(args)
+        rc = main(args, error_windows)
 
         try:
             move(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'),
@@ -435,14 +494,40 @@ if __name__ == '__main__':
             if case['status'] in ['fail', 'error', 'inprogress']:
                 current_error_count += 1
                 if args.error_count == current_error_count:
-                    group_failed(args)
+                    group_failed(args, error_windows)
             else:
                 current_error_count = 0
 
             if case['status'] in ['active', 'fail', 'inprogress']:
                 active_cases += 1
 
-        if active_cases == 0 or iteration > len(cases) * 2:  # 2- retries count
+        if active_cases == 0 or iteration > len(cases) * args.retries:
+            for case in cases:
+                error_message = ''
+                number_of_tries = case.get('number_of_tries', 0)
+                if case['status'] in ['fail', 'error']:
+                    error_message = "Testcase wasn't executed successfully (all attempts were used). Number of tries: {}".format(str(number_of_tries))
+                elif case['status'] in ['active', 'inprogress']:
+                    if number_of_tries:
+                        error_message = "Testcase wasn't finished. Number of tries: {}".format(str(number_of_tries))
+                    else:
+                        error_message = "Testcase wasn't run"
+
+                if error_message:
+                    core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
+                    path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
+
+                    with open(path_to_file, 'r') as file:
+                        report = json.load(file)
+
+                    report[0]['group_timeout_exceeded'] = False
+                    report[0]['message'].append(error_message)
+                    if len(error_windows) != 0:
+                        report[0]['message'].append("Error windows {}".format(error_windows))
+
+                    with open(path_to_file, 'w') as file:
+                        json.dump(report, file, indent=4)
+
             # exit script if base_functions don't change number of active cases
             kill_process(PROCESS)
             core_config.main_logger.info(

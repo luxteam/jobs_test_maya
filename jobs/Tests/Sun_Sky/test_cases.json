@@ -43,7 +43,10 @@
             "Sun Glow - 50",
             "Sun Disk Size - 10"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_SS_065",
@@ -185,7 +188,10 @@
             "Filter Color - sunsky_filtercolor.tga",
             "Ground Color - sunsky_groundcolor.tga"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_SS_072",
@@ -331,7 +337,10 @@
             "Ground Color - sunsky_groundcolor.tga",
             "Sun Disk Size - 10"
         ],
-        "scene": "Sun_Sky.ma"
+        "scene": "Sun_Sky.ma",
+        "skip_engine": [
+            "Hybrid_Medium"
+        ]
     },
     {
         "case": "MAYA_RS_SS_080",

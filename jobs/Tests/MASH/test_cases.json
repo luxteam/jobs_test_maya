@@ -305,6 +305,9 @@
             "cmds.currentTime(40)",
             "rpr_render(case)",
             "cmds.setAttr('world_color_node.visibility', 0)"
+        ],
+        "skip_engine": [
+            "Hybrid_High"
         ]
     },
     {
@@ -374,7 +377,7 @@
             "cmds.currentTime(20)",
             "rpr_render(case)"
         ],
-        "skip_on": [
+        "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
         ]
     }

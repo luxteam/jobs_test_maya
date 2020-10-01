@@ -18,7 +18,6 @@ Emissive
 Render_Layer
 PBR
 Uber
-Volume
 RPR_Nodes
 Quality
 Anti_Aliasing
@@ -29,10 +28,6 @@ Support_2019
 Support_2018
 XGen
 MASH
-Hybrid_Rendering
 Adaptive_Sampling
-NorthStar
-VDB
 NHair
 Maya_Utilities
-Shadow_Catcher
