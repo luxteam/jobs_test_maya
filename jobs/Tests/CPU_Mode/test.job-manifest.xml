@@ -5,7 +5,7 @@
 
     <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="2400">
         <argument>--tool "{Tool}"</argument>
-        <argument>--render_device "{RenderDevice}"</argument>
+        <argument>--render_device "cpu"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType CPU_Mode</argument>
         <argument>--pass_limit 50</argument>
