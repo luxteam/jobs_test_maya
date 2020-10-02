@@ -407,5 +407,67 @@
         "skip_config":[
             ["AMD Radeon RX Vega 56 (Metal)"]
         ]
+    },
+    {
+        "case": "MAYA_MAT_VDB_021",
+        "status": "active",
+        "functions": [
+            "cmds.currentTime(50)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "VDB sequence - Frame 50"
+        ],
+        "scene": "gas.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
+    },
+    {
+        "case": "MAYA_MAT_VDB_022",
+        "status": "active",
+        "functions": [
+            "cmds.currentTime(100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "VDB sequence - Frame 100"
+        ],
+        "scene": "gas.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
+    },
+    {
+        "case": "MAYA_MAT_VDB_023",
+        "status": "active",
+        "functions": [
+            "cmds.currentTime(100)",
+            "set_render_device('cpu')",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "VDB CPU"
+        ],
+        "scene": "non-gpu.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
+    },
+    {
+        "case": "MAYA_MAT_VDB_024",
+        "status": "active",
+        "functions": [
+            "cmds.currentTime(100)",
+            "set_render_device('dual')",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "VDB Dual"
+        ],
+        "scene": "non-gpu.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     }
 ]
