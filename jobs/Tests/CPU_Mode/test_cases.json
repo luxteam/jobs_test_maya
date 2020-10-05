@@ -213,21 +213,6 @@
         "case": "MAYA_RS_CPU_016",
         "status": "active",
         "functions": [
-            "cmds.setAttr('defaultResolution.width', 4096.0)",
-            "cmds.setAttr('defaultResolution.height', 4096.0)",
-            "rpr_render(case)",
-            "cmds.setAttr('defaultResolution.width', 640.0)",
-            "cmds.setAttr('defaultResolution.height', 480.0)"
-        ],
-        "script_info": [
-            "Image_Size 4k"
-        ],
-        "scene": "adaptive_sampling.ma"
-    },
-    {
-        "case": "MAYA_RS_CPU_017",
-        "status": "active",
-        "functions": [
             "cmds.setAttr('vdbObj.emissionEnabled', 1)",
             "cmds.setAttr('vdbObj.emissionSelectedGrid', 'density', type='string')",
             "cmds.setAttr('vdbObj.densityMultiplier', 5000)",
@@ -242,7 +227,7 @@
         "scene": "bunny_cloud.ma"
     },
     {
-        "case": "MAYA_RS_CPU_018",
+        "case": "MAYA_RS_CPU_017",
         "status": "active",
         "functions": [
             "rpr_render(case)"
@@ -253,7 +238,7 @@
         "scene": "Bathroom.ma"
     },
     {
-        "case": "MAYA_RS_CPU_019",
+        "case": "MAYA_RS_CPU_018",
         "status": "active",
         "functions": [
             "rpr_render(case)"
@@ -264,7 +249,7 @@
         "scene": "CorvetteRPR.ma"
     },
     {
-        "case": "MAYA_RS_CPU_020",
+        "case": "MAYA_RS_CPU_019",
         "status": "active",
         "functions": [
             "rpr_render(case)"
@@ -275,7 +260,7 @@
         "scene": "DenoiserDOF.ma"
     },
     {
-        "case": "MAYA_RS_CPU_021",
+        "case": "MAYA_RS_CPU_020",
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
@@ -291,7 +276,7 @@
         "scene": "adaptive_sampling.ma"
     },
     {
-        "case": "MAYA_RS_CPU_022",
+        "case": "MAYA_RS_CPU_021",
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
@@ -307,7 +292,7 @@
         "scene": "adaptive_sampling.ma"
     },
     {
-        "case": "MAYA_RS_CPU_023",
+        "case": "MAYA_RS_CPU_022",
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
@@ -326,7 +311,7 @@
         "scene": "adaptive_sampling.ma"
     },
     {
-        "case": "MAYA_RS_CPU_024",
+        "case": "MAYA_RS_CPU_023",
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
@@ -354,7 +339,7 @@
         "scene": "motion_blur.ma"
     },
     {
-        "case": "MAYA_RS_CPU_025",
+        "case": "MAYA_RS_CPU_024",
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
@@ -377,7 +362,7 @@
         "scene": "motion_blur.ma"
     },
     {
-        "case": "MAYA_RS_CPU_026",
+        "case": "MAYA_RS_CPU_025",
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
