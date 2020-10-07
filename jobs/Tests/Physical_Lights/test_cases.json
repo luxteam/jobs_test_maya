@@ -12,6 +12,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Light Type - Area",
             "Area Width - 0",
             "Intensity Units - Radience",
@@ -302,6 +303,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Light Type - Spot",
             "Light Intensity - 1",
             "Outer Cone Angle - 0"
@@ -319,6 +321,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Light Type - Spot",
             "Light Intensity - 1",
             "inner Cone Angle - 0",
