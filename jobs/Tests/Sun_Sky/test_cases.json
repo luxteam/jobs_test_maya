@@ -752,6 +752,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 1",
             "Sun Position - Altitude & Azimuth",
             "Altitude - 0"
@@ -1214,6 +1215,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 2",
             "Filter Color - sunsky_filtercolor.png",
             "Ground Color - HSV: 0, 0, 0",
@@ -1293,6 +1295,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 2",
             "Ground Color - sunsky_groundcolor.png",
             "Sun Position - Time Location",
@@ -1349,6 +1352,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 1",
             "Sun Position - Time Location",
             "Year - 2018",
@@ -1433,6 +1437,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 1",
             "Sun Position - Time Location",
             "Year - 2018",
@@ -1461,6 +1466,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 1",
             "Sun Position - Time Location",
             "Year - 2018",
@@ -1490,6 +1496,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 1",
             "Sun Position - Time Location",
             "Year - 2018",
@@ -1550,6 +1557,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 1",
             "Sun Position - Time Location",
             "Year - 2018",
@@ -1580,6 +1588,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 1",
             "Sun Position - Time Location",
             "Year - 2018",
@@ -1640,6 +1649,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Intensity - 1",
             "Sun Position - Time Location",
             "Year - 2018",
