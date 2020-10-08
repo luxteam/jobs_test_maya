@@ -239,7 +239,10 @@
             "Density - 5",
             "Scattering Direction- 1"
         ],
-        "scene": "VolumeRollingFog.ma"
+        "scene": "VolumeRollingFog.ma",
+        "skip_engine":[
+            "Northstar"
+        ]
     },
     {
         "case": "MAYA_MAT_VM_012",
