@@ -1,0 +1,172 @@
+[
+    {
+        "case": "MAYA_TRANSFORM_000",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Order for IBL (ZXY)"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_001",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.rotateX',10)",
+            "cmds.setAttr('RPRIBL.rotateY',20)",
+            "cmds.setAttr('RPRIBL.rotateZ',30)",
+            "cmds.setAttr('RPRIBL.rotateOrder',2)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Order for IBL (ZXY)"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_002",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.rotateX',10)",
+            "cmds.setAttr('RPRIBL.rotateY',20)",
+            "cmds.setAttr('RPRIBL.rotateZ',30)",
+            "cmds.setAttr('RPRIBL.rotateOrder',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Order for IBL (YZX)"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_003",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.rotateX',370)",
+            "cmds.setAttr('RPRIBL.rotateY',-380)",
+            "cmds.setAttr('RPRIBL.rotateZ',3600)",
+            "cmds.setAttr('RPRIBL.rotateAxisX',340)",
+            "cmds.setAttr('RPRIBL.rotateAxisY',380)",
+            "cmds.setAttr('RPRIBL.rotateAxisZ',-3610)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate vs Rotate Axis for IBL"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_004",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.shearXY',0.6)",
+            "cmds.setAttr('RPRIBL.shearXZ',-0.7)",
+            "cmds.setAttr('RPRIBL.shearYZ',0.8)",
+            "cmds.setAttr('RPRIBL.rotateOrder',3)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Order (XZY) with Shear for IBL"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_005",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.rotateX',100)",
+            "cmds.setAttr('RPRIBL.rotateY',0)",
+            "cmds.setAttr('RPRIBL.rotateZ',0)",
+            "cmds.setAttr('RPRIBL.rotateOrder',5)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Order for IBL (ZYX) with 1 non-zero parameter"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_006",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.scaleX',800)",
+            "cmds.setAttr('RPRIBL.scaleY',-400)",
+            "cmds.setAttr('RPRIBL.scaleZ',1001.257)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Scale for IBL"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_007",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.shearXY',0.4561)",
+            "cmds.setAttr('RPRIBL.shearXZ',-0.567)",
+            "cmds.setAttr('RPRIBL.shearYZ',0.6789)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Shear for IBL"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_008",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.rotateAxisX',180)",
+            "cmds.setAttr('RPRIBL.rotateAxisY',-180)",
+            "cmds.setAttr('RPRIBL.rotateAxisZ',45)",
+            "cmds.setAttr('RPRIBL.rotateOrder',4)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Axis for IBL"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_009",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.shearXY',99999)",
+            "cmds.setAttr('RPRIBL.shearXZ',-99999)",
+            "cmds.setAttr('RPRIBL.shearYZ',99999)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Big Shear for IBL"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_010",
+        "status": "active",
+        "functions": [
+            "reserAttributesIBL()",
+            "cmds.setAttr('RPRIBL.translateX',99999)",
+            "cmds.setAttr('RPRIBL.translateY',99999)",
+            "cmds.setAttr('RPRIBL.translateZ',-99999)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Big Translate for IBL"
+        ],
+        "scene": "transforms.ma"
+    }
+]
