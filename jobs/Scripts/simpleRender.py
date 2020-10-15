@@ -11,6 +11,7 @@ from datetime import datetime
 from shutil import copyfile, move, which
 import sys
 import time
+from utils import is_case_skipped
 
 sys.path.append(os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
@@ -294,13 +295,7 @@ def main(args, error_windows):
         os.makedirs(os.path.join(baseline_path, 'Color'))
 
     for case in cases:
-        if sum([render_platform & set(skip_conf) == set(skip_conf) for skip_conf in case.get('skip_config', '')]):
-            for i in case['skip_config']:
-                skip_config = set(i)
-                if render_platform.intersection(skip_config) == skip_config:
-                    case['status'] = 'skipped'
-
-        if any([engine for engine in case.get('skip_engine', []) if engine == args.engine]):
+        if is_case_skipped(case, render_platform, args.engine):
             case['status'] = 'skipped'
 
         if case['status'] != 'done':
