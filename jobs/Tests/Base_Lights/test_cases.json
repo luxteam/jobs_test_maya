@@ -375,7 +375,8 @@
         "case": "MAYA_L_BL_020",
         "status": "active",
         "script_info": [
-            "Spot light. Intensity: 40"
+            "Spot light. Intensity: 40",
+            "Black image expected"
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
