@@ -789,6 +789,7 @@
         "case": "MAYA_RS_AS_031",
         "status": "active",
         "script_info": [
+            "Black image expected",
             "Min iteration- 20",
             "Max Iterations - 1000",
             "Max Time Minutes - 1",
@@ -858,6 +859,7 @@
         "case": "MAYA_RS_AS_033",
         "status": "active",
         "script_info": [
+            "Black image expected",
             "Min iteration- 20",
             "Max Iterations - 1000",
             "Max Time Minutes - 1",
