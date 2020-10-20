@@ -3,7 +3,6 @@
         "case": "MAYA_RS_QL_001",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 2)",
             "rpr_render(case)"
         ],
@@ -16,7 +15,6 @@
         "case": "MAYA_RS_QL_002",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 50)",
             "rpr_render(case)"
         ],
@@ -29,7 +27,6 @@
         "case": "MAYA_RS_QL_003",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 2)",
             "rpr_render(case)"
         ],
@@ -42,7 +39,6 @@
         "case": "MAYA_RS_QL_004",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 50)",
             "rpr_render(case)"
         ],
@@ -55,7 +51,6 @@
         "case": "MAYA_RS_QL_005",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 2)",
             "rpr_render(case)"
         ],
@@ -68,7 +63,6 @@
         "case": "MAYA_RS_QL_006",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 50)",
             "rpr_render(case)"
         ],
@@ -81,7 +75,6 @@
         "case": "MAYA_RS_QL_007",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 2)",
             "rpr_render(case)"
         ],
@@ -94,7 +87,6 @@
         "case": "MAYA_RS_QL_008",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefraction', 50)",
             "rpr_render(case)"
         ],
@@ -107,7 +99,6 @@
         "case": "MAYA_RS_QL_009",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 2)",
             "rpr_render(case)"
         ],
@@ -120,7 +111,6 @@
         "case": "MAYA_RS_QL_010",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthRefractionGlossy', 50)",
             "rpr_render(case)"
         ],
@@ -133,7 +123,6 @@
         "case": "MAYA_RS_QL_011",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 2)",
             "rpr_render(case)"
         ],
@@ -146,7 +135,6 @@
         "case": "MAYA_RS_QL_012",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthShadow', 50)",
             "rpr_render(case)"
         ],
@@ -159,7 +147,6 @@
         "case": "MAYA_RS_QL_013",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.raycastEpsilon', 0)",
             "rpr_render(case)"
         ],
@@ -172,7 +159,6 @@
         "case": "MAYA_RS_QL_014",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.raycastEpsilon', 2)",
             "rpr_render(case)"
         ],
@@ -185,7 +171,6 @@
         "case": "MAYA_RS_QL_015",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.enableOOC', 1)",
             "rpr_render(case)"
         ],
@@ -198,7 +183,6 @@
         "case": "MAYA_RS_QL_016",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.enableOOC', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.textureCacheSize', 4096)",
             "rpr_render(case)"
@@ -213,7 +197,6 @@
         "case": "MAYA_RS_QL_017",
         "status": "skipped",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 2)",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 2)",
@@ -238,7 +221,6 @@
         "case": "MAYA_RS_QL_018",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.maxRayDepth', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthDiffuse', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.maxDepthGlossy', 50)",
@@ -263,7 +245,6 @@
         "case": "MAYA_RS_QL_019",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
             "rpr_render(case)"
@@ -277,7 +258,6 @@
         "case": "MAYA_RS_QL_020",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
             "rpr_render(case)"
@@ -291,7 +271,6 @@
         "case": "MAYA_RS_QL_021",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.textureCompression', 1)",
@@ -307,7 +286,6 @@
         "case": "MAYA_RS_QL_022",
         "status": "active",
         "functions": [
-            "resetAttributes()",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradiance', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.giClampIrradianceValue', 100)",
             "cmds.setAttr('RadeonProRenderGlobals.textureCompression', 1)",
