@@ -126,6 +126,37 @@ def check_licenses(res_path, maya_scenes, testType):
             'Error while deleting student license: {}'.format(ex))
 
 
+def kill_maya(process):
+    core_config.main_logger.warning('Killing maya....')
+    child_processes = process.children()
+    core_config.main_logger.warning(
+        'Child processes: {}'.format(child_processes))
+    for ch in child_processes:
+        try:
+            ch.terminate()
+            time.sleep(10)
+            ch.kill()
+            time.sleep(10)
+            status = ch.status()
+            core_config.main_logger.error(
+                'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
+        except psutil.NoSuchProcess:
+            core_config.main_logger.warning(
+                'Process is killed: {}'.format(ch))
+
+    try:
+        p.terminate()
+        time.sleep(10)
+        p.kill()
+        time.sleep(10)
+        status = ch.status()
+        core_config.main_logger.error(
+            'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
+    except psutil.NoSuchProcess:
+        core_config.main_logger.warning(
+            'Process is killed: {}'.format(ch))
+
+
 def launchMaya(cmdScriptPath, work_dir, error_windows):
     system_pl = platform.system()
     core_config.main_logger.info(
@@ -134,6 +165,12 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
     perf_count.event_record(args.output, 'Open tool', True)
     p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE,
                      stderr=subprocess.PIPE, shell=True)
+
+    prev_done_test_cases = get_finished_cases_number(args.output)
+    # timeout after which Maya is considered hung
+    restart_timeout = 440
+    current_restart_timeout = restart_timeout
+
 
     while True:
         try:
@@ -164,37 +201,20 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
                     except Exception as ex:
                         pass
 
-                core_config.main_logger.warning('Killing maya....')
-
-                child_processes = p.children()
-                core_config.main_logger.warning(
-                    'Child processes: {}'.format(child_processes))
-                for ch in child_processes:
-                    try:
-                        ch.terminate()
-                        time.sleep(10)
-                        ch.kill()
-                        time.sleep(10)
-                        status = ch.status()
-                        core_config.main_logger.error(
-                            'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
-                    except psutil.NoSuchProcess:
-                        core_config.main_logger.warning(
-                            'Process is killed: {}'.format(ch))
-
-                try:
-                    p.terminate()
-                    time.sleep(10)
-                    p.kill()
-                    time.sleep(10)
-                    status = ch.status()
-                    core_config.main_logger.error(
-                        'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
-                except psutil.NoSuchProcess:
-                    core_config.main_logger.warning(
-                        'Process is killed: {}'.format(ch))
+                kill_maya(p)
 
                 break
+            else:
+                prev_done_test_cases = get_finished_cases_number(args.output)
+                if prev_done_test_cases == new_done_test_cases_num and current_restart_timeout <= 0:
+                    # if number of finished cases wasn't increased - Maya got stuck
+                    core_config.main_logger.error('Maya got stuck.')
+                    rc = -1
+                    current_restart_timeout = restart_timeout
+                    kill_maya(p)
+                    break
+                else:
+                    prev_done_test_cases = new_done_test_cases_num
         else:
             rc = 0
             break
