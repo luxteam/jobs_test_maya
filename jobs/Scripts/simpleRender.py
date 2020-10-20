@@ -185,6 +185,7 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
             core_config.main_logger.info(
                 'Found windows: {}'.format(window_titles))
         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
+            current_restart_timeout -= 40
             fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                                    'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
                                    'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report',
@@ -211,7 +212,7 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
 
                 break
             else:
-                prev_done_test_cases = get_finished_cases_number(args.output)
+                new_done_test_cases_num = get_finished_cases_number(args.output)
                 if prev_done_test_cases == new_done_test_cases_num and current_restart_timeout <= 0:
                     # if number of finished cases wasn't increased - Maya got stuck
                     core_config.main_logger.error('Maya got stuck.')
