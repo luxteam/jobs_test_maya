@@ -145,9 +145,9 @@ def kill_maya(process):
                 'Process is killed: {}'.format(ch))
 
     try:
-        p.terminate()
+        process.terminate()
         time.sleep(10)
-        p.kill()
+        process.kill()
         time.sleep(10)
         status = ch.status()
         core_config.main_logger.error(
