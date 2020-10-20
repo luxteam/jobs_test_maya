@@ -157,6 +157,12 @@ def kill_maya(process):
             'Process is killed: {}'.format(ch))
 
 
+def get_finished_cases_number(output):
+    with open(os.path.join(os.path.abspath(output), 'test_cases.json')) as file:
+        test_cases = json.load(file)
+        return len([case['status'] for case in test_cases if case['status'] in ('skipped', 'error', 'done')])
+
+
 def launchMaya(cmdScriptPath, work_dir, error_windows):
     system_pl = platform.system()
     core_config.main_logger.info(
