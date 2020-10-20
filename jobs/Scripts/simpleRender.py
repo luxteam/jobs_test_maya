@@ -438,7 +438,7 @@ def sync_time(work_dir):
                 with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
                     rpr_json_file.write(json.dumps(rpr_json, indent=4))
             except:
-                core_config.logging.error("Can't count sync time for " + rpr_json_path)
+                core_config.main_logger.error("Can't count sync time for " + rpr_json_path)
 
 
 if __name__ == '__main__':
