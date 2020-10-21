@@ -534,6 +534,9 @@
             "cmds.setAttr('defaultResolution.height', 5000.0)",
             "rpr_render(case)",
             "resetAttributes()"
+        ],
+        "skip_engine": [
+            "Hybrid_Low"
         ]
     },
     {
