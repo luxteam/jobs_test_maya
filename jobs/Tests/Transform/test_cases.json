@@ -173,7 +173,7 @@
         "case": "MAYA_TRANSFORM_011",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributesMesh()",
             "cmds.setAttr('typeMesh1.shearXY',2)",
             "cmds.setAttr('typeMesh1.shearXZ',-1)",
             "cmds.setAttr('typeMesh1.shearYZ',6)",
@@ -181,6 +181,200 @@
         ],
         "script_info": [
             "Shear for object"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_012",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.translateX',0)",
+            "cmds.setAttr('pSphere1.translateY', 0)",
+            "cmds.setAttr('pSphere1.translateZ', 15)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Translate for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_013",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.rotateX',90)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "RotateX for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_014",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.rotateY',90)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "RotateY for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_015",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.rotateZ',90)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "RotateZ for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_016",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.rotateAxisX',90)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Axis X for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_017",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.rotateAxisY',90)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Axis Y for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_018",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.rotateAxisZ',90)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Axis Z for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_019",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.scaleX',5.5)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Scale X for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_020",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.scaleY',15)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Scale Y for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_021",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.scaleZ',7)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Scale Z for object with ParentConstraint"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_022",
+        "status": "active",
+        "functions": [
+            "resetAttributesCube()",
+            "resetAttributesSphere()",
+            "resetAttributesMesh()",
+            "cmds.setAttr('pCube1.translateX', 0)",
+            "cmds.setAttr('pCube1.translateY', 0)",
+            "cmds.setAttr('pCube1.translateZ', 0)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "cmds.setAttr('pSphere1.translateX', 5)",
+            "cmds.setAttr('pSphere1.translateY', 5)",
+            "cmds.setAttr('pSphere1.translateZ', 25)",
+            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Change Translate between object and object with ParentConstraint"
         ],
         "scene": "transforms.ma"
     }
