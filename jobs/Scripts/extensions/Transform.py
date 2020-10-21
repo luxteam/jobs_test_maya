@@ -1,4 +1,4 @@
-def resetAttributesIBL():
+def resetAttributes():
     cmds.setAttr('RPRIBL.translateX', 0)
     cmds.setAttr('RPRIBL.translateY', 0)
     cmds.setAttr('RPRIBL.translateZ', 0)
@@ -15,8 +15,6 @@ def resetAttributesIBL():
     cmds.setAttr('RPRIBL.rotateAxisX', 0)
     cmds.setAttr('RPRIBL.rotateAxisY', 0)
     cmds.setAttr('RPRIBL.inheritsTransform', 1)
-
-def resetAttributesCube():
     cmds.setAttr('pCube1.translateX', -19.89)
     cmds.setAttr('pCube1.translateY', 4.876)
     cmds.setAttr('pCube1.translateZ', 25.57)
@@ -33,8 +31,6 @@ def resetAttributesCube():
     cmds.setAttr('pCube1.rotateAxisX', 0)
     cmds.setAttr('pCube1.rotateAxisY', 0)
     cmds.setAttr('pCube1.inheritsTransform', 1)
-
-def resetAttributesSphere():
     cmds.setAttr('pSphere1.translateX', 1.892)
     cmds.setAttr('pSphere1.translateY', 2.773)
     cmds.setAttr('pSphere1.translateZ', 20.061)
@@ -51,8 +47,6 @@ def resetAttributesSphere():
     cmds.setAttr('pSphere1.rotateAxisX', 0)
     cmds.setAttr('pSphere1.rotateAxisY', 0)
     cmds.setAttr('pSphere1.inheritsTransform', 1)
-    
-def resetAttributesMesh():
     cmds.setAttr('pMesh1.translateX', -29.85)
     cmds.setAttr('pMesh1.translateY', 4.456)
     cmds.setAttr('pMesh1.translateZ', 2.671)
@@ -69,3 +63,4 @@ def resetAttributesMesh():
     cmds.setAttr('pMesh1.rotateAxisX', 0)
     cmds.setAttr('pMesh1.rotateAxisY', 0)
     cmds.setAttr('pMesh1.inheritsTransform', 1)
+    cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)

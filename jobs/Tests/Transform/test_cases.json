@@ -3,7 +3,7 @@
         "case": "MAYA_TRANSFORM_000",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -15,7 +15,7 @@
         "case": "MAYA_TRANSFORM_001",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.rotateX',10)",
             "cmds.setAttr('RPRIBL.rotateY',20)",
             "cmds.setAttr('RPRIBL.rotateZ',30)",
@@ -31,7 +31,7 @@
         "case": "MAYA_TRANSFORM_002",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.rotateX',10)",
             "cmds.setAttr('RPRIBL.rotateY',20)",
             "cmds.setAttr('RPRIBL.rotateZ',30)",
@@ -47,7 +47,7 @@
         "case": "MAYA_TRANSFORM_003",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.rotateX',370)",
             "cmds.setAttr('RPRIBL.rotateY',-380)",
             "cmds.setAttr('RPRIBL.rotateZ',3600)",
@@ -65,7 +65,7 @@
         "case": "MAYA_TRANSFORM_004",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.shearXY',0.6)",
             "cmds.setAttr('RPRIBL.shearXZ',-0.7)",
             "cmds.setAttr('RPRIBL.shearYZ',0.8)",
@@ -81,7 +81,7 @@
         "case": "MAYA_TRANSFORM_005",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.rotateX',100)",
             "cmds.setAttr('RPRIBL.rotateY',0)",
             "cmds.setAttr('RPRIBL.rotateZ',0)",
@@ -97,7 +97,7 @@
         "case": "MAYA_TRANSFORM_006",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.scaleX',800)",
             "cmds.setAttr('RPRIBL.scaleY',-400)",
             "cmds.setAttr('RPRIBL.scaleZ',1001.257)",
@@ -112,7 +112,7 @@
         "case": "MAYA_TRANSFORM_007",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.shearXY',0.4561)",
             "cmds.setAttr('RPRIBL.shearXZ',-0.567)",
             "cmds.setAttr('RPRIBL.shearYZ',0.6789)",
@@ -127,7 +127,7 @@
         "case": "MAYA_TRANSFORM_008",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.rotateAxisX',180)",
             "cmds.setAttr('RPRIBL.rotateAxisY',-180)",
             "cmds.setAttr('RPRIBL.rotateAxisZ',45)",
@@ -143,7 +143,7 @@
         "case": "MAYA_TRANSFORM_009",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.shearXY',99999)",
             "cmds.setAttr('RPRIBL.shearXZ',-99999)",
             "cmds.setAttr('RPRIBL.shearYZ',99999)",
@@ -158,7 +158,7 @@
         "case": "MAYA_TRANSFORM_010",
         "status": "active",
         "functions": [
-            "resetAttributesIBL()",
+            "resetAttributes()",
             "cmds.setAttr('RPRIBL.translateX',99999)",
             "cmds.setAttr('RPRIBL.translateY',99999)",
             "cmds.setAttr('RPRIBL.translateZ',-99999)",
@@ -173,7 +173,7 @@
         "case": "MAYA_TRANSFORM_011",
         "status": "active",
         "functions": [
-            "resetAttributesMesh()",
+            "resetAttributes()",
             "cmds.setAttr('typeMesh1.shearXY',2)",
             "cmds.setAttr('typeMesh1.shearXZ',-1)",
             "cmds.setAttr('typeMesh1.shearYZ',6)",
@@ -188,14 +188,10 @@
         "case": "MAYA_TRANSFORM_012",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.translateX',0)",
             "cmds.setAttr('pSphere1.translateY', 0)",
             "cmds.setAttr('pSphere1.translateZ', 15)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -207,12 +203,8 @@
         "case": "MAYA_TRANSFORM_013",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.rotateX',90)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -224,12 +216,8 @@
         "case": "MAYA_TRANSFORM_014",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.rotateY',90)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -241,12 +229,8 @@
         "case": "MAYA_TRANSFORM_015",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.rotateZ',90)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -258,12 +242,8 @@
         "case": "MAYA_TRANSFORM_016",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.rotateAxisX',90)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -275,12 +255,8 @@
         "case": "MAYA_TRANSFORM_017",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.rotateAxisY',90)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -292,12 +268,8 @@
         "case": "MAYA_TRANSFORM_018",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.rotateAxisZ',90)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -309,12 +281,8 @@
         "case": "MAYA_TRANSFORM_019",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.scaleX',5.5)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -326,12 +294,8 @@
         "case": "MAYA_TRANSFORM_020",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.scaleY',15)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -343,12 +307,8 @@
         "case": "MAYA_TRANSFORM_021",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
+            "resetAttributes()",
             "cmds.setAttr('pSphere1.scaleZ',7)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -360,17 +320,13 @@
         "case": "MAYA_TRANSFORM_022",
         "status": "active",
         "functions": [
-            "resetAttributesCube()",
-            "resetAttributesSphere()",
-            "resetAttributesMesh()",
+            "resetAttributes()",
             "cmds.setAttr('pCube1.translateX', 0)",
             "cmds.setAttr('pCube1.translateY', 0)",
             "cmds.setAttr('pCube1.translateZ', 0)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1)",
             "cmds.setAttr('pSphere1.translateX', 5)",
             "cmds.setAttr('pSphere1.translateY', 5)",
             "cmds.setAttr('pSphere1.translateZ', 25)",
-            "cmds.parentConstraint('pSphere1', 'pCube1', mo=1, rm=True)",
             "rpr_render(case)"
         ],
         "script_info": [
