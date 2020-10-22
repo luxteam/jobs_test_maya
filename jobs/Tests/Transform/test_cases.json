@@ -7,7 +7,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Rotate Order for IBL (ZXY)"
+            "Scene example"
         ],
         "scene": "transforms.ma"
     },
@@ -333,5 +333,430 @@
             "Change Translate between object and object with ParentConstraint"
         ],
         "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_023",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 10, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix:Translate X fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_024",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 5, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix:Translate Y fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_025",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -10, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix:Translate Z fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_026",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 10, 5, -10, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix: complex Translate fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_027",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix: Scale X fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_028",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, -2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix: Scale Y fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_029",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix: Scale Z fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_030",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (2, 0, 0, 0, 0, -2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix: complex Scale fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_031",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix: Shear X fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_032",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, -0.5, 0, 1, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix: Shear Y fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_033",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0.3, 1, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix: Shear Z fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_034",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 1, 1, 0, 0, -0.5, 0.3, 1, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Offset Parent Matrix: complex Shear fot objects"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_035",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 0.985, -0.174, 0, 0, 0.174, 0.985, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate X (-10) through Offset Parent Matrix"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_036",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (0.985, 0, 0.174, 0, 0, 1, 0, 0, -0.174, 0, 0.985, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Y (-10) through Offset Parent Matrix"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_037",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (0.866, 0.5, 0, 0, -0.5, 0.866, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate Z (30) through Offset Parent Matrix"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_038",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (0.750, 0.433, -0.5, 0, -0.217, 0.875, 0.433, 0, 0.625, -0.217, 0.750, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Rotate all axis (30) through Offset Parent Matrix"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_039",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (0.825, 0.476, -0.55, 0, 0.19, 0.31, 0.22, 0, 0.530, -0.362, 1.321, 0, -28.5, 17, -4, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "complex Offset Parent Matrix"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_040",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, -0.1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "testing fourth column first field"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_041",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, -0.1, 0, 0, 1, 0, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "testing fourth column second field"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_042",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.1, 0, 0, 0, 1), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "testing fourth column third field"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_043",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.9), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "testing fourth column fourth field"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_044",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, -0.1, 0, 1, 0, -0.1, 0, 0, 1, -0.1, 0, 0, 0, 0.9), type='matrix')",   
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "testing complex fourth column"
+        ],
+        "scene": "transforms.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_045",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('directionalLight1.scaleX',30)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "directionalLight Scale X"
+        ],
+        "scene": "transforms_directionalLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_046",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('directionalLight1.scaleY',30)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "directionalLight Scale Y"
+        ],
+        "scene": "transforms_directionalLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_047",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('directionalLight1.scaleZ',30)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "directionalLight Scale Z"
+        ],
+        "scene": "transforms_directionalLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_048",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('directionalLight1.scaleX',20)",
+            "cmds.setAttr('directionalLight1.scaleY',20)",
+            "cmds.setAttr('directionalLight1.scaleZ',20)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "directionalLight Scale complex"
+        ],
+        "scene": "transforms_directionalLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_049",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('directionalLight1.shearXY',20)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "directionalLight Shear XY"
+        ],
+        "scene": "transforms_directionalLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_050",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('directionalLight1.shearXZ',2)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "directionalLight Shear XZ"
+        ],
+        "scene": "transforms_directionalLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_051",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('directionalLight1.shearYZ',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "directionalLight Shear YZ"
+        ],
+        "scene": "transforms_directionalLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_052",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('directionalLight1.shearYZ',1)",
+            "cmds.setAttr('directionalLight1.shearXZ',2)",
+            "cmds.setAttr('directionalLight1.shearXY',20)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "directionalLight Shear complex"
+        ],
+        "scene": "transforms_directionalLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_053",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('ambientLight1.scaleX',100)",
+            "cmds.setAttr('ambientLight1.scaleY',100)",
+            "cmds.setAttr('ambientLight1.scaleZ',100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "ambientLight Scale complex"
+        ],
+        "scene": "transforms_directionalLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_054",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('ambientLight1.shearYZ',10)",
+            "cmds.setAttr('ambientLight1.shearXZ',10)",
+            "cmds.setAttr('ambientLight1.shearXY',10)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "ambientLight Shear complex"
+        ],
+        "scene": "transforms_directionalLight.ma"
     }
 ]
+ 
