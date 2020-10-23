@@ -2100,5 +2100,532 @@
             "Portal Light"
         ],
         "scene": "portal_light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_113",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 2)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 300)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Watt",
+            "Light intensity - 300"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_114",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 2)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10000)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Watt",
+            "Light intensity - 10000"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_115",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 2)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10000)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 34)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Watt",
+            "Light intensity - 10000",
+            "Light efficacy - 34"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_116",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 10"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_117",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_118",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 100000)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100",
+            "Temperature - 100000"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_119",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100",
+            "Temperature - 0"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_120",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.color', 0, 0, 1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Color - Blue"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_121",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 0)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Expected black image",
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100",
+            "Angle - 0"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_122",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 10)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100",
+            "Angle - 10"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_123",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 180)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100",
+            "Angle - 180"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_124",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 360)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100",
+            "Angle - 360"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_125",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 400)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100",
+            "Angle - 400"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_126",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.diskLightRadius', 0.1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 10",
+            "Radius - 0.1"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_127",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.diskLightRadius', 1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 10",
+            "Radius - 1"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_128",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.diskLightRadius', 100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Lumen",
+            "Light intensity - 10",
+            "Radius - 100"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_129",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 2)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 300)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Watt",
+            "Light intensity - 300"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_130",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 2)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10000)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Watt",
+            "Light intensity - 10000"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_131",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 2)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10000)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.luminousEfficacy', 34)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Disk",
+            "Light intensity unit - Watt",
+            "Light intensity - 10000",
+            "Light efficacy - 34"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_132",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Lumen",
+            "Light intensity - 10"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_133",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_134",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 100000)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100",
+            "Temperature - 100000"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_135",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Lumen",
+            "Light intensity - 100",
+            "Temperature - 0"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_136",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.color', 0, 0, 1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Lumen",
+            "Color - Blue"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_137",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.sphereLightRadius', 0.1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Lumen",
+            "Light intensity - 10",
+            "Radius - 0.1"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_138",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.sphereLightRadius', 1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Lumen",
+            "Light intensity - 10",
+            "Radius - 1"
+        ],
+        "scene": "Physical_Light.ma"
+    },
+    {
+        "case": "MAYA_L_PL_139",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
+            "setUpDefaultNorthstarLights()",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.sphereLightRadius', 100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Light type - Sphere",
+            "Light intensity unit - Lumen",
+            "Light intensity - 10",
+            "Radius - 100"
+        ],
+        "scene": "Physical_Light.ma"
     }
 ]
