@@ -189,156 +189,6 @@
         "status": "active",
         "functions": [
             "resetAttributes()",
-            "cmds.setAttr('pSphere1.translateX',0)",
-            "cmds.setAttr('pSphere1.translateY', 0)",
-            "cmds.setAttr('pSphere1.translateZ', 15)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "Translate for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_013",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pSphere1.rotateX',90)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "RotateX for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_014",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pSphere1.rotateY',90)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "RotateY for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_015",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pSphere1.rotateZ',90)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "RotateZ for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_016",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pSphere1.rotateAxisX',90)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "Rotate Axis X for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_017",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pSphere1.rotateAxisY',90)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "Rotate Axis Y for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_018",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pSphere1.rotateAxisZ',90)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "Rotate Axis Z for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_019",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pSphere1.scaleX',5.5)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "Scale X for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_020",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pSphere1.scaleY',15)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "Scale Y for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_021",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pSphere1.scaleZ',7)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "Scale Z for object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_022",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('pCube1.translateX', 0)",
-            "cmds.setAttr('pCube1.translateY', 0)",
-            "cmds.setAttr('pCube1.translateZ', 0)",
-            "cmds.setAttr('pSphere1.translateX', 5)",
-            "cmds.setAttr('pSphere1.translateY', 5)",
-            "cmds.setAttr('pSphere1.translateZ', 25)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "Change Translate between object and object with ParentConstraint"
-        ],
-        "scene": "transforms.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_023",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
             "cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 10, 0, 0, 1), type='matrix')",   
             "rpr_render(case)"
         ],
@@ -348,7 +198,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_024",
+        "case": "MAYA_TRANSFORM_013",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -361,7 +211,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_025",
+        "case": "MAYA_TRANSFORM_014",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -374,7 +224,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_026",
+        "case": "MAYA_TRANSFORM_015",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -387,7 +237,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_027",
+        "case": "MAYA_TRANSFORM_016",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -400,7 +250,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_028",
+        "case": "MAYA_TRANSFORM_017",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -413,7 +263,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_029",
+        "case": "MAYA_TRANSFORM_018",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -426,7 +276,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_030",
+        "case": "MAYA_TRANSFORM_019",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -439,7 +289,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_031",
+        "case": "MAYA_TRANSFORM_020",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -452,7 +302,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_032",
+        "case": "MAYA_TRANSFORM_021",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -465,7 +315,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_033",
+        "case": "MAYA_TRANSFORM_022",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -478,7 +328,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_034",
+        "case": "MAYA_TRANSFORM_023",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -491,7 +341,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_035",
+        "case": "MAYA_TRANSFORM_024",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -504,7 +354,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_036",
+        "case": "MAYA_TRANSFORM_025",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -517,7 +367,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_037",
+        "case": "MAYA_TRANSFORM_026",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -530,7 +380,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_038",
+        "case": "MAYA_TRANSFORM_027",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -543,7 +393,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_039",
+        "case": "MAYA_TRANSFORM_028",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -556,7 +406,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_040",
+        "case": "MAYA_TRANSFORM_029",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -569,7 +419,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_041",
+        "case": "MAYA_TRANSFORM_030",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -582,7 +432,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_042",
+        "case": "MAYA_TRANSFORM_031",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -595,7 +445,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_043",
+        "case": "MAYA_TRANSFORM_032",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -608,7 +458,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_044",
+        "case": "MAYA_TRANSFORM_033",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -621,46 +471,7 @@
         "scene": "transforms.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_045",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('directionalLight1.scaleX',30)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "directionalLight Scale X"
-        ],
-        "scene": "transforms_directionalLight.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_046",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('directionalLight1.scaleY',30)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "directionalLight Scale Y"
-        ],
-        "scene": "transforms_directionalLight.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_047",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('directionalLight1.scaleZ',30)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "directionalLight Scale Z"
-        ],
-        "scene": "transforms_directionalLight.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_048",
+        "case": "MAYA_TRANSFORM_034",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -675,46 +486,7 @@
         "scene": "transforms_directionalLight.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_049",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('directionalLight1.shearXY',20)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "directionalLight Shear XY"
-        ],
-        "scene": "transforms_directionalLight.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_050",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('directionalLight1.shearXZ',2)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "directionalLight Shear XZ"
-        ],
-        "scene": "transforms_directionalLight.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_051",
-        "status": "active",
-        "functions": [
-            "resetAttributes()",
-            "cmds.setAttr('directionalLight1.shearYZ',1)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "directionalLight Shear YZ"
-        ],
-        "scene": "transforms_directionalLight.ma"
-    },
-    {
-        "case": "MAYA_TRANSFORM_052",
+        "case": "MAYA_TRANSFORM_035",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -729,7 +501,7 @@
         "scene": "transforms_directionalLight.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_053",
+        "case": "MAYA_TRANSFORM_036",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -741,10 +513,10 @@
         "script_info": [
             "ambientLight Scale complex"
         ],
-        "scene": "transforms_directionalLight.ma"
+        "scene": "transforms_ambientLight.ma"
     },
     {
-        "case": "MAYA_TRANSFORM_054",
+        "case": "MAYA_TRANSFORM_037",
         "status": "active",
         "functions": [
             "resetAttributes()",
@@ -756,7 +528,367 @@
         "script_info": [
             "ambientLight Shear complex"
         ],
-        "scene": "transforms_directionalLight.ma"
+        "scene": "transforms_ambientLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_038",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',10)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',5)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',20)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Area LightType Scale complex"
+        ],
+        "scene": "transforms_areaTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_039",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.shearXY',5)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXZ',5)",
+            "cmds.setAttr('RPRPhysicalLight1.shearYZ',5)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Area LightType Shear complex"
+        ],
+        "scene": "transforms_areaTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_040",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',50)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',30)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',20)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Spot LightType Scale complex"
+        ],
+        "scene": "transforms_spotTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_041",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.shearXY',5)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXZ',5)",
+            "cmds.setAttr('RPRPhysicalLight1.shearYZ',5)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Spot LightType Shear complex"
+        ],
+        "scene": "transforms_spotTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_042",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',30)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',30)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',10)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Point LightType Scale complex"
+        ],
+        "scene": "transforms_pointTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_043",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.shearXY',5)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXZ',5)",
+            "cmds.setAttr('RPRPhysicalLight1.shearYZ',5)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Point LightType Shear complex"
+        ],
+        "scene": "transforms_pointTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_044",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',30)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',20)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',10)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Derectional LightType Scale complex"
+        ],
+        "scene": "transforms_derectionalTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_045",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.shearXY',5)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXZ',5)",
+            "cmds.setAttr('RPRPhysicalLight1.shearYZ',5)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Derectional LightType Shear complex"
+        ],
+        "scene": "transforms_directionalTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_046",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Sphere LightType ScaleX"
+        ],
+        "scene": "transforms_sphereTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_047",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Sphere LightType ScaleY"
+        ],
+        "scene": "transforms_sphereTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_048",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Sphere LightType ScaleZ"
+        ],
+        "scene": "transforms_sphereTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_049",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Sphere LightType Scale complex"
+        ],
+        "scene": "transforms_sphereTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_050",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXY',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Derectional LightType ShearXY"
+        ],
+        "scene": "transforms_sphereTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_051",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXZ',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Derectional LightType ShearXZ"
+        ],
+        "scene": "transforms_sphereTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_052",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "cmds.setAttr('RPRPhysicalLight1.shearYZ',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Derectional LightType ShearYZ"
+        ],
+        "scene": "transforms_sphereTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_053",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXY',1)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXZ',1)",
+            "cmds.setAttr('RPRPhysicalLight1.shearYZ',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Derectional LightType Shear complex"
+        ],
+        "scene": "transforms_sphereTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_054",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Disk LightType ScaleX"
+        ],
+        "scene": "transforms_diskTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_055",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Disk LightType ScaleY"
+        ],
+        "scene": "transforms_diskTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_056",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Disk LightType ScaleZ"
+        ],
+        "scene": "transforms_diskTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_057",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Disk LightType Scale complex"
+        ],
+        "scene": "transforms_diskTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_058",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXY',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Disk LightType ShearXY"
+        ],
+        "scene": "transforms_diskTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_059",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXZ',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Disk LightType ShearXZ"
+        ],
+        "scene": "transforms_diskTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_060",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "cmds.setAttr('RPRPhysicalLight1.shearYZ',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Disk LightType ShearYZ"
+        ],
+        "scene": "transforms_diskTypeLight.ma"
+    },
+    {
+        "case": "MAYA_TRANSFORM_061",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('RPRPhysicalLight1.scaleX',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleY',100)",
+            "cmds.setAttr('RPRPhysicalLight1.scaleZ',100)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXY',1)",
+            "cmds.setAttr('RPRPhysicalLight1.shearXZ',1)",
+            "cmds.setAttr('RPRPhysicalLight1.shearYZ',1)",
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "Disk LightType Shear complex"
+        ],
+        "scene": "transforms_diskTypeLight.ma"
     }
 ]
  
