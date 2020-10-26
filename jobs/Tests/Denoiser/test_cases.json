@@ -8,7 +8,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
@@ -34,7 +33,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
@@ -59,7 +57,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
@@ -81,7 +78,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
@@ -103,7 +99,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
@@ -124,7 +119,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
@@ -142,7 +136,6 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
@@ -159,7 +152,6 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
@@ -175,7 +167,6 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
@@ -191,7 +182,6 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaType', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaMinutes', 3.0)",
             "rpr_render(case)"
         ],
