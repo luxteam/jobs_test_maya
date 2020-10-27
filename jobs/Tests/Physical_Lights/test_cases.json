@@ -2362,6 +2362,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Light type - Disk",
             "Light intensity unit - Lumen",
             "Light intensity - 1",
@@ -2629,7 +2630,8 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.color', 0, 0, 1)",
-            "rpr_render(case)"
+            "rpr_render(case)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.color', 1, 1, 1)"
         ],
         "script_info": [
             "Light type - Sphere",
