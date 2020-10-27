@@ -356,5 +356,83 @@
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 0)"
         ]
+    },
+    {
+        "case": "MAYA_RS_MB_021",
+        "status": "active",
+        "script_info": [
+            "Diagonal move"
+        ],
+        "scene": "MotionBlurDirectionTests.ma",
+        "functions": [
+            "cmds.currentTime(75)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_022",
+        "status": "active",
+        "script_info": [
+            "Rotate and move"
+        ],
+        "scene": "MotionBlurDirectionTests.ma",
+        "functions": [
+            "cmds.currentTime(115)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_023",
+        "status": "active",
+        "script_info": [
+            "Scale, rotate and move"
+        ],
+        "scene": "MotionBlurDirectionTests.ma",
+        "functions": [
+            "cmds.currentTime(155)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_024",
+        "status": "active",
+        "script_info": [
+            "Shrink"
+        ],
+        "scene": "MotionBlurDirectionTests.ma",
+        "functions": [
+            "cmds.currentTime(190)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_025",
+        "status": "active",
+        "script_info": [
+            "Move and rotate towards camera"
+        ],
+        "scene": "MotionBlurDirectionTests.ma",
+        "functions": [
+            "cmds.currentTime(225)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_MB_026",
+        "status": "active",
+        "script_info": [
+            "Rapid rotation"
+        ],
+        "scene": "MotionBlurDirectionTests.ma",
+        "functions": [
+            "cmds.currentTime(260)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "rpr_render(case)"
+        ]
     }
 ]
