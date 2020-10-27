@@ -80,9 +80,11 @@ Case\t\tStatus\tTime\tTries
 def performance_count(work_dir):
     old_event = {'name': 'init', 'time': '', 'start': True}
     time_diffs = []
+    time_diffs_summary = []
     work_dir = os.path.join(work_dir, 'events')
     files = glob.glob(os.path.join(work_dir, '*.json'))
     files.sort(key=lambda x: os.path.getmtime(x))
+    events_summary = {}
     for f in files:
         with open(f, 'r') as json_file:
             event = json.load(json_file)
@@ -99,8 +101,14 @@ def performance_count(work_dir):
             else:
                 time_diffs.append(
                     {'name': event['name'], 'time': time_diff.total_seconds()})
+            if event['name'] not in events_summary:
+                events_summary[event['name']] = 0
+            events_summary[event['name']] += time_diff.total_seconds()
         old_event = event.copy()
-    return time_diffs
+    for event_name, event_time in events_summary.items():
+        time_diffs_summary.append(
+            {'name': event_name, 'time': event_time})
+    return time_diffs, time_diffs_summary
 
 
 def main(args):
@@ -108,8 +116,11 @@ def main(args):
 
     render_log(work_dir)
 
+    time_diffs, time_diffs_summary = performance_count(work_dir)
     with open(os.path.realpath(os.path.join(work_dir, '..', os.path.basename(work_dir) + '_performance.json')), 'w') as f:
-        f.write(json.dumps(performance_count(work_dir)))
+        json.dump(time_diffs, f)
+    with open(os.path.realpath(os.path.join(work_dir, '..', os.path.basename(work_dir) + '_performance_ums.json')), 'w') as f:
+        json.dump(time_diffs_summary, f)
 
 
 if __name__ == '__main__':
