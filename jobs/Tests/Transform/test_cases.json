@@ -742,7 +742,10 @@
         "script_info": [
             "Primary state with RPRSphere LightType"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_052",
@@ -757,7 +760,10 @@
         "script_info": [
             "RPRSphere LightType ScaleX (100)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_053",
@@ -772,7 +778,10 @@
         "script_info": [
             "RPRSphere LightType ScaleY (100)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_054",
@@ -787,7 +796,10 @@
         "script_info": [
             "RPRSphere LightType ScaleZ (100)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_055",
@@ -804,7 +816,10 @@
         "script_info": [
             "RPRSphere LightType Scale XYZ (100, 100, 100)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_056",
@@ -822,7 +837,10 @@
         "script_info": [
             "RPRSphere LightType ShearXY (1)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_057",
@@ -840,7 +858,10 @@
         "script_info": [
             "RPRSphere LightType ShearXZ (1)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_058",
@@ -858,7 +879,10 @@
         "script_info": [
             "RPRSphere LightType ShearYZ (1)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_059",
@@ -878,7 +902,10 @@
         "script_info": [
             "PRPSphere LightType Shear XYZ (1, 1, 1)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_060",
@@ -892,7 +919,10 @@
         "script_info": [
             "Primary state with RPRDisk LightType"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_061",
@@ -907,7 +937,10 @@
         "script_info": [
             "RPRDisk LightType ScaleX (100)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_062",
@@ -922,7 +955,10 @@
         "script_info": [
             "RPRDisk LightType ScaleY (100)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_063",
@@ -937,7 +973,10 @@
         "script_info": [
             "RPRDisk LightType ScaleZ (100)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_064",
@@ -954,7 +993,10 @@
         "script_info": [
             "RPRDisk LightType Scale XYZ (100, 100, 100)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_065",
@@ -972,7 +1014,10 @@
         "script_info": [
             "RPRDisk LightType ShearXY (1)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_066",
@@ -990,7 +1035,10 @@
         "script_info": [
             "RPRDisk LightType ShearXZ (1)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_067",
@@ -1008,7 +1056,10 @@
         "script_info": [
             "RPRDisk LightType ShearYZ (1)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     },
     {
         "case": "MAYA_TRANSFORM_068",
@@ -1028,7 +1079,10 @@
         "script_info": [
             "RPRDisk LightType Shear XYZ (1, 1, 1)"
         ],
-        "scene": "transforms_light.ma"
+        "scene": "transforms_light.ma",
+        "skip_engine": [
+            "Tahoe"
+        ]
     }
 ]
  
