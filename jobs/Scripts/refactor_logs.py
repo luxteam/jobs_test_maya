@@ -85,6 +85,7 @@ def performance_count(work_dir):
     files = glob.glob(os.path.join(work_dir, '*.json'))
     files.sort(key=lambda x: os.path.getmtime(x))
     events_summary = {}
+    events_order = []
     for f in files:
         with open(f, 'r') as json_file:
             event = json.load(json_file)
@@ -101,13 +102,15 @@ def performance_count(work_dir):
             else:
                 time_diffs.append(
                     {'name': event['name'], 'time': time_diff.total_seconds()})
+            if event['name'] not in events_order:
+                events_order.append(event['name'])
             if event['name'] not in events_summary:
                 events_summary[event['name']] = 0
             events_summary[event['name']] += time_diff.total_seconds()
         old_event = event.copy()
-    for event_name, event_time in events_summary.items():
+    for event_name in events_order:
         time_diffs_summary.append(
-            {'name': event_name, 'time': event_time})
+            {'name': event_name, 'time': events_summary[event_name]})
     return time_diffs, time_diffs_summary
 
 
