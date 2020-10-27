@@ -2520,7 +2520,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Light type - Disk",
+            "Light type - Sphere",
             "Light intensity unit - Watt",
             "Light intensity - 10000",
             "Light efficacy - 34"
