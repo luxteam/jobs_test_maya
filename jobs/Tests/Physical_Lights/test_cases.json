@@ -2391,7 +2391,7 @@
             "Light intensity - 1",
             "Angle - 400"
         ],
-        "scene": "Physical_Light.ma",
+        "scene": "DiskAngle.ma",
         "skip_engine": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
