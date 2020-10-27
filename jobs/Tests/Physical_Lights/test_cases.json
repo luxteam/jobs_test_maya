@@ -2216,7 +2216,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 100000)",
             "rpr_render(case)"
@@ -2224,7 +2224,7 @@
         "script_info": [
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 100",
+            "Light intensity - 10",
             "Temperature - 100000"
         ],
         "scene": "Physical_Light.ma",
@@ -2240,7 +2240,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
             "rpr_render(case)"
@@ -2248,7 +2248,7 @@
         "script_info": [
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 100",
+            "Light intensity - 10",
             "Temperature - 0"
         ],
         "scene": "Physical_Light.ma",
@@ -2264,7 +2264,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.color', 0, 0, 1)",
             "rpr_render(case)",
             "cmds.setAttr('RPRPhysicalLight1Shape.color', 1, 1, 1)"
@@ -2388,7 +2388,7 @@
         "script_info": [
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 100",
+            "Light intensity - 1",
             "Angle - 400"
         ],
         "scene": "Physical_Light.ma",
@@ -2404,7 +2404,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightRadius', 0.1)",
             "rpr_render(case)"
         ],
@@ -2427,7 +2427,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightRadius', 1)",
             "rpr_render(case)"
         ],
@@ -2450,7 +2450,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightRadius', 100)",
             "rpr_render(case)"
         ],
@@ -2580,7 +2580,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 100000)",
             "rpr_render(case)"
@@ -2588,7 +2588,7 @@
         "script_info": [
             "Light type - Sphere",
             "Light intensity unit - Lumen",
-            "Light intensity - 100",
+            "Light intensity - 10",
             "Temperature - 100000"
         ],
         "scene": "Physical_Light.ma",
@@ -2604,7 +2604,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.colorMode', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.temperature', 0)",
             "rpr_render(case)"
@@ -2612,7 +2612,7 @@
         "script_info": [
             "Light type - Sphere",
             "Light intensity unit - Lumen",
-            "Light intensity - 100",
+            "Light intensity - 10",
             "Temperature - 0"
         ],
         "scene": "Physical_Light.ma",
@@ -2628,7 +2628,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.color', 0, 0, 1)",
             "rpr_render(case)",
             "cmds.setAttr('RPRPhysicalLight1Shape.color', 1, 1, 1)"
@@ -2636,6 +2636,7 @@
         "script_info": [
             "Light type - Sphere",
             "Light intensity unit - Lumen",
+            "Light intensity - 10",
             "Color - Blue"
         ],
         "scene": "Physical_Light.ma",
@@ -2651,7 +2652,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.sphereLightRadius', 0.1)",
             "rpr_render(case)"
         ],
@@ -2674,7 +2675,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.sphereLightRadius', 1)",
             "rpr_render(case)"
         ],
@@ -2697,7 +2698,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 4)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 10)",
             "cmds.setAttr('RPRPhysicalLight1Shape.sphereLightRadius', 100)",
             "rpr_render(case)"
         ],
