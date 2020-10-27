@@ -2266,7 +2266,8 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.color', 0, 0, 1)",
-            "rpr_render(case)"
+            "rpr_render(case)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.color', 1, 1, 1)"
         ],
         "script_info": [
             "Light type - Disk",
@@ -2286,7 +2287,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 0)",
             "rpr_render(case)"
         ],
@@ -2294,10 +2295,10 @@
             "Expected black image",
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 100",
+            "Light intensity - 1",
             "Angle - 0"
         ],
-        "scene": "Physical_Light.ma",
+        "scene": "DiskAngle.ma",
         "skip_engine": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
@@ -2310,17 +2311,17 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 10)",
             "rpr_render(case)"
         ],
         "script_info": [
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 100",
+            "Light intensity - 1",
             "Angle - 10"
         ],
-        "scene": "Physical_Light.ma",
+        "scene": "DiskAngle.ma",
         "skip_engine": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
@@ -2333,17 +2334,17 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 180)",
             "rpr_render(case)"
         ],
         "script_info": [
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 100",
+            "Light intensity - 1",
             "Angle - 180"
         ],
-        "scene": "Physical_Light.ma",
+        "scene": "DiskAngle.ma",
         "skip_engine": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
@@ -2356,17 +2357,17 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 360)",
             "rpr_render(case)"
         ],
         "script_info": [
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 100",
+            "Light intensity - 1",
             "Angle - 360"
         ],
-        "scene": "Physical_Light.ma",
+        "scene": "DiskAngle.ma",
         "skip_engine": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
@@ -2379,7 +2380,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 400)",
             "rpr_render(case)"
         ],

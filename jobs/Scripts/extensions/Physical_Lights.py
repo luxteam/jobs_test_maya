@@ -12,8 +12,6 @@ def resetAttributes():
     cmds.setAttr('RPRPhysicalLight1Shape.shadowsEnabled', 1)
     cmds.setAttr('RPRPhysicalLight1Shape.spotLightInnerConeAngle', 43)
     cmds.setAttr('RPRPhysicalLight1Shape.spotLightOuterConeFalloff', 45)
-    cmds.setAttr('RPRPhysicalLight1.translateY', 6.276)
-    cmds.setAttr('RPRPhysicalLight1.translateZ', -0.590)
 
 def setUpDefaultNorthstarLights():
     cmds.setAttr('RPRPhysicalLight1.translateY', 4)
