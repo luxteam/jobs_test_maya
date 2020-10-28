@@ -269,7 +269,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Offset Parent Matrix: Shear X fot objects (1)"
+            "Offset Parent Matrix: Shear XY fot objects (1)"
         ],
         "scene": "transforms.ma"
     },
@@ -282,7 +282,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Offset Parent Matrix: Shear Y fot objects (-0.5)"
+            "Offset Parent Matrix: Shear XZ fot objects (-0.5)"
         ],
         "scene": "transforms.ma"
     },
@@ -295,7 +295,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Offset Parent Matrix: Shear Z fot objects (0.3)"
+            "Offset Parent Matrix: Shear YZ fot objects (0.3)"
         ],
         "scene": "transforms.ma"
     },
@@ -308,7 +308,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Offset Parent Matrix: XYZ Shear fot objects (1, -0.5, 0.3)"
+            "Offset Parent Matrix: Shear fot objects (1, -0.5, 0.3)"
         ],
         "scene": "transforms.ma"
     },
@@ -373,7 +373,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Change parameters through Offset Parent Matrix: Translate (-28.5, 17.0, -4.0); Rotate (63.643, 30.004, 29.984); Scale (1.1, 0.391, 1.088); Shear (0.426, -0.386, 0.821)"
+            "Change parameters through Offset Parent Matrix: Translate (-28.5, 17.0, -4.0);",
+            "Rotate (63.643, 30.004, 29.984); Scale (1.1, 0.391, 1.088); Shear (0.426, -0.386, 0.821)"
         ],
         "scene": "transforms.ma"
     },
@@ -486,7 +487,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Maya directionalLight Shear XYZ (1, 2, 20)"
+            "Maya directionalLight Shear (1, 2, 20)"
         ],
         "scene": "transforms_light.ma"
     },
@@ -534,7 +535,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Maya ambientLight Shear XYZ (10, 10, 10)"
+            "Maya ambientLight Shear (10, 10, 10)"
         ],
         "scene": "transforms_light.ma"
     },
@@ -582,7 +583,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "RPRArea LightType Shear XYZ (5, 5, 5)"
+            "RPRArea LightType Shear (5, 5, 5)"
         ],
         "scene": "transforms_light.ma"
     },
@@ -630,7 +631,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "RPRSpot LightType Shear XYZ (5, 5, 5)"
+            "RPRSpot LightType Shear (5, 5, 5)"
         ],
         "scene": "transforms_light.ma"
     },
@@ -678,7 +679,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "RPRPoint LightType Shear XYZ (5, 5, 5)"
+            "RPRPoint LightType Shear (5, 5, 5)"
         ],
         "scene": "transforms_light.ma"
     },
@@ -726,7 +727,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "RPRDirectional LightType Shear XYZ (5, 5, 5)"
+            "RPRDirectional LightType Shear (5, 5, 5)"
         ],
         "scene": "transforms_light.ma"
     },
@@ -900,7 +901,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "PRPSphere LightType Shear XYZ (1, 1, 1)"
+            "PRPSphere LightType Shear (1, 1, 1)"
         ],
         "scene": "transforms_light.ma",
         "skip_engine": [
@@ -1077,7 +1078,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "RPRDisk LightType Shear XYZ (1, 1, 1)"
+            "RPRDisk LightType Shear (1, 1, 1)"
         ],
         "scene": "transforms_light.ma",
         "skip_engine": [
