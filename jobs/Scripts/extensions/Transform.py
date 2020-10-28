@@ -56,7 +56,7 @@ def resetAttributes():
     cmds.setAttr('typeMesh1.scaleX', 1)
     cmds.setAttr('typeMesh1.scaleY', 1)
     cmds.setAttr('typeMesh1.scaleZ', 1)
-    cmds.setAttr('typepMesh1.shearXY', 0)
+    cmds.setAttr('typeMesh1.shearXY', 0)
     cmds.setAttr('typeMesh1.shearXZ', 0)
     cmds.setAttr('typeMesh1.shearYZ', 0)
     cmds.setAttr('typeMesh1.rotateOrder', 0)
