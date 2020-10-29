@@ -810,66 +810,6 @@
             "cmds.setAttr('RPRPhysicalLight5.scaleY',100)",
             "cmds.setAttr('RPRPhysicalLight5.scaleZ',100)",
             "cmds.setAttr('RPRPhysicalLight5.shearXY',1)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "RPRSphere LightType ShearXY (1)"
-        ],
-        "scene": "transforms_light.ma",
-        "skip_engine": [
-            "Tahoe"
-        ]
-    },
-    {
-        "case": "MAYA_TRANSFORM_057",
-        "status": "active",
-        "functions": [
-            "resetLights()",
-            "cmds.setAttr('RPRPhysicalLight5.visibility', 1)",
-            "cmds.setAttr('RPRPhysicalLight5.scaleX',100)",
-            "cmds.setAttr('RPRPhysicalLight5.scaleY',100)",
-            "cmds.setAttr('RPRPhysicalLight5.scaleZ',100)",
-            "cmds.setAttr('RPRPhysicalLight5.shearXZ',1)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "RPRSphere LightType ShearXZ (1)"
-        ],
-        "scene": "transforms_light.ma",
-        "skip_engine": [
-            "Tahoe"
-        ]
-    },
-    {
-        "case": "MAYA_TRANSFORM_058",
-        "status": "active",
-        "functions": [
-            "resetLights()",
-            "cmds.setAttr('RPRPhysicalLight5.visibility', 1)",
-            "cmds.setAttr('RPRPhysicalLight5.scaleX',100)",
-            "cmds.setAttr('RPRPhysicalLight5.scaleY',100)",
-            "cmds.setAttr('RPRPhysicalLight5.scaleZ',100)",
-            "cmds.setAttr('RPRPhysicalLight5.shearYZ',1)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "RPRSphere LightType ShearYZ (1)"
-        ],
-        "scene": "transforms_light.ma",
-        "skip_engine": [
-            "Tahoe"
-        ]
-    },
-    {
-        "case": "MAYA_TRANSFORM_059",
-        "status": "active",
-        "functions": [
-            "resetLights()",
-            "cmds.setAttr('RPRPhysicalLight5.visibility', 1)",
-            "cmds.setAttr('RPRPhysicalLight5.scaleX',100)",
-            "cmds.setAttr('RPRPhysicalLight5.scaleY',100)",
-            "cmds.setAttr('RPRPhysicalLight5.scaleZ',100)",
-            "cmds.setAttr('RPRPhysicalLight5.shearXY',1)",
             "cmds.setAttr('RPRPhysicalLight5.shearXZ',1)",
             "cmds.setAttr('RPRPhysicalLight5.shearYZ',1)",
             "rpr_render(case)"
@@ -883,7 +823,7 @@
         ]
     },
     {
-        "case": "MAYA_TRANSFORM_060",
+        "case": "MAYA_TRANSFORM_057",
         "status": "active",
         "functions": [
             "resetLights()",
@@ -899,7 +839,7 @@
         ]
     },
     {
-        "case": "MAYA_TRANSFORM_061",
+        "case": "MAYA_TRANSFORM_058",
         "status": "active",
         "functions": [
             "resetLights()",
@@ -916,7 +856,7 @@
         ]
     },
     {
-        "case": "MAYA_TRANSFORM_062",
+        "case": "MAYA_TRANSFORM_059",
         "status": "active",
         "functions": [
             "resetLights()",
@@ -933,7 +873,7 @@
         ]
     },
     {
-        "case": "MAYA_TRANSFORM_063",
+        "case": "MAYA_TRANSFORM_060",
         "status": "active",
         "functions": [
             "resetLights()",
@@ -950,7 +890,7 @@
         ]
     },
     {
-        "case": "MAYA_TRANSFORM_064",
+        "case": "MAYA_TRANSFORM_061",
         "status": "active",
         "functions": [
             "resetLights()",
@@ -969,67 +909,7 @@
         ]
     },
     {
-        "case": "MAYA_TRANSFORM_065",
-        "status": "active",
-        "functions": [
-            "resetLights()",
-            "cmds.setAttr('RPRPhysicalLight6.visibility', 1)",
-            "cmds.setAttr('RPRPhysicalLight6.scaleX',100)",
-            "cmds.setAttr('RPRPhysicalLight6.scaleY',100)",
-            "cmds.setAttr('RPRPhysicalLight6.scaleZ',100)",
-            "cmds.setAttr('RPRPhysicalLight6.shearXY',1)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "RPRDisk LightType ShearXY (1)"
-        ],
-        "scene": "transforms_light.ma",
-        "skip_engine": [
-            "Tahoe"
-        ]
-    },
-    {
-        "case": "MAYA_TRANSFORM_066",
-        "status": "active",
-        "functions": [
-            "resetLights()",
-            "cmds.setAttr('RPRPhysicalLight6.visibility', 1)",
-            "cmds.setAttr('RPRPhysicalLight6.scaleX',100)",
-            "cmds.setAttr('RPRPhysicalLight6.scaleY',100)",
-            "cmds.setAttr('RPRPhysicalLight6.scaleZ',100)",
-            "cmds.setAttr('RPRPhysicalLight6.shearXZ',1)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "RPRDisk LightType ShearXZ (1)"
-        ],
-        "scene": "transforms_light.ma",
-        "skip_engine": [
-            "Tahoe"
-        ]
-    },
-    {
-        "case": "MAYA_TRANSFORM_067",
-        "status": "active",
-        "functions": [
-            "resetLights()",
-            "cmds.setAttr('RPRPhysicalLight6.visibility', 1)",
-            "cmds.setAttr('RPRPhysicalLight6.scaleX',100)",
-            "cmds.setAttr('RPRPhysicalLight6.scaleY',100)",
-            "cmds.setAttr('RPRPhysicalLight6.scaleZ',100)",
-            "cmds.setAttr('RPRPhysicalLight6.shearYZ',1)",
-            "rpr_render(case)"
-        ],
-        "script_info": [
-            "RPRDisk LightType ShearYZ (1)"
-        ],
-        "scene": "transforms_light.ma",
-        "skip_engine": [
-            "Tahoe"
-        ]
-    },
-    {
-        "case": "MAYA_TRANSFORM_068",
+        "case": "MAYA_TRANSFORM_062",
         "status": "active",
         "functions": [
             "resetLights()",
