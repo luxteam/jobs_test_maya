@@ -11,6 +11,7 @@ from datetime import datetime
 from shutil import copyfile, move, which
 import sys
 import time
+from utils import is_case_skipped
 
 sys.path.append(os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
@@ -125,6 +126,49 @@ def check_licenses(res_path, maya_scenes, testType):
             'Error while deleting student license: {}'.format(ex))
 
 
+def kill_maya(process):
+    core_config.main_logger.warning('Killing maya....')
+    child_processes = process.children()
+    core_config.main_logger.warning(
+        'Child processes: {}'.format(child_processes))
+    for ch in child_processes:
+        try:
+            ch.terminate()
+            time.sleep(10)
+            ch.kill()
+            time.sleep(10)
+            status = ch.status()
+            core_config.main_logger.error(
+                'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
+        except psutil.NoSuchProcess:
+            core_config.main_logger.warning(
+                'Process is killed: {}'.format(ch))
+
+    try:
+        process.terminate()
+        time.sleep(10)
+        process.kill()
+        time.sleep(10)
+        status = process.status()
+        core_config.main_logger.error(
+            'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
+    except psutil.NoSuchProcess:
+        core_config.main_logger.warning(
+            'Process is killed: {}'.format(ch))
+
+
+def get_finished_cases_number(output):
+    for i in range(3):
+        try:
+            with open(os.path.join(os.path.abspath(output), 'test_cases.json')) as file:
+                test_cases = json.load(file)
+                return len([case['status'] for case in test_cases if case['status'] in ('skipped', 'error', 'done')])
+        except Exception as e:
+            core_config.main_logger.error('Failed to get number of finished cases (try #{}): Reason: {}'.format(i, str(e)))
+            time.sleep(5)
+    return -1
+
+
 def launchMaya(cmdScriptPath, work_dir, error_windows):
     system_pl = platform.system()
     core_config.main_logger.info(
@@ -134,6 +178,12 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
     p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE,
                      stderr=subprocess.PIPE, shell=True)
 
+    prev_done_test_cases = get_finished_cases_number(args.output)
+    # timeout after which Maya is considered hung
+    restart_timeout = 440
+    current_restart_timeout = restart_timeout
+
+
     while True:
         try:
             p.communicate(timeout=40)
@@ -141,6 +191,7 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
             core_config.main_logger.info(
                 'Found windows: {}'.format(window_titles))
         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
+            current_restart_timeout -= 40
             fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                                    'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
                                    'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report',
@@ -163,37 +214,24 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
                     except Exception as ex:
                         pass
 
-                core_config.main_logger.warning('Killing maya....')
-
-                child_processes = p.children()
-                core_config.main_logger.warning(
-                    'Child processes: {}'.format(child_processes))
-                for ch in child_processes:
-                    try:
-                        ch.terminate()
-                        time.sleep(10)
-                        ch.kill()
-                        time.sleep(10)
-                        status = ch.status()
-                        core_config.main_logger.error(
-                            'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
-                    except psutil.NoSuchProcess:
-                        core_config.main_logger.warning(
-                            'Process is killed: {}'.format(ch))
-
-                try:
-                    p.terminate()
-                    time.sleep(10)
-                    p.kill()
-                    time.sleep(10)
-                    status = ch.status()
-                    core_config.main_logger.error(
-                        'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
-                except psutil.NoSuchProcess:
-                    core_config.main_logger.warning(
-                        'Process is killed: {}'.format(ch))
+                kill_maya(p)
 
                 break
+            else:
+                new_done_test_cases_num = get_finished_cases_number(args.output)
+                if current_restart_timeout <= 0:
+                    if new_done_test_cases_num == -1:
+                        core_config.main_logger.error('Failed to get number of finished cases. Try to do that on next iteration')
+                    elif prev_done_test_cases == new_done_test_cases_num:
+                        # if number of finished cases wasn't increased - Maya got stuck
+                        core_config.main_logger.error('Maya got stuck.')
+                        rc = -1
+                        current_restart_timeout = restart_timeout
+                        kill_maya(p)
+                        break
+                    else:
+                        prev_done_test_cases = new_done_test_cases_num
+                        current_restart_timeout = restart_timeout
         else:
             rc = 0
             break
@@ -294,13 +332,7 @@ def main(args, error_windows):
         os.makedirs(os.path.join(baseline_path, 'Color'))
 
     for case in cases:
-        if sum([render_platform & set(skip_conf) == set(skip_conf) for skip_conf in case.get('skip_config', '')]):
-            for i in case['skip_config']:
-                skip_config = set(i)
-                if render_platform.intersection(skip_config) == skip_config:
-                    case['status'] = 'skipped'
-
-        if any([engine for engine in case.get('skip_engine', []) if engine == args.engine]):
+        if is_case_skipped(case, render_platform, args.engine):
             case['status'] = 'skipped'
 
         if case['status'] != 'done':
@@ -438,7 +470,7 @@ def sync_time(work_dir):
                 with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
                     rpr_json_file.write(json.dumps(rpr_json, indent=4))
             except:
-                core_config.logging.error("Can't count sync time for " + rpr_json_path)
+                core_config.main_logger.error("Can't count sync time for " + rpr_json_path)
 
 
 if __name__ == '__main__':
