@@ -343,16 +343,28 @@ def main(args, error_windows):
             template = core_config.RENDER_REPORT_BASE.copy()
             template['test_case'] = case['case']
             template['render_device'] = get_gpu()
-            template['test_status'] = 'error'
             template['script_info'] = case['script_info']
             template['scene_name'] = case.get('scene', '')
-            template['file_name'] = 'failed.jpg'
-            template['render_color_path'] = os.path.join('Color', 'failed.jpg')
             template['test_group'] = args.testType
             template['date_time'] = datetime.now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             if case['status'] == 'skipped':
+                template['test_status'] = 'skipped'
+                template['file_name'] = case['case'] + case.get('extension', '.jpg')
+                template['render_color_path'] = os.path.join('Color', template['file_name'])
                 template['group_timeout_exceeded'] = False
+
+                try:
+                    skipped_case_image_path = os.path.join(args.output, 'Color', template['file_name'])
+                    if not os.path.exists(skipped_case_image_path):
+                        copyfile(os.path.join(work_dir, '..', '..', '..', '..', 'jobs_launcher', 
+                            'common', 'img', "skipped.png"), skipped_case_image_path)
+                except OSError or FileNotFoundError as err:
+                    main_logger.error("Can't create img stub: {}".format(str(err)))
+            else:
+                template['test_status'] = 'error'
+                template['file_name'] = 'failed.jpg'
+                template['render_color_path'] = os.path.join('Color', 'failed.jpg')
 
             with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
                 f.write(json.dumps([template], indent=4))
