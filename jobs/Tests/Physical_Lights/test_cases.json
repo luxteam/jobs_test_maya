@@ -460,6 +460,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Light Type - Spot",
             "Intensity Units - Watts",
             "Outer Cone Angle - 0"
@@ -612,6 +613,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
+            "Black image expected",
             "Light Type - Spot",
             "Color Mode - Temperature",
             "Temperature - 40000",
@@ -2287,7 +2289,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 0)",
             "rpr_render(case)"
         ],
@@ -2295,7 +2297,7 @@
             "Expected black image",
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 1",
+            "Light intensity - 100",
             "Angle - 0"
         ],
         "scene": "DiskAngle.ma",
@@ -2311,14 +2313,14 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 10)",
             "rpr_render(case)"
         ],
         "script_info": [
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 1",
+            "Light intensity - 100",
             "Angle - 10"
         ],
         "scene": "DiskAngle.ma",
@@ -2334,14 +2336,14 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 180)",
             "rpr_render(case)"
         ],
         "script_info": [
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 1",
+            "Light intensity - 100",
             "Angle - 180"
         ],
         "scene": "DiskAngle.ma",
@@ -2357,7 +2359,7 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 360)",
             "rpr_render(case)"
         ],
@@ -2365,7 +2367,7 @@
             "Black image expected",
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 1",
+            "Light intensity - 100",
             "Angle - 360"
         ],
         "scene": "DiskAngle.ma",
@@ -2381,14 +2383,14 @@
             "cmds.setAttr('RPRPhysicalLight1Shape.lightType', 5)",
             "setUpDefaultNorthstarLights()",
             "cmds.setAttr('RPRPhysicalLight1Shape.intensityUnits', 0)",
-            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 1)",
+            "cmds.setAttr('RPRPhysicalLight1Shape.intensity', 100)",
             "cmds.setAttr('RPRPhysicalLight1Shape.diskLightAngle', 400)",
             "rpr_render(case)"
         ],
         "script_info": [
             "Light type - Disk",
             "Light intensity unit - Lumen",
-            "Light intensity - 1",
+            "Light intensity - 100",
             "Angle - 400"
         ],
         "scene": "DiskAngle.ma",
