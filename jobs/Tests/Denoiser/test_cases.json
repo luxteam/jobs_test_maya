@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_RS_DEN_061",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
             "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
@@ -26,7 +26,7 @@
     },
     {
         "case": "MAYA_RS_DEN_062",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
             "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
@@ -51,7 +51,7 @@
     },
     {
         "case": "MAYA_RS_DEN_063",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
             "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
@@ -72,7 +72,7 @@
     },
     {
         "case": "MAYA_RS_DEN_064",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
             "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
@@ -93,7 +93,7 @@
     },
     {
         "case": "MAYA_RS_DEN_065",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100.0)",
             "cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', 50)",
