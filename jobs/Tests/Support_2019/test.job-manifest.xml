@@ -3,7 +3,7 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="1200">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="140">
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
@@ -30,7 +30,7 @@
         <argument>--update_refs "{UpdateRefs}"</argument>
     </execute>
 
-    <execute command='python "{CWD}/Scripts/refactor_logs.py"' timeout="90">
+    <execute command='python "{CWD}/Scripts/refactor_logs.py"' timeout="60">
         <argument>--output "{OutputDir}"</argument>
     </execute>
 
