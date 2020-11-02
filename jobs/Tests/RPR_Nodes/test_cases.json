@@ -923,6 +923,9 @@
         "script_info": [
             "DDS"
         ],
-        "scene": "DDS.ma"
+        "scene": "DDS.ma",
+        "skip_engine":[
+            "Northstar"
+        ]
     }
 ]
