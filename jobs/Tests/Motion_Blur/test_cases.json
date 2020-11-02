@@ -171,7 +171,7 @@
         ],
         "scene": "MotionBlurDirectionTests.ma",
         "functions": [
-            "cmds.currentTime(75)",
+            "cmds.currentTime(65)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
             "rpr_render(case)"
         ]
