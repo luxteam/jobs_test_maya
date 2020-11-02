@@ -915,7 +915,7 @@
         "scene": "maya_shaderball.ma"
     },
     {
-        "case": "MAYA_MAT_NODE_056",
+        "case": "MAYA_MAT_NODE_057",
         "status": "active",
         "functions": [
             "rpr_render(case)"
