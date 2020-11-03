@@ -1,7 +1,7 @@
 [
     {
         "case": "MAYA_RS_AOV_001",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Opacity"
         ],
@@ -15,7 +15,7 @@
     },
     {
         "case": "MAYA_RS_AOV_002",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: World Coordinate"
         ],
@@ -29,7 +29,7 @@
     },
     {
         "case": "MAYA_RS_AOV_003",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: UV"
         ],
@@ -43,7 +43,7 @@
     },
     {
         "case": "MAYA_RS_AOV_004",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Do not compare",
             "AOV: Material Index"
@@ -58,7 +58,7 @@
     },
     {
         "case": "MAYA_RS_AOV_005",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Geometric Normal"
         ],
@@ -72,7 +72,7 @@
     },
     {
         "case": "MAYA_RS_AOV_006",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Shading Normal"
         ],
@@ -86,7 +86,7 @@
     },
     {
         "case": "MAYA_RS_AOV_007",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Depth"
         ],
@@ -100,7 +100,7 @@
     },
     {
         "case": "MAYA_RS_AOV_008",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Do not compare",
             "AOV: Object ID"
@@ -115,7 +115,7 @@
     },
     {
         "case": "MAYA_RS_AOV_009",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Shadow Catcher"
         ],
@@ -129,7 +129,7 @@
     },
     {
         "case": "MAYA_RS_AOV_010",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Background"
         ],
@@ -143,7 +143,7 @@
     },
     {
         "case": "MAYA_RS_AOV_011",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Emission"
@@ -158,7 +158,7 @@
     },
     {
         "case": "MAYA_RS_AOV_012",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Velocity"
@@ -174,7 +174,7 @@
     },
     {
         "case": "MAYA_RS_AOV_013",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Direct Illumination"
@@ -189,7 +189,7 @@
     },
     {
         "case": "MAYA_RS_AOV_014",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Indirect Illumination"
@@ -204,7 +204,7 @@
     },
     {
         "case": "MAYA_RS_AOV_015",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Ambient Occlusion"
@@ -219,7 +219,7 @@
     },
     {
         "case": "MAYA_RS_AOV_016",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Diffuse Direct"
@@ -234,7 +234,7 @@
     },
     {
         "case": "MAYA_RS_AOV_017",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Diffuse Direct"
@@ -249,7 +249,7 @@
     },
     {
         "case": "MAYA_RS_AOV_018",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Reflection Direct"
@@ -264,7 +264,7 @@
     },
     {
         "case": "MAYA_RS_AOV_019",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Reflection Indirect"
@@ -279,7 +279,7 @@
     },
     {
         "case": "MAYA_RS_AOV_020",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Refraction"
@@ -294,7 +294,7 @@
     },
     {
         "case": "MAYA_RS_AOV_021",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Volume"
@@ -312,7 +312,7 @@
     },
     {
         "case": "MAYA_RS_AOV_022",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "AOV: Albedo"
         ],
@@ -326,7 +326,7 @@
     },
     {
         "case": "MAYA_RS_AOV_023",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "Do not compare",
@@ -341,7 +341,7 @@
     },
     {
         "case": "MAYA_RS_AOV_024",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Reflection Catcher"
@@ -356,7 +356,7 @@
     },
     {
         "case": "MAYA_RS_AOV_025",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Light group 0"
@@ -371,7 +371,7 @@
     },
     {
         "case": "MAYA_RS_AOV_026",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Light group 1"
@@ -386,7 +386,7 @@
     },
     {
         "case": "MAYA_RS_AOV_027",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Light group 2"
@@ -401,7 +401,7 @@
     },
     {
         "case": "MAYA_RS_AOV_028",
-        "status": "skipped",
+        "status": "active",
         "script_info": [
             "Black image expected",
             "AOV: Light group 3"

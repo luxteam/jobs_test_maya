@@ -387,7 +387,7 @@
             "cmds.setAttr(light_transform + '.rotate', -90, 0, 0)",
             "cmds.setAttr(light_transform + '.intensity', 40)",
             "cmds.setAttr(light_transform + '.decayRate', 0)",
-            "cmds.setAttr(light_transform + '.coneAngle', 0.006)",
+            "cmds.setAttr(light_transform + '.coneAngle', 50)",
             "cmds.setAttr(light_transform + '.penumbraAngle', -10)",
             "cmds.setAttr(light_transform + '.dropoff', 0)",
             "rpr_render(case)",
