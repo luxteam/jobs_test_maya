@@ -4,7 +4,7 @@
     <outpath value="{OutputDir}"/>
 
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="407">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="600">
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
