@@ -587,7 +587,10 @@
             "Displacement",
             "Pass Limit: 50"
         ],
-        "scene": "displacement.ma"
+        "scene": "displacement.ma",
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_SM_037",
@@ -730,7 +733,7 @@
     },
     {
         "case": "MAYA_SM_048",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "rpr_render(case)"
         ],

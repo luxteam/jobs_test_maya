@@ -126,6 +126,49 @@ def check_licenses(res_path, maya_scenes, testType):
             'Error while deleting student license: {}'.format(ex))
 
 
+def kill_maya(process):
+    core_config.main_logger.warning('Killing maya....')
+    child_processes = process.children()
+    core_config.main_logger.warning(
+        'Child processes: {}'.format(child_processes))
+    for ch in child_processes:
+        try:
+            ch.terminate()
+            time.sleep(10)
+            ch.kill()
+            time.sleep(10)
+            status = ch.status()
+            core_config.main_logger.error(
+                'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
+        except psutil.NoSuchProcess:
+            core_config.main_logger.warning(
+                'Process is killed: {}'.format(ch))
+
+    try:
+        process.terminate()
+        time.sleep(10)
+        process.kill()
+        time.sleep(10)
+        status = process.status()
+        core_config.main_logger.error(
+            'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
+    except psutil.NoSuchProcess:
+        core_config.main_logger.warning(
+            'Process is killed: {}'.format(ch))
+
+
+def get_finished_cases_number(output):
+    for i in range(3):
+        try:
+            with open(os.path.join(os.path.abspath(output), 'test_cases.json')) as file:
+                test_cases = json.load(file)
+                return len([case['status'] for case in test_cases if case['status'] in ('skipped', 'error', 'done')])
+        except Exception as e:
+            core_config.main_logger.error('Failed to get number of finished cases (try #{}): Reason: {}'.format(i, str(e)))
+            time.sleep(5)
+    return -1
+
+
 def launchMaya(cmdScriptPath, work_dir, error_windows):
     system_pl = platform.system()
     core_config.main_logger.info(
@@ -135,6 +178,12 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
     p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE,
                      stderr=subprocess.PIPE, shell=True)
 
+    prev_done_test_cases = get_finished_cases_number(args.output)
+    # timeout after which Maya is considered hung
+    restart_timeout = 440
+    current_restart_timeout = restart_timeout
+
+
     while True:
         try:
             p.communicate(timeout=40)
@@ -142,6 +191,7 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
             core_config.main_logger.info(
                 'Found windows: {}'.format(window_titles))
         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
+            current_restart_timeout -= 40
             fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                                    'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
                                    'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report',
@@ -164,37 +214,24 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
                     except Exception as ex:
                         pass
 
-                core_config.main_logger.warning('Killing maya....')
-
-                child_processes = p.children()
-                core_config.main_logger.warning(
-                    'Child processes: {}'.format(child_processes))
-                for ch in child_processes:
-                    try:
-                        ch.terminate()
-                        time.sleep(10)
-                        ch.kill()
-                        time.sleep(10)
-                        status = ch.status()
-                        core_config.main_logger.error(
-                            'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
-                    except psutil.NoSuchProcess:
-                        core_config.main_logger.warning(
-                            'Process is killed: {}'.format(ch))
-
-                try:
-                    p.terminate()
-                    time.sleep(10)
-                    p.kill()
-                    time.sleep(10)
-                    status = ch.status()
-                    core_config.main_logger.error(
-                        'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
-                except psutil.NoSuchProcess:
-                    core_config.main_logger.warning(
-                        'Process is killed: {}'.format(ch))
+                kill_maya(p)
 
                 break
+            else:
+                new_done_test_cases_num = get_finished_cases_number(args.output)
+                if current_restart_timeout <= 0:
+                    if new_done_test_cases_num == -1:
+                        core_config.main_logger.error('Failed to get number of finished cases. Try to do that on next iteration')
+                    elif prev_done_test_cases == new_done_test_cases_num:
+                        # if number of finished cases wasn't increased - Maya got stuck
+                        core_config.main_logger.error('Maya got stuck.')
+                        rc = -1
+                        current_restart_timeout = restart_timeout
+                        kill_maya(p)
+                        break
+                    else:
+                        prev_done_test_cases = new_done_test_cases_num
+                        current_restart_timeout = restart_timeout
         else:
             rc = 0
             break
@@ -306,16 +343,28 @@ def main(args, error_windows):
             template = core_config.RENDER_REPORT_BASE.copy()
             template['test_case'] = case['case']
             template['render_device'] = get_gpu()
-            template['test_status'] = 'error'
             template['script_info'] = case['script_info']
             template['scene_name'] = case.get('scene', '')
-            template['file_name'] = 'failed.jpg'
-            template['render_color_path'] = os.path.join('Color', 'failed.jpg')
             template['test_group'] = args.testType
             template['date_time'] = datetime.now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             if case['status'] == 'skipped':
+                template['test_status'] = 'skipped'
+                template['file_name'] = case['case'] + case.get('extension', '.jpg')
+                template['render_color_path'] = os.path.join('Color', template['file_name'])
                 template['group_timeout_exceeded'] = False
+
+                try:
+                    skipped_case_image_path = os.path.join(args.output, 'Color', template['file_name'])
+                    if not os.path.exists(skipped_case_image_path):
+                        copyfile(os.path.join(work_dir, '..', '..', '..', '..', 'jobs_launcher', 
+                            'common', 'img', "skipped.png"), skipped_case_image_path)
+                except OSError or FileNotFoundError as err:
+                    main_logger.error("Can't create img stub: {}".format(str(err)))
+            else:
+                template['test_status'] = 'error'
+                template['file_name'] = 'failed.jpg'
+                template['render_color_path'] = os.path.join('Color', 'failed.jpg')
 
             with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
                 f.write(json.dumps([template], indent=4))

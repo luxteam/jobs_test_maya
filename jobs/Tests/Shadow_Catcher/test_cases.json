@@ -4,6 +4,7 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1)",
             "rpr_render(case)"
         ],
         "script_info": [
