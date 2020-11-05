@@ -2294,7 +2294,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Expected black image",
+            "Black image expected",
             "Light type - Disk",
             "Light intensity unit - Lumen",
             "Light intensity - 100",
