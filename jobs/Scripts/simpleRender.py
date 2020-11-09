@@ -358,7 +358,7 @@ def main(args, error_windows):
                     skipped_case_image_path = os.path.join(args.output, 'Color', template['file_name'])
                     if not os.path.exists(skipped_case_image_path):
                         copyfile(os.path.join(work_dir, '..', '..', '..', '..', 'jobs_launcher', 
-                            'common', 'img', "skipped.png"), skipped_case_image_path)
+                            'common', 'img', "skipped.jpg"), skipped_case_image_path)
                 except OSError or FileNotFoundError as err:
                     main_logger.error("Can't create img stub: {}".format(str(err)))
             else:
