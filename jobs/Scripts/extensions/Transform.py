@@ -14,6 +14,7 @@ def resetAttributes():
     cmds.setAttr('RPRIBL.rotateOrder', 0)
     cmds.setAttr('RPRIBL.rotateAxisX', 0)
     cmds.setAttr('RPRIBL.rotateAxisY', 0)
+    cmds.setAttr('RPRIBL.rotateAxisZ', 0)
     cmds.setAttr('pSphere1.offsetParentMatrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), type='matrix')
     cmds.setAttr('pSphere1.translateX', 1.892)
     cmds.setAttr('pSphere1.translateY', 2.773)
