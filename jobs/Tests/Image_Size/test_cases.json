@@ -524,9 +524,10 @@
     },
     {
         "case": "MAYA_RS_IS_035",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
-            "Preset: 5000x5000"
+            "Preset: 5000x5000",
+            "https://amdrender.atlassian.net/browse/RPRMAYA-2478"
         ],
         "scene": "maya_shaderball.ma",
         "functions": [
