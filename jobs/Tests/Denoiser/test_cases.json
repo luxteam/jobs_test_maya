@@ -1204,7 +1204,10 @@
             "Denoiser IBL",
             "EAW"
         ],
-        "scene": "DenoiserIBL.ma"
+        "scene": "DenoiserIBL.ma",
+        "skip_config": [
+            ["Radeon RX Vega"]
+        ]
     },
     {
         "case": "MAYA_RS_DEN_059",
@@ -1218,7 +1221,10 @@
             "Denoiser IBL",
             "LWR"
         ],
-        "scene": "DenoiserIBL.ma"
+        "scene": "DenoiserIBL.ma",
+        "skip_config": [
+            ["Radeon RX Vega"]
+        ]
     },
     {
         "case": "MAYA_RS_DEN_060",
