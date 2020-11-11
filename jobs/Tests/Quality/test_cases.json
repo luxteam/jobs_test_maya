@@ -33,7 +33,10 @@
         "script_info": [
             "Max Diffuse - 2"
         ],
-        "scene": "Diffuse_ray_depth.ma"
+        "scene": "Diffuse_ray_depth.ma",
+        "skip_config": [
+            ["Radeon RX Vega"]
+        ]
     },
     {
         "case": "MAYA_RS_QL_004",
@@ -239,7 +242,10 @@
             "Max Shadow - 0",
             "Ray Epsilon - 0"
         ],
-        "scene": "ComplexLighting.ma"
+        "scene": "ComplexLighting.ma",
+        "skip_config": [
+            ["Radeon RX Vega"]
+        ]
     },
     {
         "case": "MAYA_RS_QL_019",
