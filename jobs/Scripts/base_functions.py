@@ -50,10 +50,7 @@ def reportToJSON(case, render_time=0):
     logging('Create report json ({{}} {{}})'.format(
             case['case'], report['test_status']))
   
-    report['tool'] = mel.eval('about -iv')
     report['date_time'] = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
-    report['render_version'] = mel.eval('getRPRPluginVersion()')
-    report['core_version'] = mel.eval('getRprCoreVersion()')
     report['render_time'] = render_time
     report['test_group'] = TEST_TYPE
     report['test_case'] = case['case']
@@ -64,6 +61,25 @@ def reportToJSON(case, render_time=0):
     if case['status'] != 'skipped':
         report['file_name'] = case['case'] + case.get('extension', '.jpg')
         report['render_color_path'] = path.join('Color', report['file_name'])
+
+    # save metrics which can be received witout call of functions of Maya
+    with open(path_to_file, 'w') as file:
+        file.write(json.dumps([report], indent=4))
+
+    try:
+        report['tool'] = mel.eval('about -iv')
+    except Exception as e:
+        logging('Failed to get Maya version. Reason: {{}}'.format(str(e)))
+    try:
+        report['render_version'] = mel.eval('getRPRPluginVersion()')
+    except Exception as e:
+        logging('Failed to get render version. Reason: {{}}'.format(str(e)))
+    try:
+        report['core_version'] = mel.eval('getRprCoreVersion()')
+    except Exception as e:
+        logging('Failed to get core version. Reason: {{}}'.format(str(e)))
+
+    # save metrics which can't be received witout call of functions of Maya (additional measures to avoid stucking of Maya)
     with open(path_to_file, 'w') as file:
         file.write(json.dumps([report], indent=4))
 
