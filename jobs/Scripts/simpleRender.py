@@ -393,7 +393,7 @@ def main(args, error_windows):
 		  set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log
 		  set PYTHONPATH=%cd%;PYTHONPATH
 		  set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-		  "{tool}" -command "python(\\"import base_functions\\");"
+		  "{tool}" -batch -command "python(\\"import base_functions\\");"
 		'''.format(tool=args.tool)
 
         cmdScriptPath = os.path.join(args.output, 'script.bat')
@@ -405,7 +405,7 @@ def main(args, error_windows):
 		  export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
 		  export PYTHONPATH=$PWD:$PYTHONPATH
 		  export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
-		  "{tool}" -command "python(\\"import base_functions\\");"
+		  "{tool}" -batch -command "python(\\"import base_functions\\");"
 		'''.format(tool=args.tool)
 
         cmdScriptPath = os.path.join(args.output, 'script.sh')

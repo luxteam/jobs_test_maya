@@ -96,12 +96,10 @@ def rpr_render(case, mode='color'):
 
     mel.eval('fireRender -waitForItTwo')
     start_time = time.time()
-    mel.eval('renderIntoNewWindow render')
     cmds.sysFile(path.join(WORK_DIR, 'Color'), makeDir=True)
     test_case_path = path.join(WORK_DIR, 'Color', case['case'])
-    cmds.renderWindowEditor('renderView', edit=1,  dst=mode)
-    cmds.renderWindowEditor('renderView', edit=1, com=1,
-                            writeImage=test_case_path)
+    cmds.setAttr("defaultRenderGlobals.imageFilePrefix", test_case_path, type="string")
+    mel.eval("render -batch")
     test_time = time.time() - start_time
 
     event('Postrender', True, case['case'])
@@ -125,7 +123,7 @@ def prerender(case):
 
     event('Prerender', True, case['case'])
 
-    cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
+    # cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
     mel.eval('athenaEnable -ae false')
 
     if ENGINE == 'Tahoe':
@@ -248,7 +246,8 @@ def main():
             if not path.exists(log_path):
                 with open(log_path, 'w'):
                     logging('Create log file for ' + case['case'])
-            cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
+            #! historyFilename flag is not supported in batch mode
+            # cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
 
             logging(case['case'] + ' in progress')
 
