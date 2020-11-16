@@ -32,11 +32,21 @@ if platform.system() == 'Darwin':
     from Quartz import kCGWindowListOptionOnScreenOnly
     from Quartz import kCGNullWindowID
     from Quartz import kCGWindowName
+    from Quartz import CGWindowListCreateImage
+    from Quartz import CGRectMake
+    from Quartz import kCGWindowImageDefault
 
 
 def get_windows_titles():
     try:
         if platform.system() == 'Darwin':
+            # for receive kCGWindowName values from CGWindowListCopyWindowInfo function it's necessary to call any function of Screen Record API
+            CGWindowListCreateImage(
+                CGRectMake(0, 0, 1, 1),
+                kCGWindowListOptionOnScreenOnly,
+                kCGNullWindowID,
+                kCGWindowImageDefault
+            )
             ws_options = kCGWindowListOptionOnScreenOnly
             windows_list = CGWindowListCopyWindowInfo(
                 ws_options, kCGNullWindowID)
