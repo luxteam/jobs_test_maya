@@ -219,7 +219,7 @@
     },
     {
         "case": "MAYA_RS_AOV_016",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Black image expected",
             "AOV: Diffuse Direct"
@@ -234,7 +234,7 @@
     },
     {
         "case": "MAYA_RS_AOV_017",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Black image expected",
             "AOV: Diffuse Direct"
