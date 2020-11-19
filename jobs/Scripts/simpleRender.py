@@ -26,6 +26,7 @@ from jobs_launcher.core.kill_process import kill_process
 ROOT_DIR = os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 PROCESS = ['Maya', 'maya.exe']
+LOGS_DIR = 'render_tool_logs'
 
 if platform.system() == 'Darwin':
     from Quartz import CGWindowListCopyWindowInfo
@@ -33,6 +34,19 @@ if platform.system() == 'Darwin':
     from Quartz import kCGNullWindowID
     from Quartz import kCGWindowName
 
+# def save_report(case, work_dir):
+#     if not os.path.exists(os.path.join(work_dir, 'Color')):
+#         os.makedirs(os.path.join(work_dir, 'Color'))
+
+#     res_dir = os.path.join(work_dir, 'Color', case['case'] + '.jpg')
+#     source_dir = os.path.join(work_dir, '..', '..', '..',
+#                            '..', 'jobs_launcher', 'common', 'img')
+
+#     if case['status'] == 'inprogress':
+#         copyfile(os.path.join(source_dir, 'passed.jpg'), res_dir)
+#     elif case['status'] != 'skipped':
+#         copyfile(
+#             os.path.join(source_dir, case['status'] + '.jpg'), res_dir)
 
 def get_windows_titles():
     try:
@@ -331,6 +345,25 @@ def main(args, error_windows):
         os.makedirs(baseline_path)
         os.makedirs(os.path.join(baseline_path, 'Color'))
 
+    if not os.path.exists(os.path.join(work_dir, LOGS_DIR)):
+        os.makedirs(os.path.join(work_dir, LOGS_DIR))
+
+    if system_pl == 'Windows':
+        cmds = ['set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log',
+            'set PYTHONPATH=%cd%;PYTHONPATH',
+            'set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%']
+
+        cmdScriptPath = os.path.join(args.output, 'script.bat')
+
+    elif system_pl == 'Darwin':
+        cmds = ['export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log',
+                'export PYTHONPATH=$PWD:$PYTHONPATH',
+                'export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH']
+
+        cmdScriptPath = os.path.join(args.output, 'script.sh')
+        
+
+    
     for case in cases:
         if is_case_skipped(case, render_platform, args.engine):
             case['status'] = 'skipped'
@@ -384,34 +417,38 @@ def main(args, error_windows):
             except:
                 core_config.main_logger.error('Failed to copy baseline ' +
                                               os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX))
+        
+        if case['functions'][0] == 'check_test_cases_success_save':
+            continue;
+            # save_report(case, work_dir)
+        else:
+            try:
+                projPath = os.path.join(res_path, args.testType)
+                temp = os.path.join(projPath, case['scene'][:-3])
+                if os.path.isdir(temp):
+                    projPath = temp
+            except:
+                pass
+
+        case_str = str(case).replace("'", '"').replace('"', '\\"')
+        cmds.append('''"{tool}" -r FireRender -proj "{project}" -rd "{result_dir}" -im "{img_name}"  -devc {render_device} -of jpg -preRender "python(\\"import base_functions\\"); python(\\"base_functions.main({case})\\");" "{scene}" > "{log_path}";'''.format(
+            tool=args.tool,
+            log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
+            project=projPath,
+            result_dir=os.path.join(work_dir, 'Color'),
+            img_name=case['case'],
+            render_device=args.render_device,
+            case=case_str,
+            scene=case['scene']
+        ));
+
+    with open(cmdScriptPath, 'w') as file:
+        file.write("\n".join(cmds))
+    if system_pl == 'Darwin':
+        os.system('chmod +x {}'.format(cmdScriptPath))
 
     with open(os.path.join(work_dir, 'test_cases.json'), 'w+') as f:
         json.dump(cases, f, indent=4)
-
-    if system_pl == 'Windows':
-        cmdRun = '''
-		  set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log
-		  set PYTHONPATH=%cd%;PYTHONPATH
-		  set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-		  "{tool}" -batch -command "python(\\"import base_functions\\");"
-		'''.format(tool=args.tool)
-
-        cmdScriptPath = os.path.join(args.output, 'script.bat')
-        with open(cmdScriptPath, 'w') as file:
-            file.write(cmdRun)
-
-    elif system_pl == 'Darwin':
-        cmdRun = '''
-		  export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
-		  export PYTHONPATH=$PWD:$PYTHONPATH
-		  export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
-		  "{tool}" -batch -command "python(\\"import base_functions\\");"
-		'''.format(tool=args.tool)
-
-        cmdScriptPath = os.path.join(args.output, 'script.sh')
-        with open(cmdScriptPath, 'w') as file:
-            file.write(cmdRun)
-        os.system('chmod +x {}'.format(cmdScriptPath))
 
     if which(args.tool) is None:
         core_config.main_logger.error('Can\'t find tool ' + args.tool)
