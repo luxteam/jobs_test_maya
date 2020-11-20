@@ -363,8 +363,9 @@ def main(args, error_windows):
         cmdScriptPath = os.path.join(args.output, 'script.sh')
         
 
-    
+    case_num = -1
     for case in cases:
+        case_num += 1
         if is_case_skipped(case, render_platform, args.engine):
             case['status'] = 'skipped'
 
@@ -430,15 +431,15 @@ def main(args, error_windows):
             except:
                 pass
 
-        case_str = str(case).replace("'", '"').replace('"', '\\"')
-        cmds.append('''"{tool}" -r FireRender -proj "{project}" -rd "{result_dir}" -im "{img_name}"  -devc {render_device} -of jpg -preRender "python(\\"import base_functions\\"); python(\\"base_functions.main({case})\\");" "{scene}" > "{log_path}";'''.format(
+        cmds.append('''"{tool}" -r FireRender -proj "{project}" -rd "{result_dir}" -im "{img_name}"  -devc "{render_device}" -of jpg  -preRender "python(\\"import base_functions\\"); python(\\"base_functions.main({case_num})\\");" "{scene}" > "{log_path}"'''.format(
             tool=args.tool,
             log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
             project=projPath,
             result_dir=os.path.join(work_dir, 'Color'),
             img_name=case['case'],
             render_device=args.render_device,
-            case=case_str,
+            #pre_render=' '.join(pre_render_cmds),
+            case_num=case_num,
             scene=case['scene']
         ));
 
@@ -546,72 +547,72 @@ if __name__ == '__main__':
 
     error_windows = set()
 
-    while True:
-        iteration += 1
+    #while True:
+    iteration += 1
 
-        core_config.main_logger.info(
-            'Try to run script in maya (#' + str(iteration) + ')')
+    core_config.main_logger.info(
+        'Try to run script in maya (#' + str(iteration) + ')')
 
-        rc = main(args, error_windows)
+    rc = main(args, error_windows)
 
-        try:
-            move(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'),
-                 os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration) + '.log'))
-        except:
-            core_config.main_logger.error('No renderTool.log')
+    try:
+        move(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'),
+                os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration) + '.log'))
+    except:
+        core_config.main_logger.error('No renderTool.log')
 
-        try:
-            cases = json.load(open(os.path.realpath(
-                os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
-        except Exception as e:
-            core_config.logging.error("Can't load test_cases.json")
-            core_config.main_logger.error(str(e))
-            exit(-1)
+    try:
+        cases = json.load(open(os.path.realpath(
+            os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+    except Exception as e:
+        core_config.logging.error("Can't load test_cases.json")
+        core_config.main_logger.error(str(e))
+        exit(-1)
 
-        active_cases = 0
-        current_error_count = 0
+    active_cases = 0
+    current_error_count = 0
 
+    for case in cases:
+        if case['status'] in ['fail', 'error', 'inprogress']:
+            current_error_count += 1
+            if args.error_count == current_error_count:
+                group_failed(args, error_windows)
+        else:
+            current_error_count = 0
+
+        if case['status'] in ['active', 'fail', 'inprogress']:
+            active_cases += 1
+
+    if active_cases == 0 or iteration > len(cases) * args.retries:
         for case in cases:
-            if case['status'] in ['fail', 'error', 'inprogress']:
-                current_error_count += 1
-                if args.error_count == current_error_count:
-                    group_failed(args, error_windows)
-            else:
-                current_error_count = 0
+            error_message = ''
+            number_of_tries = case.get('number_of_tries', 0)
+            if case['status'] in ['fail', 'error']:
+                error_message = "Testcase wasn't executed successfully (all attempts were used). Number of tries: {}".format(str(number_of_tries))
+            elif case['status'] in ['active', 'inprogress']:
+                if number_of_tries:
+                    error_message = "Testcase wasn't finished. Number of tries: {}".format(str(number_of_tries))
+                else:
+                    error_message = "Testcase wasn't run"
 
-            if case['status'] in ['active', 'fail', 'inprogress']:
-                active_cases += 1
+            if error_message:
+                core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
+                path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
 
-        if active_cases == 0 or iteration > len(cases) * args.retries:
-            for case in cases:
-                error_message = ''
-                number_of_tries = case.get('number_of_tries', 0)
-                if case['status'] in ['fail', 'error']:
-                    error_message = "Testcase wasn't executed successfully (all attempts were used). Number of tries: {}".format(str(number_of_tries))
-                elif case['status'] in ['active', 'inprogress']:
-                    if number_of_tries:
-                        error_message = "Testcase wasn't finished. Number of tries: {}".format(str(number_of_tries))
-                    else:
-                        error_message = "Testcase wasn't run"
+                with open(path_to_file, 'r') as file:
+                    report = json.load(file)
 
-                if error_message:
-                    core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
-                    path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
+                report[0]['group_timeout_exceeded'] = False
+                report[0]['message'].append(error_message)
+                if len(error_windows) != 0:
+                    report[0]['message'].append("Error windows {}".format(error_windows))
 
-                    with open(path_to_file, 'r') as file:
-                        report = json.load(file)
+                with open(path_to_file, 'w') as file:
+                    json.dump(report, file, indent=4)
 
-                    report[0]['group_timeout_exceeded'] = False
-                    report[0]['message'].append(error_message)
-                    if len(error_windows) != 0:
-                        report[0]['message'].append("Error windows {}".format(error_windows))
-
-                    with open(path_to_file, 'w') as file:
-                        json.dump(report, file, indent=4)
-
-            # exit script if base_functions don't change number of active cases
-            kill_process(PROCESS)
-            core_config.main_logger.info(
-                'Finish simpleRender with code: {}'.format(rc))
-            sync_time(args.output)
-            exit(rc)
+        # exit script if base_functions don't change number of active cases
+        kill_process(PROCESS)
+        core_config.main_logger.info(
+            'Finish simpleRender with code: {}'.format(rc))
+        sync_time(args.output)
+        exit(rc)

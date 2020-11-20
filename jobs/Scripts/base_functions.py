@@ -64,8 +64,6 @@ def reportToJSON(case, render_time=0):
     if case['status'] != 'skipped':
         report['file_name'] = case['case'] + case.get('extension', '.jpg')
         report['render_color_path'] = path.join('Color', report['file_name'])
-    # with open(path_to_file, 'w') as file:
-    #     file.write(json.dumps([report], indent=4))
 
 
 def render_tool_log_path(name):
@@ -84,39 +82,27 @@ def validateFiles():
 
 def enable_rpr(case):
     if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
-        event('Load rpr', True, case)
         cmds.loadPlugin('RadeonProRender', quiet=True)
-        event('Load rpr', False, case)
         logging('Load rpr')
 
 
 def rpr_render(case, mode='color'):
-    event('Prerender', False, case['case'])
     logging('Render image')
 
-    #* Because of Render command execution, this piece of code can't execute after render
-    # event('Postrender', True, case['case'])
-    # reportToJSON(case, test_time)
-
+def execute_function(function):
+    try:
+        if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
+            exec(function)
+        else:
+            eval(function)
+    except Exception as e:
+        logging('Error "{{}}" with string "{{}}"'.format(e, function))
 
 def prerender(case):
     logging('Prerender')
-    # scene = case.get('scene', '')
-    # scene_name = cmds.file(q=True, sn=True, shn=True)
-    # if scene_name != scene:
-    #     try:
-    #         event('Open scene', True, case['case'])
-    #         cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
-    #         event('Open scene', False, case['case'])
-    #         validateFiles()
-    #         enable_rpr(case['case'])
-    #     except Exception as e:
-    #         logging(
-    #             "Can't prepare for render scene because of {{}}".format(str(e)))
-    enable_rpr(case['case'])
-    event('Prerender', True, case['case'])
+    enable_rpr(case)
 
-    cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
+    # cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
     mel.eval('athenaEnable -ae false')
 
     if ENGINE == 'Tahoe':
@@ -140,7 +126,6 @@ def prerender(case):
         cmds.setAttr('defaultResolution.width', RESOLUTION_X)
         cmds.setAttr('defaultResolution.height', RESOLUTION_Y)
 
-    #? Возможно, надо вернуть
     # cmds.setAttr('defaultRenderGlobals.currentRenderer',
     #              type='string' 'FireRender')
 
@@ -160,107 +145,50 @@ def prerender(case):
                 eval(function)
         except Exception as e:
             logging('Error "{{}}" with string "{{}}"'.format(e, function))
-    event('Postrender', False, case['case'])
-
-
-def save_report(case):
-    logging('Save report without rendering for ' + case['case'])
-
-    if not os.path.exists(os.path.join(WORK_DIR, 'Color')):
-        os.makedirs(os.path.join(WORK_DIR, 'Color'))
-
-    work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
-    source_dir = path.join(WORK_DIR, '..', '..', '..',
-                           '..', 'jobs_launcher', 'common', 'img')
-
-    if case['status'] == 'inprogress':
-        copyfile(path.join(source_dir, 'passed.jpg'), work_dir)
-    elif case['status'] != 'skipped':
-        copyfile(
-            path.join(source_dir, case['status'] + '.jpg'), work_dir)
-
-    enable_rpr(case['case'])
-
-    reportToJSON(case)
-
-
-def case_function(case):
-    functions = {{
-        'prerender': prerender,
-        'save_report': save_report
-    }}
-
-    func = 'prerender'
-
-    if case['functions'][0] == 'check_test_cases_success_save':
-        func = 'save_report'
-    # else:
-        # try:
-        #     projPath = os.path.join(RES_PATH, TEST_TYPE)
-        #     temp = os.path.join(projPath, case['scene'][:-3])
-        #     if os.path.isdir(temp):
-        #         projPath = temp
-        #     mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
-        # except:
-        #     logging("Can't set project in '" + projPath + "'")
-
-    if case['status'] == 'fail' or case.get('number_of_tries', 1) >= RETRIES:
-        case['status'] = 'error'
-        func = 'save_report'
-    elif case['status'] == 'skipped':
-        func = 'save_report'
-    else:
-        case['number_of_tries'] = case.get('number_of_tries', 0) + 1
-
-    functions[func](case)
-
 
 # place for extension functions
 
+def post_render(case_num):
+    with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
+        cases = json.load(json_file)
+    case = cases[case_num]
 
-def main(case):
-    # if not os.path.exists(os.path.join(WORK_DIR, LOGS_DIR)):
-    #     os.makedirs(os.path.join(WORK_DIR, LOGS_DIR))
-
-    # with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
-    #     cases = json.load(json_file)
-
-    # event('Open tool', False, next(
-    #     case['case'] for case in cases if case['status'] in ['active', 'fail', 'skipped']))
-
-    # for case in cases:
-    if case['status'] in ['active', 'fail', 'skipped']:
-        if case['status'] == 'active':
-            case['status'] = 'inprogress'
-
-            # with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
-            #     json.dump(cases, file, indent=4)
-
-            # log_path = render_tool_log_path(case['case'])
-            # if not path.exists(log_path):
-            #     with open(log_path, 'w'):
-            #         logging('Create log file for ' + case['case'])
-            #! historyFilename flag is not supported in batch mode
-            # cmds.scriptEditorInfo(historyFilename=log_path, writeHistory=True)
-
-    logging(case['case'] + ' in progress')
-
-    start_time = datetime.datetime.now()
-    case_function(case)
-    case_time = (datetime.datetime.now() - start_time).total_seconds()
+    case_time = (datetime.datetime.now() - datetime.datetime.strptime(case['start_time'])).total_seconds()
     case['time_taken'] = case_time
-
+    
+    #TODO Calculate rendering time somehow
+    reportToJSON(case, case_time)
     if case['status'] == 'inprogress':
         case['status'] = 'done'
         logging(case['case'] + ' done')
 
-            # with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
-            #     json.dump(cases, file, indent=4)
+    with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
+        json.dump(cases, file, indent=4)
 
-    # event('Close tool', True, cases[-1]['case'])
-
+    #? Not sure if it's needed
     # Athena need additional time for work before close maya
-    if TEST_TYPE not in ['Athena']:
-        cmds.quit(abort=True)
-    else:
-        cmds.evalDeferred('cmds.quit(abort=True)')
+    # if TEST_TYPE not in ['Athena']:
+    #     cmds.quit(abort=True)
+    # else:
+    #     cmds.evalDeferred('cmds.quit(abort=True)')
+
+
+def main(case_num):
+    with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
+        cases = json.load(json_file)
+    case = cases[case_num]
+    
+    event('Open tool', False, case['case'])
+
+    if case['status'] in ['active', 'fail', 'skipped']:
+            if case['status'] == 'active':
+                case['status'] = 'inprogress'
+
+    case['start_time'] = str(datetime.datetime.now())
+
+    with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
+                    json.dump(cases, file, indent=4)
+
+
+    prerender(case)
+    #rpr_render()
