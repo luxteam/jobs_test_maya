@@ -33,6 +33,9 @@ if platform.system() == 'Darwin':
     from Quartz import kCGWindowListOptionOnScreenOnly
     from Quartz import kCGNullWindowID
     from Quartz import kCGWindowName
+    from Quartz import CGWindowListCreateImage
+    from Quartz import CGRectMake
+    from Quartz import kCGWindowImageDefault
 
 # def save_report(case, work_dir):
 #     if not os.path.exists(os.path.join(work_dir, 'Color')):
@@ -51,6 +54,13 @@ if platform.system() == 'Darwin':
 def get_windows_titles():
     try:
         if platform.system() == 'Darwin':
+            # for receive kCGWindowName values from CGWindowListCopyWindowInfo function it's necessary to call any function of Screen Record API
+            CGWindowListCreateImage(
+                CGRectMake(0, 0, 1, 1),
+                kCGWindowListOptionOnScreenOnly,
+                kCGNullWindowID,
+                kCGWindowImageDefault
+            )
             ws_options = kCGWindowListOptionOnScreenOnly
             windows_list = CGWindowListCopyWindowInfo(
                 ws_options, kCGNullWindowID)
@@ -392,7 +402,7 @@ def main(args, error_windows):
                     skipped_case_image_path = os.path.join(args.output, 'Color', template['file_name'])
                     if not os.path.exists(skipped_case_image_path):
                         copyfile(os.path.join(work_dir, '..', '..', '..', '..', 'jobs_launcher', 
-                            'common', 'img', "skipped.png"), skipped_case_image_path)
+                            'common', 'img', "skipped.jpg"), skipped_case_image_path)
                 except OSError or FileNotFoundError as err:
                     main_logger.error("Can't create img stub: {}".format(str(err)))
             else:
@@ -515,7 +525,8 @@ def sync_time(work_dir):
 
                 synchronization_time = sync_minutes * 60 + sync_seconds + sync_milisec / 1000
                 rpr_json[0]['sync_time'] = synchronization_time
-                rpr_json[0]['render_time'] -= synchronization_time
+                if rpr_json[0]['render_time'] != 0:
+                    rpr_json[0]['render_time'] -= synchronization_time
 
                 with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
                     rpr_json_file.write(json.dumps(rpr_json, indent=4))
