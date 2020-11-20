@@ -64,6 +64,8 @@ def reportToJSON(case, render_time=0):
     if case['status'] != 'skipped':
         report['file_name'] = case['case'] + case.get('extension', '.jpg')
         report['render_color_path'] = path.join('Color', report['file_name'])
+    with open(path_to_file, 'w') as file:
+        file.write(json.dumps([report], indent=4))
 
 
 def render_tool_log_path(name):
@@ -89,14 +91,6 @@ def enable_rpr(case):
 def rpr_render(case, mode='color'):
     logging('Render image')
 
-def execute_function(function):
-    try:
-        if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
-            exec(function)
-        else:
-            eval(function)
-    except Exception as e:
-        logging('Error "{{}}" with string "{{}}"'.format(e, function))
 
 def prerender(case):
     logging('Prerender')
@@ -128,7 +122,6 @@ def prerender(case):
 
     # cmds.setAttr('defaultRenderGlobals.currentRenderer',
     #              type='string' 'FireRender')
-
     cmds.setAttr('defaultRenderGlobals.imageFormat', 8)
 
     cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', THRESHOLD)
@@ -137,7 +130,8 @@ def prerender(case):
     cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', SPU)
     cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 0)
 
-    for function in case['functions']:
+    rpr_render_index = case['functions'].index("rpr_render(case)")
+    for function in case['functions'][:rpr_render_index + 1]:
         try:
             if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
                 exec(function)
@@ -148,14 +142,26 @@ def prerender(case):
 
 # place for extension functions
 
+
 def post_render(case_num):
+    logging('Postrender')
     with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
         cases = json.load(json_file)
     case = cases[case_num]
 
-    case_time = (datetime.datetime.now() - datetime.datetime.strptime(case['start_time'])).total_seconds()
+    rpr_render_index = case['functions'].index("rpr_render(case)")
+    for function in case['functions'][rpr_render_index + 1:]:
+        try:
+            if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
+                exec(function)
+            else:
+                eval(function)
+        except Exception as e:
+            logging('Error "{{}}" with string "{{}}"'.format(e, function))
+
+    case_time = (datetime.datetime.now() - datetime.datetime.strptime(case['start_time'], '%Y-%m-%d %H:%M:%S.%f')).total_seconds()
     case['time_taken'] = case_time
-    
+
     #TODO Calculate rendering time somehow
     reportToJSON(case, case_time)
     if case['status'] == 'inprogress':
@@ -165,7 +171,7 @@ def post_render(case_num):
     with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
         json.dump(cases, file, indent=4)
 
-    #? Not sure if it's needed
+    # ? Not sure if it's needed
     # Athena need additional time for work before close maya
     # if TEST_TYPE not in ['Athena']:
     #     cmds.quit(abort=True)
@@ -177,18 +183,16 @@ def main(case_num):
     with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
         cases = json.load(json_file)
     case = cases[case_num]
-    
+
     event('Open tool', False, case['case'])
 
     if case['status'] in ['active', 'fail', 'skipped']:
-            if case['status'] == 'active':
-                case['status'] = 'inprogress'
+        if case['status'] == 'active':
+            case['status'] = 'inprogress'
 
     case['start_time'] = str(datetime.datetime.now())
 
     with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
-                    json.dump(cases, file, indent=4)
-
+        json.dump(cases, file, indent=4)
 
     prerender(case)
-    #rpr_render()

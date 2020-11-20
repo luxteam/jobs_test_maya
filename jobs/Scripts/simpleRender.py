@@ -431,7 +431,7 @@ def main(args, error_windows):
             except:
                 pass
 
-        cmds.append('''"{tool}" -r FireRender -proj "{project}" -rd "{result_dir}" -im "{img_name}"  -devc "{render_device}" -of jpg  -preRender "python(\\"import base_functions\\"); python(\\"base_functions.main({case_num})\\");" "{scene}" > "{log_path}"'''.format(
+        cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions\\"); python(\\"base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" "{scene}"'''.format(
             tool=args.tool,
             log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
             project=projPath,
