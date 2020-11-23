@@ -68,6 +68,27 @@ def reportToJSON(case, render_time=0):
         file.write(json.dumps([report], indent=4))
 
 
+def save_report(case_num):
+    with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
+        cases = json.load(json_file)
+    case = cases[case_num]
+
+    if not os.path.exists(os.path.join(WORK_DIR, 'Color')):
+        os.makedirs(os.path.join(WORK_DIR, 'Color'))
+
+    work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
+    source_dir = path.join(WORK_DIR, '..', '..', '..',
+                           '..', 'jobs_launcher', 'common', 'img')
+
+    if case['status'] == 'inprogress':
+        copyfile(path.join(source_dir, 'passed.jpg'), work_dir)
+    elif case['status'] != 'skipped':
+        copyfile(
+            path.join(source_dir, case['status'] + '.jpg'), work_dir)
+
+    reportToJSON(case)
+
+
 def render_tool_log_path(name):
     return path.join(LOGS_DIR, name + '.log')
 
@@ -89,7 +110,7 @@ def enable_rpr(case):
 
 
 def rpr_render(case, mode='color'):
-    logging('Render image')
+    logging('Prerender done')
 
 
 def prerender(case):
@@ -97,45 +118,66 @@ def prerender(case):
     enable_rpr(case)
 
     # cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
+    logging("mel.eval: athenaEnable -ae false")
     mel.eval('athenaEnable -ae false')
 
     if ENGINE == 'Tahoe':
+        logging("cmds.setAttr: RadeonProRenderGlobals.tahoeVersion, 1")
         cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 1)
     elif ENGINE == 'Northstar':
+        logging("cmds.setAttr: RadeonProRenderGlobals.tahoeVersion, 2")
         cmds.setAttr('RadeonProRenderGlobals.tahoeVersion', 2)
     elif ENGINE == 'Hybrid_Low':
+        logging("cmds.setAttr: RadeonProRenderGlobals.renderQualityFinalRender, 3")
         cmds.setAttr("RadeonProRenderGlobals.renderQualityFinalRender", 3)
     elif ENGINE == 'Hybrid_Medium':
+        logging("cmds.setAttr: RadeonProRenderGlobals.renderQualityFinalRender, 2")
         cmds.setAttr("RadeonProRenderGlobals.renderQualityFinalRender", 2)
     elif ENGINE == 'Hybrid_High':
+        logging("cmds.setAttr: RadeonProRenderGlobals.renderQualityFinalRender, 1")
         cmds.setAttr("RadeonProRenderGlobals.renderQualityFinalRender", 1)
 
+    logging("cmds.optionVar: rm=RPR_DevicesSelected")
     cmds.optionVar(rm='RPR_DevicesSelected')
+    logging("cmds.optionVar: iva=RPR_DevicesSelected, (RENDER_DEVICE in ['gpu', 'dual'])")
     cmds.optionVar(iva=('RPR_DevicesSelected',
                         (RENDER_DEVICE in ['gpu', 'dual'])))
+    logging("cmds.optionVar: iva=RPR_DevicesSelected, (RENDER_DEVICE in ['cpu', 'dual'])")
     cmds.optionVar(iva=('RPR_DevicesSelected',
                         (RENDER_DEVICE in ['cpu', 'dual'])))
 
     if RESOLUTION_X and RESOLUTION_Y:
+        logging("cmds.setAttr: defaultResolution.width, RESOLUTION_X")
         cmds.setAttr('defaultResolution.width', RESOLUTION_X)
+        logging("cmds.setAttr: defaultResolution.height, RESOLUTION_Y")
         cmds.setAttr('defaultResolution.height', RESOLUTION_Y)
 
     # cmds.setAttr('defaultRenderGlobals.currentRenderer',
     #              type='string' 'FireRender')
+    logging("cmds.setAttr: defaultRenderGlobals.imageFormat, 8")
     cmds.setAttr('defaultRenderGlobals.imageFormat', 8)
 
+    logging("cmds.setAttr: RadeonProRenderGlobals.adaptiveThreshold, THRESHOLD")
     cmds.setAttr('RadeonProRenderGlobals.adaptiveThreshold', THRESHOLD)
+    logging("cmds.setAttr: RadeonProRenderGlobals.completionCriteriaIterations, PASS_LIMIT")
     cmds.setAttr(
         'RadeonProRenderGlobals.completionCriteriaIterations', PASS_LIMIT)
+    logging("cmds.setAttr: RadeonProRenderGlobals.samplesPerUpdate, SPU")
     cmds.setAttr('RadeonProRenderGlobals.samplesPerUpdate', SPU)
+    logging("cmds.setAttr: RadeonProRenderGlobals.completionCriteriaSeconds, 0")
     cmds.setAttr('RadeonProRenderGlobals.completionCriteriaSeconds', 0)
+
+    logging("cmds.setAttr: defaultRenderGlobals.imageFilePrefix, 0")
+    cmds.setAttr("defaultRenderGlobals.imageFilePrefix", path.join(WORK_DIR, 'Color', case['case']), type="string")
 
     rpr_render_index = case['functions'].index("rpr_render(case)")
     for function in case['functions'][:rpr_render_index + 1]:
         try:
             if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
+                logging("exec: {{}}".format(function))
                 exec(function)
             else:
+                logging("eval: {{}}".format(function))
                 eval(function)
         except Exception as e:
             logging('Error "{{}}" with string "{{}}"'.format(e, function))
@@ -145,6 +187,7 @@ def prerender(case):
 
 def post_render(case_num):
     logging('Postrender')
+
     with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
         cases = json.load(json_file)
     case = cases[case_num]
@@ -153,8 +196,10 @@ def post_render(case_num):
     for function in case['functions'][rpr_render_index + 1:]:
         try:
             if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
+                logging("exec: {{}}".format(function))
                 exec(function)
             else:
+                logging("eval: {{}}".format(function))
                 eval(function)
         except Exception as e:
             logging('Error "{{}}" with string "{{}}"'.format(e, function))
@@ -180,6 +225,8 @@ def post_render(case_num):
 
 
 def main(case_num):
+    logging('Entered main')
+    validateFiles()
     with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
         cases = json.load(json_file)
     case = cases[case_num]

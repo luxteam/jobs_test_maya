@@ -37,19 +37,6 @@ if platform.system() == 'Darwin':
     from Quartz import CGRectMake
     from Quartz import kCGWindowImageDefault
 
-# def save_report(case, work_dir):
-#     if not os.path.exists(os.path.join(work_dir, 'Color')):
-#         os.makedirs(os.path.join(work_dir, 'Color'))
-
-#     res_dir = os.path.join(work_dir, 'Color', case['case'] + '.jpg')
-#     source_dir = os.path.join(work_dir, '..', '..', '..',
-#                            '..', 'jobs_launcher', 'common', 'img')
-
-#     if case['status'] == 'inprogress':
-#         copyfile(os.path.join(source_dir, 'passed.jpg'), res_dir)
-#     elif case['status'] != 'skipped':
-#         copyfile(
-#             os.path.join(source_dir, case['status'] + '.jpg'), res_dir)
 
 def get_windows_titles():
     try:
@@ -429,9 +416,13 @@ def main(args, error_windows):
                 core_config.main_logger.error('Failed to copy baseline ' +
                                               os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX))
         
-        if case['functions'][0] == 'check_test_cases_success_save':
-            continue;
-            # save_report(case, work_dir)
+        if case['status'] == 'skipped' or case['functions'][0] == 'check_test_cases_success_save':
+            cmds.append('''python -c "import base_functions; base_functions.save_report({case_num})"'''.format(case_num=case_num))
+            continue
+        elif case['status'] == 'fail' or case.get('number_of_tries', 1) >= args.retries:
+            case['status'] = 'error'
+            cmds.append('''python -c "import base_functions; base_functions.save_report({case_num})"'''.format(case_num=case_num))
+            continue
         else:
             try:
                 projPath = os.path.join(res_path, args.testType)
@@ -441,14 +432,13 @@ def main(args, error_windows):
             except:
                 pass
 
-        cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions\\"); python(\\"base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" "{scene}"'''.format(
+        cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g "{scene}"'''.format(
             tool=args.tool,
             log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
             project=projPath,
             result_dir=os.path.join(work_dir, 'Color'),
             img_name=case['case'],
             render_device=args.render_device,
-            #pre_render=' '.join(pre_render_cmds),
             case_num=case_num,
             scene=case['scene']
         ));
