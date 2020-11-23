@@ -575,7 +575,10 @@
             "SSS Night",
             "Pass Limit: 400"
         ],
-        "scene": "Uber_SSS_night.ma"
+        "scene": "Uber_SSS_night.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_SM_036",
@@ -675,7 +678,10 @@
         "script_info": [
             "Volume material check"
         ],
-        "scene": "VolumeRollingFog.ma"
+        "scene": "VolumeRollingFog.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_SM_043",
