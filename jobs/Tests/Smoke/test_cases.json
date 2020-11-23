@@ -679,7 +679,7 @@
             "Volume material check"
         ],
         "scene": "VolumeRollingFog.ma",
-        "skip_config": [
+        "skip_config":[
             ["AMD Radeon RX Vega 56 (Metal)"]
         ]
     },
@@ -802,6 +802,9 @@
         "scene": "normal_scene.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
+        ],
+        "skip_engine": [
+            "Northstar"
         ]
     },
     {
@@ -830,7 +833,10 @@
         "script_info": [
             "CPU+GPU mode"
         ],
-        "scene": "normal_scene.ma"
+        "scene": "normal_scene.ma",
+        "skip_engine": [
+            "Northstar"
+        ]
     },
     {
         "case": "MAYA_SM_054",
