@@ -72,13 +72,15 @@ def save_report(case_num):
     with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
         cases = json.load(json_file)
     case = cases[case_num]
+    if case['status'] == 'active':
+        case['status'] = 'inprogress'
 
     if not os.path.exists(os.path.join(WORK_DIR, 'Color')):
         os.makedirs(os.path.join(WORK_DIR, 'Color'))
 
     work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
     source_dir = path.join(WORK_DIR, '..', '..', '..',
-                           '..', 'jobs_launcher', 'common', 'img')
+                        '..', 'jobs_launcher', 'common', 'img')
 
     if case['status'] == 'inprogress':
         copyfile(path.join(source_dir, 'passed.jpg'), work_dir)
@@ -87,6 +89,12 @@ def save_report(case_num):
             path.join(source_dir, case['status'] + '.jpg'), work_dir)
 
     reportToJSON(case)
+
+    if case['status'] == 'inprogress':
+        case['status'] = 'done'
+
+    with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
+        json.dump(cases, file, indent=4)
 
 
 def render_tool_log_path(name):

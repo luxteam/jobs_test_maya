@@ -25,68 +25,7 @@ from jobs_launcher.core.kill_process import kill_process
 
 ROOT_DIR = os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir))
-PROCESS = ['Maya', 'maya.exe']
 LOGS_DIR = 'render_tool_logs'
-
-if platform.system() == 'Darwin':
-    from Quartz import CGWindowListCopyWindowInfo
-    from Quartz import kCGWindowListOptionOnScreenOnly
-    from Quartz import kCGNullWindowID
-    from Quartz import kCGWindowName
-    from Quartz import CGWindowListCreateImage
-    from Quartz import CGRectMake
-    from Quartz import kCGWindowImageDefault
-
-
-def get_windows_titles():
-    try:
-        if platform.system() == 'Darwin':
-            # for receive kCGWindowName values from CGWindowListCopyWindowInfo function it's necessary to call any function of Screen Record API
-            CGWindowListCreateImage(
-                CGRectMake(0, 0, 1, 1),
-                kCGWindowListOptionOnScreenOnly,
-                kCGNullWindowID,
-                kCGWindowImageDefault
-            )
-            ws_options = kCGWindowListOptionOnScreenOnly
-            windows_list = CGWindowListCopyWindowInfo(
-                ws_options, kCGNullWindowID)
-            maya_titles = {x.get('kCGWindowName', u'Unknown')
-                           for x in windows_list if 'Maya' in x['kCGWindowOwnerName']}
-
-            # duct tape for windows with empty title
-            expected = {'Maya', 'Render View', 'Rendering...'}
-            if maya_titles - expected:
-                maya_titles.add('Detected windows ERROR')
-
-            return list(maya_titles)
-
-        elif platform.system() == 'Windows':
-            EnumWindows = ctypes.windll.user32.EnumWindows
-            EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(
-                ctypes.c_int), ctypes.POINTER(ctypes.c_int))
-            GetWindowText = ctypes.windll.user32.GetWindowTextW
-            GetWindowTextLength = ctypes.windll.user32.GetWindowTextLengthW
-            IsWindowVisible = ctypes.windll.user32.IsWindowVisible
-
-            titles = []
-
-            def foreach_window(hwnd, lParam):
-                if IsWindowVisible(hwnd):
-                    length = GetWindowTextLength(hwnd)
-                    buff = ctypes.create_unicode_buffer(length + 1)
-                    GetWindowText(hwnd, buff, length + 1)
-                    titles.append(buff.value)
-                return True
-
-            EnumWindows(EnumWindowsProc(foreach_window), 0)
-
-            return titles
-    except Exception as err:
-        core_config.main_logger.error(
-            'Exception has occurred while pull windows titles: {}'.format(str(err)))
-
-    return []
 
 
 def createArgsParser():
@@ -198,51 +137,25 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
     while True:
         try:
             p.communicate(timeout=40)
-            window_titles = get_windows_titles()
-            core_config.main_logger.info(
-                'Found windows: {}'.format(window_titles))
-        except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
+        except (psutil.TimeoutExpired, subprocess.TimeoutExpired):
             current_restart_timeout -= 40
-            fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
-                                   'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
-                                   'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report',
-                                   'Autodesk Maya 2020 Error Report', 'Autodesk Maya 2020 Error Report', 'Autodesk Maya 2020 Error Report']
-            window_titles = get_windows_titles()
-            error_window = set(fatal_errors_titles).intersection(window_titles)
-            if error_window:
-                core_config.main_logger.error(
-                    'Error window found: {}'.format(error_window))
-                core_config.main_logger.warning(
-                    'Found windows: {}'.format(window_titles))
-                error_windows.update(error_window)
-                rc = -1
-
-                if system_pl == 'Windows':
-                    try:
-                        error_screen = pyscreenshot.grab()
-                        error_screen.save(os.path.join(
-                            args.output, 'error_screenshot.jpg'))
-                    except Exception as ex:
-                        pass
-
-                kill_maya(p)
-
-                break
-            else:
+            if current_restart_timeout <= 0:
                 new_done_test_cases_num = get_finished_cases_number(args.output)
-                if current_restart_timeout <= 0:
-                    if new_done_test_cases_num == -1:
-                        core_config.main_logger.error('Failed to get number of finished cases. Try to do that on next iteration')
-                    elif prev_done_test_cases == new_done_test_cases_num:
-                        # if number of finished cases wasn't increased - Maya got stuck
-                        core_config.main_logger.error('Maya got stuck.')
-                        rc = -1
-                        current_restart_timeout = restart_timeout
-                        kill_maya(p)
-                        break
-                    else:
-                        prev_done_test_cases = new_done_test_cases_num
-                        current_restart_timeout = restart_timeout
+                if new_done_test_cases_num == -1:
+                    core_config.main_logger.error('Failed to get number of finished cases. Try to do that on next iteration')
+                elif prev_done_test_cases == new_done_test_cases_num:
+                    # if number of finished cases wasn't increased - Maya got stuck
+                    core_config.main_logger.error('Maya got stuck.')
+                    rc = -1
+                    current_restart_timeout = restart_timeout
+                    p.terminate()
+                    time.sleep(10)
+                    p.kill()
+                    #kill_maya(p)
+                    break
+                else:
+                    prev_done_test_cases = new_done_test_cases_num
+                    current_restart_timeout = restart_timeout
         else:
             rc = 0
             break
@@ -347,9 +260,10 @@ def main(args, error_windows):
 
     if system_pl == 'Windows':
         cmds = ['set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log',
-            'set PYTHONPATH=%cd%;PYTHONPATH',
-            'set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%']
+                'set PYTHONPATH=%cd%;PYTHONPATH',
+                'set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%']
 
+        render_tool_log = "%MAYA_CMD_FILE_OUTPUT%"
         cmdScriptPath = os.path.join(args.output, 'script.bat')
 
     elif system_pl == 'Darwin':
@@ -357,6 +271,7 @@ def main(args, error_windows):
                 'export PYTHONPATH=$PWD:$PYTHONPATH',
                 'export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH']
 
+        render_tool_log = "$MAYA_CMD_FILE_OUTPUT"
         cmdScriptPath = os.path.join(args.output, 'script.sh')
         
 
@@ -417,12 +332,12 @@ def main(args, error_windows):
                                               os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX))
         
         if case['status'] == 'skipped' or case['functions'][0] == 'check_test_cases_success_save':
+
             cmds.append('''python -c "import base_functions; base_functions.save_report({case_num})"'''.format(case_num=case_num))
-            continue
         elif case['status'] == 'fail' or case.get('number_of_tries', 1) >= args.retries:
+
             case['status'] = 'error'
             cmds.append('''python -c "import base_functions; base_functions.save_report({case_num})"'''.format(case_num=case_num))
-            continue
         else:
             try:
                 projPath = os.path.join(res_path, args.testType)
@@ -432,16 +347,17 @@ def main(args, error_windows):
             except:
                 pass
 
-        cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g "{scene}"'''.format(
-            tool=args.tool,
-            log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
-            project=projPath,
-            result_dir=os.path.join(work_dir, 'Color'),
-            img_name=case['case'],
-            render_device=args.render_device,
-            case_num=case_num,
-            scene=case['scene']
-        ));
+            cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g "{scene}" >> {render_tool_log}'''.format(
+                tool=args.tool,
+                log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
+                project=projPath,
+                result_dir=os.path.join(work_dir, 'Color'),
+                img_name=case['case'],
+                render_device=args.render_device,
+                case_num=case_num,
+                scene=case['scene'],
+                render_tool_log=render_tool_log
+            ));
 
     with open(cmdScriptPath, 'w') as file:
         file.write("\n".join(cmds))
@@ -487,7 +403,6 @@ def group_failed(args, error_windows):
         json.dump(cases, f, indent=4)
 
     rc = main(args, error_windows)
-    kill_process(PROCESS)
     core_config.main_logger.info(
         "Finish simpleRender with code: {}".format(rc))
     exit(rc)
@@ -548,72 +463,71 @@ if __name__ == '__main__':
 
     error_windows = set()
 
-    #while True:
-    iteration += 1
+    while True:
+        iteration += 1
 
-    core_config.main_logger.info(
-        'Try to run script in maya (#' + str(iteration) + ')')
-
-    rc = main(args, error_windows)
-
-    try:
-        move(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'),
-                os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration) + '.log'))
-    except:
-        core_config.main_logger.error('No renderTool.log')
-
-    try:
-        cases = json.load(open(os.path.realpath(
-            os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
-    except Exception as e:
-        core_config.logging.error("Can't load test_cases.json")
-        core_config.main_logger.error(str(e))
-        exit(-1)
-
-    active_cases = 0
-    current_error_count = 0
-
-    for case in cases:
-        if case['status'] in ['fail', 'error', 'inprogress']:
-            current_error_count += 1
-            if args.error_count == current_error_count:
-                group_failed(args, error_windows)
-        else:
-            current_error_count = 0
-
-        if case['status'] in ['active', 'fail', 'inprogress']:
-            active_cases += 1
-
-    if active_cases == 0 or iteration > len(cases) * args.retries:
-        for case in cases:
-            error_message = ''
-            number_of_tries = case.get('number_of_tries', 0)
-            if case['status'] in ['fail', 'error']:
-                error_message = "Testcase wasn't executed successfully (all attempts were used). Number of tries: {}".format(str(number_of_tries))
-            elif case['status'] in ['active', 'inprogress']:
-                if number_of_tries:
-                    error_message = "Testcase wasn't finished. Number of tries: {}".format(str(number_of_tries))
-                else:
-                    error_message = "Testcase wasn't run"
-
-            if error_message:
-                core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
-                path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
-
-                with open(path_to_file, 'r') as file:
-                    report = json.load(file)
-
-                report[0]['group_timeout_exceeded'] = False
-                report[0]['message'].append(error_message)
-                if len(error_windows) != 0:
-                    report[0]['message'].append("Error windows {}".format(error_windows))
-
-                with open(path_to_file, 'w') as file:
-                    json.dump(report, file, indent=4)
-
-        # exit script if base_functions don't change number of active cases
-        kill_process(PROCESS)
         core_config.main_logger.info(
-            'Finish simpleRender with code: {}'.format(rc))
-        sync_time(args.output)
-        exit(rc)
+            'Try to run script in maya (#' + str(iteration) + ')')
+
+        rc = main(args, error_windows)
+
+        try:
+            move(os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool.log'),
+                    os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'renderTool' + str(iteration) + '.log'))
+        except:
+            core_config.main_logger.error('No renderTool.log')
+
+        try:
+            cases = json.load(open(os.path.realpath(
+                os.path.join(os.path.abspath(args.output).replace('\\', '/'), 'test_cases.json'))))
+        except Exception as e:
+            core_config.logging.error("Can't load test_cases.json")
+            core_config.main_logger.error(str(e))
+            exit(-1)
+
+        active_cases = 0
+        current_error_count = 0
+
+        for case in cases:
+            if case['status'] in ['fail', 'error', 'inprogress']:
+                current_error_count += 1
+                if args.error_count == current_error_count:
+                    group_failed(args, error_windows)
+            else:
+                current_error_count = 0
+
+            if case['status'] in ['active', 'fail', 'inprogress']:
+                active_cases += 1
+
+        if active_cases == 0 or iteration > len(cases) * args.retries:
+            for case in cases:
+                error_message = ''
+                number_of_tries = case.get('number_of_tries', 0)
+                if case['status'] in ['fail', 'error']:
+                    error_message = "Testcase wasn't executed successfully (all attempts were used). Number of tries: {}".format(str(number_of_tries))
+                elif case['status'] in ['active', 'inprogress']:
+                    if number_of_tries:
+                        error_message = "Testcase wasn't finished. Number of tries: {}".format(str(number_of_tries))
+                    else:
+                        error_message = "Testcase wasn't run"
+
+                if error_message:
+                    core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
+                    path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
+
+                    with open(path_to_file, 'r') as file:
+                        report = json.load(file)
+
+                    report[0]['group_timeout_exceeded'] = False
+                    report[0]['message'].append(error_message)
+                    if len(error_windows) != 0:
+                        report[0]['message'].append("Error windows {}".format(error_windows))
+
+                    with open(path_to_file, 'w') as file:
+                        json.dump(report, file, indent=4)
+
+            # exit script if base_functions don't change number of active cases
+            core_config.main_logger.info(
+                'Finish simpleRender with code: {}'.format(rc))
+            sync_time(args.output)
+            exit(rc)
