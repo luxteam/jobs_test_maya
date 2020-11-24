@@ -543,7 +543,10 @@
             "AOV Shadow Catcher",
             "Pass Limit: 50"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_SM_034",
