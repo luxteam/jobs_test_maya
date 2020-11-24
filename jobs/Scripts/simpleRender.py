@@ -32,11 +32,21 @@ if platform.system() == 'Darwin':
     from Quartz import kCGWindowListOptionOnScreenOnly
     from Quartz import kCGNullWindowID
     from Quartz import kCGWindowName
+    from Quartz import CGWindowListCreateImage
+    from Quartz import CGRectMake
+    from Quartz import kCGWindowImageDefault
 
 
 def get_windows_titles():
     try:
         if platform.system() == 'Darwin':
+            # for receive kCGWindowName values from CGWindowListCopyWindowInfo function it's necessary to call any function of Screen Record API
+            CGWindowListCreateImage(
+                CGRectMake(0, 0, 1, 1),
+                kCGWindowListOptionOnScreenOnly,
+                kCGNullWindowID,
+                kCGWindowImageDefault
+            )
             ws_options = kCGWindowListOptionOnScreenOnly
             windows_list = CGWindowListCopyWindowInfo(
                 ws_options, kCGNullWindowID)
@@ -358,7 +368,7 @@ def main(args, error_windows):
                     skipped_case_image_path = os.path.join(args.output, 'Color', template['file_name'])
                     if not os.path.exists(skipped_case_image_path):
                         copyfile(os.path.join(work_dir, '..', '..', '..', '..', 'jobs_launcher', 
-                            'common', 'img', "skipped.png"), skipped_case_image_path)
+                            'common', 'img', "skipped.jpg"), skipped_case_image_path)
                 except OSError or FileNotFoundError as err:
                     main_logger.error("Can't create img stub: {}".format(str(err)))
             else:
@@ -477,7 +487,8 @@ def sync_time(work_dir):
 
                 synchronization_time = sync_minutes * 60 + sync_seconds + sync_milisec / 1000
                 rpr_json[0]['sync_time'] = synchronization_time
-                rpr_json[0]['render_time'] -= synchronization_time
+                if rpr_json[0]['render_time'] != 0:
+                    rpr_json[0]['render_time'] -= synchronization_time
 
                 with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
                     rpr_json_file.write(json.dumps(rpr_json, indent=4))
@@ -507,10 +518,11 @@ if __name__ == '__main__':
         core_config.main_logger.error(str(e))
         exit(-1)
 
-    error_windows = set()
 
     while True:
         iteration += 1
+
+        error_windows = set()
 
         core_config.main_logger.info(
             'Try to run script in maya (#' + str(iteration) + ')')
@@ -534,6 +546,7 @@ if __name__ == '__main__':
         active_cases = 0
         current_error_count = 0
 
+        last_error_case = None
         for case in cases:
             if case['status'] in ['fail', 'error', 'inprogress']:
                 current_error_count += 1
@@ -545,33 +558,22 @@ if __name__ == '__main__':
             if case['status'] in ['active', 'fail', 'inprogress']:
                 active_cases += 1
 
+            path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
+
+            if case['status'] == 'error':
+                last_error_case = case
+
+        if last_error_case and error_windows:
+            path_to_file = os.path.join(args.output, last_error_case['case'] + '_RPR.json')
+            with open(path_to_file, 'r') as file:
+                report = json.load(file)
+
+            report[0]['message'].append("Error windows {}".format(error_windows))
+
+            with open(path_to_file, 'w') as file:
+                json.dump(report, file, indent=4)
+
         if active_cases == 0 or iteration > len(cases) * args.retries:
-            for case in cases:
-                error_message = ''
-                number_of_tries = case.get('number_of_tries', 0)
-                if case['status'] in ['fail', 'error']:
-                    error_message = "Testcase wasn't executed successfully (all attempts were used). Number of tries: {}".format(str(number_of_tries))
-                elif case['status'] in ['active', 'inprogress']:
-                    if number_of_tries:
-                        error_message = "Testcase wasn't finished. Number of tries: {}".format(str(number_of_tries))
-                    else:
-                        error_message = "Testcase wasn't run"
-
-                if error_message:
-                    core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
-                    path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
-
-                    with open(path_to_file, 'r') as file:
-                        report = json.load(file)
-
-                    report[0]['group_timeout_exceeded'] = False
-                    report[0]['message'].append(error_message)
-                    if len(error_windows) != 0:
-                        report[0]['message'].append("Error windows {}".format(error_windows))
-
-                    with open(path_to_file, 'w') as file:
-                        json.dump(report, file, indent=4)
-
             # exit script if base_functions don't change number of active cases
             kill_process(PROCESS)
             core_config.main_logger.info(
