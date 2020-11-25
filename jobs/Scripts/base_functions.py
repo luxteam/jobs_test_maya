@@ -277,10 +277,10 @@ def main():
     event('Close tool', True, cases[-1]['case'])
 
     # Athena need additional time for work before close maya
-    if TEST_TYPE not in ['Athena']:
-        cmds.quit(abort=True)
-    else:
-        cmds.evalDeferred('cmds.quit(abort=True)')
+    #if TEST_TYPE not in ['Athena']:
+    #    cmds.quit(abort=True)
+    #else:
+    #    cmds.evalDeferred('cmds.quit(abort=True)')
 
 
 main()
