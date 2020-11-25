@@ -42,6 +42,8 @@ def reportToJSON(case, render_time=0):
         report = json.loads(file.read())[0]
 
     if case['status'] == 'inprogress':
+        case['status'] = 'done'
+        logging(case['case'] + ' done')
         report['test_status'] = 'passed'
         report['group_timeout_exceeded'] = False
     else:
@@ -49,11 +51,19 @@ def reportToJSON(case, render_time=0):
 
     logging('Create report json ({{}} {{}})'.format(
             case['case'], report['test_status']))
-  
-    report['tool'] = mel.eval('about -iv')
+    
+    if case['status'] == 'error':
+        number_of_tries = case.get('number_of_tries', 0)
+        if number_of_tries == RETRIES:
+            error_message = 'Testcase wasn\'t executed successfully (all attempts were used). Number of tries: {{}}'.format(str(number_of_tries))
+        else:
+            error_message = 'Testcase wasn\'t executed successfully. Number of tries: {{}}'.format(str(number_of_tries))
+        report['message'] = [error_message]
+    else:
+        report['message'] = []
+
+    
     report['date_time'] = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
-    report['render_version'] = mel.eval('getRPRPluginVersion()')
-    report['core_version'] = mel.eval('getRprCoreVersion()')
     report['render_time'] = render_time
     report['test_group'] = TEST_TYPE
     report['test_case'] = case['case']
@@ -64,37 +74,27 @@ def reportToJSON(case, render_time=0):
     if case['status'] != 'skipped':
         report['file_name'] = case['case'] + case.get('extension', '.jpg')
         report['render_color_path'] = path.join('Color', report['file_name'])
+
+    # save metrics which can be received witout call of functions of Maya
     with open(path_to_file, 'w') as file:
         file.write(json.dumps([report], indent=4))
 
+    try:
+        report['tool'] = mel.eval('about -iv')
+    except Exception as e:
+        logging('Failed to get Maya version. Reason: {{}}'.format(str(e)))
+    try:
+        report['render_version'] = mel.eval('getRPRPluginVersion()')
+    except Exception as e:
+        logging('Failed to get render version. Reason: {{}}'.format(str(e)))
+    try:
+        report['core_version'] = mel.eval('getRprCoreVersion()')
+    except Exception as e:
+        logging('Failed to get core version. Reason: {{}}'.format(str(e)))
 
-def save_report(case_num):
-    with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
-        cases = json.load(json_file)
-    case = cases[case_num]
-    if case['status'] == 'active':
-        case['status'] = 'inprogress'
-
-    if not os.path.exists(os.path.join(WORK_DIR, 'Color')):
-        os.makedirs(os.path.join(WORK_DIR, 'Color'))
-
-    work_dir = path.join(WORK_DIR, 'Color', case['case'] + '.jpg')
-    source_dir = path.join(WORK_DIR, '..', '..', '..',
-                        '..', 'jobs_launcher', 'common', 'img')
-
-    if case['status'] == 'inprogress':
-        copyfile(path.join(source_dir, 'passed.jpg'), work_dir)
-    elif case['status'] != 'skipped':
-        copyfile(
-            path.join(source_dir, case['status'] + '.jpg'), work_dir)
-
-    reportToJSON(case)
-
-    if case['status'] == 'inprogress':
-        case['status'] = 'done'
-
-    with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
-        json.dump(cases, file, indent=4)
+    # save metrics which can't be received witout call of functions of Maya (additional measures to avoid stucking of Maya)
+    with open(path_to_file, 'w') as file:
+        file.write(json.dumps([report], indent=4))
 
 
 def render_tool_log_path(name):
@@ -190,8 +190,6 @@ def prerender(case):
         except Exception as e:
             logging('Error "{{}}" with string "{{}}"'.format(e, function))
 
-# place for extension functions
-
 
 def post_render(case_num):
     logging('Postrender')
@@ -217,9 +215,6 @@ def post_render(case_num):
 
     #TODO Calculate rendering time somehow
     reportToJSON(case, case_time)
-    if case['status'] == 'inprogress':
-        case['status'] = 'done'
-        logging(case['case'] + ' done')
 
     with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
         json.dump(cases, file, indent=4)
@@ -232,7 +227,11 @@ def post_render(case_num):
     #     cmds.evalDeferred('cmds.quit(abort=True)')
 
 
+# place for extension functions
+
+
 def main(case_num):
+
     logging('Entered main')
     validateFiles()
     with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
@@ -241,13 +240,14 @@ def main(case_num):
 
     event('Open tool', False, case['case'])
 
-    if case['status'] in ['active', 'fail', 'skipped']:
-        if case['status'] == 'active':
-            case['status'] = 'inprogress'
+    if case['status'] == 'active':
+        case['status'] = 'inprogress'
 
     case['start_time'] = str(datetime.datetime.now())
 
     with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
         json.dump(cases, file, indent=4)
 
+    case['number_of_tries'] = case.get('number_of_tries', 0) + 1
+    
     prerender(case)

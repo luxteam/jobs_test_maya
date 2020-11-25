@@ -51,6 +51,77 @@ def createArgsParser():
     return parser
 
 
+def move_imgs_from_folder(destination, *folders):
+    if os.path.exists(destination) and os.path.isdir(destination):
+        for folder in folders:
+            if os.path.exists(folder) and os.path.isdir(folder):
+                for file in os.listdir(folder):
+                    try:
+                        move(os.path.join(folder, file), destination)
+                        core_config.main_logger.info('Moved {} from {} to {}'.format(file, folder, destination))
+                    except:
+                        core_config.main_logger.error('Error while moving {} from {} to {}'.format(file, folder, destination))
+
+
+def save_report(args, case):
+    work_dir = args.output
+
+    if case['status'] == 'active':
+        case['status'] = 'inprogress'
+
+    if not os.path.exists(os.path.join(work_dir, 'Color')):
+        os.makedirs(os.path.join(work_dir, 'Color'))
+
+    dest = os.path.join(work_dir, 'Color', case['case'] + '.jpg')
+    src = os.path.join(work_dir, '..', '..', '..',
+                        '..', 'jobs_launcher', 'common', 'img')
+
+    if case['status'] == 'inprogress':
+        copyfile(os.path.join(src, 'passed.jpg'), dest)
+    elif case['status'] != 'skipped':
+        copyfile(
+            os.path.join(src, case['status'] + '.jpg'), dest)
+
+
+    path_to_file = os.path.join(work_dir, case['case'] + '_RPR.json')
+
+    with open(path_to_file, 'r') as file:
+        report = json.loads(file.read())[0]
+
+    if case['status'] == 'inprogress':
+        case['status'] = 'done'
+        report['test_status'] = 'passed'
+        report['group_timeout_exceeded'] = False
+    else:
+        report['test_status'] = case['status']
+    
+    if case['status'] == 'error':
+        number_of_tries = case.get('number_of_tries', 0)
+        if number_of_tries == args.retries:
+            error_message = 'Testcase wasn\'t executed successfully (all attempts were used). Number of tries: {}'.format(str(number_of_tries))
+        else:
+            error_message = 'Testcase wasn\'t executed successfully. Number of tries: {}'.format(str(number_of_tries))
+        report['message'] = [error_message]
+    else:
+        report['message'] = []
+
+    
+    report['date_time'] = datetime.now().strftime('%m/%d/%Y %H:%M:%S')
+    report['render_time'] = 0.0
+    report['test_group'] = args.testType
+    report['test_case'] = case['case']
+    report['difference_color'] = 0
+    report['script_info'] = case['script_info']
+    report['render_log'] = os.path.join('render_tool_logs', case['case'] + '.log')
+    report['scene_name'] = case.get('scene', '')
+    if case['status'] != 'skipped':
+        report['file_name'] = case['case'] + case.get('extension', '.jpg')
+        report['render_color_path'] = os.path.join('Color', report['file_name'])
+
+    with open(path_to_file, 'w') as file:
+        file.write(json.dumps([report], indent=4))
+
+
 def check_licenses(res_path, maya_scenes, testType):
     try:
         for scene in maya_scenes:
@@ -263,7 +334,6 @@ def main(args, error_windows):
                 'set PYTHONPATH=%cd%;PYTHONPATH',
                 'set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%']
 
-        render_tool_log = "%MAYA_CMD_FILE_OUTPUT%"
         cmdScriptPath = os.path.join(args.output, 'script.bat')
 
     elif system_pl == 'Darwin':
@@ -271,7 +341,6 @@ def main(args, error_windows):
                 'export PYTHONPATH=$PWD:$PYTHONPATH',
                 'export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH']
 
-        render_tool_log = "$MAYA_CMD_FILE_OUTPUT"
         cmdScriptPath = os.path.join(args.output, 'script.sh')
         
 
@@ -331,23 +400,23 @@ def main(args, error_windows):
                 core_config.main_logger.error('Failed to copy baseline ' +
                                               os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX))
         
-        if case['status'] == 'skipped' or case['functions'][0] == 'check_test_cases_success_save':
+        try:
+            projPath = os.path.join(res_path, args.testType)
+            temp = os.path.join(projPath, case['scene'][:-3])
+            if os.path.isdir(temp):
+                projPath = temp
+        except:
+            pass
 
-            cmds.append('''python -c "import base_functions; base_functions.save_report({case_num})"'''.format(case_num=case_num))
+        if case['functions'][0] == 'check_test_cases_success_save':
+            save_report(args, case)
         elif case['status'] == 'fail' or case.get('number_of_tries', 1) >= args.retries:
-
             case['status'] = 'error'
-            cmds.append('''python -c "import base_functions; base_functions.save_report({case_num})"'''.format(case_num=case_num))
+            save_report(args, case)
+        elif case['status'] == 'skipped':
+            save_report(args, case)
         else:
-            try:
-                projPath = os.path.join(res_path, args.testType)
-                temp = os.path.join(projPath, case['scene'][:-3])
-                if os.path.isdir(temp):
-                    projPath = temp
-            except:
-                pass
-
-            cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g "{scene}" >> {render_tool_log}'''.format(
+            cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g -rp "color" -fnc name.ext "{scene}"'''.format(
                 tool=args.tool,
                 log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
                 project=projPath,
@@ -355,8 +424,7 @@ def main(args, error_windows):
                 img_name=case['case'],
                 render_device=args.render_device,
                 case_num=case_num,
-                scene=case['scene'],
-                render_tool_log=render_tool_log
+                scene=case['scene']
             ));
 
     with open(cmdScriptPath, 'w') as file:
@@ -379,6 +447,9 @@ def main(args, error_windows):
         subprocess.call([sys.executable, os.path.realpath(os.path.join(
             os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
     core_config.main_logger.info('Main func return : {}'.format(rc))
+
+    move_imgs_from_folder(os.path.join(work_dir, 'Color'), os.path.join(work_dir, 'Color', 'color'), os.path.join(work_dir, 'Color', 'persp1'))
+
     return rc
 
 
