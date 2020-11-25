@@ -88,7 +88,7 @@ def validateFiles():
             cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
     unresolved_files = cmds.filePathEditor(
         query=True, listFiles='', unresolved=True, attributeOnly=True)
-    ogging(str(unresolved_files))
+    logging(str(unresolved_files))
 
 
 def enable_rpr(case):
