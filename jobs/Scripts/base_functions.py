@@ -51,7 +51,6 @@ def reportToJSON(case, render_time=0):
 
     logging('Create report json ({{}} {{}})'.format(
             case['case'], report['test_status']))
-    
     if case['status'] == 'error':
         number_of_tries = case.get('number_of_tries', 0)
         if number_of_tries == RETRIES:
@@ -62,7 +61,6 @@ def reportToJSON(case, render_time=0):
     else:
         report['message'] = []
 
-    
     report['date_time'] = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
     report['render_time'] = render_time
     report['test_group'] = TEST_TYPE
