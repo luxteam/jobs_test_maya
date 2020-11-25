@@ -77,16 +77,18 @@ def render_tool_log_path(name):
 
 def validateFiles():
     logging('Repath scene')
+
     # TODO: repath from folder with group
     unresolved_files = cmds.filePathEditor(
         query=True, listFiles='', unresolved=True, attributeOnly=True)
-    print(unresolved_files)
+    logging(unresolved_files)
+    logging('Start repath scene')
     if unresolved_files:
         for item in unresolved_files:
             print(cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1))
     unresolved_files = cmds.filePathEditor(
         query=True, listFiles='', unresolved=True, attributeOnly=True)
-    print(unresolved_files)
+    logging(unresolved_files)
 
 
 def enable_rpr(case):
