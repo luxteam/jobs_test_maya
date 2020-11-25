@@ -80,9 +80,13 @@ def validateFiles():
     # TODO: repath from folder with group
     unresolved_files = cmds.filePathEditor(
         query=True, listFiles='', unresolved=True, attributeOnly=True)
+    print(unresolved_files)
     if unresolved_files:
         for item in unresolved_files:
-            cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
+            print(cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1))
+    unresolved_files = cmds.filePathEditor(
+        query=True, listFiles='', unresolved=True, attributeOnly=True)
+    print(unresolved_files)
 
 
 def enable_rpr(case):
