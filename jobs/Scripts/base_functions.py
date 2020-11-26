@@ -80,15 +80,13 @@ def validateFiles():
 
     logging(str(RES_PATH))
     # TODO: repath from folder with group
-    unresolved_files = cmds.filePathEditor(
-        query=True, listFiles='', unresolved=True, attributeOnly=True)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
     logging(str(unresolved_files))
     logging('Start repath scene')
     if unresolved_files:
         for item in unresolved_files:
             cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
-    unresolved_files = cmds.filePathEditor(
-        query=True, listFiles='', unresolved=True, attributeOnly=True)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
     logging(str(unresolved_files))
 
 
@@ -127,6 +125,7 @@ def prerender(case):
             event('Open scene', True, case['case'])
             cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
             event('Open scene', False, case['case'])
+            logging(cmds.file(q=True, sn=True))
             validateFiles()
             enable_rpr(case['case'])
         except Exception as e:
