@@ -78,6 +78,7 @@ def render_tool_log_path(name):
 def validateFiles():
     logging('Repath scene')
 
+    logging(str(RES_PATH))
     # TODO: repath from folder with group
     unresolved_files = cmds.filePathEditor(
         query=True, listFiles='', unresolved=True, attributeOnly=True)
