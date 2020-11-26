@@ -80,13 +80,14 @@ def validateFiles():
 
     logging(str(RES_PATH))
     # TODO: repath from folder with group
-    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
+    cmds.filePathEditor(refresh=True)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True)
     logging(str(unresolved_files))
     logging('Start repath scene')
     if unresolved_files:
         for item in unresolved_files:
             cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
-    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True)
     logging(str(unresolved_files))
 
 
@@ -119,8 +120,12 @@ def rpr_render(case, mode='color'):
 def prerender(case):
     logging('Prerender')
     scene = case.get('scene', '')
+    logging(scene)
     scene_name = cmds.file(q=True, sn=True, shn=True)
-    if scene_name != scene:
+    logging(scene_name)
+    scene = os.path.join(RES_PATH, "Smoke" ,"Lamborginhi_Aventador", scene)
+    #if scene_name != scene:
+    if True:
         try:
             event('Open scene', True, case['case'])
             cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
@@ -212,14 +217,19 @@ def case_function(case):
     if case['functions'][0] == 'check_test_cases_success_save':
         func = 'save_report'
     else:
+        print('else')
+        
         try:
             projPath = os.path.join(RES_PATH, TEST_TYPE)
+            logging(projPath)
             temp = os.path.join(projPath, case['scene'][:-3])
+            logging(temp)
             if os.path.isdir(temp):
                 projPath = temp
             mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
         except:
             logging("Can't set project in '" + projPath + "'")
+        
 
     # 2- retries count
     if case['status'] == 'fail' or case.get('number_of_tries', 1) == 2:
