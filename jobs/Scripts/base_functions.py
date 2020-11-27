@@ -102,13 +102,13 @@ def validateFiles():
     logging('Repath scene')
     cmds.filePathEditor(refresh=True)
     unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
-    logging("Unresolved items {}".format(str(unresolved_files)))
+    logging("Unresolved items {{}}".format(str(unresolved_files)))
     logging('Start repath scene')
     if unresolved_files:
         for item in unresolved_files:
             cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
     unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
-    logging("Unresolved items {}".format(str(unresolved_files)))
+    logging("Unresolved items {{}}".format(str(unresolved_files)))
     logging('Repath finished')
 
 
@@ -147,7 +147,8 @@ def prerender(case):
     if os.path.isdir(temp):
         scenePath = temp
 
-    scenePath = os.path.join(RES_PATH, scenePath, scene)
+    scenePath = os.path.join(scenePath, scene)
+    logging("Scene path: {{}}".format(scenePath))
 
     scene_name = cmds.file(q=True, sn=True, shn=True)
     if scene_name != scene:
