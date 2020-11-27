@@ -121,9 +121,15 @@ def prerender(case):
     logging('Prerender')
     scene = case.get('scene', '')
     logging(scene)
+    scenePath = os.path.join(RES_PATH, TEST_TYPE)
+    logging(scenePath)
+    temp = os.path.join(scenePath, case['scene'][:-3])
+    logging(temp)
+    if os.path.isdir(temp):
+        scenePath = temp
     scene_name = cmds.file(q=True, sn=True, shn=True)
     logging(scene_name)
-    scene = os.path.join(RES_PATH, "Smoke" ,"Lamborginhi_Aventador", scene)
+    scene = os.path.join(RES_PATH, scenePath, scene)
     #if scene_name != scene:
     if True:
         try:
