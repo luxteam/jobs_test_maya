@@ -78,11 +78,16 @@ def render_tool_log_path(name):
 def validateFiles():
     logging('Repath scene')
     # TODO: repath from folder with group
-    unresolved_files = cmds.filePathEditor(
-        query=True, listFiles='', unresolved=True, attributeOnly=True)
+    cmds.filePathEditor(refresh=True)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
+    logging("Unresolved items {}".format(str(unresolved_files)))
+    logging('Start repath scene')
     if unresolved_files:
         for item in unresolved_files:
             cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
+    logging("Unresolved items {}".format(str(unresolved_files)))
+    logging('Repath finished')
 
 
 def enable_rpr(case):
@@ -114,11 +119,19 @@ def rpr_render(case, mode='color'):
 def prerender(case):
     logging('Prerender')
     scene = case.get('scene', '')
+
+    scenePath = os.path.join(RES_PATH, TEST_TYPE)
+    temp = os.path.join(scenePath, case['scene'][:-3])
+    if os.path.isdir(temp):
+        scenePath = temp
+
+    scenePath = os.path.join(RES_PATH, scenePath, scene)
+
     scene_name = cmds.file(q=True, sn=True, shn=True)
     if scene_name != scene:
         try:
             event('Open scene', True, case['case'])
-            cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
+            cmds.file(scenePath, f=True, op='v=0;', prompt=False, iv=True, o=True)
             event('Open scene', False, case['case'])
             validateFiles()
             enable_rpr(case['case'])
@@ -207,11 +220,14 @@ def case_function(case):
         func = 'save_report'
     else:
         try:
+            logging("SetProject skipped.")
+            '''
             projPath = os.path.join(RES_PATH, TEST_TYPE)
             temp = os.path.join(projPath, case['scene'][:-3])
             if os.path.isdir(temp):
                 projPath = temp
             mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
+            '''
         except:
             logging("Can't set project in '" + projPath + "'")
 
