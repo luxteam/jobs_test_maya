@@ -81,13 +81,13 @@ def validateFiles():
     logging(str(RES_PATH))
     # TODO: repath from folder with group
     cmds.filePathEditor(refresh=True)
-    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, withAttribute=True)
     logging(str(unresolved_files))
     logging('Start repath scene')
     if unresolved_files:
         for item in unresolved_files:
             cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
-    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, withAttribute=True)
     logging(str(unresolved_files))
 
 
@@ -220,6 +220,7 @@ def case_function(case):
         print('else')
         
         try:
+            '''
             projPath = os.path.join(RES_PATH, TEST_TYPE)
             logging(projPath)
             temp = os.path.join(projPath, case['scene'][:-3])
@@ -227,6 +228,7 @@ def case_function(case):
             if os.path.isdir(temp):
                 projPath = temp
             mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
+            '''
         except:
             logging("Can't set project in '" + projPath + "'")
         
