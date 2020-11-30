@@ -101,12 +101,16 @@ def render_tool_log_path(name):
 
 def validateFiles():
     logging('Repath scene')
-    # TODO: repath from folder with group
-    unresolved_files = cmds.filePathEditor(
-        query=True, listFiles='', unresolved=True, attributeOnly=True)
+    cmds.filePathEditor(refresh=True)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
+    logging("Unresolved items: {{}}".format(str(unresolved_files)))
+    logging('Start repath scene')
     if unresolved_files:
         for item in unresolved_files:
             cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
+    logging("Unresolved items: {{}}".format(str(unresolved_files)))
+    logging('Repath finished')
 
 
 def enable_rpr(case):
@@ -116,9 +120,10 @@ def enable_rpr(case):
 
 
 def rpr_render(case, mode='color'):
+    validateFiles()
     logging('Prerender done')
-
-
+    
+    
 def prerender(case):
     logging('Prerender')
     enable_rpr(case)
@@ -231,7 +236,6 @@ def post_render(case_num):
 def main(case_num):
 
     logging('Entered main')
-    validateFiles()
     with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
         cases = json.load(json_file)
     case = cases[case_num]
