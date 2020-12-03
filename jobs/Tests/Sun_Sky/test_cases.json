@@ -80,7 +80,6 @@
             "cmds.setAttr(ss_shape + '.intensity', 2)",
             "cmds.setAttr(ss_shape + '.filterColor', 0, 1, 0, type='double3'",
             "cmds.setAttr(ss_shape + '.groundColor', 0.5, 0.5, 0.5, type='double3'",
-            "cmds.setAttr(ss_shape + '.groundColor', 0.5, 0.5, 0.5, type='double3'",
             "cmds.setAttr(ss_shape + '.sunDiskSize', 0)",
             "rpr_render(case)"
         ],
