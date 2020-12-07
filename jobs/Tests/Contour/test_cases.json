@@ -14,6 +14,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -31,6 +34,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -48,6 +54,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -65,6 +74,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -82,6 +94,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -99,6 +114,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -116,6 +134,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -134,6 +155,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
             "rpr_render(case)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -154,6 +178,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourLineWidthObjectID', 10)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourLineWidthObjectID', 1)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -174,6 +201,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourLineWidthMaterialID', 10)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourLineWidthMaterialID', 1)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -194,6 +224,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourLineWidthShadingNormal', 10)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourLineWidthShadingNormal', 1)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -214,6 +247,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourAntialiasing', 0.5)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourAntialiasing', 1)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -234,6 +270,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourAntialiasing', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourAntialiasing', 1)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -254,6 +293,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 45)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -274,6 +316,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 75)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 45)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -295,6 +340,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 180)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 45)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -316,6 +364,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -337,6 +388,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -358,6 +412,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 2)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -380,6 +437,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -402,6 +462,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserEnabled', 0)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -422,6 +485,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.cameraType', 0)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     },
     {
@@ -442,6 +508,9 @@
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 0)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
         ]
     }
 ]
