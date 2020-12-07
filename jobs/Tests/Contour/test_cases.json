@@ -241,16 +241,16 @@
         "status": "active",
         "script_info": [
             "Object +",
-            "Material +",
-            "Normal +",
+            "Material -",
+            "Normal -",
             "Threshold 0"
         ],
         "scene": "Bathroom.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.contourIsEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 45)"
@@ -261,16 +261,16 @@
         "status": "active",
         "script_info": [
             "Object +",
-            "Material +",
-            "Normal +",
+            "Material -",
+            "Normal -",
             "Threshold 75"
         ],
         "scene": "Bathroom.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.contourIsEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 75)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 45)"
@@ -281,8 +281,8 @@
         "status": "active",
         "script_info": [
             "Object +",
-            "Material +",
-            "Normal +",
+            "Material -",
+            "Normal -",
             "Threshold 180",
             "Empty image expected"
         ],
@@ -290,8 +290,8 @@
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.contourIsEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 180)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 45)"
