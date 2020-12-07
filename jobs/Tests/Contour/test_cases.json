@@ -124,7 +124,8 @@
         "script_info": [
             "Object -",
             "Material -",
-            "Normal -"
+            "Normal -",
+            "Red image expected"
         ],
         "scene": "Bathroom.ma",
         "functions": [
