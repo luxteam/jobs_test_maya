@@ -51,18 +51,6 @@ def createArgsParser():
     return parser
 
 
-def move_imgs_from_folder(destination, *folders):
-    if os.path.exists(destination) and os.path.isdir(destination):
-        for folder in folders:
-            if os.path.exists(folder) and os.path.isdir(folder):
-                for file in os.listdir(folder):
-                    try:
-                        move(os.path.join(folder, file), destination)
-                        core_config.main_logger.info('Moved {} from {} to {}'.format(file, folder, destination))
-                    except:
-                        core_config.main_logger.error('Error while moving {} from {} to {}'.format(file, folder, destination))
-
-
 def save_report(args, case):
     work_dir = args.output
 
@@ -384,6 +372,33 @@ def main(args, error_windows):
             with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
                 f.write(json.dumps([template], indent=4))
 
+            try:
+                projPath = os.path.join(res_path, args.testType)
+                temp = os.path.join(projPath, case['scene'][:-3])
+                if os.path.isdir(temp):
+                    projPath = temp
+            except:
+                pass
+
+            if case['functions'][0] == 'check_test_cases_success_save':
+                save_report(args, case)
+            elif case['status'] == 'fail' or case.get('number_of_tries', 1) >= args.retries:
+                case['status'] = 'error'
+                save_report(args, case)
+            elif case['status'] == 'skipped':
+                save_report(args, case)
+            else:
+                cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g -rp "color" -fnc name.ext "{scene}"'''.format(
+                    tool=args.tool,
+                    log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
+                    project=projPath,
+                    result_dir=os.path.join(work_dir, 'Color'),
+                    img_name=case['case'],
+                    render_device=args.render_device,
+                    case_num=case_num,
+                    scene=case['scene']
+                ));
+
         if 'Update' not in args.update_refs:
             try:
                 copyfile(os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX),
@@ -399,33 +414,6 @@ def main(args, error_windows):
             except:
                 core_config.main_logger.error('Failed to copy baseline ' +
                                               os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX))
-        
-        try:
-            projPath = os.path.join(res_path, args.testType)
-            temp = os.path.join(projPath, case['scene'][:-3])
-            if os.path.isdir(temp):
-                projPath = temp
-        except:
-            pass
-
-        if case['functions'][0] == 'check_test_cases_success_save':
-            save_report(args, case)
-        elif case['status'] == 'fail' or case.get('number_of_tries', 1) >= args.retries:
-            case['status'] = 'error'
-            save_report(args, case)
-        elif case['status'] == 'skipped':
-            save_report(args, case)
-        else:
-            cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g -rp "color" -fnc name.ext "{scene}"'''.format(
-                tool=args.tool,
-                log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
-                project=projPath,
-                result_dir=os.path.join(work_dir, 'Color'),
-                img_name=case['case'],
-                render_device=args.render_device,
-                case_num=case_num,
-                scene=case['scene']
-            ));
 
     with open(cmdScriptPath, 'w') as file:
         file.write("\n".join(cmds))
@@ -447,8 +435,6 @@ def main(args, error_windows):
         subprocess.call([sys.executable, os.path.realpath(os.path.join(
             os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
     core_config.main_logger.info('Main func return : {}'.format(rc))
-
-    move_imgs_from_folder(os.path.join(work_dir, 'Color'), os.path.join(work_dir, 'Color', 'color'), os.path.join(work_dir, 'Color', 'persp1'))
 
     return rc
 
