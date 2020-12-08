@@ -181,6 +181,9 @@
         ],
         "skip_engine": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+        ],
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
         ]
     },
     {
@@ -204,6 +207,9 @@
         ],
         "skip_engine": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+        ],
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
         ]
     },
     {
@@ -227,6 +233,9 @@
         ],
         "skip_engine": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+        ],
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
         ]
     },
     {
