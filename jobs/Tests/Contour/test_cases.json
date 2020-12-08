@@ -279,17 +279,17 @@
         "case": "MAYA_RS_CNT_014",
         "status": "active",
         "script_info": [
-            "Object +",
+            "Object -",
             "Material -",
-            "Normal -",
+            "Normal +",
             "Threshold 0"
         ],
         "scene": "Bathroom.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.contourIsEnabled', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 45)"
@@ -302,17 +302,17 @@
         "case": "MAYA_RS_CNT_015",
         "status": "active",
         "script_info": [
-            "Object +",
+            "Object -",
             "Material -",
-            "Normal -",
+            "Normal +",
             "Threshold 75"
         ],
         "scene": "Bathroom.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.contourIsEnabled', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 75)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 45)"
@@ -325,18 +325,18 @@
         "case": "MAYA_RS_CNT_016",
         "status": "active",
         "script_info": [
-            "Object +",
+            "Object -",
             "Material -",
-            "Normal -",
+            "Normal +",
             "Threshold 180",
             "Empty image expected"
         ],
         "scene": "Bathroom.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.contourIsEnabled', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 0)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 180)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.contourNormalThreshold', 45)"
