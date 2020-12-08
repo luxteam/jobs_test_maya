@@ -5,6 +5,7 @@
         "script_info": [
             "Iterations: 400"
         ],
+        "camera": "persp",
         "scene": "EmissiveLight.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 400)",
