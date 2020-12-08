@@ -11,6 +11,7 @@ from datetime import datetime
 from shutil import copyfile, move, which
 import sys
 import time
+import importlib
 from utils import is_case_skipped
 
 sys.path.append(os.path.abspath(os.path.join(
@@ -248,9 +249,6 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
 
     perf_count.event_record(args.output, 'Close tool', False)
 
-    if args.testType in ['Athena']:
-        subprocess.call([sys.executable, os.path.realpath(os.path.join(
-            os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
     return rc
 
 
@@ -277,7 +275,7 @@ def main(args, error_windows):
         core_config.main_logger.error(str(e))
         return 1
 
-    if os.path.exists(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')):
+    if args.testType not in ['Athena'] and os.path.exists(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')):
         with open(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')) as f:
             extension_script = f.read()
         script = script.split('# place for extension functions')
@@ -400,11 +398,11 @@ def main(args, error_windows):
 
     if system_pl == 'Windows':
         cmdRun = '''
-		  set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log
-		  set PYTHONPATH=%cd%;PYTHONPATH
-		  set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-		  "{tool}" -command "python(\\"import base_functions\\");"
-		'''.format(tool=args.tool)
+          set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log
+          set PYTHONPATH=%cd%;PYTHONPATH
+          set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
+          "{tool}" -command "python(\\"import base_functions\\");"
+        '''.format(tool=args.tool)
 
         cmdScriptPath = os.path.join(args.output, 'script.bat')
         with open(cmdScriptPath, 'w') as file:
@@ -412,11 +410,11 @@ def main(args, error_windows):
 
     elif system_pl == 'Darwin':
         cmdRun = '''
-		  export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
-		  export PYTHONPATH=$PWD:$PYTHONPATH
-		  export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
-		  "{tool}" -command "python(\\"import base_functions\\");"
-		'''.format(tool=args.tool)
+          export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
+          export PYTHONPATH=$PWD:$PYTHONPATH
+          export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
+          "{tool}" -command "python(\\"import base_functions\\");"
+        '''.format(tool=args.tool)
 
         cmdScriptPath = os.path.join(args.output, 'script.sh')
         with open(cmdScriptPath, 'w') as file:
@@ -432,8 +430,9 @@ def main(args, error_windows):
     rc = launchMaya(cmdScriptPath, args.output, error_windows)
 
     if args.testType in ['Athena']:
-        subprocess.call([sys.executable, os.path.realpath(os.path.join(
-            os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
+        extension_module = importlib.import_module("extensions.{}".format(args.testType))
+        extension_function = getattr(extension_module, "process_results")
+        extension_function(args.output)
     core_config.main_logger.info('Main func return : {}'.format(rc))
     return rc
 
