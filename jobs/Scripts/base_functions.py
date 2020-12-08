@@ -7,7 +7,7 @@ import json
 import re
 import os.path as path
 import os
-from shutil import copyfile
+from shutil import copyfile, move
 import fireRender.rpr_material_browser
 
 WORK_DIR = '{work_dir}'
@@ -34,6 +34,17 @@ def logging(message):
     print(' >>> [RPR TEST] [' +
           datetime.datetime.now().strftime('%H:%M:%S') + '] ' + message)
 
+def extract_img_from(folder, case):
+    src_dir = path.join(WORK_DIR, 'Color', folder)
+    img_name = cmds.renderSettings(firstImageName=True)[0]
+    if os.path.exists(src_dir) and os.path.isdir(src_dir):
+        try:
+            move(path.join(src_dir, img_name), path.join(WORK_DIR, 'Color'))
+            logging('Extract {{}} from {{}} folder'.format(img_name, folder))
+        except Exception as ex:
+            logging('Error while extracting {{}} from {{}}: {{}}'.format(img_name, folder, ex))
+    else:
+        logging("{{}} doesn't exist or isn't a folder".format(folder))
 
 def reportToJSON(case, render_time=0):
     path_to_file = path.join(WORK_DIR, case['case'] + '_RPR.json')
@@ -246,10 +257,11 @@ def main(case_num):
         case['status'] = 'inprogress'
 
     case['start_time'] = str(datetime.datetime.now())
-
+    case['number_of_tries'] = case.get('number_of_tries', 0) + 1
+    
     with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
         json.dump(cases, file, indent=4)
 
-    case['number_of_tries'] = case.get('number_of_tries', 0) + 1
+    
     
     prerender(case)

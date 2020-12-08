@@ -80,6 +80,7 @@
             "Create IBL",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -99,6 +100,7 @@
             "Test IBL HDR",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -118,6 +120,7 @@
             "Test IBL EXR",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -135,6 +138,7 @@
             "Create Sun&Sky",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma",
         "skip_engine": [
             "Hybrid_High"
@@ -157,6 +161,7 @@
             "Create IES Light",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma",
         "skip_engine": [
             "Hybrid_Medium", "Hybrid_High"
@@ -168,6 +173,7 @@
         "script_info": [
             "Render 1 pass"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 1)",
@@ -180,6 +186,7 @@
         "script_info": [
             "Render 100 pass"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
@@ -192,6 +199,7 @@
         "script_info": [
             "Render 500 pass"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 500)",
@@ -215,6 +223,7 @@
             "Tone Mapping",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -229,6 +238,7 @@
             "Render Stamp",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -243,6 +253,7 @@
             "Render mode wireframe",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -259,6 +270,7 @@
             "Quality medium",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -281,6 +293,7 @@
             "Image Size 1280 720",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -300,6 +313,7 @@
             "Image Size 1500 1125",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -315,6 +329,7 @@
             "Save image as png",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma",
         "extension": ".png"
     },
@@ -329,6 +344,7 @@
             "Save image as jpg",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -345,6 +361,7 @@
             "Denoiser Bilateral default",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -360,6 +377,7 @@
             "Denoiser LWR default",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -375,6 +393,7 @@
             "Denoiser EAW default",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -392,20 +411,23 @@
             "Base Light Area Light, 50 - iterations, intensity - 100.000",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
         "case": "MAYA_SM_026",
         "status": "active",
         "functions": [
-            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 3)",
+            "cmds.setAttr('RadeonProRenderGlobals.aovUV', 1)",
             "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.aovUV', 0)",
+            "extract_img_from('uv', case)"
         ],
         "script_info": [
             "AOV UV",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -425,6 +447,7 @@
             "Physical Light",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -445,6 +468,7 @@
             "Assign material from Mat Library",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -465,6 +489,7 @@
             "Assign Pbr to objec00t",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -486,6 +511,7 @@
             "Assign Uber to object",
             "Pass Limit: 50"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -537,7 +563,8 @@
             "cmds.select('Plane01', r=True)",
             "sgs = mel.eval('listConnections -type shadingEngine \"' + rpr + '\"')",
             "cmds.sets(e=True, forceElement=sgs[0])",
-            "rpr_render(case)"
+            "rpr_render(case)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "AOV Shadow Catcher",
@@ -623,6 +650,7 @@
         "script_info": [
             "Anti-Aliasing"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma"
     },
     {
@@ -638,6 +666,7 @@
         "script_info": [
             "Motion_Blur"
         ],
+        "camera": "camera1",
         "scene": "motion_blur.ma"
     },
     {
@@ -658,12 +687,13 @@
         "functions": [
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
-            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
-            "rpr_render(case)"
+            "rpr_render(case)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPR_Nodes, BlendUbernPBRMaterials"
         ],
+        "camera": "Camera_BlendUberPBRMaterials",
         "scene": "RPRNodes.ma"
     },
     {
@@ -720,6 +750,7 @@
         "script_info": [
             "Machine Learning"
         ],
+        "camera": "persp",
         "scene": "Lamborginhi_Aventador.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
@@ -781,6 +812,7 @@
         "script_info": [
             "ML in CPU mode"
         ],
+        "camera": "persp1",
         "scene": "normal_scene.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
@@ -802,6 +834,7 @@
         "script_info": [
             "ML in CPU+GPU mode"
         ],
+        "camera": "persp1",
         "scene": "normal_scene.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
@@ -822,6 +855,7 @@
         "script_info": [
             "CPU mode"
         ],
+        "camera": "persp1",
         "scene": "normal_scene.ma"
     },
     {
@@ -836,6 +870,7 @@
         "script_info": [
             "CPU+GPU mode"
         ],
+        "camera": "persp1",
         "scene": "normal_scene.ma",
         "skip_engine": [
             "Northstar"

@@ -388,7 +388,14 @@ def main(args, error_windows):
             elif case['status'] == 'skipped':
                 save_report(args, case)
             else:
-                cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g -rp "color" -fnc name.ext "{scene}"'''.format(
+
+                # If desired camera was specified, batch render executes with '-cam' parameter
+                if 'camera' in case:
+                    cam_option = "-cam {}".format(case['camera'])
+                else:
+                    cam_option = ""
+                
+                cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g {cam_option} -fnc name.ext "{scene}"'''.format(
                     tool=args.tool,
                     log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
                     project=projPath,
@@ -396,6 +403,7 @@ def main(args, error_windows):
                     img_name=case['case'],
                     render_device=args.render_device,
                     case_num=case_num,
+                    cam_option=cam_option,
                     scene=case['scene']
                 ));
 
