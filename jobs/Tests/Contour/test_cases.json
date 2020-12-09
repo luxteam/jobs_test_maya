@@ -515,11 +515,16 @@
             "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.currentTime(10)",
             "rpr_render(case)",
+            "cmds.currentTime(3)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 0)"
         ],
         "skip_engine": [
             "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+        ],
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
         ]
     }
 ]
