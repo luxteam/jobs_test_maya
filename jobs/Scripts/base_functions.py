@@ -192,6 +192,12 @@ def prerender(case):
     logging("cmds.setAttr: defaultRenderGlobals.imageFilePrefix, 0")
     cmds.setAttr("defaultRenderGlobals.imageFilePrefix", path.join(WORK_DIR, 'Color', case['case']), type="string")
 
+    #? Different tries to apply transform to image, but it doesn't work in batch render for some reason
+    # logging("cmds.colorManagementPrefs")
+    # cmds.colorManagementPrefs(e=True, cmEnabled=True, outputTransformEnabled=True, viewTransformName='sRGB gamma', outputUseViewTransform=True)
+    # cmds.colorManagementPrefs(e=True, cmEnabled=True, outputTransformEnabled=True, outputTransformName='sRGB gamma')
+    # cmds.colorManagementPrefs(e=True, outputUseViewTransform=True)
+
     rpr_render_index = case['functions'].index("rpr_render(case)")
     for function in case['functions'][:rpr_render_index + 1]:
         try:
