@@ -304,8 +304,10 @@ def main():
                 case['status'] = 'done'
                 logging(case['case'] + ' done')
 
-            with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
-                json.dump(cases, file, indent=4)
+            # Athena group will be modified later (now it isn't final result)
+            if TEST_TYPE not in ['Athena']:
+                with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
+                    json.dump(cases, file, indent=4)
 
     event('Close tool', True, cases[-1]['case'])
 

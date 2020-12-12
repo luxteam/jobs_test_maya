@@ -433,6 +433,14 @@ def main(args, error_windows):
         extension_module = importlib.import_module("extensions.{}".format(args.testType))
         extension_function = getattr(extension_module, "process_results")
         extension_function(args.output)
+        with open(os.path.join(args.output, 'test_cases.json'), 'r') as file:
+            cases = json.load(file)
+        for case in cases:
+            if case['status'] == 'inprogress':
+                case['status'] = 'done'
+        # now it's final result of Athena suite and statuses in list of cases can be updated
+        with open(os.path.join(args.output, 'test_cases.json'), 'w') as file:
+            json.dump(cases, file, indent=4)
     core_config.main_logger.info('Main func return : {}'.format(rc))
     return rc
 
