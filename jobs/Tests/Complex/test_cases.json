@@ -78,7 +78,7 @@
     },
     {
         "case": "MAYA_RS_CMX_008",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Big Area Light Image"
         ],
