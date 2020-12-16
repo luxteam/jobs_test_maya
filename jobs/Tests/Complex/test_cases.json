@@ -174,5 +174,16 @@
         "functions": [
             "rpr_render(case)"
         ]
+    },
+    {
+        "case": "MAYA_RS_CMX_017",
+        "status": "active",
+        "script_info": [
+            "Laptop"
+        ],
+        "scene": "05_Laptop.ma",
+        "functions": [
+            "rpr_render(case)"
+        ]
     }
 ]
