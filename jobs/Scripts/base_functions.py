@@ -41,13 +41,11 @@ def reportToJSON(case, render_time=0):
     with open(path_to_file, 'r') as file:
         report = json.loads(file.read())[0]
 
-    # status for Athena suite will be set later
-    if TEST_TYPE not in ['Athena']:
-        if case['status'] == 'inprogress':
-            report['test_status'] = 'passed'
-            report['group_timeout_exceeded'] = False
-        else:
-            report['test_status'] = case['status']
+    if case['status'] == 'inprogress':
+        report['test_status'] = 'passed'
+        report['group_timeout_exceeded'] = False
+    else:
+        report['test_status'] = case['status']
 
     logging('Create report json ({{}} {{}})'.format(
             case['case'], report['test_status']))
@@ -100,15 +98,24 @@ def render_tool_log_path(name):
     return path.join(LOGS_DIR, name + '.log')
 
 
-def validateFiles():
+def get_scene_path(case):
+    scenePath = os.path.join(RES_PATH, TEST_TYPE)
+    temp = os.path.join(scenePath, case['scene'][:-3])
+    if os.path.isdir(temp):
+        scenePath = temp
+    return scenePath
+
+
+def validateFiles(case):
     logging('Repath scene')
     cmds.filePathEditor(refresh=True)
     unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
     logging("Unresolved items: {{}}".format(str(unresolved_files)))
     logging('Start repath scene')
+    logging("Target path: {{}}".format(get_scene_path(case)))
     if unresolved_files:
         for item in unresolved_files:
-            cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
+            cmds.filePathEditor(item, repath=get_scene_path(case), recursive=True, ra=1)
     unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
     logging("Unresolved items: {{}}".format(str(unresolved_files)))
     logging('Repath finished')
@@ -124,7 +131,7 @@ def enable_rpr(case):
 
 def rpr_render(case, mode='color'):
     event('Prerender', False, case['case'])
-    validateFiles()
+    validateFiles(case)
     logging('Render image')
 
     mel.eval('fireRender -waitForItTwo')
@@ -145,12 +152,7 @@ def prerender(case):
     logging('Prerender')
     scene = case.get('scene', '')
 
-    scenePath = os.path.join(RES_PATH, TEST_TYPE)
-    temp = os.path.join(scenePath, case['scene'][:-3])
-    if os.path.isdir(temp):
-        scenePath = temp
-
-    scenePath = os.path.join(scenePath, scene)
+    scenePath = os.path.join(get_scene_path(case), scene)
     logging("Scene path: {{}}".format(scenePath))
 
     scene_name = cmds.file(q=True, sn=True, shn=True)
@@ -222,13 +224,11 @@ def save_report(case):
     source_dir = path.join(WORK_DIR, '..', '..', '..',
                            '..', 'jobs_launcher', 'common', 'img')
 
-    # image for Athena suite will be set later
-    if TEST_TYPE not in ['Athena']:
-        if case['status'] == 'inprogress':
-            copyfile(path.join(source_dir, 'passed.jpg'), work_dir)
-        elif case['status'] != 'skipped':
-            copyfile(
-                path.join(source_dir, case['status'] + '.jpg'), work_dir)
+    if case['status'] == 'inprogress':
+        copyfile(path.join(source_dir, 'passed.jpg'), work_dir)
+    elif case['status'] != 'skipped':
+        copyfile(
+            path.join(source_dir, case['status'] + '.jpg'), work_dir)
 
     enable_rpr(case['case'])
 
@@ -308,10 +308,8 @@ def main():
                 case['status'] = 'done'
                 logging(case['case'] + ' done')
 
-            # Athena group will be modified later (now it isn't final result)
-            if TEST_TYPE not in ['Athena']:
-                with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
-                    json.dump(cases, file, indent=4)
+            with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
+                json.dump(cases, file, indent=4)
 
     event('Close tool', True, cases[-1]['case'])
 
