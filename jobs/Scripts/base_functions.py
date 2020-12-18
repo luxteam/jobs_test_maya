@@ -100,15 +100,24 @@ def render_tool_log_path(name):
     return path.join(LOGS_DIR, name + '.log')
 
 
-def validateFiles():
+def get_scene_path(case):
+    scenePath = os.path.join(RES_PATH, TEST_TYPE)
+    temp = os.path.join(scenePath, case['scene'][:-3])
+    if os.path.isdir(temp):
+        scenePath = temp
+    return scenePath
+
+
+def validateFiles(case):
     logging('Repath scene')
     cmds.filePathEditor(refresh=True)
     unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
     logging("Unresolved items: {{}}".format(str(unresolved_files)))
     logging('Start repath scene')
+    logging("Target path: {{}}".format(get_scene_path(case)))
     if unresolved_files:
         for item in unresolved_files:
-            cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
+            cmds.filePathEditor(item, repath=get_scene_path(case), recursive=True, ra=1)
     unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
     logging("Unresolved items: {{}}".format(str(unresolved_files)))
     logging('Repath finished')
@@ -124,7 +133,7 @@ def enable_rpr(case):
 
 def rpr_render(case, mode='color'):
     event('Prerender', False, case['case'])
-    validateFiles()
+    validateFiles(case)
     logging('Render image')
 
     mel.eval('fireRender -waitForItTwo')
@@ -145,12 +154,7 @@ def prerender(case):
     logging('Prerender')
     scene = case.get('scene', '')
 
-    scenePath = os.path.join(RES_PATH, TEST_TYPE)
-    temp = os.path.join(scenePath, case['scene'][:-3])
-    if os.path.isdir(temp):
-        scenePath = temp
-
-    scenePath = os.path.join(scenePath, scene)
+    scenePath = os.path.join(get_scene_path(case), scene)
     logging("Scene path: {{}}".format(scenePath))
 
     scene_name = cmds.file(q=True, sn=True, shn=True)
