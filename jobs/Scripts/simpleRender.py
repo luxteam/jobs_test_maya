@@ -331,7 +331,7 @@ def main(args, error_windows):
 
         cmdScriptPath = os.path.join(args.output, 'script.sh')
         
-
+    scenes_dict = {}
     case_num = -1
     for case in cases:
         case_num += 1
@@ -387,23 +387,33 @@ def main(args, error_windows):
                 save_report(args, case)
             elif case['status'] == 'skipped':
                 save_report(args, case)
-            else:
-
-                # If desired camera was specified, batch render executes with '-cam' parameter
+            elif case['scene'] not in scenes_dict:
+                scenes_dict[case['scene']] = {'cams' : [] }
                 if 'camera' in case:
+                    scenes_dict[case['scene']]['cams'].append(case['camera'])
                     cam_option = "-cam {}".format(case['camera'])
                 else:
                     cam_option = ""
-                
-                cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g {cam_option} -fnc name.ext "{scene}"'''.format(
+                cmds.append('''"{tool}" -proj "{project}" -r FireRender {cam_option} -devc "{render_device}" -rd "{result_dir}" -im result -fnc name.# -preRender "python(\\"import base_functions; base_functions.main()\\");" -preFrame "python(\\"base_functions.pre_frame()\\");" -postFrame "python(\\"base_functions.post_frame()\\");" -postRender "python(\\"base_functions.post_render()\\");" -g "{scene}" >> "{log_path}"'''.format(
                     tool=args.tool,
-                    log_path=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
+                    # log_path=os.path.join(work_dir, LOGS_DIR, case['scene'] + '.log'),
+                    log_path=os.path.join(work_dir, 'renderTool.log'),
                     project=projPath,
-                    result_dir=os.path.join(work_dir, 'Color'),
-                    img_name=case['case'],
-                    render_device=args.render_device,
-                    case_num=case_num,
                     cam_option=cam_option,
+                    result_dir=os.path.join(work_dir, 'Color'),
+                    render_device=args.render_device,
+                    scene=case['scene']
+                ));
+            elif 'camera' in case and case['camera'] not in scenes_dict[case['scene']]['cams']:
+                scenes_dict[case['scene']]['cams'].append(case['camera'])
+                cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -cam {cam_option} -devc "{render_device}" -rd "{result_dir}" -im result -fnc name.# -preRender "python(\\"import base_functions; base_functions.main()\\");" -preFrame "python(\\"base_functions.pre_frame()\\");" -postFrame "python(\\"base_functions.post_frame()\\");" -postRender "python(\\"base_functions.post_render()\\");" -g "{scene}" >> "{log_path}"'''.format(
+                    tool=args.tool,
+                    # log_path=os.path.join(work_dir, LOGS_DIR, case['scene'] + '.log'),
+                    log_path=os.path.join(work_dir, 'renderTool.log'),
+                    project=projPath,
+                    cam_option=case['camera'],
+                    result_dir=os.path.join(work_dir, 'Color'),
+                    render_device=args.render_device,
                     scene=case['scene']
                 ));
 
