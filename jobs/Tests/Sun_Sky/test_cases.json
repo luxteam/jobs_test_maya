@@ -14,8 +14,8 @@
         ],
         "script_info": [
             "Turbidity - 0",
-            "Filter Color - HSV: 0, 0, 1",
-            "Ground Color - HSV: 0, 0, 1",
+            "Filter Color - HSV: 1, 1, 1",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0",
             "Sun Disk Size - 0"
         ],
@@ -38,7 +38,7 @@
         "script_info": [
             "Intensity - 1",
             "Turbidity - 0",
-            "Filter Color - sunsky_filtercolor.tga",
+            "Filter Color - HSV: 1, 0, 0",
             "Ground Color - HSV: 0, 0, 0",
             "Sun Glow - 50",
             "Sun Disk Size - 10"
@@ -64,8 +64,8 @@
         "script_info": [
             "Intensity - 1",
             "Turbidity - 0",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.png",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Glow - 100"
         ],
         "scene": "Sun_Sky.ma"
@@ -86,8 +86,8 @@
         "script_info": [
             "Intensity - 2",
             "Turbidity - 50",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.png",
+            "Filter Color - HSV:  0, 1, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Disk Size - 0"
         ],
         "scene": "Sun_Sky.ma"
@@ -109,8 +109,8 @@
         "script_info": [
             "Intensity - 1",
             "Turbidity - 50",
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0",
             "Sun Disk Size - 10"
         ],
@@ -130,8 +130,8 @@
         ],
         "script_info": [
             "Turbidity - 50",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.png",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Glow - 50"
         ],
         "scene": "Sun_Sky.ma"
@@ -149,7 +149,7 @@
         ],
         "script_info": [
             "Turbidity - 50",
-            "Ground Color - HSV: 0, 0, 1",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 100"
         ],
         "scene": "Sun_Sky.ma"
@@ -167,7 +167,7 @@
         ],
         "script_info": [
             "Turbidity - 50",
-            "Filter Color - HSV: 0, 0, 1",
+            "Filter Color - HSV: 1, 1, 1",
             "Ground Color - HSV: 0, 0, 0"
         ],
         "scene": "Sun_Sky.ma"
@@ -185,8 +185,8 @@
         ],
         "script_info": [
             "Turbidity - 50",
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.tga"
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 1, 1, 1"
         ],
         "scene": "Sun_Sky.ma",
         "skip_engine": [
@@ -207,8 +207,8 @@
         ],
         "script_info": [
             "Intensity - 3",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - HSV: 0, 0, 1",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Disk Size - 0"
         ],
         "scene": "Sun_Sky.ma"
@@ -241,8 +241,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - HSV: 0, 0, 1",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 1, 1, 1",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0"
         ],
         "scene": "Sun_Sky.ma"
@@ -259,8 +259,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.png",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Glow - 50"
         ],
         "scene": "Sun_Sky.ma"
@@ -279,8 +279,8 @@
         ],
         "script_info": [
             "Intensity - 0.1",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 100"
         ],
         "scene": "Sun_Sky.ma"
@@ -298,8 +298,8 @@
         ],
         "script_info": [
             "Intensity - 1",
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.png"
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5"
         ],
         "scene": "Sun_Sky.ma"
     },
@@ -315,8 +315,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - HSV: 0, 0, 1",
-            "Ground Color - sunsky_groundcolor.png",
+            "Filter Color - HSV: 1, 1, 1",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Disk Size - 0"
         ],
         "scene": "Sun_Sky.ma"
@@ -333,8 +333,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Disk Size - 10"
         ],
         "scene": "Sun_Sky.ma",
@@ -353,8 +353,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.png"
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5"
         ],
         "scene": "Sun_Sky.ma"
     },
@@ -372,8 +372,8 @@
         ],
         "script_info": [
             "Intensity - 0.1",
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - HSV: 0, 0, 1",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0"
         ],
         "scene": "Sun_Sky.ma"
@@ -392,7 +392,7 @@
         ],
         "script_info": [
             "Intensity - 2",
-            "Filter Color - sunsky_filtercolor.png",
+            "Filter Color - HSV: 0, 1, 0",
             "Ground Color - HSV: 0, 0, 0",
             "Sun Glow - 50"
         ],
@@ -411,7 +411,7 @@
         ],
         "script_info": [
             "Intensity - 10",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 100"
         ],
         "scene": "Sun_Sky.ma"
@@ -429,8 +429,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - HSV: 0, 0, 1",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 100",
             "Sun Disk Size - 0"
         ],
@@ -448,7 +448,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - sunsky_filtercolor.tga",
+            "Filter Color - HSV: 1, 0, 0",
             "Ground Color - HSV: 0, 0, 0",
             "Sun Disk Size - 10"
         ],
@@ -467,8 +467,8 @@
         ],
         "script_info": [
             "Intensity - 1",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.tga"
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 1, 1, 1"
         ],
         "scene": "Sun_Sky.ma"
     },
@@ -484,7 +484,7 @@
         ],
         "script_info": [
             "Intensity - 2",
-            "Filter Color - sunsky_filtercolor.png"
+            "Filter Color - HSV: 0, 1, 0"
         ],
         "scene": "Sun_Sky.ma"
     },
@@ -502,8 +502,8 @@
         ],
         "script_info": [
             "Intensity - 1",
-            "Filter Color - HSV: 0, 0, 1",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 1, 1, 1",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0"
         ],
         "scene": "Sun_Sky.ma"
@@ -520,8 +520,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.png",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Glow - 50"
         ],
         "scene": "Sun_Sky.ma"
@@ -539,8 +539,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.png",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Glow - 50",
             "Sun Disk Size - 0"
         ],
@@ -560,7 +560,7 @@
         ],
         "script_info": [
             "Intensity - 0.1",
-            "Filter Color - sunsky_filtercolor.tga",
+            "Filter Color - HSV: 1, 0, 0",
             "Sun Glow - 100",
             "Sun Disk Size - 10"
         ],
@@ -579,8 +579,8 @@
         ],
         "script_info": [
             "Intensity - 2",
-            "Filter Color - HSV: 0, 0, 1",
-            "Ground Color - sunsky_groundcolor.png"
+            "Filter Color - HSV: 1, 1, 1",
+            "Ground Color - HSV: 0.5, 0.5, 0.5"
         ],
         "scene": "Sun_Sky.ma"
     },
@@ -597,8 +597,8 @@
         ],
         "script_info": [
             "Intensity - 10",
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - HSV: 0, 0, 1"
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 1, 1, 1"
         ],
         "scene": "Sun_Sky.ma"
     },
@@ -613,7 +613,7 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - sunsky_filtercolor.png",
+            "Filter Color - HSV: 0, 1, 0",
             "Ground Color - HSV: 0, 0, 0"
         ],
         "scene": "Sun_Sky.ma"
@@ -630,8 +630,8 @@
             "rpr_render(case)"
         ],
         "script_info": [
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0"
         ],
         "scene": "Sun_Sky.ma"
@@ -924,8 +924,8 @@
         "script_info": [
             "Intensity - 1",
             "Turbidity - 0",
-            "Filter Color - HSV: 0, 0, 1",
-            "Ground Color - HSV: 0, 0, 1",
+            "Filter Color - HSV: 1, 1, 1",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0",
             "Sun Disk Size - 0",
             "Sun Position - Time Location",
@@ -955,7 +955,7 @@
         "script_info": [
             "Intensity - 1",
             "Turbidity - 0",
-            "Filter Color - sunsky_filtercolor.tga",
+            "Filter Color - HSV: 1, 0, 0",
             "Ground Color - HSV: 0, 0, 0",
             "Sun Glow - 50",
             "Sun Disk Size - 10",
@@ -987,8 +987,8 @@
             "Black image expected",
             "Intensity - 0.1",
             "Turbidity - 0",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 100",
             "Sun Position - Time Location",
             "Year - -2000",
@@ -1017,8 +1017,8 @@
         "script_info": [
             "Intensity - 2",
             "Turbidity - 50",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.png",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Disk Size - 0",
             "Sun Position - Time Location",
             "Month - 1",
@@ -1048,8 +1048,8 @@
         "script_info": [
             "Intensity - 1",
             "Turbidity - 50",
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0",
             "Sun Disk Size - 10",
             "Sun Position - Time Location",
@@ -1079,8 +1079,8 @@
             "Black image expected",
             "Intensity - 0.1",
             "Turbidity - 50",
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Position - Time Location",
             "Day - 31",
             "Seconds - 60",
@@ -1108,8 +1108,8 @@
         ],
         "script_info": [
             "Intensity - 1",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - HSV: 0, 0, 1",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Disk Size - 0",
             "Sun Position - Time Location",
             "Month - 1",
@@ -1139,8 +1139,8 @@
         ],
         "script_info": [
             "Intensity - 1",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 100",
             "Sun Position - Time Location",
             "Month - 12",
@@ -1164,8 +1164,8 @@
         ],
         "script_info": [
             "Intensity - 2",
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - sunsky_groundcolor.png",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Position - Time Location"
         ],
         "scene": "Sun_Sky.ma"
@@ -1188,8 +1188,8 @@
         ],
         "script_info": [
             "Intensity - 1",
-            "Filter Color - sunsky_filtercolor.tga",
-            "Ground Color - HSV: 0, 0, 1",
+            "Filter Color - HSV: 1, 0, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0",
             "Sun Position - Time Location",
             "Day - 1",
@@ -1217,7 +1217,7 @@
         "script_info": [
             "Black image expected",
             "Intensity - 2",
-            "Filter Color - sunsky_filtercolor.png",
+            "Filter Color - HSV: 0, 1, 0",
             "Ground Color - HSV: 0, 0, 0",
             "Sun Glow - 50",
             "Sun Position - Time Location",
@@ -1245,7 +1245,7 @@
         ],
         "script_info": [
             "Intensity - 1",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 100",
             "Sun Position - Time Location",
             "Year - 6000",
@@ -1272,8 +1272,8 @@
         "script_info": [
             "Black image expected",
             "Intensity - 0.1",
-            "Filter Color - sunsky_filtercolor.png",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 0, 1, 0",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Position - Time Location",
             "Minutes - 60",
             "Seconds - 1"
@@ -1297,7 +1297,7 @@
         "script_info": [
             "Black image expected",
             "Intensity - 2",
-            "Ground Color - sunsky_groundcolor.png",
+            "Ground Color - HSV: 0.5, 0.5, 0.5",
             "Sun Position - Time Location",
             "Year - 6000",
             "Seconds - 60",
@@ -1324,8 +1324,8 @@
         ],
         "script_info": [
             "Intensity - 1",
-            "Filter Color - HSV: 0, 0, 1",
-            "Ground Color - sunsky_groundcolor.tga",
+            "Filter Color - HSV: 1, 1, 1",
+            "Ground Color - HSV: 1, 1, 1",
             "Sun Glow - 0",
             "Sun Position - Time Location",
             "Year - -2000",
