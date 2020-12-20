@@ -215,6 +215,8 @@ def pre_frame():
     # Same as peekLeft
     case = cases[cases_num_queue[0]]
 
+    logging("Preframe preparation", case)
+
     if case['status'] == 'active':
         case['status'] = 'inprogress'
 
@@ -242,9 +244,12 @@ def pre_frame():
 def post_frame():
     case = cases[cases_num_queue.popleft()]
 
+    logging("Postframe operations", case)
+
     #? Is it possible to make an elegant solution?
     source_name = path.join(WORK_DIR, 'Color', get_current_frame_img_name()) 
     new_name = "{{}}.{{}}".format(path.join(WORK_DIR, 'Color', case['case']), FILE_FORMATS[cmds.getAttr("defaultRenderGlobals.imageFormat")])
+    logging("Image rename", case)
     cmds.sysFile(source_name, rename=new_name)
     
     rpr_render_index = case['functions'].index("rpr_render(case)")
