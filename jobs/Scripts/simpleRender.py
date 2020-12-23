@@ -387,6 +387,28 @@ def main(args, error_windows):
                 save_report(args, case)
             elif case['status'] == 'skipped':
                 save_report(args, case)
+            elif 'functions_before_render' in case and case['functions_before_render']:
+                # This block is for cases, which functions don't work in preframe or postframe block
+
+                # If desired camera was specified, batch render executes with '-cam' parameter
+                if 'camera' in case:
+                    cam_option = "-cam {}".format(case['camera'])
+                else:
+                    cam_option = ""
+                
+                cmds.append('''"{tool}" -log {local_log} -proj "{project}" -r FireRender -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g {cam_option} -fnc name.ext "{scene}" >> "{global_log}"'''.format(
+                    tool=args.tool,
+                    local_log=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
+                    global_log=os.path.join(work_dir, 'renderTool.log'),
+                    project=projPath,
+                    result_dir=os.path.join(work_dir, 'Color'),
+                    img_name=case['case'],
+                    render_device=args.render_device,
+                    case_num=case_num,
+                    cam_option=cam_option,
+                    scene=case['scene']
+                ));
+
             elif case['scene'] not in scenes_dict:
                 scenes_dict[case['scene']] = {'cams' : [] }
                 if 'camera' in case:

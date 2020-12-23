@@ -28,6 +28,7 @@ cases_num_queue = deque()
 with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
         cases = json.load(json_file)
 
+
 def event(name, start, case):
     with open(path.join('events', str(glob.glob('events/*.json').__len__() + 1) + '.json'), 'w') as f:
         f.write(json.dumps({{'name': name, 'time': datetime.datetime.utcnow().strftime(
@@ -40,9 +41,47 @@ def logging(message, case=None):
         open(os.path.join(LOGS_DIR, case['case']+'.log'), 'a').write(message)
     print(message)
 
+
+def render_tool_log_path(name):
+    return path.join(LOGS_DIR, name + '.log')
+
+
+def get_current_frame_img_name():
+    frame_number = "{{0:0{{1}}d}}".format(int(cmds.currentTime(q=True)), cmds.getAttr("defaultRenderGlobals.extensionPadding"))
+    return "{{}}.{{}}".format(cmds.getAttr('defaultRenderGlobals.imageFilePrefix'), frame_number)
+
+
+def pre_functions(case):
+    rpr_render_index = case['functions'].index("rpr_render(case)")
+    for function in case['functions'][:rpr_render_index + 1]:
+        try:
+            if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
+                logging("exec: {{}}".format(function), case)
+                exec(function)
+            else:
+                logging("eval: {{}}".format(function), case)
+                eval(function)
+        except Exception as e:
+            logging('Error "{{}}" with string "{{}}"'.format(e, function), case)
+
+
+def post_functions(case):
+    rpr_render_index = case['functions'].index("rpr_render(case)")
+    for function in case['functions'][rpr_render_index + 1:]:
+        try:
+            if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
+                logging("exec: {{}}".format(function), case)
+                exec(function)
+            else:
+                logging("eval: {{}}".format(function), case)
+                eval(function)
+        except Exception as e:
+            logging('Error "{{}}" with string "{{}}"'.format(e, function), case)
+
+
 def extract_img_from(folder, case):
     src_dir = path.join(WORK_DIR, 'Color', folder)
-    img_name = cmds.renderSettings(firstImageName=True)[0]
+    img_name = get_current_frame_img_name()
     if os.path.exists(src_dir) and os.path.isdir(src_dir):
         try:
             move(path.join(src_dir, img_name), path.join(WORK_DIR, 'Color'))
@@ -51,6 +90,7 @@ def extract_img_from(folder, case):
             logging('Error while extracting {{}} from {{}}: {{}}'.format(img_name, folder, ex), case)
     else:
         logging("{{}} doesn't exist or isn't a folder".format(folder), case)
+
 
 def reportToJSON(case, render_time=0):
     path_to_file = path.join(WORK_DIR, case['case'] + '_RPR.json')
@@ -112,14 +152,6 @@ def reportToJSON(case, render_time=0):
         file.write(json.dumps([report], indent=4))
 
 
-def render_tool_log_path(name):
-    return path.join(LOGS_DIR, name + '.log')
-
-def get_current_frame_img_name():
-    frame_number = "{{0:0{{1}}d}}".format(int(cmds.currentTime(q=True)), cmds.getAttr("defaultRenderGlobals.extensionPadding"))
-    return "{{}}.{{}}".format(cmds.getAttr('defaultRenderGlobals.imageFilePrefix'), frame_number)
-
-
 def validateFiles(case):
     logging('Repath scene', case)
     cmds.filePathEditor(refresh=True)
@@ -145,7 +177,7 @@ def rpr_render(case, mode='color'):
     logging('Prerender done', case)
     
     
-def pre_render():
+def pre_render(case=None):
     logging('Prerender')
     enable_rpr()
 
@@ -210,6 +242,9 @@ def pre_render():
     # cmds.colorManagementPrefs(e=True, cmEnabled=True, outputTransformEnabled=True, outputTransformName='sRGB gamma')
     # cmds.colorManagementPrefs(e=True, outputUseViewTransform=True)
 
+    if case is not None:
+        pre_functions(case)
+
 
 def pre_frame():
     # Same as peekLeft
@@ -228,41 +263,21 @@ def pre_frame():
 
     cmds.commandLogging( logFile=path.join(LOGS_DIR, case['case']))
 
-    rpr_render_index = case['functions'].index("rpr_render(case)")
-    for function in case['functions'][:rpr_render_index + 1]:
-        try:
-            if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
-                logging("exec: {{}}".format(function), case)
-                exec(function)
-            else:
-                logging("eval: {{}}".format(function), case)
-                eval(function)
-        except Exception as e:
-            logging('Error "{{}}" with string "{{}}"'.format(e, function), case)
+    pre_functions(case)
 
 
 def post_frame():
     case = cases[cases_num_queue.popleft()]
 
     logging("Postframe operations", case)
+    
+    post_functions(case)
 
     #? Is it possible to make an elegant solution?
     source_name = path.join(WORK_DIR, 'Color', get_current_frame_img_name()) 
     new_name = "{{}}.{{}}".format(path.join(WORK_DIR, 'Color', case['case']), FILE_FORMATS[cmds.getAttr("defaultRenderGlobals.imageFormat")])
     logging("Image rename", case)
     cmds.sysFile(source_name, rename=new_name)
-    
-    rpr_render_index = case['functions'].index("rpr_render(case)")
-    for function in case['functions'][rpr_render_index + 1:]:
-        try:
-            if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
-                logging("exec: {{}}".format(function), case)
-                exec(function)
-            else:
-                logging("eval: {{}}".format(function), case)
-                eval(function)
-        except Exception as e:
-            logging('Error "{{}}" with string "{{}}"'.format(e, function), case)
 
     case_time = (datetime.datetime.now() - datetime.datetime.strptime(case['start_time'], '%Y-%m-%d %H:%M:%S.%f')).total_seconds()
     case['time_taken'] = case_time
@@ -273,12 +288,33 @@ def post_frame():
         json.dump(cases, file, indent=4)
 
 
-def post_render():
+def post_render(case_num=None):
     logging('Postrender')
 
-    # with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
-    #     cases = json.load(json_file)
-    # case = cases[case_num]
+    if case_num is not None:
+        with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
+            cases = json.load(json_file)
+        case = cases[case_num]
+
+        rpr_render_index = case['functions'].index("rpr_render(case)")
+        for function in case['functions'][rpr_render_index + 1:]:
+            try:
+                if re.match('((^\S+|^\S+ \S+) = |^print|^if|^for|^with)', function):
+                    logging("exec: {{}}".format(function))
+                    exec(function)
+                else:
+                    logging("eval: {{}}".format(function))
+                    eval(function)
+            except Exception as e:
+                logging('Error "{{}}" with string "{{}}"'.format(e, function))
+
+        case_time = (datetime.datetime.now() - datetime.datetime.strptime(case['start_time'], '%Y-%m-%d %H:%M:%S.%f')).total_seconds()
+        case['time_taken'] = case_time
+
+        reportToJSON(case, case_time)
+
+        with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
+            json.dump(cases, file, indent=4)
 
     # ? Not sure if it's needed
     # Athena need additional time for work before close maya
@@ -291,22 +327,40 @@ def post_render():
 # place for extension functions
 
 
-def main():
+def main(case_num=None):
     logging('Entered main')
+    if case_num is not None:
+        # Case number defined directly, if functions_before_render flag is True
 
-    scene_name = cmds.file(q=True, sn=True).split('/')[-1]
-    cameras = cmds.listCameras(p=True)
-    for cam in cameras:
-        if cmds.getAttr("{{}}.renderable".format(cam)) == 1:
-            current_cam = cam
+        case = cases[case_num]
 
-    case_num = -1
-    for case in cases:
-        case_num += 1
-        #? Not sure about other statuses
-        if 'scene' in case and case['scene'] == scene_name and case['status'] in ['active', 'inprogress']:
-            if 'camera' not in case or case['camera'] == current_cam:
-                cases_num_queue.append(case_num)
+        event('Open tool', False, case['case'])
 
-    event('Open tool', False, cases[cases_num_queue[0]]['case'])    
-    pre_render()
+        if case['status'] == 'active':
+            case['status'] = 'inprogress'
+
+        case['start_time'] = str(datetime.datetime.now())
+        case['number_of_tries'] = case.get('number_of_tries', 0) + 1
+        
+        with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
+            json.dump(cases, file, indent=4)
+        pre_render(case)
+    else:
+        scene_name = cmds.file(q=True, sn=True).split('/')[-1]
+        cameras = cmds.listCameras(p=True)
+        for cam in cameras:
+            if cmds.getAttr("{{}}.renderable".format(cam)) == 1:
+                current_cam = cam
+
+        case_num = -1
+        for case in cases:
+            case_num += 1
+            #? Not sure about other statuses
+            if 'scene' in case and case['scene'] == scene_name and case['status'] in ['active', 'inprogress']:
+                if 'camera' not in case or case['camera'] == current_cam:
+                    cases_num_queue.append(case_num)
+
+        event('Open tool', False, cases[cases_num_queue[0]]['case'])
+        pre_render() 
+
+    
