@@ -9,6 +9,7 @@
         "script_info": [
             "Max Ray Depth - 2"
         ],
+        "camera": "camera1",
         "scene": "RayDepth.ma"
     },
     {
@@ -21,6 +22,7 @@
         "script_info": [
             "Max Ray Depth - 50"
         ],
+        "camera": "camera1",
         "scene": "RayDepth.ma"
     },
     {
@@ -33,6 +35,7 @@
         "script_info": [
             "Max Diffuse - 2"
         ],
+        "camera": "Camera",
         "scene": "Diffuse_ray_depth.ma",
         "skip_config": [
             ["Radeon RX Vega"]
@@ -48,6 +51,7 @@
         "script_info": [
             "Max Diffuse - 50"
         ],
+        "camera": "Camera",
         "scene": "Diffuse_ray_depth.ma"
     },
     {
@@ -60,6 +64,7 @@
         "script_info": [
             "Max Glossy - 2"
         ],
+        "camera": "Camera",
         "scene": "Glossy_ray_depth.ma"
     },
     {
@@ -72,6 +77,7 @@
         "script_info": [
             "Max Glossy - 50"
         ],
+        "camera": "Camera",
         "scene": "Glossy_ray_depth.ma"
     },
     {
@@ -84,6 +90,7 @@
         "script_info": [
             "Max Refraction - 2"
         ],
+        "camera": "Camera",
         "scene": "Refraction_ray_depth.ma"
     },
     {
@@ -96,6 +103,7 @@
         "script_info": [
             "Max Refraction - 50"
         ],
+        "camera": "Camera",
         "scene": "Refraction_ray_depth.ma"
     },
     {
@@ -108,6 +116,7 @@
         "script_info": [
             "Max Glossy Refraction - 2"
         ],
+        "camera": "Camera",
         "scene": "Refraction_ray_depth.ma"
     },
     {
@@ -120,6 +129,7 @@
         "script_info": [
             "Max Glossy Refraction - 50"
         ],
+        "camera": "Camera",
         "scene": "Refraction_ray_depth.ma"
     },
     {
@@ -132,6 +142,7 @@
         "script_info": [
             "Max Shadow - 2"
         ],
+        "camera": "Camera",
         "scene": "Shadow_ray_depth.ma"
     },
     {
@@ -144,6 +155,7 @@
         "script_info": [
             "Max Shadow - 50"
         ],
+        "camera": "Camera",
         "scene": "Shadow_ray_depth.ma"
     },
     {
@@ -156,6 +168,7 @@
         "script_info": [
             "Ray Epsilon - 0"
         ],
+        "camera": "Camera",
         "scene": "Ray_epsilon.ma"
     },
     {
@@ -168,6 +181,7 @@
         "script_info": [
             "Ray Epsilon - 2"
         ],
+        "camera": "Camera",
         "scene": "Ray_epsilon.ma"
     },
     {
@@ -180,6 +194,7 @@
         "script_info": [
             "Activate Enable Out of Core Textures checkbox"
         ],
+        "camera": "Camera",
         "scene": "Ray_epsilon.ma"
     },
     {
@@ -194,6 +209,7 @@
             "Activate Enable Out of Core Textures checkbox",
             "GPU texture cache (MB) - 4096"
         ],
+        "camera": "Camera",
         "scene": "Ray_epsilon.ma"
     },
     {
@@ -218,6 +234,7 @@
             "Max Shadow - 0",
             "Ray Epsilon - 0"
         ],
+        "camera": "persp",
         "scene": "ComplexLighting.ma"
     },
     {
@@ -242,6 +259,7 @@
             "Max Shadow - 0",
             "Ray Epsilon - 0"
         ],
+        "camera": "persp",
         "scene": "ComplexLighting.ma",
         "skip_config": [
             ["Radeon RX Vega"]
@@ -258,6 +276,7 @@
         "script_info": [
             "Clamp Irradience Value - 50"
         ],
+        "camera": "Camera",
         "scene": "Clamp.ma"
     },
     {
@@ -271,6 +290,7 @@
         "script_info": [
             "Clamp Irradience Value - 100"
         ],
+        "camera": "Camera",
         "scene": "Clamp.ma"
     },
     {
@@ -286,6 +306,7 @@
             "Activate Enable Out of Core Textures checkbox",
             "Clamp Irradience Value - 50"
         ],
+        "camera": "Camera",
         "scene": "Clamp.ma"
     },
     {
@@ -301,6 +322,7 @@
             "Activate Enable Out of Core Textures checkbox",
             "Clamp Irradience Value - 100"
         ],
+        "camera": "Camera",
         "scene": "Clamp.ma"
     }
 ]
