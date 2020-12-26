@@ -5,13 +5,13 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
-            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
             "rpr_render(case)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "BlendUbernPBRMaterials"
         ],
+        "camera": "Camera_BlendUberPBRMaterials",
         "scene": "RPRNodes.ma"
     },
     {
@@ -20,15 +20,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
-            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
             "cmds.disconnectAttr('file1.outAlpha', 'BlendMaterial.weight')",
             "rpr_render(case)",
             "cmds.connectAttr('file1.outAlpha', 'BlendMaterial.weight')",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Open BlendMaterial Disconnect BlendWeight.png map"
         ],
+        "camera": "Camera_BlendUberPBRMaterials",
         "scene": "RPRNodes.ma"
     },
     {
@@ -37,17 +37,17 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
-            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
             "cmds.disconnectAttr('file1.outAlpha', 'BlendMaterial.weight')",
             "cmds.setAttr('BlendMaterial.weight', 0.5)",
             "rpr_render(case)",
             "cmds.setAttr('BlendMaterial.weight', 1)",
             "cmds.connectAttr('file1.outAlpha', 'BlendMaterial.weight')",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Open BlendMaterial node Set Weight - 0.5"
         ],
+        "camera": "Camera_BlendUberPBRMaterials",
         "scene": "RPRNodes.ma"
     },
     {
@@ -56,17 +56,17 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 1)",
-            "cmds.lookThru('Camera_BlendUberPBRMaterials', 'modelPanel4')",
             "cmds.disconnectAttr('file1.outAlpha', 'BlendMaterial.weight')",
             "cmds.setAttr('BlendMaterial.weight', 0)",
             "rpr_render(case)",
             "cmds.setAttr('BlendMaterial.weight', 1)",
             "cmds.connectAttr('file1.outAlpha', 'BlendMaterial.weight')",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material"
         ],
+        "camera": "Camera_BlendUberPBRMaterials",
         "scene": "RPRNodes.ma"
     },
     {
@@ -75,18 +75,18 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
             "rpr_render(case)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
-            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material AOV"
         ],
+        "camera": "Camera_ShadowCatcher",
         "scene": "RPRNodes.ma"
     },
     {
@@ -95,18 +95,18 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
             "rpr_render(case)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material"
         ],
+        "camera": "Camera_ShadowCatcher",
         "scene": "RPRNodes.ma"
     },
     {
@@ -116,20 +116,20 @@
             "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
             "cmds.setAttr('RPRMatteMaterial1.bgColor', 0.5, 0.5, 0.5)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
             "rpr_render(case)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
-            "cmds.setAttr('RPRMatteMaterial1.bgColor', 0, 0, 0)"
+            "cmds.setAttr('RPRMatteMaterial1.bgColor', 0, 0, 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material, Background Color - 0.5"
         ],
+        "camera": "Camera_ShadowCatcher",
         "scene": "RPRNodes.ma"
     },
     {
@@ -139,7 +139,6 @@
             "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
             "cmds.setAttr('RPRMatteMaterial1.bgColor', 0, 0, 0)",
@@ -147,11 +146,12 @@
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material, Background Color - 0"
         ],
+        "camera": "Camera_ShadowCatcher",
         "scene": "RPRNodes.ma"
     },
     {
@@ -161,7 +161,6 @@
             "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
             "cmds.setAttr('RPRMatteMaterial1.shadowWeight', 0.5)",
@@ -170,11 +169,12 @@
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material Shadow Weight - 0.5"
         ],
+        "camera": "Camera_ShadowCatcher",
         "scene": "RPRNodes.ma"
     },
     {
@@ -184,7 +184,6 @@
             "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
             "cmds.setAttr('RPRMatteMaterial1.shadowWeight', 0)",
@@ -193,11 +192,12 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material Shadow Weight - 0"
         ],
+        "camera": "Camera_ShadowCatcher",
         "scene": "RPRNodes.ma"
     },
     {
@@ -207,7 +207,6 @@
             "resetAttributes()",
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_ShadowCatcher', 'modelPanel4')",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 10)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 1)",
             "cmds.setAttr('RPRMatteMaterial1.reflectionWeight', 0.5)",
@@ -216,11 +215,12 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material Reflection Weight - 0.5"
         ],
+        "camera": "Camera_ShadowCatcher",
         "scene": "RPRNodes.ma"
     },
     {
@@ -229,13 +229,13 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "rpr_render(case)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "SubsurfaceMaterial"
         ],
+        "camera": "Camera_Subsurface",
         "scene": "RPRNodes.ma"
     },
     {
@@ -244,15 +244,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.density', 5)",
             "rpr_render(case)",
             "cmds.setAttr('Mat_Subsurface.density', 18.072)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "SubsurfaceMaterial, Density - 5"
         ],
+        "camera": "Camera_Subsurface",
         "scene": "RPRNodes.ma"
     },
     {
@@ -261,15 +261,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.density', 20)",
             "rpr_render(case)",
             "cmds.setAttr('Mat_Subsurface.density', 18.072)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "SubsurfaceMaterial, Density - 20"
         ],
+        "camera": "Camera_Subsurface",
         "scene": "RPRNodes.ma"
     },
     {
@@ -278,15 +278,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.scatterAmount', 0)",
             "rpr_render(case)",
             "cmds.setAttr('Mat_Subsurface.scatterAmount', 1)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "SubsurfaceMaterial, Scatter Amount - 0"
         ],
+        "camera": "Camera_Subsurface",
         "scene": "RPRNodes.ma"
     },
     {
@@ -295,15 +295,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.scatterAmount', 0.5)",
             "rpr_render(case)",
             "cmds.setAttr('Mat_Subsurface.scatterAmount', 1)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "SubsurfaceMaterial, Scatter Amount - 0.5"
         ],
+        "camera": "Camera_Subsurface",
         "scene": "RPRNodes.ma"
     },
     {
@@ -312,15 +312,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.emissionColor', 0.0392, 1, 0.0392, type='double3')",
             "rpr_render(case)",
             "cmds.setAttr('Mat_Subsurface.emissionColor', 0, 0, 0, type='double3')",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "SubsurfaceMaterial, Emission Color - RGB - 10, 255, 0"
         ],
+        "camera": "Camera_Subsurface",
         "scene": "RPRNodes.ma"
     },
     {
@@ -329,15 +329,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('SubsurfaceMaterial.visibility', 1)",
-            "cmds.lookThru('Camera_Subsurface', 'modelPanel4')",
             "cmds.setAttr('Mat_Subsurface.emissionColor', 1, 1, 0, type='double3')",
             "rpr_render(case)",
             "cmds.setAttr('Mat_Subsurface.emissionColor', 0, 0, 0, type='double3')",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "SubsurfaceMaterial, Emission Color - RGB - 255, 255, 0"
         ],
+        "camera": "Camera_Subsurface",
         "scene": "RPRNodes.ma"
     },
     {
@@ -346,13 +346,13 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "rpr_render(case)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Arythmetic_Blend_Gradient"
         ],
+        "camera": "Camera_Arythmetic_Blend_Gradient",
         "scene": "RPRNodes.ma"
     },
     {
@@ -361,15 +361,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRArithmetic1.operation', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RPRArithmetic1.operation', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Operation - Add, Arythmetic_Blend_Gradient"
         ],
+        "camera": "Camera_Arythmetic_Blend_Gradient",
         "scene": "RPRNodes.ma"
     },
     {
@@ -378,15 +378,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRArithmetic1.operation', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RPRArithmetic1.operation', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Operation - Substract, Arythmetic_Blend_Gradient"
         ],
+        "camera": "Camera_Arythmetic_Blend_Gradient",
         "scene": "RPRNodes.ma"
     },
     {
@@ -395,15 +395,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRArithmetic1.operation', 2)",
             "rpr_render(case)",
             "cmds.setAttr('RPRArithmetic1.operation', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Operation - Multiply, Arythmetic_Blend_Gradient"
         ],
+        "camera": "Camera_Arythmetic_Blend_Gradient",
         "scene": "RPRNodes.ma"
     },
     {
@@ -412,16 +412,16 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRGradient1.color0', 0, 1, 1, type='double3')",
             "rpr_render(case)",
             "cmds.setAttr('RPRGradient1.color0', 0, 0, 0, type='double3')",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Select 'RPRGradient1' node",
             "Set 'Color 0' - 0, 255, 255"
         ],
+        "camera": "Camera_Arythmetic_Blend_Gradient",
         "scene": "RPRNodes.ma"
     },
     {
@@ -430,16 +430,16 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
-            "cmds.lookThru('Camera_Arythmetic_Blend_Gradient', 'modelPanel4')",
             "cmds.setAttr('RPRGradient1.color0', 0, 1, 1, type='double3')",
             "rpr_render(case)",
             "cmds.setAttr('RPRGradient1.color0', 1, 1, 1, type='double3')",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Select 'RPRGradient1' node",
             "Set 'Color 1' - 0, 255, 255"
         ],
+        "camera": "Camera_Arythmetic_Blend_Gradient",
         "scene": "RPRNodes.ma"
     },
     {
@@ -448,13 +448,13 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "rpr_render(case)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "LookUpNoisePassthrought"
         ],
+        "camera": "Camera_LookUp_Noise_Passthrough",
         "scene": "RPRNodes.ma"
     },
     {
@@ -463,16 +463,16 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "cmds.setAttr('RPRLookup1.type', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 5)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Type - Normal",
             "LookUpNoisePassthrought"
         ],
+        "camera": "Camera_LookUp_Noise_Passthrough",
         "scene": "RPRNodes.ma"
     },
     {
@@ -481,16 +481,16 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "cmds.setAttr('RPRLookup1.type', 2)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 5)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Type - World XYZ",
             "LookUpNoisePassthrought"
         ],
+        "camera": "Camera_LookUp_Noise_Passthrough",
         "scene": "RPRNodes.ma"
     },
     {
@@ -499,16 +499,16 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "cmds.setAttr('RPRLookup1.type', 3)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 5)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Type - Incident",
             "LookUpNoisePassthrought"
         ],
+        "camera": "Camera_LookUp_Noise_Passthrough",
         "scene": "RPRNodes.ma"
     },
     {
@@ -517,16 +517,16 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
-            "cmds.lookThru('Camera_LookUp_Noise_Passthrough', 'modelPanel4')",
             "cmds.setAttr('RPRLookup1.type', 5)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 5)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Type - UV1",
             "LookUpNoisePassthrought"
         ],
+        "camera": "Camera_LookUp_Noise_Passthrough",
         "scene": "RPRNodes.ma"
     },
     {
@@ -535,13 +535,13 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('BumpNormal.visibility', 1)",
-            "cmds.lookThru('Camera_BumpNormal', 'modelPanel4')",
             "rpr_render(case)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "BumpNormal"
         ],
+        "camera": "Camera_BumpNormal",
         "scene": "RPRNodes.ma"
     },
     {
@@ -550,11 +550,13 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('CheckerDotTexture.visibility', 1)",
-            "rpr_render(case)"
+            "rpr_render(case)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "CheckerDotTexture"
         ],
+        "camera": "Camera_Checker_Dot_Texture",
         "scene": "RPRNodes.ma"
     },
     {
@@ -565,11 +567,13 @@
             "cmds.setAttr('CheckerDotTexture.visibility', 1)",
             "cmds.setAttr('RPRChecker2.mapChannel', 1)",
             "rpr_render(case)",
-            "cmds.setAttr('RPRChecker2.mapChannel', 0)"
+            "cmds.setAttr('RPRChecker2.mapChannel', 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "https://amdrender.atlassian.net/browse/RPRMAYA-790"
         ],
+        "camera": "Camera_Checker_Dot_Texture",
         "scene": "RPRNodes.ma"
     },
     {
@@ -578,13 +582,13 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "rpr_render(case)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Fresnel"
         ],
+        "camera": "Camera_Fresnel",
         "scene": "RPRNodes.ma"
     },
     {
@@ -593,15 +597,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnelSchlick2.reflectance', 0.5)",
             "rpr_render(case)",
             "cmds.setAttr('RPRFresnelSchlick2.reflectance', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPRFresnelSchlick2 node Set Reflectance - 0.5"
         ],
+        "camera": "Camera_Fresnel",
         "scene": "RPRNodes.ma"
     },
     {
@@ -610,15 +614,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnelSchlick2.reflectance', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RPRFresnelSchlick2.reflectance', 0)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPRFresnelSchlick2 node Set Reflectance - 1"
         ],
+        "camera": "Camera_Fresnel",
         "scene": "RPRNodes.ma"
     },
     {
@@ -627,15 +631,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnel1.ior', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RPRFresnel1.ior', 1.2)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPRFresnel1 node Set IOR - 1"
         ],
+        "camera": "Camera_Fresnel",
         "scene": "RPRNodes.ma"
     },
     {
@@ -644,15 +648,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnel1.ior', 3)",
             "rpr_render(case)",
             "cmds.setAttr('RPRFresnel1.ior', 1.2)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPRFresnel1 node Set IOR - 3"
         ],
+        "camera": "Camera_Fresnel",
         "scene": "RPRNodes.ma"
     },
     {
@@ -661,15 +665,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnel1.ior', 5)",
             "rpr_render(case)",
             "cmds.setAttr('RPRFresnel1.ior', 1.2)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPRFresnel1 node Set IOR - 5"
         ],
+        "camera": "Camera_Fresnel",
         "scene": "RPRNodes.ma"
     },
     {
@@ -678,15 +682,15 @@
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Fresnel.visibility', 1)",
-            "cmds.lookThru('Camera_Fresnel', 'modelPanel4')",
             "cmds.setAttr('RPRFresnel1.ior', 10)",
             "rpr_render(case)",
             "cmds.setAttr('RPRFresnel1.ior', 1.2)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')"
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Displacement node"
         ],
+        "camera": "Camera_Fresnel",
         "scene": "RPRNodes.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
@@ -700,17 +704,17 @@
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Displacement.visibility', 1)",
-            "cmds.lookThru('Camera_Displacement', 'modelPanel4')",
             "cmds.setAttr('RPRDisplacement1.subdivision', 4)",
             "rpr_render(case)",
             "cmds.setAttr('RPRDisplacement1.subdivision', 1)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Displacement.visibility', 0)",
-            "cmds.setAttr('CheckerDotTexture.visibility', 1)"
+            "cmds.setAttr('CheckerDotTexture.visibility', 1)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Displacement node"
         ],
+        "camera": "Camera_Displacement",
         "scene": "RPRNodes.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
@@ -724,17 +728,17 @@
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Displacement.visibility', 1)",
-            "cmds.lookThru('Camera_Displacement', 'modelPanel4')",
             "cmds.setAttr('RPRDisplacement1.minHeight', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RPRDisplacement1.minHeight', -1)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Displacement.visibility', 0)",
-            "cmds.setAttr('CheckerDotTexture.visibility', 1)"
+            "cmds.setAttr('CheckerDotTexture.visibility', 1)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Displacement node"
         ],
+        "camera": "Camera_Displacement",
         "scene": "RPRNodes.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
@@ -748,17 +752,17 @@
             "cmds.setAttr('BlendUbernPBRMaterials.visibility', 0)",
             "cmds.setAttr('CheckerDotTexture.visibility', 0)",
             "cmds.setAttr('Displacement.visibility', 1)",
-            "cmds.lookThru('Camera_Displacement', 'modelPanel4')",
             "cmds.setAttr('RPRDisplacement1.maxHeight', 0)",
             "rpr_render(case)",
             "cmds.setAttr('RPRDisplacement1.maxHeight', 1)",
-            "cmds.lookThru('Camera_Checker_Dot_Texture', 'modelPanel4')",
             "cmds.setAttr('Displacement.visibility', 0)",
-            "cmds.setAttr('CheckerDotTexture.visibility', 1)"
+            "cmds.setAttr('CheckerDotTexture.visibility', 1)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Displacement node"
         ],
+        "camera": "Camera_Displacement",
         "scene": "RPRNodes.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
@@ -787,7 +791,8 @@
             "cmds.setAttr('RPRLookup1.type', 1)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 0)",
-            "cmds.setAttr('Lookup.visibility', 0)"
+            "cmds.setAttr('Lookup.visibility', 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPRLookup Normal"
@@ -802,7 +807,8 @@
             "cmds.setAttr('RPRLookup1.type', 2)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 0)",
-            "cmds.setAttr('Lookup.visibility', 0)"
+            "cmds.setAttr('Lookup.visibility', 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPRLookup World XYZ"
@@ -817,7 +823,8 @@
             "cmds.setAttr('RPRLookup1.type', 3)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 0)",
-            "cmds.setAttr('Lookup.visibility', 0)"
+            "cmds.setAttr('Lookup.visibility', 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPR Lookup Incident"
@@ -832,7 +839,8 @@
             "cmds.setAttr('RPRLookup1.type', 5)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 0)",
-            "cmds.setAttr('Lookup.visibility', 0)"
+            "cmds.setAttr('Lookup.visibility', 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPR Lookup Out Vector"
@@ -847,7 +855,8 @@
             "cmds.setAttr('RPRLookup1.type', 4)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 0)",
-            "cmds.setAttr('Lookup.visibility', 0)"
+            "cmds.setAttr('Lookup.visibility', 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPR Lookup Object XYZ"
@@ -862,7 +871,8 @@
             "cmds.setAttr('RPRLookup1.type', 11)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 0)",
-            "cmds.setAttr('Lookup.visibility', 0)"
+            "cmds.setAttr('Lookup.visibility', 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "Do not compare",
@@ -879,7 +889,8 @@
             "cmds.setAttr('RPRLookup1.type', 256)",
             "rpr_render(case)",
             "cmds.setAttr('RPRLookup1.type', 0)",
-            "cmds.setAttr('Vertex_Color.visibility', 0)"
+            "cmds.setAttr('Vertex_Color.visibility', 0)",
+            "extract_img_from('color', case)"
         ],
         "script_info": [
             "RPR Lookup Vertex Color"
