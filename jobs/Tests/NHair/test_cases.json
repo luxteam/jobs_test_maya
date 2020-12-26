@@ -5,6 +5,7 @@
         "script_info": [
             "Braids"
         ],
+        "camera": "persp",
         "scene": "Braids.ma",
         "functions": [
             "rpr_render(case)"
@@ -16,6 +17,7 @@
         "script_info": [
             "Long hair"
         ],
+        "camera": "persp",
         "scene": "Long.ma",
         "functions": [
             "rpr_render(case)"
@@ -27,6 +29,7 @@
         "script_info": [
             "Pig tail"
         ],
+        "camera": "persp",
         "scene": "Pig.ma",
         "functions": [
             "rpr_render(case)"
@@ -38,6 +41,7 @@
         "script_info": [
             "Spiky"
         ],
+        "camera": "persp",
         "scene": "Spiky.ma",
         "functions": [
             "rpr_render(case)"
@@ -49,6 +53,7 @@
         "script_info": [
             "Straight long"
         ],
+        "camera": "persp",
         "scene": "Straight.ma",
         "functions": [
             "rpr_render(case)"
