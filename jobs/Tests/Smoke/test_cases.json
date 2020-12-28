@@ -753,7 +753,7 @@
     },
     {
         "case": "MAYA_SM_049",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "rpr_render(case)"
         ],
