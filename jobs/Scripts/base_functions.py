@@ -355,10 +355,12 @@ def main(case_num=None):
         case_num = -1
         for case in cases:
             case_num += 1
-            #? Not sure about other statuses
-            if 'scene' in case and case['scene'] == scene_name and case['status'] in ['active', 'inprogress']:
-                if 'camera' not in case or case['camera'] == current_cam:
-                    cases_num_queue.append(case_num)
+            
+            if 'functions_before_render' not in case or not case['functions_before_render']:
+                #? Not sure about other statuses
+                if 'scene' in case and case['scene'] == scene_name and case['status'] in ['active', 'inprogress']:
+                    if 'camera' not in case or case['camera'] == current_cam:
+                        cases_num_queue.append(case_num)
 
         event('Open tool', False, cases[cases_num_queue[0]]['case'])
         pre_render() 
