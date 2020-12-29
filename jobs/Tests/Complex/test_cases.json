@@ -177,7 +177,7 @@
     },
     {
         "case": "MAYA_RS_CMX_017",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Laptop"
         ],
