@@ -26,7 +26,7 @@ LOGS_DIR = path.join(WORK_DIR, 'render_tool_logs')
 FILE_FORMATS = {{0: 'gif', 1: 'pic', 2: 'rla', 3: 'tif', 4: 'tif', 5: 'sgi', 6: 'als', 7: 'iff', 8: 'jpg', 9: 'eps', 10: 'iff', 12: 'yuv', 13: 'sgi', 19: 'tga', 20: 'bmp', 31: 'psd', 32: 'png', 35: 'dds', 36: 'psd', 40: 'exr '}}
 cases_num_queue = deque()
 with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
-        cases = json.load(json_file)
+    cases = json.load(json_file)
 
 
 def event(name, start, case):
@@ -346,7 +346,7 @@ def main(case_num=None):
             json.dump(cases, file, indent=4)
         pre_render(case)
     else:
-        scene_name = cmds.file(q=True, sn=True).split('/')[-1]
+        scene_name = cmds.file(q=True, sn=True, shn=True)
         cameras = cmds.listCameras(p=True)
         for cam in cameras:
             if cmds.getAttr("{{}}.renderable".format(cam)) == 1:
