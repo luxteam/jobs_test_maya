@@ -526,5 +526,28 @@
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
         ]
+    },
+    {
+        "case": "MAYA_RS_CNT_024",
+        "status": "active",
+        "script_info": [
+            "Object +",
+            "Material +",
+            "Normal +",
+            "Contour visibility disabled in Object"
+        ],
+        "scene": "Bathroom.ma",
+        "functions": [
+            "cmds.setAttr('RadeonProRenderGlobals.contourIsEnabled', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseObjectID', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseMaterialID', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.contourUseShadingNormal', 1)",
+            "cmds.setAttr('lamp_obj_02.RPRContourVisibility', 0)",
+            "rpr_render(case)",
+            "cmds.setAttr('lamp_obj_02.RPRContourVisibility', 1)"
+        ],
+        "skip_engine": [
+            "Tahoe", "Hybrid_Low", "Hybrid_Medium", "Hybrid_High"
+        ]
     }
 ]
