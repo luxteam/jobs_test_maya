@@ -81,7 +81,11 @@ def post_functions(case):
 
 def extract_img_from(folder, case):
     src_dir = path.join(WORK_DIR, 'Color', folder)
-    img_name = get_current_frame_img_name()
+    if 'functions_before_render' in case and case['functions_before_render']:
+        img_name = cmds.renderSettings(firstImageName=True)[0]
+    else:
+        img_name = get_current_frame_img_name()
+        
     if os.path.exists(src_dir) and os.path.isdir(src_dir):
         try:
             move(path.join(src_dir, img_name), path.join(WORK_DIR, 'Color'))
