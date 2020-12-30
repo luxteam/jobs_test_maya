@@ -146,6 +146,7 @@
         "script_info": [
             "Camera Motion blur"
         ],
+        "camera": "camera1",
         "scene": "CameraMotion.ma",
         "frame_number": 60,
         "functions": [
@@ -179,6 +180,7 @@
         "script_info": [
             "Diagonal move"
         ],
+        "camera": "camera1",
         "scene": "MotionBlurDirectionTests.ma",
         "frame_number": 65,
         "functions": [
@@ -193,6 +195,7 @@
         "script_info": [
             "Rotate and move"
         ],
+        "camera": "camera1",
         "scene": "MotionBlurDirectionTests.ma",
         "frame_number": 115,
         "functions": [
@@ -207,6 +210,7 @@
         "script_info": [
             "Scale, rotate and move"
         ],
+        "camera": "camera1",
         "scene": "MotionBlurDirectionTests.ma",
         "frame_number": 155,
         "functions": [
@@ -221,6 +225,7 @@
         "script_info": [
             "Shrink"
         ],
+        "camera": "camera1",
         "scene": "MotionBlurDirectionTests.ma",
         "frame_number": 190,
         "functions": [
@@ -235,6 +240,7 @@
         "script_info": [
             "Move and rotate towards camera"
         ],
+        "camera": "camera1",
         "scene": "MotionBlurDirectionTests.ma",
         "frame_number": 225,
         "functions": [
@@ -249,8 +255,9 @@
         "script_info": [
             "Rapid rotation"
         ],
+        "camera": "camera1",
         "scene": "MotionBlurDirectionTests.ma",
-        "frame_number": 260,
+        "frame_number": 260 ,
         "functions": [
             "cmds.currentTime(260)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
