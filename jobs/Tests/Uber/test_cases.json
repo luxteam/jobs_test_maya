@@ -2138,5 +2138,275 @@
             "Subdivision - 1"
         ],
         "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_099",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 1)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 0)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 1)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 1",
+            "Crease Weight - 0",
+            "Boundary - Edge"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_100",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 0.3)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 0)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 1)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 0.3",
+            "Crease Weight - 0",
+            "Boundary - Edge"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_101",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 3)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 0)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 1)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 3",
+            "Crease Weight - 0",
+            "Boundary - Edge"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_102",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 1)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 1)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 1)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 1",
+            "Crease Weight - 1",
+            "Boundary - Edge"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_103",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 1)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 10)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 1)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 1",
+            "Crease Weight - 10",
+            "Boundary - Edge"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_104",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 1)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 0)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 0)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 1",
+            "Crease Weight - 0",
+            "Boundary - Edge and Corner"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_105",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 0.3)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 0)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 0)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 0.3",
+            "Crease Weight - 0",
+            "Boundary - Edge and Corner"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_106",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 3)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 0)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 0)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 3",
+            "Crease Weight - 0",
+            "Boundary - Edge and Corner"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_107",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 1)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 1)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 0)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 1",
+            "Crease Weight - 1",
+            "Boundary - Edge and Corner"
+        ],
+        "scene": "Uber.ma"
+    },
+    {
+        "case": "MAYA_MAT_UBER_108",
+        "status": "active",
+        "functions": [
+            "resetAttributes()",
+            "cmds.setAttr('R_UberMat.displacementEnable', 1)",
+            "file_tmp1 = setAttribute('displacementMap', 'outColor', 'sourceimages/displacement_displacementmap.tiff')",
+            "cmds.setAttr('R_UberMat.displacementMin', 1)",
+            "cmds.setAttr('R_UberMat.displacementMax', 3)",
+            "cmds.setAttr('R_UberMat.displacementEnableAdaptiveSubdiv', 1)",
+            "cmds.setAttr('R_UberMat.displacementASubdivFactor', 1)",
+            "cmds.setAttr('R_UberMat.displacementCreaseWeight', 10)",
+            "cmds.setAttr('R_UberMat.displacementBoundary', 0)",
+            "rpr_render(case)",
+            "cmds.disconnectAttr(str(file_tmp1) + '.outColor', 'R_UberMat.displacementMap')"
+        ],
+        "script_info": [
+            "Displacement Map - displacement_displacementmap.tiff",
+            "Displacement Min Value - 1",
+            "Displacement Max Value - 3",
+            "Adaptive subdivision",
+            "Factor - 1",
+            "Crease Weight - 10",
+            "Boundary - Edge and Corner"
+        ],
+        "scene": "Uber.ma"
     }
 ]
