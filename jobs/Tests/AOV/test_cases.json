@@ -467,7 +467,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 56)",
             "cmds.setAttr('RadeonProRenderGlobals.aovCryptoMaterialMat0', 1)",
             "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.aovCryptoMaterialmat0', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.aovCryptoMaterialMat0', 0)"
         ]
     },
     {
@@ -481,7 +481,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 57)",
             "cmds.setAttr('RadeonProRenderGlobals.aovCryptoMaterialMat1', 1)",
             "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.aovCryptoMaterialmat1', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.aovCryptoMaterialMat1', 0)"
         ]
     },
     {
@@ -495,7 +495,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 58)",
             "cmds.setAttr('RadeonProRenderGlobals.aovCryptoMaterialMat2', 1)",
             "rpr_render(case)",
-            "cmds.setAttr('RadeonProRenderGlobals.aovCryptoMaterialmat2', 0)"
+            "cmds.setAttr('RadeonProRenderGlobals.aovCryptoMaterialMat2', 0)"
         ]
     }
 ]
