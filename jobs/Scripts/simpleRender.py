@@ -183,7 +183,7 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
     core_config.main_logger.info(
         'Launch script on Maya ({})'.format(cmdScriptPath))
     os.chdir(work_dir)
-    perf_count.event_record(args.output, 'Open tool', True)
+    # perf_count.event_record(args.output, 'Open tool', True)
     p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE,
                      stderr=subprocess.PIPE, shell=True)
 
@@ -219,7 +219,7 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
             rc = 0
             break
 
-    perf_count.event_record(args.output, 'Close tool', False)
+    # perf_count.event_record(args.output, 'Close tool', False)
 
     if args.testType in ['Athena']:
         subprocess.call([sys.executable, os.path.realpath(os.path.join(
@@ -268,6 +268,8 @@ def main(args, error_windows):
 
     with open(os.path.join(args.output, 'base_functions.py'), 'w') as file:
         file.write(script)
+
+    copyfile(os.path.join(os.path.dirname(__file__), 'event_recorder.py'), os.path.join(args.output, 'event_recorder.py'))
 
     if os.path.exists(args.testCases) and args.testCases:
         with open(args.testCases) as f:
@@ -322,12 +324,16 @@ def main(args, error_windows):
                 'set PYTHONPATH=%cd%;PYTHONPATH',
                 'set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%']
 
+        python_alias = "python"
+
         cmdScriptPath = os.path.join(args.output, 'script.bat')
 
     elif system_pl == 'Darwin':
         cmds = ['export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log',
                 'export PYTHONPATH=$PWD:$PYTHONPATH',
                 'export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH']
+
+        python_alias = "python3"
 
         cmdScriptPath = os.path.join(args.output, 'script.sh')
         
@@ -401,7 +407,8 @@ def main(args, error_windows):
                 else:
                     frame_option = ""
 
-                cmds.append('''"{tool}" -log "{local_log}" -proj "{project}" -r FireRender {frame_option} -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num})\\");" -postRender "python(\\"base_functions.post_render({case_num})\\");" -g {cam_option} -fnc name.ext "{scene}" >> "{global_log}"'''.format(
+                cmds.append('''{python_alias} event_recorder.py "Open tool" True {case}'''.format(python_alias=python_alias, case=case['case']))
+                cmds.append('''"{tool}" -log "{local_log}" -proj "{project}" -r FireRender {frame_option} -devc "{render_device}" -rd "{result_dir}" -im "{img_name}" -preRender "python(\\"import base_functions; base_functions.main({case_num}, True)\\");" -postRender "python(\\"base_functions.post_render({case_num}, True)\\");" -g {cam_option} -fnc name.ext "{scene}" >> "{global_log}"'''.format(
                     tool=args.tool,
                     local_log=os.path.join(work_dir, LOGS_DIR, case['case'] + '.log'),
                     global_log=os.path.join(work_dir, 'renderTool.log'),
@@ -414,6 +421,7 @@ def main(args, error_windows):
                     cam_option=cam_option,
                     scene=case['scene']
                 ));
+                cmds.append('''{python_alias} event_recorder.py "Close tool" False {case}'''.format(python_alias=python_alias, case=case['case']))
 
             elif case['scene'] not in scenes_dict:
                 scenes_dict[case['scene']] = {'cams' : [] }
@@ -422,7 +430,8 @@ def main(args, error_windows):
                     cam_option = "-cam {}".format(case['camera'])
                 else:
                     cam_option = ""
-                cmds.append('''"{tool}" -proj "{project}" -r FireRender {cam_option} -devc "{render_device}" -rd "{result_dir}" -im result -fnc name.# -preRender "python(\\"import base_functions; base_functions.main()\\");" -preFrame "python(\\"base_functions.pre_frame()\\");" -postFrame "python(\\"base_functions.post_frame()\\");" -postRender "python(\\"base_functions.post_render()\\");" -g "{scene}" >> "{log_path}"'''.format(
+                cmds.append('''{python_alias} event_recorder.py "Open tool" True {case}'''.format(python_alias=python_alias, case=case['case']))
+                cmds.append('''"{tool}" -proj "{project}" -r FireRender {cam_option} -devc "{render_device}" -rd "{result_dir}" -im result -fnc name.# -preRender "python(\\"import base_functions; base_functions.main(None, False)\\");" -preFrame "python(\\"base_functions.pre_frame()\\");" -postFrame "python(\\"base_functions.post_frame()\\");" -postRender "python(\\"base_functions.post_render(None, False)\\");" -g "{scene}" >> "{log_path}"'''.format(
                     tool=args.tool,
                     # log_path=os.path.join(work_dir, LOGS_DIR, case['scene'] + '.log'),
                     log_path=os.path.join(work_dir, 'renderTool.log'),
@@ -432,9 +441,13 @@ def main(args, error_windows):
                     render_device=args.render_device,
                     scene=case['scene']
                 ));
+                cmds.append('''{python_alias} event_recorder.py "Close tool" False ""'''.format(python_alias=python_alias, case=case['case']))
+
             elif 'camera' in case and case['camera'] not in scenes_dict[case['scene']]['cams']:
                 scenes_dict[case['scene']]['cams'].append(case['camera'])
-                cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -cam {cam_option} -devc "{render_device}" -rd "{result_dir}" -im result -fnc name.# -preRender "python(\\"import base_functions; base_functions.main()\\");" -preFrame "python(\\"base_functions.pre_frame()\\");" -postFrame "python(\\"base_functions.post_frame()\\");" -postRender "python(\\"base_functions.post_render()\\");" -g "{scene}" >> "{log_path}"'''.format(
+
+                cmds.append('''{python_alias} event_recorder.py "Open tool" True {case}'''.format(python_alias=python_alias, case=case['case']))
+                cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -cam {cam_option} -devc "{render_device}" -rd "{result_dir}" -im result -fnc name.# -preRender "python(\\"import base_functions; base_functions.main(None, False)\\");" -preFrame "python(\\"base_functions.pre_frame()\\");" -postFrame "python(\\"base_functions.post_frame()\\");" -postRender "python(\\"base_functions.post_render(None, False)\\");" -g "{scene}" >> "{log_path}"'''.format(
                     tool=args.tool,
                     # log_path=os.path.join(work_dir, LOGS_DIR, case['scene'] + '.log'),
                     log_path=os.path.join(work_dir, 'renderTool.log'),
@@ -444,6 +457,7 @@ def main(args, error_windows):
                     render_device=args.render_device,
                     scene=case['scene']
                 ));
+                cmds.append('''{python_alias} event_recorder.py "Close tool" False ""'''.format(python_alias=python_alias, case=case['case']))
 
         if 'Update' not in args.update_refs:
             try:

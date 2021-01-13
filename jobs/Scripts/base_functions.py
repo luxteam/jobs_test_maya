@@ -1,12 +1,12 @@
 import maya.mel as mel
 import maya.cmds as cmds
-import glob
 import datetime
 import time
 import json
 import re
 import os.path as path
 import os
+from event_recorder import event
 from shutil import copyfile, move
 from collections import deque
 import fireRender.rpr_material_browser
@@ -27,12 +27,6 @@ FILE_FORMATS = {{0: 'gif', 1: 'pic', 2: 'rla', 3: 'tif', 4: 'tif', 5: 'sgi', 6: 
 cases_num_queue = deque()
 with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
     cases = json.load(json_file)
-
-
-def event(name, start, case):
-    with open(path.join('events', str(glob.glob('events/*.json').__len__() + 1) + '.json'), 'w') as f:
-        f.write(json.dumps({{'name': name, 'time': datetime.datetime.utcnow().strftime(
-            '%d/%m/%Y %H:%M:%S.%f'), 'start': start, 'case': case}}, indent=4))
 
 
 def logging(message, case=None):
@@ -170,20 +164,25 @@ def validateFiles(case):
     logging('Repath finished', case)
 
 
-def enable_rpr():
+def enable_rpr(case):
     if not cmds.pluginInfo('RadeonProRender', query=True, loaded=True):
+        event('Load rpr', True, case)
         cmds.loadPlugin('RadeonProRender', quiet=True)
+        event('Load rpr', False, case)
         logging('Load rpr')
 
 
 def rpr_render(case, mode='color'):
+    event("Prerender", False, case['case'])
     validateFiles(case)
-    logging('Prerender done', case)
+    logging('Prerender done', case['case'])
     
     
-def pre_render(case=None):
+def pre_render(case=None, separate_case=True):
     logging('Prerender')
-    enable_rpr()
+    enable_rpr(case['case'] if case is not None else "")
+
+    event("Prerender", True, case['case'] if separate_case else "")
 
     # cmds.setAttr('RadeonProRenderGlobals.detailedLog', True)
     logging("mel.eval: athenaEnable -ae false")
@@ -246,15 +245,18 @@ def pre_render(case=None):
     # cmds.colorManagementPrefs(e=True, cmEnabled=True, outputTransformEnabled=True, outputTransformName='sRGB gamma')
     # cmds.colorManagementPrefs(e=True, outputUseViewTransform=True)
 
-    if case is not None:
+    if separate_case:
         pre_functions(case)
+    else:
+        event("Prerender", False, "")
 
 
 def pre_frame():
     # Same as peekLeft
     case = cases[cases_num_queue[0]]
-
+    
     logging("Preframe preparation", case)
+    event("Prerender", True, case['case'])
 
     if case['status'] == 'active':
         case['status'] = 'inprogress'
@@ -272,10 +274,15 @@ def pre_frame():
 
 def post_frame():
     case = cases[cases_num_queue.popleft()]
-
     logging("Postframe operations", case)
+    event("Postrender", True, case['case'])
     
+    case_time = (datetime.datetime.now() - datetime.datetime.strptime(case['start_time'], '%Y-%m-%d %H:%M:%S.%f')).total_seconds()
+    case['time_taken'] = case_time
+    reportToJSON(case, case_time)
+
     post_functions(case)
+    event("Postrender", False, case['case'])
 
     #? Is it possible to make an elegant solution?
     source_name = path.join(WORK_DIR, 'Color', get_current_frame_img_name()) 
@@ -283,22 +290,24 @@ def post_frame():
     logging("Image rename", case)
     cmds.sysFile(source_name, rename=new_name)
 
-    case_time = (datetime.datetime.now() - datetime.datetime.strptime(case['start_time'], '%Y-%m-%d %H:%M:%S.%f')).total_seconds()
-    case['time_taken'] = case_time
-    
-    reportToJSON(case, case_time)
-
     with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
         json.dump(cases, file, indent=4)
 
 
-def post_render(case_num=None):
+def post_render(case_num=None, separate_case=True):
     logging('Postrender')
 
-    if case_num is not None:
+    if separate_case:
+        
         with open(path.join(WORK_DIR, 'test_cases.json'), 'r') as json_file:
             cases = json.load(json_file)
         case = cases[case_num]
+
+        event("Postrender", True, case['case'])
+
+        case_time = (datetime.datetime.now() - datetime.datetime.strptime(case['start_time'], '%Y-%m-%d %H:%M:%S.%f')).total_seconds()
+        case['time_taken'] = case_time
+        reportToJSON(case, case_time)
 
         rpr_render_index = case['functions'].index("rpr_render(case)")
         for function in case['functions'][rpr_render_index + 1:]:
@@ -311,15 +320,14 @@ def post_render(case_num=None):
                     eval(function)
             except Exception as e:
                 logging('Error "{{}}" with string "{{}}"'.format(e, function))
-
-        case_time = (datetime.datetime.now() - datetime.datetime.strptime(case['start_time'], '%Y-%m-%d %H:%M:%S.%f')).total_seconds()
-        case['time_taken'] = case_time
-
-        reportToJSON(case, case_time)
+        event("Postrender", False, case['case'])
 
         with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
             json.dump(cases, file, indent=4)
 
+        event("Close tool", True, case['case'])
+    else:
+        event("Close tool", True, "")
     # ? Not sure if it's needed
     # Athena need additional time for work before close maya
     # if TEST_TYPE not in ['Athena']:
@@ -331,14 +339,13 @@ def post_render(case_num=None):
 # place for extension functions
 
 
-def main(case_num=None):
+def main(case_num=None, separate_case=True):
+    event('Open tool', False, "")
     logging('Entered main')
-    if case_num is not None:
+    if separate_case:
         # Case number defined directly, if functions_before_render flag is True
 
         case = cases[case_num]
-
-        event('Open tool', False, case['case'])
 
         if case['status'] == 'active':
             case['status'] = 'inprogress'
@@ -348,7 +355,7 @@ def main(case_num=None):
         
         with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
             json.dump(cases, file, indent=4)
-        pre_render(case)
+        pre_render(case, separate_case)
     else:
         scene_name = cmds.file(q=True, sn=True, shn=True)
         cameras = cmds.listCameras(p=True)
@@ -366,7 +373,6 @@ def main(case_num=None):
                     if 'camera' not in case or case['camera'] == current_cam:
                         cases_num_queue.append(case_num)
 
-        event('Open tool', False, cases[cases_num_queue[0]]['case'])
-        pre_render() 
+        pre_render(separate_case=separate_case)
 
     
