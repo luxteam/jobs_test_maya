@@ -432,6 +432,7 @@
         "case": "MAYA_RS_AOV_030",
         "status": "active",
         "script_info": [
+            "Black image expected",
             "AOV: Cryptomatte Object 1"
         ],
         "scene": "maya_shaderball.ma",
@@ -446,6 +447,7 @@
         "case": "MAYA_RS_AOV_031",
         "status": "active",
         "script_info": [
+            "Black image expected",
             "AOV: Cryptomatte Object 2"
         ],
         "scene": "maya_shaderball.ma",
@@ -474,6 +476,7 @@
         "case": "MAYA_RS_AOV_033",
         "status": "active",
         "script_info": [
+            "Black image expected",
             "AOV: Cryptomatte Material 1"
         ],
         "scene": "maya_shaderball.ma",
@@ -488,6 +491,7 @@
         "case": "MAYA_RS_AOV_034",
         "status": "active",
         "script_info": [
+            "Black image expected",
             "AOV: Cryptomatte Material 2"
         ],
         "scene": "maya_shaderball.ma",
