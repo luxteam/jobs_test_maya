@@ -210,6 +210,7 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
                                    'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report',
                                    'Autodesk Maya 2020 Error Report', 'Autodesk Maya 2020 Error Report', 'Autodesk Maya 2020 Error Report']
             window_titles = get_windows_titles()
+            window_titles.append('Detected windows ERROR')
             error_window = set(fatal_errors_titles).intersection(window_titles)
             if error_window:
                 core_config.main_logger.error(
