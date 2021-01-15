@@ -19,6 +19,7 @@ sys.path.append(os.path.abspath(os.path.join(
 
 import jobs_launcher.core.performance_counter as perf_count
 import jobs_launcher.core.config as core_config
+import jobs_launcher.common.scripts.utils as utils
 from jobs_launcher.core.system_info import get_gpu
 from jobs_launcher.core.kill_process import kill_process
 
@@ -217,13 +218,13 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
                 error_windows.update(error_window)
                 rc = -1
 
-                if system_pl == 'Windows':
-                    try:
-                        error_screen = pyscreenshot.grab()
-                        error_screen.save(os.path.join(
-                            args.output, 'error_screenshot.jpg'))
-                    except Exception as ex:
-                        pass
+                try:
+                    error_case = utils.get_error_case(test_cases_path)
+                    test_cases_path = os.path.join(work_dir, case_list)
+                    error_screen_path = os.path.join(args.output, 'Color', error_case + core_config.ERROR_SCREEN_SUFFIX + '.jpg')
+                    utils.make_error_screen(test_cases_path, error_case, error_screen_path)
+                except Exception as e:
+                    core_config.main_logger.error('Failed to make error screen'.format(e))
 
                 kill_maya(p)
 
