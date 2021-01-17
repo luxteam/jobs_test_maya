@@ -5,7 +5,9 @@
         "script_info": [
             "Audio node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('auduo_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -19,7 +21,9 @@
         "script_info": [
             "Curve node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('curve_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -33,7 +37,9 @@
         "script_info": [
             "Color node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('world_color_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -47,7 +53,9 @@
         "script_info": [
             "Delay node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('random_delay_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -61,7 +69,9 @@
         "script_info": [
             "Dynamics node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('dynamic_ID_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -75,7 +85,9 @@
         "script_info": [
             "Flight node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('flight_trails_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -89,7 +101,9 @@
         "script_info": [
             "ID node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('dynamic_ID_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -103,7 +117,9 @@
         "script_info": [
             "Influence node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('influence_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -117,7 +133,9 @@
         "script_info": [
             "Merge node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('merge_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -131,7 +149,9 @@
         "script_info": [
             "Offset node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('offset_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -145,7 +165,9 @@
         "script_info": [
             "Orient node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('orient_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -159,7 +181,9 @@
         "script_info": [
             "Placer node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('placer_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -173,7 +197,9 @@
         "script_info": [
             "Random node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('random_delay_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -187,7 +213,9 @@
         "script_info": [
             "Replicator node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('replicator_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -201,7 +229,9 @@
         "script_info": [
             "Signal node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('signal_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -215,7 +245,9 @@
         "script_info": [
             "Spring node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('spring_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -229,7 +261,9 @@
         "script_info": [
             "Strength node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('strength_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -243,7 +277,9 @@
         "script_info": [
             "Symmetry node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('symmetry_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -257,7 +293,9 @@
         "script_info": [
             "Time node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('time_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -271,7 +309,9 @@
         "script_info": [
             "Transform node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('visibility_transform_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -285,7 +325,9 @@
         "script_info": [
             "Visibility node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('visibility_transform_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -299,7 +341,9 @@
         "script_info": [
             "World node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('world_color_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -316,7 +360,9 @@
         "script_info": [
             "Breakout node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('breakout_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -330,7 +376,9 @@
         "script_info": [
             "Explode node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('explode_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -344,7 +392,9 @@
         "script_info": [
             "Points node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('points_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -358,7 +408,9 @@
         "script_info": [
             "Trails node"
         ],
+        "camera": "persp1",
         "scene": "mash.ma",
+        "frame_number": 40,
         "functions": [
             "cmds.setAttr('flight_trails_node.visibility', 1)",
             "cmds.currentTime(40)",
@@ -373,6 +425,7 @@
             "Mash Complex Driving by Boss cache"
         ],
         "scene": "Ocean_Mash.ma",
+        "frame_number": 20,
         "functions": [
             "cmds.currentTime(20)",
             "rpr_render(case)"
