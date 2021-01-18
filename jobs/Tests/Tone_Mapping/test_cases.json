@@ -2,6 +2,7 @@
     {
         "case": "MAYA_RS_TM_001",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.textureGamma', 1)",
@@ -19,6 +20,7 @@
     {
         "case": "MAYA_RS_TM_002",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 0)",
@@ -34,6 +36,7 @@
     {
         "case": "MAYA_RS_TM_003",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -52,6 +55,7 @@
     {
         "case": "MAYA_RS_TM_004",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.displayGamma', 0)",
@@ -68,6 +72,7 @@
     {
         "case": "MAYA_RS_TM_005",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.displayGamma', 5)",
@@ -83,6 +88,7 @@
     {
         "case": "MAYA_RS_TM_006",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.displayGamma', 10)",
@@ -98,6 +104,7 @@
     {
         "case": "MAYA_RS_TM_007",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -115,6 +122,7 @@
     {
         "case": "MAYA_RS_TM_008",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -131,6 +139,7 @@
     {
         "case": "MAYA_RS_TM_009",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -147,6 +156,7 @@
     {
         "case": "MAYA_RS_TM_010",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.textureGamma', 1)",
@@ -162,6 +172,7 @@
     {
         "case": "MAYA_RS_TM_011",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -178,6 +189,7 @@
     {
         "case": "MAYA_RS_TM_012",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -196,6 +208,7 @@
     {
         "case": "MAYA_RS_TM_013",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -213,6 +226,7 @@
     {
         "case": "MAYA_RS_TM_014",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -230,6 +244,7 @@
     {
         "case": "MAYA_RS_TM_015",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 1)",
@@ -245,6 +260,7 @@
     {
         "case": "MAYA_RS_TM_016",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 1)",
@@ -260,6 +276,7 @@
     {
         "case": "MAYA_RS_TM_017",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -276,6 +293,7 @@
     {
         "case": "MAYA_RS_TM_018",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 1)",
@@ -295,6 +313,7 @@
     {
         "case": "MAYA_RS_TM_019",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 1)",
@@ -313,6 +332,7 @@
     {
         "case": "MAYA_RS_TM_020",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 1)",
@@ -331,6 +351,7 @@
     {
         "case": "MAYA_RS_TM_021",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -351,6 +372,7 @@
     {
         "case": "MAYA_RS_TM_022",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -370,6 +392,7 @@
     {
         "case": "MAYA_RS_TM_023",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -389,6 +412,7 @@
     {
         "case": "MAYA_RS_TM_024",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 1)",
@@ -405,6 +429,7 @@
     {
         "case": "MAYA_RS_TM_025",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -422,6 +447,7 @@
     {
         "case": "MAYA_RS_TM_026",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -443,6 +469,7 @@
     {
         "case": "MAYA_RS_TM_027",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -463,6 +490,7 @@
     {
         "case": "MAYA_RS_TM_028",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -483,6 +511,7 @@
     {
         "case": "MAYA_RS_TM_029",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 2)",
@@ -498,6 +527,7 @@
     {
         "case": "MAYA_RS_TM_030",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 2)",
@@ -513,6 +543,7 @@
     {
         "case": "MAYA_RS_TM_031",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -529,6 +560,7 @@
     {
         "case": "MAYA_RS_TM_032",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 2)",
@@ -550,6 +582,7 @@
     {
         "case": "MAYA_RS_TM_033",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 2)",
@@ -570,6 +603,7 @@
     {
         "case": "MAYA_RS_TM_034",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 2)",
@@ -590,6 +624,7 @@
     {
         "case": "MAYA_RS_TM_035",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -612,6 +647,7 @@
     {
         "case": "MAYA_RS_TM_036",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -633,6 +669,7 @@
     {
         "case": "MAYA_RS_TM_037",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -654,6 +691,7 @@
     {
         "case": "MAYA_RS_TM_038",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 2)",
@@ -670,6 +708,7 @@
     {
         "case": "MAYA_RS_TM_039",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -687,6 +726,7 @@
     {
         "case": "MAYA_RS_TM_040",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -710,6 +750,7 @@
     {
         "case": "MAYA_RS_TM_041",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -732,6 +773,7 @@
     {
         "case": "MAYA_RS_TM_042",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -754,6 +796,7 @@
     {
         "case": "MAYA_RS_TM_043",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 3)",
@@ -769,6 +812,7 @@
     {
         "case": "MAYA_RS_TM_044",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 3)",
@@ -784,6 +828,7 @@
     {
         "case": "MAYA_RS_TM_045",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -800,6 +845,7 @@
     {
         "case": "MAYA_RS_TM_046",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 3)",
@@ -817,6 +863,7 @@
     {
         "case": "MAYA_RS_TM_047",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 3)",
@@ -833,6 +880,7 @@
     {
         "case": "MAYA_RS_TM_048",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 3)",
@@ -849,6 +897,7 @@
     {
         "case": "MAYA_RS_TM_049",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -867,6 +916,7 @@
     {
         "case": "MAYA_RS_TM_050",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -884,6 +934,7 @@
     {
         "case": "MAYA_RS_TM_051",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 3)",
@@ -900,6 +951,7 @@
     {
         "case": "MAYA_RS_TM_052",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 3)",
@@ -916,6 +968,7 @@
     {
         "case": "MAYA_RS_TM_053",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -933,6 +986,7 @@
     {
         "case": "MAYA_RS_TM_054",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -952,6 +1006,7 @@
     {
         "case": "MAYA_RS_TM_055",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -970,6 +1025,7 @@
     {
         "case": "MAYA_RS_TM_056",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -988,6 +1044,7 @@
     {
         "case": "MAYA_RS_TM_057",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 4)",
@@ -1003,6 +1060,7 @@
     {
         "case": "MAYA_RS_TM_058",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 4)",
@@ -1018,6 +1076,7 @@
     {
         "case": "MAYA_RS_TM_059",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1034,6 +1093,7 @@
     {
         "case": "MAYA_RS_TM_060",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 4)",
@@ -1051,6 +1111,7 @@
     {
         "case": "MAYA_RS_TM_061",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 4)",
@@ -1067,6 +1128,7 @@
     {
         "case": "MAYA_RS_TM_062",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 4)",
@@ -1083,6 +1145,7 @@
     {
         "case": "MAYA_RS_TM_063",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1101,6 +1164,7 @@
     {
         "case": "MAYA_RS_TM_064",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1118,6 +1182,7 @@
     {
         "case": "MAYA_RS_TM_065",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1135,6 +1200,7 @@
     {
         "case": "MAYA_RS_TM_066",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 4)",
@@ -1151,6 +1217,7 @@
     {
         "case": "MAYA_RS_TM_067",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1168,6 +1235,7 @@
     {
         "case": "MAYA_RS_TM_068",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1187,6 +1255,7 @@
     {
         "case": "MAYA_RS_TM_069",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1205,6 +1274,7 @@
     {
         "case": "MAYA_RS_TM_070",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1223,6 +1293,7 @@
     {
         "case": "MAYA_RS_TM_071",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 5)",
@@ -1238,6 +1309,7 @@
     {
         "case": "MAYA_RS_TM_072",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 5)",
@@ -1253,6 +1325,7 @@
     {
         "case": "MAYA_RS_TM_073",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1269,6 +1342,7 @@
     {
         "case": "MAYA_RS_TM_074",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 5)",
@@ -1290,6 +1364,7 @@
     {
         "case": "MAYA_RS_TM_075",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 5)",
@@ -1309,6 +1384,7 @@
     {
         "case": "MAYA_RS_TM_076",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 5)",
@@ -1329,6 +1405,7 @@
     {
         "case": "MAYA_RS_TM_077",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1351,6 +1428,7 @@
     {
         "case": "MAYA_RS_TM_078",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1371,6 +1449,7 @@
     {
         "case": "MAYA_RS_TM_079",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1392,6 +1471,7 @@
     {
         "case": "MAYA_RS_TM_080",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 5)",
@@ -1408,6 +1488,7 @@
     {
         "case": "MAYA_RS_TM_081",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1425,6 +1506,7 @@
     {
         "case": "MAYA_RS_TM_082",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1448,6 +1530,7 @@
     {
         "case": "MAYA_RS_TM_083",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
@@ -1469,6 +1552,7 @@
     {
         "case": "MAYA_RS_TM_084",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingWhiteBalanceEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.applyGammaToMayaViews', 1)",
