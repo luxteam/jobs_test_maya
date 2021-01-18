@@ -2,6 +2,7 @@
     {
         "case": "MAYA_MAT_PBR_001",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('color', 'outColor', RES_PATH + '/PBR/sourceimages/base_color.png')",
@@ -17,6 +18,7 @@
     {
         "case": "MAYA_MAT_PBR_002",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('color', 'outColor', RES_PATH + '/PBR/sourceimages/base_color.jpg')",
@@ -32,6 +34,7 @@
     {
         "case": "MAYA_MAT_PBR_003",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('color', 'outColor', RES_PATH + '/PBR/sourceimages/base_color.tif')",
@@ -47,6 +50,7 @@
     {
         "case": "MAYA_MAT_PBR_004",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('color', 'outColor', RES_PATH + '/PBR/sourceimages/base_color.exr')",
@@ -64,6 +68,7 @@
     {
         "case": "MAYA_MAT_PBR_005",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.color', 1, 0, 1, type='double3')",
@@ -78,6 +83,7 @@
     {
         "case": "MAYA_MAT_PBR_006",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('metalness', 'outAlpha', RES_PATH + '/PBR/sourceimages/metalness.png')",
@@ -93,6 +99,7 @@
     {
         "case": "MAYA_MAT_PBR_007",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('metalness', 'outAlpha', RES_PATH + '/PBR/sourceimages/metalness.jpg')",
@@ -108,6 +115,7 @@
     {
         "case": "MAYA_MAT_PBR_008",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('metalness', 'outAlpha', RES_PATH + '/PBR/sourceimages/metalness.tif')",
@@ -123,6 +131,7 @@
     {
         "case": "MAYA_MAT_PBR_009",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('metalness', 'outAlpha', RES_PATH + '/PBR/sourceimages/metalness.exr')",
@@ -140,6 +149,7 @@
     {
         "case": "MAYA_MAT_PBR_010",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.metalness', 0.5)",
@@ -154,6 +164,7 @@
     {
         "case": "MAYA_MAT_PBR_011",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.metalness', 1)",
@@ -168,6 +179,7 @@
     {
         "case": "MAYA_MAT_PBR_012",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('specular', 'outAlpha', RES_PATH + '/PBR/sourceimages/specular.png')",
@@ -183,6 +195,7 @@
     {
         "case": "MAYA_MAT_PBR_013",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('specular', 'outAlpha', RES_PATH + '/PBR/sourceimages/specular.jpg')",
@@ -198,6 +211,7 @@
     {
         "case": "MAYA_MAT_PBR_014",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('specular', 'outAlpha', RES_PATH + '/PBR/sourceimages/specular.tif')",
@@ -213,6 +227,7 @@
     {
         "case": "MAYA_MAT_PBR_015",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('specular', 'outAlpha', RES_PATH + '/PBR/sourceimages/specular.exr')",
@@ -230,6 +245,7 @@
     {
         "case": "MAYA_MAT_PBR_016",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.specular', 0.5)",
@@ -244,6 +260,7 @@
     {
         "case": "MAYA_MAT_PBR_017",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.specular', 1)",
@@ -258,6 +275,7 @@
     {
         "case": "MAYA_MAT_PBR_018",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('roughness', 'outAlpha', RES_PATH + '/PBR/sourceimages/roughness.png')",
@@ -273,6 +291,7 @@
     {
         "case": "MAYA_MAT_PBR_019",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('roughness', 'outAlpha', RES_PATH + '/PBR/sourceimages/roughness.jpg')",
@@ -288,6 +307,7 @@
     {
         "case": "MAYA_MAT_PBR_020",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('roughness', 'outAlpha', RES_PATH + '/PBR/sourceimages/roughness.tif')",
@@ -303,6 +323,7 @@
     {
         "case": "MAYA_MAT_PBR_021",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('roughness', 'outAlpha', RES_PATH + '/PBR/sourceimages/roughness.exr')",
@@ -320,6 +341,7 @@
     {
         "case": "MAYA_MAT_PBR_022",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.roughness', 0.5)",
@@ -334,6 +356,7 @@
     {
         "case": "MAYA_MAT_PBR_023",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.roughness', 1)",
@@ -348,6 +371,7 @@
     {
         "case": "MAYA_MAT_PBR_024",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('file14.fileTextureName', RES_PATH + '/PBR/sourceimages/normal.png', type='string')",
@@ -362,6 +386,7 @@
     {
         "case": "MAYA_MAT_PBR_025",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('file14.fileTextureName', RES_PATH + '/PBR/sourceimages/normal.jpg', type='string')",
@@ -376,6 +401,7 @@
     {
         "case": "MAYA_MAT_PBR_026",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "rpr_render(case)",
@@ -389,6 +415,7 @@
     {
         "case": "MAYA_MAT_PBR_027",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('file14.fileTextureName', RES_PATH + '/PBR/sourceimages/normal.exr', type='string')",
@@ -405,6 +432,7 @@
     {
         "case": "MAYA_MAT_PBR_028",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('glass', 'outAlpha', RES_PATH + '/PBR/sourceimages/glass.png')",
@@ -420,6 +448,7 @@
     {
         "case": "MAYA_MAT_PBR_029",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('glass', 'outAlpha', RES_PATH + '/PBR/sourceimages/glass.jpg')",
@@ -435,6 +464,7 @@
     {
         "case": "MAYA_MAT_PBR_030",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('glass', 'outAlpha', RES_PATH + '/PBR/sourceimages/glass.tif')",
@@ -450,6 +480,7 @@
     {
         "case": "MAYA_MAT_PBR_031",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('glass', 'outAlpha', RES_PATH + '/PBR/sourceimages/glass.exr')",
@@ -467,6 +498,7 @@
     {
         "case": "MAYA_MAT_PBR_032",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.glass', 0.5)",
@@ -481,6 +513,7 @@
     {
         "case": "MAYA_MAT_PBR_033",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.glass', 1)",
@@ -495,6 +528,7 @@
     {
         "case": "MAYA_MAT_PBR_034",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('glassIOR', 'outAlpha', RES_PATH + '/PBR/sourceimages/glass_ior_t.exr')",
@@ -512,6 +546,7 @@
     {
         "case": "MAYA_MAT_PBR_035",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.glassIOR', 0.5)",
@@ -526,6 +561,7 @@
     {
         "case": "MAYA_MAT_PBR_036",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.glassIOR', 1)",
@@ -540,6 +576,7 @@
     {
         "case": "MAYA_MAT_PBR_037",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('emissiveColor', 'outColor', RES_PATH + '/PBR/sourceimages/emissive.png')",
@@ -555,6 +592,7 @@
     {
         "case": "MAYA_MAT_PBR_038",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('emissiveColor', 'outColor', RES_PATH + '/PBR/sourceimages/emissive.jpg')",
@@ -570,6 +608,7 @@
     {
         "case": "MAYA_MAT_PBR_039",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('emissiveColor', 'outColor', RES_PATH + '/PBR/sourceimages/emissive.tif')",
@@ -585,6 +624,7 @@
     {
         "case": "MAYA_MAT_PBR_040",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('emissiveColor', 'outColor', RES_PATH + '/PBR/sourceimages/emissive.exr')",
@@ -602,6 +642,7 @@
     {
         "case": "MAYA_MAT_PBR_041",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.emissiveColor', 1, 0.667, 0, type='double3')",
@@ -617,6 +658,7 @@
     {
         "case": "MAYA_MAT_PBR_042",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.emissiveColor', 1, 0.667, 0, type='double3')",
@@ -632,6 +674,7 @@
     {
         "case": "MAYA_MAT_PBR_043",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('emissiveWeight', 'outAlpha', RES_PATH + '/PBR/sourceimages/emissiveWeight.png')",
@@ -647,6 +690,7 @@
     {
         "case": "MAYA_MAT_PBR_044",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('emissiveWeight', 'outAlpha', RES_PATH + '/PBR/sourceimages/emissiveWeight.jpg')",
@@ -662,6 +706,7 @@
     {
         "case": "MAYA_MAT_PBR_045",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('emissiveWeight', 'outAlpha', RES_PATH + '/PBR/sourceimages/emissiveWeight.tif')",
@@ -678,6 +723,7 @@
     {
         "case": "MAYA_MAT_PBR_046",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('emissiveWeight', 'outAlpha', RES_PATH + '/PBR/sourceimages/emissiveWeight.exr')",
@@ -695,6 +741,7 @@
     {
         "case": "MAYA_MAT_PBR_047",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('subsurfaceWeight', 'outAlpha', RES_PATH + '/PBR/sourceimages/subsurface_weight.png')",
@@ -710,6 +757,7 @@
     {
         "case": "MAYA_MAT_PBR_048",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('subsurfaceWeight', 'outAlpha', RES_PATH + '/PBR/sourceimages/subsurface_weight.jpeg')",
@@ -725,6 +773,7 @@
     {
         "case": "MAYA_MAT_PBR_049",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('subsurfaceWeight', 'outAlpha', RES_PATH + '/PBR/sourceimages/subsurface_weight.tiff')",
@@ -740,6 +789,7 @@
     {
         "case": "MAYA_MAT_PBR_050",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('subsurfaceWeight', 'outAlpha', RES_PATH + '/PBR/sourceimages/subsurface_weight.exr')",
@@ -757,6 +807,7 @@
     {
         "case": "MAYA_MAT_PBR_051",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('subsurfaceColor', 'outColor', RES_PATH + '/PBR/sourceimages/subsurface_color.png')",
@@ -772,6 +823,7 @@
     {
         "case": "MAYA_MAT_PBR_052",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('subsurfaceColor', 'outColor', RES_PATH + '/PBR/sourceimages/subsurface_color.jpeg')",
@@ -787,6 +839,7 @@
     {
         "case": "MAYA_MAT_PBR_053",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('subsurfaceColor', 'outColor', RES_PATH + '/PBR/sourceimages/subsurface_color.tiff')",
@@ -802,6 +855,7 @@
     {
         "case": "MAYA_MAT_PBR_054",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "file_tmp = setAttribute('subsurfaceColor', 'outColor', RES_PATH + '/PBR/sourceimages/subsurface_color.exr')",
@@ -819,6 +873,7 @@
     {
         "case": "MAYA_MAT_PBR_055",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.subsurfaceRadius0', 1)",
@@ -835,6 +890,7 @@
     {
         "case": "MAYA_MAT_PBR_056",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('R_PBRMat.subsurfaceRadius0', 5)",
