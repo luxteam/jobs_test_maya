@@ -687,7 +687,10 @@
         "script_info": [
             "Displacement node"
         ],
-        "scene": "RPRNodes.ma"
+        "scene": "RPRNodes.ma",
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_NODE_044",
@@ -708,7 +711,10 @@
         "script_info": [
             "Displacement node"
         ],
-        "scene": "RPRNodes.ma"
+        "scene": "RPRNodes.ma",
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_NODE_045",
@@ -729,7 +735,10 @@
         "script_info": [
             "Displacement node"
         ],
-        "scene": "RPRNodes.ma"
+        "scene": "RPRNodes.ma",
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_NODE_046",
@@ -750,7 +759,10 @@
         "script_info": [
             "Displacement node"
         ],
-        "scene": "RPRNodes.ma"
+        "scene": "RPRNodes.ma",
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_NODE_047",
@@ -901,5 +913,19 @@
             "RPRFlatColorMaterial"
         ],
         "scene": "maya_shaderball.ma"
+    },
+    {
+        "case": "MAYA_MAT_NODE_057",
+        "status": "active",
+        "functions": [
+            "rpr_render(case)"
+        ],
+        "script_info": [
+            "DDS"
+        ],
+        "scene": "DDS.ma",
+        "skip_engine":[
+            "Northstar"
+        ]
     }
 ]

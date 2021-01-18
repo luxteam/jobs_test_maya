@@ -41,33 +41,59 @@ def reportToJSON(case, render_time=0):
     with open(path_to_file, 'r') as file:
         report = json.loads(file.read())[0]
 
-    if case['status'] == 'inprogress':
-        report['test_status'] = 'passed'
-        report['group_timeout_exceeded'] = False
-    else:
-        report['test_status'] = case['status']
+    # status for Athena suite will be set later
+    if TEST_TYPE not in ['Athena']:
+        if case['status'] == 'inprogress':
+            report['test_status'] = 'passed'
+            report['group_timeout_exceeded'] = False
+        else:
+            report['test_status'] = case['status']
 
     logging('Create report json ({{}} {{}})'.format(
             case['case'], report['test_status']))
 
-    if case['status'] == 'skipped':
-        report['file_name'] = case['case'] + '.jpg'
+    if case['status'] == 'error':
+        number_of_tries = case.get('number_of_tries', 0)
+        if number_of_tries == RETRIES:
+            error_message = 'Testcase wasn\'t executed successfully (all attempts were used). Number of tries: {{}}'.format(str(number_of_tries))
+        else:
+            error_message = 'Testcase wasn\'t executed successfully. Number of tries: {{}}'.format(str(number_of_tries))
+        report['message'] = [error_message]
+        template['group_timeout_exceeded'] = False
     else:
-        report['file_name'] = case['case'] + case.get('extension', '.jpg')
-    # TODO: render device may be incorrect (if it changes in case)
-    report['render_device'] = cmds.optionVar(q='RPR_DevicesName')[0]
-    report['tool'] = mel.eval('about -iv')
+        report['message'] = []
+
     report['date_time'] = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
-    report['render_version'] = mel.eval('getRPRPluginVersion()')
-    report['core_version'] = mel.eval('getRprCoreVersion()')
-    report['render_color_path'] = path.join('Color', report['file_name'])
     report['render_time'] = render_time
     report['test_group'] = TEST_TYPE
     report['test_case'] = case['case']
+    report['case_functions'] = case['functions']
     report['difference_color'] = 0
     report['script_info'] = case['script_info']
     report['render_log'] = path.join('render_tool_logs', case['case'] + '.log')
     report['scene_name'] = case.get('scene', '')
+    if case['status'] != 'skipped':
+        report['file_name'] = case['case'] + case.get('extension', '.jpg')
+        report['render_color_path'] = path.join('Color', report['file_name'])
+
+    # save metrics which can be received witout call of functions of Maya
+    with open(path_to_file, 'w') as file:
+        file.write(json.dumps([report], indent=4))
+
+    try:
+        report['tool'] = mel.eval('about -iv')
+    except Exception as e:
+        logging('Failed to get Maya version. Reason: {{}}'.format(str(e)))
+    try:
+        report['render_version'] = mel.eval('getRPRPluginVersion()')
+    except Exception as e:
+        logging('Failed to get render version. Reason: {{}}'.format(str(e)))
+    try:
+        report['core_version'] = mel.eval('getRprCoreVersion()')
+    except Exception as e:
+        logging('Failed to get core version. Reason: {{}}'.format(str(e)))
+
+    # save metrics which can't be received witout call of functions of Maya (additional measures to avoid stucking of Maya)
     with open(path_to_file, 'w') as file:
         file.write(json.dumps([report], indent=4))
 
@@ -76,14 +102,27 @@ def render_tool_log_path(name):
     return path.join(LOGS_DIR, name + '.log')
 
 
-def validateFiles():
+def get_scene_path(case):
+    scenePath = os.path.join(RES_PATH, TEST_TYPE)
+    temp = os.path.join(scenePath, case['scene'][:-3])
+    if os.path.isdir(temp):
+        scenePath = temp
+    return scenePath
+
+
+def validateFiles(case):
     logging('Repath scene')
-    # TODO: repath from folder with group
-    unresolved_files = cmds.filePathEditor(
-        query=True, listFiles='', unresolved=True, attributeOnly=True)
+    cmds.filePathEditor(refresh=True)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
+    logging("Unresolved items: {{}}".format(str(unresolved_files)))
+    logging('Start repath scene')
+    logging("Target path: {{}}".format(get_scene_path(case)))
     if unresolved_files:
         for item in unresolved_files:
-            cmds.filePathEditor(item, repath=RES_PATH, recursive=True, ra=1)
+            cmds.filePathEditor(item, repath=get_scene_path(case), recursive=True, ra=1)
+    unresolved_files = cmds.filePathEditor(query=True, listFiles='', unresolved=True, attributeOnly=True)
+    logging("Unresolved items: {{}}".format(str(unresolved_files)))
+    logging('Repath finished')
 
 
 def enable_rpr(case):
@@ -96,6 +135,7 @@ def enable_rpr(case):
 
 def rpr_render(case, mode='color'):
     event('Prerender', False, case['case'])
+    validateFiles(case)
     logging('Render image')
 
     mel.eval('fireRender -waitForItTwo')
@@ -115,13 +155,16 @@ def rpr_render(case, mode='color'):
 def prerender(case):
     logging('Prerender')
     scene = case.get('scene', '')
+
+    scenePath = os.path.join(get_scene_path(case), scene)
+    logging("Scene path: {{}}".format(scenePath))
+
     scene_name = cmds.file(q=True, sn=True, shn=True)
     if scene_name != scene:
         try:
             event('Open scene', True, case['case'])
-            cmds.file(scene, f=True, op='v=0;', prompt=False, iv=True, o=True)
+            cmds.file(scenePath, f=True, op='v=0;', prompt=False, iv=True, o=True)
             event('Open scene', False, case['case'])
-            validateFiles()
             enable_rpr(case['case'])
         except Exception as e:
             logging(
@@ -185,11 +228,13 @@ def save_report(case):
     source_dir = path.join(WORK_DIR, '..', '..', '..',
                            '..', 'jobs_launcher', 'common', 'img')
 
-    if case['status'] == 'inprogress':
-        copyfile(path.join(source_dir, 'passed.jpg'), work_dir)
-    else:
-        copyfile(
-            path.join(source_dir, case['status'] + '.jpg'), work_dir)
+    # image for Athena suite will be set later
+    if TEST_TYPE not in ['Athena']:
+        if case['status'] == 'inprogress':
+            copyfile(path.join(source_dir, 'passed.jpg'), work_dir)
+        elif case['status'] != 'skipped':
+            copyfile(
+                path.join(source_dir, case['status'] + '.jpg'), work_dir)
 
     enable_rpr(case['case'])
 
@@ -208,13 +253,17 @@ def case_function(case):
         func = 'save_report'
     else:
         try:
+            logging("SetProject skipped.")
+            '''
             projPath = os.path.join(RES_PATH, TEST_TYPE)
             temp = os.path.join(projPath, case['scene'][:-3])
             if os.path.isdir(temp):
                 projPath = temp
             mel.eval('setProject("{{}}")'.format(projPath.replace('\\', '/')))
+            '''
         except:
-            logging("Can't set project in '" + projPath + "'")
+            pass
+            # logging("Can't set project in '" + projPath + "'")
 
     if case['status'] == 'fail' or case.get('number_of_tries', 1) >= RETRIES:
         case['status'] = 'error'
@@ -265,8 +314,10 @@ def main():
                 case['status'] = 'done'
                 logging(case['case'] + ' done')
 
-            with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
-                json.dump(cases, file, indent=4)
+            # Athena group will be modified later (now it isn't final result)
+            if TEST_TYPE not in ['Athena']:
+                with open(path.join(WORK_DIR, 'test_cases.json'), 'w') as file:
+                    json.dump(cases, file, indent=4)
 
     event('Close tool', True, cases[-1]['case'])
 

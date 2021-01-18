@@ -41,7 +41,7 @@
         "case": "MAYA_SM_004",
         "status": "active",
         "functions": [
-            "cmds.file(RES_PATH + '/default/example.obj', i=True, type='OBJ', options='mo=-1', pr=True)",
+            "cmds.file(RES_PATH + '/Smoke/default/example.obj', i=True, type='OBJ', options='mo=-1', pr=True)",
             "cmds.rename('polySurface1', 'Shader_Ball')",
             "cmds.setAttr('Shader_Ball.translate', -3.774, -1.4, -3.865)",
             "cmds.setAttr('Shader_Ball.scale', 2, 2, 2)",
@@ -543,7 +543,10 @@
             "AOV Shadow Catcher",
             "Pass Limit: 50"
         ],
-        "scene": "maya_shaderball.ma"
+        "scene": "maya_shaderball.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_SM_034",
@@ -575,7 +578,10 @@
             "SSS Night",
             "Pass Limit: 400"
         ],
-        "scene": "Uber_SSS_night.ma"
+        "scene": "Uber_SSS_night.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_SM_036",
@@ -587,7 +593,10 @@
             "Displacement",
             "Pass Limit: 50"
         ],
-        "scene": "displacement.ma"
+        "scene": "displacement.ma",
+        "skip_config": [
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_SM_037",
@@ -672,7 +681,10 @@
         "script_info": [
             "Volume material check"
         ],
-        "scene": "VolumeRollingFog.ma"
+        "scene": "VolumeRollingFog.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_SM_043",
@@ -730,7 +742,7 @@
     },
     {
         "case": "MAYA_SM_048",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "rpr_render(case)"
         ],
@@ -741,7 +753,7 @@
     },
     {
         "case": "MAYA_SM_049",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "rpr_render(case)"
         ],
@@ -793,6 +805,9 @@
         "scene": "normal_scene.ma",
         "skip_config": [
             ["AMD Radeon RX Vega 56 (Metal)"]
+        ],
+        "skip_engine": [
+            "Northstar"
         ]
     },
     {
@@ -821,7 +836,10 @@
         "script_info": [
             "CPU+GPU mode"
         ],
-        "scene": "normal_scene.ma"
+        "scene": "normal_scene.ma",
+        "skip_engine": [
+            "Northstar"
+        ]
     },
     {
         "case": "MAYA_SM_054",
@@ -839,7 +857,7 @@
     },
     {
         "case": "MAYA_SM_055",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 8)",
             "cmds.setAttr('RadeonProRenderGlobals.aovObjectId', 1)",

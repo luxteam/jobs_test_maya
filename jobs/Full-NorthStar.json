@@ -4,6 +4,8 @@
         "Image_Size":"",
         "AOV":"",
         "Camera":"",
+        "Contour":"",
+        "Complex":"",
         "Smoke":"",
         "IBL":"",
         "IES":"",
@@ -32,6 +34,7 @@
         "MASH":"",
         "NHair":"",
         "Maya_Utilities":"",
-        "Shadow_Catcher":""
+        "Shadow_Catcher":"",
+        "Transform":""
     }
 }

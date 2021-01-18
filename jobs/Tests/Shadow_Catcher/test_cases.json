@@ -4,12 +4,16 @@
         "status": "active",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1)",
             "rpr_render(case)"
         ],
         "script_info": [
             "SC + Motion Blur"
         ],
-        "scene": "scmotion.ma"
+        "scene": "scmotion.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_SC_002",
@@ -42,6 +46,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)"
         ],
         "script_info": [
+            "Black image expected",
             "SC AOV"
         ],
         "scene": "SC.ma"
@@ -155,7 +160,10 @@
         "script_info": [
             "SC ML Denoiser"
         ],
-        "scene": "DenoiserShadowCatcher.ma"
+        "scene": "DenoiserShadowCatcher.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_SC_014",

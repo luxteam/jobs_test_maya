@@ -6,6 +6,7 @@
         "Camera":"",
         "CPU_Mode":"",
         "Dual_Mode":"",
+        "Complex":"",
         "Smoke":"",
         "IBL":"",
         "IES":"",
@@ -37,6 +38,7 @@
         "VDB":"",
         "NHair":"",
         "Maya_Utilities":"",
-        "Shadow_Catcher":""
+        "Shadow_Catcher":"",
+        "Transform":""
     }
 }

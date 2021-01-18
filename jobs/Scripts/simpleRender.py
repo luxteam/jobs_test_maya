@@ -11,6 +11,8 @@ from datetime import datetime
 from shutil import copyfile, move, which
 import sys
 import time
+import importlib
+from utils import is_case_skipped
 
 sys.path.append(os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
@@ -31,11 +33,21 @@ if platform.system() == 'Darwin':
     from Quartz import kCGWindowListOptionOnScreenOnly
     from Quartz import kCGNullWindowID
     from Quartz import kCGWindowName
+    from Quartz import CGWindowListCreateImage
+    from Quartz import CGRectMake
+    from Quartz import kCGWindowImageDefault
 
 
 def get_windows_titles():
     try:
         if platform.system() == 'Darwin':
+            # for receive kCGWindowName values from CGWindowListCopyWindowInfo function it's necessary to call any function of Screen Record API
+            CGWindowListCreateImage(
+                CGRectMake(0, 0, 1, 1),
+                kCGWindowListOptionOnScreenOnly,
+                kCGNullWindowID,
+                kCGWindowImageDefault
+            )
             ws_options = kCGWindowListOptionOnScreenOnly
             windows_list = CGWindowListCopyWindowInfo(
                 ws_options, kCGNullWindowID)
@@ -125,6 +137,49 @@ def check_licenses(res_path, maya_scenes, testType):
             'Error while deleting student license: {}'.format(ex))
 
 
+def kill_maya(process):
+    core_config.main_logger.warning('Killing maya....')
+    child_processes = process.children()
+    core_config.main_logger.warning(
+        'Child processes: {}'.format(child_processes))
+    for ch in child_processes:
+        try:
+            ch.terminate()
+            time.sleep(10)
+            ch.kill()
+            time.sleep(10)
+            status = ch.status()
+            core_config.main_logger.error(
+                'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
+        except psutil.NoSuchProcess:
+            core_config.main_logger.warning(
+                'Process is killed: {}'.format(ch))
+
+    try:
+        process.terminate()
+        time.sleep(10)
+        process.kill()
+        time.sleep(10)
+        status = process.status()
+        core_config.main_logger.error(
+            'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
+    except psutil.NoSuchProcess:
+        core_config.main_logger.warning(
+            'Process is killed: {}'.format(ch))
+
+
+def get_finished_cases_number(output):
+    for i in range(3):
+        try:
+            with open(os.path.join(os.path.abspath(output), 'test_cases.json')) as file:
+                test_cases = json.load(file)
+                return len([case['status'] for case in test_cases if case['status'] in ('skipped', 'error', 'done')])
+        except Exception as e:
+            core_config.main_logger.error('Failed to get number of finished cases (try #{}): Reason: {}'.format(i, str(e)))
+            time.sleep(5)
+    return -1
+
+
 def launchMaya(cmdScriptPath, work_dir, error_windows):
     system_pl = platform.system()
     core_config.main_logger.info(
@@ -134,6 +189,12 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
     p = psutil.Popen(cmdScriptPath, stdout=subprocess.PIPE,
                      stderr=subprocess.PIPE, shell=True)
 
+    prev_done_test_cases = get_finished_cases_number(args.output)
+    # timeout after which Maya is considered hung
+    restart_timeout = 440
+    current_restart_timeout = restart_timeout
+
+
     while True:
         try:
             p.communicate(timeout=40)
@@ -141,6 +202,7 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
             core_config.main_logger.info(
                 'Found windows: {}'.format(window_titles))
         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
+            current_restart_timeout -= 40
             fatal_errors_titles = ['Detected windows ERROR', 'maya', 'Student Version File', 'Radeon ProRender Error', 'Script Editor',
                                    'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report', 'Autodesk Maya 2018 Error Report',
                                    'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report', 'Autodesk Maya 2019 Error Report',
@@ -163,46 +225,30 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
                     except Exception as ex:
                         pass
 
-                core_config.main_logger.warning('Killing maya....')
-
-                child_processes = p.children()
-                core_config.main_logger.warning(
-                    'Child processes: {}'.format(child_processes))
-                for ch in child_processes:
-                    try:
-                        ch.terminate()
-                        time.sleep(10)
-                        ch.kill()
-                        time.sleep(10)
-                        status = ch.status()
-                        core_config.main_logger.error(
-                            'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
-                    except psutil.NoSuchProcess:
-                        core_config.main_logger.warning(
-                            'Process is killed: {}'.format(ch))
-
-                try:
-                    p.terminate()
-                    time.sleep(10)
-                    p.kill()
-                    time.sleep(10)
-                    status = ch.status()
-                    core_config.main_logger.error(
-                        'Process is alive: {}. Name: {}. Status: {}'.format(ch, ch.name(), status))
-                except psutil.NoSuchProcess:
-                    core_config.main_logger.warning(
-                        'Process is killed: {}'.format(ch))
+                kill_maya(p)
 
                 break
+            else:
+                new_done_test_cases_num = get_finished_cases_number(args.output)
+                if current_restart_timeout <= 0:
+                    if new_done_test_cases_num == -1:
+                        core_config.main_logger.error('Failed to get number of finished cases. Try to do that on next iteration')
+                    elif prev_done_test_cases == new_done_test_cases_num:
+                        # if number of finished cases wasn't increased - Maya got stuck
+                        core_config.main_logger.error('Maya got stuck.')
+                        rc = -1
+                        current_restart_timeout = restart_timeout
+                        kill_maya(p)
+                        break
+                    else:
+                        prev_done_test_cases = new_done_test_cases_num
+                        current_restart_timeout = restart_timeout
         else:
             rc = 0
             break
 
     perf_count.event_record(args.output, 'Close tool', False)
 
-    if args.testType in ['Athena']:
-        subprocess.call([sys.executable, os.path.realpath(os.path.join(
-            os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
     return rc
 
 
@@ -229,7 +275,7 @@ def main(args, error_windows):
         core_config.main_logger.error(str(e))
         return 1
 
-    if os.path.exists(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')):
+    if args.testType not in ['Athena'] and os.path.exists(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')):
         with open(os.path.join(os.path.dirname(__file__), 'extensions', args.testType + '.py')) as f:
             extension_script = f.read()
         script = script.split('# place for extension functions')
@@ -294,33 +340,40 @@ def main(args, error_windows):
         os.makedirs(os.path.join(baseline_path, 'Color'))
 
     for case in cases:
-        if sum([render_platform & set(skip_conf) == set(skip_conf) for skip_conf in case.get('skip_config', '')]):
-            for i in case['skip_config']:
-                skip_config = set(i)
-                if render_platform.intersection(skip_config) == skip_config:
-                    case['status'] = 'skipped'
-
-        if any([engine for engine in case.get('skip_engine', []) if engine == args.engine]):
+        if is_case_skipped(case, render_platform, args.engine):
             case['status'] = 'skipped'
 
-        if case['status'] != 'done':
+        if case['status'] != 'done' and case['status'] != 'error':
             if case['status'] == 'inprogress':
                 case['status'] = 'active'
                 case['number_of_tries'] = case.get('number_of_tries', 0) + 1
 
             template = core_config.RENDER_REPORT_BASE.copy()
             template['test_case'] = case['case']
+            template['case_functions'] = case['functions']
             template['render_device'] = get_gpu()
-            template['test_status'] = 'error'
             template['script_info'] = case['script_info']
             template['scene_name'] = case.get('scene', '')
-            template['file_name'] = 'failed.jpg'
-            template['render_color_path'] = os.path.join('Color', 'failed.jpg')
             template['test_group'] = args.testType
             template['date_time'] = datetime.now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             if case['status'] == 'skipped':
+                template['test_status'] = 'skipped'
+                template['file_name'] = case['case'] + case.get('extension', '.jpg')
+                template['render_color_path'] = os.path.join('Color', template['file_name'])
                 template['group_timeout_exceeded'] = False
+
+                try:
+                    skipped_case_image_path = os.path.join(args.output, 'Color', template['file_name'])
+                    if not os.path.exists(skipped_case_image_path):
+                        copyfile(os.path.join(work_dir, '..', '..', '..', '..', 'jobs_launcher', 
+                            'common', 'img', "skipped.jpg"), skipped_case_image_path)
+                except OSError or FileNotFoundError as err:
+                    main_logger.error("Can't create img stub: {}".format(str(err)))
+            else:
+                template['test_status'] = 'error'
+                template['file_name'] = 'failed.jpg'
+                template['render_color_path'] = os.path.join('Color', 'failed.jpg')
 
             with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
                 f.write(json.dumps([template], indent=4))
@@ -346,11 +399,11 @@ def main(args, error_windows):
 
     if system_pl == 'Windows':
         cmdRun = '''
-		  set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log
-		  set PYTHONPATH=%cd%;PYTHONPATH
-		  set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
-		  "{tool}" -command "python(\\"import base_functions\\");"
-		'''.format(tool=args.tool)
+          set MAYA_CMD_FILE_OUTPUT=%cd%/renderTool.log
+          set PYTHONPATH=%cd%;PYTHONPATH
+          set MAYA_SCRIPT_PATH=%cd%;%MAYA_SCRIPT_PATH%
+          "{tool}" -command "python(\\"import base_functions\\");"
+        '''.format(tool=args.tool)
 
         cmdScriptPath = os.path.join(args.output, 'script.bat')
         with open(cmdScriptPath, 'w') as file:
@@ -358,11 +411,11 @@ def main(args, error_windows):
 
     elif system_pl == 'Darwin':
         cmdRun = '''
-		  export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
-		  export PYTHONPATH=$PWD:$PYTHONPATH
-		  export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
-		  "{tool}" -command "python(\\"import base_functions\\");"
-		'''.format(tool=args.tool)
+          export MAYA_CMD_FILE_OUTPUT=$PWD/renderTool.log
+          export PYTHONPATH=$PWD:$PYTHONPATH
+          export MAYA_SCRIPT_PATH=$PWD:$MAYA_SCRIPT_PATH
+          "{tool}" -command "python(\\"import base_functions\\");"
+        '''.format(tool=args.tool)
 
         cmdScriptPath = os.path.join(args.output, 'script.sh')
         with open(cmdScriptPath, 'w') as file:
@@ -378,8 +431,17 @@ def main(args, error_windows):
     rc = launchMaya(cmdScriptPath, args.output, error_windows)
 
     if args.testType in ['Athena']:
-        subprocess.call([sys.executable, os.path.realpath(os.path.join(
-            os.path.dirname(__file__), 'extensions', args.testType + '.py')), args.output])
+        extension_module = importlib.import_module("extensions.{}".format(args.testType))
+        extension_function = getattr(extension_module, "process_results")
+        extension_function(args.output)
+        with open(os.path.join(args.output, 'test_cases.json'), 'r') as file:
+            cases = json.load(file)
+        for case in cases:
+            if case['status'] == 'inprogress':
+                case['status'] = 'done'
+        # now it's final result of Athena suite and statuses in list of cases can be updated
+        with open(os.path.join(args.output, 'test_cases.json'), 'w') as file:
+            json.dump(cases, file, indent=4)
     core_config.main_logger.info('Main func return : {}'.format(rc))
     return rc
 
@@ -433,12 +495,13 @@ def sync_time(work_dir):
 
                 synchronization_time = sync_minutes * 60 + sync_seconds + sync_milisec / 1000
                 rpr_json[0]['sync_time'] = synchronization_time
-                rpr_json[0]['render_time'] -= synchronization_time
+                if rpr_json[0]['render_time'] != 0:
+                    rpr_json[0]['render_time'] -= synchronization_time
 
                 with open(os.path.join(work_dir, rpr_json_path), 'w') as rpr_json_file:
                     rpr_json_file.write(json.dumps(rpr_json, indent=4))
             except:
-                core_config.logging.error("Can't count sync time for " + rpr_json_path)
+                core_config.main_logger.error("Can't count sync time for " + rpr_json_path)
 
 
 if __name__ == '__main__':
@@ -463,10 +526,11 @@ if __name__ == '__main__':
         core_config.main_logger.error(str(e))
         exit(-1)
 
-    error_windows = set()
 
     while True:
         iteration += 1
+
+        error_windows = set()
 
         core_config.main_logger.info(
             'Try to run script in maya (#' + str(iteration) + ')')
@@ -490,6 +554,7 @@ if __name__ == '__main__':
         active_cases = 0
         current_error_count = 0
 
+        last_error_case = None
         for case in cases:
             if case['status'] in ['fail', 'error', 'inprogress']:
                 current_error_count += 1
@@ -501,33 +566,22 @@ if __name__ == '__main__':
             if case['status'] in ['active', 'fail', 'inprogress']:
                 active_cases += 1
 
+            path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
+
+            if case['status'] == 'error':
+                last_error_case = case
+
+        if last_error_case and error_windows:
+            path_to_file = os.path.join(args.output, last_error_case['case'] + '_RPR.json')
+            with open(path_to_file, 'r') as file:
+                report = json.load(file)
+
+            report[0]['message'].append("Error windows {}".format(error_windows))
+
+            with open(path_to_file, 'w') as file:
+                json.dump(report, file, indent=4)
+
         if active_cases == 0 or iteration > len(cases) * args.retries:
-            for case in cases:
-                error_message = ''
-                number_of_tries = case.get('number_of_tries', 0)
-                if case['status'] in ['fail', 'error']:
-                    error_message = "Testcase wasn't executed successfully (all attempts were used). Number of tries: {}".format(str(number_of_tries))
-                elif case['status'] in ['active', 'inprogress']:
-                    if number_of_tries:
-                        error_message = "Testcase wasn't finished. Number of tries: {}".format(str(number_of_tries))
-                    else:
-                        error_message = "Testcase wasn't run"
-
-                if error_message:
-                    core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
-                    path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
-
-                    with open(path_to_file, 'r') as file:
-                        report = json.load(file)
-
-                    report[0]['group_timeout_exceeded'] = False
-                    report[0]['message'].append(error_message)
-                    if len(error_windows) != 0:
-                        report[0]['message'].append("Error windows {}".format(error_windows))
-
-                    with open(path_to_file, 'w') as file:
-                        json.dump(report, file, indent=4)
-
             # exit script if base_functions don't change number of active cases
             kill_process(PROCESS)
             core_config.main_logger.info(
