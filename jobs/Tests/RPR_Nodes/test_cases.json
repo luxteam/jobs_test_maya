@@ -82,7 +82,7 @@
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
-            "extract_img_from('color', case)"
+            "extract_img_from('shadow', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material AOV"
@@ -103,7 +103,7 @@
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
-            "extract_img_from('color', case)"
+            "extract_img_from('shadow', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material"
@@ -127,7 +127,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
             "cmds.setAttr('RPRMatteMaterial1.bgColor', 0, 0, 0)",
-            "extract_img_from('color', case)"
+            "extract_img_from('shadow', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material, Background Color - 0.5"
@@ -150,7 +150,7 @@
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
-            "extract_img_from('color', case)"
+            "extract_img_from('shadow', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material, Background Color - 0"
@@ -174,7 +174,7 @@
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
-            "extract_img_from('color', case)"
+            "extract_img_from('shadow', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material Shadow Weight - 0.5"
@@ -198,7 +198,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
-            "extract_img_from('color', case)"
+            "extract_img_from('shadow', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material Shadow Weight - 0"
@@ -222,7 +222,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.aovDisplayedInRenderView', 0)",
             "cmds.setAttr('RadeonProRenderGlobals.aovShadowCatcher', 0)",
             "cmds.setAttr('ShadowCatcherMaterial.visibility', 0)",
-            "extract_img_from('color', case)"
+            "extract_img_from('shadow', case)"
         ],
         "script_info": [
             "Shadow Catcher Matte Material Reflection Weight - 0.5"
