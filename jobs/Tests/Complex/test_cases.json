@@ -170,7 +170,7 @@
         "script_info": [
             "Playground"
         ],
-        "scene": "Vray_RPR_2.ma",
+        "scene": "Vray_RPR.ma",
         "functions": [
             "rpr_render(case)"
         ]
