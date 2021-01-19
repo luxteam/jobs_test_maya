@@ -3,18 +3,18 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="18000">
+    <execute command='python "{CWD}/Scripts/simpleRender.py"' timeout="10800">
         <argument>--tool "{Tool}"</argument>
         <argument>--render_device "{RenderDevice}"</argument>
         <argument>--output "{OutputDir}"</argument>
         <argument>--testType Complex</argument>
-        <argument>--pass_limit 500</argument>
+        <argument>--pass_limit 300</argument>
         <argument>--resolution_x {rx}</argument>
         <argument>--resolution_y {ry}</argument>
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU {SPU}</argument>
-        <argument>--threshold 0</argument>
+        <argument>--threshold {threshold}</argument>
         <argument>--engine "{engine}"</argument>
         <argument>--retries {retries}</argument>
         <argument>--update_refs "{UpdateRefs}"</argument>
