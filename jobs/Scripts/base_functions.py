@@ -62,7 +62,6 @@ def reportToJSON(case, render_time=0):
         report['group_timeout_exceeded'] = False
     else:
         report['message'] = []
-        report['error_screen_path'] = ''
 
     report['date_time'] = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
     report['render_time'] = render_time
