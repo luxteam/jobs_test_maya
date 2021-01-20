@@ -78,7 +78,7 @@
     },
     {
         "case": "MAYA_RS_CMX_008",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Big Area Light Image"
         ],
@@ -111,7 +111,7 @@
     },
     {
         "case": "MAYA_RS_CMX_011",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Bathroom"
         ],
@@ -122,7 +122,7 @@
     },
     {
         "case": "MAYA_RS_CMX_012",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Caustics Bench"
         ],
@@ -155,7 +155,7 @@
     },
     {
         "case": "MAYA_RS_CMX_015",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Lights"
         ],
@@ -177,7 +177,7 @@
     },
     {
         "case": "MAYA_RS_CMX_017",
-        "status": "active",
+        "status": "skipped",
         "script_info": [
             "Laptop"
         ],
