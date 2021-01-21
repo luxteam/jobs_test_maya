@@ -14,7 +14,7 @@
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--SPU {SPU}</argument>
-        <argument>--threshold {threshold}</argument>
+        <argument>--threshold 0</argument>
         <argument>--engine "{engine}"</argument>
         <argument>--retries {retries}</argument>
         <argument>--update_refs "{UpdateRefs}"</argument>
