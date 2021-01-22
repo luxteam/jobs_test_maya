@@ -1,0 +1,74 @@
+[
+    {
+        "case": "MAYA_RS_RL_001",
+        "status": "active",
+        "script_info": [
+            "Render Layer - rs_L03_BEAUTY"
+        ],
+        "scene": "render_layer.ma",
+        "functions": [
+            "cmds.editRenderLayerGlobals(crl='rs_L03_BEAUTY')",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_RL_002",
+        "status": "active",
+        "script_info": [
+            "Render Layer - rs_ALL_SHADOW"
+        ],
+        "scene": "render_layer.ma",
+        "functions": [
+            "cmds.editRenderLayerGlobals(crl='rs_ALL_SHADOW')",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_RL_003",
+        "status": "active",
+        "script_info": [
+            "Render Layer - rs_L02_BEAUTY"
+        ],
+        "scene": "render_layer.ma",
+        "functions": [
+            "cmds.editRenderLayerGlobals(crl='rs_L02_BEAUTY')",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_RL_004",
+        "status": "active",
+        "script_info": [
+            "Render Layer - rs_POL_BEAUTY"
+        ],
+        "scene": "render_layer.ma",
+        "functions": [
+            "cmds.editRenderLayerGlobals(crl='rs_POL_BEAUTY')",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_RL_005",
+        "status": "active",
+        "script_info": [
+            "Render Layer - rs_L01_BEAUTY"
+        ],
+        "scene": "render_layer.ma",
+        "functions": [
+            "cmds.editRenderLayerGlobals(crl='rs_L01_BEAUTY')",
+            "rpr_render(case)"
+        ]
+    },
+    {
+        "case": "MAYA_RS_RL_006",
+        "status": "active",
+        "script_info": [
+            "Render Layer - masterLayer"
+        ],
+        "scene": "render_layer.ma",
+        "functions": [
+            "cmds.editRenderLayerGlobals(crl='defaultRenderLayer')",
+            "rpr_render(case)"
+        ]
+    }
+]
