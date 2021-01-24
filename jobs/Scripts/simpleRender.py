@@ -423,41 +423,35 @@ def main(args, error_windows):
                 ));
                 cmds.append('''{python_alias} event_recorder.py "Close tool" False {case}'''.format(python_alias=python_alias, case=case['case']))
 
-            elif case['scene'] not in scenes_dict:
-                scenes_dict[case['scene']] = {'cams' : [] }
-                if 'camera' in case:
-                    scenes_dict[case['scene']]['cams'].append(case['camera'])
-                    cam_option = "-cam {}".format(case['camera'])
-                else:
-                    cam_option = ""
-                cmds.append('''{python_alias} event_recorder.py "Open tool" True {case}'''.format(python_alias=python_alias, case=case['case']))
-                cmds.append('''"{tool}" -proj "{project}" -r FireRender {cam_option} -devc "{render_device}" -rd "{result_dir}" -im result -fnc name.# -preRender "python(\\"import base_functions; base_functions.main(None, False)\\");" -preFrame "python(\\"base_functions.pre_frame()\\");" -postFrame "python(\\"base_functions.post_frame()\\");" -postRender "python(\\"base_functions.post_render(None, False)\\");" -g "{scene}" >> "{log_path}"'''.format(
-                    tool=args.tool,
-                    # log_path=os.path.join(work_dir, LOGS_DIR, case['scene'] + '.log'),
-                    log_path=os.path.join(work_dir, 'renderTool.log'),
-                    project=projPath,
-                    cam_option=cam_option,
-                    result_dir=os.path.join(work_dir, 'Color'),
-                    render_device=args.render_device,
-                    scene=case['scene']
-                ));
-                cmds.append('''{python_alias} event_recorder.py "Close tool" False ""'''.format(python_alias=python_alias, case=case['case']))
+            else:
 
-            elif 'camera' in case and case['camera'] not in scenes_dict[case['scene']]['cams']:
-                scenes_dict[case['scene']]['cams'].append(case['camera'])
+                if case['scene'] not in scenes_dict:
+                    scenes_dict[case['scene']] = {'cams' : [] }
 
-                cmds.append('''{python_alias} event_recorder.py "Open tool" True {case}'''.format(python_alias=python_alias, case=case['case']))
-                cmds.append('''"{tool}" -log "{log_path}" -proj "{project}" -r FireRender -cam {cam_option} -devc "{render_device}" -rd "{result_dir}" -im result -fnc name.# -preRender "python(\\"import base_functions; base_functions.main(None, False)\\");" -preFrame "python(\\"base_functions.pre_frame()\\");" -postFrame "python(\\"base_functions.post_frame()\\");" -postRender "python(\\"base_functions.post_render(None, False)\\");" -g "{scene}" >> "{log_path}"'''.format(
-                    tool=args.tool,
-                    # log_path=os.path.join(work_dir, LOGS_DIR, case['scene'] + '.log'),
-                    log_path=os.path.join(work_dir, 'renderTool.log'),
-                    project=projPath,
-                    cam_option=case['camera'],
-                    result_dir=os.path.join(work_dir, 'Color'),
-                    render_device=args.render_device,
-                    scene=case['scene']
-                ));
-                cmds.append('''{python_alias} event_recorder.py "Close tool" False ""'''.format(python_alias=python_alias, case=case['case']))
+                camera = case.get('camera', None)
+                if camera not in scenes_dict[case['scene']]['cams']:
+                    scenes_dict[case['scene']]['cams'].append(camera)
+
+                    if camera is not None:
+                        cam_option = "-cam {}".format(camera)
+                    else:
+                        cam_option = ""
+                    
+                    # Command to create event 'Open tool'
+                    cmds.append('''{python_alias} event_recorder.py "Open tool" True {case}'''.format(python_alias=python_alias, case=case['case']))
+                    # Command to start Render program
+                    cmds.append('''"{tool}" -proj "{project}" -r FireRender {cam_option} -devc "{render_device}" -rd "{result_dir}" -im result -fnc name.# -preRender "python(\\"import base_functions; base_functions.main(None, False)\\");" -preFrame "python(\\"base_functions.pre_frame()\\");" -postFrame "python(\\"base_functions.post_frame()\\");" -postRender "python(\\"base_functions.post_render(None, False)\\");" -g "{scene}" >> "{log_path}"'''.format(
+                        tool=args.tool,
+                        # log_path=os.path.join(work_dir, LOGS_DIR, case['scene'] + '.log'),
+                        log_path=os.path.join(work_dir, 'renderTool.log'),
+                        project=projPath,
+                        cam_option=cam_option,
+                        result_dir=os.path.join(work_dir, 'Color'),
+                        render_device=args.render_device,
+                        scene=case['scene']
+                    ));
+                    # Command to finish event 'Close tool', which was started in 'base_functions'
+                    cmds.append('''{python_alias} event_recorder.py "Close tool" False ""'''.format(python_alias=python_alias, case=case['case']))
 
         if 'Update' not in args.update_refs:
             try:
