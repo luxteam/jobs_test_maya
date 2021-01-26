@@ -350,6 +350,7 @@
     {
         "case": "MAYA_MAT_NODE_021",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -365,6 +366,7 @@
     {
         "case": "MAYA_MAT_NODE_022",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -382,6 +384,7 @@
     {
         "case": "MAYA_MAT_NODE_023",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -399,6 +402,7 @@
     {
         "case": "MAYA_MAT_NODE_024",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -416,6 +420,7 @@
     {
         "case": "MAYA_MAT_NODE_025",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -434,6 +439,7 @@
     {
         "case": "MAYA_MAT_NODE_026",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('Arythmetic_Blend_Gradient.visibility', 1)",
@@ -452,6 +458,7 @@
     {
         "case": "MAYA_MAT_NODE_028",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
@@ -467,6 +474,7 @@
     {
         "case": "MAYA_MAT_NODE_029",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
@@ -485,6 +493,7 @@
     {
         "case": "MAYA_MAT_NODE_030",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
@@ -503,6 +512,7 @@
     {
         "case": "MAYA_MAT_NODE_031",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
@@ -521,6 +531,7 @@
     {
         "case": "MAYA_MAT_NODE_032",
         "status": "active",
+        "functions_before_render": true,
         "functions": [
             "resetAttributes()",
             "cmds.setAttr('LookUpNoisePassthrough.visibility', 1)",
