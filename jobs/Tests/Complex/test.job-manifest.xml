@@ -21,7 +21,7 @@
         <argument>--update_refs "{UpdateRefs}"</argument>
     </execute>
 
-    <execute command='python "{CWD}/Scripts/make_report_json.py"'>
+    <execute command='python "{CommonDir}/scripts/makeReport.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 

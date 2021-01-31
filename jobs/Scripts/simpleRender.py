@@ -19,6 +19,8 @@ sys.path.append(os.path.abspath(os.path.join(
 
 import jobs_launcher.core.performance_counter as perf_count
 import jobs_launcher.core.config as core_config
+import jobs_launcher.common.scripts.utils as utils
+import local_config
 from jobs_launcher.core.system_info import get_gpu
 from jobs_launcher.core.kill_process import kill_process
 
@@ -290,13 +292,18 @@ def launchMaya(cmdScriptPath, work_dir, error_windows):
                     error_windows.update(error_window)
                     rc = -1
 
-                    if system_pl == 'Windows':
-                        try:
-                            error_screen = pyscreenshot.grab()
-                            error_screen.save(os.path.join(
-                                args.output, 'error_screenshot.jpg'))
-                        except Exception as ex:
-                            pass
+                    try:
+                        test_cases_path = os.path.join(work_dir, core_config.TEST_CASES_JSON_NAME[local_config.tool_name])
+                        error_case = utils.get_error_case(test_cases_path)
+                        if error_case:
+                            error_case_path = os.path.join(work_dir, error_case + core_config.CASE_REPORT_SUFFIX)
+                            relative_screen_path = os.path.join('Color', error_case + core_config.ERROR_SCREEN_SUFFIX + '.jpg')
+                            absolute_screen_path = os.path.join(args.output, relative_screen_path)
+                            utils.make_error_screen(error_case_path, absolute_screen_path, relative_screen_path)
+                        else:
+                            core_config.main_logger.error('Error case wasn\'t found. Can\'t save error screen')
+                    except Exception as e:
+                        core_config.main_logger.error('Failed to make error screen: {}'.format(str(e)))
 
                     kill_maya(p)
                     break
@@ -540,7 +547,14 @@ def main(args, error_windows):
                 template['file_name'] = 'failed.jpg'
                 template['render_color_path'] = os.path.join('Color', 'failed.jpg')
 
-            with open(os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX), 'w') as f:
+            case_path = os.path.join(work_dir, case['case'] + core_config.CASE_REPORT_SUFFIX)
+
+            if os.path.exists(case_path):
+                with open(case_path) as f:
+                    case_json = json.load(f)[0]
+                    template["error_screen_path"] = case_json["error_screen_path"]
+
+            with open(case_path, 'w') as f:
                 f.write(json.dumps([template], indent=4))
 
         if 'Update' not in args.update_refs:

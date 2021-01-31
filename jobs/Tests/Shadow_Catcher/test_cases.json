@@ -10,7 +10,10 @@
         "script_info": [
             "SC + Motion Blur"
         ],
-        "scene": "scmotion.ma"
+        "scene": "scmotion.ma",
+        "skip_config":[
+            ["AMD Radeon RX Vega 56 (Metal)"]
+        ]
     },
     {
         "case": "MAYA_MAT_SC_002",
