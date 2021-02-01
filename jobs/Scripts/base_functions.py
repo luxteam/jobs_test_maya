@@ -265,7 +265,7 @@ def case_function(case):
             pass
             # logging("Can't set project in '" + projPath + "'")
 
-    if case['status'] == 'fail' or case.get('number_of_tries', 1) >= RETRIES:
+    if case['status'] == 'fail' or case.get('number_of_tries', 0) >= RETRIES:
         case['status'] = 'error'
         func = 'save_report'
     elif case['status'] == 'skipped':
