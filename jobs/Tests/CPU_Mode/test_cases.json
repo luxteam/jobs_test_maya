@@ -43,7 +43,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
             "cmds.currentTime(440.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
             "rpr_render(case)"
         ],
@@ -202,6 +202,9 @@
         "case": "MAYA_RS_CPU_015",
         "status": "active",
         "functions": [
+            "ss_shape = cmds.createNode('RPRSky', n='RPRSkyShape')",
+            "cmds.setAttr(ss_shape + '.intensity', 1)",
+            "cmds.setAttr(ss_shape + '.saturation', 1)",
             "rpr_render(case)"
         ],
         "script_info": [
@@ -261,7 +264,7 @@
     },
     {
         "case": "MAYA_RS_CPU_020",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 0)",
@@ -277,7 +280,7 @@
     },
     {
         "case": "MAYA_RS_CPU_021",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.denoiserType', 3)",
             "cmds.setAttr('RadeonProRenderGlobals.denoiserColorOnly', 1)",
@@ -293,7 +296,7 @@
     },
     {
         "case": "MAYA_RS_CPU_022",
-        "status": "active",
+        "status": "skipped",
         "functions": [
             "cmds.setAttr('RadeonProRenderGlobals.tileRenderEnabled', 1)",
             "cmds.setAttr('RadeonProRenderGlobals.filter', 1)",
@@ -324,7 +327,7 @@
             "cmds.setAttr('RadeonProRenderGlobals.completionCriteriaIterations', 100)",
             "cmds.currentTime(440.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlur', 1)",
-            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 5.0)",
+            "cmds.setAttr('RadeonProRenderGlobals.motionBlurCameraExposure', 1.0)",
             "cmds.setAttr('RadeonProRenderGlobals.motionBlurScale', 5.0)",
             "rpr_render(case)",
             "cmds.setAttr('RadeonProRenderGlobals.toneMappingType', 0)",
